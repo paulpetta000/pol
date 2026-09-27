@@ -1,0 +1,361 @@
+{
+ "updated": "domenica 27 settembre, ore 12:30",
+ "afterRaces": 6,
+ "standings": [
+  [
+   "lr1",
+   51
+  ],
+  [
+   "nz1",
+   43
+  ],
+  [
+   "al",
+   38
+  ],
+  [
+   "lr2",
+   35
+  ],
+  [
+   "us",
+   34
+  ],
+  [
+   "nz2",
+   32
+  ],
+  [
+   "fr",
+   31
+  ],
+  [
+   "gb2",
+   29
+  ],
+  [
+   "gb1",
+   28
+  ]
+ ],
+ "standingsNote": "Classifica completa dopo 6 regate su 8 (fine di sabato). Domenica si corrono le regate 7 e 8, poi la finale tra le prime due.",
+ "others": [],
+ "days": [
+  {
+   "d": "2026-09-24",
+   "lbl": "Gio 24",
+   "t": "Prove ufficiali",
+   "races": []
+  },
+  {
+   "d": "2026-09-25",
+   "lbl": "Ven 25",
+   "t": "Regate 1–2",
+   "races": [
+    {
+     "n": "Regata 1",
+     "at": "14:10",
+     "st": "done",
+     "res": "<b>Vince ARC Team USA</b> al debutto, 2ª Luna Rossa 1 a 18\""
+    },
+    {
+     "n": "Regata 2",
+     "at": "14:46",
+     "st": "done",
+     "res": "<b>Vince Luna Rossa 1</b>, 2ª Alinghi a 9\". I francesi si rovesciano alla partenza"
+    },
+    {
+     "n": "Regata 3",
+     "at": "15:27",
+     "st": "skip",
+     "res": "Non corsa per il vento: recuperata sabato"
+    }
+   ]
+  },
+  {
+   "d": "2026-09-26",
+   "lbl": "Sab 26",
+   "t": "Regate 3–6",
+   "races": [
+    {
+     "n": "Regata 3",
+     "at": "14:10",
+     "st": "done",
+     "res": "<b>Vince Luna Rossa 1</b>, 2ª Alinghi, 3ª GB1. Le due barche neozelandesi 8ª e 9ª"
+    },
+    {
+     "n": "Regata 4",
+     "at": "14:46",
+     "st": "done",
+     "res": "<b>Vince La Roche-Posay</b>, prima vittoria dei francesi. 2ª ETNZ, 3ª Alinghi"
+    },
+    {
+     "n": "Regata 5",
+     "at": "15:27",
+     "st": "done",
+     "res": "<b>Vince ETNZ Women &amp; Youth</b>. La Roche-Posay era in testa e si rovescia a pochi metri dal traguardo"
+    },
+    {
+     "n": "Regata 6",
+     "at": "16:03",
+     "st": "done",
+     "res": "<b>Vince La Roche-Posay</b>, 2ª ETNZ, 3ª Luna Rossa 1"
+    }
+   ]
+  },
+  {
+   "d": "2026-09-27",
+   "lbl": "Dom 27",
+   "t": "Regate 7–8 e finale",
+   "races": [
+    {
+     "n": "Regata 7",
+     "at": "14:10",
+     "st": "",
+     "res": ""
+    },
+    {
+     "n": "Regata 8",
+     "at": "14:46",
+     "st": "",
+     "res": ""
+    },
+    {
+     "n": "Finale match race",
+     "at": "15:27",
+     "st": "",
+     "res": "Le prime due in classifica, una sola regata: chi vince prende tutto"
+    }
+   ]
+  }
+ ],
+ "feed": [
+  {
+   "w": "Dom 27",
+   "hot": 1,
+   "h": "Oggi si decide tutto",
+   "p": "Alle 14:10 e alle 14:46 le ultime due regate di flotta, alle 15:27 la finale testa a testa tra le prime due. Luna Rossa 1 parte con 8 punti su Team New Zealand e 13 su Alinghi.",
+   "s": [
+    "mattino27"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "hot": 1,
+   "h": "La classifica completa",
+   "p": "Dietro alle prime cinque: ETNZ Women & Youth 32, La Roche-Posay 31, GB2 29, GB1 28. Senza la scuffia sull'ultima strambata di regata 5, i francesi avrebbero potuto vincere tre regate su quattro.",
+   "s": [
+    "ansa3",
+    "sailweb2"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "hot": 1,
+   "h": "Luna Rossa 1 chiude in testa con 51 punti",
+   "p": "Sabato Burling e compagni arrivano 1°, 6°, 2° e 3°. Ora hanno 8 punti su Team New Zealand (43) e 13 su Alinghi (38). Luna Rossa 2 è quarta con 35, ARC Team USA quinta con 34.",
+   "s": [
+    "oascl",
+    "sportface"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "hot": 1,
+   "h": "Dalla scuffia alla vittoria",
+   "p": "La Roche-Posay vince l'ultima regata del giorno davanti a ETNZ e Luna Rossa 1. È la seconda vittoria del giorno per i francesi.",
+   "s": [
+    "sportface",
+    "ansa2"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "hot": 1,
+   "h": "Capovolti sul traguardo",
+   "p": "In regata 5 i francesi sono in testa, ma si rovesciano a poche centinaia di metri dall'arrivo. Vince l'equipaggio giovani e donne di Team New Zealand.",
+   "s": [
+    "ansa",
+    "oascl"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "h": "Prima vittoria francese",
+   "p": "Il giorno dopo la scuffia di venerdì, La Roche-Posay vince regata 4.",
+   "s": [
+    "sky",
+    "ansa2"
+   ]
+  },
+  {
+   "w": "Sab 26",
+   "h": "Luna Rossa 1 vince regata 3",
+   "p": "Gli italiani aprono la giornata vincendo davanti ad Alinghi.",
+   "s": [
+    "mattino"
+   ]
+  },
+  {
+   "w": "Ven 25",
+   "h": "Luna Rossa 1 in testa a fine giornata",
+   "p": "Burling e Gradoni arrivano 2° e 1°: 19 punti, 5 in più di Team New Zealand e ARC Team USA.",
+   "s": [
+    "acnews",
+    "bnz1"
+   ]
+  },
+  {
+   "w": "Ven 25",
+   "h": "I francesi si rovesciano",
+   "p": "In regata 2 La Roche-Posay parte in anticipo e prova a tornare dietro la linea. Il timone esce dall'acqua, la barca non si governa più e cade su un fianco. Zero punti.",
+   "s": [
+    "nzh",
+    "bnz1"
+   ]
+  },
+  {
+   "w": "Ven 25",
+   "h": "Debutto vincente per gli americani",
+   "p": "ARC Team USA vince la prima regata della sua storia con quasi 250 metri di vantaggio.",
+   "s": [
+    "acnews"
+   ]
+  },
+  {
+   "w": "Ven 25",
+   "h": "Partenza a fatica",
+   "p": "Due partenze annullate per il vento instabile. Poi arrivano 14–15 nodi con raffiche a 18 e si corrono 2 regate su 3. Le due barche neozelandesi tagliano il traguardo separate da un secondo.",
+   "s": [
+    "bnz1"
+   ]
+  },
+  {
+   "w": "Gio 24",
+   "h": "Prove ufficiali a Luna Rossa 1",
+   "p": "Nelle regate di prova, che non contano, gli italiani vincono tutto.",
+   "s": [
+    "prac"
+   ]
+  }
+ ],
+ "races": [
+  {
+   "n": 1,
+   "p": {
+    "1": "us",
+    "2": "lr1"
+   },
+   "x": "Prima regata della storia di ARC Team USA, vinta con quasi 250 metri di vantaggio.",
+   "s": [
+    "acnews"
+   ]
+  },
+  {
+   "n": 2,
+   "p": {
+    "1": "lr1",
+    "2": "al"
+   },
+   "x": "La Roche-Posay si rovescia dopo la partenza anticipata: zero punti.",
+   "s": [
+    "acnews",
+    "nzh"
+   ]
+  },
+  {
+   "n": 3,
+   "p": {
+    "1": "lr1",
+    "2": "al",
+    "3": "gb1",
+    "4": "lr2"
+   },
+   "x": "Le due barche neozelandesi chiudono 8ª e 9ª.",
+   "s": [
+    "mattino",
+    "skyres"
+   ]
+  },
+  {
+   "n": 4,
+   "p": {
+    "1": "fr",
+    "2": "nz1",
+    "3": "al",
+    "6": "lr1"
+   },
+   "x": "Prima vittoria francese, il giorno dopo la scuffia.",
+   "s": [
+    "sky",
+    "ansa2",
+    "oascl"
+   ]
+  },
+  {
+   "n": 5,
+   "p": {
+    "1": "nz2",
+    "2": "lr1",
+    "3": "nz1"
+   },
+   "x": "La Roche-Posay era in testa e si rovescia a poche centinaia di metri dal traguardo.",
+   "s": [
+    "ansa",
+    "oascl",
+    "mysail"
+   ]
+  },
+  {
+   "n": 6,
+   "p": {
+    "1": "fr",
+    "2": "nz1",
+    "3": "lr1"
+   },
+   "x": "Seconda vittoria del giorno per i francesi.",
+   "s": [
+    "sportface",
+    "ansa2"
+   ]
+  },
+  {
+   "n": 7,
+   "p": {},
+   "x": "",
+   "s": []
+  },
+  {
+   "n": 8,
+   "p": {},
+   "x": "",
+   "s": []
+  }
+ ],
+ "day1": [
+  [
+   "lr1",
+   19
+  ],
+  [
+   "us",
+   14
+  ],
+  [
+   "nz1",
+   14
+  ],
+  [
+   "lr2",
+   13
+  ]
+ ],
+ "final": {
+  "a": null,
+  "b": null,
+  "winner": null,
+  "res": "",
+  "s": []
+ }
+}

@@ -1,0 +1,1514 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Coppa America Napoli · AC38 Live</title>
+<meta name="description" content="Classifica, risultati, squadre e guida della Regata Preliminare della 38ª America's Cup a Napoli, aggiornata durante le regate.">
+<meta name="theme-color" content="#06131D">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coppa America a Napoli · segui la regata con noi">
+<meta property="og:description" content="Classifica live, chi va in finale, le squadre, e la barca volante spiegata pezzo per pezzo.">
+<meta property="og:image" content="https://coppa-america-napoli.vercel.app/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap">
+<style>
+:root{
+  --sea-0:#06131D;--sea-1:#0A1C29;--sea-2:#0F2636;--sea-3:#163246;
+  --line:rgba(120,190,220,.13);--line-hi:rgba(120,190,220,.30);
+  --ink-1:#E6F0F5;--ink-2:#93AEBE;--ink-3:#5B7686;
+  --teal:#43D1C6;--teal-dim:rgba(67,209,198,.13);
+  --flag:#FF7A45;--flag-dim:rgba(255,122,69,.14);
+  --gold:#E9B44C;--gold-dim:rgba(233,180,76,.14);
+  --display:'Barlow Condensed','Arial Narrow',sans-serif;
+  --body:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--sea-0);color:var(--ink-1);font-family:var(--body);font-size:15px;line-height:1.5;min-height:100vh}
+a{color:var(--teal)}
+button,select{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px;border-radius:4px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:.02em}
+
+/* header */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,19,29,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top-row{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
+.mark{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.06em;color:var(--teal);line-height:1}
+.mark small{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--ink-2);text-transform:uppercase;margin-top:3px}
+.status{margin-left:auto;display:flex;align-items:center;gap:10px;min-width:0}
+.pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:99px;white-space:nowrap}
+.pill.live{background:var(--flag-dim);color:var(--flag);border:1px solid rgba(255,122,69,.4)}
+.pill.wait{background:var(--teal-dim);color:var(--teal);border:1px solid rgba(67,209,198,.35)}
+.pill.off{background:rgba(147,174,190,.1);color:var(--ink-2);border:1px solid var(--line)}
+.pulse{width:8px;height:8px;border-radius:50%;background:currentColor;animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{50%{opacity:.35;transform:scale(.7)}}
+.clock{font-family:var(--display);font-weight:600;font-size:17px;font-variant-numeric:tabular-nums;white-space:nowrap}
+.clock span{color:var(--ink-3);font-size:12px;letter-spacing:.1em;margin-left:4px}
+.tabs{max-width:1180px;margin:0 auto;padding:0 16px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);padding:11px 14px 12px;border-bottom:2px solid transparent;white-space:nowrap}
+.tab:hover{color:var(--ink-1)}
+.tab[aria-selected="true"]{color:var(--teal);border-bottom-color:var(--teal)}
+@media(max-width:480px){.clock span{display:none}.mark small{max-width:120px}.pill{font-size:12px;padding:4px 9px}}
+
+main{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
+.stack{display:flex;flex-direction:column;gap:22px}
+.eyebrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
+.h2{font-size:26px;font-weight:800;text-transform:uppercase;line-height:1.1}
+.lede{color:var(--ink-2);max-width:68ch}
+.lede b{color:var(--ink-1)}
+.box{background:var(--sea-1);border:1px solid var(--line);border-radius:12px}
+.box-h{display:flex;align-items:baseline;justify-content:space-between;gap:12px;padding:13px 16px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.box-h h3{font-size:18px;font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.box-b{padding:16px}
+.sep{border-top:1px solid var(--line)}
+.note{font-size:13px;color:var(--ink-3)}
+.note b{color:var(--ink-2)}
+.src{font-size:12px;color:var(--ink-3)}
+.src a{color:var(--ink-2)}
+.grid-2{display:grid;grid-template-columns:1fr;gap:22px}
+@media(min-width:900px){.grid-2{grid-template-columns:minmax(0,1.55fr) minmax(0,1fr)}}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.06em;text-transform:uppercase;padding:10px 16px;border-radius:9px;background:var(--teal);color:#062026}
+.btn:hover{filter:brightness(1.08)}
+
+/* hero */
+.hero{padding:20px;border-radius:14px;background:linear-gradient(135deg,#0E2A3B 0%,#0A1C29 60%);border:1px solid var(--line-hi);display:grid;gap:16px}
+@media(min-width:760px){.hero{min-height:360px;align-content:center}.hero>div:not(.hero-art){max-width:600px}}
+.hero h1{font-size:clamp(28px,5vw,44px);font-weight:800;text-transform:uppercase;line-height:1}
+.hero h1 em{font-style:normal;color:var(--teal)}
+.hero p{color:var(--ink-2);margin-top:8px;max-width:56ch}
+.hero .btn{margin-top:14px}
+.now{background:rgba(6,19,29,.55);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.now-label{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.now-main{font-family:var(--display);font-weight:800;font-size:30px;line-height:1.1;margin-top:4px;font-variant-numeric:tabular-nums}
+.now-sub{color:var(--ink-2);font-size:14px;margin-top:4px}
+.watch{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chip{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;padding:5px 10px;border-radius:7px;background:var(--sea-3);color:var(--ink-1);text-decoration:none;border:1px solid var(--line)}
+a.chip:hover,button.chip:hover{border-color:var(--teal)}
+
+/* program */
+.days{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.day{border:1px solid var(--line);border-radius:10px;padding:11px 13px;background:var(--sea-1)}
+.day.today{border-color:var(--teal);background:linear-gradient(180deg,rgba(67,209,198,.08),transparent)}
+.day.done{opacity:.72}
+.day b{display:block;font-family:var(--display);font-size:17px;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+.day span{font-size:13px;color:var(--ink-2)}
+.day i{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.day.today i{color:var(--teal)}
+
+/* races */
+.race{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:12px 16px;border-top:1px solid var(--line)}
+.race:first-child{border-top:0}
+.race-t{font-family:var(--display);font-weight:700;font-size:20px;font-variant-numeric:tabular-nums;color:var(--ink-2)}
+.race-n{font-family:var(--display);font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.03em}
+.race-d{font-size:13px;color:var(--ink-2)}
+.race-d b{color:var(--ink-1)}
+.tag{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:3px 8px;border-radius:5px;white-space:nowrap}
+.tag.done{background:var(--teal-dim);color:var(--teal)}
+.tag.now{background:var(--flag-dim);color:var(--flag)}
+.tag.next{background:rgba(147,174,190,.1);color:var(--ink-2)}
+.tag.gold{background:var(--gold-dim);color:var(--gold)}
+
+/* feed */
+.fi{padding:12px 16px;border-top:1px solid var(--line);display:grid;grid-template-columns:58px 1fr;gap:10px}
+.fi:first-child{border-top:0}
+.fi-when{font-family:var(--display);font-weight:600;font-size:14px;color:var(--ink-3);line-height:1.3}
+.fi p{font-size:14px}
+.fi .src{margin-top:3px}
+.fi.hot .fi-when{color:var(--flag)}
+
+/* tomorrow */
+.final-card{display:grid;gap:14px;padding:18px;border-radius:14px;border:1px solid rgba(233,180,76,.35);background:linear-gradient(135deg,rgba(233,180,76,.10),rgba(10,28,41,.9) 55%)}
+.vs{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;text-align:center}
+.vs .side{display:block;width:100%;padding:6px;border-radius:10px}
+.vs .side:hover{background:rgba(255,255,255,.04)}
+.vs .side b{display:block;font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1.05}
+.vs .side span{font-size:13px;color:var(--ink-2)}
+.vs .x{font-family:var(--display);font-weight:800;font-size:20px;color:var(--gold)}
+.flagbig{font-size:34px;line-height:1.1}
+.sched{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:8px}
+.sched div{border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:rgba(6,19,29,.5)}
+.sched b{display:block;font-family:var(--display);font-weight:800;font-size:22px;font-variant-numeric:tabular-nums}
+.sched span{font-size:12px;color:var(--ink-2)}
+
+/* standings */
+.table-wrap{overflow-x:auto}
+table{width:100%;border-collapse:collapse}
+th{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:middle}
+tr:last-child td{border-bottom:0}
+.pos{font-family:var(--display);font-weight:800;font-size:22px;color:var(--ink-3);font-variant-numeric:tabular-nums;width:36px}
+.pos.top{color:var(--gold)}
+.boat{display:flex;align-items:center;gap:10px;min-width:170px;text-align:left}
+.swatch{width:4px;height:30px;border-radius:2px;flex-shrink:0}
+.boat-n{font-family:var(--display);font-weight:700;font-size:17px;text-transform:uppercase;letter-spacing:.03em;line-height:1.1}
+.boat-s{font-size:12px;color:var(--ink-2)}
+.bar-cell{width:38%;min-width:110px}
+.bar{height:8px;border-radius:4px;background:var(--sea-3);overflow:hidden}
+.bar i{display:block;height:100%;border-radius:4px}
+.pts{font-family:var(--display);font-weight:800;font-size:24px;color:var(--teal);font-variant-numeric:tabular-nums;text-align:right;width:56px}
+.gap{font-size:12px;color:var(--ink-3);text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.cut td{border-bottom:2px dashed rgba(233,180,76,.5)}
+.legend{font-size:13px;color:var(--ink-2);padding:12px 16px;border-top:1px solid var(--line)}
+.legend::before{content:"";display:inline-block;width:14px;border-top:2px dashed var(--gold);margin-right:6px;vertical-align:middle}
+.pts-table{display:grid;grid-template-columns:repeat(9,1fr);gap:4px;text-align:center}
+.pts-table div{background:var(--sea-2);border:1px solid var(--line);border-radius:6px;padding:6px 0}
+.pts-table b{display:block;font-family:var(--display);font-size:20px;font-weight:800;color:var(--teal)}
+.pts-table span{font-size:11px;color:var(--ink-3)}
+.example{border-left:3px solid var(--gold);background:var(--gold-dim);padding:10px 14px;border-radius:0 8px 8px 0;font-size:14px}
+
+/* simulator */
+.sim-row{display:grid;grid-template-columns:1fr 64px 64px 50px;gap:8px;align-items:center;padding:8px 16px;border-top:1px solid var(--line)}
+.sim-row.h{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);border-top:0}
+.sim-row select{background:var(--sea-2);border:1px solid var(--line-hi);border-radius:6px;padding:5px 4px;width:100%}
+.sim-row .p{font-family:var(--display);font-weight:800;font-size:20px;text-align:right;color:var(--teal);font-variant-numeric:tabular-nums}
+.sim-out{padding:14px 16px;border-top:1px solid var(--line);font-size:15px}
+.sim-out b{color:var(--gold)}
+.warn{color:var(--flag);font-size:13px;margin-top:4px}
+
+/* teams */
+.teams{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.team{background:var(--sea-1);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.team-head{padding:16px;border-top:4px solid var(--c);display:flex;gap:12px;align-items:flex-start}
+.team-flag{font-size:30px;line-height:1}
+.team-name{font-family:var(--display);font-weight:800;font-size:22px;text-transform:uppercase;line-height:1.05}
+.team-role{display:inline-block;margin-top:5px;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;padding:2px 7px;border-radius:4px;background:var(--teal-dim);color:var(--teal)}
+.team-role.def{background:var(--gold-dim);color:var(--gold)}
+.team-blurb{padding:0 16px 12px;font-size:14px;color:var(--ink-2)}
+.team-more{margin:0 16px 14px;align-self:flex-start;font-size:13px;font-weight:600;color:var(--teal);padding:4px 0;border-bottom:1px solid rgba(67,209,198,.4)}
+.crew{border-top:1px solid var(--line);padding:12px 16px 14px}
+.crew-h{display:flex;justify-content:space-between;align-items:baseline;gap:8px;margin-bottom:8px}
+.crew-h b{font-family:var(--display);font-weight:700;font-size:15px;text-transform:uppercase;letter-spacing:.06em}
+.crew-h span{font-size:12px;color:var(--ink-3)}
+.sailor{display:flex;align-items:center;gap:10px;text-align:left;padding:7px 8px;margin:0 -8px;width:calc(100% + 16px);border-radius:8px}
+.sailor:hover{background:var(--sea-2)}
+.avatar{width:34px;height:34px;border-radius:50%;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:14px;color:#06131D;flex-shrink:0}
+.sailor-n{font-weight:600;font-size:14px;line-height:1.2}
+.sailor-r{font-size:12px;color:var(--ink-2)}
+.sailor .chev{margin-left:auto;color:var(--ink-3);font-size:18px}
+.rivals{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.rival{border:1px solid var(--line);border-radius:12px;padding:14px;background:var(--sea-1);text-align:left}
+.rival:hover{border-color:var(--line-hi)}
+.rival b{display:block;font-family:var(--display);font-weight:800;font-size:19px;text-transform:uppercase;line-height:1.1;margin-bottom:4px}
+.rival p{font-size:14px;color:var(--ink-2);margin-bottom:6px}
+
+/* guide */
+.guide{display:grid;gap:22px}
+.g-sec{display:grid;gap:14px}
+@media(min-width:860px){.g-sec.split{grid-template-columns:1fr 1fr;align-items:start}}
+.g-sec h3{font-size:22px;font-weight:800;text-transform:uppercase}
+.g-sec p{color:var(--ink-2);max-width:68ch}
+.g-sec p b{color:var(--ink-1)}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}
+.fact{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--sea-2)}
+.fact b{display:block;font-family:var(--display);font-weight:800;font-size:26px;line-height:1.05}
+.fact span{font-size:12px;color:var(--ink-2)}
+.diagram{background:var(--sea-2);border:1px solid var(--line);border-radius:12px;padding:10px;overflow:hidden}
+.diagram svg{display:block;width:100%;height:auto;max-width:520px;margin:0 auto}
+.preview{position:relative;border-radius:12px;overflow:hidden;border:1px solid var(--line-hi);cursor:pointer;text-align:left;width:100%;display:block}
+.preview #preview-svg svg{display:block;width:100%;height:340px}
+.preview .cta{position:absolute;left:12px;right:12px;bottom:12px;display:flex;justify-content:space-between;align-items:center;gap:8px;background:rgba(6,19,29,.84);backdrop-filter:blur(6px);border:1px solid var(--line-hi);border-radius:10px;padding:10px 12px}
+.preview .cta b{font-family:var(--display);font-weight:800;font-size:18px;text-transform:uppercase}
+.preview .cta span{font-size:13px;color:var(--ink-2)}
+.steps{display:grid;gap:10px;counter-reset:s}
+.step{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}
+.step::before{counter-increment:s;content:counter(s);width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--teal-dim);color:var(--teal);font-family:var(--display);font-weight:800;font-size:16px}
+.gloss{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.term{border:1px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--sea-1)}
+.term b{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:.03em;text-transform:uppercase}
+.term p{font-size:14px;color:var(--ink-2);margin-top:2px}
+.timeline{display:grid}
+.tl{display:grid;grid-template-columns:96px 18px 1fr;gap:10px;align-items:start;padding-bottom:14px}
+.tl-d{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink-2);text-align:right;line-height:1.3}
+.tl-dot{width:12px;height:12px;border-radius:50%;border:2px solid var(--teal);margin-top:4px}
+.tl.now .tl-dot{background:var(--flag);border-color:var(--flag)}
+.tl.past .tl-dot{background:var(--teal)}
+.tl-b b{font-weight:700}
+.tl-b p{font-size:14px;color:var(--ink-2)}
+.speed{display:grid;gap:10px}
+.speed input{width:100%;accent-color:var(--teal)}
+.speed-out{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+.speed-out b{font-family:var(--display);font-weight:800;font-size:40px;line-height:1;font-variant-numeric:tabular-nums}
+.speed-out span{color:var(--ink-2)}
+.quiz{display:grid;gap:14px}
+.q p{font-weight:600;margin-bottom:6px}
+.q .opts{display:flex;flex-wrap:wrap;gap:6px}
+.q button{font-size:14px;padding:6px 11px;border-radius:8px;background:var(--sea-2);border:1px solid var(--line-hi)}
+.q button.ok{background:var(--teal-dim);border-color:var(--teal);color:var(--teal)}
+.q button.ko{background:var(--flag-dim);border-color:var(--flag);color:var(--flag)}
+.q .why{font-size:13px;color:var(--ink-2);margin-top:6px}
+.score{font-family:var(--display);font-weight:800;font-size:22px}
+.countdown{display:flex;gap:10px;flex-wrap:wrap}
+.countdown div{min-width:74px;text-align:center;border:1px solid var(--line);border-radius:10px;padding:8px;background:var(--sea-2)}
+.countdown b{display:block;font-family:var(--display);font-weight:800;font-size:28px;font-variant-numeric:tabular-nums}
+.countdown span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.sources{columns:2 280px;column-gap:24px;font-size:13px}
+.sources li{break-inside:avoid;margin:0 0 6px 16px;color:var(--ink-2)}
+
+/* sheet */
+.scrim{position:fixed;inset:0;background:rgba(2,8,13,.72);z-index:90;display:flex;align-items:flex-end;justify-content:center}
+@media(min-width:720px){.scrim{align-items:center;padding:24px}}
+.sheet{background:var(--sea-1);border:1px solid var(--line-hi);width:100%;max-width:560px;max-height:88vh;overflow-y:auto;border-radius:16px 16px 0 0;padding-bottom:env(safe-area-inset-bottom,0px);animation:up .22s ease-out}
+@media(min-width:720px){.sheet{border-radius:16px}}
+@keyframes up{from{transform:translateY(24px);opacity:.4}}
+.sheet-top{position:relative;padding:20px 52px 16px 18px;border-top:5px solid var(--c);display:flex;gap:14px;align-items:center}
+.sheet-top .avatar{width:56px;height:56px;font-size:21px}
+.sheet-name{font-family:var(--display);font-weight:800;font-size:27px;text-transform:uppercase;line-height:1}
+.sheet-meta{font-size:14px;color:var(--ink-2);margin-top:4px}
+.close{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:var(--sea-3);font-size:20px;line-height:1;display:grid;place-items:center}
+.sheet-body{padding:0 18px 22px;display:grid;gap:16px}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px}
+.kv div{background:var(--sea-2);border:1px solid var(--line);border-radius:8px;padding:8px 10px}
+.kv span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.kv b{font-weight:600;font-size:14px}
+.sheet h4{font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);margin-bottom:6px}
+.sheet ul{padding-left:18px;display:grid;gap:5px;font-size:14px}
+.sheet p{font-size:15px}
+.mates{display:flex;flex-wrap:wrap;gap:6px}
+.mate{font-size:13px;padding:5px 10px;border-radius:99px;background:var(--sea-3);border:1px solid var(--line)}
+.mate:hover{border-color:var(--teal)}
+.foot{margin-top:28px;padding-top:18px;border-top:1px solid var(--line)}
+
+/* ===== BOAT EXPLORER ===== */
+.bx{position:fixed;inset:0;z-index:95;background:#071724;overflow-y:auto;overscroll-behavior:contain}
+.bx-bar{position:sticky;top:0;z-index:5;height:60px;display:flex;align-items:center;gap:10px;padding:env(safe-area-inset-top,0px) 16px 0;background:rgba(6,19,29,.94);border-bottom:1px solid var(--line)}
+.bx-bar b{font-family:var(--display);font-weight:800;font-size:18px;letter-spacing:.06em;text-transform:uppercase}
+.bx-alt{margin-left:auto;font-family:var(--display);font-weight:700;font-size:15px;font-variant-numeric:tabular-nums;padding:4px 10px;border-radius:99px;background:rgba(6,19,29,.7);border:1px solid var(--line-hi);white-space:nowrap}
+.bx-alt.under{color:var(--teal)}
+.bx-x{width:38px;height:38px;border-radius:50%;background:var(--sea-3);font-size:22px;display:grid;place-items:center;flex-shrink:0}
+.bx-track{position:relative;margin-top:-60px}
+.bx-stage{position:sticky;top:0;height:100vh;height:100dvh;overflow:hidden}
+.bx-stage svg{display:block;width:100%;height:100%}
+.bx-steps{position:relative;margin-top:-100vh;margin-top:-100dvh;padding:0 16px}
+.bx-step{min-height:92vh;min-height:92dvh;display:flex;align-items:flex-end;padding-bottom:calc(env(safe-area-inset-bottom,0px) + 22px)}
+.bx-step:first-child,.bx-step:last-child{min-height:100vh;min-height:100dvh}
+.bx-card{width:100%;max-width:440px;background:rgba(6,19,29,.86);backdrop-filter:blur(8px);border:1px solid var(--line-hi);border-radius:14px;padding:14px 16px;box-shadow:0 10px 30px rgba(0,0,0,.35)}
+.bx-card .k{font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+.bx-card h3{font-size:24px;font-weight:800;text-transform:uppercase;line-height:1.05;margin:2px 0 6px}
+.bx-card p{font-size:15px}
+.bx-card .num{display:inline-block;margin-top:8px;font-family:var(--display);font-weight:800;font-size:20px;color:var(--gold)}
+.bx-card .fun{margin-top:8px;font-size:13px;color:var(--ink-2);border-top:1px solid var(--line);padding-top:8px}
+.bx-card .fun b{color:var(--gold)}
+.bx-hint{display:block;margin-top:10px;font-size:13px;color:var(--teal);animation:nudge 1.6s ease-in-out infinite}
+@keyframes nudge{50%{transform:translateY(4px)}}
+.bx-rail{position:fixed;right:8px;top:50%;transform:translateY(-50%);z-index:6;display:flex;flex-direction:column;gap:4px}
+.bx-rail button{width:22px;height:18px;display:grid;place-items:center;padding:0}
+.bx-rail button::before{content:"";width:8px;height:8px;border-radius:50%;background:rgba(230,240,245,.3)}
+.bx-rail button.on::before{background:var(--teal);width:11px;height:11px}
+@media(min-width:900px){
+  .bx-steps{margin-left:auto;width:min(460px,42%);padding-right:44px}
+  .bx-stage{width:60%}
+  .bx-step{align-items:center;padding-bottom:0}
+}
+.part{transition:opacity .35s}
+.focus .part{opacity:.35}
+.focus .part.on{opacity:1}
+.part.on .hl{stroke:#43D1C6;stroke-width:3}
+.glow{opacity:0;transition:opacity .35s}
+.part.on .glow{opacity:1}
+
+/* ===== v5: hero illustrato ===== */
+.hero{position:relative;overflow:hidden;isolation:isolate}
+.hero-art{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.hero-art svg{width:100%;height:100%;display:block}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(6,19,29,.94) 0%,rgba(6,19,29,.78) 38%,rgba(6,19,29,.1) 70%)}
+@media(max-width:759px){.hero::after{background:linear-gradient(180deg,rgba(6,19,29,0) 0%,rgba(6,19,29,0) 190px,rgba(6,19,29,.9) 290px,rgba(6,19,29,.96) 100%)}}
+.now-strip{display:grid;gap:10px;background:var(--sea-1)}
+@media(min-width:760px){.now-strip{grid-template-columns:auto 1fr;align-items:center;gap:24px}.now-strip .watch{justify-content:flex-end;margin-top:0}}
+@media(max-width:759px){.hero{padding-top:250px}}
+.boat-bob{animation:bob 5s ease-in-out infinite;transform-origin:center}
+@keyframes bob{50%{transform:translate(-6px,-3px) rotate(-.4deg)}}
+.spray{animation:spray 1.2s ease-in-out infinite}
+@keyframes spray{50%{opacity:.55}}
+.wake{animation:wake 3s linear infinite}
+@keyframes wake{to{stroke-dashoffset:-60}}
+
+/* ===== header azioni ===== */
+.hbtn{display:inline-flex;align-items:center;gap:6px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.06em;text-transform:uppercase;padding:6px 11px;border-radius:99px;border:1px solid var(--line-hi);background:var(--sea-2);white-space:nowrap}
+.hbtn:hover{border-color:var(--teal)}
+.hbtn .star{color:var(--c,var(--ink-3));font-size:15px;line-height:1}
+@media(max-width:560px){.hbtn .lbl{display:none}.clock{display:none}}
+
+/* ===== la mia squadra ===== */
+tr.mine td{background:linear-gradient(90deg,rgba(233,180,76,.16),rgba(233,180,76,.03))}
+tr.mine .boat-n::after{content:" ★";color:var(--gold)}
+.side.mine{outline:2px solid var(--gold);outline-offset:-2px}
+.myteam{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center;padding:14px 16px;border-radius:12px;border:1px solid rgba(233,180,76,.4);background:linear-gradient(135deg,rgba(233,180,76,.12),rgba(10,28,41,.9) 60%)}
+.myteam .big{font-family:var(--display);font-weight:800;font-size:38px;line-height:1;color:var(--gold);font-variant-numeric:tabular-nums}
+.myteam .big small{font-size:16px;color:var(--ink-2)}
+.myteam b{font-family:var(--display);font-weight:800;font-size:20px;text-transform:uppercase;display:block;line-height:1.1}
+.myteam span{font-size:13px;color:var(--ink-2)}
+.pick{display:grid;gap:8px}
+.pick button{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--sea-2);text-align:left}
+.pick button:hover,.pick button[aria-pressed="true"]{border-color:var(--gold)}
+.pick button[aria-pressed="true"]{background:var(--gold-dim)}
+.pick .swatch{height:26px}
+
+/* ===== regata per regata ===== */
+.rr{display:grid;grid-template-columns:54px repeat(3,minmax(0,1fr));gap:6px;align-items:stretch;padding:8px 16px;border-top:1px solid var(--line)}
+.rr.h{border-top:0;font-family:var(--display);font-weight:700;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding-bottom:0}
+.rr-n{font-family:var(--display);font-weight:800;font-size:18px;display:flex;align-items:center;color:var(--ink-2)}
+.pc{display:flex;align-items:center;gap:6px;min-width:0;padding:6px 8px;border-radius:7px;background:var(--sea-2);border:1px solid var(--line);font-size:13px;font-weight:600;text-align:left}
+.pc i{width:4px;align-self:stretch;border-radius:2px;flex-shrink:0}
+.pc span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.pc.empty{color:var(--ink-3);font-weight:400;justify-content:center}
+.pc.mine{border-color:var(--gold);background:var(--gold-dim)}
+.pc.p1{box-shadow:inset 0 0 0 1px rgba(233,180,76,.35)}
+.pc .sm{display:none}
+.rr-x{grid-column:2/-1;font-size:12px;color:var(--ink-3);margin-top:-2px}
+@media(max-width:520px){.pc .lg{display:none}.pc .sm{display:inline}.rr{grid-template-columns:36px repeat(3,minmax(0,1fr));gap:4px;padding:8px 10px}.pc{font-size:12px;padding:5px 6px}}
+
+/* ===== mappa ===== */
+.map svg{display:block;width:100%;height:auto;max-width:760px}
+.spots{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+.spot{display:grid;grid-template-columns:28px 1fr;gap:10px;align-items:start}
+.spot i{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-family:var(--display);font-weight:800;background:var(--gold);color:#06131D}
+.spot b{display:block}
+.spot p{font-size:14px;color:var(--ink-2)}
+
+/* ===== video / share ===== */
+.vids{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px}
+.vid{display:flex;gap:12px;align-items:center;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--sea-2);text-decoration:none;color:var(--ink-1)}
+.vid:hover{border-color:var(--teal)}
+.vid .ico{width:42px;height:42px;border-radius:10px;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.vid b{display:block;font-size:15px}
+.vid span{font-size:12px;color:var(--ink-2)}
+.share-row{display:flex;flex-wrap:wrap;gap:8px}
+
+/* ===== toast / campione ===== */
+.toast{position:fixed;left:50%;bottom:calc(env(safe-area-inset-bottom,0px) + 18px);transform:translate(-50%,20px);opacity:0;z-index:120;background:var(--sea-3);border:1px solid var(--teal);color:var(--ink-1);padding:11px 16px;border-radius:12px;font-weight:600;font-size:14px;box-shadow:0 12px 30px rgba(0,0,0,.4);transition:.3s;pointer-events:none;max-width:calc(100vw - 32px);text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+.champ{position:relative;overflow:hidden;text-align:center;padding:22px 18px;border-radius:14px;border:1px solid rgba(233,180,76,.55);background:radial-gradient(ellipse at 50% 0%,rgba(233,180,76,.28),rgba(10,28,41,.95) 70%)}
+.champ .trophy{font-size:48px;line-height:1}
+.champ h2{font-size:clamp(26px,5vw,40px);font-weight:800;text-transform:uppercase;line-height:1.05;margin-top:6px}
+.champ p{color:var(--ink-2);margin-top:6px}
+#confetti{position:fixed;inset:0;pointer-events:none;z-index:130}
+.g-sec[id]{scroll-margin-top:120px}
+.fresh{display:inline-flex;align-items:center;gap:6px}
+.fresh::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--teal)}
+
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-row">
+    <div class="mark">AC38<small>Napoli · Preliminare</small></div>
+    <div class="status">
+      <span id="pill" class="pill wait"><span class="pulse"></span><span id="pill-t">Napoli</span></span>
+      <button class="hbtn" id="fav-btn" data-pick aria-label="Scegli la tua squadra"><span class="star" aria-hidden="true">★</span><span class="lbl" id="fav-lbl">Tifo per…</span></button>
+      <button class="hbtn" data-share aria-label="Condividi l'app"><span aria-hidden="true">↗</span><span class="lbl">Condividi</span></button>
+      <div class="clock" id="clock">--:--<span>NAPOLI</span></div>
+    </div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Sezioni">
+    <button class="tab" role="tab" id="t-oggi" aria-controls="oggi" aria-selected="true">Oggi</button>
+    <button class="tab" role="tab" id="t-classifica" aria-controls="classifica" aria-selected="false">Classifica</button>
+    <button class="tab" role="tab" id="t-squadre" aria-controls="squadre" aria-selected="false">Squadre e velisti</button>
+    <button class="tab" role="tab" id="t-guida" aria-controls="guida" aria-selected="false">Come funziona</button>
+    <button class="tab" role="tab" id="t-extra" aria-controls="extra" aria-selected="false">Curiosità e quiz</button>
+  </nav>
+</header>
+
+<main>
+
+<!-- ================= OGGI ================= -->
+<section class="stack" id="oggi" role="tabpanel" aria-labelledby="t-oggi">
+  <div id="champ"></div>
+  <div class="hero">
+    <div class="hero-art" id="hero-art" aria-hidden="true"></div>
+    <div>
+      <div class="eyebrow">Louis Vuitton 38th America's Cup · 24–27 settembre 2026</div>
+      <h1>Nove barche volanti<br>nel <em>Golfo di Napoli</em></h1>
+      <p>È la seconda Regata Preliminare verso la Coppa America del 2027: sei squadre, nove AC40 identici, tre giorni di regate tra Castel dell'Ovo e Posillipo. È una prova generale: il risultato non conta per la Coppa vera, ma dice chi va più forte.</p>
+      <button class="btn" data-boat>⛵ Esplora la barca pezzo per pezzo</button>
+    </div>
+  </div>
+
+  <div class="now now-strip" aria-live="polite">
+    <div><div class="now-label" id="now-label">In questo momento</div>
+    <div class="now-main" id="now-main">—</div>
+    <div class="now-sub" id="now-sub"></div></div>
+    <div class="watch">
+      <span class="chip">📺 Rai 2 · RaiPlay</span>
+      <span class="chip">Sky Sport · NOW</span>
+      <a class="chip" href="https://www.youtube.com/@americascup" target="_blank" rel="noopener">YouTube ↗</a>
+      <a class="chip" href="https://www.americascup.com/results" target="_blank" rel="noopener">Risultati ufficiali ↗</a>
+    </div>
+  </div>
+
+  <div id="myteam"></div>
+
+  <div class="days" id="days"></div>
+
+  <div class="grid-2">
+    <div class="stack">
+      <div class="final-card" id="final-card"></div>
+      <div class="box">
+        <div class="box-h"><h3 id="races-title">Le regate</h3><span class="note" id="races-label"></span></div>
+        <div id="races"></div>
+        <div class="box-b sep"><p class="note">In ogni regata di flotta partono <b>tutte e nove le barche insieme</b>. Il testa a testa c'è solo nella finale. Con troppo o troppo poco vento le partenze slittano o la regata salta.</p></div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Cronaca</h3><span class="note">Ogni notizia con la sua fonte</span></div>
+        <div id="feed"></div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="box">
+        <div class="box-h"><h3>Classifica</h3><button class="note" data-go="classifica" style="color:var(--teal)">Completa e simulatore →</button></div>
+        <div class="table-wrap"><table><tbody id="mini-standings"></tbody></table></div>
+        <div class="box-b sep"><p class="note" id="mini-note"></p></div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Come si aggiorna</h3></div>
+        <div class="box-b" style="display:grid;gap:10px">
+          <p style="font-size:14px;color:var(--ink-2)">Durante le regate Claude controlla le fonti ufficiali e le dirette, poi pubblica i nuovi risultati. <b style="color:var(--ink-1)">Se hai la pagina aperta, si aggiorna da sola.</b> Non serve ricaricare.</p>
+          <p style="font-size:14px;color:var(--ink-2)">Per vedere le barche muoversi al secondo, usa la diretta YouTube o il tracciamento sul sito ufficiale.</p>
+          <p class="note" id="updated-at"></p>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Da sapere in 20 secondi</h3></div>
+        <div class="box-b steps">
+          <div class="step"><p><b>Barche tutte uguali.</b> Vince l'equipaggio, non chi spende di più.</p></div>
+          <div class="step"><p><b>Volano sull'acqua.</b> Con i foil lo scafo si alza e la barca supera gli 80 km/h.</p></div>
+          <div class="step"><p><b>8 regate a punti.</b> 10 al primo, 9 al secondo e così via. Vince chi è costante.</p></div>
+          <div class="step"><p><b>Finale secca.</b> Domenica le prime due si sfidano in una sola regata, e chi vince prende tutto.</p></div>
+        </div>
+        <div class="box-b" style="padding-top:0"><button class="chip" data-go="guida">Guida completa →</button></div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Vederla dal vivo</h3></div>
+        <div class="box-b"><p style="font-size:14px;color:var(--ink-2)">Il campo di regata è davanti al lungomare, <b style="color:var(--ink-1)">tra Castel dell'Ovo e Posillipo</b>. Dalla riva si vede bene da via Caracciolo, dalla Rotonda Diaz e da Mergellina. La TV si collega alle 13:45, la prima partenza è alle 14:10.</p><button class="chip" data-go="guida" data-anchor="dove" style="margin-top:10px">🗺️ Mappa dei punti migliori →</button></div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Rivedi le regate</h3></div>
+        <div class="box-b vids">
+          <a class="vid" href="https://www.youtube.com/@americascup/videos" target="_blank" rel="noopener"><span class="ico" style="background:#3a1414">▶</span><span><b>Canale ufficiale</b><span>Dirette e riassunti su YouTube</span></span></a>
+          <a class="vid" href="https://www.raiplay.it/" target="_blank" rel="noopener"><span class="ico" style="background:#10243a">📺</span><span><b>RaiPlay</b><span>Diretta Rai 2 e repliche</span></span></a>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box-h"><h3>Mandala agli amici</h3></div>
+        <div class="box-b stack" style="gap:10px">
+          <p style="font-size:14px;color:var(--ink-2)">Chi apre il link vede i risultati che si aggiornano da soli durante le regate.</p>
+          <div class="share-row"><button class="btn" data-share style="font-size:15px;padding:9px 14px">↗ Condividi</button><a class="chip" id="wa-link" href="#" target="_blank" rel="noopener">WhatsApp</a><button class="chip" data-copy>Copia link</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CLASSIFICA ================= -->
+<section class="stack" id="classifica" role="tabpanel" aria-labelledby="t-classifica" hidden>
+  <div>
+    <div class="eyebrow">Regata Preliminare Napoli</div>
+    <h2 class="h2">Classifica generale</h2>
+    <p class="lede" id="stand-lede"></p>
+  </div>
+  <div class="box">
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Barca</th><th style="text-align:right">Punti</th><th style="text-align:right">Distacco</th><th></th></tr></thead>
+        <tbody id="standings"></tbody>
+      </table>
+    </div>
+    <div class="legend">Le prime due dopo le 8 regate vanno alla finale.</div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Regata per regata</h3><span class="note">I primi tre di ogni prova</span></div>
+    <div class="rr h"><span>Reg.</span><span>1°</span><span>2°</span><span>3°</span></div>
+    <div id="rr"></div>
+    <div class="box-b sep"><p class="note">Riportiamo solo i piazzamenti confermati da almeno una fonte. Gli ordini d'arrivo completi sono su <a href="https://www.americascup.com/results" target="_blank" rel="noopener">americascup.com</a>.</p></div>
+  </div>
+
+  <div class="box" id="sim-box">
+    <div class="box-h"><h3>Simulatore: chi va in finale?</h3><span class="note">Gioca con gli amici</span></div>
+    <div class="box-b" style="padding-bottom:6px"><p style="font-size:14px;color:var(--ink-2)">Scegli in che posizione arriva ogni barca nelle ultime due regate: il simulatore calcola chi va in finale. Restano al massimo 20 punti a testa (due vittorie).</p></div>
+    <div class="sim-row h"><span>Barca</span><span>Reg. 7</span><span>Reg. 8</span><span style="text-align:right">Tot.</span></div>
+    <div id="sim"></div>
+    <div class="sim-out" id="sim-out" aria-live="polite"></div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Come si fanno i punti</h3></div>
+    <div class="box-b stack" style="gap:12px">
+      <div class="pts-table" aria-label="Punti per posizione">
+        <div><b>10</b><span>1°</span></div><div><b>9</b><span>2°</span></div><div><b>8</b><span>3°</span></div><div><b>7</b><span>4°</span></div><div><b>6</b><span>5°</span></div><div><b>5</b><span>6°</span></div><div><b>4</b><span>7°</span></div><div><b>3</b><span>8°</span></div><div><b>2</b><span>9°</span></div>
+      </div>
+      <div class="example">Esempio vero: sabato Luna Rossa 1 è arrivata 1ª, 6ª, 2ª e 3ª. Sono 10 + 5 + 9 + 8 = 32 punti, che sommati ai 19 di venerdì fanno <b>51</b>.</div>
+      <p class="note">Chi non parte o non finisce (per esempio dopo una scuffia) prende pochissimi punti o nessuno. Venerdì i francesi, rovesciati alla partenza, hanno fatto zero punti in quella regata.</p>
+    </div>
+  </div>
+  <div class="box">
+    <div class="box-h"><h3>La tappa precedente: Cagliari, maggio 2026</h3><span class="note">8 barche · USA assente</span></div>
+    <div class="table-wrap"><table><tbody id="pr1"></tbody></table></div>
+    <div class="box-b sep"><p class="note">In finale Luna Rossa ha costretto Team New Zealand a una partenza anticipata e ha vinto il testa a testa. <span class="src">Fonte: <a href="https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/" target="_blank" rel="noopener">Scuttlebutt</a></span></p></div>
+  </div>
+</section>
+
+<!-- ================= SQUADRE ================= -->
+<section class="stack" id="squadre" role="tabpanel" aria-labelledby="t-squadre" hidden>
+  <div>
+    <div class="eyebrow">6 squadre · 9 barche · 4 velisti per barca</div>
+    <h2 class="h2">Squadre e velisti</h2>
+    <p class="lede">Tocca il nome di una squadra o di un velista per leggere chi è, cosa ha vinto e che ruolo ha a bordo. Tre squadre portano una seconda barca con l'equipaggio <b>Women &amp; Youth</b>, fatto di donne e giovani. Le formazioni possono cambiare giorno per giorno.</p>
+  </div>
+  <div>
+    <h3 class="h2" style="font-size:20px;margin-bottom:10px">Le storie da seguire</h3>
+    <div class="rivals" id="rivals"></div>
+  </div>
+  <div class="teams" id="teams"></div>
+</section>
+
+<!-- ================= GUIDA ================= -->
+<section class="guide" id="guida" role="tabpanel" aria-labelledby="t-guida" hidden>
+  <div>
+    <div class="eyebrow">Per chi non ha mai visto una regata</div>
+    <h2 class="h2">Come funziona</h2>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>1 · Cos'è la Coppa America</h3>
+    <p>È il trofeo più antico dello sport internazionale: si corre dal <b>1851</b>. Funziona come un titolo di campione. Chi ha vinto l'ultima edizione è il <b>Defender</b>: difende la Coppa e sceglie dove e con quali regole si corre. Oggi il Defender è <b>Emirates Team New Zealand</b>, che ha vinto nel 2024 a Barcellona. Tutte le altre squadre sono <b>Challenger</b>: prima si sfidano tra loro nella Louis Vuitton Cup, e solo la vincitrice affronta i neozelandesi. La prossima sfida finale si corre <b>a Napoli, a luglio 2027</b>.</p>
+    <p>Il motto è <b>“There is no second”</b>: non esiste il secondo posto.</p>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>2 · Allora cosa succede a Napoli adesso?</h3>
+    <p>È una <b>Regata Preliminare</b>, una prova generale un anno prima della Coppa. <b>Non assegna punti per il 2027</b>. Serve alle squadre per allenarsi in gara, provare gli equipaggi e studiare il campo dove si correrà la finale. È la seconda tappa: la prima, a Cagliari a maggio, l'ha vinta Luna Rossa.</p>
+  </div>
+
+  <div class="box box-b g-sec split">
+    <div class="stack" style="gap:12px">
+      <h3>3 · La barca: AC40</h3>
+      <p>Un monoscafo di 12 metri che <b>vola</b>. Sotto lo scafo ci sono due bracci con delle ali subacquee, i <b>foil</b>. Quando la barca prende velocità, i foil la sollevano e lo scafo esce dall'acqua. Senza attrito, va più veloce del vento che la spinge. Le nove barche sono <b>identiche</b> (in gergo “one-design”).</p>
+      <div class="facts">
+        <div class="fact"><b>11,8 m</b><span>lunghezza</span></div>
+        <div class="fact"><b>17,9 m</b><span>altezza dell'albero</span></div>
+        <div class="fact"><b>~2.000 kg</b><span>peso</span></div>
+        <div class="fact"><b>45+ nodi</b><span>oltre 83 km/h nei test</span></div>
+      </div>
+    </div>
+    <button class="preview" data-boat aria-label="Apri l'esplorazione della barca">
+      <span id="preview-svg"></span>
+      <span class="cta"><span><b>Esplora la barca</b><br><span>Scorri dalla cima dell'albero fin sotto l'acqua</span></span><span class="btn" style="padding:8px 12px;font-size:14px">Apri →</span></span>
+    </button>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>4 · Chi fa cosa a bordo</h3>
+    <p>Ogni barca ha <b>quattro persone</b>. Non servono “muscoli” per le manovre: i sistemi vanno a batteria.</p>
+    <div class="gloss">
+      <div class="term"><b>2 Timonieri</b><p>Uno per lato. Guida chi sta sul lato da cui arriva il vento. A ogni virata passano il comando all'altro.</p></div>
+      <div class="term"><b>2 Trimmer</b><p>Uno regola la vela, l'altro l'altezza di volo. Se la barca vola troppo alta perde il controllo, se vola troppo bassa tocca l'acqua e rallenta.</p></div>
+    </div>
+  </div>
+
+  <div class="box box-b g-sec split">
+    <div class="stack" style="gap:12px">
+      <h3>5 · Come si svolge una regata</h3>
+      <p><b>Regata di flotta.</b> Le nove barche partono insieme. Si gira tra due “cancelli”, ognuno fatto di due boe, uno in alto verso il vento e uno in basso.</p>
+      <div class="steps">
+        <div class="step"><p><b>Partenza.</b> C'è un conto alla rovescia, e chi taglia la linea prima dello zero deve tornare indietro. Venerdì i francesi, per rientrare, hanno piantato la prua in acqua e si sono rovesciati.</p></div>
+        <div class="step"><p><b>Bolina.</b> Si sale controvento a zig-zag, perché nessuna barca va dritta contro il vento. Ogni cambio di lato è una virata.</p></div>
+        <div class="step"><p><b>Poppa.</b> Si scende col vento alle spalle, ancora a zig-zag, con le strambate. È il tratto più veloce.</p></div>
+        <div class="step"><p><b>Arrivo.</b> Circa 6 lati e meno di mezz'ora dopo si taglia il traguardo. L'ordine d'arrivo decide i punti.</p></div>
+      </div>
+      <p class="note">In TV vedrai delle linee disegnate sul mare: sono i confini del campo, virtuali. Chi li supera prende una penalità.</p>
+    </div>
+    <div class="diagram" aria-label="Schema del percorso di regata">
+      <svg viewBox="0 0 320 420" role="img">
+        <title>Percorso a bastone con cancelli</title>
+        <rect x="0" y="0" width="320" height="420" fill="#0B3148" rx="8"/>
+        <line x1="160" y1="16" x2="160" y2="46" stroke="#E6F0F5" stroke-width="1.5"/>
+        <path d="M152 44 L160 58 L168 44 Z" fill="#E6F0F5"/>
+        <text x="172" y="36" font-size="13" fill="#E6F0F5">Vento</text>
+        <circle cx="128" cy="86" r="7" fill="#E9B44C"/><circle cx="192" cy="86" r="7" fill="#E9B44C"/>
+        <text x="160" y="72" font-size="12" fill="#E9B44C" text-anchor="middle">Cancello alto</text>
+        <circle cx="128" cy="304" r="7" fill="#E9B44C"/><circle cx="192" cy="304" r="7" fill="#E9B44C"/>
+        <text x="160" y="330" font-size="12" fill="#E9B44C" text-anchor="middle">Cancello basso</text>
+        <line x1="96" y1="378" x2="224" y2="378" stroke="#FF7A45" stroke-width="2" stroke-dasharray="5 4"/>
+        <text x="160" y="402" font-size="12" fill="#FF7A45" text-anchor="middle">Partenza e arrivo</text>
+        <path d="M150 374 L110 330 L178 290" fill="none" stroke="#93AEBE" stroke-width="2" stroke-dasharray="3 4"/>
+        <path d="M184 296 L112 240 L200 180 L120 124 L130 92" fill="none" stroke="#43D1C6" stroke-width="2.5"/>
+        <text x="206" y="192" font-size="12" fill="#43D1C6">Bolina:</text><text x="206" y="207" font-size="12" fill="#43D1C6">zig-zag</text><text x="206" y="222" font-size="12" fill="#43D1C6">controvento</text>
+        <path d="M194 94 L248 170 L150 236 L186 298" fill="none" stroke="#FF7A45" stroke-width="2.5"/>
+        <text x="258" y="150" font-size="12" fill="#FF7A45">Poppa:</text><text x="258" y="165" font-size="12" fill="#FF7A45">col vento</text><text x="258" y="180" font-size="12" fill="#FF7A45">alle spalle</text>
+        <text x="14" y="252" font-size="11" fill="#93AEBE">A ogni cancello</text><text x="14" y="266" font-size="11" fill="#93AEBE">si sceglie la boa</text><text x="14" y="280" font-size="11" fill="#93AEBE">destra o sinistra</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="box box-b g-sec" id="dove">
+    <h3>Dove vederla dal lungomare</h3>
+    <p>Il campo di regata è lo specchio d'acqua davanti al lungomare di Chiaia, tra <b>Castel dell'Ovo</b> e <b>Posillipo</b>. Le barche passano a poche centinaia di metri dalla riva: da terra si vedono volare benissimo.</p>
+    <div class="diagram map" id="map"></div>
+    <div class="spots">
+      <div class="spot"><i>1</i><div><b>Castel dell'Ovo e Borgo Marinari</b><p>Il punto più avanzato sul mare, all'estremità est del campo.</p></div></div>
+      <div class="spot"><i>2</i><div><b>Rotonda Diaz</b><p>A metà di via Caracciolo, affaccio largo e centrale sul campo.</p></div></div>
+      <div class="spot"><i>3</i><div><b>Via Caracciolo</b><p>Tutto il lungomare pedonale: si segue la regata camminando.</p></div></div>
+      <div class="spot"><i>4</i><div><b>Mergellina</b><p>Lato ovest, verso Posillipo, vicino al porticciolo.</p></div></div>
+    </div>
+    <p class="note">Schema indicativo, non in scala. Il campo esatto viene posato ogni giorno in base al vento.</p>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>6 · Il programma dei tre giorni</h3>
+    <div class="timeline" id="prog-tl"></div>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>7 · Il match race: la finale</h3>
+    <p>Nella flotta conta andare veloce e scegliere il lato giusto. Nel <b>match race</b> conta solo stare davanti all'avversario. Prima del via le due barche si studiano e si “marcano”, cercando di costringere l'altra a sbagliare o a prendere una penalità. La prima della classifica sceglie da che lato della linea partire. È la forma classica della Coppa America: la sfida del 2027 sarà così, al meglio di più regate.</p>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>8 · La strada verso luglio 2027</h3>
+    <div class="timeline">
+      <div class="tl past"><div class="tl-d">Mag 2026</div><div class="tl-dot"></div><div class="tl-b"><b>Preliminare di Cagliari</b><p>Vinta da Luna Rossa.</p></div></div>
+      <div class="tl now"><div class="tl-d">Set 2026</div><div class="tl-dot"></div><div class="tl-b"><b>Preliminare di Napoli</b><p>Quella che stai seguendo.</p></div></div>
+      <div class="tl"><div class="tl-d">Primavera 2027</div><div class="tl-dot"></div><div class="tl-b"><b>Louis Vuitton Cup</b><p>Solo i Challenger, sulle grandi barche AC75. Prima i gironi con match race e regate di flotta, poi semifinali (vince chi arriva a 5 vittorie) e finale (a 7).</p></div></div>
+      <div class="tl"><div class="tl-d">10–18 lug 2027</div><div class="tl-dot"></div><div class="tl-b"><b>La 38ª America's Cup</b><p>A Napoli, la vincitrice della Louis Vuitton Cup contro Team New Zealand.</p></div></div>
+    </div>
+    <p>Novità del 2027: sugli AC75 ci saranno <b>5 velisti</b> invece di 8 e <b>almeno una donna</b>. Tre membri dell'equipaggio devono avere la nazionalità della squadra, e ne sono ammessi fino a due di altri paesi. Per questo Burling, neozelandese, può correre per Luna Rossa.</p>
+  </div>
+
+  <div class="box box-b g-sec">
+    <h3>9 · Piccolo dizionario</h3>
+    <div class="gloss" id="gloss"></div>
+  </div>
+</section>
+
+<!-- ================= EXTRA ================= -->
+<section class="stack" id="extra" role="tabpanel" aria-labelledby="t-extra" hidden>
+  <div>
+    <div class="eyebrow">Per fare bella figura con gli amici</div>
+    <h2 class="h2">Curiosità e quiz</h2>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Conto alla rovescia per la Coppa a Napoli</h3><span class="note">Prima regata: 10 luglio 2027</span></div>
+    <div class="box-b"><div class="countdown" id="countdown"></div></div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Quanto va veloce?</h3></div>
+    <div class="box-b speed">
+      <label for="kn" class="note">Sposta il cursore: in mare la velocità si misura in nodi</label>
+      <input type="range" id="kn" min="0" max="50" value="45" step="1">
+      <div class="speed-out"><b id="kn-v">45 nodi</b><span id="kmh-v">= 83 km/h</span></div>
+      <p id="kn-cmp" style="font-size:14px"></p>
+    </div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>La storia in 10 momenti</h3></div>
+    <div class="box-b"><div class="timeline" id="history"></div></div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Lo sapevi che…</h3></div>
+    <div class="box-b"><div class="gloss" id="trivia"></div></div>
+  </div>
+
+  <div class="box">
+    <div class="box-h"><h3>Quiz: sei pronto per la finale?</h3><span class="score" id="q-score"></span></div>
+    <div class="box-b quiz" id="quiz"></div>
+  </div>
+</section>
+
+<footer class="foot">
+  <p class="note" style="margin-bottom:10px"><b id="foot-upd"></b> Ogni risultato e ogni nome viene da fonti ufficiali o da testate sportive, elencate qui sotto. Durante le regate fanno fede <a href="https://www.americascup.com/results" target="_blank" rel="noopener">i risultati ufficiali</a>. App non ufficiale, fatta per seguire la regata tra amici.</p>
+  <details>
+    <summary class="note" style="cursor:pointer;color:var(--ink-2)">Fonti consultate</summary>
+    <ul class="sources" id="sources" style="margin-top:10px"></ul>
+  </details>
+</footer>
+</main>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<canvas id="confetti" hidden></canvas>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-name" tabindex="-1"></div>
+</div>
+
+<div class="bx" id="bx" role="dialog" aria-modal="true" aria-label="Esplora l'AC40" hidden>
+  <div class="bx-bar"><b>AC40 · pezzo per pezzo</b><span class="bx-alt" id="bx-alt">+0 m</span><button class="bx-x" data-bx-close aria-label="Chiudi">×</button></div>
+  <div class="bx-track">
+    <div class="bx-stage" id="bx-stage"></div>
+    <div class="bx-steps" id="bx-steps"></div>
+  </div>
+  <nav class="bx-rail" id="bx-rail" aria-label="Parti della barca"></nav>
+</div>
+
+<script>
+/* =========================================================
+   DATI LIVE: l'unica parte da aggiornare durante le regate
+   ========================================================= */
+const LIVE_FALLBACK = /*__LIVE__*/null;
+let LIVE = LIVE_FALLBACK;
+
+/* ============ FONTI ============ */
+const S = {
+  acnews:{t:"America's Cup – ARC Team USA score first but Luna Rossa 1 shine",u:"https://www.americascup.com/news/4354_ARC-TEAM-USA-SCORE-FIRST-BUT-LUNA-ROSSA-1-SHINE-TO-LEAD-OVERNIGHT"},
+  bnz1:{t:"Boating NZ – Burling puts Luna Rossa on top after Naples Day 1 drama",u:"https://www.boatingnz.co.nz/2026/09/burling-puts-luna-rossa-on-top-after-naples-day-1-drama/"},
+  nzh:{t:"NZ Herald – French challenger capsizes",u:"https://www.nzherald.co.nz/sport/sailing/americas-cup/americas-cup-french-challenger-capsizes-as-luna-rossa-team-nz-end-day-one-on-top-in-naples/H6FSDXY2WNDFBGP4ZQVVVQ7ONQ/"},
+  mattino:{t:"Il Mattino – diretta 26 settembre",u:"https://www.ilmattino.it/sport/vela/america_s_cup_napoli_il_mattino_diretta_risultati_classifica_luna_rossa-9786807.html"},
+  mattino27:{t:"Il Mattino – programma di domenica 27 e Final Match Race",u:"https://www.ilmattino.it/sport/vela/america_s_cup_napoli_programma_completo_di_domenica_27_settembre_final_match_race-9786977.html"},
+  sky:{t:"Sky Sport – diretta regate 26 settembre",u:"https://sport.sky.it/altri-sport/vela/2026/09/26/coppa-america-napoli-regate-preliminari-oggi-26-settembre-live"},
+  ansa:{t:"ANSA – La Roche-Posay scuffia sul traguardo, regata a New Zealand Y&W",u:"https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/26/americas-cup-la-roche-posay-scuffia-sul-traguardo-terza-regata-va-a-new_26c7ef98-f3e3-4a39-ad31-deaad3b3ccae.html"},
+  ansa2:{t:"ANSA – Riscatto La Roche-Posay, Luna Rossa chiude in testa",u:"https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/26/americas-cup-riscatto-la-roche-posay-luna-rossa-chiude-in-testa-alla_18b5922c-090e-4ecc-8d70-a914ef672cae.html"},
+  sportface:{t:"Sportface – La Roche-Posay vince l'ultima regata, Luna Rossa leader",u:"https://www.sportface.it/vela/americas-cup-napoli-luna-rossa-leader-seconda-giornata-classifica/2829139"},
+  oascl:{t:"OA Sport – classifica dopo la seconda giornata",u:"https://www.oasport.it/2026/09/classifica-americas-cup-regate-preliminari-2026-luna-rossa-al-comando-dopo-la-seconda-giornata/"},
+  oas:{t:"OA Sport – orari, tv e streaming",u:"https://www.oasport.it/2026/09/americas-cup-oggi-regate-preliminari-napoli-2026-orari-26-settembre-tv-programma-streaming/"},
+  ansa3:{t:"ANSA – Luna Rossa al comando dopo due giornate",u:"https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/26/americas-cup-regate-preliminari-luna-rossa-al-comando-dopo-due-giornate_0422e9bc-6f3f-4ac0-8f15-ce7493471f45.html"},
+  sailweb2:{t:"Sailweb – Luna Rossa extend lead, French capsize again",u:"https://www.sailweb.co.uk/2026/09/26/ac38-second-race-day-pr2-naples-luna-rossa-extend-lead-french-capsize-again"},
+  skyres:{t:"Sky Sport – America's Cup Napoli: risultati e classifica",u:"https://sport.sky.it/altri-sport/vela/americas-cup-napoli-risultati-classifica"},
+  mysail:{t:"MySailing – Intriguing and outstanding racing on the Bay of Naples",u:"https://www.mysailing.com.au/intriguing-and-outstanding-racing-on-the-bay-of-naples/"},
+  gdv:{t:"Giornale della Vela – La zampata dei francesi, Luna Rossa in testa",u:"https://www.giornaledellavela.com/2026/09/26/coppa-america-napoli-seconda-giornata/"},
+  prac:{t:"Pressmare – Luna Rossa Senior Team wins the practice race",u:"https://pressmare.it/en/team/luna-rossa/2026-09-24/preliminary-regatta-naples-senior-team-wins-practice-race-92947"},
+  fmt:{t:"America's Cup – Racing format Q&A",u:"https://www.americascup.com/news/4020_RACING-FORMAT-QA-THE-EASY-GUIDE-TO-SARDINIA"},
+  pr1:{t:"Scuttlebutt – Italy grabs bragging rights in Sardinia",u:"https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/"},
+  lr:{t:"Metropolis – Luna Rossa annuncia il sailing team",u:"https://www.metropolisweb.it/2026/09/14/luna-rossa-a-napoli-annunciato-il-sailing-team-per-le-regate-preliminari/"},
+  nz:{t:"Afloat – Team New Zealand crew line-ups for Naples",u:"https://afloat.ie/sail/events/americas-cup/item/73050-team-new-zealand-confirms-ac40-crew-line-ups-for-naples"},
+  usa:{t:"Scuttlebutt – USA roster for AC Preliminary Regatta",u:"https://www.sailingscuttlebutt.com/2026/09/22/usa-roster-for-ac-preliminary-regatta/"},
+  gb2:{t:"All At Sea – Cobham-Ultra GB2 set for Naples",u:"https://www.allatsea.co.uk/news/british-americas-cup-women-youth-squad-cobham-ultra-gb2-set-for-napless-racing-debut/"},
+  gb1:{t:"GB1 – Dylan Fletcher confirmed as helm",u:"https://www.gb1.com/en/articles/710_Britain-s-America-s-Cup-Team-unveils-GB1-identity-and-confirms-Dylan-Fletcher-as-helm-for-38th-America-s-Cup.html"},
+  ali:{t:"Boating NZ – Tudor Team Alinghi Naples crew",u:"https://www.boatingnz.co.nz/2026/09/tudor-team-alinghi-rolls-into-naples-in-style/"},
+  fra:{t:"Pressmare – La Roche-Posay Racing Team in Naples",u:"https://pressmare.it/en/team/k-challenge/2026-09-21/posay-racing-team-gets-down-business-the-38th-americas-cup-92839"},
+  proto:{t:"Scuttlebutt – Dates confirmed for 38th America's Cup",u:"https://www.sailingscuttlebutt.com/2026/01/21/dates-confirmed-for-38th-americas-cup/"},
+  wiki:{t:"Wikipedia – 2027 America's Cup",u:"https://en.wikipedia.org/wiki/2027_America%27s_Cup"},
+  cup:{t:"Wikipedia – America's Cup",u:"https://en.wikipedia.org/wiki/America%27s_Cup"},
+  ac40:{t:"Wikipedia – AC40",u:"https://en.wikipedia.org/wiki/AC40"},
+  speed:{t:"Sail-World – AC40 blasting at 45kts",u:"https://www.sail-world.com/news/254409/Cup-Spy-AC40-blasting-at-45kts-Day-5"},
+  ac2013:{t:"Wikipedia – 2013 America's Cup",u:"https://en.wikipedia.org/wiki/2013_America's_Cup"},
+  acws:{t:"World Sailing – Luna Rossa winners at ACWS Naples 2013",u:"https://www.sailing.org/2013/04/22/luna-rossa-winners-at-americas-cup-world-series-naples/"},
+  women:{t:"World Sailing – Luna Rossa win Puig Women's America's Cup",u:"https://www.sailing.org/2024/10/13/womens-americas-cup-luna-rossa-prada-pirelli-win-inaugural-puig-womens-americas-cup/"},
+  burl:{t:"Wikipedia – Peter Burling",u:"https://en.wikipedia.org/wiki/Peter_Burling_(sailor)"},
+  outt:{t:"Australian Sailing Hall of Fame – Outteridge & Jensen",u:"https://www.sailing.org.au/hall-of-fame/nathan-outteridge-oam-and-iain-jensen-oam"},
+  grad:{t:"World Sailing – Gradoni youngest Rolex World Sailor of the Year",u:"https://www.sailing.org/news/89461.php"}
+};
+
+/* ============ SQUADRE, BARCHE, VELISTI ============ */
+const TEAMS = [
+ {id:'lr',name:'Luna Rossa Prada Pirelli',flag:'🇮🇹',country:'Italia',c:'#E0303B',role:'Challenger',
+  blurb:"La squadra italiana. Ha vinto la tappa di Cagliari e per il 2027 ha preso Peter Burling, tre volte vincitore della Coppa con i neozelandesi.",
+  about:["Sfida la Coppa dal 2000. È arrivata alla sfida finale nel 2000 e nel 2021, ma non l'ha mai vinta.","Nel 2024 ha vinto sia la Youth sia la prima Women's America's Cup.","A Napoli corre in casa, con il pubblico del lungomare a favore."],
+  lead:"Max Sirena, team director",boats:['lr1','lr2']},
+ {id:'nz',name:'Emirates Team New Zealand',flag:'🇳🇿',country:'Nuova Zelanda',c:'#2E9BD6',role:'Defender',
+  blurb:"I campioni in carica. Hanno vinto la Coppa cinque volte, l'ultima nel 2024 a Barcellona, e nel 2027 la difendono a Napoli.",
+  about:["Coppe vinte: 1995, 2000, 2017, 2021, 2024.","Da Defender non corre la Louis Vuitton Cup: aspetta la vincitrice.","Dopo l'uscita di Burling, lo skipper è l'australiano Nathan Outteridge (da maggio 2025).","Sabato la barca Women & Youth ha vinto regata 5."],
+  lead:"Nathan Outteridge, skipper",boats:['nz1','nz2']},
+ {id:'gb',name:'GB1',flag:'🇬🇧',country:'Gran Bretagna',c:'#C8A24A',role:'Challenger of Record',
+  blurb:"La sfida britannica di Sir Ben Ainslie, erede di INEOS Britannia finalista nel 2024. È il Challenger of Record: tratta le regole a nome di tutti gli sfidanti.",
+  about:["La Gran Bretagna non ha mai vinto la Coppa, che nasce nel 1851 proprio in una regata attorno all'Isola di Wight.","Nel 2024 INEOS Britannia ha perso la finale 7–2 contro Team New Zealand.","Squadra: Ben Ainslie team principal, Ian Walker CEO, Dylan Fletcher timoniere."],
+  lead:"Ben Ainslie, team principal",boats:['gb1','gb2']},
+ {id:'al',name:'Tudor Team Alinghi',flag:'🇨🇭',country:'Svizzera',c:'#D8252E',role:'Challenger',
+  blurb:"La squadra svizzera di Ernesto Bertarelli. È stata la prima europea a vincere la Coppa, nel 2003, e l'ha rivinta nel 2007. A Napoli è terza.",
+  about:["Coppe vinte: 2003 e 2007.","A Napoli timonano l'inglese Paul Goodison, oro olimpico, e il neozelandese Phil Robertson.","Terza dopo sabato con 38 punti: è ancora in corsa per la finale."],
+  lead:"Paul Goodison, skipper",boats:['al']},
+ {id:'fr',name:'La Roche-Posay Racing Team',flag:'🇫🇷',country:'Francia',c:'#3D7BE0',role:'Challenger',
+  blurb:"La sfida francese, ora con base a Napoli. È la barca più spettacolare della regata: ha vinto due regate e si è rovesciata due volte.",
+  about:["La Francia non ha mai vinto la Coppa.","In equipaggio ci sono due spagnoli campioni olimpici a Parigi 2024: Diego Botín e Florian Trittel.","A Cagliari era arrivata quarta, seconda tra gli sfidanti."],
+  lead:"Quentin Delapierre, timoniere",boats:['fr']},
+ {id:'us',name:'American Racing Challenger Team USA',flag:'🇺🇸',country:'Stati Uniti',c:'#8FA8C8',role:'Challenger',
+  blurb:"Il nuovo sfidante americano. Napoli è la sua prima regata contro gli avversari, e ha vinto la prima prova.",
+  about:["Gli Stati Uniti hanno tenuto la Coppa per 132 anni di fila, dal 1851 al 1983.","ARC Team USA si è iscritta nel 2026 e a Cagliari non c'era.","Riserva: Riley Gibbs."],
+  lead:"Harry Melges IV e Lucas Calabrese, timonieri",boats:['us']}
+];
+
+const BOATS = {
+ lr1:{team:'lr',name:'Luna Rossa 1',tag:'Senior',crew:['burling','gradoni','tita','giubilei','ugolini','molineris'],note:'Rosa di 6: in barca vanno in 4, scelti giorno per giorno',src:'lr'},
+ lr2:{team:'lr',name:'Luna Rossa 2',tag:'Women & Youth',crew:['porro','antoniazzi','sirena','marchesini','santi','linussi'],note:'Rosa di 6: in barca vanno in 4, scelti giorno per giorno',src:'lr'},
+ nz1:{team:'nz',name:'Emirates Team New Zealand',tag:'Senior',crew:['outteridge','menzies','maloney','jensen'],src:'nz'},
+ nz2:{team:'nz',name:'ETNZ Women & Youth',tag:'Women & Youth',crew:['pye','dawson','woodall','armit'],src:'nz'},
+ gb1:{team:'gb',name:'GB1',tag:'Senior',crew:['fletcher','cornish','mon','tesei'],src:'gb1'},
+ gb2:{team:'gb',name:'Cobham-Ultra GB2',tag:'Women & Youth',crew:['mills','aldridge','beck','webb'],src:'gb2'},
+ al:{team:'al',name:'Tudor Team Alinghi',tag:'Senior',crew:['goodison','robertson','rolaz','sibello'],src:'ali'},
+ fr:{team:'fr',name:'La Roche-Posay',tag:'Senior',crew:['delapierre','botin','saunders','trittel'],note:'Riserve: Enzo Balanger, Timothé Lapauw',src:'fra'},
+ us:{team:'us',name:'ARC Team USA',tag:'Senior',crew:['melges','calabrese','henken','menninger'],note:'Riserva: Riley Gibbs',src:'usa'}
+};
+
+const SAILORS = {
+ burling:{n:'Peter Burling',f:'🇳🇿',nat:'Nuova Zelanda',r:'Timoniere',
+  bio:"Uno dei velisti più forti al mondo. Ha vinto tre volte la Coppa America da timoniere con Team New Zealand, e nel 2021 ha battuto proprio Luna Rossa. A giugno 2025 è passato agli italiani: per questo ogni sfida con i neozelandesi fa rumore.",
+  wins:['Oro olimpico 49er, Rio 2016 (con Blair Tuke)','Argento olimpico 49er, Londra 2012 e Tokyo 2020','America\'s Cup vinte: 2017, 2021, 2024','6 titoli mondiali 49er con Tuke, un record'],
+  napoli:"Timona Luna Rossa 1 con Marco Gradoni, prima in classifica con 51 punti.",src:'burl'},
+ gradoni:{n:'Marco Gradoni',f:'🇮🇹',nat:'Italia',r:'Timoniere',
+  bio:"Il ragazzo prodigio della vela italiana. Da giovanissimo ha dominato l'Optimist, poi è entrato in Luna Rossa, e nel 2024 ha vinto la Youth America's Cup a Barcellona.",
+  wins:['3 Mondiali Optimist consecutivi (2017, 2018, 2019), primo nella storia','Rolex World Sailor of the Year 2019, il più giovane di sempre','Youth America\'s Cup 2024 con Luna Rossa'],
+  napoli:"Co-timoniere di Burling su Luna Rossa 1.",src:'grad'},
+ tita:{n:'Ruggero Tita',f:'🇮🇹',nat:'Italia',r:'Timoniere',bio:"Due volte campione olimpico sul catamarano Nacra 17, insieme a Caterina Banti. In Luna Rossa è uno dei candidati al timone.",wins:['Oro olimpico Nacra 17, Tokyo 2020','Oro olimpico Nacra 17, Parigi 2024'],napoli:"Nella rosa di Luna Rossa 1. La formazione si decide giorno per giorno.",src:'lr'},
+ giubilei:{n:'Maria Giubilei',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Trimmer della squadra Senior di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 1.",src:'lr'},
+ ugolini:{n:'Gianluigi Ugolini',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Nel 2024 ha vinto la Youth America's Cup come co-timoniere di Gradoni. Ora è trimmer nella squadra Senior.",wins:['Youth America\'s Cup 2024 con Luna Rossa'],napoli:"Nella rosa di Luna Rossa 1.",src:'lr'},
+ molineris:{n:'Umberto Molineris',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Trimmer della squadra Senior di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 1.",src:'lr'},
+ porro:{n:'Margherita Porro',f:'🇮🇹',nat:'Italia',r:'Timoniera',bio:"Timoniera dell'equipaggio Women & Youth di Luna Rossa, la squadra che nel 2024 ha vinto la prima Women's America's Cup.",wins:[],napoli:"Nella rosa di Luna Rossa 2, quarta con 35 punti.",src:'lr'},
+ antoniazzi:{n:'Massimiliano Antoniazzi',f:'🇮🇹',nat:'Italia',r:'Timoniere',bio:"Giovane timoniere della squadra Women & Youth di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 2.",src:'lr'},
+ sirena:{n:'Lorenzo Sirena',f:'🇮🇹',nat:'Italia',r:'Timoniere',bio:"Giovane timoniere della squadra Women & Youth di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 2.",src:'lr'},
+ marchesini:{n:'Maria Vittoria Marchesini',f:'🇮🇹',nat:'Italia',r:'Timoniera / trimmer',bio:"Può fare sia la timoniera sia la trimmer nella squadra Women & Youth.",wins:[],napoli:"Nella rosa di Luna Rossa 2.",src:'lr'},
+ santi:{n:'Giovanni Santi',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Trimmer della squadra Women & Youth di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 2.",src:'lr'},
+ linussi:{n:'Alice Linussi',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Trimmer della squadra Women & Youth di Luna Rossa.",wins:[],napoli:"Nella rosa di Luna Rossa 2.",src:'lr'},
+ outteridge:{n:'Nathan Outteridge',f:'🇦🇺',nat:'Australia',r:'Skipper e timoniere',bio:"Australiano, da maggio 2025 è lo skipper di Team New Zealand, al posto di Burling. In Coppa America aveva già timonato per la svedese Artemis nel 2017.",wins:['Oro olimpico 49er, Londra 2012 (con Iain Jensen)','Argento olimpico 49er, Rio 2016 (con Jensen)'],napoli:"Timona la barca Senior neozelandese, seconda con 43 punti.",src:'outt'},
+ menzies:{n:'Seb Menzies',f:'🇳🇿',nat:'Nuova Zelanda',r:'Timoniere',bio:"Giovane neozelandese, uno dei nuovi acquisti di Team New Zealand per il 2027.",wins:[],napoli:"Timona la barca Senior con Outteridge.",src:'nz'},
+ maloney:{n:'Andy Maloney',f:'🇳🇿',nat:'Nuova Zelanda',r:'Trimmer',bio:"Veterano di Team New Zealand, fa parte del gruppo storico della squadra.",wins:[],napoli:"Trimmer sulla barca Senior.",src:'nz'},
+ jensen:{n:'Iain Jensen',f:'🇦🇺',nat:'Australia',r:'Trimmer',bio:"Il compagno storico di Outteridge: insieme hanno vinto le Olimpiadi sul 49er, e ora sono di nuovo sulla stessa barca.",wins:['Oro olimpico 49er, Londra 2012','Argento olimpico 49er, Rio 2016'],napoli:"Trimmer sulla barca Senior.",src:'outt'},
+ pye:{n:'Jake Pye',f:'🇳🇿',nat:'Nuova Zelanda',r:'Skipper',bio:"Skipper dell'equipaggio Women & Youth neozelandese.",wins:['Vincitore di regata 5 a Napoli'],napoli:"Ha guidato la seconda barca neozelandese alla vittoria in regata 5.",src:'nz'},
+ dawson:{n:'Erica Dawson',f:'🇳🇿',nat:'Nuova Zelanda',r:'Equipaggio',bio:"Fa parte dell'equipaggio Women & Youth neozelandese.",wins:['Vincitrice di regata 5 a Napoli'],napoli:"Sulla seconda barca neozelandese.",src:'nz'},
+ woodall:{n:'Serena Woodall',f:'🇳🇿',nat:'Nuova Zelanda',r:'Equipaggio',bio:"Fa parte dell'equipaggio Women & Youth neozelandese.",wins:['Vincitrice di regata 5 a Napoli'],napoli:"Sulla seconda barca neozelandese.",src:'nz'},
+ armit:{n:'Josh Armit',f:'🇳🇿',nat:'Nuova Zelanda',r:'Equipaggio',bio:"Uno dei nuovi acquisti di Team New Zealand per il 2027.",wins:['Vincitore di regata 5 a Napoli'],napoli:"Sulla seconda barca neozelandese.",src:'nz'},
+ fletcher:{n:'Dylan Fletcher',f:'🇬🇧',nat:'Gran Bretagna',r:'Timoniere',bio:"Campione olimpico, ha timonato INEOS Britannia fino alla sfida finale della Coppa 2024. GB1 l'ha scelto come timoniere per il 2027.",wins:['Oro olimpico 49er, Tokyo 2020 (con Stuart Bithell)','Finalista America\'s Cup 2024'],napoli:"Timoniere di GB1.",src:'gb1'},
+ cornish:{n:'Ben Cornish',f:'🇬🇧',nat:'Gran Bretagna',r:'Timoniere',bio:"Alla terza campagna di Coppa America, era nella squadra britannica a Barcellona nel 2024.",wins:[],napoli:"Co-timoniere di GB1.",src:'gb1'},
+ mon:{n:'Bleddyn Mon',f:'🇬🇧',nat:'Gran Bretagna',r:'Trimmer',bio:"Alla quarta campagna di Coppa America, era nell'equipaggio britannico del 2024.",wins:[],napoli:"Trimmer di GB1.",src:'gb1'},
+ tesei:{n:'Andrea Tesei',f:'🇮🇹',nat:'Italia',r:'Trimmer',bio:"Italiano, a marzo 2026 è passato da Luna Rossa ai britannici. Ha alle spalle tre campagne di Coppa.",wins:[],napoli:"Trimmer di GB1: a Napoli corre contro la sua ex squadra.",src:'gb1'},
+ mills:{n:'Hannah Mills',f:'🇬🇧',nat:'Gran Bretagna',r:'Timoniera',bio:"La velista olimpica più medagliata della storia. Guida il progetto Athena Pathway per donne e giovani.",wins:['Oro olimpico 470, Rio 2016 e Tokyo 2020','Argento olimpico 470, Londra 2012'],napoli:"Timoniera di GB2 sul lato destro.",src:'gb2'},
+ aldridge:{n:'Ellie Aldridge',f:'🇬🇧',nat:'Gran Bretagna',r:'Timoniera',bio:"Campionessa olimpica di kitefoil, uno sport in cui si vola sull'acqua proprio come sull'AC40.",wins:['Oro olimpico Formula Kite, Parigi 2024'],napoli:"Timoniera di GB2 sul lato sinistro.",src:'gb2'},
+ beck:{n:'Matt Beck',f:'🇬🇧',nat:'Gran Bretagna',r:'Trimmer',bio:"Nel 2024 era nella squadra britannica arrivata terza alla Youth America's Cup.",wins:[],napoli:"Trimmer di GB2.",src:'gb2'},
+ webb:{n:'Sam Webb',f:'🇬🇧',nat:'Gran Bretagna',r:'Trimmer',bio:"È entrato con le selezioni giovanili del 2026.",wins:[],napoli:"Trimmer di GB2.",src:'gb2'},
+ goodison:{n:'Paul Goodison',f:'🇬🇧',nat:'Gran Bretagna',r:'Skipper e timoniere',bio:"Inglese e campione olimpico. Nel 2024 timonava gli americani di American Magic, ora è lo skipper di Alinghi.",wins:['Oro olimpico Laser, Pechino 2008'],napoli:"Skipper di Alinghi e timoniere sul lato destro. Alinghi è terza con 38 punti.",src:'ali'},
+ robertson:{n:'Phil Robertson',f:'🇳🇿',nat:'Nuova Zelanda',r:'Timoniere',bio:"Neozelandese, specialista di match race.",wins:[],napoli:"Timoniere di Alinghi sul lato sinistro.",src:'ali'},
+ rolaz:{n:'Nicolas Rolaz',f:'🇨🇭',nat:'Svizzera',r:'Trimmer',bio:"Svizzero, trimmer di Alinghi.",wins:[],napoli:"Trimmer sul lato destro.",src:'ali'},
+ sibello:{n:'Pietro Sibello',f:'🇮🇹',nat:'Italia / Svizzera',r:'Trimmer',bio:"Italo-svizzero, trimmer di Alinghi.",wins:[],napoli:"Trimmer sul lato sinistro.",src:'ali'},
+ delapierre:{n:'Quentin Delapierre',f:'🇫🇷',nat:'Francia',r:'Timoniere',bio:"Il timoniere di riferimento della vela francese, che guida anche la squadra francese in SailGP. Secondo lui, con barche identiche “conta l'equipaggio”.",wins:['Vincitore di regata 4 e regata 6 a Napoli'],napoli:"Timoniere della barca francese, con lo stesso equipaggio di Cagliari.",src:'fra'},
+ botin:{n:'Diego Botín',f:'🇪🇸',nat:'Spagna',r:'Timoniere',bio:"Spagnolo, campione olimpico. Guida anche la squadra spagnola in SailGP.",wins:['Oro olimpico 49er, Parigi 2024 (con Florian Trittel)'],napoli:"Co-timoniere della barca francese.",src:'fra'},
+ saunders:{n:'Jason Saunders',f:'🇳🇿',nat:'Nuova Zelanda',r:'Trimmer',bio:"Trimmer della squadra francese.",wins:[],napoli:"Trimmer della barca francese.",src:'fra'},
+ trittel:{n:'Florian Trittel',f:'🇪🇸',nat:'Spagna',r:'Trimmer',bio:"Il compagno di Botín: insieme hanno vinto l'oro olimpico.",wins:['Oro olimpico 49er, Parigi 2024'],napoli:"Trimmer della barca francese.",src:'fra'},
+ melges:{n:'Harry Melges IV',f:'🇺🇸',nat:'Stati Uniti',r:'Timoniere',bio:"Viene da una famiglia storica della vela americana, i Melges del Wisconsin.",wins:['Vincitore di regata 1 a Napoli, al debutto della squadra'],napoli:"Timoniere di ARC Team USA, quinta con 34 punti.",src:'usa'},
+ calabrese:{n:'Lucas Calabrese',f:'🇺🇸',nat:'Argentina / USA',r:'Timoniere',bio:"Nato in Argentina, ha vinto una medaglia olimpica per il suo paese d'origine. Ora corre con gli americani.",wins:['Bronzo olimpico 470, Londra 2012 (per l\'Argentina)'],napoli:"Co-timoniere di ARC Team USA.",src:'usa'},
+ henken:{n:'Hans Henken',f:'🇺🇸',nat:'Stati Uniti',r:'Trimmer',bio:"Trimmer di ARC Team USA.",wins:[],napoli:"Trimmer di ARC Team USA.",src:'usa'},
+ menninger:{n:'Michael Menninger',f:'🇺🇸',nat:'Stati Uniti',r:'Trimmer',bio:"Trimmer di ARC Team USA.",wins:[],napoli:"Trimmer di ARC Team USA.",src:'usa'}
+};
+
+const RIVALS = [
+ {h:'Burling contro il suo passato',p:"Ha vinto tre Coppe con Team New Zealand e ora corre per Luna Rossa. A Cagliari la finale era proprio Luna Rossa contro i neozelandesi, e l'ha vinta lui.",s:'burling'},
+ {h:'I compagni di una vita',p:"Outteridge e Jensen hanno vinto l'oro olimpico insieme nel 2012. Quattordici anni dopo sono di nuovo sulla stessa barca, quella del Defender.",s:'outteridge'},
+ {h:'L\'italiano che corre contro l\'Italia',p:"Andrea Tesei ha lasciato Luna Rossa a marzo e ora regola le vele per GB1.",s:'tesei'},
+ {h:'Due ori spagnoli su una barca francese',p:"Botín e Trittel, campioni olimpici a Parigi 2024, sono nell'equipaggio francese, la squadra più imprevedibile della settimana.",s:'botin'},
+ {h:'La velista più medagliata',p:"Hannah Mills ha vinto due ori olimpici. Timona la barca britannica di giovani e donne insieme a una campionessa di kitefoil.",s:'mills'},
+ {h:'I nuovi americani',p:"ARC Team USA non aveva mai corso contro nessuno, e ha vinto la prima regata della sua storia.",s:'melges'}
+];
+
+const PR1 = [['lr1','1°','Vince la finale contro ETNZ'],['nz1','2°','Finalista'],['lr2','3°',''],['fr','4°',''],['nz2','5°',''],['al','6°',''],['gb2','7°',''],['gb1','8°','']];
+
+const GLOSS = [
+ ['Foil','Ali sotto lo scafo che sollevano la barca fuori dall\'acqua, come un aliscafo.'],
+ ['Nodo','Velocità in mare: 1 nodo = 1,85 km/h, quindi 40 nodi sono circa 74 km/h.'],
+ ['Bolina','Andare verso il vento, a zig-zag.'],
+ ['Poppa','Andare col vento alle spalle. È il tratto più veloce.'],
+ ['Virata','Cambio di direzione in bolina: la prua passa attraverso il vento.'],
+ ['Strambata','Cambio di direzione in poppa: la poppa passa attraverso il vento.'],
+ ['Cancello (gate)','Due boe vicine: si gira attorno all\'una o all\'altra.'],
+ ['OCS','“On Course Side”: una barca oltre la linea al via, che deve tornare indietro.'],
+ ['Scuffia','Quando la barca si rovescia.'],
+ ['Nosedive','La prua si pianta in acqua ad alta velocità e la barca si ferma di colpo.'],
+ ['Defender','Chi detiene la Coppa: Team New Zealand.'],
+ ['Challenger of Record','Lo sfidante che tratta le regole con il Defender a nome di tutti: oggi GB1.'],
+ ['Women & Youth','Equipaggi di donne e di giovani, che hanno anche Coppe dedicate.'],
+ ['AC75','La barca grande (75 piedi) della Coppa vera del 2027.']
+];
+
+const HISTORY = [
+ ['1851','La prima regata',"La goletta America batte la flotta britannica attorno all'Isola di Wight e vince una coppa d'argento: da lì il nome America's Cup."],
+ ['1851–1983','132 anni americani',"Il New York Yacht Club difende la Coppa per 132 anni, la striscia più lunga dello sport."],
+ ['1983','Australia II',"Gli australiani la strappano agli americani 4–3, con una chiglia alata rivoluzionaria."],
+ ['1992','Il Moro di Venezia',"Prima barca italiana nella sfida finale: perde 4–1 contro America³."],
+ ['2000','Luna Rossa ad Auckland',"Luna Rossa vince la selezione degli sfidanti, ma nella sfida finale perde 5–0 con Team New Zealand."],
+ ['2003','Alinghi',"Una squadra svizzera, di un paese senza mare, è la prima europea a vincere la Coppa."],
+ ['2012–13','Napoli c\'era già',"Napoli ha ospitato l'America's Cup World Series. Nel 2013 circa 100.000 persone hanno seguito da riva le regate dell'ultimo giorno, e Luna Rossa ha vinto le regate di flotta."],
+ ['2013','La rimonta',"A San Francisco Oracle è sotto 8–1 contro Team New Zealand e vince 9–8, con otto vittorie di fila. Il tattico era Ben Ainslie."],
+ ['2021','Burling batte Luna Rossa',"Ad Auckland Team New Zealand, con Burling al timone, batte Luna Rossa 7–3."],
+ ['2024','Barcellona',"Team New Zealand batte INEOS Britannia 7–2 e vince la quinta Coppa."]
+];
+
+const TRIVIA = [
+ ['La Coppa non ha fondo',"Il trofeo, chiamato “Auld Mug”, è una brocca d'argento del 1848 senza fondo. Non si può bere dentro."],
+ ['Costava 100 sterline',"Nel 1851 si chiamava “£100 Cup” e l'aveva messa in palio il Royal Yacht Squadron."],
+ ['Più veloce del vento',"Con i foil l'AC40 va più veloce del vento che lo spinge: nei test ha superato i 45 nodi."],
+ ['Energia a batteria',"Niente muscoli per le manovre: i sistemi della barca vanno a batteria, con una carica che dura circa 8 ore."],
+ ['L\'acqua pesa 800 volte l\'aria',"Per questo un'ala subacquea piccola riesce a sollevare due tonnellate di barca."],
+ ['Napoli fa numeri',"Nel 2012 l'America's Cup World Series di Napoli ha portato sul lungomare oltre mezzo milione di persone."]
+];
+
+const QUIZ = [
+ {q:'Quante persone ci sono su un AC40?',o:['2','4','8'],a:1,w:'Due timonieri e due trimmer.'},
+ {q:'Se arrivi terzo in una regata, quanti punti prendi?',o:['3','8','10'],a:1,w:'10 al primo, 9 al secondo, 8 al terzo.'},
+ {q:'Chi detiene la Coppa America oggi?',o:['Luna Rossa','Team New Zealand','Alinghi'],a:1,w:'L\'ha vinta nel 2024 a Barcellona.'},
+ {q:'A cosa servono i foil?',o:['A frenare','A sollevare la barca','A tenere la vela'],a:1,w:'Sono ali subacquee: sollevano lo scafo fuori dall\'acqua.'},
+ {q:'Cosa succede domenica alle 15:27?',o:['Una regata di flotta','La finale testa a testa','La premiazione'],a:1,w:'Le prime due in classifica si sfidano in un match race, e chi vince prende tutto.'},
+ {q:'Perché Burling fa notizia?',o:['È italiano','Ha vinto 3 Coppe con NZ e ora è in Luna Rossa','È il più giovane'],a:1,w:'Neozelandese, tre volte campione con Team New Zealand, da giugno 2025 corre per Luna Rossa.'},
+ {q:'In che anno si è corsa la prima Coppa America?',o:['1851','1920','1983'],a:0,w:'Attorno all\'Isola di Wight, in Inghilterra.'}
+];
+
+/* ============ LA BARCA: tappe dello scorrimento ============
+   Coordinate SVG a scala reale: 30 unità = 1 metro. Coperta a y=700, pelo dell'acqua a y=781. */
+const WATER = 781, UNIT = 30;
+const BOAT_STEPS = [
+ {id:null,x:210,y:500,z:.72,k:'Inizio',h:'Questo è un AC40',p:"Proporzioni vere. Scorri verso il basso: partiamo dalla cima dell'albero e finiamo sotto il mare, dove succede la magia.",num:'11,8 m di lunghezza',fun:"Sullo sfondo, la sagoma del Vesuvio: è qui che si correrà la Coppa del 2027."},
+ {id:'top',x:205,y:215,z:2.6,k:'In cima',h:'La testa della vela',p:"La vela è tagliata quasi dritta in alto (in gergo “square top”): c'è più superficie in alto, dove il vento soffia più forte.",num:'17,9 m: l\'albero',fun:"<b>Chicca:</b> è alto come un palazzo di 6 piani, su una barca lunga meno di 12 metri."},
+ {id:'main',x:262,y:420,z:1.7,k:'Il motore',h:'La randa a doppia pelle',p:"La vela principale è fatta di due teli che avvolgono l'albero. Insieme formano un profilo spesso, come l'ala di un aereo, che spinge molto di più di una vela normale.",num:'63 m² di superficie',fun:"<b>Chicca:</b> la regola uno dei due trimmer, e cambia forma di continuo in base al vento."},
+ {id:'jib',x:112,y:520,z:1.8,k:'Davanti all\'albero',h:'Il fiocco',p:"La vela davanti. Ce ne sono tre misure: prima della regata si sceglie quella adatta al vento del giorno.",num:'da 26 a 38 m²',fun:"<b>Chicca:</b> con vento forte si monta la più piccola, per non sovraccaricare la barca."},
+ {id:'deck',x:265,y:694,z:2.8,k:'Dove la vela finisce',h:'Vela quasi sulla coperta',p:"La vela scende fino a sfiorare la coperta. Così l'aria non scappa sotto e la vela lavora su tutta la sua altezza.",num:'nessun boma',fun:"<b>Chicca:</b> sulle barche normali c'è il boma, il palo orizzontale che fa abbassare la testa a chi sta a bordo. Qui non c'è."},
+ {id:'crew',x:292,y:688,z:3.6,k:'Chi guida',h:'I quattro a bordo',p:"Stanno seduti in piccoli abitacoli, due per lato: due timonieri e due trimmer. Guida chi sta sul lato da cui arriva il vento, e a ogni virata si scambiano il comando.",num:'4 velisti',fun:"<b>Chicca:</b> indossano casco e giubbotto protettivo. A queste velocità cadere in acqua fa male."},
+ {id:'hull',x:210,y:722,z:1.35,k:'Il corpo',h:'Lo scafo',p:"Guscio in carbonio, leggerissimo. Quando la barca vola, lo scafo non tocca l'acqua: serve a tenere insieme tutto.",num:'circa 2.000 kg',fun:"<b>Chicca:</b> pesa quanto un grosso SUV, ma in volo tocca l'acqua solo con due piccole ali."},
+ {id:'batt',x:162,y:718,z:3.4,k:'Dentro lo scafo',h:'Le batterie',p:"Sulle AC75 del 2024 servivano quattro atleti a pedalare per dare energia ai comandi idraulici. Qui c'è un pacco batterie al litio.",num:'circa 8 ore di autonomia',fun:"<b>Chicca:</b> per questo sull'AC40 bastano 4 persone."},
+ {id:'wfoil',x:208,y:640,z:2.6,k:'Fuori dall\'acqua',h:'Il foil alzato',p:"I foil sono due, uno per lato. Quello dalla parte del vento resta alzato in aria: in punta ha una zavorra e fa da contrappeso, come chi si sporge da una barca a vela.",num:'2 foil: uno su, uno giù',fun:"<b>Chicca:</b> a ogni virata si abbassa quello alzato e si alza l'altro, in pochi secondi."},
+ {id:'water',x:230,y:781,z:1.9,k:'Il pelo dell\'acqua',h:'Vola!',p:"Ecco il trucco: tra lo scafo e il mare c'è aria. Senza attrito la barca accelera fino a superare la velocità del vento.",num:'45+ nodi, oltre 83 km/h',fun:"<b>Chicca:</b> se vola troppo alta perde il controllo, se vola troppo bassa tocca e frena. Il trimmer la tiene “in quota”."},
+ {id:'arm',x:196,y:808,z:3,k:'Sott\'acqua',h:'Il braccio del foil',p:"Collega lo scafo all'ala. Un sistema a batteria lo fa ruotare su e giù, e si comanda dall'abitacolo.",num:'si alza e si abbassa a comando',fun:"<b>Chicca:</b> se l'ala esce dall'acqua per sbaglio, la barca ricade di colpo sullo scafo."},
+ {id:'wing',x:193,y:850,z:4.2,k:'Il cuore',h:'L\'ala del foil',p:"Un'ala a T, come quella di un aereo ma sott'acqua. Ha un'aletta mobile, il flap: alzandola o abbassandola il trimmer decide quanto la barca sale.",num:'acqua 800 volte più densa dell\'aria',fun:"<b>Chicca:</b> per questo un'ala così piccola riesce a sollevare due tonnellate."},
+ {id:'rudder',x:374,y:835,z:3.2,k:'A poppa',h:'Il timone con l\'ala',p:"Anche il timone ha un'alettina orizzontale in fondo. Tiene la barca in assetto e aiuta a non far piantare la prua in acqua.",num:'timone a T',fun:"<b>Chicca:</b> venerdì ai francesi è uscito il timone dall'acqua. Senza timone la barca non si governa, e si sono rovesciati."},
+ {id:null,x:210,y:500,z:.72,k:'Fine',h:'Ora sai com\'è fatto',p:"Quando guardi la regata, osserva le barche in poppa: sono quelle che volano più veloci. E fai attenzione alle virate: è lì che si vincono e si perdono le regate.",num:'9 barche identiche in acqua',fun:"<b>Chicca:</b> le barche sono uguali, quindi ogni metro guadagnato è merito dell'equipaggio."}
+];
+
+function boatSVG(idp,opt){
+  opt=opt||{};
+  const g=(id,inner)=>`<g class="part" data-part="${id}">${inner}</g>`;
+  const u=n=>`url(#${idp}${n})`;
+  const waves=Array.from({length:120},(_,i)=>`T${-2360+i*40} ${WATER}`).join(' ');
+  let seed=7;const rnd=()=>(seed=(seed*9301+49297)%233280)/233280;
+  const sparkle=Array.from({length:70},()=>{const x=-1900+rnd()*2500,y=WATER+6+rnd()*rnd()*190,w=6+rnd()*22;return `M${x.toFixed(0)} ${y.toFixed(0)}h${w.toFixed(0)}`}).join('');
+  const glint=Array.from({length:14},(_,i)=>{const y=WATER+4+i*i*1.3,w=70-i*4;return `<path d="M${395-w/2} ${y.toFixed(1)}h${w}" stroke="#FFD9A6" stroke-opacity="${(.55-i*.035).toFixed(2)}" stroke-width="${i<4?2:1.4}"/>`}).join('');
+  const bubbles=Array.from({length:16},(_,i)=>{const x=224+i*14+rnd()*8,y=846+Math.sin(i*1.7)*6-i*.6;return `<circle cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${(2.4-i*.12).toFixed(1)}" fill="none" stroke="#BFEFFF" stroke-opacity="${(.7-i*.04).toFixed(2)}"/>`}).join('');
+  const rays=[[-40,70],[120,55],[300,80],[470,60]].map(([x,w])=>`<path d="M${x} ${WATER} L${x+w} ${WATER} L${x+w+60} ${WATER+260} L${x+30} ${WATER+260} Z" fill="#9BE3F5" opacity=".05"/>`).join('');
+  const vb=opt.vb||'0 100 420 860', par=opt.par||'xMidYMid slice';
+  return `
+<svg viewBox="${vb}" preserveAspectRatio="${par}" role="img" aria-label="AC40 in volo sui foil, in proporzioni reali">
+ <defs>
+  <linearGradient id="${idp}sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0A1F30"/><stop offset=".45" stop-color="#17425C"/><stop offset=".78" stop-color="#5B7E8E"/><stop offset=".93" stop-color="#D59A72"/><stop offset="1" stop-color="#F3C08E"/></linearGradient>
+  <radialGradient id="${idp}sun" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(398 758) scale(260 150)"><stop offset="0" stop-color="#FFE7B8" stop-opacity=".95"/><stop offset=".25" stop-color="#FFC98A" stop-opacity=".45"/><stop offset="1" stop-color="#FFB070" stop-opacity="0"/></radialGradient>
+  <linearGradient id="${idp}sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2F6E86"/><stop offset=".08" stop-color="#155673"/><stop offset=".45" stop-color="#0A3650"/><stop offset="1" stop-color="#03131E"/></linearGradient>
+  <linearGradient id="${idp}sail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E9EFF3"/><stop offset=".25" stop-color="#FFFFFF"/><stop offset=".85" stop-color="#E4ECF1"/><stop offset="1" stop-color="#C3D1DA"/></linearGradient>
+  <linearGradient id="${idp}sailv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9CF" stop-opacity=".0"/><stop offset=".7" stop-color="#FFD7A8" stop-opacity=".0"/><stop offset="1" stop-color="#F6B98A" stop-opacity=".28"/></linearGradient>
+  <linearGradient id="${idp}hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#E3EAEF"/><stop offset="1" stop-color="#9FB1BD"/></linearGradient>
+  <linearGradient id="${idp}mast" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2A35"/><stop offset=".5" stop-color="#4C6474"/><stop offset="1" stop-color="#15222B"/></linearGradient>
+  <linearGradient id="${idp}foil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2B3C48"/><stop offset=".45" stop-color="#8FA5B3"/><stop offset="1" stop-color="#22323D"/></linearGradient>
+  <linearGradient id="${idp}wing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4CD72"/><stop offset="1" stop-color="#B9832A"/></linearGradient>
+  <linearGradient id="${idp}haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6F8E9C"/><stop offset="1" stop-color="#B99A86"/></linearGradient>
+  <filter id="${idp}soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  <filter id="${idp}softer" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+ </defs>
+ <rect x="-2400" y="-600" width="4800" height="${WATER+600}" fill="${u('sky')}"/>
+ <rect x="-2400" y="400" width="4800" height="${WATER-400}" fill="${u('sun')}"/>
+ <circle cx="398" cy="758" r="15" fill="#FFF1D2" opacity=".95"/>
+ <g opacity=".35" stroke="#F7D9BD" stroke-linecap="round">
+  <path d="M-520 620h260M-420 612h140M60 648h210M140 641h120M-1200 590h300M-980 600h180" stroke-width="3" filter="${u('soft')}"/>
+ </g>
+ <path d="M-1480 781 L-1320 760 L-1160 742 L-1040 716 Q-1000 702 -968 700 L-930 704 Q-900 690 -872 686 Q-846 684 -820 694 L-760 722 L-600 752 L-420 770 L-260 777 L-200 781 Z" fill="${u('haze')}" opacity=".7"/>
+ <path d="M-1000 706 L-968 700 L-930 704 Q-900 690 -872 686 L-866 689 Q-900 697 -930 710 Z" fill="#D8C2B2" opacity=".35"/>
+ <path d="M-200 781 L-80 774 L120 771 L300 776 L520 773 L700 778 L760 781 Z" fill="#7C8F98" opacity=".45"/>
+ <rect x="-2400" y="${WATER}" width="4800" height="900" fill="${u('sea')}"/>
+ ${rays}
+ <path d="${sparkle}" stroke="#CDEFF8" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round"/>
+ ${glint}
+ <ellipse cx="210" cy="${WATER+5}" rx="190" ry="6" fill="#021019" opacity=".35" filter="${u('softer')}"/>
+ <g class="${opt.anim?'wake':''}" stroke="#F4FBFF" stroke-linecap="round" fill="none" stroke-dasharray="${opt.anim?'40 20':'none'}">
+  <path d="M198 ${WATER} L760 ${WATER-5}" stroke-opacity=".35" stroke-width="2.4"/>
+  <path d="M198 ${WATER+1} L760 ${WATER+14}" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M378 ${WATER} L760 ${WATER+4}" stroke-opacity=".3" stroke-width="1.6"/>
+ </g>
+ <g class="${opt.anim?'boat-bob':''}">
+ ${g('arm',`<path class="hl" d="M195.5 742 L201 742 L195.5 848 L190.5 848 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>`)}
+ ${g('wing',`<path class="hl" d="M168 850 Q176 842 196 842 Q214 843 222 849 Q214 855 196 856 Q176 856 168 850 Z" fill="${u('wing')}" stroke="#E9B44C" stroke-width=".8"/>
+   <path d="M214 845 L226 850 L214 855 Z" fill="#FF7A45"/>
+   <ellipse cx="193" cy="849" rx="12" ry="4.5" fill="#5B7686"/>
+   <path d="M172 849 Q196 845 219 849" stroke="#FFF3D6" stroke-opacity=".5" stroke-width="1" fill="none"/>
+   ${bubbles}`)}
+ ${g('rudder',`<path class="hl" d="M374 742 L379 742 L377.5 836 L374.5 836 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>
+   <path d="M358 838 Q368 832 378 832 Q390 833 395 837 Q388 842 378 842 Q366 842 358 838 Z" fill="${u('wing')}"/>`)}
+ <path d="M150 ${WATER} q18 -6 36 0 q18 6 36 0" fill="#0E4A66" opacity=".55"/>
+ ${g('water',`<path class="hl" d="M-2400 ${WATER} Q-2390 ${WATER-4} -2380 ${WATER} ${waves}" fill="none" stroke="#B9EEF8" stroke-opacity=".55" stroke-width="1.4"/>
+   <g class="${opt.anim?'spray':''}" filter="${u('soft')}">
+    <path d="M186 ${WATER} Q196 ${WATER-22} 226 ${WATER-30} Q214 ${WATER-16} 238 ${WATER-12} Q214 ${WATER-6} 204 ${WATER} Z" fill="#FFFFFF" opacity=".85"/>
+    <path d="M200 ${WATER-4} Q230 ${WATER-44} 270 ${WATER-40} Q240 ${WATER-24} 262 ${WATER-18}" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>
+    <path d="M372 ${WATER} Q380 ${WATER-12} 398 ${WATER-16} Q390 ${WATER-6} 404 ${WATER-4} Q388 ${WATER-1} 382 ${WATER} Z" fill="#FFFFFF" opacity=".75"/>
+   </g>`)}
+ ${g('jib',`<path class="hl" d="M172 298 L46 693 L170 692 Z" fill="${u('sail')}" fill-opacity=".86" stroke="#9FB6C4" stroke-width="1"/>
+   <path d="M172 298 L46 693 L170 692 Z" fill="${u('sailv')}"/>
+   <path d="M150 368 L170 367 M125 450 L169 449 M100 530 L169 529 M76 610 L170 609" stroke="#A9BCC8" stroke-width=".8" opacity=".75"/>
+   <path d="M174 290 L40 700" stroke="#2A3B47" stroke-width="1.1"/>`)}
+ ${g('main',`<path class="hl" d="M178 168 L236 172 Q300 420 352 690 L178 696 Z" fill="${u('sail')}" stroke="#9FB6C4" stroke-width="1"/>
+   <path d="M178 168 L236 172 Q300 420 352 690 L178 696 Z" fill="${u('sailv')}"/>
+   <path d="M180 170 L196 171 L196 695 L180 696 Z" fill="#C7D4DC" opacity=".55"/>
+   <path d="M181 171 L233 175 Q296 420 346 687 L181 692 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"/>
+   <path d="M178 250 Q220 246 254 243 M178 330 Q228 325 270 321 M178 410 Q236 404 286 400 M178 490 Q244 483 302 478 M178 570 Q252 562 318 557 M178 640 Q258 632 336 628" stroke="#9FB6C4" stroke-width=".9" fill="none"/>
+   <path d="M175 700 L180 700 L178.6 160 L176.4 160 Z" fill="${u('mast')}"/>`)}
+ ${g('top',`<circle class="glow" cx="206" cy="184" r="32" fill="none" stroke="#43D1C6" stroke-width="2" stroke-dasharray="4 4"/>`)}
+ ${g('wfoil',`<path class="hl" d="M202 716 L207 716 L216.5 606 L211.5 606 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>
+   <path d="M194 604 Q214 594 236 602 Q214 612 194 604 Z" fill="${u('wing')}"/>
+   <ellipse cx="214" cy="604" rx="11" ry="4" fill="#5B7686"/>`)}
+ ${g('hull',`<path class="hl" d="M34 712 Q42 700 72 699 L388 697 L390 728 Q330 745 160 744 Q72 740 34 712 Z" fill="${u('hull')}" stroke="#8FA3B0" stroke-width="1"/>
+   <path d="M40 710 Q52 703 74 702 L388 700 L388 704 L76 706 Q54 707 40 712 Z" fill="#1A2A35"/>
+   <path d="M44 718 Q120 730 388 717" stroke="#FF7A45" stroke-width="3.2" fill="none"/>
+   <path d="M60 725 Q140 735 388 723" stroke="#E6F0F5" stroke-opacity=".9" stroke-width="1" fill="none"/>
+   <path d="M60 734 Q150 744 330 738" stroke="#6F8795" stroke-opacity=".5" stroke-width="1" fill="none"/>`)}
+ ${g('deck',`<path class="hl" d="M178 696 L352 690" stroke="#E9B44C" stroke-width="2" fill="none"/>
+   <path class="glow" d="M180 700 L350 696" stroke="#43D1C6" stroke-width="5" stroke-opacity=".5"/>`)}
+ ${g('batt',`<rect class="hl" x="146" y="708" width="36" height="16" rx="3" fill="#0F2636" stroke="#43D1C6" stroke-width="1.2"/>
+   <path d="M166 710 L158 717 L164 717 L160 723 L170 715 L164 715 Z" fill="#E9B44C"/>`)}
+ ${g('crew',`<rect x="248" y="697" width="98" height="5" rx="2" fill="#0B1822"/>
+   <path d="M252 697 a6 6 0 0 1 12 0 Z" fill="#E9B44C"/><path d="M254 694 h9" stroke="#0F2636" stroke-width="2"/>
+   <path d="M286 696 a6 6 0 0 1 12 0 Z" fill="#43D1C6"/><path d="M288 693 h9" stroke="#0F2636" stroke-width="2"/>
+   <path d="M310 697 a6 6 0 0 1 12 0 Z" fill="#E9B44C" opacity=".6"/>
+   <path d="M332 697 a6 6 0 0 1 12 0 Z" fill="#43D1C6" opacity=".6"/>
+   <rect class="glow" x="244" y="676" width="106" height="30" rx="8" fill="none" stroke="#43D1C6" stroke-width="2" stroke-dasharray="4 4"/>`)}
+ </g>
+</svg>`;
+}
+
+/* ============ UTILITÀ ============ */
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.split(' ').filter(w=>/^[A-ZÀ-Ý]/.test(w)).slice(0,2).map(w=>w[0]).join('');
+const teamOf = b => TEAMS.find(t=>t.id===BOATS[b].team);
+const srcLink = k => S[k]?`<a href="${S[k].u}" target="_blank" rel="noopener">${esc(S[k].t.split(' – ')[0])}</a>`:'';
+const PTS = p => Math.max(11-p,0);
+const SHORT={lr1:'Luna Rossa 1',lr2:'Luna Rossa 2',nz1:'ETNZ',nz2:'ETNZ W&Y',gb1:'GB1',gb2:'GB2',al:'Alinghi',fr:'La Roche-Posay',us:'ARC USA'};
+const TINY={lr1:"LR1",lr2:"LR2",nz1:"NZ",nz2:"NZ W&amp;Y",gb1:"GB1",gb2:"GB2",al:"ALI",fr:"FRA",us:"USA"};
+const SHARE_URL='https://coppa-america-napoli.vercel.app/';
+const SHARE_TEXT='Coppa America a Napoli: classifica live, chi va in finale e la barca volante spiegata pezzo per pezzo ⛵';
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
+let MY=store.get('ac38-my');if(MY&&!BOATS[MY])MY=null;
+let toastT=0;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),3200)}
+
+function romeNow(){
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+  const h=(+p.hour)%24;
+  return {date:`${p.year}-${p.month}-${p.day}`,min:h*60+(+p.minute),hm:`${String(h).padStart(2,'0')}:${p.minute}`};
+}
+const toMin = s => {const m=s.replace('~','').split(':');return +m[0]*60+ +m[1]};
+
+/* ============ OGGI ============ */
+function renderDays(){
+  const n=romeNow();
+  $('#days').innerHTML=LIVE.days.map(d=>{
+    const cls=d.d===n.date?'today':(d.d<n.date?'done':'');
+    return `<div class="day ${cls}"><i>${cls==='today'?'Oggi':cls==='done'?'Concluso':'In arrivo'}</i><b>${d.lbl} settembre</b><span>${d.t}</span></div>`;
+  }).join('');
+}
+function pickDay(){
+  const n=romeNow();
+  const today=LIVE.days.find(d=>d.d===n.date&&d.races.length);
+  if(today){const last=toMin(today.races[today.races.length-1].at)+45;if(n.min<=last||today.d==='2026-09-27')return today}
+  return LIVE.days.find(d=>d.d>n.date&&d.races.length)||LIVE.days[LIVE.days.length-1];
+}
+function renderRaces(){
+  const n=romeNow(), day=pickDay(), isToday=day.d===n.date;
+  $('#races-title').textContent=isToday?'Le regate di oggi':`Le regate di ${day.lbl.split(' ')[0].toLowerCase()==='dom'?'domenica':day.lbl}`;
+  $('#races-label').textContent=`${day.lbl} settembre · ora di Napoli`;
+  let html=day.races.map(r=>{
+    let tag,txt=r.res;
+    const start=toMin(r.at), fin=r.n.startsWith('Finale');
+    if(r.st==='done')tag='<span class="tag done">Conclusa</span>';
+    else if(r.st==='skip')tag='<span class="tag next">Annullata</span>';
+    else if(isToday&&n.min>=start&&n.min<start+32){tag='<span class="tag now">In corso</span>';txt=txt||'Si sta correndo adesso: segui la diretta'}
+    else if(isToday&&n.min>=start+32){tag='<span class="tag next">Risultato in arrivo</span>';txt=txt||'Controlla i risultati ufficiali: qui arriva a breve'}
+    else{tag=fin?'<span class="tag gold">Finale</span>':'<span class="tag next">In programma</span>';txt=txt||'Tutte e 9 le barche in acqua'}
+    return `<div class="race"><div class="race-t">${r.at}</div><div><div class="race-n">${r.n}</div><div class="race-d">${txt}</div></div>${tag}</div>`;
+  }).join('');
+  if(day.d!==n.date){
+    const prev=[...LIVE.days].reverse().find(d=>d.d<=n.date&&d.races.some(r=>r.st==='done'));
+    if(prev)html+=`<div class="box-b sep"><p class="note" style="margin-bottom:6px"><b>Com'è andata ${prev.lbl}</b></p>${prev.races.map(r=>`<p class="race-d" style="margin:3px 0">${r.n}: ${r.res}</p>`).join('')}</div>`;
+  }
+  $('#races').innerHTML=html;
+}
+function renderStatus(){
+  const n=romeNow();
+  $('#clock').innerHTML=`${n.hm}<span>NAPOLI</span>`;
+  const day=LIVE.days.find(d=>d.d===n.date);
+  const pill=$('#pill'),pt=$('#pill-t'),main=$('#now-main'),sub=$('#now-sub'),lab=$('#now-label');
+  const set=(c,p,l,m,s)=>{pill.className='pill '+c;pt.textContent=p;lab.textContent=l;main.textContent=m;sub.textContent=s};
+  ['2026-09-25','2026-09-26','2026-09-27'].forEach((d,i)=>{const el=document.getElementById('ptl'+i);if(el)el.className='tl '+(n.date>d?'past':n.date===d?'now':'')});
+  if(n.date>'2026-09-27'){set('off','Concluso','La Regata Preliminare è finita','Evento concluso','Prossimo appuntamento: la Louis Vuitton Cup, primavera 2027.');return}
+  if(!day||!day.races.length){const nx=LIVE.days.find(d=>d.d>n.date&&d.races.length);set('wait','Prossime regate','Prossime regate',`${nx.lbl} settembre, ${nx.races[0].at}`,'Oggi non ci sono regate a punti.');return}
+  const first=toMin(day.races[0].at), last=toMin(day.races[day.races.length-1].at)+40;
+  if(n.min<first){const left=first-n.min,h=Math.floor(left/60),m=left%60;set('wait','Oggi si regata','Prima partenza tra',`${h?h+' h ':''}${m} min`,'Diretta TV dalle 13:45 su Rai 2, Sky e YouTube.')}
+  else if(n.min<=last){const cur=[...day.races].reverse().find(r=>toMin(r.at)<=n.min);set('live','In diretta','In questo momento',`${cur?cur.n:'Regate'} in corso`,'Diretta ora su Rai 2, Sky Sport e YouTube.')}
+  else{const nx=LIVE.days.find(d=>d.d>n.date&&d.races.length);set('off','Giornata finita','Le regate di oggi sono finite','Giornata conclusa',nx?`Domani ${nx.t.toLowerCase()}: si parte alle ${nx.races[0].at}, TV dalle 13:45.`:'')}
+}
+function renderFinalCard(){
+  const F=LIVE.final||{}, ptsOf=b=>(LIVE.standings.find(x=>x[0]===b)||[b,0])[1];
+  const [a,b]=F.a&&F.b?[[F.a,ptsOf(F.a)],[F.b,ptsOf(F.b)]]:LIVE.standings, ta=teamOf(a[0]), tb=teamOf(b[0]);
+  const done=LIVE.afterRaces>=8, W=F.winner;
+  const side=(x,t)=>`<button class="side ${x[0]===MY?'mine':''}" data-team="${t.id}"><div class="flagbig">${W===x[0]?'🏆':t.flag}</div><b>${esc(BOATS[x[0]].name)}</b><span>${W?(W===x[0]?'<b style="color:var(--gold);font-size:14px;display:inline">Vince la finale</b>':'Seconda'):x[1]+' punti'}</span></button>`;
+  $('#final-card').innerHTML=`
+    <div><div class="eyebrow" style="color:var(--gold)">Domenica 27 · la giornata decisiva</div>
+    <h3 class="h2" style="font-size:24px;margin-top:4px">${W?'Com\'è finita la finale':done?'La finale':'Se la classifica restasse così, la finale sarebbe…'}</h3></div>
+    <div class="vs">${side(a,ta)}<div class="x">VS</div>${side(b,tb)}</div>
+    ${W&&F.res?`<p style="font-size:14px">${esc(F.res)}</p>${F.s&&F.s.length?`<p class="src">Fonte: ${F.s.map(srcLink).join(', ')}</p>`:''}`:''}
+    ${!done&&a[0]==='lr1'&&b[0]==='nz1'?`<p style="font-size:14px;color:var(--ink-2)">Sarebbe <b style="color:var(--ink-1)">la rivincita di Cagliari</b>, dove a maggio Luna Rossa ha battuto Team New Zealand in finale. E sarebbe Burling contro la sua ex squadra.</p>`:''}
+    ${done?'':`<p class="note">Con 2 regate restano al massimo 20 punti a testa: la finale non è ancora decisa. <button data-go="classifica" style="color:var(--teal);font-size:13px">Prova il simulatore →</button></p>`}
+    <div class="sched"><div><b>13:45</b><span>inizio diretta TV</span></div><div><b>14:10</b><span>Regata 7</span></div><div><b>14:46</b><span>Regata 8</span></div><div><b>15:27</b><span>Finale testa a testa</span></div></div>
+    <p class="src">Orari: ${srcLink('mattino27')}. Possono cambiare in base al vento.</p>`;
+}
+function boatCell(b){
+  const t=teamOf(b),bo=BOATS[b];
+  return `<button class="boat" data-team="${t.id}"><span class="swatch" style="background:${t.c}"></span><span><span class="boat-n">${t.flag} ${esc(bo.name)}</span><br><span class="boat-s">${esc(bo.tag)}</span></span></button>`;
+}
+function renderStandings(){
+  const st=LIVE.standings, max=st[0][1];
+  $('#standings').innerHTML=st.map(([b,p],i)=>`<tr class="${i===1?'cut':''} ${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td><td class="gap">${i?'−'+(max-p):'in testa'}</td><td class="bar-cell"><div class="bar"><i style="width:${p/max*100}%;background:${teamOf(b).c}"></i></div></td></tr>`).join('')
+    +(LIVE.others||[]).map(b=>`<tr><td class="pos">–</td><td>${boatCell(b)}</td><td class="pts" style="color:var(--ink-3);font-size:16px">≤${st[st.length-1][1]}</td><td class="gap">in attesa</td><td></td></tr>`).join('');
+  const top=st.slice(0,5).some(x=>x[0]===MY)||!MY?st.slice(0,5):[...st.slice(0,4),st.find(x=>x[0]===MY)];
+  $('#mini-standings').innerHTML=top.map(([b,p])=>[b,p,st.findIndex(x=>x[0]===b)]).map(([b,p,i])=>`<tr class="${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td></tr>`).join('');
+  $('#mini-note').textContent=`Dopo ${LIVE.afterRaces} regate su 8. Le prime due vanno in finale.`;
+  $('#stand-lede').textContent=LIVE.standingsNote;
+  $('#pr1').innerHTML=PR1.map(([b,p,x])=>`<tr><td class="pos ${p==='1°'?'top':''}" style="font-size:18px">${p}</td><td>${boatCell(b)}</td><td class="note" style="text-align:right">${esc(x)}</td></tr>`).join('');
+}
+function renderFeed(){
+  $('#feed').innerHTML=LIVE.feed.map(f=>`<div class="fi ${f.hot?'hot':''}"><div class="fi-when">${f.w}</div><div><p><b>${esc(f.h)}.</b> ${esc(f.p)}</p>${f.s.length?`<div class="src">Fonte: ${f.s.map(srcLink).join(', ')}</div>`:''}</div></div>`).join('');
+  $('#updated-at').textContent=`Ultimo aggiornamento: ${LIVE.updated}.`;
+  $('#foot-upd').textContent=`Aggiornato: ${LIVE.updated}.`;
+}
+
+/* ============ REGATA PER REGATA ============ */
+function renderRR(){
+  $('#rr').innerHTML=(LIVE.races||[]).map(r=>{
+    const run=Object.keys(r.p).length>0;
+    const cells=[1,2,3].map(k=>{const b=r.p[k];
+      if(!b)return `<span class="pc empty">${run?'n.d.':'—'}</span>`;
+      const t=teamOf(b);
+      return `<button class="pc ${k===1?'p1':''} ${b===MY?'mine':''}" data-team="${t.id}" title="${esc(BOATS[b].name)}"><i style="background:${t.c}"></i><span><span class="lg">${t.flag} ${esc(SHORT[b])}</span><span class="sm">${t.flag} ${TINY[b]}</span></span></button>`}).join('');
+    const others=Object.entries(r.p).filter(([k])=>+k>3).map(([k,b])=>`${k}ª ${SHORT[b]}`);
+    const x=run?[r.x,others.length?'Poi: '+others.join(', ')+'.':''].filter(Boolean).join(' '):'Da correre.';
+    return `<div class="rr"><span class="rr-n">R${r.n}</span>${cells}<div class="rr-x">${esc(x)}${r.s&&r.s.length?' · '+r.s.map(srcLink).join(', '):''}</div></div>`;
+  }).join('');
+}
+
+/* ============ LA MIA SQUADRA ============ */
+function renderFav(){
+  const b=$('#fav-btn');
+  if(MY){b.style.setProperty('--c',teamOf(MY).c);$('#fav-lbl').textContent=SHORT[MY]}
+  else{b.style.removeProperty('--c');$('#fav-lbl').textContent='Tifo per…'}
+}
+function renderMyTeam(){
+  const el=$('#myteam');
+  if(!MY){el.innerHTML=`<button class="myteam" data-pick style="width:100%;text-align:left;border-style:dashed"><span class="big">★</span><span><b>Per chi tifi?</b><span>Scegli la tua barca: la vedrai evidenziata ovunque, in classifica e nei risultati.</span></span><span class="chip">Scegli</span></button>`;return}
+  const st=LIVE.standings,i=st.findIndex(x=>x[0]===MY),p=st[i][1],t=teamOf(MY),F=LIVE.final||{};
+  const left=Math.max(0,8-LIVE.afterRaces),gap=st[1][1]-p;
+  let msg;
+  if(F.winner)msg=MY===F.winner?'Ha vinto la Regata Preliminare di Napoli!':(MY===F.a||MY===F.b)?'Finalista a Napoli: ha perso solo il testa a testa.':`Chiude la regata di flotta ${i+1}ª con ${p} punti.`;
+  else if(i===0)msg=`In testa, con ${p-st[1][1]} punti sulla seconda.${left?' Oggi sarebbe in finale.':' È in finale.'}`;
+  else if(i===1)msg=`${left?'Oggi sarebbe in finale':'È in finale'}. ${st[0][1]-p} punti dalla prima.`;
+  else if(!left)msg=`Fuori dalla finale: chiude ${i+1}ª.`;
+  else msg=`A ${gap} punti dal 2° posto, l'ultimo che vale la finale. `+(gap<8*left?'Ancora in corsa.':gap===8*left?'Serve un miracolo e uno spareggio.':'Non può più arrivare in finale.');
+  el.innerHTML=`<div class="myteam" style="border-color:${t.c}"><span class="big">${i+1}ª<small> · ${p} pt</small></span><span><b>${t.flag} ${esc(BOATS[MY].name)}</b><span>${esc(msg)}</span></span><button class="chip" data-pick>Cambia</button></div>`;
+}
+function pickSheet(){
+  const order=LIVE.standings.map(x=>x[0]);
+  openSheet(`
+    <div class="sheet-top"><span class="team-flag" style="font-size:40px">★</span><div><div class="sheet-name" id="sheet-name">Per chi tifi?</div><div class="sheet-meta">La scelta resta salvata su questo telefono</div></div><button class="close" aria-label="Chiudi" data-close>×</button></div>
+    <div class="sheet-body"><div class="pick">${order.map(b=>{const t=teamOf(b);return `<button data-my="${b}" aria-pressed="${b===MY}"><span class="swatch" style="background:${t.c}"></span><span style="font-size:22px">${t.flag}</span><span><b style="font-family:var(--display);font-size:18px;text-transform:uppercase">${esc(BOATS[b].name)}</b><br><span class="note">${esc(BOATS[b].tag)}</span></span></button>`}).join('')}
+    ${MY?'<button data-my="" style="justify-content:center;color:var(--ink-2)">Nessuna, grazie</button>':''}</div></div>`,'#E9B44C');
+}
+function setMy(b){
+  MY=b||null;store.set('ac38-my',MY);closeSheet();renderMine();
+  if(MY)toast(`Ora tifi per ${BOATS[MY].name} ★`);
+}
+function renderMine(){renderFav();renderMyTeam();renderStandings();renderFinalCard();renderRR()}
+
+/* ============ CAMPIONE E CORIANDOLI ============ */
+function renderChamp(){
+  const F=LIVE.final||{},el=$('#champ');
+  if(!F.winner){el.innerHTML='';return}
+  const t=teamOf(F.winner);
+  el.innerHTML=`<div class="champ"><div class="trophy">🏆</div><div class="eyebrow" style="color:var(--gold);margin-top:6px">Vincitore della Regata Preliminare di Napoli</div><h2>${t.flag} ${esc(BOATS[F.winner].name)}</h2>${F.res?`<p>${esc(F.res)}</p>`:''}<button class="chip" data-confetti style="margin-top:12px">🎉 Festeggia</button></div>`;
+}
+function confetti(colors){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const c=$('#confetti'),x=c.getContext('2d');c.hidden=false;
+  const W=c.width=innerWidth,H=c.height=innerHeight;
+  const cols=colors||['#43D1C6','#E9B44C','#FF7A45','#E6F0F5'];
+  const P=Array.from({length:160},()=>({x:Math.random()*W,y:-20-Math.random()*H*.6,r:4+Math.random()*5,vx:-1.5+Math.random()*3,vy:2+Math.random()*3.5,a:Math.random()*6,va:-.2+Math.random()*.4,c:cols[Math.floor(Math.random()*cols.length)]}));
+  const t0=performance.now();
+  (function f(t){x.clearRect(0,0,W,H);P.forEach(p=>{p.x+=p.vx;p.y+=p.vy;p.a+=p.va;x.save();x.translate(p.x,p.y);x.rotate(p.a);x.fillStyle=p.c;x.fillRect(-p.r/2,-p.r/4,p.r,p.r/2);x.restore()});
+    if(t-t0<4200)requestAnimationFrame(f);else{x.clearRect(0,0,W,H);c.hidden=true}})(t0);
+}
+function celebrate(){const F=LIVE.final||{};if(!F.winner)return;const t=teamOf(F.winner);confetti([t.c,'#E9B44C','#FFFFFF',t.c])}
+
+/* ============ CONDIVIDI ============ */
+async function doShare(){
+  if(navigator.share){try{await navigator.share({title:'Coppa America a Napoli',text:SHARE_TEXT,url:SHARE_URL});return}catch(e){if(e&&e.name==='AbortError')return}}
+  doCopy();
+}
+function doCopy(){
+  const ok=()=>toast('Link copiato: incollalo su WhatsApp');
+  if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(SHARE_URL).then(ok,()=>toast(SHARE_URL));
+  else toast(SHARE_URL);
+}
+
+/* ============ IMMAGINI: hero e mappa ============ */
+function renderHeroArt(){
+  const el=$('#hero-art');if(!el)return;
+  const W=el.clientWidth||800,H=el.clientHeight||360;
+  let vb;
+  if(W/H>1.2){const hu=725,wu=W*hu/H;vb=`${(210-.76*wu).toFixed(0)} 150 ${wu.toFixed(0)} ${hu}`}
+  else{const k=690/245,wu=W*k,hu=H*k;vb=`${(205-.5*wu).toFixed(0)} 128 ${wu.toFixed(0)} ${hu.toFixed(0)}`}
+  if(!el.firstChild)el.innerHTML=boatSVG('hr',{vb,par:'xMidYMid slice',anim:true});
+  else el.firstElementChild.setAttribute('viewBox',vb);
+}
+function mapSVG(){
+  const pin=(n,x,y)=>`<g><circle cx="${x}" cy="${y}" r="11" fill="#E9B44C" stroke="#06131D" stroke-width="2"/><text x="${x}" y="${y+4.5}" font-size="13" font-weight="800" fill="#06131D" text-anchor="middle" font-family="Barlow Condensed,sans-serif">${n}</text></g>`;
+  return `<svg viewBox="0 0 640 360" role="img" aria-label="Schema del lungomare di Napoli con il campo di regata e i punti di osservazione">
+  <title>Il campo di regata tra Posillipo e Castel dell'Ovo</title>
+  <rect width="640" height="360" fill="#0B3148"/>
+  <path d="M0 0 H640 V118 L560 126 L505 138 L488 146 L486 176 L478 178 L476 146 L440 142 L336 140 Q326 152 316 140 L160 146 L138 150 L130 160 L118 158 L110 168 L70 196 L30 236 L0 262 Z" fill="#2C4A5D" stroke="#6FA3BC" stroke-opacity=".6" stroke-width="1.5"/>
+  <path d="M470 176 H496 V214 Q496 224 486 224 H480 Q470 224 470 214 Z" fill="#2B4A5E" stroke="#93AEBE" stroke-width="1"/>
+  <path d="M138 150 L150 172 L162 170" fill="none" stroke="#93AEBE" stroke-width="2"/>
+  <path d="M160 146 L336 140 M346 140 L440 142" stroke="#E6F0F5" stroke-opacity=".35" stroke-width="2" stroke-dasharray="1 5" stroke-linecap="round"/>
+  <rect x="120" y="196" width="330" height="120" rx="14" fill="rgba(67,209,198,.10)" stroke="#43D1C6" stroke-width="2" stroke-dasharray="7 6"/>
+  <text x="285" y="262" font-size="16" font-weight="700" fill="#43D1C6" text-anchor="middle" font-family="Barlow Condensed,sans-serif" letter-spacing="1.5">CAMPO DI REGATA</text>
+  <text x="285" y="280" font-size="12" fill="#93AEBE" text-anchor="middle">posizione indicativa</text>
+  <text x="40" y="150" font-size="14" font-weight="700" fill="#E6F0F5" font-family="Barlow Condensed,sans-serif" letter-spacing="1">POSILLIPO</text>
+  <text x="250" y="100" font-size="14" font-weight="700" fill="#E6F0F5" font-family="Barlow Condensed,sans-serif" letter-spacing="1">CHIAIA · VILLA COMUNALE</text>
+  <text x="520" y="100" font-size="14" font-weight="700" fill="#E6F0F5" font-family="Barlow Condensed,sans-serif" letter-spacing="1">SANTA LUCIA</text>
+  <text x="506" y="206" font-size="12" fill="#E6F0F5">Castel dell'Ovo</text>
+  <text x="560" y="300" font-size="12" fill="#93AEBE" text-anchor="middle">verso il Vesuvio →</text>
+  <g font-size="12" fill="#93AEBE"><text x="24" y="340">N ↑</text></g>
+  ${pin(1,483,192)}${pin(2,326,160)}${pin(3,232,160)}${pin(4,128,178)}
+  </svg>`;
+}
+
+/* ============ DATI LIVE ============ */
+let lastPull=0;
+async function pullLive(quiet){
+  if(!/^https?:$/.test(location.protocol))return;
+  try{
+    const r=await fetch('/live.json?t='+Date.now(),{cache:'no-store'});
+    if(!r.ok)return;
+    const d=await r.json();lastPull=Date.now();
+    if(!d||!d.standings||d.updated===LIVE.updated)return;
+    const hadWin=!!(LIVE.final&&LIVE.final.winner);
+    LIVE=d;renderData();
+    if(!quiet)toast(`Nuovi risultati · ${d.updated}`);
+    if(d.final&&d.final.winner&&!hadWin)celebrate();
+  }catch(e){}
+}
+function renderData(){renderDays();renderRaces();renderStandings();renderFinalCard();renderSim();renderFeed();renderRR();renderMyTeam();renderFav();renderChamp();renderStatus()}
+
+/* ============ SIMULATORE ============ */
+function renderSim(){
+  if(LIVE.afterRaces>=8){$('#sim-box').hidden=true;return}
+  const st=LIVE.standings;
+  $('#sim').innerHTML=st.map(([b,p],i)=>{
+    const opt=v=>Array.from({length:9},(_,k)=>`<option value="${k+1}" ${k+1===v?'selected':''}>${k+1}°</option>`).join('');
+    return `<div class="sim-row" data-b="${b}" data-p="${p}"><span>${teamOf(b).flag} ${esc(BOATS[b].name)} <span class="note">${p}</span></span><select id="s7-${b}" aria-label="Regata 7, ${esc(BOATS[b].name)}">${opt(i+1)}</select><select id="s8-${b}" aria-label="Regata 8, ${esc(BOATS[b].name)}">${opt(i+1)}</select><span class="p"></span></div>`;
+  }).join('');
+  calcSim();
+}
+function calcSim(){
+  const rows=[...document.querySelectorAll('.sim-row[data-b]')];
+  const used=[[],[]];let dup=false;
+  const res=rows.map(r=>{
+    const s=r.querySelectorAll('select'),a=+s[0].value,b=+s[1].value;
+    if(used[0].includes(a)||used[1].includes(b))dup=true;used[0].push(a);used[1].push(b);
+    const tot=+r.dataset.p+PTS(a)+PTS(b);r.querySelector('.p').textContent=tot;
+    return {b:r.dataset.b,tot};
+  }).sort((x,y)=>y.tot-x.tot);
+  const f=res.slice(0,2).map(x=>`${teamOf(x.b).flag} ${esc(BOATS[x.b].name)} (${x.tot})`);
+  $('#sim-out').innerHTML=`In finale andrebbero <b>${f[0]}</b> e <b>${f[1]}</b>.${res[1].tot===res[2].tot?'<div class="warn">Pareggio per il secondo posto: in quel caso decidono le regole di spareggio ufficiali.</div>':''}${dup?'<div class="warn">Attenzione: due barche non possono arrivare nella stessa posizione nella stessa regata.</div>':''}<div class="note" style="margin-top:4px">Il simulatore include tutte e 9 le barche.</div>`;
+}
+
+/* ============ SQUADRE ============ */
+function sailorBtn(id,c){const s=SAILORS[id];return `<button class="sailor" data-sailor="${id}"><span class="avatar" style="background:${c}">${initials(s.n)}</span><span><span class="sailor-n">${s.f} ${esc(s.n)}</span><br><span class="sailor-r">${esc(s.r)}</span></span><span class="chev">›</span></button>`}
+function renderTeams(){
+  $('#rivals').innerHTML=RIVALS.map(r=>`<button class="rival" data-sailor="${r.s}"><b>${esc(r.h)}</b><p>${esc(r.p)}</p><span class="note" style="color:var(--teal)">Scheda di ${esc(SAILORS[r.s].n)} →</span></button>`).join('');
+  $('#teams').innerHTML=TEAMS.map(t=>`
+    <article class="team" style="--c:${t.c}">
+      <div class="team-head"><span class="team-flag">${t.flag}</span><div><div class="team-name">${esc(t.name)}</div><span class="team-role ${t.role==='Defender'?'def':''}">${esc(t.role)}</span></div></div>
+      <p class="team-blurb">${esc(t.blurb)}</p>
+      <button class="team-more" data-team="${t.id}">Scheda squadra →</button>
+      ${t.boats.map(b=>{const bo=BOATS[b];return `<div class="crew"><div class="crew-h"><b>${esc(bo.name)}</b><span>${esc(bo.tag)}</span></div><div>${bo.crew.map(id=>sailorBtn(id,t.c)).join('')}</div>${bo.note?`<p class="note" style="margin-top:6px">${esc(bo.note)}</p>`:''}</div>`}).join('')}
+    </article>`).join('');
+}
+
+/* ============ GUIDA / EXTRA ============ */
+function renderGuide(){
+  $('#gloss').innerHTML=GLOSS.map(([a,b])=>`<div class="term"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join('');
+  $('#prog-tl').innerHTML=`
+    <div class="tl past"><div class="tl-d">Gio 24</div><div class="tl-dot"></div><div class="tl-b"><b>Prove ufficiali</b><p>Regate di allenamento, non contano.</p></div></div>
+    <div class="tl" id="ptl0"><div class="tl-d">Ven 25</div><div class="tl-dot"></div><div class="tl-b"><b>Giorno 1 · regate 1–2</b><p>Previste 3 regate, corse 2 per il vento instabile.</p></div></div>
+    <div class="tl" id="ptl1"><div class="tl-d">Sab 26</div><div class="tl-dot"></div><div class="tl-b"><b>Giorno 2 · regate 3–6</b><p>Quattro regate, compresa quella saltata venerdì.</p></div></div>
+    <div class="tl" id="ptl2"><div class="tl-d">Dom 27</div><div class="tl-dot"></div><div class="tl-b"><b>Giorno 3 · regate 7–8 e finale</b><p>Alle 14:10 e alle 14:46 le ultime due regate di flotta. Alle 15:27 le prime due si sfidano in un <b>match race</b>: una sola regata, barca contro barca, e chi vince prende tutto.</p></div></div>`;
+  $('#preview-svg').innerHTML=boatSVG('pv');
+  $('#history').innerHTML=HISTORY.map(([d,h,p])=>`<div class="tl past"><div class="tl-d">${d}</div><div class="tl-dot"></div><div class="tl-b"><b>${esc(h)}</b><p>${esc(p)}</p></div></div>`).join('');
+  $('#trivia').innerHTML=TRIVIA.map(([a,b])=>`<div class="term"><b>${esc(a)}</b><p>${esc(b)}</p></div>`).join('');
+  renderQuiz();
+}
+function renderSpeed(){
+  const kn=+$('#kn').value, kmh=Math.round(kn*1.852);
+  $('#kn-v').textContent=`${kn} nodi`;$('#kmh-v').textContent=`= ${kmh} km/h`;
+  $('#kn-cmp').textContent=kmh<20?'Come una bici tranquilla. A questa velocità un AC40 fa fatica a volare.':kmh<35?'Come una bici da corsa in discesa. Più o meno qui la barca si alza sui foil.':kmh<55?'Come un motorino in città.':kmh<75?'Come un\'auto su una strada extraurbana.':'Come un\'auto su una statale veloce, ma in mare e senza strada. È la zona delle punte massime.';
+}
+let qScore=0,qDone=0;
+function renderQuiz(){
+  $('#quiz').innerHTML=QUIZ.map((x,i)=>`<div class="q" data-q="${i}"><p>${i+1}. ${esc(x.q)}</p><div class="opts">${x.o.map((o,j)=>`<button data-a="${j}">${esc(o)}</button>`).join('')}</div><div class="why" hidden></div></div>`).join('');
+  $('#q-score').textContent=`0/${QUIZ.length}`;
+}
+function answer(btn){
+  const q=btn.closest('.q'),x=QUIZ[+q.dataset.q];
+  if(q.dataset.done)return;q.dataset.done=1;qDone++;
+  const ok=+btn.dataset.a===x.a;if(ok)qScore++;
+  q.querySelectorAll('button').forEach(b=>{if(+b.dataset.a===x.a)b.classList.add('ok');else if(b===btn)b.classList.add('ko')});
+  const w=q.querySelector('.why');w.hidden=false;w.textContent=(ok?'Giusto! ':'No: ')+x.w;
+  $('#q-score').textContent=`${qScore}/${QUIZ.length}`;
+  if(qDone===QUIZ.length){const m=qScore===QUIZ.length?'Perfetto: puoi spiegarla tu agli amici.':qScore>=5?'Ottimo, sei pronto per la finale.':'Rileggi la guida e riprova.';$('#quiz').insertAdjacentHTML('beforeend',`<p class="example">${qScore} su ${QUIZ.length}. ${m} <button class="chip" id="q-reset" style="margin-left:6px">Rifai il quiz</button></p>`)}
+}
+function renderCountdown(){
+  const d=Math.max(0,Date.UTC(2027,6,10,12,0,0)-Date.now());
+  $('#countdown').innerHTML=`<div><b>${Math.floor(d/864e5)}</b><span>giorni</span></div><div><b>${Math.floor(d%864e5/36e5)}</b><span>ore</span></div><div><b>${Math.floor(d%36e5/6e4)}</b><span>minuti</span></div>`;
+}
+function renderSources(){$('#sources').innerHTML=Object.values(S).map(s=>`<li><a href="${s.u}" target="_blank" rel="noopener">${esc(s.t)}</a></li>`).join('')}
+
+/* ============ SCHEDE ============ */
+let lastFocus=null;
+function openSheet(html,color){lastFocus=document.activeElement;const sh=$('#sheet');sh.style.setProperty('--c',color);sh.innerHTML=html;$('#scrim').hidden=false;document.body.style.overflow='hidden';sh.scrollTop=0;sh.focus()}
+function closeSheet(){if($('#scrim').hidden)return;$('#scrim').hidden=true;if($('#bx').hidden)document.body.style.overflow='';lastFocus&&lastFocus.focus&&lastFocus.focus()}
+function roleText(r){r=r.toLowerCase();if(r.includes('trimmer')&&!r.includes('timon'))return['trimmer','Regola la vela o l\'altezza di volo: decide quanto la barca “vola” sopra l\'acqua.'];if(r.includes('timon')||r.includes('skipper'))return['timoniere','Guida la barca dal suo lato. I due timonieri si alternano a ogni virata, e chi guida sceglie anche la tattica.'];return['membro d\'equipaggio','Fa parte dell\'equipaggio di quattro: due timonieri e due trimmer.']}
+function sailorSheet(id){
+  const s=SAILORS[id],bId=Object.keys(BOATS).find(b=>BOATS[b].crew.includes(id)),bo=BOATS[bId],t=teamOf(bId),rt=roleText(s.r);
+  openSheet(`
+    <div class="sheet-top"><span class="avatar" style="background:${t.c}">${initials(s.n)}</span><div><div class="sheet-name" id="sheet-name">${esc(s.n)}</div><div class="sheet-meta">${s.f} ${esc(s.nat)} · ${esc(s.r)}</div></div><button class="close" aria-label="Chiudi" data-close>×</button></div>
+    <div class="sheet-body">
+      <div class="kv"><div><span>Squadra</span><b>${t.flag} ${esc(t.name)}</b></div><div><span>Barca</span><b>${esc(bo.name)}</b></div><div><span>Ruolo</span><b>${esc(s.r)}</b></div></div>
+      <div><h4>Chi è</h4><p>${esc(s.bio)}</p></div>
+      ${s.wins.length?`<div><h4>Palmarès</h4><ul>${s.wins.map(w=>`<li>${esc(w)}</li>`).join('')}</ul></div>`:''}
+      <div><h4>A Napoli</h4><p>${esc(s.napoli)}</p></div>
+      <div><h4>Compagni di barca</h4><div class="mates">${bo.crew.filter(x=>x!==id).map(m=>`<button class="mate" data-sailor="${m}">${SAILORS[m].f} ${esc(SAILORS[m].n)}</button>`).join('')}</div></div>
+      <div><h4>Cosa fa un ${rt[0]}</h4><p style="color:var(--ink-2);font-size:14px">${rt[1]}</p><button class="chip" data-boat="crew" style="margin-top:8px">⛵ Guarda dove sta sulla barca</button></div>
+      <p class="src">Fonte: ${srcLink(s.src)}${bo.src!==s.src?', '+srcLink(bo.src):''}</p>
+    </div>`,t.c);
+}
+function teamSheet(id){
+  const t=TEAMS.find(x=>x.id===id);
+  const pts=t.boats.map(b=>{const i=LIVE.standings.findIndex(x=>x[0]===b);return `<div><span>${esc(BOATS[b].name)}</span><b>${i<0?'in attesa':`${i+1}° · ${LIVE.standings[i][1]} punti`}</b></div>`}).join('');
+  openSheet(`
+    <div class="sheet-top"><span class="team-flag" style="font-size:44px">${t.flag}</span><div><div class="sheet-name" id="sheet-name">${esc(t.name)}</div><div class="sheet-meta">${esc(t.country)} · ${esc(t.role)}</div></div><button class="close" aria-label="Chiudi" data-close>×</button></div>
+    <div class="sheet-body">
+      <p>${esc(t.blurb)}</p>
+      <div><h4>Classifica a Napoli</h4><div class="kv">${pts}</div></div>
+      <div><h4>Da sapere</h4><ul>${t.about.map(a=>`<li>${esc(a)}</li>`).join('')}</ul></div>
+      <div><h4>Riferimento</h4><p>${esc(t.lead)}</p></div>
+      ${t.boats.map(b=>`<div><h4>${esc(BOATS[b].name)} · ${esc(BOATS[b].tag)}</h4><div class="mates">${BOATS[b].crew.map(m=>`<button class="mate" data-sailor="${m}">${SAILORS[m].f} ${esc(SAILORS[m].n)}</button>`).join('')}</div></div>`).join('')}
+      <p class="src">Fonte: ${[...new Set(t.boats.map(b=>BOATS[b].src))].map(srcLink).join(', ')}</p>
+    </div>`,t.c);
+}
+
+/* ============ ESPLORA LA BARCA ============ */
+const REL={top:['main'],deck:['main'],crew:['hull'],batt:['hull'],water:['hull','arm','wing','rudder']};
+let bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
+const bx=()=>$('#bx');
+function stepCenter(i){const el=document.querySelector(`.bx-step[data-i="${i}"]`);return el.offsetTop+$('.bx-track').offsetTop+el.offsetHeight/2}
+function buildBx(){
+  $('#bx-stage').innerHTML=boatSVG('bx');
+  bxSvg=$('#bx-stage svg');
+  $('#bx-steps').innerHTML=BOAT_STEPS.map((s,i)=>`<section class="bx-step" data-i="${i}"><div class="bx-card"><div class="k">${i&&i<BOAT_STEPS.length-1?`${i} di ${BOAT_STEPS.length-2} · `:''}${esc(s.k)}</div><h3>${esc(s.h)}</h3><p>${esc(s.p)}</p><span class="num">${esc(s.num)}</span><p class="fun">${s.fun}</p>${i===0?'<span class="bx-hint">↓ Scorri per scendere</span>':''}${i===BOAT_STEPS.length-1?'<button class="btn" data-bx-close style="margin-top:12px">Torna alla regata</button>':''}</div></section>`).join('');
+  $('#bx-rail').innerHTML=BOAT_STEPS.map((s,i)=>`<button data-bx-go="${i}" aria-label="${esc(s.h)}"></button>`).join('');
+  bx().addEventListener('scroll',()=>{cancelAnimationFrame(bxRaf);bxRaf=requestAnimationFrame(updateBx)},{passive:true});
+  window.addEventListener('resize',()=>{if(!bx().hidden)updateBx()});
+  bxBuilt=true;
+}
+function openBx(jump){
+  bxOpener=document.activeElement;
+  closeSheet();
+  if(!bxBuilt)buildBx();
+  bx().hidden=false;document.body.style.overflow='hidden';
+  bxActive=-1;
+  const idx=jump?BOAT_STEPS.findIndex(s=>s.id===jump):0;
+  bx().scrollTop=idx>0?stepCenter(idx)-bx().clientHeight*0.55:0;
+  updateBx();$('#bx .bx-x').focus();
+}
+function closeBx(){if(bx().hidden)return;bx().hidden=true;document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
+function updateBx(){
+  const sc=bx(),stage=$('#bx-stage');
+  const mid=sc.scrollTop+sc.clientHeight*0.55;
+  const c=BOAT_STEPS.map((_,i)=>stepCenter(i));
+  let i=0;while(i<c.length-1&&mid>c[i+1])i++;
+  const a=BOAT_STEPS[i],b=BOAT_STEPS[Math.min(i+1,BOAT_STEPS.length-1)];
+  let t=i<c.length-1?(mid-c[i])/(c[i+1]-c[i]):0;
+  t=Math.max(0,Math.min(1,t));t=t*t*(3-2*t);
+  const L=(p,q)=>p+(q-p)*t;
+  const x=L(a.x,b.x),y=L(a.y,b.y),z=L(a.z,b.z);
+  const W=stage.clientWidth||400,H=stage.clientHeight||700;
+  const base=W>H?Math.max(420,860*W/H):420;
+  const vw=base/z,vh=vw*H/W;
+  const oy=W>H?0:vh*0.12;
+  bxSvg.setAttribute('viewBox',`${(x-vw/2).toFixed(1)} ${(y-vh/2+oy).toFixed(1)} ${vw.toFixed(1)} ${vh.toFixed(1)}`);
+  const alt=(WATER-y)/UNIT,el=$('#bx-alt');
+  el.textContent=alt>=0.05?`+${alt.toFixed(1).replace('.',',')} m sul mare`:`${alt.toFixed(1).replace('.',',').replace('-','−')} m sott'acqua`;
+  el.classList.toggle('under',alt<0.05);
+  const act=t>0.5?Math.min(i+1,BOAT_STEPS.length-1):i;
+  if(act!==bxActive){
+    bxActive=act;const id=BOAT_STEPS[act].id;
+    bxSvg.classList.toggle('focus',!!id);
+    const rel=REL[id]||[];
+    bxSvg.querySelectorAll('.part').forEach(g=>g.classList.toggle('on',g.dataset.part===id||rel.includes(g.dataset.part)));
+    document.querySelectorAll('#bx-rail button').forEach((btn,k)=>btn.classList.toggle('on',k===act));
+  }
+}
+
+/* ============ NAVIGAZIONE ============ */
+const PANELS=['oggi','classifica','squadre','guida','extra'];
+function show(id,push){
+  if(!PANELS.includes(id))id='oggi';
+  PANELS.forEach(p=>{document.getElementById(p).hidden=p!==id;document.getElementById('t-'+p).setAttribute('aria-selected',p===id)});
+  if(push){try{history.replaceState(null,'','#'+id)}catch(e){}window.scrollTo({top:0})}
+}
+document.addEventListener('click',e=>{
+  const T=e.target;
+  if(T.closest('[data-bx-close]')){closeBx();return}
+  const my=T.closest('[data-my]');if(my){setMy(my.dataset.my);return}
+  if(T.closest('[data-pick]')){pickSheet();return}
+  if(T.closest('[data-share]')){doShare();return}
+  if(T.closest('[data-copy]')){doCopy();return}
+  if(T.closest('[data-confetti]')){celebrate();return}
+  const anc=T.closest('[data-anchor]');if(anc){closeSheet();show(anc.dataset.go,false);try{history.replaceState(null,'','#'+anc.dataset.go)}catch(e){}const el=document.getElementById(anc.dataset.anchor);el&&el.scrollIntoView({behavior:'smooth',block:'start'});return}
+  const go2=T.closest('[data-bx-go]');if(go2){bx().scrollTo({top:stepCenter(+go2.dataset.bxGo)-bx().clientHeight*0.55,behavior:'smooth'});return}
+  const bo=T.closest('[data-boat]');if(bo){openBx(bo.dataset.boat);return}
+  if(T.id==='q-reset'){qScore=0;qDone=0;renderQuiz();return}
+  const qa=T.closest('.q button');if(qa){answer(qa);return}
+  const tab=T.closest('.tab');if(tab){show(tab.id.slice(2),true);return}
+  const go=T.closest('[data-go]');if(go){closeSheet();show(go.dataset.go,true);return}
+  if(T.closest('[data-close]')||T.id==='scrim'){closeSheet();return}
+  const sa=T.closest('[data-sailor]');if(sa){sailorSheet(sa.dataset.sailor);return}
+  const te=T.closest('[data-team]');if(te){teamSheet(te.dataset.team);return}
+});
+document.addEventListener('change',e=>{if(e.target.closest('#sim'))calcSim()});
+document.addEventListener('input',e=>{if(e.target.id==='kn')renderSpeed()});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){if(!$('#scrim').hidden)closeSheet();else closeBx()}
+  const box=!$('#scrim').hidden?$('#sheet'):(!bx().hidden?bx():null);
+  if(e.key==='Tab'&&box){const f=[...box.querySelectorAll('button,a,select,input')];if(!f.length)return;
+    if(e.shiftKey&&document.activeElement===f[0]){e.preventDefault();f[f.length-1].focus()}
+    else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}}
+});
+
+renderData();
+renderTeams();renderGuide();renderSpeed();renderCountdown();renderSources();renderHeroArt();
+$('#map').innerHTML=mapSVG();
+$('#wa-link').href='https://wa.me/?text='+encodeURIComponent(SHARE_TEXT+' '+SHARE_URL);
+show((location.hash||'').slice(1)||'oggi',false);
+addEventListener('resize',()=>{cancelAnimationFrame(renderHeroArt.r);renderHeroArt.r=requestAnimationFrame(renderHeroArt)});
+pullLive(true);
+setInterval(()=>{if(!document.hidden)pullLive()},60000);
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastPull>30000)pullLive()});
+setInterval(()=>{renderStatus();renderRaces();renderDays()},20000);
+setInterval(()=>{const n=romeNow();$('#clock').innerHTML=`${n.hm}<span>NAPOLI</span>`},1000);
+setInterval(renderCountdown,30000);
+</script>
+</body>
+</html>
