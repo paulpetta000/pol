@@ -42,7 +42,7 @@ button{background:none;border:0;cursor:pointer}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:.02em}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,19,29,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top-row{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
-.mark{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.06em;color:var(--teal);line-height:1}
+.mark{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);line-height:1;white-space:nowrap}
 .mark small{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--ink-2);text-transform:uppercase;margin-top:3px}
 .status{margin-left:auto;display:flex;align-items:center;gap:10px;min-width:0}
 .pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:99px;white-space:nowrap}
@@ -58,7 +58,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:.02em}
 .tab{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);padding:11px 14px 12px;border-bottom:2px solid transparent;white-space:nowrap}
 .tab:hover{color:var(--ink-1)}
 .tab[aria-selected="true"]{color:var(--teal);border-bottom-color:var(--teal)}
-@media(max-width:480px){.clock span{display:none}.mark small{max-width:120px}.pill{font-size:12px;padding:4px 9px}}
+@media(max-width:480px){.clock span{display:none}.mark{font-size:17px}.mark small{font-size:10px;letter-spacing:.08em}.mark .hm{display:none}.top-row{gap:8px}.status{gap:6px}.hbtn{padding:6px 9px}.pill{font-size:12px;padding:4px 9px}}
 main{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
 .stack{display:flex;flex-direction:column;gap:22px}
 .eyebrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
@@ -364,7 +364,7 @@ tr.mine .boat-n::after{content:" ★";color:var(--gold)}
 <body>
 <header class="top">
 <div class="top-row">
-<div class="mark">AC38<small>Napoli · Preliminare</small></div>
+<div class="mark">Coppa America<small>38ª edizione · <span class="hm">barche </span>AC40</small></div>
 <div class="status">
 <span id="pill" class="pill wait"><span class="pulse"></span><span id="pill-t">Napoli</span></span>
 <button class="hbtn" id="fav-btn" data-pick aria-label="Scegli la tua squadra"><span class="star" aria-hidden="true">★</span><span class="lbl" id="fav-lbl">Tifo per…</span></button>
@@ -1293,7 +1293,7 @@ ${t.boats.map(b=>`<div><h4>${esc(BOATS[b].name)} · ${esc(BOATS[b].tag)}</h4><di
 </div>`,t.c);
 }
 const REL={top:['main'],deck:['main'],crew:['hull'],batt:['hull'],water:['hull','arm','wing','rudder']};
-let bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
+let B3=null,bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
 const bx=()=>$('#bx');
 function stepCenter(i){const el=document.querySelector(`.bx-step[data-i="${i}"]`);return el.offsetTop+$('.bx-track').offsetTop+el.offsetHeight/2}
 function buildBx(){
@@ -1304,6 +1304,7 @@ $('#bx-rail').innerHTML=BOAT_STEPS.map((s,i)=>`<button data-bx-go="${i}" aria-la
 bx().addEventListener('scroll',()=>{cancelAnimationFrame(bxRaf);bxRaf=requestAnimationFrame(updateBx)},{passive:true});
 window.addEventListener('resize',()=>{if(!bx().hidden)updateBx()});
 bxBuilt=true;
+import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'));bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
 }
 function openBx(jump){
 bxOpener=document.activeElement;
@@ -1313,9 +1314,9 @@ bx().hidden=false;document.body.style.overflow='hidden';
 bxActive=-1;
 const idx=jump?BOAT_STEPS.findIndex(s=>s.id===jump):0;
 bx().scrollTop=idx>0?stepCenter(idx)-bx().clientHeight*0.55:0;
-updateBx();$('#bx .bx-x').focus();
+updateBx();B3&&B3.start();$('#bx .bx-x').focus();
 }
-function closeBx(){if(bx().hidden)return;bx().hidden=true;document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
+function closeBx(){if(bx().hidden)return;bx().hidden=true;B3&&B3.stop();document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
 function updateBx(){
 const sc=bx(),stage=$('#bx-stage');
 const mid=sc.scrollTop+sc.clientHeight*0.55;
@@ -1330,16 +1331,16 @@ const W=stage.clientWidth||400,H=stage.clientHeight||700;
 const base=W>H?Math.max(420,860*W/H):420;
 const vw=base/z,vh=vw*H/W;
 const oy=W>H?0:vh*0.12;
-bxSvg.setAttribute('viewBox',`${(x-vw/2).toFixed(1)} ${(y-vh/2+oy).toFixed(1)} ${vw.toFixed(1)} ${vh.toFixed(1)}`);
-const alt=(WATER-y)/UNIT,el=$('#bx-alt');
+if(B3)B3.view(i,t);else bxSvg.setAttribute('viewBox',`${(x-vw/2).toFixed(1)} ${(y-vh/2+oy).toFixed(1)} ${vw.toFixed(1)} ${vh.toFixed(1)}`);
+const alt=B3?B3.altitude():(WATER-y)/UNIT,el=$('#bx-alt');
 el.textContent=alt>=0.05?`+${alt.toFixed(1).replace('.',',')} m sul mare`:`${alt.toFixed(1).replace('.',',').replace('-','−')} m sott'acqua`;
 el.classList.toggle('under',alt<0.05);
 const act=t>0.5?Math.min(i+1,BOAT_STEPS.length-1):i;
 if(act!==bxActive){
 bxActive=act;const id=BOAT_STEPS[act].id;
-bxSvg.classList.toggle('focus',!!id);
 const rel=REL[id]||[];
-bxSvg.querySelectorAll('.part').forEach(g=>g.classList.toggle('on',g.dataset.part===id||rel.includes(g.dataset.part)));
+if(B3)B3.active(id,rel);else{bxSvg.classList.toggle('focus',!!id);
+bxSvg.querySelectorAll('.part').forEach(g=>g.classList.toggle('on',g.dataset.part===id||rel.includes(g.dataset.part)))}
 document.querySelectorAll('#bx-rail button').forEach((btn,k)=>btn.classList.toggle('on',k===act));
 }
 }
@@ -1392,5 +1393,6 @@ setInterval(()=>{const n=romeNow();$('#clock').innerHTML=`${n.hm}<span>NAPOLI</s
 setInterval(renderCountdown,30000);
 })();
 </script>
+<script type="importmap">{"imports":{"three":"/vendor/three.module.min.js","three/addons/":"/vendor/addons/"}}</script>
 </body>
 </html>
