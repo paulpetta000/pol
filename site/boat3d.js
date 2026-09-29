@@ -412,7 +412,7 @@ export function mount(stage, opts = {}) {
   boat.rotation.x = WIND * THREE.MathUtils.degToRad(2.5);
   boat.traverse(o => { if (o.isMesh && !o.userData.noClone) { o.material = o.material.clone(); o.material.userData.baseEm = o.material.emissive ? o.material.emissive.clone() : null; } });
 
-  /* ----- spruzzi e scia ----- */
+  /* ----- spruzzi ----- */
   const sprite = canvasTex(64, 64, (x, w) => { const g = x.createRadialGradient(w / 2, w / 2, 0, w / 2, w / 2, w / 2); g.addColorStop(0, 'rgba(255,255,255,1)'); g.addColorStop(.4, 'rgba(255,255,255,.55)'); g.addColorStop(1, 'rgba(255,255,255,0)'); x.fillStyle = g; x.fillRect(0, 0, w, w); });
   const NP = 700, pPos = new Float32Array(NP * 3), pVel = new Float32Array(NP * 3), pLife = new Float32Array(NP), pSrc = new Uint8Array(NP);
   const sprayG = new THREE.BufferGeometry(); sprayG.setAttribute('position', new THREE.BufferAttribute(pPos, 3));
@@ -428,13 +428,6 @@ export function mount(stage, opts = {}) {
   };
   for (let i = 0; i < NP; i++) { respawn(i); pLife[i] *= Math.random(); }
 
-  const foam = canvasTex(256, 1024, (x, w, h) => {
-    x.clearRect(0, 0, w, h);
-    for (let i = 0; i < 2600; i++) { const y = Math.random() * h, spread = (y / h) * w * .45 + 6; const px = w / 2 + (Math.random() - .5) * 2 * spread * Math.random(); x.fillStyle = `rgba(255,255,255,${(1 - y / h) * .5 * Math.random()})`; x.beginPath(); x.arc(px, y, 1 + Math.random() * 3, 0, 7); x.fill(); }
-  });
-  foam.wrapT = THREE.RepeatWrapping;
-  const wakeMat = new THREE.MeshBasicMaterial({ map: foam, transparent: true, depthWrite: false, opacity: 0.85 });
-  const mkWake = (o, w, l) => { const m = new THREE.Mesh(new THREE.PlaneGeometry(w, l), wakeMat); m.rotation.x = -Math.PI / 2; m.rotation.z = Math.PI / 2; m.position.set(o.x - l / 2, 0.015, o.z); m.renderOrder = 3; scene.add(m); };
   water.material.uniforms.uWake.value.set(leeHit.x, leeHit.z, srcs[1].x, srcs[1].z);
 
   /* ----- evidenziazione ----- */
@@ -512,7 +505,6 @@ export function mount(stage, opts = {}) {
       boat.position.y = DECK + Math.sin(tAcc * 1.3) * 0.035;
       boat.rotation.z = Math.sin(tAcc * 0.9) * 0.006;
       water.material.uniforms.uTime.value = tAcc;
-      foam.offset.y = (foam.offset.y - dt * 0.9) % 1;
       for (let i = 0; i < NP; i++) {
         pLife[i] -= dt; if (pLife[i] <= 0) { respawn(i); continue; }
         pVel[i * 3 + 1] -= 9.8 * dt;
