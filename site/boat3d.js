@@ -184,37 +184,35 @@ void main(){ float y = vP.y;
 
   /* ----- la barca ----- */
   const boat = new THREE.Group(); scene.add(boat);
-  const parts = {};
   const add = (id, geo, key, parent = boat) => {
-    const m = new THREE.Mesh(geo, mk[key]()); m.userData.mk = key;
+    const m = new THREE.Mesh(geo, mk[key]()); m.userData.mk = key; m.userData.part = id;
     m.castShadow = true; m.receiveShadow = true; parent.add(m);
-    if (id) (parts[id] = parts[id] || []).push(m);
     return m;
   };
 
   // scafo, specchio di poppa, coperta, abitacoli
-  const hullMesh = add('hull', hullGeometry(US, rings), 'paint');
-  const transom = add('hull', capGeometry(US[0], rings[0], [0.003, 0.997], V3(-1, 0, 0)), 'paint');
-  add('hull', capGeometry(US[US.length - 1], rings[rings.length - 1], [0.003, 0.997], V3(1, 0, 0)), 'paint');
-  const deckMesh = add('deck', deckGeometry(US), 'deck');
-  const pitMesh = add('deck', pitGeometry(US), 'pit');
-  const glassy = [hullMesh, transom, deckMesh, pitMesh];
-  for (const s of [1, -1]) for (const [x0, x1] of PITS) glassy.push(add('deck', coamingGeometry(s, x0, x1), 'trim'));
+  const glass = (m, shell) => { m.userData.glassy = shell ? 2 : 1; return m; };
+  glass(add('hull', hullGeometry(US, rings), 'paint'), true);
+  glass(add('hull', capGeometry(US[0], rings[0], [0.003, 0.997], V3(-1, 0, 0)), 'paint'), true);
+  glass(add('hull', capGeometry(US[US.length - 1], rings[rings.length - 1], [0.003, 0.997], V3(1, 0, 0)), 'paint'), true);
+  glass(add('deck', deckGeometry(US), 'deck'));
+  glass(add('deck', pitGeometry(US), 'pit'));
+  for (const s of [1, -1]) for (const [x0, x1] of PITS) glass(add('deck', coamingGeometry(s, x0, x1), 'trim'));
   // dorsale centrale che porta i rinvii dei comandi
   {
     const sh = new THREE.Shape(); const w = 0.17, h = 0.11, r = 0.05;
     sh.moveTo(-w, 0); sh.lineTo(-w, h - r); sh.quadraticCurveTo(-w, h, -w + r, h); sh.lineTo(w - r, h); sh.quadraticCurveTo(w, h, w, h - r); sh.lineTo(w, 0); sh.closePath();
     const g = new THREE.ExtrudeGeometry(sh, { depth: 5.1, bevelEnabled: true, bevelThickness: 0.12, bevelSize: 0.02, bevelSegments: 4, curveSegments: 6 });
     g.rotateY(-Math.PI / 2); g.translate(0.55, deckY(xu(-2), 0) - 0.03, 0);
-    glassy.push(add('deck', g, 'trim'));
+    glass(add('deck', g, 'trim'));
   }
   // prese di coperta e boccaporti
   for (const [x, z] of [[3.6, 0.32], [3.6, -0.32], [2.6, 0]]) {
     const g = new THREE.CylinderGeometry(0.17, 0.18, 0.03, 28); g.translate(x, deckY(xu(x), 0) + 0.01, z);
-    glassy.push(add('deck', g, 'trim'));
+    glass(add('deck', g, 'trim'));
   }
   // cupola della telecamera di bordo a prua e telecamera di poppa
-  { const g = new THREE.SphereGeometry(0.11, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2); g.translate(4.4, deckY(xu(4.4), 0), 0); glassy.push(add('hull', g, 'visor')); }
+  { const g = new THREE.SphereGeometry(0.11, 20, 12, 0, Math.PI * 2, 0, Math.PI / 2); g.translate(4.4, deckY(xu(4.4), 0), 0); glass(add('hull', g, 'visor')); }
   // binario del fiocco autovirante
   {
     const pts = []; for (let i = 0; i <= 12; i++) { const z = lerp(-0.8, 0.8, i / 12), x = 1.3 + 0.06 * (1 - (z / 0.8) ** 2); pts.push(V3(x, deckY(xu(x), Math.abs(z) / HB(xu(x))) + 0.02, z)); }
@@ -259,15 +257,13 @@ void main(){ float y = vP.y;
   }
 
   // randa a doppia pelle: due teli che avvolgono l'albero e si chiudono sulla balumina
-  const mainMeshes = {};
   {
     const rows = 48, cols = 26, p = V3();
     for (const skin of [-1, 1]) {
       const luffLeft = skin > 0; // la faccia sottovento si guarda da −Z: l'inferitura (verso prua) è a sinistra
       const g = sailGrid(rows, cols, (s, t, o) => mainPoint(s, t, skin, o), (s, t) => { const u = s * mainChord(t) / MAIN_CMAX; return [luffLeft ? u : 1 - u, t]; });
       faceTo(g, V3(0, 0, -skin * WIND));
-      mainMeshes[skin] = add('main', g, 'sail');
-      mainMeshes[skin].userData.luffLeft = luffLeft;
+      add('main', g, 'sail').userData.luffLeft = luffLeft;
     }
     // chiusure di base e di testa tra i due teli
     for (const t of [0, 1]) {
@@ -289,18 +285,16 @@ void main(){ float y = vP.y;
     add('top', tube(hp, 0.045, false, 30, 8), 'carbon');
   }
   // fiocco: due facce (una per lato) perché grafiche e scritte si leggano bene da entrambe le parti
-  const jibMeshes = {};
   for (const face of [-1, 1]) {
     const luffLeft = face < 0;
     const g = sailGrid(36, 18, jibPoint, (s, t) => { const u = s * jibChord(t) / JIB_CMAX; return [luffLeft ? u : 1 - u, t]; });
     faceTo(g, V3(0, 0, face * WIND));
-    jibMeshes[face] = add('jib', g, 'jib');
-    jibMeshes[face].userData.luffLeft = luffLeft;
+    add('jib', g, 'jib').userData.luffLeft = luffLeft;
   }
   { const pts = []; const p = V3(); for (let i = 0; i <= 20; i++) { jibPoint(0, i / 20, p); pts.push(p.clone()); } add('jib', tube(pts, 0.02, false, 30, 6), 'rig'); }
 
   // equipaggio: due timonieri a poppa, due trimmer davanti
-  const crewMats = [];
+  const sailors = [];
   function sailor(x, z, s, helm) {
     const g = new THREE.Group(); boat.add(g);
     const u = xu(x), floor = deckY(u, 0.62) - PIT_D;
@@ -331,7 +325,7 @@ void main(){ float y = vP.y;
       const scr = new THREE.BoxGeometry(0.01, 0.12, 0.2); scr.translate(0.505, 0.44, 0); add('crew', scr, 'screen', g);
       for (const k of [-1, 1]) { const j = new THREE.CylinderGeometry(0.018, 0.022, 0.1, 10); j.translate(0.48, 0.52, 0.13 * k * s); add('crew', j, 'rig', g); }
     }
-    crewMats.push(g);
+    sailors.push(g);
   }
   for (const s of [1, -1]) {
     const zc = (xx) => s * lerp(PW[0], PW[1], 0.52) * HB(xu(xx));
@@ -389,6 +383,50 @@ void main(){ float y = vP.y;
     const pole = rod(V3(RX + 0.05, 0.18, 0), V3(RX + 0.05, 0.62, 0), 0.02); add('hull', pole, 'rig');
     const cam = new THREE.BoxGeometry(0.16, 0.11, 0.12); cam.translate(RX + 0.05, 0.68, 0); add('hull', cam, 'rig');
   }
+
+  /* ----- meno oggetti da disegnare: si uniscono i pezzi con stessa parte e stesso materiale ----- */
+  const mtx = new THREE.Matrix4();
+  for (const g of sailors) {
+    g.updateMatrix();
+    for (const c of [...g.children]) { c.updateMatrix(); c.geometry.applyMatrix4(mtx.multiplyMatrices(g.matrix, c.matrix)); c.position.set(0, 0, 0); c.rotation.set(0, 0, 0); c.scale.set(1, 1, 1); boat.add(c); }
+    boat.remove(g);
+  }
+  function mergeGeos(list) {
+    let nv = 0, ni = 0;
+    list.forEach(g => { nv += g.attributes.position.count; ni += g.index ? g.index.count : g.attributes.position.count; });
+    const pos = new Float32Array(nv * 3), nor = new Float32Array(nv * 3), uv = new Float32Array(nv * 2), idx = new Uint32Array(ni);
+    let ov = 0, oi = 0;
+    for (const g of list) {
+      const c = g.attributes.position.count;
+      pos.set(g.attributes.position.array, ov * 3); nor.set(g.attributes.normal.array, ov * 3);
+      if (g.attributes.uv) uv.set(g.attributes.uv.array, ov * 2);
+      if (g.index) { const a = g.index.array; for (let i = 0; i < a.length; i++) idx[oi + i] = a[i] + ov; oi += a.length; }
+      else { for (let i = 0; i < c; i++) idx[oi + i] = ov + i; oi += c; }
+      ov += c; g.dispose();
+    }
+    const m = new THREE.BufferGeometry();
+    m.setAttribute('position', new THREE.BufferAttribute(pos, 3)); m.setAttribute('normal', new THREE.BufferAttribute(nor, 3)); m.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
+    m.setIndex(new THREE.BufferAttribute(idx, 1));
+    return m;
+  }
+  for (const root of [boat, foils.down, foils.up, battGroup]) {
+    const bins = new Map();
+    for (const c of root.children) {
+      if (!c.isMesh) continue;
+      const u = c.userData, key = [u.part, u.mk, c.material.side, u.glassy || 0, u.luffLeft].join('|');
+      if (!bins.has(key)) bins.set(key, []);
+      bins.get(key).push(c);
+    }
+    for (const list of bins.values()) {
+      if (list.length < 2) continue;
+      list.forEach(c => { c.updateMatrix(); c.geometry.applyMatrix4(c.matrix); });
+      const m = new THREE.Mesh(mergeGeos(list.map(c => c.geometry)), list[0].material);
+      Object.assign(m.userData, list[0].userData); m.castShadow = m.receiveShadow = true;
+      list.forEach(c => root.remove(c)); root.add(m);
+    }
+  }
+  const parts = {}, glassy = [];
+  boat.traverse(o => { if (!o.isMesh) return; const id = o.userData.part; if (id) (parts[id] = parts[id] || []).push(o); if (o.userData.glassy) glassy.push(o); });
 
   /* ----- patch dei materiali: tinta sott'acqua e luce che attraversa le vele ----- */
   const U_TIME = { value: 0 }, U_ABOVE = { value: 1 }, U_WATER = { value: new THREE.Color(0x0b4a60) }, U_SUNV = { value: V3() }, U_SUNC = { value: new THREE.Color(1, 0.94, 0.85).multiplyScalar(1.4) };
@@ -504,7 +542,7 @@ void main(){ float y = vP.y;
   const setActive = (id, rel = []) => {
     activeIds = id ? [id, ...rel] : [];
     const glass = activeIds.includes('batt');
-    glassy.forEach(m => { const mt = m.material; mt.transparent = glass; mt.opacity = glass ? (m === hullMesh || m === transom ? 0.28 : 0.2) : 1; mt.depthWrite = !glass; mt.needsUpdate = true; m.castShadow = !glass; });
+    glassy.forEach(m => { const mt = m.material; mt.transparent = glass; mt.opacity = glass ? (m.userData.glassy === 2 ? 0.28 : 0.2) : 1; mt.depthWrite = !glass; mt.needsUpdate = true; m.castShadow = !glass; });
     battGroup.visible = glass;
   };
   const glowAll = k => {
@@ -590,7 +628,7 @@ void main(){ float y = vP.y;
 
   const underFog = new THREE.FogExp2(0xffffff, 0.05); underFog.color.copy(UW_H);
   const clock = new THREE.Clock();
-  let running = false, raf = 0, tAcc = 0, fAcc = 0, fN = 0;
+  let running = false, raf = 0, tAcc = 0, fAcc = 0, fN = 0, fno = 0;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const tmp = V3(), goalT = V3();
   const frame = () => {
@@ -650,8 +688,9 @@ void main(){ float y = vP.y;
       const lx = Math.min(Math.max((tmp.x * 0.5 + 0.5) * stage.clientWidth, 12), stage.clientWidth - 170), ly = Math.min(Math.max((-tmp.y * 0.5 + 0.5) * stage.clientHeight, 120), stage.clientHeight - 40);
       label.style.transform = `translate(${lx}px,${ly}px)`;
     }
-    renderer.shadowMap.needsUpdate = true;
-    if (reflOn && !under) renderMirror(); else WU.uUseRefl.value = 0;
+    const full = tier === 'high' || (++fno & 1);
+    if (full) renderer.shadowMap.needsUpdate = true;
+    if (reflOn && !under) { if (full || !WU.uUseRefl.value) renderMirror(); } else WU.uUseRefl.value = 0;
     renderer.render(scene, camera);
   };
 
