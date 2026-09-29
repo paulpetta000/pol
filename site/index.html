@@ -867,7 +867,7 @@ const QUIZ = [
 Coordinate SVG a scala reale: 30 unità = 1 metro. Coperta a y=700, pelo dell'acqua a y=781. */
 const WATER = 781, UNIT = 30;
 const BOAT_STEPS = [
-{id:null,x:210,y:500,z:.72,k:'Inizio',h:'Questo è un AC40',p:"Proporzioni vere. Scorri verso il basso: partiamo dalla cima dell'albero e finiamo sotto il mare, dove succede la magia.",num:'11,8 m di lunghezza',fun:"Sullo sfondo, la sagoma del Vesuvio: è qui che si correrà la Coppa del 2027."},
+{id:null,x:210,y:500,z:.72,k:'Inizio',h:'Questo è un AC40',p:"Ricostruito in 3D con le misure ufficiali della classe. Scorri verso il basso: partiamo dalla cima dell'albero e finiamo sotto il mare, dove succede la magia.",num:'11,8 m di lunghezza',fun:"Sullo sfondo, la sagoma del Vesuvio: è qui che si correrà la Coppa del 2027."},
 {id:'top',x:205,y:215,z:2.6,k:'In cima',h:'La testa della vela',p:"La vela è tagliata quasi dritta in alto (in gergo “square top”): c'è più superficie in alto, dove il vento soffia più forte.",num:'17,9 m: l\'albero',fun:"<b>Chicca:</b> è alto come un palazzo di 6 piani, su una barca lunga meno di 12 metri."},
 {id:'main',x:262,y:420,z:1.7,k:'Il motore',h:'La randa a doppia pelle',p:"La vela principale è fatta di due teli che avvolgono l'albero. Insieme formano un profilo spesso, come l'ala di un aereo, che spinge molto di più di una vela normale.",num:'63 m² di superficie',fun:"<b>Chicca:</b> la regola uno dei due trimmer, e cambia forma di continuo in base al vento."},
 {id:'jib',x:112,y:520,z:1.8,k:'Davanti all\'albero',h:'Il fiocco',p:"La vela davanti. Ce ne sono tre misure: prima della regata si sceglie quella adatta al vento del giorno.",num:'da 26 a 38 m²',fun:"<b>Chicca:</b> con vento forte si monta la più piccola, per non sovraccaricare la barca."},
@@ -1295,6 +1295,7 @@ ${t.boats.map(b=>`<div><h4>${esc(BOATS[b].name)} · ${esc(BOATS[b].tag)}</h4><di
 const REL={top:['main'],deck:['main'],crew:['hull'],batt:['hull'],water:['hull','arm','wing','rudder']};
 let B3=null,bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
 const bx=()=>$('#bx');
+const bxTeam=()=>MY&&BOATS[MY]?BOATS[MY].team:'lr';
 function stepCenter(i){const el=document.querySelector(`.bx-step[data-i="${i}"]`);return el.offsetTop+$('.bx-track').offsetTop+el.offsetHeight/2}
 function buildBx(){
 $('#bx-stage').innerHTML=boatSVG('bx');
@@ -1304,7 +1305,7 @@ $('#bx-rail').innerHTML=BOAT_STEPS.map((s,i)=>`<button data-bx-go="${i}" aria-la
 bx().addEventListener('scroll',()=>{cancelAnimationFrame(bxRaf);bxRaf=requestAnimationFrame(updateBx)},{passive:true});
 window.addEventListener('resize',()=>{if(!bx().hidden)updateBx()});
 bxBuilt=true;
-import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'));bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
+import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'),{team:bxTeam()});bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
 }
 function openBx(jump){
 bxOpener=document.activeElement;
@@ -1314,7 +1315,7 @@ bx().hidden=false;document.body.style.overflow='hidden';
 bxActive=-1;
 const idx=jump?BOAT_STEPS.findIndex(s=>s.id===jump):0;
 bx().scrollTop=idx>0?stepCenter(idx)-bx().clientHeight*0.55:0;
-updateBx();B3&&B3.start();$('#bx .bx-x').focus();
+updateBx();if(B3){B3.livery(bxTeam());B3.start()}$('#bx .bx-x').focus();
 }
 function closeBx(){if(bx().hidden)return;bx().hidden=true;B3&&B3.stop();document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
 function updateBx(){

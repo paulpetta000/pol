@@ -167,6 +167,7 @@ ${t.boats.map(b=>`<div><h4>${esc(BOATS[b].name)} · ${esc(BOATS[b].tag)}</h4><di
 const REL={top:['main'],deck:['main'],crew:['hull'],batt:['hull'],water:['hull','arm','wing','rudder']};
 let B3=null,bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
 const bx=()=>$('#bx');
+const bxTeam=()=>MY&&BOATS[MY]?BOATS[MY].team:'lr';
 function stepCenter(i){const el=document.querySelector(`.bx-step[data-i="${i}"]`);return el.offsetTop+$('.bx-track').offsetTop+el.offsetHeight/2}
 function buildBx(){
 $('#bx-stage').innerHTML=boatSVG('bx');
@@ -176,7 +177,7 @@ $('#bx-rail').innerHTML=BOAT_STEPS.map((s,i)=>`<button data-bx-go="${i}" aria-la
 bx().addEventListener('scroll',()=>{cancelAnimationFrame(bxRaf);bxRaf=requestAnimationFrame(updateBx)},{passive:true});
 window.addEventListener('resize',()=>{if(!bx().hidden)updateBx()});
 bxBuilt=true;
-import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'));bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
+import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'),{team:bxTeam()});bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
 }
 function openBx(jump){
 bxOpener=document.activeElement;
@@ -186,7 +187,7 @@ bx().hidden=false;document.body.style.overflow='hidden';
 bxActive=-1;
 const idx=jump?BOAT_STEPS.findIndex(s=>s.id===jump):0;
 bx().scrollTop=idx>0?stepCenter(idx)-bx().clientHeight*0.55:0;
-updateBx();B3&&B3.start();$('#bx .bx-x').focus();
+updateBx();if(B3){B3.livery(bxTeam());B3.start()}$('#bx .bx-x').focus();
 }
 function closeBx(){if(bx().hidden)return;bx().hidden=true;B3&&B3.stop();document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
 function updateBx(){
