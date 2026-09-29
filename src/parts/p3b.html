@@ -165,7 +165,7 @@ ${t.boats.map(b=>`<div><h4>${esc(BOATS[b].name)} · ${esc(BOATS[b].tag)}</h4><di
 </div>`,t.c);
 }
 const REL={top:['main'],deck:['main'],crew:['hull'],batt:['hull'],water:['hull','arm','wing','rudder']};
-let bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
+let B3=null,bxBuilt=false,bxSvg=null,bxRaf=0,bxActive=-1,bxOpener=null;
 const bx=()=>$('#bx');
 function stepCenter(i){const el=document.querySelector(`.bx-step[data-i="${i}"]`);return el.offsetTop+$('.bx-track').offsetTop+el.offsetHeight/2}
 function buildBx(){
@@ -176,6 +176,7 @@ $('#bx-rail').innerHTML=BOAT_STEPS.map((s,i)=>`<button data-bx-go="${i}" aria-la
 bx().addEventListener('scroll',()=>{cancelAnimationFrame(bxRaf);bxRaf=requestAnimationFrame(updateBx)},{passive:true});
 window.addEventListener('resize',()=>{if(!bx().hidden)updateBx()});
 bxBuilt=true;
+import('/boat3d.js').then(m=>{B3=m.mount($('#bx-stage'));bxSvg=null;bxActive=-1;if(!bx().hidden){B3.start();updateBx()}}).catch(()=>{});
 }
 function openBx(jump){
 bxOpener=document.activeElement;
@@ -185,9 +186,9 @@ bx().hidden=false;document.body.style.overflow='hidden';
 bxActive=-1;
 const idx=jump?BOAT_STEPS.findIndex(s=>s.id===jump):0;
 bx().scrollTop=idx>0?stepCenter(idx)-bx().clientHeight*0.55:0;
-updateBx();$('#bx .bx-x').focus();
+updateBx();B3&&B3.start();$('#bx .bx-x').focus();
 }
-function closeBx(){if(bx().hidden)return;bx().hidden=true;document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
+function closeBx(){if(bx().hidden)return;bx().hidden=true;B3&&B3.stop();document.body.style.overflow='';bxOpener&&bxOpener.focus&&bxOpener.focus()}
 function updateBx(){
 const sc=bx(),stage=$('#bx-stage');
 const mid=sc.scrollTop+sc.clientHeight*0.55;
@@ -202,16 +203,16 @@ const W=stage.clientWidth||400,H=stage.clientHeight||700;
 const base=W>H?Math.max(420,860*W/H):420;
 const vw=base/z,vh=vw*H/W;
 const oy=W>H?0:vh*0.12;
-bxSvg.setAttribute('viewBox',`${(x-vw/2).toFixed(1)} ${(y-vh/2+oy).toFixed(1)} ${vw.toFixed(1)} ${vh.toFixed(1)}`);
-const alt=(WATER-y)/UNIT,el=$('#bx-alt');
+if(B3)B3.view(i,t);else bxSvg.setAttribute('viewBox',`${(x-vw/2).toFixed(1)} ${(y-vh/2+oy).toFixed(1)} ${vw.toFixed(1)} ${vh.toFixed(1)}`);
+const alt=B3?B3.altitude():(WATER-y)/UNIT,el=$('#bx-alt');
 el.textContent=alt>=0.05?`+${alt.toFixed(1).replace('.',',')} m sul mare`:`${alt.toFixed(1).replace('.',',').replace('-','−')} m sott'acqua`;
 el.classList.toggle('under',alt<0.05);
 const act=t>0.5?Math.min(i+1,BOAT_STEPS.length-1):i;
 if(act!==bxActive){
 bxActive=act;const id=BOAT_STEPS[act].id;
-bxSvg.classList.toggle('focus',!!id);
 const rel=REL[id]||[];
-bxSvg.querySelectorAll('.part').forEach(g=>g.classList.toggle('on',g.dataset.part===id||rel.includes(g.dataset.part)));
+if(B3)B3.active(id,rel);else{bxSvg.classList.toggle('focus',!!id);
+bxSvg.querySelectorAll('.part').forEach(g=>g.classList.toggle('on',g.dataset.part===id||rel.includes(g.dataset.part)))}
 document.querySelectorAll('#bx-rail button').forEach((btn,k)=>btn.classList.toggle('on',k===act));
 }
 }
@@ -264,5 +265,6 @@ setInterval(()=>{const n=romeNow();$('#clock').innerHTML=`${n.hm}<span>NAPOLI</s
 setInterval(renderCountdown,30000);
 })();
 </script>
+<script type="importmap">{"imports":{"three":"/vendor/three.module.min.js","three/addons/":"/vendor/addons/"}}</script>
 </body>
 </html>

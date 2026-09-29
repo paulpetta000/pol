@@ -42,7 +42,7 @@ button{background:none;border:0;cursor:pointer}
 h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:.02em}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(6,19,29,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top-row{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
-.mark{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.06em;color:var(--teal);line-height:1}
+.mark{font-family:var(--display);font-weight:800;font-size:24px;letter-spacing:.04em;text-transform:uppercase;color:var(--teal);line-height:1;white-space:nowrap}
 .mark small{display:block;font-size:11px;font-weight:600;letter-spacing:.14em;color:var(--ink-2);text-transform:uppercase;margin-top:3px}
 .status{margin-left:auto;display:flex;align-items:center;gap:10px;min-width:0}
 .pill{display:inline-flex;align-items:center;gap:7px;font-family:var(--display);font-weight:700;font-size:14px;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:99px;white-space:nowrap}
@@ -58,7 +58,7 @@ h1,h2,h3{font-family:var(--display);text-wrap:balance;letter-spacing:.02em}
 .tab{font-family:var(--display);font-weight:700;font-size:16px;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2);padding:11px 14px 12px;border-bottom:2px solid transparent;white-space:nowrap}
 .tab:hover{color:var(--ink-1)}
 .tab[aria-selected="true"]{color:var(--teal);border-bottom-color:var(--teal)}
-@media(max-width:480px){.clock span{display:none}.mark small{max-width:120px}.pill{font-size:12px;padding:4px 9px}}
+@media(max-width:480px){.clock span{display:none}.mark{font-size:17px}.mark small{font-size:10px;letter-spacing:.08em}.mark .hm{display:none}.top-row{gap:8px}.status{gap:6px}.hbtn{padding:6px 9px}.pill{font-size:12px;padding:4px 9px}}
 main{max-width:1180px;margin:0 auto;padding:22px 16px 60px}
 .stack{display:flex;flex-direction:column;gap:22px}
 .eyebrow{font-family:var(--display);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3)}
@@ -364,7 +364,7 @@ tr.mine .boat-n::after{content:" ★";color:var(--gold)}
 <body>
 <header class="top">
 <div class="top-row">
-<div class="mark">AC38<small>Napoli · Preliminare</small></div>
+<div class="mark">Coppa America<small>38ª edizione · <span class="hm">barche </span>AC40</small></div>
 <div class="status">
 <span id="pill" class="pill wait"><span class="pulse"></span><span id="pill-t">Napoli</span></span>
 <button class="hbtn" id="fav-btn" data-pick aria-label="Scegli la tua squadra"><span class="star" aria-hidden="true">★</span><span class="lbl" id="fav-lbl">Tifo per…</span></button>

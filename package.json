@@ -1,1 +1,1 @@
-{"name":"coppa-america-napoli","private":true,"type":"module","scripts":{"build":"node build.mjs && node gen.mjs"},"devDependencies":{"sharp":"0.33.5"}}
+{"name":"coppa-america-napoli","private":true,"type":"module","scripts":{"build":"node build.mjs && node gen.mjs"},"devDependencies":{"sharp":"0.33.5","three":"0.170.0"}}
