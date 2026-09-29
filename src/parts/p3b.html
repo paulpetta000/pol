@@ -63,7 +63,7 @@ if(!quiet)toast(`Nuovi risultati · ${d.updated}`);
 if(d.final&&d.final.winner&&!hadWin)celebrate();
 }catch(e){}
 }
-function renderData(){renderDays();renderRaces();renderStandings();renderFinalCard();renderSim();renderFeed();renderRR();renderMyTeam();renderFav();renderChamp();renderStatus()}
+function renderData(){Object.assign(S,LIVE.src||{});renderDays();renderRaces();renderStandings();renderFinalCard();renderSim();renderFeed();renderRR();renderMyTeam();renderFav();renderChamp();renderStatus()}
 function renderSim(){
 if(LIVE.afterRaces>=8){$('#sim-box').hidden=true;return}
 const st=LIVE.standings;

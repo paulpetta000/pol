@@ -165,7 +165,7 @@ function renderStandings(){
 const st=LIVE.standings, max=st[0][1];
 $('#standings').innerHTML=st.map(([b,p],i)=>`<tr class="${i===1?'cut':''} ${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td><td class="gap">${i?'−'+(max-p):'in testa'}</td><td class="bar-cell"><div class="bar"><i style="width:${p/max*100}%;background:${teamOf(b).c}"></i></div></td></tr>`).join('')
 +(LIVE.others||[]).map(b=>`<tr><td class="pos">–</td><td>${boatCell(b)}</td><td class="pts" style="color:var(--ink-3);font-size:16px">≤${st[st.length-1][1]}</td><td class="gap">in attesa</td><td></td></tr>`).join('');
-const top=st.slice(0,5).some(x=>x[0]===MY)||!MY?st.slice(0,5):[...st.slice(0,4),st.find(x=>x[0]===MY)];
+const mine=st.find(x=>x[0]===MY),top=!mine||st.slice(0,5).includes(mine)?st.slice(0,5):[...st.slice(0,4),mine];
 $('#mini-standings').innerHTML=top.map(([b,p])=>[b,p,st.findIndex(x=>x[0]===b)]).map(([b,p,i])=>`<tr class="${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td></tr>`).join('');
 $('#mini-note').textContent=`Dopo ${LIVE.afterRaces} regate su 8. Le prime due vanno in finale.`;
 $('#stand-lede').textContent=LIVE.standingsNote;
@@ -196,7 +196,9 @@ else{b.style.removeProperty('--c');$('#fav-lbl').textContent='Tifo per…'}
 function renderMyTeam(){
 const el=$('#myteam');
 if(!MY){el.innerHTML=`<button class="myteam" data-pick style="width:100%;text-align:left;border-style:dashed"><span class="big">★</span><span><b>Per chi tifi?</b><span>Scegli la tua barca: la vedrai evidenziata ovunque, in classifica e nei risultati.</span></span><span class="chip">Scegli</span></button>`;return}
-const st=LIVE.standings,i=st.findIndex(x=>x[0]===MY),p=st[i][1],t=teamOf(MY),F=LIVE.final||{};
+const st=LIVE.standings,i=st.findIndex(x=>x[0]===MY),t=teamOf(MY),F=LIVE.final||{};
+if(i<0){el.innerHTML=`<div class="myteam" style="border-color:${t.c}"><span class="big">–</span><span><b>${t.flag} ${esc(BOATS[MY].name)}</b><span>Punteggio finale non ancora confermato dalle fonti.</span></span><button class="chip" data-pick>Cambia</button></div>`;return}
+const p=st[i][1];
 const left=Math.max(0,8-LIVE.afterRaces),gap=st[1][1]-p;
 let msg;
 if(F.winner)msg=MY===F.winner?'Ha vinto la Regata Preliminare di Napoli!':(MY===F.a||MY===F.b)?'Finalista a Napoli: ha perso solo il testa a testa.':`Chiude la regata di flotta ${i+1}ª con ${p} punti.`;
@@ -207,7 +209,7 @@ else msg=`A ${gap} punti dal 2° posto, l'ultimo che vale la finale. `+(gap<8*le
 el.innerHTML=`<div class="myteam" style="border-color:${t.c}"><span class="big">${i+1}ª<small> · ${p} pt</small></span><span><b>${t.flag} ${esc(BOATS[MY].name)}</b><span>${esc(msg)}</span></span><button class="chip" data-pick>Cambia</button></div>`;
 }
 function pickSheet(){
-const order=LIVE.standings.map(x=>x[0]);
+const order=[...LIVE.standings.map(x=>x[0]),...(LIVE.others||[])];
 openSheet(`
 <div class="sheet-top"><span class="team-flag" style="font-size:40px">★</span><div><div class="sheet-name" id="sheet-name">Per chi tifi?</div><div class="sheet-meta">La scelta resta salvata su questo telefono</div></div><button class="close" aria-label="Chiudi" data-close>×</button></div>
 <div class="sheet-body"><div class="pick">${order.map(b=>{const t=teamOf(b);return `<button data-my="${b}" aria-pressed="${b===MY}"><span class="swatch" style="background:${t.c}"></span><span style="font-size:22px">${t.flag}</span><span><b style="font-family:var(--display);font-size:18px;text-transform:uppercase">${esc(BOATS[b].name)}</b><br><span class="note">${esc(BOATS[b].tag)}</span></span></button>`}).join('')}
