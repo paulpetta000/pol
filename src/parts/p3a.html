@@ -1,0 +1,225 @@
+<linearGradient id="${idp}sail" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#E9EFF3"/><stop offset=".25" stop-color="#FFFFFF"/><stop offset=".85" stop-color="#E4ECF1"/><stop offset="1" stop-color="#C3D1DA"/></linearGradient>
+<linearGradient id="${idp}sailv" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9CF" stop-opacity=".0"/><stop offset=".7" stop-color="#FFD7A8" stop-opacity=".0"/><stop offset="1" stop-color="#F6B98A" stop-opacity=".28"/></linearGradient>
+<linearGradient id="${idp}hull" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#E3EAEF"/><stop offset="1" stop-color="#9FB1BD"/></linearGradient>
+<linearGradient id="${idp}mast" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#1B2A35"/><stop offset=".5" stop-color="#4C6474"/><stop offset="1" stop-color="#15222B"/></linearGradient>
+<linearGradient id="${idp}foil" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2B3C48"/><stop offset=".45" stop-color="#8FA5B3"/><stop offset="1" stop-color="#22323D"/></linearGradient>
+<linearGradient id="${idp}wing" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F4CD72"/><stop offset="1" stop-color="#B9832A"/></linearGradient>
+<linearGradient id="${idp}haze" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#6F8E9C"/><stop offset="1" stop-color="#B99A86"/></linearGradient>
+<filter id="${idp}soft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+<filter id="${idp}softer" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<rect x="-2400" y="-600" width="4800" height="${WATER+600}" fill="${u('sky')}"/>
+<rect x="-2400" y="400" width="4800" height="${WATER-400}" fill="${u('sun')}"/>
+<circle cx="398" cy="758" r="15" fill="#FFF1D2" opacity=".95"/>
+<g opacity=".35" stroke="#F7D9BD" stroke-linecap="round">
+<path d="M-520 620h260M-420 612h140M60 648h210M140 641h120M-1200 590h300M-980 600h180" stroke-width="3" filter="${u('soft')}"/>
+</g>
+<path d="M-1480 781 L-1320 760 L-1160 742 L-1040 716 Q-1000 702 -968 700 L-930 704 Q-900 690 -872 686 Q-846 684 -820 694 L-760 722 L-600 752 L-420 770 L-260 777 L-200 781 Z" fill="${u('haze')}" opacity=".7"/>
+<path d="M-1000 706 L-968 700 L-930 704 Q-900 690 -872 686 L-866 689 Q-900 697 -930 710 Z" fill="#D8C2B2" opacity=".35"/>
+<path d="M-200 781 L-80 774 L120 771 L300 776 L520 773 L700 778 L760 781 Z" fill="#7C8F98" opacity=".45"/>
+<rect x="-2400" y="${WATER}" width="4800" height="900" fill="${u('sea')}"/>
+${rays}
+<path d="${sparkle}" stroke="#CDEFF8" stroke-opacity=".22" stroke-width="1.2" stroke-linecap="round"/>
+${glint}
+<ellipse cx="210" cy="${WATER+5}" rx="190" ry="6" fill="#021019" opacity=".35" filter="${u('softer')}"/>
+<g class="${opt.anim?'wake':''}" stroke="#F4FBFF" stroke-linecap="round" fill="none" stroke-dasharray="${opt.anim?'40 20':'none'}">
+<path d="M198 ${WATER} L760 ${WATER-5}" stroke-opacity=".35" stroke-width="2.4"/>
+<path d="M198 ${WATER+1} L760 ${WATER+14}" stroke-opacity=".28" stroke-width="2"/>
+<path d="M378 ${WATER} L760 ${WATER+4}" stroke-opacity=".3" stroke-width="1.6"/>
+</g>
+<g class="${opt.anim?'boat-bob':''}">
+${g('arm',`<path class="hl" d="M195.5 742 L201 742 L195.5 848 L190.5 848 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>`)}
+${g('wing',`<path class="hl" d="M168 850 Q176 842 196 842 Q214 843 222 849 Q214 855 196 856 Q176 856 168 850 Z" fill="${u('wing')}" stroke="#E9B44C" stroke-width=".8"/>
+<path d="M214 845 L226 850 L214 855 Z" fill="#FF7A45"/>
+<ellipse cx="193" cy="849" rx="12" ry="4.5" fill="#5B7686"/>
+<path d="M172 849 Q196 845 219 849" stroke="#FFF3D6" stroke-opacity=".5" stroke-width="1" fill="none"/>
+${bubbles}`)}
+${g('rudder',`<path class="hl" d="M374 742 L379 742 L377.5 836 L374.5 836 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>
+<path d="M358 838 Q368 832 378 832 Q390 833 395 837 Q388 842 378 842 Q366 842 358 838 Z" fill="${u('wing')}"/>`)}
+<path d="M150 ${WATER} q18 -6 36 0 q18 6 36 0" fill="#0E4A66" opacity=".55"/>
+${g('water',`<path class="hl" d="M-2400 ${WATER} Q-2390 ${WATER-4} -2380 ${WATER} ${waves}" fill="none" stroke="#B9EEF8" stroke-opacity=".55" stroke-width="1.4"/>
+<g class="${opt.anim?'spray':''}" filter="${u('soft')}">
+<path d="M186 ${WATER} Q196 ${WATER-22} 226 ${WATER-30} Q214 ${WATER-16} 238 ${WATER-12} Q214 ${WATER-6} 204 ${WATER} Z" fill="#FFFFFF" opacity=".85"/>
+<path d="M200 ${WATER-4} Q230 ${WATER-44} 270 ${WATER-40} Q240 ${WATER-24} 262 ${WATER-18}" fill="none" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="3" stroke-dasharray="2 5" stroke-linecap="round"/>
+<path d="M372 ${WATER} Q380 ${WATER-12} 398 ${WATER-16} Q390 ${WATER-6} 404 ${WATER-4} Q388 ${WATER-1} 382 ${WATER} Z" fill="#FFFFFF" opacity=".75"/>
+</g>`)}
+${g('jib',`<path class="hl" d="M172 298 L46 693 L170 692 Z" fill="${u('sail')}" fill-opacity=".86" stroke="#9FB6C4" stroke-width="1"/>
+<path d="M172 298 L46 693 L170 692 Z" fill="${u('sailv')}"/>
+<path d="M150 368 L170 367 M125 450 L169 449 M100 530 L169 529 M76 610 L170 609" stroke="#A9BCC8" stroke-width=".8" opacity=".75"/>
+<path d="M174 290 L40 700" stroke="#2A3B47" stroke-width="1.1"/>`)}
+${g('main',`<path class="hl" d="M178 168 L236 172 Q300 420 352 690 L178 696 Z" fill="${u('sail')}" stroke="#9FB6C4" stroke-width="1"/>
+<path d="M178 168 L236 172 Q300 420 352 690 L178 696 Z" fill="${u('sailv')}"/>
+<path d="M180 170 L196 171 L196 695 L180 696 Z" fill="#C7D4DC" opacity=".55"/>
+<path d="M181 171 L233 175 Q296 420 346 687 L181 692 Z" fill="none" stroke="#FFFFFF" stroke-opacity=".7" stroke-width="1"/>
+<path d="M178 250 Q220 246 254 243 M178 330 Q228 325 270 321 M178 410 Q236 404 286 400 M178 490 Q244 483 302 478 M178 570 Q252 562 318 557 M178 640 Q258 632 336 628" stroke="#9FB6C4" stroke-width=".9" fill="none"/>
+<path d="M175 700 L180 700 L178.6 160 L176.4 160 Z" fill="${u('mast')}"/>`)}
+${g('top',`<circle class="glow" cx="206" cy="184" r="32" fill="none" stroke="#43D1C6" stroke-width="2" stroke-dasharray="4 4"/>`)}
+${g('wfoil',`<path class="hl" d="M202 716 L207 716 L216.5 606 L211.5 606 Z" fill="${u('foil')}" stroke="#6D8595" stroke-width=".6"/>
+<path d="M194 604 Q214 594 236 602 Q214 612 194 604 Z" fill="${u('wing')}"/>
+<ellipse cx="214" cy="604" rx="11" ry="4" fill="#5B7686"/>`)}
+${g('hull',`<path class="hl" d="M34 712 Q42 700 72 699 L388 697 L390 728 Q330 745 160 744 Q72 740 34 712 Z" fill="${u('hull')}" stroke="#8FA3B0" stroke-width="1"/>
+<path d="M40 710 Q52 703 74 702 L388 700 L388 704 L76 706 Q54 707 40 712 Z" fill="#1A2A35"/>
+<path d="M44 718 Q120 730 388 717" stroke="#FF7A45" stroke-width="3.2" fill="none"/>
+<path d="M60 725 Q140 735 388 723" stroke="#E6F0F5" stroke-opacity=".9" stroke-width="1" fill="none"/>
+<path d="M60 734 Q150 744 330 738" stroke="#6F8795" stroke-opacity=".5" stroke-width="1" fill="none"/>`)}
+${g('deck',`<path class="hl" d="M178 696 L352 690" stroke="#E9B44C" stroke-width="2" fill="none"/>
+<path class="glow" d="M180 700 L350 696" stroke="#43D1C6" stroke-width="5" stroke-opacity=".5"/>`)}
+${g('batt',`<rect class="hl" x="146" y="708" width="36" height="16" rx="3" fill="#0F2636" stroke="#43D1C6" stroke-width="1.2"/>
+<path d="M166 710 L158 717 L164 717 L160 723 L170 715 L164 715 Z" fill="#E9B44C"/>`)}
+${g('crew',`<rect x="248" y="697" width="98" height="5" rx="2" fill="#0B1822"/>
+<path d="M252 697 a6 6 0 0 1 12 0 Z" fill="#E9B44C"/><path d="M254 694 h9" stroke="#0F2636" stroke-width="2"/>
+<path d="M286 696 a6 6 0 0 1 12 0 Z" fill="#43D1C6"/><path d="M288 693 h9" stroke="#0F2636" stroke-width="2"/>
+<path d="M310 697 a6 6 0 0 1 12 0 Z" fill="#E9B44C" opacity=".6"/>
+<path d="M332 697 a6 6 0 0 1 12 0 Z" fill="#43D1C6" opacity=".6"/>
+<rect class="glow" x="244" y="676" width="106" height="30" rx="8" fill="none" stroke="#43D1C6" stroke-width="2" stroke-dasharray="4 4"/>`)}
+</g>
+</svg>`;
+}
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const initials = n => n.split(' ').filter(w=>/^[A-ZÀ-Ý]/.test(w)).slice(0,2).map(w=>w[0]).join('');
+const teamOf = b => TEAMS.find(t=>t.id===BOATS[b].team);
+const srcLink = k => S[k]?`<a href="${S[k].u}" target="_blank" rel="noopener">${esc(S[k].t.split(' – ')[0])}</a>`:'';
+const PTS = p => Math.max(11-p,0);
+const SHORT={lr1:'Luna Rossa 1',lr2:'Luna Rossa 2',nz1:'ETNZ',nz2:'ETNZ W&Y',gb1:'GB1',gb2:'GB2',al:'Alinghi',fr:'La Roche-Posay',us:'ARC USA'};
+const TINY={lr1:"LR1",lr2:"LR2",nz1:"NZ",nz2:"NZ W&amp;Y",gb1:"GB1",gb2:"GB2",al:"ALI",fr:"FRA",us:"USA"};
+const SHARE_URL='https://coppa-america-napoli.vercel.app/';
+const SHARE_TEXT='Coppa America a Napoli: classifica live, chi va in finale e la barca volante spiegata pezzo per pezzo ⛵';
+const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{v==null?localStorage.removeItem(k):localStorage.setItem(k,v)}catch(e){}}};
+let MY=store.get('ac38-my');if(MY&&!BOATS[MY])MY=null;
+let toastT=0;
+function toast(msg){const t=$('#toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),3200)}
+function romeNow(){
+const p=Object.fromEntries(new Intl.DateTimeFormat('en-GB',{timeZone:'Europe/Rome',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date()).map(x=>[x.type,x.value]));
+const h=(+p.hour)%24;
+return {date:`${p.year}-${p.month}-${p.day}`,min:h*60+(+p.minute),hm:`${String(h).padStart(2,'0')}:${p.minute}`};
+}
+const toMin = s => {const m=s.replace('~','').split(':');return +m[0]*60+ +m[1]};
+function renderDays(){
+const n=romeNow();
+$('#days').innerHTML=LIVE.days.map(d=>{
+const cls=d.d===n.date?'today':(d.d<n.date?'done':'');
+return `<div class="day ${cls}"><i>${cls==='today'?'Oggi':cls==='done'?'Concluso':'In arrivo'}</i><b>${d.lbl} settembre</b><span>${d.t}</span></div>`;
+}).join('');
+}
+function pickDay(){
+const n=romeNow();
+const today=LIVE.days.find(d=>d.d===n.date&&d.races.length);
+if(today){const last=toMin(today.races[today.races.length-1].at)+45;if(n.min<=last||today.d==='2026-09-27')return today}
+return LIVE.days.find(d=>d.d>n.date&&d.races.length)||LIVE.days[LIVE.days.length-1];
+}
+function renderRaces(){
+const n=romeNow(), day=pickDay(), isToday=day.d===n.date;
+$('#races-title').textContent=isToday?'Le regate di oggi':`Le regate di ${day.lbl.split(' ')[0].toLowerCase()==='dom'?'domenica':day.lbl}`;
+$('#races-label').textContent=`${day.lbl} settembre · ora di Napoli`;
+let html=day.races.map(r=>{
+let tag,txt=r.res;
+const start=toMin(r.at), fin=r.n.startsWith('Finale');
+if(r.st==='done')tag='<span class="tag done">Conclusa</span>';
+else if(r.st==='skip')tag='<span class="tag next">Annullata</span>';
+else if(isToday&&n.min>=start&&n.min<start+32){tag='<span class="tag now">In corso</span>';txt=txt||'Si sta correndo adesso: segui la diretta'}
+else if(isToday&&n.min>=start+32){tag='<span class="tag next">Risultato in arrivo</span>';txt=txt||'Controlla i risultati ufficiali: qui arriva a breve'}
+else{tag=fin?'<span class="tag gold">Finale</span>':'<span class="tag next">In programma</span>';txt=txt||'Tutte e 9 le barche in acqua'}
+return `<div class="race"><div class="race-t">${r.at}</div><div><div class="race-n">${r.n}</div><div class="race-d">${txt}</div></div>${tag}</div>`;
+}).join('');
+if(day.d!==n.date){
+const prev=[...LIVE.days].reverse().find(d=>d.d<=n.date&&d.races.some(r=>r.st==='done'));
+if(prev)html+=`<div class="box-b sep"><p class="note" style="margin-bottom:6px"><b>Com'è andata ${prev.lbl}</b></p>${prev.races.map(r=>`<p class="race-d" style="margin:3px 0">${r.n}: ${r.res}</p>`).join('')}</div>`;
+}
+$('#races').innerHTML=html;
+}
+function renderStatus(){
+const n=romeNow();
+$('#clock').innerHTML=`${n.hm}<span>NAPOLI</span>`;
+const day=LIVE.days.find(d=>d.d===n.date);
+const pill=$('#pill'),pt=$('#pill-t'),main=$('#now-main'),sub=$('#now-sub'),lab=$('#now-label');
+const set=(c,p,l,m,s)=>{pill.className='pill '+c;pt.textContent=p;lab.textContent=l;main.textContent=m;sub.textContent=s};
+['2026-09-25','2026-09-26','2026-09-27'].forEach((d,i)=>{const el=document.getElementById('ptl'+i);if(el)el.className='tl '+(n.date>d?'past':n.date===d?'now':'')});
+if(n.date>'2026-09-27'){set('off','Concluso','La Regata Preliminare è finita','Evento concluso','Prossimo appuntamento: la Louis Vuitton Cup, primavera 2027.');return}
+if(!day||!day.races.length){const nx=LIVE.days.find(d=>d.d>n.date&&d.races.length);set('wait','Prossime regate','Prossime regate',`${nx.lbl} settembre, ${nx.races[0].at}`,'Oggi non ci sono regate a punti.');return}
+const first=toMin(day.races[0].at), last=toMin(day.races[day.races.length-1].at)+40;
+if(n.min<first){const left=first-n.min,h=Math.floor(left/60),m=left%60;set('wait','Oggi si regata','Prima partenza tra',`${h?h+' h ':''}${m} min`,'Diretta TV dalle 13:45 su Rai 2, Sky e YouTube.')}
+else if(n.min<=last){const cur=[...day.races].reverse().find(r=>toMin(r.at)<=n.min);set('live','In diretta','In questo momento',`${cur?cur.n:'Regate'} in corso`,'Diretta ora su Rai 2, Sky Sport e YouTube.')}
+else{const nx=LIVE.days.find(d=>d.d>n.date&&d.races.length);set('off','Giornata finita','Le regate di oggi sono finite','Giornata conclusa',nx?`Domani ${nx.t.toLowerCase()}: si parte alle ${nx.races[0].at}, TV dalle 13:45.`:'')}
+}
+function renderFinalCard(){
+const F=LIVE.final||{}, ptsOf=b=>(LIVE.standings.find(x=>x[0]===b)||[b,0])[1];
+const [a,b]=F.a&&F.b?[[F.a,ptsOf(F.a)],[F.b,ptsOf(F.b)]]:LIVE.standings, ta=teamOf(a[0]), tb=teamOf(b[0]);
+const done=LIVE.afterRaces>=8, W=F.winner;
+const side=(x,t)=>`<button class="side ${x[0]===MY?'mine':''}" data-team="${t.id}"><div class="flagbig">${W===x[0]?'🏆':t.flag}</div><b>${esc(BOATS[x[0]].name)}</b><span>${W?(W===x[0]?'<b style="color:var(--gold);font-size:14px;display:inline">Vince la finale</b>':'Seconda'):x[1]+' punti'}</span></button>`;
+$('#final-card').innerHTML=`
+<div><div class="eyebrow" style="color:var(--gold)">Domenica 27 · la giornata decisiva</div>
+<h3 class="h2" style="font-size:24px;margin-top:4px">${W?'Com\'è finita la finale':done?'La finale':'Se la classifica restasse così, la finale sarebbe…'}</h3></div>
+<div class="vs">${side(a,ta)}<div class="x">VS</div>${side(b,tb)}</div>
+${W&&F.res?`<p style="font-size:14px">${esc(F.res)}</p>${F.s&&F.s.length?`<p class="src">Fonte: ${F.s.map(srcLink).join(', ')}</p>`:''}`:''}
+${!done&&a[0]==='lr1'&&b[0]==='nz1'?`<p style="font-size:14px;color:var(--ink-2)">Sarebbe <b style="color:var(--ink-1)">la rivincita di Cagliari</b>, dove a maggio Luna Rossa ha battuto Team New Zealand in finale. E sarebbe Burling contro la sua ex squadra.</p>`:''}
+${done?'':`<p class="note">Con 2 regate restano al massimo 20 punti a testa: la finale non è ancora decisa. <button data-go="classifica" style="color:var(--teal);font-size:13px">Prova il simulatore →</button></p>`}
+<div class="sched"><div><b>13:45</b><span>inizio diretta TV</span></div><div><b>14:10</b><span>Regata 7</span></div><div><b>14:46</b><span>Regata 8</span></div><div><b>15:27</b><span>Finale testa a testa</span></div></div>
+<p class="src">Orari: ${srcLink('mattino27')}. Possono cambiare in base al vento.</p>`;
+}
+function boatCell(b){
+const t=teamOf(b),bo=BOATS[b];
+return `<button class="boat" data-team="${t.id}"><span class="swatch" style="background:${t.c}"></span><span><span class="boat-n">${t.flag} ${esc(bo.name)}</span><br><span class="boat-s">${esc(bo.tag)}</span></span></button>`;
+}
+function renderStandings(){
+const st=LIVE.standings, max=st[0][1];
+$('#standings').innerHTML=st.map(([b,p],i)=>`<tr class="${i===1?'cut':''} ${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td><td class="gap">${i?'−'+(max-p):'in testa'}</td><td class="bar-cell"><div class="bar"><i style="width:${p/max*100}%;background:${teamOf(b).c}"></i></div></td></tr>`).join('')
++(LIVE.others||[]).map(b=>`<tr><td class="pos">–</td><td>${boatCell(b)}</td><td class="pts" style="color:var(--ink-3);font-size:16px">≤${st[st.length-1][1]}</td><td class="gap">in attesa</td><td></td></tr>`).join('');
+const top=st.slice(0,5).some(x=>x[0]===MY)||!MY?st.slice(0,5):[...st.slice(0,4),st.find(x=>x[0]===MY)];
+$('#mini-standings').innerHTML=top.map(([b,p])=>[b,p,st.findIndex(x=>x[0]===b)]).map(([b,p,i])=>`<tr class="${b===MY?'mine':''}"><td class="pos ${i<2?'top':''}">${i+1}</td><td>${boatCell(b)}</td><td class="pts">${p}</td></tr>`).join('');
+$('#mini-note').textContent=`Dopo ${LIVE.afterRaces} regate su 8. Le prime due vanno in finale.`;
+$('#stand-lede').textContent=LIVE.standingsNote;
+$('#pr1').innerHTML=PR1.map(([b,p,x])=>`<tr><td class="pos ${p==='1°'?'top':''}" style="font-size:18px">${p}</td><td>${boatCell(b)}</td><td class="note" style="text-align:right">${esc(x)}</td></tr>`).join('');
+}
+function renderFeed(){
+$('#feed').innerHTML=LIVE.feed.map(f=>`<div class="fi ${f.hot?'hot':''}"><div class="fi-when">${f.w}</div><div><p><b>${esc(f.h)}.</b> ${esc(f.p)}</p>${f.s.length?`<div class="src">Fonte: ${f.s.map(srcLink).join(', ')}</div>`:''}</div></div>`).join('');
+$('#updated-at').textContent=`Ultimo aggiornamento: ${LIVE.updated}.`;
+$('#foot-upd').textContent=`Aggiornato: ${LIVE.updated}.`;
+}
+function renderRR(){
+$('#rr').innerHTML=(LIVE.races||[]).map(r=>{
+const run=Object.keys(r.p).length>0;
+const cells=[1,2,3].map(k=>{const b=r.p[k];
+if(!b)return `<span class="pc empty">${run?'n.d.':'—'}</span>`;
+const t=teamOf(b);
+return `<button class="pc ${k===1?'p1':''} ${b===MY?'mine':''}" data-team="${t.id}" title="${esc(BOATS[b].name)}"><i style="background:${t.c}"></i><span><span class="lg">${t.flag} ${esc(SHORT[b])}</span><span class="sm">${t.flag} ${TINY[b]}</span></span></button>`}).join('');
+const others=Object.entries(r.p).filter(([k])=>+k>3).map(([k,b])=>`${k}ª ${SHORT[b]}`);
+const x=run?[r.x,others.length?'Poi: '+others.join(', ')+'.':''].filter(Boolean).join(' '):'Da correre.';
+return `<div class="rr"><span class="rr-n">R${r.n}</span>${cells}<div class="rr-x">${esc(x)}${r.s&&r.s.length?' · '+r.s.map(srcLink).join(', '):''}</div></div>`;
+}).join('');
+}
+function renderFav(){
+const b=$('#fav-btn');
+if(MY){b.style.setProperty('--c',teamOf(MY).c);$('#fav-lbl').textContent=SHORT[MY]}
+else{b.style.removeProperty('--c');$('#fav-lbl').textContent='Tifo per…'}
+}
+function renderMyTeam(){
+const el=$('#myteam');
+if(!MY){el.innerHTML=`<button class="myteam" data-pick style="width:100%;text-align:left;border-style:dashed"><span class="big">★</span><span><b>Per chi tifi?</b><span>Scegli la tua barca: la vedrai evidenziata ovunque, in classifica e nei risultati.</span></span><span class="chip">Scegli</span></button>`;return}
+const st=LIVE.standings,i=st.findIndex(x=>x[0]===MY),p=st[i][1],t=teamOf(MY),F=LIVE.final||{};
+const left=Math.max(0,8-LIVE.afterRaces),gap=st[1][1]-p;
+let msg;
+if(F.winner)msg=MY===F.winner?'Ha vinto la Regata Preliminare di Napoli!':(MY===F.a||MY===F.b)?'Finalista a Napoli: ha perso solo il testa a testa.':`Chiude la regata di flotta ${i+1}ª con ${p} punti.`;
+else if(i===0)msg=`In testa, con ${p-st[1][1]} punti sulla seconda.${left?' Oggi sarebbe in finale.':' È in finale.'}`;
+else if(i===1)msg=`${left?'Oggi sarebbe in finale':'È in finale'}. ${st[0][1]-p} punti dalla prima.`;
+else if(!left)msg=`Fuori dalla finale: chiude ${i+1}ª.`;
+else msg=`A ${gap} punti dal 2° posto, l'ultimo che vale la finale. `+(gap<8*left?'Ancora in corsa.':gap===8*left?'Serve un miracolo e uno spareggio.':'Non può più arrivare in finale.');
+el.innerHTML=`<div class="myteam" style="border-color:${t.c}"><span class="big">${i+1}ª<small> · ${p} pt</small></span><span><b>${t.flag} ${esc(BOATS[MY].name)}</b><span>${esc(msg)}</span></span><button class="chip" data-pick>Cambia</button></div>`;
+}
+function pickSheet(){
+const order=LIVE.standings.map(x=>x[0]);
+openSheet(`
+<div class="sheet-top"><span class="team-flag" style="font-size:40px">★</span><div><div class="sheet-name" id="sheet-name">Per chi tifi?</div><div class="sheet-meta">La scelta resta salvata su questo telefono</div></div><button class="close" aria-label="Chiudi" data-close>×</button></div>
+<div class="sheet-body"><div class="pick">${order.map(b=>{const t=teamOf(b);return `<button data-my="${b}" aria-pressed="${b===MY}"><span class="swatch" style="background:${t.c}"></span><span style="font-size:22px">${t.flag}</span><span><b style="font-family:var(--display);font-size:18px;text-transform:uppercase">${esc(BOATS[b].name)}</b><br><span class="note">${esc(BOATS[b].tag)}</span></span></button>`}).join('')}
+${MY?'<button data-my="" style="justify-content:center;color:var(--ink-2)">Nessuna, grazie</button>':''}</div></div>`,'#E9B44C');
+}
+function setMy(b){
+MY=b||null;store.set('ac38-my',MY);closeSheet();renderMine();
+if(MY)toast(`Ora tifi per ${BOATS[MY].name} ★`);
+}
+function renderMine(){renderFav();renderMyTeam();renderStandings();renderFinalCard();renderRR()}
+function renderChamp(){
+const F=LIVE.final||{},el=$('#champ');
+if(!F.winner){el.innerHTML='';return}
+const t=teamOf(F.winner);
+el.innerHTML=`<div class="champ"><div class="trophy">🏆</div><div class="eyebrow" style="color:var(--gold);margin-top:6px">Vincitore della Regata Preliminare di Napoli</div><h2>${t.flag} ${esc(BOATS[F.winner].name)}</h2>${F.res?`<p>${esc(F.res)}</p>`:''}<button class="chip" data-confetti style="margin-top:12px">🎉 Festeggia</button></div>`;

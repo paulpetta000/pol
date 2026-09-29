@@ -1285,7 +1285,7 @@ function mapSVG(){
 
 /* ============ DATI LIVE ============ */
 let lastPull=0;
-async function pullLive(quiet){
+async function pullLive(quiet,noRender){
   if(!/^https?:$/.test(location.protocol))return;
   try{
     const r=await fetch('/live.json?t='+Date.now(),{cache:'no-store'});
@@ -1293,7 +1293,7 @@ async function pullLive(quiet){
     const d=await r.json();lastPull=Date.now();
     if(!d||!d.standings||d.updated===LIVE.updated)return;
     const hadWin=!!(LIVE.final&&LIVE.final.winner);
-    LIVE=d;renderData();
+    LIVE=d;if(noRender)return;renderData();
     if(!quiet)toast(`Nuovi risultati · ${d.updated}`);
     if(d.final&&d.final.winner&&!hadWin)celebrate();
   }catch(e){}
@@ -1497,18 +1497,20 @@ document.addEventListener('keydown',e=>{
     else if(!e.shiftKey&&document.activeElement===f[f.length-1]){e.preventDefault();f[0].focus()}}
 });
 
+(async()=>{
+if(/^https?:$/.test(location.protocol))await Promise.race([pullLive(true,true),new Promise(r=>setTimeout(r,2500))]);
 renderData();
 renderTeams();renderGuide();renderSpeed();renderCountdown();renderSources();renderHeroArt();
 $('#map').innerHTML=mapSVG();
 $('#wa-link').href='https://wa.me/?text='+encodeURIComponent(SHARE_TEXT+' '+SHARE_URL);
 show((location.hash||'').slice(1)||'oggi',false);
 addEventListener('resize',()=>{cancelAnimationFrame(renderHeroArt.r);renderHeroArt.r=requestAnimationFrame(renderHeroArt)});
-pullLive(true);
 setInterval(()=>{if(!document.hidden)pullLive()},60000);
 document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastPull>30000)pullLive()});
 setInterval(()=>{renderStatus();renderRaces();renderDays()},20000);
 setInterval(()=>{const n=romeNow();$('#clock').innerHTML=`${n.hm}<span>NAPOLI</span>`},1000);
 setInterval(renderCountdown,30000);
+})();
 </script>
 </body>
 </html>
