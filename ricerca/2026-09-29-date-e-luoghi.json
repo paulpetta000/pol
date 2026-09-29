@@ -1,0 +1,1307 @@
+{
+ "luo": {
+  "items": [
+   {
+    "id": "luo-01",
+    "area": "race village 2027",
+    "fatto": "Per il 2027 gli organizzatori prevedono il Race Village principale lungo via Francesco Caracciolo, sul lungomare del centro. Avrà tribune ricavate sfruttando i promontori, il palco ufficiale per la presentazione dei velisti e le premiazioni, stand dei partner, negozi, cibo e bar, per uno «show» di circa tre mesi.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/host-venue",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "The Viale Francesco Caracciolo will be transformed into the ultimate Race Village… grandstand viewing opportunities… Official Main Stage for sailor and trophy presentations",
+    "data_pubblicazione": "2025-09-20 (piano presentato al 65° Salone Nautico di Genova)",
+    "altre_fonti": [
+     "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+     "https://www.americascup.com/it/host-venue"
+    ],
+    "note": "Solo snippet: la pagina ufficiale non si apriva (dominio bloccato dal proxy di rete), quindi non è marcato CONFERMATO. Mancano i dettagli pratici: date di apertura, orari, posizione e prezzo delle tribune. Un testo ufficiale parla di «free-to-enter Race Village», ma dallo snippet non si capisce se si riferisca al 2027 o alla pre-regata 2026."
+   },
+   {
+    "id": "luo-02",
+    "area": "race village 2027 (Bagnoli)",
+    "fatto": "A Bagnoli, accanto alle basi dei team, il progetto ufficiale prevede un «AC Tech Fan Village» con aree interattive, maxischermi per vedere le regate e gli show prima delle gare, cibo e negozi. Sono previsti anche aree pubbliche da cui guardare, un marina per superyacht e una base per Women's e Youth America's Cup.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "AC Tech Fan Village with interactive areas, large jumbotron screens to watch the racing and pre-event feature shows, plus… gastronomy and retail options",
+    "data_pubblicazione": "2025-09-20",
+    "altre_fonti": [
+     "https://www.americascup.com/host-venue"
+    ],
+    "note": "Solo snippet. Non sono indicati date, orari e nemmeno se l'ingresso sarà gratuito."
+   },
+   {
+    "id": "luo-03",
+    "area": "race village 2027",
+    "fatto": "Il 29 settembre 2026 il sindaco Gaetano Manfredi ha detto che nel 2027 ci saranno due Race Village: uno in via Caracciolo e uno a Bagnoli.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.napolimagazine.com/in-evidenza/articolo/il-sindaco-manfredi-america-s-cup-tutti-entusiasti-saranno-realizzati-due-race-village-29-09-2026",
+    "fonte_tipo": "stampa",
+    "evidenza": "Manfredi: «America's Cup? Tutti entusiasti, saranno realizzati due Race Village», uno in via Caracciolo e l'altro a Bagnoli (parafrasi).",
+    "data_pubblicazione": "2026-09-29",
+    "altre_fonti": [
+     "https://www.tuttonapoli.net/napoli-citta/america-s-cup-2027-manfredi-svela-due-race-village-dragaggi-bagnoli-657643",
+     "https://www.napolita.it/manfredi-tutti-entusiasti-americas-cup/"
+    ],
+    "note": "Solo snippet. È una dichiarazione riportata dalla stampa: non l'ho trovata in un atto o in una pagina ufficiale."
+   },
+   {
+    "id": "luo-04",
+    "area": "race village 2027",
+    "fatto": "La pagina del Comune di Napoli dedicata all'evento dice che nel 2027 le attività saranno divise tra Bagnoli e il lungomare. A Bagnoli ci sarà il villaggio (vicino alle basi dei team, con ingresso gratuito), mentre le regate si svolgeranno davanti al lungomare Caracciolo.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Nel 2027 le attività saranno distribuite tra Bagnoli e il lungomare: a Bagnoli sarà realizzato il villaggio, mentre le regate si svolgeranno sul lungomare Caracciolo",
+    "data_pubblicazione": "non indicata",
+    "note": "Solo snippet: comune.napoli.it è bloccato dal proxy. La pagina non ha data e forse è precedente ai piani più recenti. Non coincide con americascup.com, che mette il Race Village principale in via Caracciolo (vedi contraddizioni)."
+   },
+   {
+    "id": "luo-05",
+    "area": "race village 2027 e viabilità",
+    "fatto": "Secondo la stampa locale, il villaggio 2027 in via Caracciolo avrà tribune, negozio ufficiale, gazebo per cibo e bevande sulla carreggiata davanti alla Villa Comunale, maxischermi, il palco alla Rotonda Diaz e pedane sugli scogli. Via Caracciolo e viale Dohrn potrebbero restare chiuse alle auto per circa tre mesi, ma il Comune non ha ancora emanato il piano del traffico definitivo.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+    "fonte_tipo": "stampa",
+    "evidenza": "Via Caracciolo e viale Anton Dohrn chiuse al traffico per circa 3 mesi, con sospensione della pista ciclabile (parafrasi); 'dispositivo definitivo non ancora emanato' (NapoliToday).",
+    "data_pubblicazione": "2026-09 (data esatta non visibile nello snippet)",
+    "altre_fonti": [
+     "https://www.napolitoday.it/attualita/america-cup-2027-via-caracciolo-chiusa-tre-mesi-viabilita.html",
+     "https://www.2anews.it/americas-cup-2027-lungomare-chiuso-per-3-mesi/",
+     "https://www.napolike.it/americas-cup-2027-via-caracciolo-chiusa-tre-mesi"
+    ],
+    "note": "Solo snippet. Sono ipotesi dei giornali, non ancora un'ordinanza. Secondo NapoliToday le regate durano circa due mesi: i «tre mesi» comprenderebbero anche montaggio e smontaggio."
+   },
+   {
+    "id": "luo-06",
+    "area": "race village 2027 - date e orari",
+    "fatto": "Non sono ancora usciti date di apertura, orari, modalità d'ingresso e mappa del Race Village 2027. Per ora si conoscono solo le date delle regate: Louis Vuitton Cup dal 22 maggio 2027 e Match dal 10 luglio, al massimo fino al 19 luglio 2027.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com (host-venue, news, /it), comune.napoli.it, sportesalute.eu, regione.campania.it e stampa locale: nessun orario o data del village 2027.",
+    "altre_fonti": [
+     "https://www.americascup.com/38th-americascup",
+     "https://www.tuttonapoli.net/napoli-citta/america-s-cup-tributo-napoli-sei-magnifica-ufficiali-date-2027-657646"
+    ],
+    "note": "Le date delle regate vengono da snippet (americascup.com e TuttoNapoli del 29/09/2026). Uno snippet di americascup.com indica anche Youth America's Cup dal 2 al 6 giugno e Women's America's Cup dal 5 al 9 luglio 2027: da verificare (rientra nel tema calendario)."
+   },
+   {
+    "id": "luo-07",
+    "area": "basi team",
+    "fatto": "Le basi dei team per il 2027 sono a Bagnoli, nella vecchia area industriale della zona ovest (secondo la stampa, la «colmata» dell'ex Italsider). Le squadre sono Emirates Team New Zealand, GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, Team Australia e ARC Team USA.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4370_BAGNOLI-DEVELOPMENT-CONTINUES-AT-ASTONISHING-PACE",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "The team bases include Emirates Team New Zealand, GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, Team Australia, and ARC Team USA.",
+    "data_pubblicazione": "fine settembre 2026 (circa 27-28/09)",
+    "altre_fonti": [
+     "https://www.americascup.com/it/news/4371_LO-SVILUPPO-DI-BAGNOLI-PROCEDE-A-UN-RITMO-SORPRENDENTE",
+     "https://www.ilmattino.it/sport/vela/america_s_cup_entusiasta_di_bagnoli_lavori_proseguono_ritmo_sorprendente-9788440.html",
+     "https://www.americascup.com/news/3801_LITALIA-OSPITERA-LA-38-EDIZIONE-DELLA-LOUIS-VUITTON-AMERICAS-CUP-A-NAPOLI-NEL-2027"
+    ],
+    "note": "Solo snippet. Uno snippet dà l'ordine delle basi «da nord a sud» come nell'elenco sopra (ETNZ più a nord, ARC Team USA più a sud), ma non si capisce da quale fonte venga. Secondo un altro snippet l'hangar di ARC Team USA non è ancora stato costruito."
+   },
+   {
+    "id": "luo-08",
+    "area": "basi team - stato dei lavori",
+    "fatto": "A fine settembre 2026 le strutture delle basi di Bagnoli sono ben visibili, alcune sono quasi finite e si stanno costruendo strade e servizi. Il sindaco, che è anche commissario straordinario per Bagnoli, ha annunciato la consegna di tutte le aree ai team entro l'8 ottobre 2026 e la fine dei dragaggi dei fondali in un paio di settimane; il primo AC75 (La Roche-Posay Racing Team) è arrivato a Bagnoli su una chiatta il 24 settembre 2026.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4370_BAGNOLI-DEVELOPMENT-CONTINUES-AT-ASTONISHING-PACE",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Structures of the America's Cup team bases… with several structures approaching completion and supporting infrastructure taking shape around them.",
+    "data_pubblicazione": "fine settembre 2026",
+    "altre_fonti": [
+     "https://kisskissnapoli.it/bagnoli-americas-cup-aree-consegna-8-ottobre/",
+     "https://www.americascup.com/news/4302_MAYOR-OF-NAPLES-VISITS-THE-TEAM-BASES-AT-NISIDA",
+     "https://www.americascup.com/it/news/4353_LA-ROCHE-POSAY-RACING-TEAM-PORTA-IL-PRIMO-AC75-A-NAPOLI",
+     "https://www.boatingnz.co.nz/2026/09/first-ac75-arrives-in-naples-from-lorient-to-naples-la-roche-posay-racing-teams-ac75-completes-an-extraordinary-journey/"
+    ],
+    "note": "Solo snippet. La scadenza dell'8 ottobre va ricontrollata dopo quella data."
+   },
+   {
+    "id": "luo-09",
+    "area": "basi team - accesso del pubblico",
+    "fatto": "A Bagnoli il pubblico non potrà entrare nei piazzali davanti agli hangar né nelle aree tecniche. Sul retro delle basi sono però previste attività aperte a tutti: simulatori, negozi dei team, bar e ristoranti.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.ilmattino.it/sport/vela/america_s_cup_entusiasta_di_bagnoli_lavori_proseguono_ritmo_sorprendente-9788440.html",
+    "fonte_tipo": "stampa",
+    "evidenza": "Il pubblico non avrà accesso ai piazzali davanti agli hangar; sul retro delle basi simulatori e negozi dei team (parafrasi, Giacomo Vinci, ACE).",
+    "data_pubblicazione": "fine settembre 2026 (circa 28/09)",
+    "altre_fonti": [
+     "https://sailbiz.it/americas-cup-napoli-2027-dentro-il-cantiere-di-bagnoli/",
+     "https://www.2anews.it/americas-cup-2027-lungomare-chiuso-per-3-mesi/"
+    ],
+    "note": "Solo snippet. La frase è di Giacomo Vinci, responsabile infrastrutture di America's Cup Event (ACE), detta durante una visita al cantiere; non è chiaro se l'abbia riportata Il Mattino o Sailbiz. 2anews scrive invece che gli hangar saranno accessibili al pubblico (vedi contraddizioni)."
+   },
+   {
+    "id": "luo-10",
+    "area": "basi team (precedente 2026)",
+    "fatto": "Precedente 2026: durante la regata preliminare le squadre avevano basi provvisorie a Nisida, con sei hangar nell'area del Comando Logistico della Marina Militare, in attesa che Bagnoli fosse pronta. A Nisida si è svolta anche la cerimonia ufficiale di apertura.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/photo/4330_OFFICIAL-OPENING-CEREMONY-IN-NISIDA",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "The Official Opening Ceremony… took place on the island of Nisida where the teams have taken temporary bases for the regatta.",
+    "data_pubblicazione": "2026-09 (circa 23/09)",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4302_MAYOR-OF-NAPLES-VISITS-THE-TEAM-BASES-AT-NISIDA",
+     "https://www.sportesalute.eu/primo-piano/americas-cup-ecco-come-si-trasformera-bagnoli.html",
+     "https://www.napolitoday.it/attualita/americas-cup-hangar-nisida-bagnoli.html"
+    ],
+    "note": "Solo snippet. È un'area militare: non ho trovato informazioni su un eventuale accesso del pubblico."
+   },
+   {
+    "id": "luo-11",
+    "area": "race village (precedente 2026)",
+    "fatto": "Precedente 2026: il Race Village ufficiale era gratuito, organizzato da Sport e Salute, con il palco principale alla Rotonda Diaz (spiaggia della Mappatella), e si allungava su via Caracciolo chiusa al traffico. Dentro c'erano maxischermi con diretta e commento, gli show di uscita e rientro delle barche alle 12 e alle 17, un'area ristoro, il negozio ufficiale, attività per ragazzi e prove di vela in spiaggia.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/naples",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Race Village… in Rotonda Diaz (also known as Mappatella Beach) as the centre-piece for the main stage, stretching out along the Via Francesco Caracciolo",
+    "data_pubblicazione": "settembre 2026",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4362_RACE-VILLAGE-COMES-ALIVE-IN-NAPLES-AS-MASSIVE-SATURDAY-AWAITS",
+     "https://www.americascup.com/it/news/4305_UN-RACE-VILLAGE-SENZA-EGUALI-IL-CUORE-PULSANTE-DELLA-PR2-DI-NAPOLI",
+     "https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/27/americas-cup-gia-42mila-accessi-al-race-village-tutto-pronto-per_b9de1038-9729-487d-999b-cc5fc9ac05db.html",
+     "https://www.comune.napoli.it/novita/americas-cup-race-village/",
+     "https://www.regione.campania.it/regione-informa/notizie/regata-preliminare-america-s-cup-campania-si-racconta-al-race-village"
+    ],
+    "note": "Solo snippet. Nel villaggio c'erano anche uno spazio del Comune vicino a piazza Vittoria (incontri e laboratori per le scuole) e uno della Regione Campania (prodotti tipici e show cooking). Le regate si svolgevano circa dalle 14 alle 16. Una notizia ufficiale scrive per errore «Via Federico Carraciolo»."
+   },
+   {
+    "id": "luo-12",
+    "area": "race village (precedente 2026) - orari",
+    "fatto": "Precedente 2026: secondo il Comune il Race Village, a ingresso libero, era aperto giovedì 24 e venerdì 25 settembre dalle 11 alle 21, sabato 26 dalle 11 alle 20:30 e domenica 27 dalle 11 alle 22.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.comune.napoli.it/novita/americas-cup-race-village/",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Aperto giovedì 24 e venerdì 25 dalle 11 alle 21, sabato 26 dalle 11 alle 20.30, domenica 27 dalle 11 alle 22 (parafrasi).",
+    "data_pubblicazione": "settembre 2026 (circa 22-23/09)",
+    "altre_fonti": [
+     "https://www.napolike.it/villaggio-americas-cup-2026-napoli-lungomare-orari-programma-squadre",
+     "https://www.americascup.com/naples"
+    ],
+    "note": "Solo snippet. americascup.com indicava invece «11am to approximately 8pm every day» (vedi contraddizioni)."
+   },
+   {
+    "id": "luo-13",
+    "area": "race village (precedente 2026) - ingressi e controlli",
+    "fatto": "Precedente 2026: l'ingresso principale del Race Village era in piazza Vittoria e un secondo accesso era dalla Villa Comunale. Ai varchi c'erano i metal detector e le aree venivano chiuse quando erano piene.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.corrieredellosport.it/news/motori/am/speciale-america-s-cup/2026/09/24-151423847/cos_napoli_diventa_capitale_della_vela",
+    "fonte_tipo": "stampa",
+    "evidenza": "L'ingresso principale al Race Village (gratuito) sarà in piazza Vittoria… un secondo accesso sarà dalla Villa Comunale (parafrasi).",
+    "data_pubblicazione": "2026-09-24",
+    "altre_fonti": [
+     "https://www.napolitoday.it/attualita/americas-cup-napoli-come-accedere-controlli.html",
+     "https://www.ilmattino.it/napoli/cronaca/america_s_cup_piano_sicurezza_ha_retto_napoli_molto_attrattiva-9788786.html",
+     "https://www.tuttosport.com/news/motori/am/speciale-america-s-cup/2026/09/24-151423935/cos_napoli_diventa_capitale_della_vela"
+    ],
+    "note": "Solo snippet. Non ho trovato un elenco ufficiale degli oggetti vietati."
+   },
+   {
+    "id": "luo-14",
+    "area": "maxischermi (precedente 2026)",
+    "fatto": "Precedente 2026: oltre ai maxischermi del villaggio, lungo via Caracciolo c'erano quattro portali con schermi LED e un maxischermo con beach bar alla spiaggia della Mappatella. Così la diretta si poteva seguire anche lontano dal palco.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.ilmattino.it/napoli/cronaca/regate_america_s_cup_sul_lungomare_arrivano_i_maxischermi_sara_il_villaggio_di_tutti-9773521.html",
+    "fonte_tipo": "stampa",
+    "evidenza": "Lungo via Caracciolo quattro portali con led wall, strutture del villaggio con maxischermo e beach bar alla Mappatella, palco alla Rotonda Diaz (parafrasi).",
+    "data_pubblicazione": "settembre 2026 (circa 19/09)",
+    "altre_fonti": [
+     "https://www.americascup.com/it/naples",
+     "https://www.napolidavivere.it/2026/09/14/americas-cup-napoli-2026-programma-dove-vederla/"
+    ],
+    "note": "Solo snippet. Attenzione: i quattro maxischermi di Largo Sermoneta, piazza Sannazaro, piazza San Pasquale e via Partenope che escono in alcune ricerche riguardano la festa scudetto del Napoli (maggio 2025), non l'America's Cup."
+   },
+   {
+    "id": "luo-15",
+    "area": "vedere gratis (precedente 2026) - pedane",
+    "fatto": "Precedente 2026: il Comune ha montato quattro pedane panoramiche sugli scogli di via Caracciolo, all'altezza della Rotonda Diaz, gratuite e senza prenotazione (entrava chi arrivava prima); quando erano piene l'accesso veniva bloccato e si sono formate lunghe file. Rampe, una corsia prioritaria e aree dedicate erano riservate a persone con disabilità e più fragili.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.agenziagiornalisticaopinione.it/opinionmix/comune-di-napoli-americas-cup-pedane-accessibili-sugli-scogli-e-imbarcazioni-inclusive-per-vivere-le-regate-dal-mare/",
+    "fonte_tipo": "stampa",
+    "evidenza": "Grazie a specifiche passerelle sono accessibili quattro pedane panoramiche… corsia prioritaria e aree dedicate a persone con disabilità e categorie più fragili (parafrasi comunicato Comune).",
+    "data_pubblicazione": "settembre 2026",
+    "altre_fonti": [
+     "https://www.fanpage.it/napoli/americas-cup-folla-e-ressa-per-sedersi-alle-pedane-sul-lungomare-posti-limitati-file-lunghissime/",
+     "https://cronachedi.it/americas-cup-napoli-piattaforme-gratuite-regate-barche/",
+     "https://www.napolimagazine.com/attualita/articolo/il-sindaco-manfredi-le-piattaforme-sul-lungomare-in-occasione-della-pre-regata-dell-america-s-cup-s-20-09-2026",
+     "https://www.sportesalute.eu/americascup.html",
+     "https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/25/americas-cup-entusiasmo-e-selfie-per-i-napoletani-sul-pontone-del-race_4212a7e7-1601-4861-8d42-5cf3760c205d.html"
+    ],
+    "note": "Solo snippet: è un comunicato del Comune ripreso da un'agenzia. Uno snippet parla di circa 1.000 mq e di una capienza totale di 150 persone (3 pedane per il pubblico e 1 per le autorità): dato da verificare. Sport e Salute aveva anche un pontone galleggiante aperto al pubblico («BeActive Multisport Village») vicino alla Colonna Spezzata, molto affollato."
+   },
+   {
+    "id": "luo-16",
+    "area": "vedere gratis 2027 - pedane",
+    "fatto": "La Soprintendenza ha dato alle pedane sugli scogli di via Caracciolo un permesso temporaneo di un anno, fino a luglio 2027: potrebbero quindi servire anche per le regate del 2027. Comune e Regione vorrebbero rimontarle ogni estate.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.fanpage.it/napoli/pedane-dellamericas-cup-sul-lungomare-di-napoli-ok-per-un-anno-fino-a-luglio-2027/",
+    "fonte_tipo": "stampa",
+    "evidenza": "Pedane dell'America's Cup sul Lungomare di Napoli, ok della Soprintendenza per un anno: fino a luglio 2027 (titolo).",
+    "data_pubblicazione": "settembre 2026",
+    "altre_fonti": [
+     "https://www.ilroma.net/news/cronaca/864725/americas-cup-la-soprintendenza-approva-le-pedane-ma-per-un-anno.html",
+     "https://www.lanotiziaincomune.it/prima-pagina/americas-cup-a-napoli-ok-alle-pedane-sul-lungomare-fino-a-luglio-2027/",
+     "https://www.napolitoday.it/attualita/americas-cup-villaggio-lungomare-apertura.html"
+    ],
+    "note": "Solo snippet: non ho trovato l'atto della Soprintendenza. Non si sa se nel 2027 le pedane saranno ancora montate né come ci si entrerà (una fonte ipotizza prenotazione o registrazione)."
+   },
+   {
+    "id": "luo-17",
+    "area": "folla (precedente 2026)",
+    "fatto": "Precedente 2026: gli organizzatori parlano di decine di migliaia di persone sul lungomare, nel villaggio e sulle colline, con oltre 85.000 nel Race Village nella seconda giornata di regate. Sport e Salute ha poi comunicato oltre 250.000 presenze in quattro giorni, di cui più di 130.000 l'ultimo giorno; per l'ANSA domenica gli ingressi sono stati oltre 100.000.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "An electric crowd of over 85,000 spectators in the Race Village (seconda giornata di regate).",
+    "data_pubblicazione": "2026-09-28 circa",
+    "altre_fonti": [
+     "https://www.sportesalute.eu/americascup.html",
+     "https://www.sportefinanza.it/2026/09/28/americas-cup-napoli-presenze-regate-preliminari/",
+     "https://www.ansa.it/campania/notizie/2026/09/27/americas-cup-oltre-100mila-ingressi-sul-lungomare-per-il-successo-di-luna_c1638251-2464-4907-88bf-27d2e37fbcf4.html",
+     "https://www.ansa.it/sito/notizie/sport/altrisport/2026/09/26/americas-cup-circa-90mila-persone-al-race-village-per-la-seconda-giornata_21c23aa7-8896-46c5-b3d7-763389087487.html"
+    ],
+    "note": "Solo snippet. Sport e Salute: 87.000 ingressi sabato, con un picco di 33.000 persone presenti insieme. I numeri cambiano da fonte a fonte (vedi contraddizioni)."
+   },
+   {
+    "id": "luo-18",
+    "area": "sicurezza (precedente 2026)",
+    "fatto": "Precedente 2026: il piano della Prefettura ha impiegato dal 22 al 27 settembre 1.630 agenti delle forze di polizia e 230 rinforzi, più circa 700 vigili urbani e 200 agenti della Polizia Metropolitana, con metal detector ai varchi, videosorveglianza, controlli in mare e assistenza sanitaria (118, ASL e volontari). Il Prefetto Michele di Bari ha detto che il piano ha funzionato e che valuterà correzioni in vista di maggio 2027.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.ilmattino.it/sport/vela/americas_cup_napoli_sicurezza_1630_agenti_prefettura_regate_settembre-9779238.html",
+    "fonte_tipo": "stampa",
+    "evidenza": "America's Cup a Napoli, maxi piano sicurezza: 1.630 agenti in campo dal 22 al 27 settembre (titolo).",
+    "data_pubblicazione": "2026-09-22",
+    "altre_fonti": [
+     "https://askanews.it/2026/09/24/americas-cupprefettura-napolial-via-piano-sicurezza-per-regate/",
+     "https://www.ansa.it/campania/notizie/2026/09/22/americas-cup-per-i-controlli-in-campo-1630-uomini-delle-forze-dellordine_a548b088-d9b1-4f4c-8a19-b0c01c64b202.html",
+     "https://www.ilmattino.it/napoli/cronaca/america_s_cup_piano_sicurezza_ha_retto_napoli_molto_attrattiva-9788786.html",
+     "https://www.italiaonline.news/interno-gov-it-americas-cup-definito-il-piano-di-sicurezza-per-le-regate-preliminari-sul-lungomare-di-napoli/"
+    ],
+    "note": "Solo snippet. Secondo italiaonline.news il comunicato è uscito anche su interno.gov.it, che non ho aperto. Le prime notizie (18-19/09) parlavano di circa 1.000 agenti."
+   },
+   {
+    "id": "luo-19",
+    "area": "viabilità (precedente 2026)",
+    "fatto": "Precedente 2026: con le ordinanze O.D. 1496 del 2/9/2026 e O.D. 1598 del 16/9/2026 il Comune ha sospeso le piste ciclabili di via Caracciolo dal 7 settembre al 5 ottobre. Dal 21 settembre ha vietato il transito su viale Dohrn e su via Caracciolo tra viale Dohrn e piazza Vittoria, con rimozione forzata; il divieto è stato poi prorogato fino alla mezzanotte del 2 ottobre per lo smontaggio, e le auto passavano dalla Riviera di Chiaia.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.comune.napoli.it/novita/dispositivo-di-circolazione-temporaneo-in-via-francesco-caracciolo-in-occasione-dellevento-regata-preliminare-louis-vuitton-cup-2026-villaggio/",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Dal 21 al 27 settembre divieto di transito in viale Anton Dohrn e in via Francesco Caracciolo, tra viale Dohrn e piazza Vittoria (parafrasi).",
+    "data_pubblicazione": "settembre 2026 (proroga del 27/09/2026)",
+    "altre_fonti": [
+     "https://www.comune.napoli.it/novita/regata-preliminare-louis-vuitton-cup-cambia-la-viabilita-sul-lungomare-il-dispositivo-di-circolazione-esaminato-dalla-commissione-mobilita/",
+     "https://www.napolimagazine.com/attualita/articolo/comune-di-napoli-prorogato-il-dispositivo-di-circolazione-previsto-per-le-pre-regate-dell-america-s-27-09-2026",
+     "https://www.ilmattino.it/sport/vela/america_s_cup_a_napoli_divieto_di_transito_sul_lungomare_fino_al_2_ottobre-9788664.html"
+    ],
+    "note": "Solo snippet. La Fase 4 (28 settembre-5 ottobre) è stata annullata. Il piano del traffico per il 2027 non è ancora uscito."
+   },
+   {
+    "id": "luo-20",
+    "area": "sicurezza (precedente 2026) - emergenza terremoto",
+    "fatto": "Precedente 2026: per il rischio bradisismo dei Campi Flegrei è stato preparato un piano di emergenza con 13 aree di attesa comunali tra il lungomare e Bagnoli e una centrale di controllo con sala video nella Villa Comunale. Era un piano di precauzione, senza nessun allarme in corso.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.fanpage.it/napoli/le-pre-regate-dellamericas-cup-a-napoli-hanno-un-piano-di-emergenza-in-caso-di-terremoto-ai-campi-flegrei/",
+    "fonte_tipo": "stampa",
+    "evidenza": "13 aree di attesa individuate tra il lungomare e Bagnoli per il rischio bradisismo ai Campi Flegrei (parafrasi).",
+    "data_pubblicazione": "settembre 2026",
+    "altre_fonti": [
+     "https://www.napolike.it/americas-cup-napoli-aree-di-attesa-terremoto"
+    ],
+    "note": "Solo snippet. L'elenco delle 13 aree va verificato sul sito del Comune (Protezione civile)."
+   },
+   {
+    "id": "luo-21",
+    "area": "campo di regata 2027",
+    "fatto": "Il campo di regata 2027 andrà dal Castel dell'Ovo al promontorio occidentale di Posillipo, vicino alla costa. Gli organizzatori parlano di un anfiteatro naturale, con punti per guardare lungo tutto il lungomare del centro e AC75 a piena velocità a pochi metri dalla riva.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/3800_THE-CITY-OF-NAPLES-WELCOMES-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-STYLE-AT-THE-OFFICIAL-HOST-VENUE-PRESENTATION",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "The race area… will be set from the Castel to the western headland of Posillipo… with vantage points all along the waterfront of downtown Naples",
+    "data_pubblicazione": "2025-05-28",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4196_WHAT-RACING-IN-THE-SHADOW-OF-VESUVIUS-WILL-FEEL-LIKE",
+     "https://www.americascup.com/it/news/3803_LA-CITTA-DI-NAPOLI-ACCOGLIE-CON-STILE-LA-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-OCCASIONE-DELLA-PRESENTAZIONE-UFFICIALE-DELLA-SEDE-OSPITANTE"
+    ],
+    "note": "Solo snippet. La posizione esatta delle boe e delle zone vietate sarà decisa da un'ordinanza della Capitaneria di Porto, che per il 2027 non è ancora uscita."
+   },
+   {
+    "id": "luo-22",
+    "area": "campo di regata (precedente 2026)",
+    "fatto": "Precedente 2026: gli AC40 hanno regatato davanti al lungomare Caracciolo, tra Castel dell'Ovo e Rotonda Diaz, con passaggi ravvicinati («fly-by») subito fuori dalla scogliera frangiflutti. L'ordinanza n. 99/2026 della Capitaneria ha vietato la navigazione non autorizzata in quell'area dalle 8 del 21 alle 8 del 28 settembre.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/it/news/4176_NAPOLI-UN-ANFITEATRO-NATURALE-PER-L-AMERICA-S-CUP",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Gli AC40 regateranno nello specchio d'acqua antistante il Lungomare Caracciolo, tra Castel dell'Ovo e Rotonda Diaz",
+    "data_pubblicazione": "estate 2026 (data esatta non visibile)",
+    "altre_fonti": [
+     "https://www.americascup.com/it/news/4305_UN-RACE-VILLAGE-SENZA-EGUALI-IL-CUORE-PULSANTE-DELLA-PR2-DI-NAPOLI",
+     "https://www.ansa.it/campania/notizie/2026/09/19/americas-cup-rotte-piu-lunghe-per-navi-e-aliscafi-verso-le-isole_4a223961-609a-4655-a57e-eb59c560e62c.html",
+     "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html"
+    ],
+    "note": "Solo snippet. L'ordinanza è citata solo dalla stampa: non l'ho aperta su guardiacostiera.gov.it. americascup.com/naples descrive l'area come compresa «tra Castel dell'Ovo e la costa di Posillipo»."
+   },
+   {
+    "id": "luo-23",
+    "area": "vedere gratis - dall'alto (fonti ufficiali)",
+    "fatto": "Gli organizzatori descrivono Napoli come un anfiteatro naturale: oltre che dal lungomare, il golfo e il campo di regata si vedono dall'alto da Pizzofalcone, dalla collina del Vomero (Certosa di San Martino, Castel Sant'Elmo) e da Posillipo. Nel 2026 molte persone hanno seguito le regate anche dalle colline.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/it/news/4176_NAPOLI-UN-ANFITEATRO-NATURALE-PER-L-AMERICA-S-CUP",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Pizzofalcone, la collina del Vomero, dominata dalla Certosa di San Martino e Posillipo aprono prospettive diverse sul Golfo",
+    "data_pubblicazione": "estate 2026",
+    "altre_fonti": [
+     "https://www.americascup.com/news/3847_THE-ENDLESS-FASCINATION-OF-THE-CITY-OF-NAPLES",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI"
+    ],
+    "note": "Solo snippet. Una pagina ufficiale (probabilmente la news 3847) dice che Castel Sant'Elmo offre «an alternative view… looking south across the racecourse». Orari e costi d'ingresso di Castel Sant'Elmo e della Certosa non sono stati verificati."
+   },
+   {
+    "id": "luo-24",
+    "area": "vedere gratis - consigli della stampa",
+    "fatto": "La stampa locale consiglia il lungomare Caracciolo, via Partenope e il Borgo Marinari per stare vicini alle barche. Per vedere tutto il campo consiglia i punti alti, dove però non si seguono i dettagli delle manovre: Monte Echia, Terrazza di Sant'Antonio, via Orazio e via Petrarca a Posillipo, via Aniello Falcone al Vomero.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.napolidavivere.it/2026/09/14/americas-cup-napoli-2026-programma-dove-vederla/",
+    "fonte_tipo": "stampa",
+    "evidenza": "Da via Orazio, via Petrarca e via Aniello Falcone… una visione d'insieme del campo di regata, più che le singole manovre (parafrasi).",
+    "data_pubblicazione": "2026-09-14",
+    "altre_fonti": [
+     "https://www.ilmattino.it/schede/america_s_cup_dove_vedere_pre_regate_napoli_ecco_tutti_punti_panoramici_dove_vedere_meglio-9778678.html",
+     "https://moveo.telepass.com/americas-cup-dove-vedere-regate-napoli/",
+     "https://www.napolike.it/americas-cup-napoli-2026-dove-vederla"
+    ],
+    "note": "Solo snippet. I consigli riguardano le pre-regate 2026 con gli AC40. Monte Echia e Terrazza di Sant'Antonio vengono da Il Mattino (centinaia di persone). Via Partenope, Borgo Marinari e le fermate comode (Arco Mirelli e San Pasquale sulla Linea 6, Mergellina e Piazza Amedeo sulla Linea 2) vengono da uno snippet di fonte incerta (probabilmente Moveo)."
+   },
+   {
+    "id": "luo-25",
+    "area": "vedere gratis - punti senza indicazioni",
+    "fatto": "Per Parco Virgiliano, Molosiglio, Mergellina, Nisida e Coroglio non ho trovato indicazioni ufficiali o di stampa affidabile come punti da cui guardare le regate, né per il 2027 né per il 2026. Per Bagnoli il progetto ufficiale parla solo in modo generico di «aree pubbliche di osservazione».",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com, comune.napoli.it, sportesalute.eu e stampa (Il Mattino, Fanpage, NapoliToday, Napoli da Vivere, Moveo): nessuna indicazione specifica.",
+    "note": "Un articolo di Fanpage non recente parla di «piattaforme sulla colmata a Bagnoli» e di un campo di regata fino a Nisida (vedi contraddizioni)."
+   },
+   {
+    "id": "luo-26",
+    "area": "regole e servizi 2027",
+    "fatto": "Non sono ancora uscite regole ufficiali per il pubblico del 2027 (borse, vetro, droni, animali) né informazioni su bagni, punti acqua e primo soccorso nel Race Village. Per il 2026 ho trovato solo i metal detector ai varchi, l'assistenza sanitaria di 118, ASL e volontari e, da siti non ufficiali, il divieto di droni sopra il campo di regata e le zone per gli spettatori.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com (naples, mappa, host-venue), comune.napoli.it (ordinanze), prefettura, guardiacostiera.gov.it e stampa: nessun regolamento spettatori né ordinanza anti-vetro per l'evento.",
+    "altre_fonti": [
+     "https://www.americascup.com/it/naples/map",
+     "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/"
+    ],
+    "note": "Non sono riuscito ad aprire la mappa ufficiale dell'evento 2026. Per altri grandi eventi (partite, festa scudetto) il Comune ha fatto ordinanze contro il vetro; per l'America's Cup non ne ho trovate."
+   },
+   {
+    "id": "luo-27",
+    "area": "fan zone fuori dal lungomare",
+    "fatto": "Oltre a via Caracciolo e Bagnoli, non risultano annunciate fan zone ufficiali con maxischermi in altre zone di Napoli o della Campania. Nel 2026 Sport e Salute ha portato iniziative legate all'evento anche in comuni dell'area metropolitana (per esempio Casoria il 21 settembre), ma non erano fan zone per guardare le regate.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com, sportesalute.eu, comune.napoli.it, regione.campania.it e stampa: indicati solo via Caracciolo e Bagnoli.",
+    "altre_fonti": [
+     "https://www.sportesalute.eu/primo-piano/americas-cup-una-coppa-per-tutti-gli-appuntamenti-dal-21-al-27-settembre.html"
+    ],
+    "note": "Da ricontrollare nella primavera del 2027."
+   },
+   {
+    "id": "luo-28",
+    "area": "race village - orologio del conto alla rovescia",
+    "fatto": "Dal 22 settembre 2026 in piazza Vittoria, accanto all'area del Race Village, c'è un grande orologio a forma di due vele. Fa il conto alla rovescia verso la Louis Vuitton Cup (22 maggio 2027) e il Match (10 luglio 2027).",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.sportesalute.eu/primo-piano/napoli-accende-il-countdown-lamericas-cup-entra-nel-tempo-della-citta.html",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "In piazza Vittoria… è partito ufficialmente il countdown: 242 giorni alla Louis Vuitton Cup e 291 alla Louis Vuitton 38th America's Cup (parafrasi).",
+    "data_pubblicazione": "2026-09-22",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4320_THE-COUNTDOWN-CLOCK-TO-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-HAS-LIT-UP-ON-LUNGOMARE-CARACCIOLO",
+     "https://www.2anews.it/americas-cup-2027-napoli-countdown-piazza-vittoria/"
+    ],
+    "note": "Solo snippet. Secondo americascup.com l'orologio è «just beside the Official Race Village» sul lungomare Caracciolo."
+   },
+   {
+    "id": "luo-29",
+    "area": "fonti - sito americascupitalia.it",
+    "fatto": "Il sito americascupitalia.it («Naples America's Cup») esiste e si presenta come portale dell'evento, con negozio di gadget, prenotazioni e servizi VIP. Non ho trovato nessun legame con gli organizzatori ufficiali: il sito ufficiale resta americascup.com, che ha anche una versione in italiano.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://americascupitalia.it/en/",
+    "fonte_tipo": "altro",
+    "evidenza": "Pagine indicizzate: 'Shop', 'Cappellino ufficiale America's Cup', 'Prenotazione', 'Servizi', 'Hello world!'; indirizzi 'Lungomare Caracciolo 15' e 'Piazza del Plebiscito 7'.",
+    "altre_fonti": [
+     "https://americascupitalia.it/en/prodotto/cappellino-ufficiale-americas-cup/",
+     "https://americascupitalia.it/en/hello-world/",
+     "https://www.americascup.com/it/home"
+    ],
+    "note": "Solo snippet: il sito non è stato aperto. Lo stato ANNUNCIATO indica solo che non ho potuto verificarlo: non è una fonte ufficiale. Dagli snippet non risulta chi lo gestisce, e il post di prova di WordPress «Hello world!» fa pensare a un sito poco curato. Non usarlo come fonte e non confonderlo con la fan page Facebook «americascupitalia»."
+   },
+   {
+    "id": "luo-30",
+    "area": "trasporti (precedente 2026)",
+    "fatto": "Precedente 2026: per le pre-regate ANM ha prolungato gli orari: metro Linea 1 fino alle 2 di notte, Linea 6 con ultime corse alle 00:30 e funicolare di Mergellina fino alle 00:30 (25-27 settembre).",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.comune.napoli.it/novita/servizi-di-trasporto-anm-in-occasione-della-coppa-america/",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Linea 1 prolunga il servizio fino alle 2:00… Linea 6 ultime partenze alle 00:30… funicolare di Mergellina ultima corsa alle 00:30 (parafrasi).",
+    "data_pubblicazione": "settembre 2026",
+    "altre_fonti": [
+     "https://www.napolike.it/americas-cup-napoli-metro-e-funicolari-fino-alle-2"
+    ],
+    "note": "Solo snippet. Ultime corse della Linea 1: da Centro Direzionale alle 1:32, da Piscinola alle 1:20. Il piano dei trasporti per il 2027 non è ancora uscito."
+   }
+  ],
+  "contraddizioni": [
+   {
+    "descrizione": "Dove sarà il Race Village 2027. Per americascup.com sarà lungo via Francesco Caracciolo, con in più un «AC Tech Fan Village» a Bagnoli. La pagina del Comune scrive che «a Bagnoli sarà realizzato il villaggio» e che le regate si svolgeranno davanti al lungomare. Il sindaco Manfredi (29/09/2026) parla di due Race Village, uno in via Caracciolo e uno a Bagnoli.",
+    "fonti": [
+     "https://www.americascup.com/host-venue",
+     "https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/",
+     "https://www.napolimagazine.com/in-evidenza/articolo/il-sindaco-manfredi-america-s-cup-tutti-entusiasti-saranno-realizzati-due-race-village-29-09-2026"
+    ]
+   },
+   {
+    "descrizione": "Orari del Race Village 2026. americascup.com: «from 11am to approximately 8pm every day». Comune di Napoli: giovedì e venerdì 11-21, sabato 11-20:30, domenica 11-22.",
+    "fonti": [
+     "https://www.americascup.com/naples",
+     "https://www.comune.napoli.it/novita/americas-cup-race-village/"
+    ]
+   },
+   {
+    "descrizione": "Ingresso al Race Village 2026. americascup.com lo dice «free-to-all» e senza biglietto, mentre Napolike scrive «ingresso gratuito previa registrazione secondo le modalità indicate dall'organizzazione».",
+    "fonti": [
+     "https://www.americascup.com/naples",
+     "https://www.napolike.it/villaggio-americas-cup-2026-napoli-lungomare-orari-programma-squadre"
+    ]
+   },
+   {
+    "descrizione": "Numero di persone al Race Village 2026. Per sabato 26 i dati sono vicini: oltre 85.000 per americascup.com, 87.000 per Sport e Salute, circa 90.000 per l'ANSA. Per domenica 27 invece l'ANSA scrive «oltre 100mila ingressi», mentre Sport e Salute (riportata da Sport e Finanza) parla di oltre 130.000 e di 250.000 in quattro giorni. Il Mattino riportava 135.000 nei primi tre giorni. Forse i conteggi sono stati fatti in momenti diversi.",
+    "fonti": [
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://www.sportefinanza.it/2026/09/28/americas-cup-napoli-presenze-regate-preliminari/",
+     "https://www.ansa.it/campania/notizie/2026/09/27/americas-cup-oltre-100mila-ingressi-sul-lungomare-per-il-successo-di-luna_c1638251-2464-4907-88bf-27d2e37fbcf4.html",
+     "https://www.ilmattino.it/napoli/cronaca/america_s_cup_a_napoli_assalto_al_lungomare_gia_135mila_visitatori_oggi_show_finale-9787487.html"
+    ]
+   },
+   {
+    "descrizione": "Accesso del pubblico agli hangar di Bagnoli. 2anews scrive che gli hangar dei team saranno accessibili al pubblico. Il Mattino riporta invece Giacomo Vinci (ACE): il pubblico non entrerà nei piazzali davanti agli hangar, e le attività aperte saranno sul retro delle basi.",
+    "fonti": [
+     "https://www.2anews.it/americas-cup-2027-lungomare-chiuso-per-3-mesi/",
+     "https://www.ilmattino.it/sport/vela/america_s_cup_entusiasta_di_bagnoli_lavori_proseguono_ritmo_sorprendente-9788440.html"
+    ]
+   },
+   {
+    "descrizione": "Fin dove arriva il campo di regata 2027. Per americascup.com va dal Castel dell'Ovo al promontorio occidentale di Posillipo. Un articolo di Fanpage meno recente, con alcune imprecisioni (parla di «catamarani»), dice invece tra Castel dell'Ovo e l'isola di Nisida, passando per la Pietra Salata.",
+    "fonti": [
+     "https://www.americascup.com/news/3800_THE-CITY-OF-NAPLES-WELCOMES-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-STYLE-AT-THE-OFFICIAL-HOST-VENUE-PRESENTATION",
+     "https://www.fanpage.it/napoli/come-sara-lamericas-cup-napoli-2027-piattaforme-sulla-colmata-a-bagnoli-gare-a-posillipo-e-lungomare/"
+    ]
+   },
+   {
+    "descrizione": "Campo di regata degli AC40 nel 2026 (differenza piccola). Una news ufficiale in italiano dice «tra Castel dell'Ovo e Rotonda Diaz», mentre la pagina dell'evento e la stampa dicono «tra Castel dell'Ovo e Posillipo».",
+    "fonti": [
+     "https://www.americascup.com/it/news/4176_NAPOLI-UN-ANFITEATRO-NATURALE-PER-L-AMERICA-S-CUP",
+     "https://www.americascup.com/naples"
+    ]
+   }
+  ],
+  "non_raggiungibili": [
+   {
+    "url": "https://www.americascup.com/host-venue",
+    "motivo": "WebFetch bloccato dal proxy di rete (EGRESS_BLOCKED). Anche curl ha fallito: «CONNECT tunnel failed, response 403»."
+   },
+   {
+    "url": "https://www.americascup.com/it/naples",
+    "motivo": "WebFetch: EGRESS_BLOCKED, il dominio www.americascup.com è bloccato dal proxy."
+   },
+   {
+    "url": "https://americascup.com/naples",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://commissari.gov.it/bagnoli/comunicazione/notizie/regata_preliminare/",
+    "motivo": "WebFetch: EGRESS_BLOCKED (sito del Commissario straordinario per Bagnoli)."
+   },
+   {
+    "url": "https://www.comune.napoli.it/americascup",
+    "motivo": "WebFetch: EGRESS_BLOCKED, tutto il dominio comune.napoli.it è bloccato."
+   },
+   {
+    "url": "https://www.ansa.it/campania/notizie/2026/09/03/americas-cup-comune-napoli-istituisce-piano-traffico-per-regate-preliminari_d3981ccf-3dc2-4488-94d8-fb44d6811238.html",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.fanpage.it/napoli/piano-traffico-pre-regate-americas-cup-2026-strade-chiuse-e-divieti-sul-lungomare-di-napoli-da-lunedi-7-per-un-mese/",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.italia.it/it/italia/cosa-fare/38-america-cup",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.agi.it/sport/news/2026-09-21/napoli-americas-cup-39172498/",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.sailingscuttlebutt.com/2025/09/20/naples-plan-revealed-for-americas-cup",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.napolidavivere.it/2026/09/22/americas-cup/",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.geopop.it/americas-cup-a-napoli-le-regate-preliminari-dal-24-al-27-settembre-programma-e-regolamento/",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.ilmattino.it/napoli/citta/america_s_cup_quali_sono_le_strade_chiuse_per_le_pre_regate_ecco_il_piano_viabilita_completo-9755316.html",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://it.wikipedia.org/wiki/38ª_America's_Cup",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.napolitoday.it/sport/calendario-regate-preliminiari-napoli-2026-americas-cup.html",
+    "motivo": "WebFetch: EGRESS_BLOCKED."
+   },
+   {
+    "url": "https://www.americascup.com/it/naples/map",
+    "motivo": "Non aperta perché il dominio americascup.com è bloccato dal proxy. È la mappa ufficiale dell'evento 2026 (servizi, varchi)."
+   },
+   {
+    "url": "https://www.sportesalute.eu/americascup.html",
+    "motivo": "Non aperta: il proxy ha bloccato tutti i 15 tentativi di apertura, su domini diversi. Ho usato solo gli snippet di ricerca."
+   },
+   {
+    "url": "https://www.guardiacostiera.gov.it/napoli",
+    "motivo": "Non aperta per lo stesso blocco di rete. L'ordinanza n. 99/2026 è nota solo dalla stampa."
+   }
+  ],
+  "da_controllare_utente": [
+   {
+    "url": "https://www.americascup.com/host-venue",
+    "cosa": "Pagina ufficiale sulla sede 2027. Verificare la posizione del Race Village in via Caracciolo, le tribune, il palco e l'AC Tech Fan Village a Bagnoli: da qui non si apriva e sarà probabilmente aggiornata."
+   },
+   {
+    "url": "https://www.americascup.com/it/naples/map",
+    "cosa": "Mappa ufficiale dell'evento 2026 (varchi, bagni, primo soccorso, maxischermi). Controllare quando esce quella del 2027."
+   },
+   {
+    "url": "https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/",
+    "cosa": "Controllare la frase «a Bagnoli sarà realizzato il villaggio», che non coincide con americascup.com, e se la pagina viene aggiornata."
+   },
+   {
+    "url": "https://www.comune.napoli.it/novita/americas-cup-race-village/",
+    "cosa": "Orari ufficiali del villaggio 2026 (precedente) e spazio del Comune dentro il villaggio."
+   },
+   {
+    "url": "https://www.comune.napoli.it/novita/dispositivo-di-circolazione-temporaneo-in-via-francesco-caracciolo-in-occasione-dellevento-regata-preliminare-louis-vuitton-cup-2026-villaggio/",
+    "cosa": "Ordinanze sul traffico del 2026. Seguire le novità del Comune per il piano del traffico 2027 (chiusura di via Caracciolo)."
+   },
+   {
+    "url": "https://www.sportesalute.eu/americascup.html",
+    "cosa": "Dati ufficiali sul pubblico del 2026 e annunci su villaggio, pedane e pontone per il 2027."
+   },
+   {
+    "url": "https://www.americascup.com/news/4370_BAGNOLI-DEVELOPMENT-CONTINUES-AT-ASTONISHING-PACE",
+    "cosa": "Stato dei lavori delle basi di Bagnoli. Ricontrollare dopo la consegna delle aree prevista per l'8 ottobre 2026."
+   },
+   {
+    "url": "https://www.guardiacostiera.gov.it/napoli",
+    "cosa": "Ordinanza della Capitaneria sul campo di regata 2027, non ancora uscita (per il 2026 era la n. 99/2026, vista solo sulla stampa)."
+   },
+   {
+    "url": "https://prefettura.interno.gov.it/it/prefetture/napoli",
+    "cosa": "Piano di sicurezza 2027 e regole per il pubblico (borse, droni): non ancora pubblicati."
+   },
+   {
+    "url": "https://www.fanpage.it/napoli/pedane-dellamericas-cup-sul-lungomare-di-napoli-ok-per-un-anno-fino-a-luglio-2027/",
+    "cosa": "Verificare il permesso della Soprintendenza per le pedane fino a luglio 2027, cercando l'atto ufficiale."
+   },
+   {
+    "url": "https://www.napolimagazine.com/in-evidenza/articolo/il-sindaco-manfredi-america-s-cup-tutti-entusiasti-saranno-realizzati-due-race-village-29-09-2026",
+    "cosa": "Dichiarazione del sindaco sui due Race Village (29/09/2026): aspettare una conferma ufficiale."
+   },
+   {
+    "url": "https://americascupitalia.it/en/",
+    "cosa": "Sito di gestore sconosciuto e non collegato agli organizzatori: verificare chi lo gestisce prima di citarlo o linkarlo."
+   }
+  ],
+  "sintesi": "Per il 2027 gli organizzatori (americascup.com, piano presentato il 20/09/2025) prevedono il Race Village principale in via Francesco Caracciolo, con tribune, palco ufficiale, stand e ristoro, e un «AC Tech Fan Village» con maxischermi a Bagnoli, dove si stanno costruendo le basi dei sette team (lavori avanzati, consegna delle aree annunciata entro l'8 ottobre 2026). Il 29/09/2026 però il sindaco Manfredi ha parlato di due Race Village, mentre una pagina del Comune mette «il villaggio» solo a Bagnoli. Date di apertura, orari, regole d'ingresso (borse, vetro, droni), servizi e fan zone del 2027 non sono ancora pubblicati, e anche il piano del traffico 2027 non è deciso (la stampa ipotizza via Caracciolo chiusa per circa tre mesi). Il precedente di settembre 2026 dà un'idea: villaggio gratuito alla Rotonda Diaz/Mappatella lungo via Caracciolo chiusa alle auto, aperto dalle 11 fino alle 20:30-22, maxischermi e schermi LED, quattro pedane gratuite sugli scogli (spesso piene, con corsia per disabili, autorizzate fino a luglio 2027), metal detector ai varchi e, nel weekend, dalle 85.000 alle 100.000-130.000 persone al giorno secondo le varie fonti. Per vedere gratis da terra le fonti indicano il lungomare Caracciolo, via Partenope e il Borgo Marinari per stare vicini alle barche, e i punti alti (Monte Echia/Pizzofalcone, il Vomero con Castel Sant'Elmo e via Aniello Falcone, via Orazio e via Petrarca a Posillipo) per la vista d'insieme. Attenzione: nessuna pagina è stata aperta direttamente perché il proxy di rete blocca tutti i siti e alla fine il budget di ricerche si è esaurito, quindi tutti i dati vengono da snippet di ricerca e nessun fatto è marcato CONFERMATO."
+ },
+ "cal": {
+  "items": [
+   {
+    "id": "cal-01",
+    "area": "date Match",
+    "fatto": "Il Match della 38ª America's Cup (Emirates Team New Zealand contro il vincitore della Louis Vuitton Cup) inizia sabato 10 luglio 2027 con due regate. Finisce quando una barca arriva a 7 vittorie, al più tardi lunedì 19 luglio 2027. L'annuncio iniziale parlava del weekend 17-18 luglio.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/38th-americascup",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“set to begin on the 10th July 2027 and will run to a conclusion at the latest, depending on scoreline, by the 19th July 2027”",
+    "altre_fonti": [
+     "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+     "https://www.sportegiovani.governo.it/it/comunicazione/notizie/america-s-cup-2027-presentata-a-napoli-la-38%C2%AA-edizione/",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/",
+     "https://www.comune.napoli.it/novita/napoli-capitale-della-vela-lamericas-cup-a-palazzo-reale/"
+    ],
+    "data_pubblicazione": "2026-01-21 (annuncio a Palazzo Reale, Napoli); ripetuto il 2026-09-28",
+    "note": "Solo snippet: americascup.com, il sito ETNZ e il sito del Governo non si aprivano per un blocco di rete. Le date coincidono su più fonti ufficiali (ACP, ETNZ, Ministro per lo Sport, Comune di Napoli). Si può promuovere a CONFERMATO dopo aver aperto la pagina. Sulla data finale vedi le contraddizioni."
+   },
+   {
+    "id": "cal-02",
+    "area": "formato Match",
+    "fatto": "Il Match è una sfida a due barche (match race) al meglio delle 13 regate: vince l'America's Cup chi arriva per primo a 7 vittorie. I punti della Louis Vuitton Cup non contano nel Match.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“a best-of-13 series, with the first team to claim seven race wins lifting the oldest trophy in international sport”",
+    "altre_fonti": [
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf"
+    ],
+    "data_pubblicazione": "2026-01 / 2026-07",
+    "note": "Solo snippet per la pagina ETNZ. Nella bozza del Protocollo (maggio 2025, aperta) i 7 punti sono la regola di riserva (art. 8.2c). La stessa bozza dice che nessun punto passa dalla selezione degli sfidanti al Match (art. 6f)."
+   },
+   {
+    "id": "cal-03",
+    "area": "date Match - giorni di regata e di riserva",
+    "fatto": "Il calendario giorno per giorno del Match non è ancora uscito: non si sa in quali giorni si regata tra il 10 e il 19 luglio, quali sono i giorni di riposo o di riserva, né quante regate al giorno ci sono dopo il 10 luglio.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com (tramite motore di ricerca), ETNZ, GB1 e stampa (MySailing, Sail-World, Barche Magazine) “reserve day”, “rest day”, “giorno di riserva”: solo date di inizio e fine.",
+    "altre_fonti": [
+     "https://www.mysailing.com.au/americas-cup-schedule-announced/"
+    ],
+    "note": "Secondo la stampa (MySailing, solo snippet), se il Match va fino in fondo l'ultimo giorno è lunedì 19 luglio, ma il Race Director può prolungare in caso di maltempo. I dettagli potrebbero stare nelle 'Match Conditions' su americascup.com, che era bloccato."
+   },
+   {
+    "id": "cal-04",
+    "area": "date Louis Vuitton Cup",
+    "fatto": "La Louis Vuitton Cup 2027, cioè la selezione degli sfidanti, si corre nel Golfo di Napoli dal 22 maggio al 4 luglio 2027 al più tardi. Si apre sabato 22 e domenica 23 maggio con le regate di flotta: 3 regate al giorno (6 in tutto), con 7 AC75 sulla stessa linea di partenza per la prima volta nella storia.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“Racing in the opening Group Stage 1 begins on Saturday 22nd May 2027 with three fleet races planned”",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://emirates-team-new-zealand.americascup.com/en/news/809_TAIHORO-READY-FOR-AN-EXCITING-TEST-AS-AC75-FLEET-RACING-KICKS-OFF-THE-LOUIS-VUITTON-38th-AMERICAS-CUP-RACE-SCHEDULE-IN-2027.html",
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://www.americascup.com/it/news/4213_LE-REGATE-DI-FLOTTA-DEGLI-AC75-APRIRANNO-LA-LOUIS-VUITTON-CUP"
+    ],
+    "data_pubblicazione": "2026-07 (circa 20/07/2026, quando il Regatta Director Iain Murray ha pubblicato le 'Conditions')",
+    "note": "Solo snippet. I 7 AC75 sono i 6 sfidanti più il Defender (vedi cal-06 e le contraddizioni)."
+   },
+   {
+    "id": "cal-05",
+    "area": "date Louis Vuitton Cup - round robin",
+    "fatto": "Dopo le regate di flotta ci sono tre Round Robin di duelli (match race) da 21 regate ciascuno. RR1 va da mercoledì 26 a venerdì 28 maggio e RR2 da sabato 29 a lunedì 31 maggio. Segue una settimana di pausa dal 1° all'8 giugno, poi RR3 dal 9 all'11 giugno 2027.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The teams will be given a week off from 1-8th June 2027 ahead of the final Round Robin from the 9-11th June 2027”",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+     "https://www.yachtsandyachting.com/news/298163/Louis-Vuitton-Cup-Race-dates-and-Format",
+     "https://www.barchemagazine.com/en/louis-vuitton-cup-2027-official-dates/",
+     "https://www.allatsea.co.uk/news/racing-schedule-confirmed-for-the-louis-vuitton-cup-as-the-road-to-naples-continues/"
+    ],
+    "data_pubblicazione": "2026-07",
+    "note": "Solo snippet. 21 regate in 3 giorni fanno circa 7 duelli al giorno (calcolo mio). 21 è il numero di coppie possibili tra 7 barche."
+   },
+   {
+    "id": "cal-06",
+    "area": "formato Louis Vuitton Cup - ruolo del Defender",
+    "fatto": "Il Defender (Emirates Team New Zealand) può correre nella fase a gironi della Louis Vuitton Cup, ma non in semifinale né in finale. Nella classifica degli sfidanti i suoi risultati non contano.",
+    "stato": "CONFERMATO",
+    "fonte_url": "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“the Defender will be eligible to compete in the Group stage but not the Semi-Final stage or the Final stage of the CSS” (art. 7.2d)",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+     "https://emirates-team-new-zealand.americascup.com/en/news/809_TAIHORO-READY-FOR-AN-EXCITING-TEST-AS-AC75-FLEET-RACING-KICKS-OFF-THE-LOUIS-VUITTON-38th-AMERICAS-CUP-RACE-SCHEDULE-IN-2027.html"
+    ],
+    "data_pubblicazione": "2025-05-23 (bozza finale del Protocollo)",
+    "note": "Ho aperto la 'FINAL DRAFT' del Protocollo AC38 sul server media ufficiale di ETNZ. Il Protocollo definitivo del 12/08/2025 su americascup.com non si apriva. Lo snippet ufficiale di luglio 2026 precisa che il Defender corre dalle regate di flotta fino alla fine del terzo Round Robin e che i suoi risultati non contano."
+   },
+   {
+    "id": "cal-07",
+    "area": "formato e date Louis Vuitton Cup - ripescaggio e semifinali",
+    "fatto": "Dopo il terzo Round Robin i primi 3 sfidanti vanno dritti in semifinale. Gli altri 3 si giocano il quarto posto nel 'Repêchage' (ripescaggio), sabato 12 e domenica 13 giugno. Le semifinali si corrono da mercoledì 16 a domenica 20 giugno 2027, con lunedì 21 giugno di riserva: passa chi arriva prima a 5 vittorie.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/38th-americascup",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“from the 16th– 20th June 2027 (with a reserve day on the 21st June 2027) to decide who will contest the Louis Vuitton Cup Final”",
+    "altre_fonti": [
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://www.barchemagazine.com/en/louis-vuitton-cup-2027-official-dates/",
+     "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf"
+    ],
+    "data_pubblicazione": "2026-07",
+    "note": "Solo snippet. GB1 (snippet): 'top three challengers ... directly to the Semi-Finals' e semifinali vinte dal 'first team to secure five race wins'. Per Barche Magazine (stampa) nel ripescaggio passa chi arriva prima a 3 punti. La bozza del Protocollo (aperta) conferma 'primo a 5 punti', ma prevedeva un altro modo di accedere alle semifinali (vedi contraddizioni)."
+   },
+   {
+    "id": "cal-08",
+    "area": "date Louis Vuitton Cup - finale",
+    "fatto": "La finale della Louis Vuitton Cup inizia nel weekend 26-27 giugno 2027 e, se serve, finisce nel weekend 3-4 luglio. Si corre come il Match (vince chi arriva prima a 7 vittorie); il vincitore sfida Emirates Team New Zealand dal 10 luglio.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.barchemagazine.com/en/louis-vuitton-cup-2027-official-dates/",
+    "fonte_tipo": "stampa",
+    "evidenza": "“The series will begin on the weekend of 26 and 27 June and ... will conclude the following weekend on 3 and 4 July”",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf"
+    ],
+    "data_pubblicazione": "2026-07",
+    "note": "Solo snippet. La data limite del 4 luglio compare anche su fonte ufficiale ACP (snippet). Il formato 'come il Match' è nella bozza del Protocollo (art. 7.5b, aperta) e GB1 parla di 'first-to-seven-wins' (snippet). L'inizio al 26-27 giugno l'ho trovato solo in stampa."
+   },
+   {
+    "id": "cal-09",
+    "area": "Youth America's Cup",
+    "fatto": "La Youth America's Cup (per velisti giovani) si corre a Napoli da mercoledì 2 a domenica 6 giugno 2027, su barche AC40 con foil. Partecipano le squadre giovanili dei team della Coppa e squadre di club invitati da tutto il mondo.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/3836_NAPLES-SET-TO-CONTINUE-THE-YOUTH-AMERICAS-CUP-A-COMPETITION-WHERE-THE-FUTURE-STARS-OF-THE-AMERICAS-CUP-EMERGE",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“the Youth America's Cup will run from the 2-6 June 2027” (snippet ACP)",
+    "altre_fonti": [
+     "https://www.americascup.com/38th-americascup",
+     "https://www.americascup.com/host-venue",
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf"
+    ],
+    "data_pubblicazione": "2025-09 circa (annuncio dell'evento, data non verificata); date pubblicate nel 2026",
+    "note": "Solo snippet. Si svolge nella settimana di pausa degli AC75 (1-8 giugno). Lo snippet della pagina host-venue indica a Bagnoli una base dedicata agli AC40 di donne e giovani."
+   },
+   {
+    "id": "cal-10",
+    "area": "Women's America's Cup",
+    "fatto": "La Women's America's Cup (seconda edizione dopo Barcellona 2024) si corre a Napoli da lunedì 5 a venerdì 9 luglio 2027 compresi, su AC40, subito prima del Match. Possono iscriversi le squadre femminili dei team della Coppa e club invitati.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/3837_WOMENS-AMERICAS-CUP-SET-TO-CONTINUE-MOMENTUM-IN-NAPLES-IN-2027-AS-FEMALE-ATHLETES-CONFIRMED-ONBOARD-THE-AC75-YACHTS",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The Women's America's Cup will be held from the 5th July 2027 to the 9th July 2027 inclusive”",
+    "altre_fonti": [
+     "https://www.americascup.com/38th-americascup",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI"
+    ],
+    "data_pubblicazione": "2025-09 circa (annuncio dell'evento, data non verificata); date pubblicate nel 2026",
+    "note": "Solo snippet. Nel 2024 si chiamava 'Puig Women's America's Cup': nome e sponsor del 2027 non verificati."
+   },
+   {
+    "id": "cal-11",
+    "area": "Youth e Women's America's Cup - regole",
+    "fatto": "Secondo la bozza del Protocollo, Youth e Women's America's Cup si tengono nel 2027 nella stessa sede del Match, su AC40 con 4 persone di equipaggio, e i team della Coppa devono partecipare. Alla Youth corrono velisti di massimo 25 anni (età al giorno della prima regata del Match); alla Women's non c'è limite d'età.",
+    "stato": "CONFERMATO",
+    "fonte_url": "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The Youth and Women's AC Regattas shall be sailed with four (4) crew in the AC40 Yachts” (art. 9.2a)",
+    "altre_fonti": [
+     "https://www.americascup.com/news/3836_NAPLES-SET-TO-CONTINUE-THE-YOUTH-AMERICAS-CUP-A-COMPETITION-WHERE-THE-FUTURE-STARS-OF-THE-AMERICAS-CUP-EMERGE",
+     "https://www.americascup.com/news/3837_WOMENS-AMERICAS-CUP-SET-TO-CONTINUE-MOMENTUM-IN-NAPLES-IN-2027-AS-FEMALE-ATHLETES-CONFIRMED-ONBOARD-THE-AC75-YACHTS"
+    ],
+    "data_pubblicazione": "2025-05-23 (bozza)",
+    "note": "È la bozza di maggio 2025, e l'art. 9.1a subordinava i due eventi ai fondi disponibili ('subject to the availability of funding'). Da ricontrollare sul Protocollo definitivo del 12/08/2025, che non si apriva."
+   },
+   {
+    "id": "cal-12",
+    "area": "Youth e Women's America's Cup - bando e squadre",
+    "fatto": "Non ho trovato il bando ufficiale (Notice of Race) di Youth e Women's America's Cup 2027. Mancano anche l'elenco delle squadre e dei club invitati, il formato di gara e gli orari.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com (tramite motore di ricerca), Protocollo, GB1 e stampa “Notice of Race”, “invited teams”, “Youth/Women's America's Cup 2027”: nessun bando trovato.",
+    "altre_fonti": [
+     "https://www.gb1.com/"
+    ],
+    "note": "La bozza del Protocollo prevedeva il bando almeno 12 mesi prima della prima regata, quindi entro inizio giugno 2026. Potrebbe trovarsi su americascup.com, che era bloccato. Da GB1 (solo snippet): la squadra femminile britannica corre come 'GB2', guidata da Hannah Mills."
+   },
+   {
+    "id": "cal-13",
+    "area": "regate preliminari - Cagliari 2026",
+    "fatto": "Precedente 2026: la prima Regata Preliminare del ciclo si è corsa a Cagliari (Golfo degli Angeli) dal 21 al 24 maggio 2026, con 8 AC40. Le regate di flotta erano dal 22 al 24 maggio, poi una finale a due. Ha vinto Luna Rossa.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/sardinia",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The first Preliminary Regatta took place in the Gulf of Angels ... from 21 to 24 May 2026”; titolo ACP: “LUNA ROSSA TRIONFA IN SARDEGNA”",
+    "altre_fonti": [
+     "https://www.americascup.com/it/news/4135_PETER-BURLING-RUGGERO-TITA-IN-GRANDE-STILE-E-LUNA-ROSSA-TRIONFA-IN-SARDEGNA-CON-UNA-VITTORIA-SPETTACOLARE",
+     "https://www.gb1.com/en/articles/746_GB1-secure-a-race-win-on-final-day-in-Sardinia-home-town-favourites-win-the-regatta.html",
+     "https://www.americascup.com/results",
+     "https://www.sportesalute.eu/primo-piano/americas-cup-la-road-to-naples-partira-da-cagliari-con-la-prima-regata-preliminare-nepi-molineris-da-qui-il-via-ad-un-percorso-che-promuove-sport-e-territori.html"
+    ],
+    "data_pubblicazione": "2026-05-24",
+    "note": "Solo snippet. I risultati completi sono su americascup.com/results, che non si apriva."
+   },
+   {
+    "id": "cal-14",
+    "area": "regate preliminari - Napoli 2026",
+    "fatto": "Precedente 2026: la seconda Regata Preliminare si è corsa a Napoli dal 24 al 27 settembre 2026 (24 allenamento ufficiale, regate dal 25 al 27), con 9 AC40, 8 regate di flotta e una finale a due. Ha vinto Luna Rossa ('Luna Rossa 1') battendo in finale Emirates Team New Zealand. All'inizio era prevista a fine giugno 2026, poi è stata rinviata.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4373_LUNA-ROSSA-SCORE-AN-OUTSTANDING-STATEMENT-WIN-IN-NAPLES",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“Luna Rossa won the last two fleet races and then totally dominated the Match Race final against Emirates Team New Zealand”",
+    "altre_fonti": [
+     "https://www.americascup.com/it/news/4375_LUNA-ROSSA-1-CONQUISTA-UNA-VITTORIA-STRAORDINARIA-A-NAPOLI",
+     "https://www.americascup.com/news/4270_MARK-YOUR-DIARIES-PR2-NAPLES-IS-ALL-SET",
+     "https://www.americascup.com/news/4208_TWO-MONTHS-TO-GO-AND-NAPLES-SET-TO-IGNITE-FOR-THE-SECOND-PRELIMINARY-REGATTA-WITH-NINE-AC40s-DOING-BATTLE",
+     "https://www.americascup.com/news/4111_BREAKING-NEWS-SECOND-LOUIS-VUITTON-PRELIMINARY-REGATTA-WILL-BE-IN-NAPLES-FROM-24-27-SEPTEMBER",
+     "https://www.yachtsandyachting.com/news/296108/Preliminary-Cup-Regatta-in-Naples-postponed",
+     "https://www.ansa.it/sito/notizie/sport/speciali/coppa-america-2027/2026/09/27/luna-rossa-batte-new-zealand-e-vince-la-regata-preliminare-di-napoli_feb106a9-89db-43bb-9816-acbbbe5f584a.html"
+    ],
+    "data_pubblicazione": "2026-09-27",
+    "note": "Solo snippet. Secondo Yachts and Yachting (stampa) la data originaria era 25-28 giugno 2026. La stampa collega il rinvio ai lavori a Bagnoli, ma non è un motivo ufficiale."
+   },
+   {
+    "id": "cal-15",
+    "area": "regate preliminari - regole del Protocollo",
+    "fatto": "Il Protocollo (bozza) prevede fino a 3 regate preliminari con AC40 nel 2026, forse una a inizio 2027, e una 'regata preliminare finale' con AC75 nella sede del Match subito prima della Louis Vuitton Cup. I punti delle preliminari 2026 non contano, quelli delle preliminari 2027 sì.",
+    "stato": "CONFERMATO",
+    "fonte_url": "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“up to three Initial Preliminary Regattas during 2026 and one possibly in early 2027” (art. 6a)",
+    "altre_fonti": [
+     "https://www.yachtingnz.org.nz/news/two-non-nationals-cost-cap-guest-racers-38th-americas-cup-protocol-announced"
+    ],
+    "data_pubblicazione": "2025-05-23 (bozza)",
+    "note": "È una bozza: il testo definitivo del 12/08/2025 non si apriva. Yachting New Zealand (snippet) riporta la stessa previsione per il Protocollo definitivo."
+   },
+   {
+    "id": "cal-16",
+    "area": "regate preliminari - 2027",
+    "fatto": "Non risulta annunciata nessun'altra regata preliminare prima della Louis Vuitton Cup 2027: né una terza preliminare né la 'preliminare finale' con gli AC75. Il calendario ufficiale 2027 parte direttamente il 22 maggio.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato con motore di ricerca (americascup.com e stampa) “third preliminary regatta”, “PR3”, “final preliminary regatta 2027”, “terza regata preliminare 2027”: nessun annuncio.",
+    "altre_fonti": [
+     "https://www.americascup.com/naples",
+     "https://pressmare.it/en/regattas/americas-cup/2026-09-28/grazie-napoli-93017"
+    ],
+    "note": "Uno snippet di fine settembre 2026 (americascup.com/naples, Pressmare) descrive la preliminare di Napoli come 'the final opportunity' per i team prima dell'evento 2027. Da ricontrollare sul sito ufficiale."
+   },
+   {
+    "id": "cal-17",
+    "area": "orari 2027",
+    "fatto": "Gli orari delle regate 2027 (a che ora partono ogni giorno e la finestra oraria) non sono ancora pubblicati. Non si conosce nemmeno il numero di regate al giorno per semifinali, finale e Match, tranne le 2 regate del 10 luglio.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato su americascup.com (tramite motore di ricerca), GB1, ETNZ e stampa “race window”, “racing start time”, “orario regate 2027”, “ore 14”: nessun orario per il 2027.",
+    "note": "Gli orari potrebbero stare nelle 'Conditions' di Louis Vuitton Cup e Match o nelle Istruzioni di Regata 2027, che non ho potuto aprire o non ho trovato. Da snippet: nel Golfo le brezze termiche tendono a rinforzare nel primo pomeriggio."
+   },
+   {
+    "id": "cal-18",
+    "area": "orari - precedente 2026",
+    "fatto": "Precedente 2026 (preliminare di Napoli con AC40): si regatava ogni pomeriggio dalle 14:00, con partenze alle 14:10, 14:46 e 15:27. Venerdì e sabato c'erano 3 regate; domenica 2 regate più la finale alle 15:27. Sul palco del Race Village c'erano gli show di uscita e rientro delle barche alle 12:00 e alle 17:00.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/4270_MARK-YOUR-DIARIES-PR2-NAPLES-IS-ALL-SET",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“Racing starts at 14.00 CEST with three fleet races scheduled”; show “at midday and 17.00 CEST”",
+    "altre_fonti": [
+     "https://www.napolitoday.it/sport/calendario-regate-preliminiari-napoli-2026-americas-cup.html",
+     "https://www.americascup.com/news/4232_SAILING-INSTRUCTIONS-ISSUED-FOR-NAPLES-PRELIMINARY-REGATTA-24-27-SEPTEMBER"
+    ],
+    "data_pubblicazione": "2026-09",
+    "note": "Solo snippet. Gli orari delle singole partenze vengono da NapoliToday (stampa). Nel 2027, con gli AC75, gli orari possono cambiare."
+   },
+   {
+    "id": "cal-19",
+    "area": "campo di regata",
+    "fatto": "Il campo di regata è nel Golfo di Napoli, molto vicino a riva: va dal Castel dell'Ovo al promontorio occidentale di Posillipo, davanti al lungomare di via Caracciolo, con il Vesuvio sullo sfondo. Le basi dei team, per gli AC75 e gli AC40, sono a Bagnoli.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/host-venue",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The race area ... will be set from the Castel dell'Ovo to the western headland of Posillipo”",
+    "altre_fonti": [
+     "https://www.sportegiovani.governo.it/it/comunicazione/notizie/america-s-cup-2027-per-la-prima-volta-in-italia-sar%C3%A0-napoli-la-citt%C3%A0-ospitante-della-38%C2%AA-edizione/",
+     "https://commissari.gov.it/bagnoli/comunicazione/notizie/america-s_cup_2027/",
+     "https://www.americascup.com/news/3800_THE-CITY-OF-NAPLES-WELCOMES-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-STYLE-AT-THE-OFFICIAL-HOST-VENUE-PRESENTATION",
+     "https://www.americascup.com/news/4196_WHAT-RACING-IN-THE-SHADOW-OF-VESUVIUS-WILL-FEEL-LIKE",
+     "https://www.americascup.com/naples"
+    ],
+    "data_pubblicazione": "2025 (presentazione della sede); ripetuto nel 2026",
+    "note": "Solo snippet. Il sito del Ministro per lo Sport (snippet) conferma le regate tra Castel dell'Ovo e Posillipo e le basi a Bagnoli. Uno snippet chiama la preliminare di settembre 2026 'the first competitive racing on the 2027 racecourse'. La bozza del Protocollo (aperta) dice che semifinali e finale della Louis Vuitton Cup usano lo stesso campo del Match (art. 37.3)."
+   },
+   {
+    "id": "cal-20",
+    "area": "campo di regata - mappa e ordinanze 2027",
+    "fatto": "Non ho trovato una mappa ufficiale del campo di regata 2027 (confini, boe, zone per le barche degli spettatori). Non ho trovato nemmeno le ordinanze 2027 della Capitaneria di Porto di Napoli.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato “mappa ufficiale campo di regata”, “racing area Naples”, ordinanze della Capitaneria su guardiacostiera.gov.it e stampa: solo descrizioni generiche e l'ordinanza del 2026.",
+    "altre_fonti": [
+     "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html",
+     "https://www.guardiacostiera.gov.it/napoli"
+    ],
+    "note": "Precedente 2026 (NapoliToday, solo snippet): con l'ordinanza n. 99/2026 la Capitaneria ha vietato navigazione, sosta e ancoraggio nell'area di regata dalle 8:00 del 21 alle 8:00 del 28 settembre, e aliscafi e traghetti hanno cambiato rotta. La bozza del Protocollo prevedeva l'annuncio delle aree di regata di Louis Vuitton Cup e Match entro il 30/11/2025."
+   },
+   {
+    "id": "cal-21",
+    "area": "race village",
+    "fatto": "Il Race Village ufficiale del 2027 sarà sul lungomare: viale Francesco Caracciolo diventerà il villaggio, con tribune, punti di osservazione sui promontori e il palco principale per presentazioni e premiazioni. Precedente 2026: il palco era alla Rotonda Diaz.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/host-venue",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The Viale Francesco Caracciolo will be transformed into the ultimate Race Village ... housing the Official Main Stage”",
+    "altre_fonti": [
+     "https://www.americascup.com/naples",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW"
+    ],
+    "data_pubblicazione": "2025-09 (presentazione al Salone Nautico di Genova); pagina aggiornata nel 2026",
+    "note": "Solo snippet. Non ho verificato dove sarà esattamente il palco nel 2027."
+   },
+   {
+    "id": "cal-22",
+    "area": "race village - date di apertura",
+    "fatto": "Date e orari di apertura del Race Village 2027 non sono ancora pubblicati. Precedente 2026: durante la preliminare di settembre il Village alla Rotonda Diaz era gratuito e ha avuto decine di migliaia di visitatori (secondo ANSA oltre 42mila accessi prima dell'ultima giornata).",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato “Race Village 2027 apertura”, “orari villaggio” su americascup.com, sportesalute.eu e comune.napoli.it (tramite motore di ricerca) e in stampa: nessuna data per il 2027.",
+    "altre_fonti": [
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://www.ansa.it/sito/notizie/sport/speciali/coppa-america-2027/2026/09/27/americas-cup-gia-42mila-accessi-al-race-village-tutto-pronto-per_0c4e64ae-27de-4403-90b2-a2eaea194d2c.html",
+     "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+     "https://www.napolitoday.it/attualita/america-cup-2027-via-caracciolo-chiusa-tre-mesi-viabilita.html"
+    ],
+    "note": "Stampa (Fanpage, NapoliToday, solo snippet): via Caracciolo e viale Dohrn chiuse al traffico per circa 3 mesi (maggio-luglio 2027), ma il piano traffico definitivo non è ancora approvato. Snippet ACP: 'Tens of thousands of spectators ... packed the Race Village at Rotonda Diaz'. Un titolo ACP (news 4319) dice che su via Caracciolo è stato acceso l'orologio del conto alla rovescia."
+   },
+   {
+    "id": "cal-23",
+    "area": "cerimonie",
+    "fatto": "Non sono ancora state annunciate date e luoghi delle cerimonie di apertura e chiusura del 2027 (Louis Vuitton Cup e Match). Precedente 2026: la cerimonia ufficiale di apertura della preliminare di Napoli si è tenuta sull'isola di Nisida, dove i team avevano le basi temporanee.",
+    "stato": "NON_ANCORA_USCITO",
+    "fonte_url": "",
+    "fonte_tipo": "nessuna",
+    "evidenza": "Cercato “opening ceremony Louis Vuitton Cup 2027”, “cerimonia di apertura America's Cup 2027 Napoli”: trovate solo le cerimonie delle preliminari 2026 (Cagliari e Nisida).",
+    "altre_fonti": [
+     "https://www.boatingnz.co.nz/2026/09/stunning-opening-ceremony-for-the-louis-vuitton-38th-americas-cup-preliminary-regatta-naples/",
+     "https://www.ilnautilus.it/sport/regate/2026-09-24/straordinaria-cerimonia-di-apertura-della-regata-preliminare-della-louis-vuitton-38a-americas-cup-napoli_195537/",
+     "https://www.americascup.com/news/4112_STUNNING-OPENING-CEREMONY-IN-SARDINIA-FOR-THE-LOUIS-VUITTON-38th-PRELIMINARY-REGATTA"
+    ],
+    "note": "Il precedente viene dalla stampa (Boating NZ, Il Nautilus, solo snippet): a Nisida c'era musica con Edoardo Bennato e la prima sfilata dei team."
+   },
+   {
+    "id": "cal-24",
+    "area": "governance - organizzatore",
+    "fatto": "L'organizzatore dell'evento (Event Authority) è l'America's Cup Partnership (ACP), creata dai team fondatori. Gestisce formato, calendario e diritti commerciali e sceglie città e sedi insieme al Defender. Prima che l'ACP partisse, questo lavoro lo faceva AC38 Event Limited, la società del Defender.",
+    "stato": "CONFERMATO",
+    "fonte_url": "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“It is agreed that ACP or its designated entity will be appointed as the Event Authority for AC38” (art. 3.1)",
+    "altre_fonti": [
+     "https://www.americascup.com/news/3867_FIVE-TEAMS-ENTER-HISTORIC-AMERICAS-CUP-ALLIANCE-TO-SUPERCHARGE-FUTURE-OF-SPORTS-OLDEST-TROPHY",
+     "https://www.americascup.com/news/3883_THE-ACP-THE-BIGGEST-CHANGE-IN-THE-AMERICAS-CUP-SINCE-1887"
+    ],
+    "data_pubblicazione": "2025-05-23 (bozza)",
+    "note": "Dalla bozza del Protocollo (aperta). Le regole sportive le decidono insieme Defender e Challenger of Record (in sigla 'COR/D')."
+   },
+   {
+    "id": "cal-25",
+    "area": "governance - team fondatori",
+    "fatto": "L'ACP riunisce 5 team fondatori: Emirates Team New Zealand, Athena Racing (GB1, Regno Unito), Luna Rossa (Italia), Tudor Team Alinghi (Svizzera) e K-Challenge (Francia). È in vigore dal 1° novembre 2025 ed è stata presentata il 21 gennaio 2026 a Palazzo Reale di Napoli, dove sono state annunciate le date del Match e Louis Vuitton ha rinnovato la sponsorizzazione principale.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/news/3867_FIVE-TEAMS-ENTER-HISTORIC-AMERICAS-CUP-ALLIANCE-TO-SUPERCHARGE-FUTURE-OF-SPORTS-OLDEST-TROPHY",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“The America's Cup Partnership came into force on November 1st, 2025”; dettagli presentati a Napoli il 21 gennaio 2026 con le date del Match.",
+    "altre_fonti": [
+     "https://www.americascup.com/news/3874_AMERICAS-CUP-PARTNERSHIP-FORMALLY-INITIATED-AS-LOUIS-VUITTON-RENEWS-ITS-HEADLINE-SPONSORSHIP-AT-THE-TEAMS-PRESENTATION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-ITALY",
+     "https://www.lunarossachallenge.com/en/news/1381_FIVE-TEAMS-ENTER-HISTORIC-AMERICAS-CUP-ALLIANCE-TO-SUPERCHARGE-FUTURE-OF-SPORTS-OLDEST-TROPHY",
+     "https://www.comune.napoli.it/novita/napoli-capitale-della-vela-lamericas-cup-a-palazzo-reale/",
+     "https://www.sportesalute.eu/primo-piano/americas-cup-2027-a-palazzo-reale-la-presentazione-dei-team-mezzaroma-napoli-e-litalia-si-preparano-a-scrivere-una-pagina-storica.html"
+    ],
+    "data_pubblicazione": "fine 2025 (annuncio ACP, data non verificata); 2026-01-21 (presentazione a Napoli)",
+    "note": "Solo snippet. Da snippet del sito Luna Rossa: la squadra italiana corre per il Circolo del Remo e della Vela Italia di Napoli. L'elenco completo dei team 2027 è un altro argomento: secondo snippet ACP nel 2027 ci sono 7 AC75."
+   },
+   {
+    "id": "cal-26",
+    "area": "governance - Defender e Challenger of Record",
+    "fatto": "Il Defender è il Royal New Zealand Yacht Squadron, rappresentato da Team New Zealand Limited (Emirates Team New Zealand). Il Challenger of Record, cioè lo sfidante che tratta le regole a nome degli altri, è il britannico Royal Yacht Squadron Limited, rappresentato da Athena Racing Limited (team GB1).",
+    "stato": "CONFERMATO",
+    "fonte_url": "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "“RNZYS has appointed Team New Zealand Limited ... to defend”; “RYSL has appointed Athena Racing Limited (“ARL”), as its representative team”",
+    "altre_fonti": [
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP"
+    ],
+    "data_pubblicazione": "2025-05-23 (bozza)",
+    "note": "Dalla bozza del Protocollo (aperta). Negli snippet ufficiali del 2026 GB1 è indicato come 'Challenger of Record'."
+   },
+   {
+    "id": "cal-27",
+    "area": "governance - Italia (Sport e Salute)",
+    "fatto": "In Italia la legge affida l'evento 'America's Cup – Napoli 2027' alla società pubblica Sport e Salute S.p.A., come soggetto attuatore (art. 7 del decreto-legge 30 giugno 2025 n. 96, il 'DL Sport', convertito in legge ad agosto 2025). C'è anche un comitato tecnico di gestione (America's Cup Venue Board) di 11 membri, presieduto da Grant Dalton; per il Governo ne fa parte il Prefetto di Napoli Michele di Bari.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://temi.camera.it/leg19/temi/conversione-in-legge-del-decreto-legge-n-96-del-2025-in-materia-di-organizzazione-di-eventi-sportivi.html",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Art. 7 comma 1: a Sport e Salute, soggetto attuatore di “America's Cup – Napoli 2027”, sono affidate l'organizzazione e le attività necessarie (parafrasi dello snippet).",
+    "altre_fonti": [
+     "https://www.normattiva.it/uri-res/N2Ls?urn%3Anir%3Astato%3Adecreto.legge%3A2025-06-30%3B96=",
+     "https://www.sportegiovani.governo.it/it/comunicazione/comunicati-media/america-s-cup-prima-riunione-del-board-ministro-abodi-buon-lavoro-al-comitato-tecnico-di-gestione",
+     "https://www.napolitoday.it/politica/decreto-sport-americas-cup.html",
+     "https://www.ansa.it/campania/notizie/2025/08/06/il-decreto-sport-e-legge-ce-anche-la-coppa-america-di-napoli_be6f007a-ce69-4442-a965-2ffa97ad8883.html",
+     "https://www.sportesalute.eu/americascup.html"
+    ],
+    "data_pubblicazione": "2025-06-30 (DL); 2025-08 (legge di conversione)",
+    "note": "Solo snippet: Gazzetta Ufficiale e siti del Governo erano bloccati. Stampa (NapoliToday, ANSA): 7,5 milioni di euro iniziali a Sport e Salute. Dossier Camera (snippet): il Comune di Napoli può usare fino a 30 milioni l'anno dal 2025 al 2027. Membri del board secondo il sito del Ministro per lo Sport (snippet): Grant Dalton, Mack Dalton, Leslie Ryan, Luis Saenz Mariscal e Mark Sheffield; per il Governo Michele di Bari, Mario Pozzi ed Eliana Ventola."
+   },
+   {
+    "id": "cal-28",
+    "area": "governance - Comune, Regione, Commissario",
+    "fatto": "Comune di Napoli, Regione Campania e Governo collaborano. Il 21 maggio 2026 a Cagliari il Ministro Abodi, il presidente della Regione Fico, il sindaco Manfredi e il presidente di Sport e Salute Mezzaroma hanno firmato un protocollo d'intesa per promuovere Napoli e la Campania. I lavori a Bagnoli, dove sono le basi dei team, li segue il sindaco Manfredi come Commissario straordinario di Governo per Bagnoli-Coroglio.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.sportegiovani.governo.it/it/comunicazione/comunicati-media/america-s-cup-2027-firmato-protocollo-tra-ministro-abodi-presidente-fico-sindaco-manfredi-e-presidente-mezzaroma-per-promuovere-napoli-e-la-campania",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Titolo: “America's Cup 2027, firmato protocollo tra Ministro Abodi, Presidente Fico, Sindaco Manfredi e Presidente Mezzaroma per promuovere Napoli e la Campania”",
+    "altre_fonti": [
+     "https://www.regione.campania.it/regione-informa/notizie/america-s-cup-firmato-cagliari-protocollo-d-intesa-vista-fase-finale-2027",
+     "https://www.regione.campania.it/comunicazione/area-stampa/comunicati/11022026-comunicato-n-72-america-s-cup-2027-regione-campania-comune-napoli-rafforzano-sinergia-istituzionale",
+     "https://commissari.gov.it/bagnoli/sin-bagnoli-coroglio/commissario/il-commissario-straordinario-per-bagnoli-coroglio/",
+     "https://commissari.gov.it/bagnoli/normativa/provvedimenti/dec_7_2025/",
+     "https://commissari.gov.it/bagnoli/comunicazione/notizie/america-s_cup_2027/",
+     "https://temi.camera.it/leg19/provvedimento/decreto-legge-n-108-2026-disposizioni-urgenti-in-materia-di-sport-per-lo-svolgimento-di-grandi-eventi-e-l-efficacia-del-documento-di-identit.html"
+    ],
+    "data_pubblicazione": "2026-05-21",
+    "note": "Solo snippet. Dal sito del Commissario (snippet): Manfredi è stato nominato con DPR del 30/11/2021, e gli interventi collegati all'America's Cup valgono circa 220 milioni (fondi FSC 2021-2027). Il DL 26 giugno 2026 n. 108 aggiunge misure, anche fiscali, per 'America's Cup – Napoli 2027' (snippet Camera e Ipsoa)."
+   },
+   {
+    "id": "cal-29",
+    "area": "documenti ufficiali",
+    "fatto": "Esistono questi documenti ufficiali, che da qui non ho potuto aprire: il Protocollo definitivo della 38ª America's Cup (12 agosto 2025); le 'Conditions' della Louis Vuitton Cup e del Match firmate dal Regatta Director Iain Murray (luglio 2026); il press kit ufficiale in italiano e in inglese (versione del 17 giugno 2026); le Istruzioni di Regata della preliminare di Napoli 2026. Ho aperto solo la bozza finale del Protocollo (maggio 2025).",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+    "fonte_tipo": "ufficiale",
+    "evidenza": "Titolo nei risultati: “THE PROTOCOL GOVERNING THE 38TH AMERICA'S CUP”; le Conditions sono state “issued by the Regatta Director, Iain Murray”.",
+    "altre_fonti": [
+     "https://www.americascup.com/files/m30121_AC38-ITA-PressKit-V4-5-20260617.pdf",
+     "https://www.americascup.com/files/m30120_AC38-ENG-PressKit-V4-5-20260617.pdf",
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+     "https://www.americascup.com/news/4232_SAILING-INSTRUCTIONS-ISSUED-FOR-NAPLES-PRELIMINARY-REGATTA-24-27-SEPTEMBER",
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf"
+    ],
+    "data_pubblicazione": "2025-08-12 / 2026-06-17 / 2026-07",
+    "note": "Il PDF che ho aperto si chiama 'AC38-Protocol-FINAL-DRAFT' e sta sul server media di ETNZ (metadati del 23/05/2025)."
+   },
+   {
+    "id": "cal-30",
+    "area": "siti non ufficiali",
+    "fatto": "Il sito americascupitalia.it esiste e si presenta come 'portale ufficiale' dell'America's Cup 2027 a Napoli, ma vende pacchetti, tour e gadget (cappellino, cartoline, orologio). Non ho trovato conferme che lo gestiscano gli organizzatori (ACP, Sport e Salute) o un ente pubblico: il gestore non è verificato.",
+    "stato": "ANNUNCIATO",
+    "fonte_url": "https://americascupitalia.it/en/",
+    "fonte_tipo": "altro",
+    "evidenza": "“The official portal for the America's Cup 2027 in Naples brings together sport, tourism and exclusive services” (snippet); pagine 'Shop' e 'Prenotazione'.",
+    "altre_fonti": [
+     "https://americascupitalia.it/en/negozio/",
+     "https://americascupitalia.it/en/contatti/"
+    ],
+    "note": "Il sito non si apriva (blocco di rete). Le fonti ufficiali dell'evento sono americascup.com (ACP) e sportesalute.eu. Finché non si verifica chi lo gestisce, va trattato come non ufficiale."
+   }
+  ],
+  "contraddizioni": [
+   {
+    "descrizione": "Data di fine del Match. L'annuncio di gennaio 2026 (Governo, ETNZ) dice che il Match si chiude nel weekend 17-18 luglio 2027. Le pagine ACP più recenti dicono 'al più tardi entro il 19 luglio, a seconda del punteggio'. Alcune sintesi del DL 108/2026 e alcuni articoli parlano di '10-18 luglio'. Probabile spiegazione: il 19 luglio (lunedì) è un giorno di margine. Da verificare.",
+    "fonti": [
+     "https://www.sportegiovani.governo.it/it/comunicazione/notizie/america-s-cup-2027-presentata-a-napoli-la-38%C2%AA-edizione/",
+     "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+     "https://www.americascup.com/38th-americascup",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "https://temi.camera.it/leg19/provvedimento/decreto-legge-n-108-2026-disposizioni-urgenti-in-materia-di-sport-per-lo-svolgimento-di-grandi-eventi-e-l-efficacia-del-documento-di-identit.html"
+    ]
+   },
+   {
+    "descrizione": "Accesso alle semifinali della Louis Vuitton Cup. La bozza del Protocollo (maggio 2025) mandava in semifinale i primi 4 sfidanti del girone, con il primo che sceglie l'avversario. Il formato annunciato a luglio 2026 manda in semifinale i primi 3 e il vincitore di un ripescaggio tra gli altri 3. Vale il formato del 2026: la bozza è superata.",
+    "fonti": [
+     "https://emirates-team-new-zealand-media.s3.amazonaws.com/files/m7569_AC38-Protocol-FINAL-DRAFT.pdf",
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP"
+    ]
+   },
+   {
+    "descrizione": "Barche nelle regate di flotta del 22-23 maggio 2027. Alcune fonti (GB1 e Barche Magazine, via snippet) parlano di 'sette AC75 sfidanti'. ACP ed ETNZ precisano invece che gli AC75 sono 7 in tutto: 6 sfidanti più il Defender, i cui risultati non contano.",
+    "fonti": [
+     "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+     "https://www.barchemagazine.com/en/louis-vuitton-cup-2027-official-dates/",
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+     "https://emirates-team-new-zealand.americascup.com/en/news/809_TAIHORO-READY-FOR-AN-EXCITING-TEST-AS-AC75-FLEET-RACING-KICKS-OFF-THE-LOUIS-VUITTON-38th-AMERICAS-CUP-RACE-SCHEDULE-IN-2027.html"
+    ]
+   },
+   {
+    "descrizione": "Date della preliminare di Napoli 2026: prima indicate per il 25-28 giugno 2026, poi la regata è stata rinviata e corsa il 24-27 settembre 2026. Non è un errore ma un cambio di programma: nelle guide vanno usate le date di settembre.",
+    "fonti": [
+     "https://www.yachtsandyachting.com/news/296108/Preliminary-Cup-Regatta-in-Naples-postponed",
+     "https://www.americascup.com/news/4111_BREAKING-NEWS-SECOND-LOUIS-VUITTON-PRELIMINARY-REGATTA-WILL-BE-IN-NAPLES-FROM-24-27-SEPTEMBER"
+    ]
+   }
+  ],
+  "non_raggiungibili": [
+   {
+    "url": "https://www.americascup.com/38th-americascup",
+    "motivo": "EGRESS_BLOCKED: tutto il dominio americascup.com è bloccato dal proxy di rete di questo ambiente (anche curl riceve CONNECT 403). Letto solo tramite snippet."
+   },
+   {
+    "url": "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+    "motivo": "EGRESS_BLOCKED (dominio americascup.com)"
+   },
+   {
+    "url": "https://americascup.com/naples",
+    "motivo": "EGRESS_BLOCKED (dominio americascup.com)"
+   },
+   {
+    "url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+    "motivo": "EGRESS_BLOCKED: Protocollo definitivo non apribile. Ho usato la bozza sul server S3 di ETNZ."
+   },
+   {
+    "url": "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+    "motivo": "EGRESS_BLOCKED (sito ETNZ)"
+   },
+   {
+    "url": "https://www.gb1.com/en/articles/757_Racing-Schedule-Confirmed-for-the-Louis-Vuitton-Cup-as-the-Road-to-Naples-Continues.html",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.lunarossachallenge.com/it/home",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.comune.napoli.it/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.governo.it/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.sportegiovani.governo.it/it/comunicazione/comunicati-media/america-s-cup-2027-firmato-protocollo-tra-ministro-abodi-presidente-fico-sindaco-manfredi-e-presidente-mezzaroma-per-promuovere-napoli-e-la-campania",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.sportesalute.eu/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.regione.campania.it/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://commissari.gov.it/bagnoli/comunicazione/notizie/regata_preliminare/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.gazzettaufficiale.it/atto/serie_generale/caricaArticolo?art.versione=1&art.idGruppo=2&art.flagTipoArticolo=0&art.codiceRedazionale=25G00108&art.idArticolo=7&art.idSottoArticolo=1&art.idSottoArticolo1=10&art.dataPubblicazioneGazzetta=2025-06-30&art.progressivo=0",
+    "motivo": "EGRESS_BLOCKED (art. 7 del DL 96/2025)"
+   },
+   {
+    "url": "https://www.americascupitalia.it/",
+    "motivo": "EGRESS_BLOCKED (bloccato anche https://americascupitalia.it/en/)"
+   },
+   {
+    "url": "https://en.wikipedia.org/wiki/2027_America%27s_Cup",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.sailingscuttlebutt.com/2026/01/21/dates-confirmed-for-38th-americas-cup/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://afloat.ie/sail/events/americas-cup/item/70081-dates-confirmed-for-38th-america-s-cup-match-in-naples",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://sport.quotidiano.net/en/altri-sport/americas-cup-2027-napoli-date-finale-d47c2527",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.milanofinanza.it/news/america-s-cup-2027-a-napoli-ecco-tutte-le-date-da-segnare-in-agenda-202607291105498878",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.boatingnz.co.nz/2026/09/grazie-napoli/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://www.allatsea.co.uk/news/racing-schedule-confirmed-for-the-louis-vuitton-cup-as-the-road-to-naples-continues/",
+    "motivo": "EGRESS_BLOCKED"
+   },
+   {
+    "url": "https://nautica.news/blog/louis-vuitton-cup-racing-schedule-confirmed/",
+    "motivo": "EGRESS_BLOCKED"
+   }
+  ],
+  "da_controllare_utente": [
+   {
+    "url": "https://www.americascup.com/38th-americascup",
+    "cosa": "Calendario ufficiale completo 2027 (Louis Vuitton Cup, Youth, Women's, Match): confermare le date e vedere se sono usciti il calendario giorno per giorno e gli orari."
+   },
+   {
+    "url": "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+    "cosa": "Formato della Louis Vuitton Cup e link alle 'Conditions' di Iain Murray: cercare finestra oraria delle regate e giorni di riserva del Match."
+   },
+   {
+    "url": "https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html",
+    "cosa": "Tabella delle date: Round Robin, pausa 1-8 giugno, Match 10-19 luglio."
+   },
+   {
+    "url": "https://www.americascup.com/host-venue",
+    "cosa": "Descrizione ufficiale del campo di regata (Castel dell'Ovo–Posillipo) e del Race Village; controllare se c'è una mappa."
+   },
+   {
+    "url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+    "cosa": "Protocollo definitivo: verificare che le regole prese dalla bozza (Defender nei gironi, Youth e Women's, regate preliminari, Event Authority) non siano cambiate."
+   },
+   {
+    "url": "https://www.americascup.com/files/m30121_AC38-ITA-PressKit-V4-5-20260617.pdf",
+    "cosa": "Press kit ufficiale in italiano (17/06/2026): calendario, campo di regata, Race Village."
+   },
+   {
+    "url": "https://www.americascup.com/results",
+    "cosa": "Risultati ufficiali delle regate preliminari di Cagliari e Napoli 2026."
+   },
+   {
+    "url": "https://www.sportegiovani.governo.it/it/comunicazione/notizie/america-s-cup-2027-presentata-a-napoli-la-38%C2%AA-edizione/",
+    "cosa": "Comunicato del Governo sull'annuncio delle date del Match (21/01/2026)."
+   },
+   {
+    "url": "https://www.normattiva.it/uri-res/N2Ls?urn%3Anir%3Astato%3Adecreto.legge%3A2025-06-30%3B96=",
+    "cosa": "Testo dell'art. 7 del DL 96/2025: Sport e Salute come soggetto attuatore, comitato tecnico, fondi."
+   },
+   {
+    "url": "https://www.sportegiovani.governo.it/it/comunicazione/comunicati-media/america-s-cup-prima-riunione-del-board-ministro-abodi-buon-lavoro-al-comitato-tecnico-di-gestione",
+    "cosa": "Data della prima riunione e composizione dell'America's Cup Venue Board."
+   },
+   {
+    "url": "https://www.sportesalute.eu/americascup.html",
+    "cosa": "Pagina di Sport e Salute: possibili annunci su Race Village, orari e cerimonie 2027."
+   },
+   {
+    "url": "https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/",
+    "cosa": "Pagina del Comune: aggiornamenti su piano traffico e Race Village 2027."
+   },
+   {
+    "url": "https://www.guardiacostiera.gov.it/napoli",
+    "cosa": "Ordinanze 2027 della Capitaneria (area di regata, divieti, zone per spettatori), probabilmente pubblicate a ridosso di maggio 2027."
+   },
+   {
+    "url": "https://temi.camera.it/leg19/provvedimento/decreto-legge-n-108-2026-disposizioni-urgenti-in-materia-di-sport-per-lo-svolgimento-di-grandi-eventi-e-l-efficacia-del-documento-di-identit.html",
+    "cosa": "Contenuto del DL 108/2026 sull'America's Cup e date citate (10-18 o 10-19 luglio)."
+   },
+   {
+    "url": "https://americascupitalia.it/en/",
+    "cosa": "Verificare chi gestisce il sito (note legali, partita IVA): si definisce 'portale ufficiale' ma vende pacchetti e gadget."
+   }
+  ],
+  "sintesi": "Il calendario 2027 è fissato nelle linee generali. La Louis Vuitton Cup va dal 22 maggio (regate di flotta con 7 AC75) al 4 luglio al più tardi: tre Round Robin tra il 26 maggio e l'11 giugno con pausa dal 1° all'8 giugno, ripescaggio il 12-13 giugno, semifinali 16-20 giugno (21 di riserva), finale dal 26-27 giugno. La Youth America's Cup è il 2-6 giugno e la Women's America's Cup il 5-9 luglio, entrambe su AC40; il Match parte il 10 luglio con due regate e finisce entro il 19 luglio (vince chi arriva prima a 7), dopo le preliminari 2026 di Cagliari (21-24 maggio) e Napoli (24-27 settembre), vinte tutte e due da Luna Rossa. Si regata sotto costa tra Castel dell'Ovo e Posillipo, il Race Village sarà su via Caracciolo (nel 2026 il palco era alla Rotonda Diaz) e le basi dei team sono a Bagnoli; non sono ancora usciti orari delle regate, calendario giorno per giorno del Match, date del Village, cerimonie, mappa ufficiale del campo, bando di Youth e Women's e altre preliminari nel 2027. Organizza l'America's Cup Partnership (5 team fondatori) come Event Authority, con Defender Emirates Team New Zealand/Royal New Zealand Yacht Squadron e Challenger of Record GB1/Royal Yacht Squadron; in Italia Sport e Salute è soggetto attuatore per legge (DL 96/2025), insieme a Governo, Comune, Regione e Commissario per Bagnoli. Attenzione: la rete di ricerca bloccava i siti ufficiali (ho aperto solo la bozza del Protocollo) e il budget di ricerche si è esaurito, quindi quasi tutti i dati vengono da snippet di fonti ufficiali e restano ANNUNCIATO finché non si verificano direttamente."
+ }
+}
