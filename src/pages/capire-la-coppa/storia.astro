@@ -42,7 +42,8 @@ const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.p
       <p class="kicker">Albo d'oro</p>
       <h2 id="albo-h">Tutti i Match dal 1983</h2>
       <p class="lead">Da quando la Coppa ha lasciato l'America: {ALBO.length} sfide, vinte da Nuova Zelanda ({vittorie.nz}), Stati Uniti ({vittorie.us}), Svizzera ({vittorie.ch}) e Australia ({vittorie.au}).</p>
-      <div class="tabella-wrap">
+      <!-- sul telefono la tabella scorre di lato: raggiungibile anche da tastiera -->
+      <div class="tabella-wrap" tabindex="0" role="region" aria-label="Tabella dei Match dal 1983">
         <table class="albo">
           <caption class="visually-hidden">America's Cup: vincitori e sconfitti di ogni Match dal 1983</caption>
           <thead><tr><th scope="col" class="num">Anno</th><th scope="col">Sede</th><th scope="col">Vince</th><th scope="col" class="num">Risultato</th><th scope="col">Perde</th></tr></thead>

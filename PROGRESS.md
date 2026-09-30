@@ -38,6 +38,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 costruito, in anteprima)_
   - **Pagina barche rifatta** (`/squadre/barche/`): selettore **AC75 / AC40 / Affiancate**. L'AC75 ha il suo giro in 13 tappe (`src/data/tappe-ac75.json`): testa d'albero, randa, fiocco, 5 velisti e un ospite, batterie viste in trasparenza, scafo, foil alzato, pelo dell'acqua, braccio, ala e timone sott'acqua. «Affiancate» mette le due barche in fila alla stessa scala (di lato, di tre quarti, dall'alto). Ogni tappa riparte dalla sua inquadratura anche se prima hai ruotato o ingrandito.
   - **Disegno in scala** (`src/components/ConfrontoScala.astro`): AC75 e AC40 in volo di fianco, con una persona di 1,8 m, disegnati dallo stesso modello del 3D. **Tabella dei numeri** con la fonte sotto ogni riga.
   - **Immagine fissa** per ogni modo (`src/assets/barche/`, rigenerabile dal 3D): la vedi prima di avviare il 3D e resta se il dispositivo non lo supporta, con un messaggio.
+  - **Controlli** (in locale, telefono simulato): Lighthouse 99–100 in prestazioni, accessibilità, best practice e SEO su home, Capire la Coppa, video, glossario, storia, quiz e barche; axe senza violazioni; nessun errore in console; «riduci movimento» provato; 1559 link interni tutti validi (`npm run check:links`, script aggiunto ora: prima mancava).
 
 ## Da fare
 - **Il tuo OK per pubblicare il Rilascio 2 su `main`** (dopo aver visto l'anteprima).

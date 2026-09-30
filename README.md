@@ -8,6 +8,7 @@ Sito statico in [Astro](https://astro.build), pubblicato su Vercel.
 npm install
 npm run dev      # sito in locale su http://localhost:4321
 npm run build    # costruisce il sito in dist/
+npm run check:links  # dopo la build: controlla che ogni link interno porti a una pagina o a un file
 ```
 
 ## Dove sono le informazioni

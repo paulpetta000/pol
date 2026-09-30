@@ -58,7 +58,7 @@ const NUMERI = [
         <div class="x3d__stage" data-stage>
           <div class="x3d__poster">
             {MODI.map((m, i) => (
-              <Picture src={m.img} alt={m.alt} widths={[480, 800, 1200]} sizes="(min-width: 1240px) 700px, (min-width: 900px) 57vw, calc(100vw - 32px)" formats={['avif', 'webp']} quality={55} class="x3d__img" data-poster={m.k} hidden={i > 0} />
+              <Picture src={m.img} alt={m.alt} widths={[480, 800, 1200]} sizes="(min-width: 1240px) 700px, (min-width: 900px) 57vw, calc(100vw - 32px)" formats={['avif', 'webp']} quality={55} loading={i === 0 ? 'eager' : 'lazy'} fetchpriority={i === 0 ? 'high' : undefined} class="x3d__img" data-poster={m.k} hidden={i > 0} />
             ))}
             <div class="x3d__avvio">
               <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
