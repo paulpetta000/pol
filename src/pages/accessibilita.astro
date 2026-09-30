@@ -3,8 +3,8 @@ import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import { SITO } from '../config/sito';
 ---
-<Base title="Accessibilità del sito" description="Com'è costruita la guida perché la possano usare tutti: contrasti, tastiera, lettori di schermo, movimento ridotto, uso senza rete.">
-  <PageHead kicker="Trasparenza" title="Accessibilità del sito" lead="Vogliamo che la guida funzioni per tutti, anche con un telefono vecchio, sotto il sole e con poca rete." aggiornato="2026-09-30" />
+<Base title="Accessibilità del sito" description={`Com'è costruita ${SITO.nome} perché la possano usare tutti: contrasti, tastiera, lettori di schermo, movimento ridotto, uso senza rete.`}>
+  <PageHead kicker="Trasparenza" title="Accessibilità del sito" lead={`Vogliamo che ${SITO.nome} funzioni per tutti, anche con un telefono vecchio, sotto il sole e con poca rete.`} aggiornato="2026-09-30" />
   <section class="section">
     <div class="wrap prose">
       <h2>Cosa facciamo</h2>
@@ -19,7 +19,8 @@ import { SITO } from '../config/sito';
       <h2>Limiti che conosciamo</h2>
       <ul>
         <li>Il modello 3D della barca non è utilizzabile con un lettore di schermo: le stesse informazioni sono nel testo accanto.</li>
-        <li>La mappa si ingrandisce con i pulsanti delle zone, non con il gesto delle dita.</li>
+        <li>La mappa si sposta trascinando con un dito (o con il mouse) e si ingrandisce pizzicando con due dita o con i pulsanti + e −; il pulsante con la freccia circolare torna alla vista iniziale. Con la tastiera si usano i pulsanti di zona e di ingrandimento, ma non si può spostare la mappa punto per punto: gli stessi luoghi sono nell'elenco sotto la mappa, con numero e colore uguali.</li>
+        <li>Sulla mappa il dito sposta la mappa e non la pagina: per scorrere la pagina metti il dito fuori dalla mappa, che per questo ha un'altezza contenuta.</li>
       </ul>
       <h2>Segnalaci un problema</h2>
       <p>Scrivi a <strong>{SITO.titolare.email || '[email da completare]'}</strong>: rispondiamo e, se possibile, correggiamo.</p>

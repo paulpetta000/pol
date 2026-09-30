@@ -53,6 +53,13 @@
   --sea: #0B6E80;
   --sea-soft: #DCEFF2;
   --buoy: #E6B800;
+  --sea-ink: #FFFFFF;
+  --blu: #1F4E99;
+  --blu-ink: #FFFFFF;
+  --blu-soft: #E1EAF7;
+  --navy: #0B2F55;
+  --navy-ink: #EDF3F5;
+  --seg: #6B3FA0;
   --ok: #0B6E80;
   --press: #8A5300;
   --wait: #56646E;
@@ -89,6 +96,13 @@
     --sea: #2CC4D8;
     --sea-soft: #0B2A30;
     --buoy: #FFD84D;
+    --sea-ink: #0B1B2E;
+    --blu: #8AB4FF;
+    --blu-ink: #0B1B2E;
+    --blu-soft: #13233A;
+    --navy: #0D2440;
+    --navy-ink: #EDF3F5;
+    --seg: #C4A5FF;
     --ok: #2CC4D8;
     --press: #FFB547;
     --wait: #8C9CA6;
@@ -118,6 +132,13 @@
   --sea: #2CC4D8;
   --sea-soft: #0B2A30;
   --buoy: #FFD84D;
+  --sea-ink: #0B1B2E;
+  --blu: #8AB4FF;
+  --blu-ink: #0B1B2E;
+  --blu-soft: #13233A;
+  --navy: #0D2440;
+  --navy-ink: #EDF3F5;
+  --seg: #C4A5FF;
   --ok: #2CC4D8;
   --press: #FFB547;
   --wait: #8C9CA6;
@@ -214,6 +235,7 @@ h4 { font-size: 1rem; font-stretch: 90%; font-weight: 750; }
 }
 .chip--confermato { color: var(--ok); }
 .chip--stampa { color: var(--press); }
+.chip--segnalato { color: var(--seg); border-style: dotted; }
 .chip--atteso { color: var(--wait); border-style: dashed; }
 .chip--anno { color: var(--ink-2); border-color: var(--line-2); }
 .chip--solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }

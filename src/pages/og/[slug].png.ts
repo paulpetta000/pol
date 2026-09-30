@@ -6,6 +6,7 @@ import path from 'node:path';
 import satori from 'satori';
 import sharp from 'sharp';
 import { PAGINE, slugOg } from '../../data/pagine';
+import { SITO } from '../../config/sito';
 
 const font = (f: string) => fs.readFileSync(path.join(process.cwd(), 'node_modules', f));
 const FONTS = [
@@ -33,7 +34,7 @@ export const GET: APIRoute = async ({ props }) => {
     h('div', { display: 'flex', alignItems: 'center', gap: 18 }, [
       h('div', { width: 56, height: 56, background: '#FF7A3D', borderRadius: 6, display: 'flex' }),
       h('div', { display: 'flex', flexDirection: 'column' }, [
-        h('div', { fontSize: 30, fontWeight: 800, letterSpacing: 1 }, 'COPPA AMERICA NAPOLI'),
+        h('div', { fontSize: 30, fontWeight: 800, letterSpacing: 1 }, SITO.nome.toUpperCase()),
         h('div', { fontSize: 18, fontFamily: 'Plex', color: '#8C9CA6', letterSpacing: 3 }, 'GUIDA NON UFFICIALE 2027')
       ])
     ]),

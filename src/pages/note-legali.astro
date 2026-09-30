@@ -4,12 +4,12 @@ import PageHead from '../components/PageHead.astro';
 import { SITO } from '../config/sito';
 const t = SITO.titolare;
 ---
-<Base title="Note legali" description="Note legali della guida non ufficiale all'America's Cup di Napoli 2027: sito indipendente, marchi dei rispettivi titolari, fonti, mappe OpenStreetMap, font con licenza libera.">
+<Base title="Note legali" description={`Note legali di ${SITO.nome}, guida non ufficiale all'America's Cup di Napoli 2027: sito indipendente, marchi dei rispettivi titolari, fonti, foto e mappe con licenza libera.`}>
   <PageHead kicker="Trasparenza" title="Note legali" aggiornato="2026-09-30" />
   <section class="section">
     <div class="wrap prose">
       <h2>Sito non ufficiale</h2>
-      <p>Questa è una guida <strong>indipendente</strong>. Non è gestita, approvata o sponsorizzata da America's Cup Partnership, America's Cup Event, Louis Vuitton, Sport e Salute, Comune di Napoli, Regione Campania o dalle squadre in gara. Il sito ufficiale dell'evento è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>.</p>
+      <p><strong>{SITO.nome}</strong> è una guida <strong>indipendente</strong>. Non è gestita, approvata o sponsorizzata da America's Cup Partnership, America's Cup Event, Louis Vuitton, Sport e Salute, Comune di Napoli, Regione Campania o dalle squadre in gara. Il sito ufficiale dell'evento è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>.</p>
       <h2>Marchi</h2>
       <p>«America's Cup», «Louis Vuitton Cup», i nomi delle squadre e i loro marchi appartengono ai rispettivi titolari. Li usiamo solo per indicare di quale evento e di quali squadre parliamo. Le barche 3D sono ricostruzioni nostre, senza loghi.</p>
       <h2>Informazioni</h2>

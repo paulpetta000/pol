@@ -5,7 +5,7 @@ import Icon from '../../components/Icon.astro';
 import Flag from '../../components/Flag.astro';
 import Fatti from '../../components/Fatti.astro';
 import Countdown from '../../components/Countdown.astro';
-import Timeline2027 from '../../components/Timeline2027.astro';
+import CalendarioMesi from '../../components/CalendarioMesi.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
 import { getFatti } from '../../lib/fatti';
@@ -33,8 +33,9 @@ const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
 
   <section class="section">
     <div class="wrap">
-      <Timeline2027 />
-      <h2 class="visually-hidden">Le fasi, una per una</h2>
+      <h2 class="visually-hidden">Il calendario, mese per mese</h2>
+      <CalendarioMesi />
+      <h2 class="agenda-h">Le fasi, una per una</h2>
       <ol class="agenda">
         {EVENTI.map(e => (
           <li class={`agenda__i agenda__i--${e.gara}`}>
@@ -96,11 +97,12 @@ const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
   <FontiPagina fatti={f.values()} />
 </Base>
 <style>
-  .agenda { list-style: none; margin: 1.6rem 0 0; padding: 0; border-top: 2px solid var(--ink); }
+  .agenda-h { margin-top: 2.4rem; }
+  .agenda { list-style: none; margin: 1rem 0 0; padding: 0; border-top: 2px solid var(--ink); }
   .agenda__i { display: grid; grid-template-columns: 7.2rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); margin: 0; position: relative; }
   .agenda__i::before { content: ''; position: absolute; left: -12px; top: 1.1rem; bottom: 1.1rem; width: 4px; border-radius: 2px; background: var(--accent); }
   .agenda__i--youth::before, .agenda__i--womens::before { background: var(--sea); }
-  .agenda__i--match::before { background: var(--ink); }
+  .agenda__i--match::before { background: var(--blu); }
   .agenda__i--pausa::before { background: repeating-linear-gradient(180deg, var(--line-2) 0 3px, transparent 3px 6px); }
   .agenda__gg { display: block; font-size: 1.05rem; font-weight: 600; }
   .agenda__sett { display: block; font-size: .8rem; color: var(--ink-3); margin-top: .15rem; }

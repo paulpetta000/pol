@@ -3,32 +3,28 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import Fatti from '../../components/Fatti.astro';
-import Spot from '../../components/Spot.astro';
+import SpotGruppi from '../../components/SpotGruppi.astro';
 import Mappa from '../../components/Mappa.astro';
 import Avvisami from '../../components/Avvisami.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
-import { vistaOrdinata } from '../../lib/luoghi';
 import { getFatti } from '../../lib/fatti';
 
 const ids2027 = ['vista-vicino', 'vista-anfiteatro', 'vil-caracciolo', 'vil-bagnoli', 'vil-bagnoli-gratis', 'vil-caracciolo-gratis', 'vil-formato-stampa', 'vil-due', 'vil-orari-2027', 'ped-2027', 'campo-ovo', 'campo-posillipo', 'campo-mappa-atteso'];
 const ids2026 = ['vil-2026-gratis', 'vil-2026-orari', 'vil-2026-show', 'vil-2026-schermi', 'vil-2026-radio', 'ped-2026', 'vil-2026-folla', 'vil-2026-sicurezza', 'campo-2026'];
 const idsRegole = ['regole-pubblico-atteso', 'droni-2026', 'caldo-bollettini', 'vento-golfo'];
 const f = await getFatti([...ids2027, ...ids2026, ...idsRegole]);
-const viste = await vistaOrdinata();
 ---
-<Base title="Vedere l'America's Cup gratis dal lungomare" description="Dove mettersi per vedere gratis le regate dell'America's Cup 2027 a Napoli: via Caracciolo, Rotonda Diaz, Castel dell'Ovo, Monte Echia, San Martino. Sole, gradini, folla e cosa portare.">
+<Base title="Vedere l'America's Cup gratis dal lungomare" description="Dove mettersi per vedere gratis le regate dell'America's Cup 2027 a Napoli: via Caracciolo, Rotonda Diaz, Castel dell'Ovo, Monte Echia, via Aniello Falcone, via Orazio e via Petrarca a Posillipo. Sole, gradini, folla e cosa portare.">
   <PageHead kicker="Vederla · gratis" title="Dal lungomare" lead="Il campo di regata è a pochi metri dalla riva: dal lungomare vedi gli AC75 passare a tutta velocità, dalle colline tutto il golfo. Qui trovi dove metterti, quando arrivare e cosa portare." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
 
   <section class="section" aria-labelledby="punti-h">
     <div class="wrap">
       <p class="kicker">Dove mi metto?</p>
-      <h2 id="punti-h">Otto punti da cui guardare</h2>
-      <p>Il sole, i gradini e la folla sono <strong>valutazioni nostre</strong>, per aiutarti a scegliere: non sono informazioni ufficiali. Il campo 2027 non è ancora disegnato, quindi le distanze sono indicative.</p>
+      <h2 id="punti-h">Undici punti da cui guardare</h2>
+      <p>Sul lungomare sei in prima fila; dalle colline e da Posillipo vedi tutto il campo dall'alto. Ogni punto ha la sua fonte, con l'etichetta che dice da dove viene. Il sole, i gradini e la folla sono <strong>valutazioni nostre</strong>, per aiutarti a scegliere: non sono informazioni ufficiali. Il campo 2027 non è ancora disegnato, quindi le distanze sono indicative.</p>
       <Mappa vista="lungomare" id="mappa-lungomare" />
-      <div class="spots">
-        {viste.map((l, i) => <Spot l={l} n={i + 1} />)}
-      </div>
+      <SpotGruppi />
     </div>
   </section>
 
@@ -80,8 +76,6 @@ const viste = await vistaOrdinata();
   <FontiPagina fatti={f.values()} />
 </Base>
 <style>
-  .spots { display: grid; gap: 1rem; margin-top: 1.4rem; }
-  @media (min-width: 760px) { .spots { grid-template-columns: 1fr 1fr; } }
   .checklist { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
   .checklist li { display: grid; grid-template-columns: auto 1fr; gap: .8rem; padding: .85rem 0; border-bottom: 1px solid var(--line); margin: 0; }
   .checklist :global(svg) { color: var(--accent); margin-top: .1rem; }

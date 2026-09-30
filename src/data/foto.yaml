@@ -1,0 +1,80 @@
+# Foto con licenza libera (Wikimedia Commons). Niente foto ufficiali dell'America's Cup, delle squadre o di Louis Vuitton.
+# Ogni foto: file in src/assets/foto/, descrizione per chi usa il lettore di schermo (alt), didascalia,
+# autore, licenza, pagina di origine e data di controllo. Senza questi campi la build si ferma.
+# Le foto con licenza CC BY-SA, dopo il ritaglio, restano con la stessa licenza.
+
+- id: ac75-auckland-2021
+  src: ../assets/foto/ac75-auckland-2021.jpg
+  alt: "Due barche AC75 in regata su un mare turchese: in primo piano INEOS Britannia, con le vele nere, sollevata sui foil tra gli spruzzi; più indietro Luna Rossa, con le vele blu scuro a righe rosse."
+  didascalia: "Due AC75 in regata: INEOS Britannia e Luna Rossa nella finale della Prada Cup, Auckland, 13 febbraio 2021."
+  autore: Geoff McKay
+  autoreUrl: https://www.flickr.com/people/129472387@N07
+  licenza: CC BY 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Prada_Cup_Final_Race_One_-_Tacking_Upwind!_(50951085726).jpg
+  anno: 2021
+  modifiche: "Ritagliata (tolta la cornice) e ridimensionata"
+  controllato: 2026-09-30
+
+- id: acws-2013-caracciolo
+  src: ../assets/foto/acws-2013-caracciolo.jpg
+  alt: "Una flotta di catamarani da regata con vele colorate sul mare davanti a via Caracciolo; dietro, gli alberi della Villa Comunale e il pubblico lungo la ringhiera del lungomare."
+  didascalia: "Regate del 2013 (America's Cup World Series, catamarani AC45) davanti a via Caracciolo e alla Villa Comunale."
+  autore: Maurizio Pesce
+  autoreUrl: https://www.flickr.com/people/30364433@N05
+  licenza: CC BY 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:America%27s_Cup_2013,_Napoli_(NA,_ITA)_(8763037647).jpg
+  anno: 2013
+  controllato: 2026-09-30
+
+- id: acws-2013-partenope
+  src: ../assets/foto/acws-2013-partenope.jpg
+  alt: "Catamarani da regata sul mare davanti ai grandi alberghi di via Partenope; a destra Castel dell'Ovo, sullo sfondo il Vesuvio velato dalla foschia."
+  didascalia: "Regate del 2013 (America's Cup World Series): vista dal lungomare vicino alla Rotonda Diaz: la flotta davanti a via Partenope, con Castel dell'Ovo e il Vesuvio."
+  autore: Maurizio Pesce
+  autoreUrl: https://www.flickr.com/people/30364433@N05
+  licenza: CC BY 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:America%27s_Cup_2013,_Napoli_(NA,_ITA)_(8764934948).jpg
+  anno: 2013
+  controllato: 2026-09-30
+
+- id: acws-2012-ovo
+  src: ../assets/foto/acws-2012-ovo.jpg
+  alt: "Due catamarani da regata, uno con la vela nera di Oracle e uno con la vela rossa e bianca di Luna Rossa, passano vicinissimi alle mura di tufo di Castel dell'Ovo."
+  didascalia: "Regate del 2012 (America's Cup World Series): Oracle e Luna Rossa davanti a Castel dell'Ovo."
+  autore: Armando Tripodi
+  autoreUrl: https://it.wikipedia.org/wiki/Utente:Tripiz
+  licenza: Pubblico dominio
+  fonte: https://commons.wikimedia.org/wiki/File:America%E2%80%99s_Cup_WORLD_SERIES_2012_-_Napoli.JPG
+  anno: 2012
+  modifiche: "Ridimensionata"
+  controllato: 2026-09-30
+
+- id: via-partenope
+  src: ../assets/foto/via-partenope.jpg
+  alt: "Il lungomare di via Partenope in una giornata di sole: la scogliera bianca lungo la passeggiata, il mare blu e, in fondo, Castel dell'Ovo sull'isolotto."
+  didascalia: "Via Partenope e la scogliera verso Castel dell'Ovo."
+  autore: Baku
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Via_Parthenope.jpg
+  anno: 2021
+  controllato: 2026-09-30
+
+- id: vista-san-martino
+  src: ../assets/foto/vista-san-martino.jpg
+  alt: "Il golfo di Napoli visto dall'alto della collina di San Martino: sotto i tetti della città e la collina di Pizzofalcone, poi il mare con alcune barche e, all'orizzonte, la penisola sorrentina e Capri."
+  didascalia: "Dalla Certosa di San Martino: Pizzofalcone, il golfo e all'orizzonte Capri."
+  autore: Miguel Hermoso Cuesta
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Certosa_Pizzofalcone_06.JPG
+  anno: 2013
+  controllato: 2026-09-30
+
+- id: floridiana-viale
+  src: ../assets/foto/floridiana-viale.jpg
+  alt: "Il grande viale a gradoni della Villa Floridiana scende tra gli alberi verso il belvedere; in fondo si vede il mare."
+  didascalia: "Villa Floridiana: il viale che scende verso il belvedere sul mare."
+  autore: Baku
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Floridiana2.jpg
+  anno: 2018
+  controllato: 2026-09-30

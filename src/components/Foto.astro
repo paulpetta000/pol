@@ -1,0 +1,63 @@
+---
+// Foto con licenza libera da src/data/foto.yaml: formati moderni (AVIF, WebP), più larghezze,
+// dimensioni dichiarate e caricamento differito. Sotto la foto: didascalia e crediti (autore, licenza, origine).
+import { Picture } from 'astro:assets';
+import { getEntry } from 'astro:content';
+
+interface Props {
+  id: string;
+  sizes?: string;
+  widths?: number[];
+  prima?: boolean;          // foto in alto nella pagina: niente caricamento differito
+  rapporto?: string;        // es. '3 / 2': ritaglio della cornice (la foto si adatta)
+  posizione?: string;       // es. '50% 60%': quale parte tenere nel ritaglio
+  didascalia?: boolean;
+  class?: string;
+}
+const { id, sizes = '(min-width: 1200px) 560px, (min-width: 760px) 46vw, calc(100vw - 32px)', widths = [480, 800, 1120], prima = false, rapporto, posizione, didascalia = true, class: cls } = Astro.props;
+const f = await getEntry('foto', id);
+if (!f) throw new Error(`Foto "${id}" non trovata in src/data/foto.yaml`);
+const d = f.data;
+const LICENZE: Record<string, string | undefined> = {
+  'CC0': 'https://creativecommons.org/publicdomain/zero/1.0/deed.it',
+  'Pubblico dominio': undefined,
+  'CC BY 2.0': 'https://creativecommons.org/licenses/by/2.0/deed.it',
+  'CC BY 3.0': 'https://creativecommons.org/licenses/by/3.0/deed.it',
+  'CC BY 4.0': 'https://creativecommons.org/licenses/by/4.0/deed.it',
+  'CC BY-SA 2.0': 'https://creativecommons.org/licenses/by-sa/2.0/deed.it',
+  'CC BY-SA 3.0': 'https://creativecommons.org/licenses/by-sa/3.0/deed.it',
+  'CC BY-SA 4.0': 'https://creativecommons.org/licenses/by-sa/4.0/deed.it'
+};
+const licUrl = LICENZE[d.licenza];
+const w = widths.filter(x => x <= d.src.width);
+if (!w.includes(d.src.width) && w.length === 0) w.push(d.src.width);
+const stile = [rapporto && `aspect-ratio: ${rapporto}`, posizione && `object-position: ${posizione}`].filter(Boolean).join('; ');
+---
+<figure class:list={['foto', cls]}>
+  <Picture
+    src={d.src}
+    alt={d.alt}
+    widths={w}
+    sizes={sizes}
+    formats={['avif', 'webp']}
+    quality={48}
+    loading={prima ? 'eager' : 'lazy'}
+    decoding={prima ? 'auto' : 'async'}
+    fetchpriority={prima ? 'high' : undefined}
+    class="foto__img"
+    style={stile || undefined}
+  />
+  <figcaption class="foto__cap">
+    {didascalia && <span class="foto__did">{d.didascalia} </span>}
+    <span class="foto__cr">Foto: {d.autoreUrl ? <a href={d.autoreUrl} rel="noopener">{d.autore}</a> : d.autore} · {licUrl ? <a href={licUrl} rel="noopener license">{d.licenza}</a> : d.licenza} · <a href={d.fonte} rel="noopener">Wikimedia Commons</a></span>
+  </figcaption>
+</figure>
+
+<style>
+  .foto { margin: 0; }
+  .foto :global(.foto__img) { display: block; width: 100%; height: auto; object-fit: cover; background: var(--sea-soft); border-radius: var(--r); }
+  .foto__cap { margin-top: .4rem; font-size: .78rem; line-height: 1.35; color: var(--ink-3); }
+  .foto__did { color: var(--ink-2); }
+  .foto__cr { white-space: normal; }
+  .foto__cap a { color: var(--ink-2); }
+</style>

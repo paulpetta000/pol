@@ -58,11 +58,13 @@ export function ultimoControllo(fatti: Iterable<Fatto>): Date | null {
 export const ETICHETTA_STATO = {
   confermato: 'Confermato',
   stampa: 'Dalla stampa',
+  segnalato: 'Segnalato da siti non ufficiali',
   atteso: 'Non ancora uscito'
 } as const;
 
 export const SPIEGA_STATO = {
   confermato: 'Letto su una fonte ufficiale o su dati pubblici',
-  stampa: 'Riportato da giornali o siti non ufficiali, senza conferma ufficiale',
+  stampa: 'Riportato da giornali e testate, senza conferma ufficiale',
+  segnalato: 'Indicato da blog o altri siti non ufficiali (non giornali), senza conferma ufficiale',
   atteso: 'Cercato: gli organizzatori non l\'hanno ancora pubblicato'
 } as const;

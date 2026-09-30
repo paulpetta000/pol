@@ -345,6 +345,34 @@
   controllato: 2026-09-29
   letta: false
 
+- id: mattino-punti-panoramici
+  titolo: "America's Cup, dove vedere le pre regate a Napoli: ecco tutti i punti panoramici"
+  editore: Il Mattino
+  url: https://www.ilmattino.it/schede/america_s_cup_dove_vedere_pre_regate_napoli_ecco_tutti_punti_panoramici_dove_vedere_meglio-9778678.html
+  tipo: stampa
+  pubblicato: 2026-09-23
+  controllato: 2026-09-30
+  letta: true
+  nota: "Galleria di 7 schede: Monte Echia, via Caracciolo, belvedere della Villa Floridiana, via Aniello Falcone e via Tasso, via Orazio, Parco Virgiliano."
+
+- id: napolidavivere-dove
+  titolo: "America's Cup Napoli 2026: programma e dove vederla"
+  editore: Napoli da Vivere
+  url: https://www.napolidavivere.it/2026/09/14/americas-cup-napoli-2026-programma-dove-vederla/
+  tipo: stampa
+  pubblicato: 2026-09-14
+  controllato: 2026-09-30
+  letta: true
+
+- id: napolike-dove
+  titolo: "America's Cup Napoli 2026, dove vederla gratis dal lungomare"
+  editore: Napolike
+  url: https://www.napolike.it/americas-cup-napoli-2026-dove-vederla
+  tipo: stampa
+  pubblicato: 2026-09-14
+  controllato: 2026-09-30
+  letta: true
+
 # ---------- Dati ----------
 - id: osm
   titolo: "OpenStreetMap"
@@ -363,6 +391,25 @@
   tipo: altro
   controllato: 2026-09-29
   letta: false
+
+- id: pernice-punti
+  titolo: "Dove vedere gratis le regate dell'America's Cup a Napoli: la mia guida ai punti panoramici"
+  editore: Le avventure di Anna Pernice (blog di viaggi)
+  url: https://www.annapernice.com/dove-vedere-gratis-le-regate-dellamericas-cup-a-napoli-la-mia-guida-ai-punti-panoramici/
+  tipo: altro
+  pubblicato: 2026-09-21
+  controllato: 2026-09-30
+  letta: true
+
+- id: vienianapoli-panorami
+  titolo: "I migliori panorami di Napoli"
+  editore: Vieni a Napoli (blog di viaggi)
+  url: https://www.vienianapoli.com/2024/04/BEST-PANORAMAS-NAPLES-.html
+  tipo: altro
+  pubblicato: 2024-04-01
+  controllato: 2026-09-30
+  letta: true
+  nota: "Guida generale ai panorami (non solo regate): via Tasso e via Aniello Falcone, via Petrarca, Villa Floridiana, Monte Echia."
 
 # ---------- Schede dei velisti (fonti già usate dal sito 2026) ----------
 - id: wiki-burling

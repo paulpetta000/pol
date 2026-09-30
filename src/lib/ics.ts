@@ -18,15 +18,15 @@ const piega = (line: string) => {
 export function calendario(nome: string, eventi: (Evento & { condizionale?: string })[], perChi = '', chiave = 'ac38') {
   const stamp = new Date().toISOString().replace(/[-:]/g, '').replace(/\.\d+/, '');
   const righe = [
-    'BEGIN:VCALENDAR', 'VERSION:2.0', 'PRODID:-//Coppa America Napoli//Guida 2027//IT', 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
-    `X-WR-CALNAME:${esc(nome)}`, 'X-WR-TIMEZONE:Europe/Rome', 'REFRESH-INTERVAL;VALUE=DURATION:P1D', 'X-PUBLISHED-TTL:P1D'
+    'BEGIN:VCALENDAR', 'VERSION:2.0', `PRODID:-//${SITO.nome}//Guida 2027//IT`, 'CALSCALE:GREGORIAN', 'METHOD:PUBLISH',
+    `X-WR-CALNAME:${esc(nome)}`, `X-WR-CALDESC:${esc(`${SITO.nome}, guida non ufficiale all'America's Cup di Napoli: ${SITO.url}/calendario/`)}`, 'X-WR-TIMEZONE:Europe/Rome', 'REFRESH-INTERVAL;VALUE=DURATION:P1D', 'X-PUBLISHED-TTL:P1D'
   ];
   for (const e of eventi) {
     const titolo = e.condizionale ? `${e.titolo} (${e.condizionale})` : e.titolo;
     const desc = `${e.testo}${e.riserva ? ` Giorno di riserva: ${e.riserva.split('-').reverse().join('/')}.` : ''}\nOrari non ancora pubblicati.${perChi ? `\n${perChi}` : ''}\nGuida non ufficiale: ${SITO.url}/calendario/`;
     righe.push(
       'BEGIN:VEVENT',
-      `UID:${e.id}-${chiave}@coppa-america-napoli`,
+      `UID:${e.id}-${chiave}@${SITO.sigla}`,
       `DTSTAMP:${stamp}`,
       `DTSTART;VALUE=DATE:${giorno(e.inizio)}`,
       `DTEND;VALUE=DATE:${dopo(e.riserva || e.fine)}`,

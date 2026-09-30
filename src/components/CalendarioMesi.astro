@@ -1,0 +1,137 @@
+---
+// Calendario vero, mese per mese (maggio, giugno, luglio 2027), costruito dagli eventi di src/data/eventi.ts.
+// Colore pieno: giorno di gara in programma. Colore chiaro: giorno possibile o di riserva.
+import { EVENTI } from '../data/eventi';
+import { d } from '../lib/formato';
+
+interface Props { compatto?: boolean }
+const { compatto = false } = Astro.props;
+
+type Tipo = 'lvc' | 'ac40' | 'match';
+type Giorno = { tipo: Tipo; forse: boolean; nome: string; chiave?: string };
+const TIPO: Record<string, Tipo> = { lvc: 'lvc', youth: 'ac40', womens: 'ac40', match: 'match' };
+const iso = (t: Date) => t.toISOString().slice(0, 10);
+const dopo = (t: Date) => new Date(t.getTime() + 86400000);
+
+const giorni = new Map<string, Giorno>();
+for (const e of EVENTI) {
+  if (e.gara === 'pausa') continue;
+  const ultimo = e.riserva || e.fine;
+  for (let t = d(e.inizio); t <= d(ultimo); t = dopo(t)) {
+    const g = iso(t);
+    const forse = (e.riserva ? g > e.fine : false) || (e.possibiliDal ? g >= e.possibiliDal : false);
+    const nome = g === e.riserva ? `${e.breve}, giorno di riserva` : forse ? `${e.breve}, giorno possibile` : e.breve;
+    giorni.set(g, { tipo: TIPO[e.gara], forse, nome, chiave: g === e.inizio ? e.chiave : undefined });
+  }
+}
+
+const NOMI_MESI = ['Maggio', 'Giugno', 'Luglio'];
+const mesi = [4, 5, 6].map((m, i) => {
+  const primo = new Date(Date.UTC(2027, m, 1));
+  const vuoti = (primo.getUTCDay() + 6) % 7; // settimana da lunedì
+  const n = new Date(Date.UTC(2027, m + 1, 0)).getUTCDate();
+  const celle: (null | { n: number; iso: string; g?: Giorno })[] = [...Array(vuoti).fill(null)];
+  for (let k = 1; k <= n; k++) { const s = iso(new Date(Date.UTC(2027, m, k))); celle.push({ n: k, iso: s, g: giorni.get(s) }); }
+  while (celle.length % 7) celle.push(null);
+  const settimane = Array.from({ length: celle.length / 7 }, (_, w) => celle.slice(w * 7, w * 7 + 7));
+  return { nome: NOMI_MESI[i], settimane };
+});
+const SETT = [['L', 'lunedì'], ['M', 'martedì'], ['M', 'mercoledì'], ['G', 'giovedì'], ['V', 'venerdì'], ['S', 'sabato'], ['D', 'domenica']];
+const CHIAVI = [
+  { data: '22 mag', t: 'Prima regata', s: 'Louis Vuitton Cup' },
+  { data: '2–6 giu', t: "Youth America's Cup", s: 'barche AC40' },
+  { data: '5–9 lug', t: "Women's America's Cup", s: 'barche AC40' },
+  { data: 'dal 10 lug', t: "Match per la Coppa", s: 'fino al 19 luglio al più tardi' }
+];
+---
+<div class:list={['calm', { 'calm--compatto': compatto }]}>
+  {compatto && <p class="visually-hidden">Calendario 2027: Louis Vuitton Cup dal 22 maggio al 4 luglio al più tardi, Youth America's Cup dal 2 al 6 giugno, Women's America's Cup dal 5 al 9 luglio, Match dal 10 luglio, entro il 19.</p>}
+  <div class="calm__mesi" aria-hidden={compatto ? 'true' : undefined}>
+    {mesi.map(m => (
+      <table class="calm__mese">
+        <caption>{m.nome}<span class="calm__anno"> 2027</span></caption>
+        <thead><tr>{SETT.map(([s, lungo]) => <th scope="col" abbr={lungo}>{s}</th>)}</tr></thead>
+        <tbody>
+          {m.settimane.map(w => (
+            <tr>
+              {w.map(c => c === null
+                ? <td class="calm__vuoto"></td>
+                : c.g
+                  ? <td class:list={['calm__g', `calm__g--${c.g.tipo}`, { 'calm__g--forse': c.g.forse, 'calm__g--chiave': c.g.chiave }]} >
+                      <span class="calm__n">{c.n}</span><span class="visually-hidden">: {c.g.nome}{c.g.chiave && ' (data chiave)'}</span>
+                    </td>
+                  : <td><span class="calm__n">{c.n}</span></td>)}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    ))}
+  </div>
+  <ul class="calm__leg" aria-label="Legenda del calendario">
+    <li><i class="calm__sw calm__sw--lvc"></i>Louis Vuitton Cup</li>
+    <li><i class="calm__sw calm__sw--ac40"></i>Youth e Women's (AC40)</li>
+    <li><i class="calm__sw calm__sw--match"></i>Match per la Coppa</li>
+    <li><i class="calm__sw calm__sw--forse"></i>Colore chiaro: giorno possibile o di riserva</li>
+    {!compatto && <li><i class="calm__sw calm__sw--chiave"></i>Data chiave ★</li>}
+  </ul>
+  <ol class="calm__chiavi">
+    {CHIAVI.map(k => <li><span class="calm__kd num">{k.data}</span><span><strong>{k.t}</strong> <span class="calm__ks">{k.s}</span></span></li>)}
+  </ol>
+</div>
+
+<style>
+  .calm { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem; box-shadow: var(--shadow); }
+  .calm__mesi { display: grid; gap: 1.4rem; }
+  @media (min-width: 900px) { .calm__mesi { grid-template-columns: repeat(3, 1fr); gap: 1.2rem; } }
+  .calm__mese { width: 100%; border-collapse: separate; border-spacing: 3px; table-layout: fixed; font-size: 1rem; }
+  .calm__mese caption { text-align: left; font-weight: 850; font-stretch: 74%; font-size: 1.5rem; line-height: 1; padding: 0 3px .45rem; }
+  .calm__anno { color: var(--ink-3); font-weight: 600; }
+  .calm__mese th { background: none; padding: .15rem 0; text-align: center; font-size: .7rem; color: var(--ink-3); border: 0; }
+  .calm__mese td { padding: 0; border: 0; text-align: center; vertical-align: middle; height: 2.7rem; border-radius: 4px; background: var(--bg); color: var(--ink-2); }
+  .calm__mese td.calm__vuoto { background: none; }
+  .calm__n { font-family: var(--f-mono); font-weight: 500; font-size: .95rem; }
+  .calm__g { font-weight: 700; position: relative; }
+  .calm__g .calm__n { font-weight: 600; }
+  .calm__g--lvc { background: var(--accent) !important; color: var(--accent-ink) !important; }
+  .calm__g--ac40 { background: var(--sea) !important; color: var(--sea-ink) !important; }
+  .calm__g--match { background: var(--blu) !important; color: var(--blu-ink) !important; }
+  .calm__g--forse { background: var(--surface) !important; color: var(--ink) !important; box-shadow: inset 0 0 0 2px var(--c); }
+  .calm__g--lvc.calm__g--forse { --c: var(--accent); background: var(--accent-soft) !important; }
+  .calm__g--match.calm__g--forse { --c: var(--blu); background: var(--blu-soft) !important; }
+  .calm__g--chiave { outline: 3px solid var(--ink); outline-offset: 1px; z-index: 1; }
+  .calm__g--chiave::after { content: '★'; position: absolute; top: 2px; right: 3px; font-size: .62rem; line-height: 1; }
+  .calm__leg { list-style: none; display: flex; flex-wrap: wrap; gap: .45rem 1rem; margin: 1.1rem 0 0; padding: .8rem 0 0; border-top: 1px solid var(--line); font-size: .86rem; color: var(--ink-2); }
+  .calm__leg li { margin: 0; display: inline-flex; align-items: center; gap: .4rem; }
+  .calm__sw { display: inline-block; width: 16px; height: 16px; border-radius: 3px; flex: none; }
+  .calm__sw--lvc { background: var(--accent); }
+  .calm__sw--ac40 { background: var(--sea); }
+  .calm__sw--match { background: var(--blu); }
+  .calm__sw--forse { background: var(--accent-soft); box-shadow: inset 0 0 0 2px var(--accent); }
+  .calm__sw--chiave { outline: 3px solid var(--ink); outline-offset: -1px; background: var(--bg); }
+  .calm__chiavi { list-style: none; margin: .9rem 0 0; padding: 0; display: grid; gap: .5rem; }
+  @media (min-width: 640px) { .calm__chiavi { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1000px) { .calm__chiavi { grid-template-columns: repeat(4, 1fr); } }
+  .calm__chiavi li { margin: 0; display: grid; grid-template-columns: auto 1fr; gap: .6rem; align-items: baseline; padding: .55rem .7rem; background: var(--bg); border-radius: var(--r); border-left: 4px solid var(--ink); line-height: 1.25; }
+  .calm__chiavi li:nth-child(1) { border-left-color: var(--accent); }
+  .calm__chiavi li:nth-child(2), .calm__chiavi li:nth-child(3) { border-left-color: var(--sea); }
+  .calm__chiavi li:nth-child(4) { border-left-color: var(--blu); }
+  .calm__kd { font-weight: 600; font-size: .92rem; white-space: nowrap; }
+  .calm__ks { display: block; color: var(--ink-3); font-size: .84rem; }
+
+  /* Versione compatta per la home: tre mesi affiancati anche sul telefono */
+  .calm--compatto { padding: .8rem; }
+  .calm--compatto .calm__mesi { grid-template-columns: repeat(3, 1fr); gap: .5rem; }
+  .calm--compatto .calm__mese { border-spacing: 1.5px; }
+  .calm--compatto .calm__mese caption { font-size: 1rem; padding-bottom: .3rem; }
+  .calm--compatto .calm__anno { display: none; }
+  .calm--compatto .calm__mese th { font-size: .56rem; padding: 0; }
+  .calm--compatto .calm__mese td { height: auto; aspect-ratio: 1; border-radius: 2px; }
+  .calm--compatto .calm__n { font-size: clamp(.56rem, 2.1vw, .76rem); }
+  .calm--compatto .calm__g--chiave { outline-width: 2px; outline-offset: 0; }
+  .calm--compatto .calm__g--chiave::after { display: none; }
+  .calm--compatto .calm__leg { font-size: .8rem; gap: .35rem .8rem; margin-top: .8rem; padding-top: .6rem; }
+  .calm--compatto .calm__sw { width: 13px; height: 13px; }
+  .calm--compatto .calm__chiavi { grid-template-columns: 1fr 1fr; gap: .4rem; }
+  .calm--compatto .calm__chiavi li { padding: .45rem .55rem; grid-template-columns: 1fr; gap: 0; }
+  .calm--compatto .calm__ks { display: none; }
+</style>

@@ -2,17 +2,15 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Mappa from '../../components/Mappa.astro';
-import Spot from '../../components/Spot.astro';
+import SpotGruppi from '../../components/SpotGruppi.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
-import { vistaOrdinata } from '../../lib/luoghi';
 import { getFatti, tutteLeFonti } from '../../lib/fatti';
 
 const ids = ['campo-mappa-atteso', 'vil-caracciolo', 'vil-bagnoli', 'sq-basi', 'linea6-fermate', 'echia-ascensore'];
 const f = await getFatti(ids);
 const luoghi = await getCollection('luoghi');
-const viste = await vistaOrdinata();
 const stazioni = luoghi.filter(l => l.data.tipo === 'stazione' || l.data.tipo === 'porto');
 const osm = (await tutteLeFonti()).get('osm')!;
 ---
@@ -27,8 +25,8 @@ const osm = (await tutteLeFonti()).get('osm')!;
     <div class="wrap">
       <p class="kicker">Dove mi metto?</p>
       <h2 id="pt-h">I punti della mappa</h2>
-      <p>Sole, gradini e folla sono valutazioni nostre, non informazioni ufficiali.</p>
-      <div class="spots">{viste.map((l, i) => <Spot l={l} n={i + 1} />)}</div>
+      <p>Divisi per zona, con lo stesso numero e colore della mappa. Sole, gradini e folla sono valutazioni nostre, non informazioni ufficiali.</p>
+      <SpotGruppi />
     </div>
   </section>
   <section class="section" aria-labelledby="st-h">
@@ -50,7 +48,3 @@ const osm = (await tutteLeFonti()).get('osm')!;
   </section>
   <FontiPagina fatti={f.values()} extra={[osm]} />
 </Base>
-<style>
-  .spots { display: grid; gap: 1rem; margin-top: 1.2rem; }
-  @media (min-width: 760px) { .spots { grid-template-columns: 1fr 1fr; } }
-</style>

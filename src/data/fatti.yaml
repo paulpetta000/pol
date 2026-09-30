@@ -296,6 +296,42 @@
   fonti: [salute-caldo]
   controllato: 2026-09-30
 
+# Punti da cui guardare: perché sono nella lista
+- id: vista-colline-stampa
+  testo: "Per le regate del 2026 la stampa locale ha indicato via Orazio e via Petrarca a Posillipo e via Aniello Falcone al Vomero per vedere dall'alto tutto il campo: da lassù si perde il dettaglio delle manovre."
+  stato: stampa
+  anno: 2026
+  fonti: [napolidavivere-dove, napolike-dove, mattino-punti-panoramici]
+  controllato: 2026-09-30
+
+- id: vista-falcone-tasso
+  testo: "Il Mattino ha indicato via Aniello Falcone e la vicina via Tasso, sulla collina del Vomero, come un unico lungo belvedere da cui seguire le regate del 2026."
+  stato: stampa
+  anno: 2026
+  fonti: [mattino-punti-panoramici, vienianapoli-panorami]
+  controllato: 2026-09-30
+
+- id: vista-floridiana
+  testo: "Il Mattino ha indicato il belvedere della Villa Floridiana, sul fianco del Vomero, tra i punti panoramici da cui vedere le regate del 2026. Il belvedere è segnato anche su OpenStreetMap."
+  stato: stampa
+  anno: 2026
+  fonti: [mattino-punti-panoramici, osm]
+  controllato: 2026-09-30
+
+- id: vista-sant-antonio
+  testo: "Un blog di viaggi napoletano consiglia la terrazza di Sant'Antonio a Posillipo per vedere dall'alto tutto il campo di regata, con il Vesuvio di fronte. La terrazza è segnata come punto panoramico su OpenStreetMap."
+  stato: segnalato
+  anno: 2026
+  fonti: [pernice-punti, osm]
+  controllato: 2026-09-30
+
+- id: vista-echia-2026
+  testo: "Per le regate del 2026 Il Mattino e un blog di viaggi napoletano hanno indicato Monte Echia tra i punti migliori: la vista abbraccia il mare davanti a Castel dell'Ovo e a via Caracciolo."
+  stato: stampa
+  anno: 2026
+  fonti: [mattino-punti-panoramici, pernice-punti]
+  controllato: 2026-09-30
+
 # ================= DAL MARE =================
 - id: mare-registrazione
   testo: "Nel 2026 chi voleva vedere le regate con la propria barca doveva registrarsi online. In cambio riceveva ogni mattina il programma, il meteo e gli avvisi di sicurezza."

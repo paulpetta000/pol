@@ -24,7 +24,7 @@ const fatti = defineCollection({
   loader: file('src/data/fatti.yaml'),
   schema: z.object({
     testo: z.string().min(10),
-    stato: z.enum(['confermato', 'stampa', 'atteso']),
+    stato: z.enum(['confermato', 'stampa', 'segnalato', 'atteso']),
     anno: z.number().int().default(2027),
     fonti: z.array(reference('fonti')).min(1),
     controllato: data,
@@ -68,12 +68,32 @@ const squadre = defineCollection({
   })
 });
 
+// Foto con licenza libera: senza autore, licenza e pagina di origine la build si ferma
+const foto = defineCollection({
+  loader: file('src/data/foto.yaml'),
+  schema: ({ image }) => z.object({
+    src: image(),
+    alt: z.string().min(20),
+    didascalia: z.string().min(10),
+    autore: z.string().min(2),
+    autoreUrl: z.string().url().optional(),
+    licenza: z.enum(['CC0', 'Pubblico dominio', 'CC BY 2.0', 'CC BY 3.0', 'CC BY 4.0', 'CC BY-SA 2.0', 'CC BY-SA 3.0', 'CC BY-SA 4.0']),
+    licenzaUrl: z.string().url().optional(),
+    fonte: z.string().url(),
+    anno: z.number().int().optional(),
+    modifiche: z.string().default('Ritagliata e ridimensionata'),
+    controllato: data
+  })
+});
+
 const luoghi = defineCollection({
   loader: file('src/data/luoghi.yaml'),
   schema: z.object({
     nome: z.string(),
     tipo: z.enum(['vista', 'village', 'stazione', 'porto']),
     zona: z.string().optional(),
+    // Solo per i punti da cui guardare: gruppo sulla mappa e nell'elenco
+    gruppo: z.enum(['lungomare', 'colline', 'posillipo']).optional(),
     linea: z.string().optional(),
     lat: z.number().min(40.79).max(40.852),
     lon: z.number().min(14.15).max(14.264),
@@ -86,8 +106,11 @@ const luoghi = defineCollection({
     folla: z.string().optional(),
     servizi: z.string().optional(),
     arrivare: z.array(reference('luoghi')).default([]),
+    // La scheda che spiega perché il punto è nella lista (con stato e fonte)
+    perche: reference('fatti').optional(),
+    foto: reference('foto').optional(),
     fatti: z.array(reference('fatti')).default([])
-  })
+  }).refine(l => l.tipo !== 'vista' || (l.gruppo && l.perche), { message: 'Ogni punto "vista" deve avere gruppo e perche (la scheda con la fonte)' })
 });
 
 const faq = defineCollection({
@@ -99,4 +122,4 @@ const faq = defineCollection({
   })
 });
 
-export const collections = { fonti, fatti, squadre, luoghi, faq };
+export const collections = { fonti, fatti, squadre, foto, luoghi, faq };

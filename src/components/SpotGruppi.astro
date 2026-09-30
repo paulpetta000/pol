@@ -1,0 +1,32 @@
+---
+// Elenco dei punti da cui guardare, diviso per zona (Lungomare, Colline, Posillipo)
+import Spot from './Spot.astro';
+import { vistePerGruppo } from '../lib/luoghi';
+// Titoli: h3 per le zone, h4 per i punti (la pagina ha l'h2 "Dove mi metto?")
+const gruppi = await vistePerGruppo();
+---
+<div class="gruppi">
+  {gruppi.map(g => (
+    <section class:list={['gruppo', `gruppo--${g.id}`]} aria-labelledby={`gr-${g.id}`}>
+      <header class="gruppo__head">
+        <h3 class="gruppo__h" id={`gr-${g.id}`}>{g.nome} <span class="gruppo__nn num">{g.punti[0].n}–{g.punti[g.punti.length - 1].n}</span></h3>
+        <p class="gruppo__s">{g.sotto}</p>
+      </header>
+      <div class="gruppo__spots">
+        {g.punti.map(p => <Spot l={p.l} n={p.n} livello="h4" />)}
+      </div>
+    </section>
+  ))}
+</div>
+<style>
+  .gruppi { display: grid; gap: 2.2rem; margin-top: 1.6rem; }
+  .gruppo { --g: var(--accent); }
+  .gruppo--colline { --g: var(--sea); }
+  .gruppo--posillipo { --g: var(--blu); }
+  .gruppo__head { display: flex; flex-wrap: wrap; align-items: baseline; gap: .2rem 1rem; padding: .55rem .9rem; margin-bottom: 1rem; background: color-mix(in srgb, var(--g) 12%, var(--surface)); border-left: 6px solid var(--g); border-radius: var(--r); }
+  .gruppo__h { margin: 0; font-size: 1.6rem; font-stretch: 76%; font-weight: 850; }
+  .gruppo__nn { font-size: .9rem; color: var(--ink-2); font-weight: 600; margin-left: .3rem; }
+  .gruppo__s { margin: 0; color: var(--ink-2); font-size: .95rem; }
+  .gruppo__spots { display: grid; gap: 1rem; }
+  @media (min-width: 760px) { .gruppo__spots { grid-template-columns: 1fr 1fr; } }
+</style>

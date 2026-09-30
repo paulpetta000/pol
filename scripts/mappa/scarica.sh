@@ -7,7 +7,7 @@ for lat in $(seq 40.788 0.008 40.844); do
     f="t_${lon}_${lat}.xml"
     [ -s "$f" ] && continue
     for try in 1 2 3; do
-      code=$(curl -sS --compressed --max-time 120 -A "coppa-america-napoli-guide/1.0 (map build)" -o "$f" -w '%{http_code}' "https://api.openstreetmap.org/api/0.6/map?bbox=$lon,$lat,$lo2,$la2")
+      code=$(curl -sS --compressed --max-time 120 -A "napoli-a-vela-guide/1.0 (map build)" -o "$f" -w '%{http_code}' "https://api.openstreetmap.org/api/0.6/map?bbox=$lon,$lat,$lo2,$la2")
       [ "$code" = "200" ] && break
       echo "retry $f $code"; rm -f "$f"; sleep 5
     done

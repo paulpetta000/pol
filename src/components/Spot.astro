@@ -1,22 +1,36 @@
 ---
-// Scheda "Dove mi metto?": un punto da cui guardare, con la valutazione della guida
+// Scheda "Dove mi metto?": un punto da cui guardare, con foto, perché è in elenco (stato e fonte)
+// e la valutazione della guida (sole, gradini, folla: stime nostre).
 import type { CollectionEntry } from 'astro:content';
 import { getEntry } from 'astro:content';
 import Icon from './Icon.astro';
-interface Props { l: CollectionEntry<'luoghi'>; n: number }
-const { l, n } = Astro.props;
+import Foto from './Foto.astro';
+import { getFatti, ETICHETTA_STATO, SPIEGA_STATO } from '../lib/fatti';
+import { GRUPPI } from '../lib/luoghi';
+interface Props { l: CollectionEntry<'luoghi'>; n: number; livello?: 'h3' | 'h4' }
+const { l, n, livello = 'h3' } = Astro.props;
+const H = livello;
 const d = l.data;
 const VICINO = { 'prima-fila': 'In prima fila', vicino: 'Vicino', 'dall-alto': 'Dall\'alto' } as const;
-const staz = await Promise.all(d.arrivare.map(r => getEntry('luoghi', r.id)));
+const staz = (await Promise.all(d.arrivare.map(r => getEntry('luoghi', r.id)))).filter(Boolean);
+const perche = d.perche ? (await getFatti([d.perche.id])).get(d.perche.id)! : null;
+const gruppo = d.gruppo ? GRUPPI[d.gruppo] : null;
 ---
-<article class="spot" id={`luogo-${l.id}`}>
+<article class:list={['spot', d.gruppo && `spot--${d.gruppo}`]} id={`luogo-${l.id}`}>
+  {d.foto && <Foto id={d.foto.id} rapporto="3 / 2" class="spot__foto" />}
   <header class="spot__head">
     <span class="spot__n num" aria-hidden="true">{n}</span>
     <div>
-      <h3 class="spot__h">{d.nome}</h3>
-      <p class="spot__z mono">{d.zona}{d.vicino && <> · <span class="spot__v">{VICINO[d.vicino]}</span></>}</p>
+      <H class="spot__h"><span class="visually-hidden">{n}. </span>{d.nome}</H>
+      <p class="spot__z mono">{gruppo ? gruppo.nome : d.zona}{d.zona && gruppo && d.zona !== gruppo.nome && <> · {d.zona}</>}{d.vicino && <> · <span class="spot__v">{VICINO[d.vicino]}</span></>}</p>
     </div>
   </header>
+  {perche && (
+    <p class="spot__perche">
+      <span class={`chip chip--${perche.data.stato}`} title={SPIEGA_STATO[perche.data.stato]}>{ETICHETTA_STATO[perche.data.stato]}</span>
+      <span class="spot__fonti">{perche.fontiRisolte.filter(s => s.id !== 'osm').map((s, i) => <>{i > 0 && ' · '}<a href={s.data.url} rel="noopener">{s.data.editore.replace(/ \(.*\)$/, '')}</a></>)}{perche.fontiRisolte.some(s => s.id === 'osm') && ' · dati OpenStreetMap'}</span>
+    </p>
+  )}
   {d.testo && <p class="spot__t">{d.testo}</p>}
   <dl class="righe spot__righe">
     {d.visuale && <><dt><Icon name="binocolo" size={16} /> Cosa vedi</dt><dd>{d.visuale}</dd></>}
@@ -24,19 +38,26 @@ const staz = await Promise.all(d.arrivare.map(r => getEntry('luoghi', r.id)));
     {d.gradini && <><dt><Icon name="scale" size={16} /> Gradini</dt><dd>{d.gradini}</dd></>}
     {d.folla && <><dt><Icon name="persone" size={16} /> Folla</dt><dd>{d.folla}</dd></>}
     {d.servizi && <><dt><Icon name="info" size={16} /> Servizi</dt><dd>{d.servizi}</dd></>}
-    {staz.length > 0 && <><dt><Icon name="treno" size={16} /> Fermate</dt><dd>{staz.filter(Boolean).map(s => `${s!.data.nome} (${s!.data.linea})`).join(' · ')}</dd></>}
+    {staz.length > 0 && <><dt><Icon name="treno" size={16} /> Fermate</dt><dd>{staz.map(s => `${s!.data.nome} (${s!.data.linea})`).join(' · ')}</dd></>}
   </dl>
+  {perche && <p class="spot__nota small">{perche.data.testo}</p>}
 </article>
 <style>
-  .spot { background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); padding: 1rem 1rem .4rem; scroll-margin-top: calc(var(--head-h) + 16px); }
-  .spot:target { outline: 3px solid var(--accent); outline-offset: 2px; }
-  .spot__head { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; margin-bottom: .6rem; }
-  .spot__n { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--accent); color: var(--accent-ink); font-size: 1.1rem; font-weight: 600; }
+  .spot { --g: var(--accent); --g-ink: var(--accent-ink); background: var(--surface); border: 1px solid var(--line); border-top: 5px solid var(--g); border-radius: var(--r); padding: 1rem 1rem .6rem; scroll-margin-top: calc(var(--head-h) + 16px); }
+  .spot--colline { --g: var(--sea); --g-ink: var(--sea-ink); }
+  .spot--posillipo { --g: var(--blu); --g-ink: var(--blu-ink); }
+  .spot:target { outline: 3px solid var(--g); outline-offset: 2px; }
+  .spot :global(.spot__foto) { margin: -.2rem 0 .9rem; }
+  .spot__head { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: center; margin-bottom: .5rem; }
+  .spot__n { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 50%; background: var(--g); color: var(--g-ink); font-size: 1.1rem; font-weight: 600; }
   .spot__h { margin: 0; font-size: 1.25rem; }
   .spot__z { margin: .2rem 0 0; font-size: .74rem; letter-spacing: .05em; text-transform: uppercase; color: var(--ink-3); }
-  .spot__v { color: var(--accent); font-weight: 600; }
+  .spot__v { color: var(--ink); font-weight: 600; }
+  .spot__perche { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; margin: 0 0 .7rem; font-size: .84rem; color: var(--ink-3); }
+  .spot__fonti a { color: var(--ink-2); }
   .spot__t { color: var(--ink-2); }
   .spot__righe { grid-template-columns: minmax(6.8rem, max-content) 1fr; font-size: .94rem; }
   .spot__righe dt { display: flex; gap: .35rem; align-items: center; }
   .spot__righe > :nth-last-child(-n+2) { border-bottom: 0; }
+  .spot__nota { margin: .6rem 0 .3rem; padding-top: .6rem; border-top: 1px dashed var(--line); color: var(--ink-3); }
 </style>

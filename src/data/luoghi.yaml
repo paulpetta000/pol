@@ -4,26 +4,16 @@
 # sono consigli nostri, non informazioni ufficiali.
 
 # ---------- Dove guardare ----------
-- id: rotonda-diaz
-  nome: Rotonda Diaz
-  tipo: vista
-  zona: Lungomare
-  lat: 40.83228
-  lon: 14.23033
-  testo: "Il cuore del lungomare. Nel 2026 qui c'era il palco principale, con la spiaggia della Mappatella davanti."
-  vicino: prima-fila
-  visuale: "Passaggi ravvicinati davanti alla scogliera e il palco con le premiazioni."
-  sole: "Pieno sole nel pomeriggio, guardando verso il mare: niente ombra sugli scogli."
-  gradini: "In piano."
-  folla: "La zona più affollata: nel 2026 file lunghe per le pedane."
-  servizi: "Nel 2026: maxischermi, cibo e negozio ufficiale nel villaggio."
-  arrivare: [san-pasquale, arco-mirelli, fun-chiaia]
-  fatti: [vil-2026-gratis, ped-2026, campo-2026]
+# gruppo: lungomare | colline | posillipo (numeri e colori sulla mappa)
+# perche: la scheda di fatti.yaml che spiega perché il punto è in elenco (stato + fonte)
+# Un punto nuovo entra solo se lo indicano due fonti indipendenti, oppure una fonte affidabile più i dati di OpenStreetMap.
 
+# Lungomare
 - id: villa-comunale
   nome: Via Caracciolo e Villa Comunale
   tipo: vista
-  zona: Lungomare
+  gruppo: lungomare
+  zona: Chiaia
   lat: 40.83090
   lon: 14.22560
   testo: "Il lungo tratto tra Mergellina e la Rotonda Diaz, dove nel 2027 sarà il Race Village."
@@ -34,11 +24,33 @@
   folla: "Molta gente, ma più spazio che alla Rotonda."
   servizi: "Nel 2026: schermi lungo la strada."
   arrivare: [arco-mirelli, mergellina-l6, san-pasquale]
+  perche: vil-caracciolo
+  foto: acws-2013-caracciolo
   fatti: [vil-caracciolo, vil-2026-schermi]
+
+- id: rotonda-diaz
+  nome: Rotonda Diaz
+  tipo: vista
+  gruppo: lungomare
+  zona: Chiaia
+  lat: 40.83228
+  lon: 14.23033
+  testo: "Il cuore del lungomare. Nel 2026 qui c'era il palco principale, con la spiaggia della Mappatella davanti."
+  vicino: prima-fila
+  visuale: "Passaggi ravvicinati davanti alla scogliera e il palco con le premiazioni."
+  sole: "Pieno sole nel pomeriggio, guardando verso il mare: niente ombra sugli scogli."
+  gradini: "In piano."
+  folla: "La zona più affollata: nel 2026 file lunghe per le pedane."
+  servizi: "Nel 2026: maxischermi, cibo e negozio ufficiale nel villaggio."
+  arrivare: [san-pasquale, arco-mirelli, fun-chiaia]
+  perche: campo-2026
+  foto: acws-2013-partenope
+  fatti: [vil-2026-gratis, ped-2026, campo-2026]
 
 - id: via-partenope
   nome: Via Partenope
   tipo: vista
+  gruppo: lungomare
   zona: Santa Lucia
   lat: 40.83118
   lon: 14.24399
@@ -50,11 +62,14 @@
   folla: "Molta gente, soprattutto verso piazza Vittoria."
   servizi: "Bar e ristoranti lungo la strada."
   arrivare: [chiaia-l6, municipio]
+  perche: ped-2027
+  foto: via-partenope
   fatti: [ped-2027]
 
 - id: castel-dell-ovo
   nome: Castel dell'Ovo e Borgo Marinari
   tipo: vista
+  gruppo: lungomare
   zona: Santa Lucia
   lat: 40.82836
   lon: 14.24848
@@ -66,27 +81,51 @@
   folla: "Spazio limitato sul borgo: si riempie presto."
   servizi: "Ristoranti del Borgo Marinari."
   arrivare: [chiaia-l6, municipio]
+  perche: campo-ovo
+  foto: acws-2012-ovo
   fatti: [campo-ovo]
 
-- id: monte-echia
-  nome: Monte Echia (Pizzofalcone)
+# Colline
+- id: via-aniello-falcone
+  nome: Via Aniello Falcone e via Tasso
   tipo: vista
-  zona: Pizzofalcone
-  lat: 40.83123
-  lon: 14.24792
-  testo: "La collina sopra Castel dell'Ovo: un balcone sul golfo e sul campo di regata."
+  gruppo: colline
+  zona: Vomero
+  lat: 40.83972
+  lon: 14.22723
+  testo: "La lunga balconata del Vomero sopra Chiaia e Mergellina; poco più in basso c'è la parte alta di via Tasso."
   vicino: dall-alto
-  visuale: "Tutto il campo dall'alto, con il Vesuvio alle spalle."
-  sole: "Sole pieno nel pomeriggio."
-  gradini: "Salita ripida a piedi; c'è anche un ascensore pubblico."
+  visuale: "Tutto il golfo dall'alto, da Posillipo a Castel dell'Ovo: si capisce la regata, non i dettagli delle manovre."
+  sole: "Guardi verso sud: nel pomeriggio il sole è di fronte."
+  gradini: "Strada in piano lungo la collina; per arrivarci salite, scale o funicolare."
   folla: "Meno gente che sul lungomare (nostra stima)."
-  servizi: "Nessun servizio ufficiale."
-  arrivare: [chiaia-l6, municipio]
-  fatti: [vista-anfiteatro, echia-ascensore]
+  servizi: "Bar e locali lungo la strada; nessun servizio ufficiale."
+  arrivare: [fun-cimarosa]
+  perche: vista-colline-stampa
+  fatti: [vista-falcone-tasso]
+
+- id: villa-floridiana
+  nome: Belvedere della Villa Floridiana
+  tipo: vista
+  gruppo: colline
+  zona: Vomero
+  lat: 40.83987
+  lon: 14.23406
+  testo: "Il parco storico del Vomero: dal belvedere in fondo al parco si vede il golfo dall'alto."
+  vicino: dall-alto
+  visuale: "Il mare davanti a Chiaia dall'alto, in un angolo più tranquillo di via Falcone."
+  sole: "Alberi e ombra nel parco; sul belvedere sole nel pomeriggio."
+  gradini: "Viali in pendenza e scale dentro il parco."
+  folla: "Poca gente (nostra stima)."
+  servizi: "È un parco con orari di apertura: controllali prima di andare."
+  arrivare: [fun-cimarosa]
+  perche: vista-floridiana
+  foto: floridiana-viale
 
 - id: san-martino
-  nome: Belvedere di San Martino (Vomero)
+  nome: Belvedere di San Martino
   tipo: vista
+  gruppo: colline
   zona: Vomero
   lat: 40.84411
   lon: 14.24086
@@ -98,39 +137,78 @@
   folla: "Meno gente che sul lungomare (nostra stima)."
   servizi: "Nessun servizio ufficiale."
   arrivare: [fun-chiaia, fun-centrale]
-  fatti: [vista-anfiteatro]
+  perche: vista-anfiteatro
+  foto: vista-san-martino
 
-- id: capo-posillipo
-  nome: Belvedere di Capo Posillipo
+- id: monte-echia
+  nome: Monte Echia (Pizzofalcone)
   tipo: vista
-  zona: Posillipo
-  lat: 40.80457
-  lon: 14.18513
-  testo: "Sulla punta di Posillipo, verso Nisida e Bagnoli."
+  gruppo: colline
+  zona: Pizzofalcone
+  lat: 40.83123
+  lon: 14.24792
+  testo: "La collina sopra Castel dell'Ovo: un balcone sul golfo e sul campo di regata."
   vicino: dall-alto
-  visuale: "Vista verso ovest e sulle basi di Bagnoli; il campo resta lontano."
-  sole: "Sole di fronte nel tardo pomeriggio."
-  gradini: "Strade in salita, pochi mezzi."
+  visuale: "Tutto il campo dall'alto, con il Vesuvio alle spalle."
+  sole: "Sole pieno nel pomeriggio."
+  gradini: "Salita ripida a piedi; c'è anche un ascensore pubblico."
+  folla: "Meno gente che sul lungomare (nostra stima)."
+  servizi: "Nessun servizio ufficiale."
+  arrivare: [chiaia-l6, municipio]
+  perche: vista-echia-2026
+  fatti: [vista-anfiteatro, echia-ascensore]
+
+# Posillipo
+- id: via-petrarca
+  nome: Via Petrarca
+  tipo: vista
+  gruppo: posillipo
+  zona: Posillipo
+  lat: 40.82215
+  lon: 14.21284
+  testo: "La strada panoramica in cima alla collina di Posillipo, famosa per la vista sul golfo."
+  vicino: dall-alto
+  visuale: "Il golfo intero, con il campo di regata lontano e più in basso: porta un binocolo."
+  sole: "Guardi verso sud-est: nel tardo pomeriggio il sole è alle spalle."
+  gradini: "Strada trafficata: guarda dagli slarghi panoramici, non dal bordo della carreggiata."
   folla: "Poca gente (nostra stima)."
   servizi: "Nessun servizio ufficiale."
-  arrivare: [cavalleggeri]
-  fatti: [campo-posillipo]
+  arrivare: [fun-manzoni]
+  perche: vista-colline-stampa
 
-- id: parco-virgiliano
-  nome: Parco Virgiliano
+- id: via-orazio
+  nome: Via Orazio
   tipo: vista
+  gruppo: posillipo
   zona: Posillipo
-  lat: 40.79841
-  lon: 14.17933
-  testo: "Il parco in cima a Posillipo, con terrazze sul golfo, su Nisida e verso Capri."
+  lat: 40.82569
+  lon: 14.21734
+  testo: "La strada a tornanti che sale da Mergellina verso via Petrarca, con tratti a balcone sul golfo."
   vicino: dall-alto
-  visuale: "Panorama molto ampio; per il campo di regata serve un binocolo."
-  sole: "Alberi e un po' d'ombra nel parco."
-  gradini: "In cima alla collina: bus o auto, poi a piedi in piano nel parco."
-  folla: "Poca gente (nostra stima)."
-  servizi: "Nessun servizio ufficiale per le regate; il parco ha orari di apertura."
-  arrivare: [cavalleggeri]
-  fatti: [vista-anfiteatro]
+  visuale: "Il campo di regata dall'alto e tutto il golfo: si vede l'insieme, non i dettagli."
+  sole: "Guardi verso sud-est: nel pomeriggio il sole è alle spalle o di lato."
+  gradini: "Strada in salita e trafficata: resta sul marciapiede."
+  folla: "Meno gente che sul lungomare (nostra stima)."
+  servizi: "Qualche bar lungo la strada; nessun servizio ufficiale."
+  arrivare: [fun-sant-antonio, mergellina-l6]
+  perche: vista-colline-stampa
+
+- id: sant-antonio-posillipo
+  nome: Terrazza di Sant'Antonio a Posillipo
+  tipo: vista
+  gruppo: posillipo
+  zona: Posillipo
+  lat: 40.82807
+  lon: 14.21781
+  testo: "Il piazzale della chiesa di Sant'Antonio, sopra Mergellina: la classica cartolina di Napoli con il Vesuvio."
+  vicino: dall-alto
+  visuale: "Il golfo con il Vesuvio di fronte e il campo di regata più in basso."
+  sole: "Guardi verso est: il sole del pomeriggio è alle spalle."
+  gradini: "Da Mergellina si sale a piedi con rampe e scale, oppure con la funicolare di Mergellina."
+  folla: "Terrazza piccola: si riempie presto (nostra stima)."
+  servizi: "Nessun servizio ufficiale."
+  arrivare: [fun-sant-antonio, mergellina-l6, mergellina-l2]
+  perche: vista-sant-antonio
 
 # ---------- Villaggi e zone dell'evento ----------
 - id: village-caracciolo
@@ -176,5 +254,8 @@
 - { id: fun-chiaia, nome: "Parco Margherita", linea: "Funicolare di Chiaia", tipo: stazione, lat: 40.83812, lon: 14.23470 }
 - { id: fun-centrale, nome: "Augusteo", linea: "Funicolare Centrale", tipo: stazione, lat: 40.83894, lon: 14.24769 }
 - { id: fun-mergellina, nome: "Mergellina", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82635, lon: 14.21941 }
+- { id: fun-sant-antonio, nome: "Sant'Antonio", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82605, lon: 14.21767 }
+- { id: fun-manzoni, nome: "Manzoni", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82588, lon: 14.21291 }
+- { id: fun-cimarosa, nome: "Cimarosa", linea: "Funicolare di Chiaia", tipo: stazione, lat: 40.84232, lon: 14.23202 }
 - { id: molo-beverello, nome: "Molo Beverello", linea: "Aliscafi e traghetti", tipo: porto, lat: 40.83735, lon: 14.25475 }
 - { id: molo-mergellina, nome: "Molo Mergellina", linea: "Aliscafi", tipo: porto, lat: 40.82885, lon: 14.22272 }

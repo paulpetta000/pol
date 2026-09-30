@@ -9,7 +9,7 @@ const fonti = [...(await tutteLeFonti()).values()];
 const fatti = await getCollection('fatti');
 const uso = new Map<string, number>();
 for (const f of fatti) for (const r of f.data.fonti) uso.set(r.id, (uso.get(r.id) || 0) + 1);
-const conta = { confermato: 0, stampa: 0, atteso: 0 } as Record<string, number>;
+const conta = { confermato: 0, stampa: 0, segnalato: 0, atteso: 0 } as Record<string, number>;
 for (const f of fatti) conta[f.data.stato]++;
 const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati', 'Dati aperti'], ['altro', 'Altre fonti']] as const;
 ---
@@ -20,7 +20,7 @@ const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati',
       <div>
         <h2>Come leggere le etichette</h2>
         <dl class="righe">
-          {(['confermato', 'stampa', 'atteso'] as const).map(s => <><dt><span class={`chip chip--${s}`}>{ETICHETTA_STATO[s]}</span></dt><dd>{SPIEGA_STATO[s]}. <span class="mono small muted">{conta[s]} schede</span></dd></>)}
+          {(['confermato', 'stampa', 'segnalato', 'atteso'] as const).map(s => <><dt><span class={`chip chip--${s}`}>{ETICHETTA_STATO[s]}</span></dt><dd>{SPIEGA_STATO[s]}. <span class="mono small muted">{conta[s]} schede</span></dd></>)}
           <dt><span class="chip chip--anno">Com'era nel 2026</span></dt><dd>Racconta la regata di prova di settembre 2026: è un riferimento, non una regola per il 2027.</dd>
         </dl>
       </div>

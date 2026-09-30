@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import Icon from '../components/Icon.astro';
 import Flag from '../components/Flag.astro';
-import HeroArt from '../components/HeroArt.astro';
+import Foto from '../components/Foto.astro';
 import Countdown from '../components/Countdown.astro';
-import Timeline2027 from '../components/Timeline2027.astro';
+import CalendarioMesi from '../components/CalendarioMesi.astro';
 import Avvisami from '../components/Avvisami.astro';
 import Fatto from '../components/Fatto.astro';
 import Mappa from '../components/Mappa.astro';
@@ -34,12 +34,14 @@ const podio = R.napoli.classifica.slice(0, 3);
   description="Come vedere l'America's Cup a Napoli nel 2027: date dal 22 maggio al 19 luglio, dove guardare gratis dal lungomare, regole per le barche, biglietti, trasporti e squadre. Ogni informazione con fonte."
 >
   <section class="hero">
-    <HeroArt />
     <div class="wrap hero__in">
-      <p class="hero__meta mono">Guida non ufficiale · controllata il {dataBreve(SITO.aggiornato)}</p>
-      <h1>L'America's Cup è a Napoli</h1>
-      <p class="hero__date"><span class="num">22.05 → 19.07.2027</span> Regate nel golfo, davanti al lungomare</p>
-      <Countdown al="2027-05-22" testo="alla prima regata" grande />
+      <div class="hero__txt">
+        <p class="hero__meta mono">Guida non ufficiale · controllata il {dataBreve(SITO.aggiornato)}</p>
+        <h1>L'America's Cup è a Napoli</h1>
+        <p class="hero__date"><span class="num">22.05 → 19.07.2027</span> Regate nel golfo, davanti al lungomare</p>
+        <Countdown al="2027-05-22" testo="alla prima regata" grande />
+      </div>
+      <Foto id="ac75-auckland-2021" prima rapporto="3 / 2" class="hero__foto" sizes="(min-width: 900px) 46vw, 100vw" widths={[480, 800, 1200, 1512]} />
     </div>
   </section>
 
@@ -70,7 +72,7 @@ const podio = R.napoli.classifica.slice(0, 3);
         <p class="btn-row"><a class="btn btn--primary" href="/calendario/"><Icon name="calendario" size={20} /> Tutte le date</a><a class="btn" href="/calendario/#iscriviti">Aggiungi al tuo calendario</a></p>
       </div>
       <div class="stack">
-        <Timeline2027 compatta />
+        <CalendarioMesi compatto />
         <ul class="fatti">
           <Fatto f={f.get('cal-flotta')!} />
         </ul>
@@ -83,7 +85,7 @@ const podio = R.napoli.classifica.slice(0, 3);
       <div>
         <p class="kicker">Dove guardare</p>
         <h2 id="dove-h">In prima fila sul lungomare, o dall'alto</h2>
-        <p>{f.get('vista-vicino')!.data.testo} Otto punti da cui guardare, con sole, gradini e folla: scegli il tuo.</p>
+        <p>{f.get('vista-vicino')!.data.testo} Undici punti da cui guardare, sul lungomare, sulle colline e a Posillipo: scegli il tuo.</p>
         <p class="btn-row"><a class="btn btn--primary" href="/napoli/mappa/"><Icon name="mappa" size={20} /> Apri la mappa</a><a class="btn" href="/come-vederla/dal-lungomare/">Consigli per il lungomare</a></p>
       </div>
       <a href="/napoli/mappa/" class="map-link"><span class="visually-hidden">Apri la mappa completa</span>
@@ -152,9 +154,17 @@ const podio = R.napoli.classifica.slice(0, 3);
 </Base>
 
 <style>
-  .hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); min-height: clamp(26rem, 70vh, 38rem); display: flex; align-items: flex-start; }
-  .hero__in { position: relative; z-index: 1; padding-top: clamp(2rem, 6vw, 4.5rem); padding-bottom: 13rem; }
-  @media (min-width: 900px) { .hero__in { padding-bottom: 5rem; } .hero h1, .hero__date, .hero :global(.countdown) { max-width: 34rem; } }
+  .hero { position: relative; border-bottom: 1px solid var(--line); background: linear-gradient(180deg, var(--bg) 0%, var(--bg) 55%, var(--sea-soft) 100%); }
+  .hero__in { display: grid; gap: 1.4rem; padding-top: clamp(1.8rem, 6vw, 4rem); padding-bottom: 1.6rem; }
+  .hero :global(.hero__foto) { margin-inline: calc(-1 * var(--gutter)); }
+  .hero :global(.hero__foto .foto__img) { border-radius: 0; }
+  .hero :global(.hero__foto figcaption) { padding-inline: var(--gutter); }
+  @media (min-width: 900px) {
+    .hero__in { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); align-items: center; gap: 2.5rem; padding-bottom: 3rem; }
+    .hero :global(.hero__foto) { margin-inline: 0; }
+    .hero :global(.hero__foto .foto__img) { border-radius: var(--r); box-shadow: var(--shadow); }
+    .hero :global(.hero__foto figcaption) { padding-inline: 0; }
+  }
   .hero__meta { font-size: .74rem; color: var(--ink-3); letter-spacing: .05em; text-transform: uppercase; margin-bottom: 1rem; }
   .hero h1 { max-width: 11ch; margin-bottom: .6rem; }
   .hero__date { display: flex; flex-wrap: wrap; gap: .3rem .8rem; align-items: baseline; font-size: 1.12rem; color: var(--ink-2); margin-bottom: 1.2rem; }

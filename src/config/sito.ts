@@ -1,6 +1,8 @@
 // Impostazioni generali della guida
 export const SITO = {
-  nome: 'Coppa America Napoli',
+  nome: 'Napoli a Vela',
+  // Identificatore breve (calendari .ics, nomi tecnici)
+  sigla: 'napoli-a-vela',
   sottotitolo: 'Guida non ufficiale 2027',
   url: 'https://coppa-america-napoli.vercel.app',
   lingua: 'it',

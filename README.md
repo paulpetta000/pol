@@ -1,4 +1,4 @@
-# Coppa America Napoli · Guida non ufficiale 2027
+# Napoli a Vela · Guida non ufficiale 2027
 
 Sito statico in [Astro](https://astro.build), pubblicato su Vercel.
 
