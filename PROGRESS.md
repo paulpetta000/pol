@@ -19,7 +19,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 1.1)_
   - **Lighthouse mobile** (in locale): 99–100 in prestazioni, accessibilità, best practice e SEO su home, calendario, barche, archivio, mappa.
 
 - **Rilascio 1.1 · "Napoli a Vela"** (30/09/2026, ramo `claude/sharp-archimedes-nusxet`, solo anteprima):
-  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). L'indirizzo resta `coppa-america-napoli.vercel.app`.
+  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). Nuovo indirizzo gratuito **napoli-a-vela.vercel.app**; il vecchio `coppa-america-napoli.vercel.app` reindirizza al nuovo (regola in `vercel.json`).
   - Nuovo logo "Golfo e Vesuvio" (scelto tra 4 proposte): intestazione, favicon, icone dell'app, immagini di anteprima. Si rigenera con `node scripts/icone.mjs`.
   - Home: al posto del disegno, **foto vera di due AC75 in regata** (Auckland 2021, Geoff McKay, CC BY 2.0).
   - **Foto dei luoghi** con licenza libera (Wikimedia Commons) in 8 schede su 11, con didascalia, autore, licenza e link; elenco in `src/data/foto.yaml` e nelle note legali. Mancano foto adatte per via Aniello Falcone, via Petrarca e la terrazza di Sant'Antonio a Posillipo.
@@ -37,11 +37,11 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 1.1)_
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. Dopo il tuo OK: unire il ramo in `main` per pubblicare il Rilascio 1 e 1.1.
+4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1 e 1.1 online).
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
 
 ## Note
-- La versione pubblica su Vercel è ancora quella del 2026 finché non si pubblica su `main`.
+- Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`).
 - Aggiornare un'informazione: modificare la scheda in `src/data/fatti.yaml` (e la fonte in `src/data/fonti.yaml`), cambiare la data `controllato`. Vedi `README.md`.
 - Rigenerare la mappa: `scripts/mappa/scarica.sh <cartella>` e poi `node scripts/mappa/costruisci.mjs <cartella>`.
 - Leggere le iscrizioni ad Avvisami: dalla dashboard Supabase (Table editor → `avvisami`).

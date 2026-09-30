@@ -2,7 +2,7 @@ import { defineConfig } from 'astro/config';
 import serviceWorker from './integrations/service-worker.mjs';
 
 export default defineConfig({
-  site: 'https://coppa-america-napoli.vercel.app',
+  site: 'https://napoli-a-vela.vercel.app',
   trailingSlash: 'always',
   build: {
     format: 'directory',

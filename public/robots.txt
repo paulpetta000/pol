@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://coppa-america-napoli.vercel.app/sitemap.xml
+Sitemap: https://napoli-a-vela.vercel.app/sitemap.xml
