@@ -11,12 +11,14 @@ _Ultimo aggiornamento: 30/09/2026_
 - Rilascio 1: Base (nuova struttura in Astro, design, contenuti principali, privacy, SEO, "Avvisami", app installabile).
 - Rilasci 2-5 come da PIANO.md.
 
-## Decisioni prese
-- Tecnologia consigliata: Astro (da confermare con l'OK al piano).
-- Nessuna decisione di gusto, soldi o marchio ancora presa.
+## Decisioni prese (30/09/2026)
+- Stile grafico: **B "Regata"** (sportivo, numeri in evidenza, font Archivo + IBM Plex Mono).
+- Nome e indirizzo: **restare su coppa-america-napoli.vercel.app** per ora. Il nome contiene un marchio: da far vedere all'avvocato, e cambiarlo più avanti con reindirizzamenti. Senza dominio proprio, il modulo "Avvisami" salva le email ma non può ancora inviarle (servizi come Brevo richiedono un dominio proprio).
+- Budget: **0 €** fino al Rilascio 4 (solo piani gratuiti).
+- Tecnologia consigliata: Astro (da confermare con l'OK a partire).
 
 ## Cose che devi fare tu
-1. Rispondere alle 3 domande del punto 9 di PIANO.md (stile, nome e dominio, budget).
+1. ~~Rispondere alle 3 domande~~ (fatto). Dare l'OK esplicito a partire con il Rilascio 1.
 2. Collegare GitHub a Vercel (Settings → Git → Connect Git Repository → paulpetta000/pol).
 3. Dare l'OK a creare il ramo `main`.
 4. Nome ed email del titolare per la pagina privacy.
