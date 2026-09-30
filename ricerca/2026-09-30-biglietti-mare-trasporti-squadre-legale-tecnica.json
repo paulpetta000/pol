@@ -1,0 +1,2896 @@
+{
+ "results": [
+  {
+   "items": [
+    {
+     "id": "tra-01",
+     "area": "Aeroporto - Alibus",
+     "fatto": "L'Alibus collega l'aeroporto di Capodichino con Napoli Centrale (piazza Garibaldi), Varco Immacolatella e Molo Beverello. Il biglietto costa 5 euro, vale 90 minuti e include anche i mezzi urbani UnicoCampania a Napoli.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.anm.it/index.php?option=com_content&task=view&id=1314ui",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Alibus Unico €5,00, valido 90 minuti; percorso Aeroporto–Garibaldi–Immacolatella–Beverello; comprende mezzi UnicoCampania area urbana.",
+     "note": "snippet ufficiale, da aprire (anm.it bloccato). Data della pagina ANM non verificata."
+    },
+    {
+     "id": "tra-02",
+     "area": "Aeroporto - Alibus",
+     "fatto": "Alibus: orari indicativi 5:30-24:00, una corsa ogni 15-25 minuti; circa 15-20 minuti fino alla stazione e 30-35 fino al porto (di più nelle ore di punta). Il biglietto si compra anche con l'app Gira Napoli o sul sito dell'aeroporto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://metrodinapoli.it/aeroporto/",
+     "fonte_tipo": "altro",
+     "evidenza": "Orari 05:30–00:00, frequenza 15-25 minuti; 15-20 min a Garibaldi, 30-35 min al porto.",
+     "note": "solo snippet; sito non ufficiale. Acquisto via app Gira Napoli citato da pagina ANM (id=3979), solo snippet. Orari da verificare su anm.it."
+    },
+    {
+     "id": "tra-03",
+     "area": "Aeroporto - Metro Linea 1",
+     "fatto": "La stazione Capodichino della metro Linea 1 non è ancora aperta. Il sindaco punta ad aprirla per l'America's Cup (primavera / primo semestre 2027), ma fonti più recenti parlano di fine 2027. Nel frattempo è previsto un bus diretto 'Capodichino Link' dalla nuova stazione Tribunale all'aeroporto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.terramiagiornale.it/metro-linea-1-avanti-verso-capodichino-ma-per-lamericas-cup-ci-sara-un-collegamento-alternativo/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Con l'apertura della stazione Tribunale dovrebbe partire il Capodichino Link, bus diretto metro-aeroporto; treni a Capodichino verso fine 2027.",
+     "note": "solo snippet. Vedi contraddizione sulle date. Altre fonti: napolitoday.it (obiettivo primavera 2027)."
+    },
+    {
+     "id": "tra-04",
+     "area": "Aeroporto - Taxi",
+     "fatto": "I taxi di Napoli hanno tariffe fisse (predeterminate) dall'aeroporto: 21 euro fino alla Stazione Centrale, 24 euro fino al Molo Beverello, 28,50 euro fino a Mergellina e agli hotel del lungomare. Sono comprese le maggiorazioni (notte, festivi, bagagli); i pedaggi no; minivan +5 euro.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://static-www.comune.napoli.it/wp-content/uploads/2025/05/Tariffario_Taxi_2024.pdf",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "€21 Stazione Centrale, €24 Molo Beverello, €28,50 Via Partenope e Mergellina; supplementi inclusi, pedaggi esclusi, minivan +€5.",
+     "note": "snippet ufficiale, da aprire. Cifre riportate da sicurauto.it (stampa) che cita il tariffario comunale aggiornato al 2024."
+    },
+    {
+     "id": "tra-05",
+     "area": "Taxi - regole",
+     "fatto": "La tariffa fissa va chiesta all'inizio della corsa: il tassista non può rifiutarla e deve dare una ricevuta con percorso e importo. Vale 24 ore su 24, anche nei festivi.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/taxi-e-ncc/taxi/servizio-taxi/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Tariffe predeterminate da richiedere a inizio corsa, senza possibilità di rifiuto; ricevuta con percorso e importo.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tra-06",
+     "area": "Aeroporto - Taxi collettivo",
+     "fatto": "C'è un taxi collettivo Aeroporto - Stazione Centrale - Molo Beverello a 6 euro a persona, prorogato fino al 31 dicembre 2026. Per il 2027 non ci sono ancora notizie.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/taxi-e-ncc/taxi-collettivo/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Taxi collettivo Capodichino/Stazione Centrale/Molo Beverello a €6,00 a persona, servizio prorogato al 31 dicembre 2026.",
+     "note": "snippet ufficiale, da aprire. Proroga oltre il 2026 non trovata."
+    },
+    {
+     "id": "tra-07",
+     "area": "Treni - Napoli Centrale",
+     "fatto": "Con 'Napoli Air&Port Link' di Trenitalia si compra insieme treno regionale fino a Napoli Centrale e Alibus per aeroporto o porto (Beverello, Immacolatella): la parte Alibus costa 5 euro in più.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.trenitalia.com/it/regionale/collegamenti-regionale/napoli-air-port-link.html",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Biglietto unico treno+Alibus; per porto e aeroporto da Napoli Centrale €5,00 aggiunti alla tariffa del treno.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tra-08",
+     "area": "Treni - Napoli Afragola",
+     "fatto": "Napoli Afragola (stazione dell'alta velocità) è a circa 12 km dal centro e non ha la metro. Dal 4 luglio 2026 ci fermano anche i treni regionali Trenitalia (70 nei feriali, 23 nei festivi). Verso Napoli Centrale servono circa 14 minuti con i treni più veloci.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.trenitalia.com/it/chi-siamo/comunicati-stampa/20260703-i-treni-del-regionale-arrivano-a-napoli-afragola.html",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Dal 4 luglio i treni del Regionale arrivano a Napoli Afragola; 70 treni feriali, 23 festivi.",
+     "note": "snippet ufficiale, da aprire. Il dato 12 km/14 minuti viene da siti non ufficiali (solo snippet)."
+    },
+    {
+     "id": "tra-09",
+     "area": "Treni - Mergellina / Linea 2",
+     "fatto": "La stazione di Napoli Mergellina serve la Linea 2 (treni Trenitalia) ed è vicina alla funicolare di Mergellina e alla Linea 6: è il punto di arrivo in treno più vicino al lungomare Caracciolo.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://en.wikipedia.org/wiki/Mergellina_Funicular",
+     "fonte_tipo": "altro",
+     "evidenza": "Mergellina station allows interchange with Line 2 (Trenitalia) and with the Mergellina funicular.",
+     "note": "solo snippet, Wikipedia."
+    },
+    {
+     "id": "tra-10",
+     "area": "Treni - Linea 2 Bagnoli 2027",
+     "fatto": "Per l'America's Cup è prevista una nuova fermata della Linea 2 'Porta del Parco' a Bagnoli (via Nuova Agnano), tra Bagnoli-Agnano Terme e Cavalleggeri Aosta, con apertura stimata a maggio 2027. Da lì circa 300 m a piedi e poi un bus rapido (BRT) di circa 800 m verso il mare e le basi dei team. Lavori: stop dei treni tra Pozzuoli e Campi Flegrei da 1 ottobre 2026 a gennaio 2027.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ansa.it/campania/notizie/2026/03/26/americas-cup-pronto-progetto-per-stazione-a-bagnoli-linea-2-della-metro_b7c4149a-5f7c-43de-8452-e1d03178f17f.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Nuova stazione Linea 2 in via Nuova Agnano, apertura stimata maggio 2027; interruzione Pozzuoli-Campi Flegrei 1 ottobre 2026-gennaio 2027.",
+     "note": "solo snippet; dettagli interruzione e BRT da solovela.net / ilmattino.it (snippet). Fermata con ascensore previsto (accessibile)."
+    },
+    {
+     "id": "tra-11",
+     "area": "Cumana / EAV - Bagnoli",
+     "fatto": "La Cumana (EAV) arriva a Bagnoli, zona delle basi dei team e del secondo villaggio nel 2027. EAV dice che con il raddoppio dei binari i treni potranno passare ogni 10 minuti nel 2027. Non abbiamo trovato un piano specifico di corse extra per l'America's Cup.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.pozzuolinews24.it/cumana-corse-30-minuti-10-minuti/",
+     "fonte_tipo": "stampa",
+     "evidenza": "De Gregorio (EAV): treni ogni mezz'ora fino a fine anno, poi ogni 10 minuti; raddoppio completato, frequenza 10 minuti entro 2027.",
+     "note": "solo snippet; data articolo non verificata. Nessun piano EAV America's Cup trovato su eavsrl.it. Precedente: Cumana aperta fino alle 2 per Pizza Village (eavsrl.it)."
+    },
+    {
+     "id": "tra-12",
+     "area": "Metro Linea 6",
+     "fatto": "La Linea 6 va da Mostra (Fuorigrotta) a Municipio passando per Mergellina, Arco Mirelli, San Pasquale e Chiaia: è la metro che corre parallela al lungomare. È aperta fino a Municipio da luglio 2024. Orario normale indicativo circa 7:30-21:30 nei feriali (da verificare).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.railjournal.com/passenger/metros/extended-metro-line-6-reopens-in-naples/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Linea 6 estesa di 3,2 km da Mergellina a Municipio con Arco Mirelli, San Pasquale e Chiaia; riaperta luglio 2024.",
+     "note": "solo snippet. L'orario 7:30-21:30 è da eroicafenice.com (non ufficiale): verificare su ANM."
+    },
+    {
+     "id": "tra-13",
+     "area": "Precedente 2026 - orari prolungati",
+     "fatto": "Precedente 2026 (regata preliminare 24-27 settembre): Linea 1 aperta fino alle 2 di notte (ultime partenze 01:32 da Centro Direzionale e 01:20 da Piscinola); Linea 6 con ultime partenze alle 00:30 da Mostra e Municipio; funicolare di Mergellina fino alle 00:30 (25-27 settembre).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.fanpage.it/napoli/americas-cup-gli-orari-di-metro-e-funicolari-per-le-pre-regate-a-napoli-dal-24-al-27-settembre/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Linea 1 fino alle 02:00; Linea 6 ultime partenze 00:30; funicolare Mergellina ultima corsa 00:30.",
+     "note": "solo snippet. Confermato anche da nanotv.it e ilmattino.it. Il dato richiesto (L1 alle 2, L6 e Mergellina alle 00:30) risulta confermato dalla stampa."
+    },
+    {
+     "id": "tra-14",
+     "area": "Precedente 2026 - funicolari Chiaia e Centrale",
+     "fatto": "Precedente 2026: il 25 e 26 settembre le funicolari di Chiaia e Centrale sono rimaste aperte fino alle 2 di notte (come di solito il venerdì e sabato).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.fanpage.it/napoli/americas-cup-gli-orari-di-metro-e-funicolari-per-le-pre-regate-a-napoli-dal-24-al-27-settembre/",
+     "fonte_tipo": "stampa",
+     "evidenza": "25-26 settembre funicolari di Chiaia e Centrale prolungano regolarmente fino alle 02:00.",
+     "note": "solo snippet. Vedi contraddizione con seepompeii.com (Chiaia fino alle 00:30)."
+    },
+    {
+     "id": "tra-15",
+     "area": "Precedente 2026 - bus",
+     "fatto": "Precedente 2026: dal 25 al 27 settembre le principali linee di superficie ANM (bus C16, R2, R5, R7, 128, 140, 151, 154, 181, 612; filobus 201, 202, 204; tram 412 e 421) hanno fatto servizio fino alle 00:30, con il 10% di corse in più. In totale oltre 200 corse metro extra (60 Linea 1, 156 Linea 6) e circa 90 in più sulla funicolare di Mergellina.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.nanotv.it/2026/09/26/napoli-regate-della-louis-vuitton-cup-lanm-potenzia-metro-bus-e-funicolari-con-corse-prolungate/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Linee C16, R2, R5, R7, 128, 140, 151, 154, 181, 612, filobus 201-202-204, tram 412-421 prolungate fino alle 00:30.",
+     "note": "solo snippet. ilmattino.it parla di 'oltre 300 corse aggiuntive' in totale."
+    },
+    {
+     "id": "tra-16",
+     "area": "Precedente 2026 - sindacati",
+     "fatto": "Precedente 2026: il prolungamento notturno è stato deciso solo pochi giorni prima, dopo un accordo tra ANM e sindacati; inizialmente erano state escluse le navette. Per il 2027 conviene controllare gli orari a ridosso delle gare.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.fanpage.it/napoli/trasporti-americas-cup-pace-anm-sindacati-ok-ai-prolungamenti-metro-bonus-per-tutti-i-lavoratori/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Pace ANM-sindacati: ok ai prolungamenti metro, bonus per tutti i lavoratori.",
+     "note": "solo snippet. Vedi anche fanpage 'niente navette: i sindacati non firmano' e napolimilionaria.it del 22/09/2026."
+    },
+    {
+     "id": "tra-17",
+     "area": "Precedente 2026 - strade chiuse",
+     "fatto": "Precedente 2026: misure di traffico dal 7 settembre al 5 ottobre; dal 21 al 27 settembre divieto di transito su viale Anton Dohrn e via Caracciolo (tra viale Dohrn e piazza Vittoria). Il traffico è stato deviato sulla Riviera di Chiaia a senso unico verso piazza Vittoria (ordinanze 1496 del 2 settembre e 1598 del 16 settembre).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.comune.napoli.it/novita/dispositivo-di-circolazione-temporaneo-in-via-francesco-caracciolo-in-occasione-dellevento-regata-preliminare-louis-vuitton-cup-2026-villaggio/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Dal 21 settembre divieto di transito su viale Anton Dohrn e via Caracciolo tra viale Dohrn e piazza Vittoria; ordinanze 1496 e 1598.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tra-18",
+     "area": "Precedente 2026 - traghetti",
+     "fatto": "Precedente 2026: un'ordinanza della Capitaneria (n. 99/2026) ha chiuso uno specchio d'acqua davanti al lungomare dal 21 al 28 settembre. Aliscafi e traghetti per Ischia e Procida hanno fatto rotte più lunghe: circa +10 minuti gli aliscafi e +20 minuti i traghetti. Nessuna sospensione generale.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ansa.it/campania/notizie/2026/09/19/americas-cup-rotte-piu-lunghe-per-navi-e-aliscafi-verso-le-isole_4a223961-609a-4655-a57e-eb59c560e62c.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Ordinanza 99/2026; aumento stimato di circa 10 minuti per aliscafi e 20 minuti per traghetti.",
+     "note": "solo snippet"
+    },
+    {
+     "id": "tra-19",
+     "area": "Precedente 2026 - parcheggi",
+     "fatto": "Precedente 2026: il consiglio era di non cercare parcheggio sul lungomare, ma lasciare l'auto in parcheggi del centro e arrivare a piedi o con i mezzi. Non abbiamo trovato un elenco ufficiale di parcheggi di interscambio (park & ride) per l'evento.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ilmattino.it/schede/america_s_cup_napoli_2026_come_arrivare_alle_regate_metro_bus_parcheggi_e_strade_chiuse-9762774.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Consigliato lasciare l'auto in parcheggi vicino al centro e raggiungere Rotonda Diaz a piedi o con i mezzi.",
+     "note": "solo snippet. Nessuna lista ufficiale park & ride trovata su comune.napoli.it."
+    },
+    {
+     "id": "tra-20",
+     "area": "2027 - via Caracciolo",
+     "fatto": "Per il 2027 la stampa scrive che via Caracciolo potrebbe restare chiusa alle auto per circa 3 mesi (da maggio a luglio) per ospitare il Race Village. Il Comune non ha ancora approvato il piano traffico definitivo: la chiusura è molto probabile ma non ufficiale.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.napolitoday.it/attualita/america-cup-2027-via-caracciolo-chiusa-tre-mesi-viabilita.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Chiusura di tre mesi non ancora certa ma molto concreta; il Comune non ha approvato il piano traffico definitivo.",
+     "note": "solo snippet. Anche fanpage.it: 'via Caracciolo chiusa 3 mesi da maggio a luglio'."
+    },
+    {
+     "id": "tra-21",
+     "area": "2027 - piano trasporti",
+     "fatto": "Per il 2027 non esiste ancora un piano trasporti ufficiale. La stampa ipotizza che ANM ripeta metro e funicolari fino alle 2 di notte come nella regata preliminare. Saranno due villaggi: via Caracciolo e Bagnoli.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Cercato su stampa e comune.napoli.it: piano mobilità 2027 non ancora definito; probabile conferma dei potenziamenti.",
+     "note": "solo snippet. Due Race Village annunciati da Manfredi (tuttonapoli.net)."
+    },
+    {
+     "id": "tra-22",
+     "area": "Biglietti - contactless",
+     "fatto": "Con Tap&Go si paga con carta contactless (anche telefono o smartwatch) sulla Linea 1, sulle funicolari Centrale e di Chiaia e su alcune linee EAV. Bisogna fare 'tap' all'ingresso e anche all'uscita; il sistema calcola la tariffa migliore, senza commissioni.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.anm.it/index.php?option=com_content&task=view&id=3868&Itemid=11",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Tap&Go attivo su Linea 1, funicolari Centrale e Chiaia; tap in all'ingresso e tap out all'uscita.",
+     "note": "snippet ufficiale, da aprire. Estensione a Linea 6, bus e funicolare Mergellina non verificata. Fanpage cita anche Alibus."
+    },
+    {
+     "id": "tra-23",
+     "area": "Biglietti - prezzi",
+     "fatto": "Il biglietto ANM di corsa singola costa 1,50 euro (metro, bus, funicolari). Dal 1° ottobre 2026 UnicoCampania alza i biglietti integrati: il biglietto orario di Napoli passa da 1,60 a 1,70 euro; ANM ed EAV lasciano invariati i propri biglietti. Abbonamenti senza aumenti.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.napolitoday.it/attualita/nuove-tariffe-trasporti-campania-ottobre-2026.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Dal 1° ottobre adeguamento UnicoCampania; orario Napoli da 1,60 a 1,70 euro; prezzi invariati per ANM ed EAV.",
+     "note": "solo snippet. Decreto regionale n. 55 del 3 luglio 2026. Verificare su unicocampania.it."
+    },
+    {
+     "id": "tra-24",
+     "area": "Accessibilità - piattaforme 2026",
+     "fatto": "Precedente 2026: il Comune ha allestito sugli scogli del lungomare quattro piattaforme panoramiche con rampe, pensate per persone con disabilità e bambini, e un accesso preferenziale al Race Village.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sciscianonotizie.it/americas-cup-napoli-apre-il-mare-a-tutti-pedane-accessibili-e-inclusione-al-centro-delle-regate/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Quattro piattaforme panoramiche accessibili con rampe dedicate; accesso preferenziale al Race Village per persone con disabilità.",
+     "note": "solo snippet. Anche expartibus.it. Non trovato sul sito del Comune. Per il 2027 nulla ancora annunciato."
+    },
+    {
+     "id": "tra-25",
+     "area": "Accessibilità - treni e metro",
+     "fatto": "RFI Sala Blu Napoli assiste le persone con disabilità nelle stazioni ferroviarie: si prenota al numero verde 800 90 60 60 (da fisso), 02 32 32 32 (anche da cellulare) o via email salablu.napoli@rfi.it; orario 6:45-21:30 tutti i giorni. Per la metro ANM molte stazioni di Linea 1 e 6 hanno ascensori, ma conviene controllare che funzionino sull'app prima di partire.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.disabili.com/mobilita-auto/treni-disabili-nuove-regole-sale-blu-per-assistenza-alle-persone-a-mobilita-ridotta-e-altre-disabilita/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Prenotazione: salablu.napoli@rfi.it, 800.90.60.60 o 02.32.32.32; operativa ogni giorno 6:45-21:30.",
+     "note": "solo snippet. Dato ascensori ANM da eroicafenice.com (non ufficiale). Servizio assistenza EAV: nessuna info trovata."
+    },
+    {
+     "id": "tra-26",
+     "area": "Accessibilità - aeroporto",
+     "fatto": "All'aeroporto di Napoli c'è la 'Sala Amica' per i passeggeri a mobilità ridotta, con posto auto gratuito vicino sulla strada delle partenze. L'assistenza va chiesta alla compagnia aerea almeno 48 ore prima del volo.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.aeroportodinapoli.it/en/prm",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Posto auto gratuito riservato accanto alla Sala Amica sulla strada delle partenze; assistenza in tutte le fasi.",
+     "note": "snippet ufficiale, da aprire. Regola delle 48 ore da enac.gov.it (snippet ufficiale)."
+    },
+    {
+     "id": "tra-27",
+     "area": "Caldo",
+     "fatto": "Il Ministero della Salute pubblica bollettini sulle ondate di calore per 27 città tra cui Napoli (nel 2026 dal 25 maggio al 20 settembre, lun-ven dalle 11), anche sull'app 'Caldo e Salute'. Il numero 1500 dà consigli sul caldo. Le gare 2027 (maggio-luglio) cadono nel periodo dei bollettini.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.salute.gov.it/new/it/news-e-media/notizie/estate-2026-dal-25-maggio-disponibili-i-bollettini-sulle-ondate-di-calore",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Bollettini dal 25 maggio al 20 settembre per 27 città incluso Napoli; app Caldo e Salute; numero 1500.",
+     "note": "snippet ufficiale, da aprire. Calendario 2027 non ancora pubblicato."
+    }
+   ],
+   "contraddizioni": [
+    {
+     "descrizione": "Orario funicolare di Chiaia nel 2026: fanpage dice fino alle 2:00 il 25-26 settembre; seepompeii dice Linea 6 e funicolari di Chiaia e Mergellina fino alle 00:30. Alcuni titoli dicevano 'metro e funicolari fino alle 2', ma Linea 6 e Mergellina chiudevano alle 00:30.",
+     "fonti": [
+      "https://www.fanpage.it/napoli/americas-cup-gli-orari-di-metro-e-funicolari-per-le-pre-regate-a-napoli-dal-24-al-27-settembre/",
+      "https://seepompeii.com/americas-cup-napoli-2026-dove-vederla-parcheggi-e-date/",
+      "https://www.napolike.it/americas-cup-napoli-metro-e-funicolari-fino-alle-2"
+     ]
+    },
+    {
+     "descrizione": "Apertura della stazione Capodichino (Linea 1): 'primavera/primo semestre 2027, in tempo per l'America's Cup' secondo il sindaco, 'fine 2026-inizio 2027' secondo altri, 'verso fine 2027' secondo Terra Mia.",
+     "fonti": [
+      "https://www.napolitoday.it/attualita/americas-cup-apertura-stazione-linea-1-capodichino.html",
+      "https://www.juorno.it/metro-capodichino-pronta-al-95-salvini-la-definisce-modello-di-sostenibilita-apertura-tra-fine-2026-e-inizio-2027/",
+      "https://www.terramiagiornale.it/metro-linea-1-avanti-verso-capodichino-ma-per-lamericas-cup-ci-sara-un-collegamento-alternativo/"
+     ]
+    },
+    {
+     "descrizione": "Tram sulla Riviera di Chiaia: a settembre 2026 il Comune parla di tram completato (corsia usata per il traffico), mentre fanpage scrive che i cantieri del tram finiranno entro dicembre 2026.",
+     "fonti": [
+      "https://www.comune.napoli.it/novita/regata-preliminare-louis-vuitton-cup-cambia-la-viabilita-sul-lungomare-il-dispositivo-di-circolazione-esaminato-dalla-commissione-mobilita/",
+      "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/"
+     ]
+    },
+    {
+     "descrizione": "Prezzo del biglietto integrato 90 minuti a Napoli: 1,70 euro, 1,80 euro o 1,60 euro che diventa 1,70 dal 1° ottobre 2026, a seconda della fonte.",
+     "fonti": [
+      "https://www.infoturismonapoli.it/trasporti-guida-a-biglietti-e-tariffe/",
+      "https://napolimetro.com/biglietti/",
+      "https://www.napolitoday.it/attualita/nuove-tariffe-trasporti-campania-ottobre-2026.html"
+     ]
+    },
+    {
+     "descrizione": "Taxi aeroporto-centro: un sito parla di 'taxi a tariffa fissa da 16 euro', mentre il tariffario comunale riportato dalla stampa dà 21 euro per la Stazione Centrale e 24 per il Beverello.",
+     "fonti": [
+      "https://italyplanner.com/naples-airport-to-city-center.html",
+      "https://www.sicurauto.it/news/traffico-e-viabilita/taxi-napoli-aeroporto-numero-e-tariffe/"
+     ]
+    },
+    {
+     "descrizione": "Numero di corse extra ANM nel 2026: 'oltre 300 corse aggiuntive' (Il Mattino) contro 'oltre 200 corse metro extra + circa 90 sulla funicolare' (Nano TV). Forse contano cose diverse.",
+     "fonti": [
+      "https://www.ilmattino.it/sport/vela/napoli_regate_louis_vuitton_anm_trasporti_metro_funicolari_corse_straordinarie-9785505.html",
+      "https://www.nanotv.it/2026/09/26/napoli-regate-della-louis-vuitton-cup-lanm-potenzia-metro-bus-e-funicolari-con-corse-prolungate/"
+     ]
+    }
+   ],
+   "da_controllare_utente": [
+    {
+     "url": "https://www.anm.it",
+     "cosa": "Pagine ANM su Alibus (prezzo, orari prima e ultima corsa), orari normali della Linea 6, stazioni con ascensore, Tap&Go su Linea 6 e bus, eventuale comunicato ufficiale sugli orari prolungati del 2026 (sito bloccato qui)."
+    },
+    {
+     "url": "https://www.comune.napoli.it/novita/dispositivo-di-circolazione-temporaneo-in-via-francesco-caracciolo-in-occasione-dellevento-regata-preliminare-louis-vuitton-cup-2026-villaggio/",
+     "cosa": "Aprire l'ordinanza del 2026 (strade chiuse, deviazioni, bus spostati) come precedente per il 2027."
+    },
+    {
+     "url": "https://static-www.comune.napoli.it/wp-content/uploads/2025/05/Tariffario_Taxi_2024.pdf",
+     "cosa": "Controllare le cifre esatte delle tariffe fisse dei taxi (aeroporto, stazione, Beverello, Mergellina, Bagnoli)."
+    },
+    {
+     "url": "https://www.unicocampania.it/trova-tariffa",
+     "cosa": "Prezzi dei biglietti integrati in vigore dal 1° ottobre 2026 (orario e giornaliero Napoli)."
+    },
+    {
+     "url": "https://www.eavsrl.it",
+     "cosa": "Eventuale piano corse e orari prolungati della Cumana verso Bagnoli per il 2027; servizio di assistenza per persone con disabilità EAV."
+    },
+    {
+     "url": "https://www.aeroportodinapoli.it/en/prm",
+     "cosa": "Procedura PRM e Sala Amica; notizie su Capodichino Link o sulla stazione della metro."
+    },
+    {
+     "url": "https://www.americascup.com/it/naples",
+     "cosa": "Eventuali pagine 'come arrivare' o 'accessibilità' ufficiali per il 2027."
+    },
+    {
+     "url": "https://www.salute.gov.it/new/it/tema/ondate-di-calore/bollettini-sulle-ondate-di-calore-0",
+     "cosa": "Date dei bollettini sul caldo per il 2027 (per ora c'è solo il calendario 2026)."
+    }
+   ],
+   "sintesi": "Trasporti e accessibilità: ho usato solo i riassunti dei risultati di ricerca, perché WebFetch era bloccato (anm.it). Nessun fatto è CONFERMATO da una pagina ufficiale aperta. I fatti con fonte ufficiale (Comune, ANM, Trenitalia, aeroporto, Ministero della Salute) sono indicati come ANNUNCIATO, da aprire.\n\n- **Aeroporto:** l'Alibus costa 5 euro, vale 90 minuti e passa da aeroporto, Napoli Centrale e Molo Beverello. I taxi hanno tariffe fisse: circa 21 euro fino alla Centrale, 24 fino al Beverello e 28,50 fino a Mergellina. C'è anche un taxi collettivo a 6 euro, prorogato fino a fine 2026.\n- **Metro verso l'aeroporto:** la fermata Capodichino della Linea 1 potrebbe non essere pronta per le gare; le fonti non sono d'accordo sulle date. In alternativa si parla di un bus 'Capodichino Link'.\n- **Precedente 2026 (regata preliminare, 24-27 settembre):** la stampa conferma Linea 1 fino alle 2, Linea 6 e funicolare di Mergellina fino alle 00:30, e molti bus fino alle 00:30. Via Caracciolo e viale Dohrn sono stati chiusi dal 21 al 27 settembre. Aliscafi e traghetti hanno fatto rotte più lunghe.\n- **2027:** manca ancora un piano trasporti ufficiale. La chiusura di via Caracciolo per circa 3 mesi è probabile ma non approvata. A Bagnoli è prevista una nuova fermata della Linea 2, 'Porta del Parco', con apertura stimata a maggio 2027; per i lavori, i treni tra Pozzuoli e Campi Flegrei sono fermi da ottobre 2026 a gennaio 2027. La Cumana dovrebbe avere treni ogni 10 minuti nel 2027.\n- **Biglietti:** con la carta contactless (Tap&Go) si paga su Linea 1 e funicolari Centrale e Chiaia. Dal 1° ottobre 2026 i biglietti integrati UnicoCampania aumentano: il biglietto orario di Napoli passa da 1,60 a 1,70 euro. I biglietti ANM ed EAV restano uguali.\n- **Accessibilità:** nel 2026 c'erano 4 piattaforme con rampe sugli scogli (fonte: solo stampa locale). Per i treni c'è la Sala Blu RFI, per l'aeroporto la Sala Amica.\n- **Caldo:** il Ministero della Salute pubblica bollettini anche per Napoli; c'è il numero 1500.\n\nContraddizioni principali: gli orari della funicolare di Chiaia nel 2026, le date della stazione Capodichino e il prezzo del biglietto da 90 minuti."
+  },
+  {
+   "items": [
+    {
+     "id": "big-01",
+     "area": "Biglietti - Race Village",
+     "fatto": "Precedente 2026: alla regata preliminare di Napoli (24-27 settembre 2026) il Race Village tra Piazza Vittoria e Rotonda Diaz era a ingresso gratuito, con maxischermi per seguire le regate.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.fanpage.it/sport/altri-sport/americas-cup-le-regate-preliminari-a-napoli-il-programma-dal-24-al-27-settembre-2026-e-i-biglietti/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Regate visibili gratuitamente a Rotonda Diaz e al Race Village sul lungomare Caracciolo, con maxischermi.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; conferma anche in agi.it 2026-09-21 (ingresso principale gratuito a Piazza Vittoria): https://www.agi.it/sport/news/2026-09-21/napoli-americas-cup-39172498/"
+    },
+    {
+     "id": "big-02",
+     "area": "Biglietti - Race Village 2027",
+     "fatto": "Per il 2027 il Race Village sarà sul lungomare di Viale Francesco Caracciolo; gli organizzatori parlano di punti di osservazione tipo tribuna sfruttando i promontori. Gratuità del Village 2027 non ancora detta in modo esplicito da fonte ufficiale.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Viale Francesco Caracciolo trasformato in Race Village, usando promontori per creare opportunità di visione tipo tribuna.",
+     "data_pubblicazione": "2025-09",
+     "note": "snippet ufficiale, da aprire; vedi anche https://www.americascup.com/host-venue"
+    },
+    {
+     "id": "big-03",
+     "area": "Tribune 2027",
+     "fatto": "Tribune a pagamento 2027: non sono stati pubblicati né posizioni precise, né prezzi, né date di vendita.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://tripprof.com/en/blog/americas-cup-naples-2027-guide/",
+     "fonte_tipo": "altro",
+     "evidenza": "Cercato su americascup.com (snippet), stampa italiana e blog: nessun prezzo o data di vendita delle tribune pubblicati a settembre 2026.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; ricerche multiple con 'tribune', 'biglietti in vendita', 'ticketing ufficiale'"
+    },
+    {
+     "id": "big-04",
+     "area": "Tribune 2027 - stime non ufficiali",
+     "fatto": "Alcuni blog non ufficiali riportano stime di prezzo (tribune 30-150 euro al giorno, hospitality 200-500 euro). Non sono dati degli organizzatori: da non usare come prezzi.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.brainrooms.net/ideadocs/guide/coppa-america-napoli",
+     "fonte_tipo": "altro",
+     "evidenza": "Snippet: 'tribune a pagamento (stima 30-150 € al giorno) e pacchetti hospitality premium (200-500 €)'.",
+     "data_pubblicazione": "",
+     "note": "solo snippet; attribuzione alla pagina brainrooms probabile ma non certa (risultato aggregato). Stime senza fonte ufficiale."
+    },
+    {
+     "id": "big-05",
+     "area": "Piattaforma biglietti",
+     "fatto": "Piattaforma ufficiale di vendita biglietti 2027: non ancora annunciata. I blog indicano genericamente americascup.com.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.americascup.com/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Nessuna sezione ticketing 2027 emersa nelle ricerche su americascup.com; solo blog rimandano al sito ufficiale.",
+     "data_pubblicazione": "",
+     "note": "solo snippet; WebFetch bloccato"
+    },
+    {
+     "id": "big-06",
+     "area": "Hospitality 2027",
+     "fatto": "Gli organizzatori hanno annunciato che le esperienze VIP Hospitality saranno sviluppate, con pacchetti a terra e in mare. Fornitore, prezzi e pagina di registrazione interesse non ancora pubblicati.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "VIP Hospitality experiences will be developed over the coming months offering on land and on water packages.",
+     "data_pubblicazione": "2025-09",
+     "note": "snippet ufficiale, da aprire. Un blog (interno16holidayhome.com) conferma che a settembre 2026 non c'erano prezzi né data di vendita."
+    },
+    {
+     "id": "big-07",
+     "area": "Hospitality - superyacht",
+     "fatto": "BWA Yachting è il partner ufficiale del Superyacht Programme 2027 (terza Coppa di fila) e ha aperto le prenotazioni ufficiali degli ormeggi per superyacht; cura anche un calendario sociale per armatori e ospiti.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/4263_BWA-YACHTING-OPENS-OFFICIAL-BERTH-BOOKINGS-FOR-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-AND-GETS-READY-FOR-THE-PRELIMINARY-REGATTA-IN-NAPLES",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Titolo news ufficiale: BWA Yachting opens official berth bookings for the Louis Vuitton 38th America's Cup.",
+     "data_pubblicazione": "2026",
+     "note": "snippet ufficiale, da aprire; dettagli su pressmare 2026-03-11 https://www.pressmare.it/en/regattas/americas-cup/2026-03-11/bwa-yachting-named-official-superyacht-programme-partner-88665"
+    },
+    {
+     "id": "big-08",
+     "area": "Store ufficiale",
+     "fatto": "IMG Licensing gestisce le licenze ufficiali della 38a Coppa. Esiste uno shop online ufficiale; il primo Official Shop fisico ha aperto nel Race Village di Cagliari (maggio 2026) e un negozio era presente anche a Napoli a settembre 2026.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.licensingmagazine.com/o36h",
+     "fonte_tipo": "stampa",
+     "evidenza": "Primo America's Cup Official Shop nel Race Village della regata preliminare di Cagliari, più negozio online.",
+     "data_pubblicazione": "2026",
+     "note": "solo snippet; URL esatto dello shop online non trovato"
+    },
+    {
+     "id": "big-09",
+     "area": "Merchandising",
+     "fatto": "North Sails è sponsor ufficiale per l'abbigliamento tecnico e ha lanciato la capsule 'Road to Naples', venduta nello shop ufficiale online e nei negozi del Village dal 21 maggio 2026.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.boatingnz.co.nz/2026/05/north-sails-becomes-official-technical-apparel-sponsor-of-the-louis-vuitton-38th-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Collezione 'Road to Naples' acquistabile online nello shop ufficiale America's Cup e in negozio dal 21 maggio.",
+     "data_pubblicazione": "2026-05",
+     "note": "solo snippet"
+    },
+    {
+     "id": "big-10",
+     "area": "App e newsletter",
+     "fatto": "Non è emersa un'app ufficiale specifica per la 38a Coppa né una pagina newsletter per l'avviso vendita biglietti 2027. Le regate 2026 erano visibili gratis su YouTube.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.yachtingworld.com/americas-cup/americas-cup-preliminary-regatta-144475",
+     "fonte_tipo": "stampa",
+     "evidenza": "Ricerche su app/newsletter hanno dato solo app di edizioni passate; Yachting World: diretta gratis su YouTube.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; da verificare su americascup.com"
+    },
+    {
+     "id": "big-11",
+     "area": "Siti non ufficiali",
+     "fatto": "americascupitalia.it ('Naples America's Cup') vende pacchetti evento, tour guidati e servizi VIP, con pagina di prenotazione, e si presenta come portale ufficiale. Il gestore non è stato identificato; il sito ufficiale dell'evento è americascup.com.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://americascupitalia.it/en/servizi/",
+     "fonte_tipo": "altro",
+     "evidenza": "Offre Event Packages, Guided Tours e VIP Services; invita a registrarsi sul 'portale ufficiale' per offerte esclusive.",
+     "data_pubblicazione": "",
+     "note": "solo snippet; WebFetch bloccato, nessun nome società o P.IVA trovato. Pagina prenotazione: https://americascupitalia.it/en/prenotazione/"
+    },
+    {
+     "id": "big-12",
+     "area": "Siti non ufficiali",
+     "fatto": "Esistono altri siti con nomi simili all'evento (es. acnaples2027.com) e molti operatori privati che vendono uscite in barca (GetYourGuide, Ahoy Days, charter). Non sono canali ufficiali.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.acnaples2027.com/news/america-s-cup-in-naples-four-days-of-world-class-sailing-from-september-24-to-27-2026/",
+     "fonte_tipo": "altro",
+     "evidenza": "Domini e offerte di terzi compaiono tra i risultati accanto ad americascup.com.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; vedi anche https://ahoydays.com/events/americas-cup"
+    },
+    {
+     "id": "big-13",
+     "area": "Truffe",
+     "fatto": "Nessun avviso ufficiale anti-truffa biglietti trovato. Un blog consiglia di usare solo americascup.com. La stampa ha raccontato una truffa ai danni di aziende con 'contratti fantasma' legati all'America's Cup.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://amp.today.it/dossier/criminalita/truffa-americas-cup-h2biz.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Titolo: 'Sfruttano l'America's Cup per vendere contratti fantasma: tutte le aziende che hanno pagato'.",
+     "data_pubblicazione": "",
+     "note": "solo snippet; truffa rivolta ad aziende, non ai tifosi. Avviso generico in brainrooms.net"
+    },
+    {
+     "id": "big-14",
+     "area": "Precedente Barcellona 2024",
+     "fatto": "Precedente Barcellona 2024: Race Village al Moll de la Fusta e due Fanzone (Plaça del Mar e Bogatell) gratuiti, ma a capienza limitata.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.catalannews.com/sports/item/where-to-watch-the-americas-cup-2024-in-barcelona",
+     "fonte_tipo": "stampa",
+     "evidenza": "Race Village e Fanzone con ingresso gratuito e numero limitato di persone.",
+     "data_pubblicazione": "2024",
+     "note": "solo snippet"
+    },
+    {
+     "id": "big-15",
+     "area": "Precedente Barcellona 2024",
+     "fatto": "Precedente Barcellona 2024: l'hospitality ufficiale era l'AC37 Club (maxischermi, commento, cibo e bevande), da circa 500 euro al giorno; 550 euro per alcuni eventi; esperienze premium 750-5.000 euro.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/hospitality",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "AC37 Club: race viewing su maxischermi, commentatori, cibo e bevande illimitati, prezzi da 500 euro.",
+     "data_pubblicazione": "2024",
+     "note": "snippet ufficiale, da aprire; prezzi dettagliati da stampa https://barcelonasecreta.com/en/america-cup-sailing-2024-barcelona-ticket-prices/"
+    },
+    {
+     "id": "big-16",
+     "area": "Precedente Barcellona 2024",
+     "fatto": "Precedente Barcellona 2024: biglietti per barche spettatori vicino al campo di regata vendute da Las Golondrinas e altri operatori (catamarani, caicchi, yacht).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.catalannews.com/sports/item/where-to-watch-the-americas-cup-2024-in-barcelona",
+     "fonte_tipo": "stampa",
+     "evidenza": "Las Golondrinas offriva biglietti per vedere le regate vicino al campo e le basi dei team dal mare.",
+     "data_pubblicazione": "2024",
+     "note": "solo snippet; non chiaro se operatore ufficiale"
+    },
+    {
+     "id": "big-17",
+     "area": "Precedente Napoli 2026",
+     "fatto": "Precedente 2026: non risulta hospitality a pagamento ufficiale né tribune a pagamento alla regata preliminare di Napoli; gli organizzatori non avevano pubblicato prezzi.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.interno16holidayhome.com/2026/09/24/americas-cup-naples-2026-regatta-guide/",
+     "fonte_tipo": "altro",
+     "evidenza": "Blog: hospitality VIP non ancora prezzata; organizzatori dicono che informazioni saranno pubblicate 'in due course'.",
+     "data_pubblicazione": "2026-09-24",
+     "note": "solo snippet; cercato anche aree VIP/sponsor: nessun risultato"
+    },
+    {
+     "id": "big-18",
+     "area": "Precedente Napoli 2026",
+     "fatto": "Precedente 2026: grande affluenza sul lungomare. Il Mattino parla di 135mila presenze nei primi tre giorni (picco 33mila); ANSA di oltre 100mila ingressi nell'ultimo giorno.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ansa.it/campania/notizie/2026/09/27/americas-cup-oltre-100mila-ingressi-sul-lungomare-per-il-successo-di-luna_c1638251-2464-4907-88bf-27d2e37fbcf4.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Oltre 100mila ingressi sul lungomare per il successo di Luna Rossa.",
+     "data_pubblicazione": "2026-09-27",
+     "note": "solo snippet; Il Mattino: https://www.ilmattino.it/napoli/cronaca/america_s_cup_a_napoli_assalto_al_lungomare_gia_135mila_visitatori_oggi_show_finale-9787487.html"
+    },
+    {
+     "id": "big-19",
+     "area": "Accesso 2027",
+     "fatto": "Per il 2027 la stampa riporta che via Caracciolo resterà chiusa al traffico per circa 3 mesi, da maggio a luglio.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Titolo: 'America's Cup 2027, via Caracciolo chiusa 3 mesi da maggio a luglio: il piano traffico'.",
+     "data_pubblicazione": "",
+     "note": "solo snippet (solo titolo)"
+    },
+    {
+     "id": "big-20",
+     "area": "Accessibilità",
+     "fatto": "Precedente 2026: il Comune di Napoli ha installato pedane accessibili sugli scogli e una passerella rialzata per far seguire le regate anche a persone con disabilità e minori.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.agenziagiornalisticaopinione.it/opinionmix/comune-di-napoli-americas-cup-pedane-accessibili-sugli-scogli-e-imbarcazioni-inclusive-per-vivere-le-regate-dal-mare/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Comune di Napoli: pedane accessibili sugli scogli e imbarcazioni inclusive per vivere le regate dal mare.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; comunicato del Comune ripreso dalla stampa"
+    },
+    {
+     "id": "mar-01",
+     "area": "Ordinanza 99/2026",
+     "fatto": "Precedente 2026: l'ordinanza n. 99/2026 della Capitaneria di Porto di Napoli ha creato una 'Race Area' davanti al lungomare, segnalata da boe, dove erano vietati navigazione, transito, sosta e ancoraggio alle unità non autorizzate.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Race Area delimitata da boe: vietati navigazione, transito, sosta e ancoraggio alle unità non autorizzate.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; testo dell'ordinanza non trovato online"
+    },
+    {
+     "id": "mar-02",
+     "area": "Ordinanza 99/2026 - orari",
+     "fatto": "Precedente 2026: secondo la stampa i divieti valevano dalle 8 di lunedì 21 settembre alle 8 del 28 settembre, compresi i giorni di allenamento.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Restrizioni dalle ore 8 di lunedì 21 settembre fino alle ore 8 del 28 settembre.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; Nautica Report indica invece dal 22 settembre (vedi contraddizioni)"
+    },
+    {
+     "id": "mar-03",
+     "area": "Traghetti e aliscafi",
+     "fatto": "Precedente 2026: navi e aliscafi per le isole hanno seguito rotte alternative; circa 10 minuti in più per gli aliscafi e quasi 20 per i traghetti.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ilmessaggero.it/italia/americas_cup_napoli_traghetti_isole_ritardi_cosa_cambia_date_orari-9773280.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Deviazioni: circa dieci minuti in più per aliscafi e quasi venti per i traghetti.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet"
+    },
+    {
+     "id": "mar-04",
+     "area": "Registrazione barche",
+     "fatto": "Precedente 2026: chi voleva vedere le regate con la propria barca doveva registrarsi online sul sito ufficiale (Watch on Water), indicando tipo e nome della barca; in cambio riceveva briefing giornalieri su orari, meteo e sicurezza.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/it/watch-on-water",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Tutti gli spettatori che vogliono seguire dal mare con la propria barca devono registrarsi per accedere alle aree di osservazione.",
+     "data_pubblicazione": "2026",
+     "note": "snippet ufficiale, da aprire; dettagli da https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/"
+    },
+    {
+     "id": "mar-05",
+     "area": "Zone spettatori",
+     "fatto": "Precedente 2026: zone a colori. Rossa = barche accreditate (team, sponsor, noleggi ufficiali). Blu = spettatori: barche oltre 10 m sul lato est, sotto 10 m verso costa. Grigia = vietato fermarsi. 20 boe numerate.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/it/watch-on-water",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Zone rosse per barche accreditate; zona blu divisa per lunghezza; zona grigia dove è vietato fermarsi.",
+     "data_pubblicazione": "2026",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "mar-06",
+     "area": "Orari in mare",
+     "fatto": "Precedente 2026: boe posizionate entro le 12:30, barche spettatori nelle aree entro le 13:30, regate tra le 14 e le 16 (25-27 settembre).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingaddicted.it/post/2026-08-05/americas-cup-a-napoli-guida-per-gli-spettatori-in-mare-1785910532545/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Boe in posizione entro le 12:30; raggiungere le aree entro le 13:30; regate tra 14:00 e 16:00.",
+     "data_pubblicazione": "2026-08-05",
+     "note": "solo snippet"
+    },
+    {
+     "id": "mar-07",
+     "area": "Regole di navigazione",
+     "fatto": "Precedente 2026: velocità massima 5 nodi, vietato fare onda, obbligo di seguire i marshal in acqua.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Velocità massima 5 nodi, vietato creare moto ondoso, seguire le indicazioni dei marshal.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet"
+    },
+    {
+     "id": "mar-08",
+     "area": "Regole di navigazione",
+     "fatto": "Precedente 2026: nelle zone spettatori le barche dovevano restare in moto e mobili, niente ancora (salvo emergenza), niente navigazione a vela; le unità senza motore (quindi anche kayak e SUP) non potevano entrare nelle aree riservate.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Unità senza motore non possono accedere alle aree spettatori; ancoraggio non consentito salvo emergenze.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; kayak/SUP non citati per nome, deduzione da 'unità senza motore'"
+    },
+    {
+     "id": "mar-09",
+     "area": "Bagnanti e droni",
+     "fatto": "Precedente 2026: vietato nuotare e tuffarsi nelle zone vicine al campo di regata; vietato far volare droni non autorizzati.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Vietati balneazione, ancoraggio e droni non autorizzati per riprese aeree nell'area.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; nessun provvedimento ENAC specifico trovato"
+    },
+    {
+     "id": "mar-10",
+     "area": "Sanzioni",
+     "fatto": "Importi delle sanzioni per chi viola l'ordinanza 99/2026: non trovati.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato 'sanzioni', 'Codice della navigazione' con ordinanza America's Cup: nessun dettaglio in stampa o snippet ufficiali.",
+     "data_pubblicazione": "",
+     "note": "testo ordinanza non raggiungibile (WebFetch bloccato)"
+    },
+    {
+     "id": "mar-11",
+     "area": "Controlli",
+     "fatto": "Precedente 2026: la Guardia Costiera ha impiegato oltre 150 persone tra mare e sala operativa e circa 30 mezzi navali.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://videonola.tv/napoli-americas-cup-il-punto-sulla-sicurezza-con-la-capitaneria-di-porto/2026/09/26/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Oltre 150 unità di personale e circa 30 unità navali impiegate.",
+     "data_pubblicazione": "2026-09-26",
+     "note": "solo snippet; attribuzione tra videonola e nauticareport non certa"
+    },
+    {
+     "id": "mar-12",
+     "area": "Barche inclusive",
+     "fatto": "Precedente 2026: il Comune ha portato in mare barche inclusive: il Lorkinos di Isolahabile (24 m, reso accessibile a persone con disabilità) e le barche di Scugnizzi a Vela, tra cui l'Elisabeth restaurata dai ragazzi.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.expartibus.it/americas-cup-napoli-protagonista-dellinclusione/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Inclusione anche in acqua con il Lorkinos di Isolahabile e le barche di Scugnizzi a Vela.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; un risultato cita prenotazione gratuita via email circuitoarte.assculturale@gmail.com ma non è chiaro a quale iniziativa si riferisca"
+    },
+    {
+     "id": "mar-13",
+     "area": "Barche spettatori ufficiali",
+     "fatto": "Precedente 2026: la pagina ufficiale 'Esperienze in mare per gli spettatori' prevede 'barche a noleggio ufficiali' nella zona rossa, ma nomi degli operatori e prezzi non sono emersi.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/it/watch-on-water",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Zone rosse riservate a team, sponsor ufficiali e barche a noleggio ufficiali.",
+     "data_pubblicazione": "2026",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "mar-14",
+     "area": "Uscite in barca private",
+     "fatto": "Precedente 2026: forte richiesta di tour in barca per vedere le regate; molti operatori privati (es. 'Boat Experience Cup' con tre catamarani) non risultano ufficiali.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.gazzettadinapoli.it/turismo/americas-cup-alta-richiesta-tour-in-barca-per-vedere-la-regata-dal-mare/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Alta richiesta di tour in barca per vedere la regata dal mare.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; Boat Experience Cup: https://www.flyradiotv.net/2026/09/28/boat-experience-cup-napoli-raccontata-dal-mare/"
+    },
+    {
+     "id": "mar-15",
+     "area": "Ordinanza 2027",
+     "fatto": "Nessuna ordinanza della Capitaneria per il 2027 ancora pubblicata. L'ammiraglio Aulicino ha parlato di un'ordinanza in preparazione con aree di ormeggio e ancoraggio (riferimento temporale non chiaro).",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.solovela.net/notizie/3/america-cup-2027-napoli-ormeggi-megayacht/1354854/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Cercato 'ordinanza 2027 Capitaneria Napoli America's Cup': solo ordinanza 99/2026 e dichiarazioni su bozza.",
+     "data_pubblicazione": "",
+     "note": "solo snippet; attribuzione della frase di Aulicino incerta tra i risultati"
+    },
+    {
+     "id": "mar-16",
+     "area": "Marine e ormeggi",
+     "fatto": "Rete marine del programma superyacht 2027: Nuova Marina di Bagnoli, Marina Molo Luise, Stabia Main Port, Marina di Stabia, Sud Cantieri Pozzuoli, Marina di Capri, Marina d'Arechi (Salerno), Marina di Procida. Luise Group è 'Preferred Yacht Agent'.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://en.ilsole24ore.com/art/america-s-cup-bwa-and-luise-group-will-manage-the-super-yacht-reception-AIFPHpwB",
+     "fonte_tipo": "stampa",
+     "evidenza": "Rete marine: Bagnoli, Molo Luise, Stabia, Pozzuoli, Capri, Arechi, Procida.",
+     "data_pubblicazione": "2026",
+     "note": "solo snippet; restrizioni per ormeggi di diportisti comuni non trovate"
+    },
+    {
+     "id": "mar-17",
+     "area": "Avvisi ai naviganti",
+     "fatto": "Avvisi ai naviganti specifici per le regate (2026 o 2027) non trovati nelle ricerche.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.napolimagazine.com/altri-sport/articolo/america-s-cup-rotte-pi-lunghe-per-navi-e-aliscafi-verso-le-isole-19-09-2026",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato ordinanza, avvisi e rotte: solo articoli stampa su rotte alternative, nessun avviso ai naviganti online.",
+     "data_pubblicazione": "",
+     "note": "verificare sul sito della Guardia Costiera di Napoli"
+    },
+    {
+     "id": "mar-18",
+     "area": "Precedente Barcellona 2024",
+     "fatto": "Precedente Barcellona 2024: zona di esclusione dal 22 agosto al 27 ottobre; navigazione autorizzata 10-20; registrazione di tutte le barche spettatori; quattro zone con marshal (pubblico, team/sponsor, charter preferiti, superyacht).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://ineosteamuk.americascup.com/en/on-water-information.html",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Quattro zone marshallate: General Public Spectator Boats, team/sponsor, Preferred Charter, Superyacht Programme.",
+     "data_pubblicazione": "2024",
+     "note": "snippet ufficiale, da aprire (sottodominio team INEOS su americascup.com)"
+    },
+    {
+     "id": "mar-19",
+     "area": "Precedente Barcellona 2024",
+     "fatto": "Precedente Barcellona 2024: barche spettatori sempre in moto e mobili (mai all'ancora), ascolto VHF canale 72; la Capitanía Marítima autorizzava a parte il trasporto di più passeggeri.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/watch-on-water",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Spectator boats must be under engine and mobile at all times; Channel 72.",
+     "data_pubblicazione": "2024",
+     "note": "snippet ufficiale, da aprire; titolo snippet riferito alla 37a Coppa. Autorizzazioni passeggeri: https://www.register-iri.com/wp-content/uploads/YSA-2024-09.pdf"
+    }
+   ],
+   "contraddizioni": [
+    {
+     "descrizione": "Inizio dei divieti dell'ordinanza 99/2026: NapoliToday dice dalle 8 di lunedì 21 settembre; Nautica Report dice in vigore da martedì 22 settembre (evento 22-27).",
+     "fonti": [
+      "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html",
+      "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/"
+     ]
+    },
+    {
+     "descrizione": "americascupitalia.it si presenta come 'portale ufficiale' e vende pacchetti, mentre il sito ufficiale è americascup.com e l'hospitality ufficiale è in mano ad America's Cup Events (non ancora in vendita).",
+     "fonti": [
+      "https://americascupitalia.it/en/servizi/",
+      "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW"
+     ]
+    },
+    {
+     "descrizione": "Presenze 2026: Il Mattino 135mila nei primi tre giorni; ANSA oltre 100mila ingressi nell'ultimo giorno. Metriche diverse (presenze cumulate vs ingressi giornalieri), non confrontabili direttamente.",
+     "fonti": [
+      "https://www.ilmattino.it/napoli/cronaca/america_s_cup_a_napoli_assalto_al_lungomare_gia_135mila_visitatori_oggi_show_finale-9787487.html",
+      "https://www.ansa.it/campania/notizie/2026/09/27/americas-cup-oltre-100mila-ingressi-sul-lungomare-per-il-successo-di-luna_c1638251-2464-4907-88bf-27d2e37fbcf4.html"
+     ]
+    },
+    {
+     "descrizione": "La pagina americascup.com/watch-on-water compare con titolo della 37a Coppa (Barcellona), mentre /it/watch-on-water riguarda Napoli: possibile riuso dell'URL, regole Barcellona e Napoli da non mescolare.",
+     "fonti": [
+      "https://www.americascup.com/watch-on-water",
+      "https://www.americascup.com/it/watch-on-water"
+     ]
+    }
+   ],
+   "da_controllare_utente": [
+    {
+     "url": "https://www.americascup.com/it/watch-on-water",
+     "cosa": "Aprire la pagina: mappe delle zone, modulo di registrazione barche, operatori di noleggio ufficiali, eventuale aggiornamento per il 2027."
+    },
+    {
+     "url": "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+     "cosa": "Confermare il testo su Race Village, tribune e hospitality 2027."
+    },
+    {
+     "url": "https://www.americascup.com/",
+     "cosa": "Verificare se esistono sezione biglietti/hospitality 2027, iscrizione newsletter, app ufficiale e link allo shop online."
+    },
+    {
+     "url": "https://www.guardiacostiera.gov.it/",
+     "cosa": "Cercare il testo dell'ordinanza 99/2026 della Capitaneria di Napoli (orari esatti, sanzioni, regole kayak/SUP) ed eventuali ordinanze o avvisi per il 2027."
+    },
+    {
+     "url": "https://americascupitalia.it/en/",
+     "cosa": "Controllare note legali/footer: chi gestisce il sito, P.IVA, eventuale affiliazione con America's Cup Events."
+    },
+    {
+     "url": "https://www.agenziagiornalisticaopinione.it/opinionmix/comune-di-napoli-americas-cup-pedane-accessibili-sugli-scogli-e-imbarcazioni-inclusive-per-vivere-le-regate-dal-mare/",
+     "cosa": "Verificare come si prenotavano le barche inclusive 2026 (email citata: circuitoarte.assculturale@gmail.com, attribuzione incerta)."
+    },
+    {
+     "url": "https://www.americascup.com/news/4263_BWA-YACHTING-OPENS-OFFICIAL-BERTH-BOOKINGS-FOR-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-AND-GETS-READY-FOR-THE-PRELIMINARY-REGATTA-IN-NAPLES",
+     "cosa": "Leggere le condizioni del programma superyacht/ormeggi 2027."
+    },
+    {
+     "url": "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+     "cosa": "Leggere dettagli sulla chiusura di via Caracciolo 2027 e se il Race Village sarà a ingresso libero."
+    }
+   ],
+   "sintesi": "Biglietti e hospitality 2027: al 29/09/2026 non risultano in vendita tribune, biglietti o pacchetti hospitality ufficiali. Gli organizzatori hanno solo annunciato che il Race Village sarà su Viale Caracciolo, con punti di visione tipo tribuna, e che arriveranno pacchetti VIP a terra e in mare. Non ci sono prezzi, date o piattaforma di vendita. Le cifre che girano (30-150 euro per le tribune) sono stime di blog, non dati ufficiali. L'unico canale ufficiale già attivo è il programma superyacht/ormeggi di BWA Yachting (con Luise Group). C'è anche uno shop ufficiale (licenze IMG, capsule North Sails). americascupitalia.it si presenta come 'ufficiale' e vende pacchetti, ma il gestore non è identificato e non è americascup.com. Nessun avviso ufficiale anti-truffa trovato. Precedenti: a Napoli nel 2026 il Village era gratuito, con 100-135mila presenze. A Barcellona 2024 Village e Fanzone erano gratuiti a capienza limitata, l'AC37 Club costava da 500 euro al giorno e c'erano barche spettatori a pagamento (Las Golondrinas). Dal mare: l'ordinanza 99/2026 della Capitaneria ha creato una Race Area vietata ai non autorizzati (dal 21 o 22 settembre, le fonti non concordano) e ha allungato le rotte di aliscafi e traghetti. Regole per gli spettatori: registrazione online obbligatoria, zone rossa/blu/grigia, massimo 5 nodi, niente onda, niente ancora, niente vela; barche senza motore escluse; vietati bagno e droni. Sanzioni, avvisi ai naviganti e ordinanza 2027 non ancora pubblicati o non trovati. Nel 2026 il Comune ha offerto pedane accessibili e barche inclusive (Lorkinos, Scugnizzi a Vela). Nota sul metodo: WebFetch era bloccato, quindi nessuna pagina ufficiale è stata aperta davvero e nessun fatto è CONFERMATO; i dati ufficiali vengono solo da snippet."
+  },
+  {
+   "items": [
+    {
+     "id": "squ-01",
+     "area": "Squadre AC38",
+     "fatto": "Alla 38a America's Cup sono iscritti 7 team: il Defender Emirates Team New Zealand e 6 sfidanti (GB1 Challenger of Record, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA, Team Australia).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/08/31/new-challenge-for-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Current entrants include ETNZ (Defender), GB1 (Challenger of Record), Luna Rossa, Tudor Team Alinghi, La Roche-Posay, American Racing Challenger Team USA, Team Australia.",
+     "data_pubblicazione": "2026-08-31",
+     "note": "solo snippet; stessa lista in pressmare.it 2026-04-02. Pagina ufficiale squadre (americascup.com/teams) non apribile: EGRESS_BLOCKED."
+    },
+    {
+     "id": "squ-02",
+     "area": "Squadre AC38",
+     "fatto": "Per la prima volta nell'era moderna tutte le nazioni che hanno già vinto la Coppa (USA, Australia, Svizzera, Nuova Zelanda) sono in gara nella stessa edizione.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.pressmare.it/en/media/press-mare/2026-04-02/americas-cup-38-entries-closed-two-new-challenges-expected-89073",
+     "fonte_tipo": "stampa",
+     "evidenza": "All previous winning nations will compete in the same edition: United States, Australia, Switzerland, New Zealand.",
+     "data_pubblicazione": "2026-04-02",
+     "note": "solo snippet (sintesi del motore di ricerca)"
+    },
+    {
+     "id": "squ-03",
+     "area": "Squadre AC38",
+     "fatto": "Iscrizioni: chiusura iniziale il 31 ottobre 2025; iscrizioni tardive accettate fino al 31 marzo 2026.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/03/31/additional-entries-for-2027-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Initial entry period closed October 31, 2025; late entries considered up to March 31, 2026.",
+     "data_pubblicazione": "2026-03-31",
+     "note": "solo snippet"
+    },
+    {
+     "id": "squ-04",
+     "area": "Squadre AC38",
+     "fatto": "GB1 è il nuovo nome del team britannico Athena Racing (fondato da Sir Ben Ainslie nel 2014); rappresenta il Challenger of Record Royal Yacht Squadron Racing Ltd. Timoniere: Dylan Fletcher.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://afloat.ie/sail/events/americas-cup/item/70062-britain-s-america-s-cup-team-unveils-gb1-and-names-dylan-fletcher-helm",
+     "fonte_tipo": "stampa",
+     "evidenza": "GB1 new identity of Athena Racing... Challenger of Record Royal Yacht Squadron Racing Ltd... Dylan Fletcher confirmed as helm for AC38.",
+     "data_pubblicazione": "2026-01-21",
+     "note": "solo snippet; anche pressmare.it 2026-01-21"
+    },
+    {
+     "id": "squ-05",
+     "area": "Squadre AC38",
+     "fatto": "Luna Rossa: CEO Max Sirena; Peter Burling (ex Team New Zealand) è entrato nel team italiano; timonieri nominati Peter Burling e Ruggero Tita. A Napoli 2026 la finale è stata timonata da Burling e Marco Gradoni.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://marineindustrynews.co.uk/peter-burling-joins-luna-rossa-for-38th-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Peter Burling has joined Luna Rossa... Burling and Tita nominated helms; Max Sirena CEO.",
+     "data_pubblicazione": "2025-06",
+     "note": "solo snippet; club Circolo della Vela Sicilia NON verificato in questa ricerca. Ruolo Gradoni a Napoli da boatingnz.co.nz 2026-09."
+    },
+    {
+     "id": "squ-06",
+     "area": "Squadre AC38",
+     "fatto": "Tudor Team Alinghi (Svizzera): guidato da Paul Goodison; con lui Nathalie Brugger, Phil Robertson e Nicolas Rolaz.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://skippers.ch/en/news/regattas/americas-cup-on-course-for-the-38th-edition-120458/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Team now led by Paul Goodison... Nathalie Brugger, Phil Robertson, Nicolas Rolaz.",
+     "note": "solo snippet; club (Société Nautique de Genève) non verificato qui; ruolo esatto di timoniere per AC75 da confermare."
+    },
+    {
+     "id": "squ-07",
+     "area": "Squadre AC38",
+     "fatto": "La Roche-Posay Racing Team (Francia, struttura K-Challenge): co-CEO Stephan Kandler e Bruno Dubois, direttore sportivo Philippe Presti, skipper Quentin Delapierre; in squadra anche Diego Botín, Florian Trittel, Leigh McMillan, Enzo Balanger.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.pressmare.it/en/regattas/americas-cup/2026-03-17/partner-director-elite-crew-la-roche-posay-racing-team-born-88781",
+     "fonte_tipo": "stampa",
+     "evidenza": "Kandler and Dubois joint CEOs... Philippe Presti Sporting Director... Quentin Delapierre skipper.",
+     "data_pubblicazione": "2026-03-17",
+     "note": "solo snippet; esiste anche 'CUP BLOG: LA ROCHE-POSAY RACING TEAM' su americascup.com (non aperto). Club francese non verificato."
+    },
+    {
+     "id": "squ-08",
+     "area": "Squadre AC38",
+     "fatto": "American Racing Challenger Team USA (ARC Team USA): iscrizione tardiva annunciata l'8 aprile 2026, club Sail Newport (Rhode Island). CEO Ken Read, direttore sportivo Giles Scott, fondatori Karel Komárek e Chris Welsh. Ha rilevato l'AC75 'Patriot' e due AC40 di American Magic.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/08/10/americas-cup-revealing-arc-team-usa/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Sailing under the burgee of Sail Newport... led by Ken Read... took over AC75 Patriot and two AC40s.",
+     "data_pubblicazione": "2026-08-10",
+     "note": "solo snippet; nome del co-fondatore scritto 'Welsh' e 'Welch' in fonti diverse. Velisti annunciati: Calabrese, Gibbs, Henken, Melges IV, Menninger, Nordstrom."
+    },
+    {
+     "id": "squ-09",
+     "area": "Squadre AC38",
+     "fatto": "Team Australia rappresenta il Royal Prince Edward Yacht Club (Sydney); sfida accettata a maggio 2026. CEO Grant Simmer, capo della vela Tom Slingsby, performance e design Glenn Ashby; sostegno di John Winning e famiglia.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/4275_TEAM-AUSTRALIA-UNVEILS-ELITE-AUSTRALIAN-SEVEN-SAILOR-TEAM-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Team Australia represents the Royal Prince Edward Yacht Club, challenge accepted in May as the sixth entry.",
+     "data_pubblicazione": "2026-09",
+     "note": "snippet ufficiale, da aprire. Pagina team: americascup.com/teams/83_Team-Australia. Team Australia NON ha corso a Napoli 2026."
+    },
+    {
+     "id": "squ-10",
+     "area": "Squadre AC38",
+     "fatto": "Emirates Team New Zealand (Defender): timonieri Nathan Outteridge (skipper) e Seb Menzies; AC75 'Taihoro'.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.boatingnz.co.nz/2026/04/seb-menzies-steps-into-co-helm-pathway-with-emirates-team-new-zealand/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Helming duties shared by Skipper Nathan Outteridge and Seb Menzies... co-helm the team's AC75, Taihoro.",
+     "data_pubblicazione": "2026-04",
+     "note": "solo snippet; club Royal New Zealand Yacht Squadron e ruolo di Grant Dalton non verificati in questa ricerca. Pagina team: americascup.com/teams/75_Emirates-TeamNew-Zealand."
+    },
+    {
+     "id": "squ-11",
+     "area": "Regole AC75",
+     "fatto": "Nell'AC38 l'AC75 ha 5 velisti (erano 8 nel 2024), con almeno una donna a bordo. Almeno 3 dell'equipaggio (due velisti + la velista) devono avere la nazionalità del team; fino a 2 possono essere stranieri. Più funzioni a batteria (niente ciclisti).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Crew of five sailors (eight in 2024)... at least one female... two sailors plus the female sailor national; up to two non-nationals.",
+     "data_pubblicazione": "2025-08-12",
+     "note": "snippet ufficiale, da aprire (Protocollo AC38 del 12 agosto 2025). Stessa regola in yachtingworld.com e sailingscuttlebutt 2025-08-12. L'affermazione dell'utente risulta coerente."
+    },
+    {
+     "id": "squ-12",
+     "area": "Regole AC75",
+     "fatto": "Nuova figura: un 'guest racer' (ospite) a bordo durante le regate ufficiali, per la prima volta da Valencia 2007. Gli scafi devono essere quelli già varati per AC37 o AC36.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.boatingnz.co.nz/2025/09/ac75-rules-published-what-it-means-for-the-38th-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "For the first time since Valencia 2007, a guest racer will ride... Hulls from the last Cup must be reused.",
+     "data_pubblicazione": "2025-09",
+     "note": "solo snippet"
+    },
+    {
+     "id": "squ-13",
+     "area": "Risultati 2026 Cagliari",
+     "fatto": "Regata preliminare di Cagliari (evento 21-24 maggio 2026, regate 22-24 maggio): 8 barche, 8 regate di flotta. Classifica: 1 Luna Rossa 63, 2 ETNZ 60, 3 Luna Rossa Women & Youth 59, 4 La Roche-Posay 55, 5 ETNZ Women & Youth 50, 6 Tudor Team Alinghi 40, 7 Athena Pathway Women & Youth (GB2) 38, 8 GB1 27.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Luna Rossa 63, ETNZ 60, Luna Rossa W&Y 59, La Roche-Posay 55... GB1 27.",
+     "data_pubblicazione": "2026-05-24",
+     "note": "solo snippet; ARC Team USA non era in gara a Cagliari. Classifica ufficiale su americascup.com/sardinia non apribile."
+    },
+    {
+     "id": "squ-14",
+     "area": "Risultati 2026 Cagliari",
+     "fatto": "Finale match race di Cagliari: Luna Rossa (Burling, Tita, Molineris, Bissaro) batte ETNZ di circa 33 secondi, dopo un errore in partenza dei neozelandesi. Il trofeo Women & Youth va a Luna Rossa (Gradoni, Porro, Giubilei, Santi).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.1news.co.nz/2026/05/25/peter-burlings-luna-rossa-beats-team-nz-in-sardinia/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Luna Rossa beat Team NZ in the match race final... 33-second win... Women & Youth trophy to Luna Rossa.",
+     "data_pubblicazione": "2026-05-25",
+     "note": "solo snippet; 33 s da sintesi di più fonti (sailweb/afloat). Vedi contraddizione titolo sailweb."
+    },
+    {
+     "id": "squ-15",
+     "area": "Risultati 2026 Napoli",
+     "fatto": "Regata preliminare di Napoli (24-27 settembre 2026): 6 team, 9 barche, 8 regate di flotta. Classifica: 1 Luna Rossa 71, 2 ETNZ 56, 3 La Roche-Posay 48; a pari 44: ARC Team USA (4a), ETNZ Women & Youth, Luna Rossa 2 Women & Youth, Tudor Team Alinghi; 8 GB1 42; 9 Cobham-Ultra GB2 (circa 36).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.livesaildie.com/la-roche-posay-racing-team-takes-third-in-naples-after-two-race-wins-and-despite-two-capsizes/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Third with 48 points behind Luna Rossa 71 and ETNZ 56, ahead of four teams tied on 44... GB1 42, just ahead of Cobham-Ultra GB2.",
+     "data_pubblicazione": "2026-09-28",
+     "note": "solo snippet. Parziali da sailingscuttlebutt 2026-09-27: LR 2-1-1-6-2-3-1-1; ETNZ 5-3-8-2-3-2-2-7; GB1 8-8-3-9-6-4-4-4; GB2 3-6-7-8-7-6-5-9 = 36 pt (con punti 11-posizione darebbe 37: possibile penalità, da verificare). Ordine esatto dei pari 44 oltre ARC 4a da verificare."
+    },
+    {
+     "id": "squ-16",
+     "area": "Risultati 2026 Napoli",
+     "fatto": "Finale match race di Napoli (27 settembre 2026): Luna Rossa (Burling, Gradoni, Giubilei, Ugolini) batte ETNZ (Outteridge, Menzies) di circa 17 secondi, in testa dalla partenza all'arrivo. È la seconda finale vinta su ETNZ nel 2026.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/4373_LUNA-ROSSA-SCORE-AN-OUTSTANDING-STATEMENT-WIN-IN-NAPLES",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Defeating Emirates Team New Zealand in the concluding Match Race... leading the Match Race final from start to finish.",
+     "data_pubblicazione": "2026-09-28",
+     "note": "snippet ufficiale, da aprire. Il margine 'about 17 seconds' viene da boatingnz.co.nz (stampa), non dallo snippet ufficiale."
+    },
+    {
+     "id": "squ-17",
+     "area": "Risultati 2026 Napoli",
+     "fatto": "ARC Team USA ha vinto la prima regata di flotta a Napoli al debutto ed è arrivata quarta; Team Australia non ha partecipato.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://pressmare.it/en/team/arc-team-usa/2026-09-28/arc-team-usa-debuts-with-victory-fourth-place-americas-cup-93025",
+     "fonte_tipo": "stampa",
+     "evidenza": "ARC Team USA debuts with Victory and fourth place... Team Australia was on the sidelines.",
+     "data_pubblicazione": "2026-09-28",
+     "note": "solo snippet"
+    },
+    {
+     "id": "squ-18",
+     "area": "Youth/Women AC 2027",
+     "fatto": "Youth America's Cup 2027: 2-6 giugno 2027 a Napoli, con finale match race secca; data annunciata il 23 settembre 2026 (presentazione a Caivano). Women's AC 2027: 5-9 luglio. Entrambe su AC40.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.boatingnz.co.nz/2026/09/youth-americas-cup-dates-announced-as-the-americas-cup-celebrates-the-next-generation-at-pino-daniele-sports-centre-in-caivano/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Youth America's Cup 2027 dates announced as 2-6 June inclusive, winner-takes-all one race match race final.",
+     "data_pubblicazione": "2026-09-23",
+     "note": "solo snippet; anche sailingscuttlebutt 2026-09-23."
+    },
+    {
+     "id": "squ-19",
+     "area": "Youth/Women AC 2027",
+     "fatto": "Elenco ufficiale dei team di Youth e Women's America's Cup 2027 non ancora pubblicato. Il Protocollo prevede un Notice of Race almeno 12 mesi prima della prima regata. Precedente Barcellona 2024: due gruppi da sei (team AC + club invitati).",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/09/23/dates-set-for-youth-americas-cup/",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato su scuttlebutt, boatingnz, americascup.com (snippet), Wikipedia 2027: nessun elenco iscritti Youth/Women.",
+     "note": "Precedente 2024 da Wikipedia (fonte 'altro')."
+    },
+    {
+     "id": "squ-20",
+     "area": "Calendario",
+     "fatto": "Louis Vuitton Cup: apertura 22-23 maggio 2027 con regate di flotta di tutti e sei gli sfidanti su AC75; Match dal 10 luglio 2027 al meglio delle 13 regate. Date confermate nel comunicato 'Grazie Napoli'.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Louis Vuitton Cup opens 22-23 May 2027 with Stage 1 Fleet Racing... Match from 10 July, best-of-13.",
+     "data_pubblicazione": "2026-09-28",
+     "note": "snippet ufficiale, da aprire; dettagli anche in boatingnz.co.nz/2026/09/grazie-napoli. Lo snippet dice 'all seven AC75 challengers': probabilmente errore (gli sfidanti sono 6)."
+    },
+    {
+     "id": "mis-01",
+     "area": "Contesto",
+     "fatto": "Il 31 agosto 2026 il New York Yacht Club ha chiesto al Procuratore Generale di New York di verificare se la nuova America's Cup Partnership sia compatibile con il Deed of Gift.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sailingscuttlebutt.com/2026/08/31/new-challenge-for-americas-cup/",
+     "fonte_tipo": "stampa",
+     "evidenza": "NYYC asked the New York Attorney General's Charities Bureau to examine whether the America's Cup Partnership can be reconciled with the Deed.",
+     "data_pubblicazione": "2026-08-31",
+     "note": "solo snippet"
+    },
+    {
+     "id": "med-01",
+     "area": "Media",
+     "fatto": "Dirette gratuite di tutti gli eventi 2026/27 sul canale YouTube ufficiale dell'America's Cup (@americascup) e sul sito americascup.com; repliche e highlights restano sul canale.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.yachtingworld.com/americas-cup/americas-cup-preliminary-regatta-144475",
+     "fonte_tipo": "stampa",
+     "evidenza": "Watch live and free on the America's Cup YouTube channel, then return for replays, highlights.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; handle @americascup riportato dalla sintesi, non verificato aprendo YouTube. Esempi dirette: youtube.com/watch?v=cEztv-kITdU (Day 1 Napoli)."
+    },
+    {
+     "id": "med-02",
+     "area": "Media",
+     "fatto": "Non verificato se i video del canale YouTube ufficiale permettono l'incorporamento (embed): l'impostazione è per singolo video e nessuna fonte ne parla.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.youtube.com/watch?v=ucnrVcDshx0",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato 'youtube.com/@americascup' e termini d'uso: nessuna indicazione pubblica sull'embed.",
+     "note": "Da controllare a mano provando l'embed di un video ufficiale."
+    },
+    {
+     "id": "med-03",
+     "area": "Media TV Italia 2026",
+     "fatto": "Regate preliminari di Napoli 2026 in diretta TV su Rai 2 e Sky Sport Max; in streaming su YouTube America's Cup, RaiPlay, Sky Go e NOW.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.napolitoday.it/sport/regate-napoli-americas-cup-dove-vederle-tv-streaming.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Diretta tv su Rai 2 e su Sky Sport Max; streaming su YouTube America's Cup, Rai Play, Sky Go e NOW.",
+     "data_pubblicazione": "2026-09",
+     "note": "solo snippet; conferma Sky in sport.sky.it 2026-09-24."
+    },
+    {
+     "id": "med-04",
+     "area": "Media TV Italia 2027",
+     "fatto": "La Rai ha i diritti esclusivi in chiaro per l'Italia: America's Cup Match, Louis Vuitton Cup, tutte le preliminari 'Road to Naples', Youth e Women's America's Cup 2027.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/it/news/3924_LAMERICAS-CUP-PARTNERSHIP-ASSEGNA-ALLA-RAI-I-DIRITTI-MEDIA-PER-LITALIA-DELLA-LOUIS-VUITTON-38-AMERICAS-CUP",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "L'America's Cup Partnership assegna alla Rai i diritti media per l'Italia della Louis Vuitton 38a America's Cup.",
+     "data_pubblicazione": "2026-03-01",
+     "note": "snippet ufficiale, da aprire; dettagli contenuto da sportefinanza.it 2026-03-02."
+    },
+    {
+     "id": "med-05",
+     "area": "Media TV Italia 2027",
+     "fatto": "Sky Sport ha i diritti pay-TV della 38a America's Cup (terza edizione di fila su Sky), su Sky e NOW, dalla Sardegna fino al Match di Napoli.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sportefinanza.it/2026/05/13/americas-cup-2027-sky-diritti-tv-italia/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Sky ha acquisito i diritti tv per la pay TV della 38a America's Cup, terza edizione consecutiva.",
+     "data_pubblicazione": "2026-05-13",
+     "note": "solo snippet; anche dtti.it e saily.it 2026-05-13."
+    },
+    {
+     "id": "med-06",
+     "area": "Media app",
+     "fatto": "Nessuna app ufficiale dell'AC38 trovata con certezza: le fonti trovate parlano di app di edizioni passate (AC34/AC35, Emmy 2014). Per il 2026 si indicano sito, YouTube e app dei broadcaster.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.techradar.com/how-to-watch/sport/how-to-watch-americas-cup-2026-27-free-streams",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato app ufficiale 38th AC su App Store/Google Play: trovate solo app di edizioni precedenti.",
+     "note": "Precedente AC34-35: app ufficiale con viewer 3D e tracking live (yachtsandyachting.com, virtualeye.tv). Da controllare negli store."
+    },
+    {
+     "id": "med-07",
+     "area": "Media dati",
+     "fatto": "Nessuna API pubblica documentata per risultati o tracking dell'AC38. Precedente AC37/2024: file JSON di gara scaricabili dal sito ufficiale ma senza documentazione (formato da ricostruire). Precedente 2014: dati AC34 resi pubblici.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://stevewardaustin.substack.com/p/data-analytics-1-americas-cup-yacht?r=2k0zc",
+     "fonte_tipo": "altro",
+     "evidenza": "Race committee did not provide a key to the JSON format files, requiring reverse-engineering.",
+     "note": "solo snippet. Nessuna pagina 'developer/API' trovata su americascup.com. Precedente 2014: sailingscuttlebutt.com/2014/12/22/americas-cup-data-now-available/."
+    },
+    {
+     "id": "med-08",
+     "area": "Media diritti",
+     "fatto": "Termini d'uso di americascup.com: marchi, foto e contenuti sono di America's Cup o licenziatari; vietato uso commerciale senza autorizzazione scritta e rimozione di avvisi di copyright; per i media rinvio all'accredito stampa. La pagina è ancora intitolata 'AC37'.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/legal/terms",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Owns or licenses all copyright, trademarks... prohibits commercial use unless expressly authorized in writing.",
+     "note": "snippet ufficiale, da aprire. Titolo pagina 'TERMS AND CONDITIONS (AC37)': verificare se esiste versione AC38. Guida non ufficiale: non usare loghi/foto ufficiali senza permesso."
+    },
+    {
+     "id": "mis-02",
+     "area": "Misure AC75",
+     "fatto": "AC75 (dati edizione 2024): lunghezza fuori tutto 22,86 m, scafo 20,70 m, larghezza 5,00 m, albero 26,50 m, peso circa 6.450 kg a vuoto e 7.600 kg in regata, randa 145 m², fiocco 90 m².",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://en.wikipedia.org/wiki/AC75",
+     "fonte_tipo": "altro",
+     "evidenza": "LOA 22.86 m, hull 20.70 m, beam 5.00 m, mast 26.50 m, 6,450 kg lightship, main 145 m², jib 90 m².",
+     "note": "solo snippet Wikipedia; valori probabilmente riferiti ad AC37. Con la regola AC38 (5 persone, batterie) peso/equipaggio possono cambiare: verificare su americascup.com/the-boats e Class Rule V3.01."
+    },
+    {
+     "id": "mis-03",
+     "area": "Misure AC75",
+     "fatto": "Regola di classe AC75 per l'AC38: versione V3.01 del 9 settembre 2025, pubblicata con le Technical Regulations. Il sistema a batteria si chiama RigEPS e simula la potenza dei vecchi ciclisti.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.americascup.com/files/m26296_2025-09-09-AC75-Class-Rule-V301.pdf",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "AC75 CLASS RULE V3.01 9 September 2025.",
+     "data_pubblicazione": "2025-09-09",
+     "note": "snippet ufficiale, da aprire; RigEPS da boatingnz.co.nz 2025-09. Comunicato: americascup.com/news/3839."
+    },
+    {
+     "id": "mis-04",
+     "area": "Misure AC75",
+     "fatto": "Velocità massima AC75: 55,6 nodi (102,9 km/h) di INEOS Britannia, regata 8 del 1 ottobre 2024 a Barcellona. Precedente Barcellona 2024.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://blog.geogarage.com/2024/10/neos-britannia-close-out-louis-vuitton.html",
+     "fonte_tipo": "altro",
+     "evidenza": "INEOS Britannia's AC75 hit a top speed of 55.6 knots (102.9 km/h) during Race 8 on October 1, 2024.",
+     "data_pubblicazione": "2024-10",
+     "note": "solo snippet; fonte non ufficiale, da confermare con fonte ufficiale."
+    },
+    {
+     "id": "mis-05",
+     "area": "Misure AC40",
+     "fatto": "AC40: lunghezza 11,80 m, larghezza 3,38 m, albero 17,92 m, pescaggio in banchina 3,5 m, peso circa 2.000 kg, randa 63 m², fiocchi 38/32/26 m², 4 persone (2 timonieri e 2 regolatori), sistemi a batteria.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://en.wikipedia.org/wiki/AC40",
+     "fonte_tipo": "altro",
+     "evidenza": "LOA 11.80 m, beam 3.38 m, mast 17.92 m, 2,000 kg estimated, main 63 m², 4 crew.",
+     "note": "solo snippet; dati coerenti con scheda McConaghy (boats.com). Misure dell'utente (11,8 m, 3,38 m, 17,9 m) risultano coerenti."
+    },
+    {
+     "id": "mis-06",
+     "area": "Misure AC40",
+     "fatto": "Velocità massima di progetto AC40: circa 44 nodi (calcolo: 39 nodi di bolina, 44 in poppa).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.boats.com/sailing-boats/2026-mcconaghy-ac40-8500709",
+     "fonte_tipo": "altro",
+     "evidenza": "Target top speed 44 knots (39 knots upwind, 44 knots downwind).",
+     "note": "solo snippet; è una velocità di progetto, non un record misurato."
+    },
+    {
+     "id": "mis-07",
+     "area": "Disegni/3D",
+     "fatto": "Nessun modello 3D o disegno ufficiale di AC75/AC40 con licenza di riuso (es. Creative Commons) trovato; esistono solo modelli 3D commerciali di terzi.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.cgtrader.com/3d-models/watercraft/recreational-watercraft/prada-cup-ac75-sailboat-luna-rossa",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato media kit, 3D, Creative Commons: solo marketplace (CGTrader, TurboSquid, RenderHub) con licenze commerciali/editoriali.",
+     "note": "I modelli di terzi possono violare marchi dei team: evitarli nella guida."
+    }
+   ],
+   "contraddizioni": [
+    {
+     "descrizione": "Cagliari 2026: il titolo di Sailweb dice che 'Luna Rossa 2' (Women & Youth) ha vinto la classifica generale; altre fonti dicono che la finale l'ha vinta la squadra principale di Luna Rossa (Burling/Tita), mentre Luna Rossa W&Y ha vinto solo il trofeo Women & Youth ed è finita 3a (59 pt).",
+     "fonti": [
+      "https://www.sailweb.co.uk/2026/05/24/americas-cup-preliminary-regatta-luna-rossa-2-take-overall-victory-in-cagliari/",
+      "https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/"
+     ]
+    },
+    {
+     "descrizione": "Una sintesi di ricerca ha attribuito a Cagliari i punteggi 71/56/48 e GB1 42 / GB2 36; questi numeri appartengono invece a Napoli (Scuttlebutt 27/9/2026). Cagliari: LR 63, ETNZ 60 ... GB1 27.",
+     "fonti": [
+      "https://www.sailingscuttlebutt.com/2026/09/27/americas-cup-italy-remains-on-form/",
+      "https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/"
+     ]
+    },
+    {
+     "descrizione": "Napoli 2026: uno snippet riportava una classifica confusa (LR1 44, LR2 44, Alinghi 44, GB1 42); le fonti più chiare danno LR 71, ETNZ 56, La Roche-Posay 48, poi quattro team a 44 (ARC USA, ETNZ W&Y, LR2 W&Y, Alinghi), GB1 42, GB2 ultimo.",
+     "fonti": [
+      "https://www.sailingscuttlebutt.com/2026/09/27/americas-cup-italy-remains-on-form/",
+      "https://www.livesaildie.com/la-roche-posay-racing-team-takes-third-in-naples-after-two-race-wins-and-despite-two-capsizes/"
+     ]
+    },
+    {
+     "descrizione": "GB2 a Napoli: 36 punti dichiarati ma i piazzamenti (3-6-7-8-7-6-5-9) con la scala 11-posizione danno 37: possibile penalità, oppure errore.",
+     "fonti": [
+      "https://www.sailingscuttlebutt.com/2026/09/27/americas-cup-italy-remains-on-form/"
+     ]
+    },
+    {
+     "descrizione": "Lo snippet del comunicato 'Grazie Napoli' parla di 'seven AC75 challengers' nella Louis Vuitton Cup, ma gli sfidanti iscritti sono 6 (7 team contando il Defender).",
+     "fonti": [
+      "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+      "https://www.sailingscuttlebutt.com/2026/08/31/new-challenge-for-americas-cup/"
+     ]
+    },
+    {
+     "descrizione": "Luna Rossa: timonieri nominati Burling e Tita, ma nella finale di Napoli hanno timonato Burling e Gradoni (non è per forza una contraddizione: possibile rotazione).",
+     "fonti": [
+      "https://marineindustrynews.co.uk/peter-burling-joins-luna-rossa-for-38th-americas-cup/",
+      "https://www.boatingnz.co.nz/2026/09/luna-rossa-beats-team-nz-in-the-americas-cup-naples-final/"
+     ]
+    }
+   ],
+   "da_controllare_utente": [
+    {
+     "url": "https://www.americascup.com/results",
+     "cosa": "Classifiche ufficiali complete di Cagliari e Napoli (ordine dei pari a 44, punti GB2, margine finale 17 s)."
+    },
+    {
+     "url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+     "cosa": "Testo esatto su equipaggio di 5, velista donna e regole di nazionalità."
+    },
+    {
+     "url": "https://www.americascup.com/files/m26296_2025-09-09-AC75-Class-Rule-V301.pdf",
+     "cosa": "Misure e pesi AC75 validi per l'AC38 (Class Rule V3.01)."
+    },
+    {
+     "url": "https://www.americascup.com/the-boats",
+     "cosa": "Schede ufficiali AC75/AC40 con unità di misura."
+    },
+    {
+     "url": "https://www.americascup.com/legal/terms",
+     "cosa": "Termini d'uso: esiste una versione AC38? Regole su foto, marchi, embed."
+    },
+    {
+     "url": "https://www.youtube.com/@americascup",
+     "cosa": "Handle esatto del canale e se l'embed dei video è permesso."
+    },
+    {
+     "url": "https://www.americascup.com/it/news/3924_LAMERICAS-CUP-PARTNERSHIP-ASSEGNA-ALLA-RAI-I-DIRITTI-MEDIA-PER-LITALIA-DELLA-LOUIS-VUITTON-38-AMERICAS-CUP",
+     "cosa": "Dettaglio diritti Rai 2027 (canali, RaiPlay)."
+    },
+    {
+     "url": "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+     "cosa": "Date ufficiali 2027 e numero di sfidanti nella Stage 1."
+    },
+    {
+     "url": "https://www.americascup.com/teams/83_Team-Australia",
+     "cosa": "Pagine team ufficiali: club, persone chiave, siti web di tutti i 7 team (club di Luna Rossa, Alinghi, La Roche-Posay, ETNZ non verificati)."
+    }
+   ],
+   "sintesi": "Team: le fonti di stampa confermano 7 team, cioè il Defender ETNZ più 6 sfidanti: GB1 (Challenger of Record, Royal Yacht Squadron Racing), Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, ARC Team USA (Sail Newport) e Team Australia (Royal Prince Edward YC). La regola AC75 per l'AC38 (Protocollo del 12/8/2025) prevede 5 velisti invece di 8 e almeno una donna. Almeno 3 devono avere la nazionalità del team (due velisti più la velista), fino a 2 possono essere stranieri: l'affermazione di partenza è coerente, ma va letta nel PDF ufficiale. Cagliari (8 barche): vince Luna Rossa, che in finale batte ETNZ di circa 33 s; GB1 ultima con 27 punti. Napoli (9 barche, 6 team, Australia assente): LR 71, ETNZ 56, La Roche-Posay 48, poi quattro team a 44 punti (ARC USA 4a), GB1 42, GB2 ultima. In finale Luna Rossa (Burling/Gradoni) batte ETNZ di circa 17 s. Media: dirette gratuite su YouTube e sul sito americascup.com. In Italia la Rai ha i diritti in chiaro (annuncio ufficiale, marzo 2026) e Sky/NOW quelli pay. Per il 2026 le dirette sono su Rai 2/RaiPlay e Sky Sport Max. Non si trovano un'app ufficiale AC38 né un'API pubblica documentata. I termini d'uso vietano l'uso commerciale di marchi e foto. Misure: AC40 11,8 m x 3,38 m, albero 17,92 m, circa 2.000 kg, 4 persone, circa 44 nodi di progetto. AC75 (dati 2024, da Wikipedia): scafo 20,7 m, larghezza 5 m, albero 26,5 m. La regola AC38 è la Class Rule V3.01 del 9/9/2025. Nessun modello 3D ufficiale con licenza di riuso. Nessuna pagina ufficiale è stata aperta davvero, perché WebFetch è bloccato: nessun dato è CONFERMATO."
+  },
+  {
+   "items": [
+    {
+     "id": "leg-01",
+     "area": "Marchi",
+     "fatto": "America's Cup Properties Inc. (ACPI) è la società che detiene i diritti di proprietà intellettuale sui cosiddetti 'America's Cup Marks': le parole 'America's Cup', la sagoma del trofeo e segni simili.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.sail-world.com/-67850",
+     "fonte_tipo": "stampa",
+     "evidenza": "ACPI 'holds the intellectual property rights and copyright' degli 'America's Cup Marks': silhouette, parole 'America's Cup' e simili.",
+     "note": "solo snippet; articolo sull'accordo legale tra i club. Stessa frase su seabreeze.com.au"
+    },
+    {
+     "id": "leg-02",
+     "area": "Marchi",
+     "fatto": "Negli USA il marchio 'AMERICA'S CUP' (numero di serie USPTO 73084527, depositato il 20 aprile 1976) risulta intestato ad America's Cup Properties, Inc.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://trademarks.justia.com/owners/america-s-cup-properties-inc-2062182",
+     "fonte_tipo": "altro",
+     "evidenza": "Marchio 'AMERICA'S CUP' depositato il 20/04/1976, titolare America's Cup Properties, Inc., serial 73084527.",
+     "note": "solo snippet; Justia è un aggregatore dei dati USPTO, non il registro ufficiale"
+    },
+    {
+     "id": "leg-03",
+     "area": "Marchi",
+     "fatto": "Non ho trovato online, tramite ricerca web, le registrazioni EUIPO o WIPO di 'America's Cup' o 'Coppa America' con i relativi titolari. Vanno controllate direttamente su TMview o sul WIPO Global Brand Database.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.tmview.europa.eu/",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato 'Coppa America' e 'America's Cup' con EUIPO, WIPO e ACPI: nessun risultato di registro nei risultati di ricerca.",
+     "note": "Non vuol dire che il marchio UE non esista: le banche dati non erano consultabili da qui (WebFetch bloccato)"
+    },
+    {
+     "id": "leg-04",
+     "area": "Marchi",
+     "fatto": "Il marchio 'LOUIS VUITTON CUP' appartiene a Louis Vuitton Malletier (Parigi). Una decisione WIPO del 2000 cita un marchio comunitario n. 000015610, registrato il 16/03/1998 (classi 16, 18, 25).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.wipo.int/amc/en/domains/decisions/html/2000/d2000-0722.html",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Decisione WIPO: Louis Vuitton Malletier organizza la regata 'Louis Vuitton Cup'; marchio comunitario 000015610 registrato il 16/03/1998.",
+     "note": "snippet ufficiale, da aprire. È una decisione su nomi a dominio del 2000: lo stato attuale del marchio va verificato su TMview"
+    },
+    {
+     "id": "leg-05",
+     "area": "Privacy - YouTube",
+     "fatto": "La modalità 'privacy avanzata' (youtube-nocookie.com) non imposta cookie HTML al caricamento della pagina. Quando l'utente preme Play, però, YouTube imposta cookie. Inoltre usa il Local Storage per salvare un identificativo del dispositivo già prima della riproduzione.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://cloudfour.com/thinks/youtube-no-cookies-adds-cookies/",
+     "fonte_tipo": "altro",
+     "evidenza": "Premendo Play un cookie YouTube viene impostato; il Local Storage salva un identificativo unico anche prima della riproduzione.",
+     "note": "solo snippet; blog tecnici (anche axbom.com e stefanjudis.com). Nessuna pagina Google aperta su questo punto"
+    },
+    {
+     "id": "leg-06",
+     "area": "Termini YouTube",
+     "fatto": "Secondo le regole per sviluppatori di YouTube, il player incorporato è soggetto ai Termini delle API di YouTube. Non si può modificare o bloccare la riproduzione standard, non si possono nascondere o cambiare titolo e miniatura e non si possono bloccare i link o le funzioni del player.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://developers.google.com/youtube/terms/required-minimum-functionality",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'must not modify, add to or block the standard playback'; i metadati (titolo, miniatura) devono restare visibili e non modificati.",
+     "note": "snippet ufficiale, da aprire. Vedi anche developers.google.cn/youtube/terms/developer-policies-guide"
+    },
+    {
+     "id": "leg-07",
+     "area": "Privacy - Cookie",
+     "fatto": "Il Garante Privacy ha approvato le 'Linee guida cookie e altri strumenti di tracciamento' il 10 giugno 2021. Sono uscite in Gazzetta Ufficiale il 9 luglio 2021 e i siti dovevano adeguarsi entro il 9 gennaio 2022.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.agendadigitale.eu/sicurezza/privacy/linee-guida-cookie-del-garante-privacy-le-novita-del-testo-in-gazzetta-ufficiale/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Approvate il 10/06/2021, in Gazzetta il 9/07/2021; adeguamento entro il 9/01/2022.",
+     "note": "solo snippet; anche assolombarda.it e lavoripubblici.it"
+    },
+    {
+     "id": "leg-08",
+     "area": "Privacy - Cookie",
+     "fatto": "Per il Garante i cookie analytics sono equiparati ai tecnici, e quindi non serve il consenso, solo a queste condizioni: statistiche aggregate per un solo sito o app; per i cookie di terze parti, almeno l'ultima parte dell'indirizzo IP mascherata; la terza parte non incrocia i dati con altre informazioni e non li passa ad altri.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.cybersecurity360.it/?p=47236",
+     "fonte_tipo": "stampa",
+     "evidenza": "Analytics tecnici solo se aggregati, IP mascherato almeno nella quarta componente, niente incroci con altri dati né cessione a terzi.",
+     "note": "solo snippet; il paragrafo 7.2 permette statistiche su più domini dello stesso editore. Testo ufficiale sul sito del Garante, da aprire"
+    },
+    {
+     "id": "leg-09",
+     "area": "Privacy - Cookie",
+     "fatto": "Regole del banner secondo le Linee guida 2021: al primo accesso solo cookie tecnici; il tasto 'X' di chiusura vale come rifiuto e deve avere lo stesso peso di 'Accetta'; lo scroll non vale come consenso; i cookie wall sono vietati; la scelta non va richiesta di nuovo prima di 6 mesi.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.lavoripubblici.it/news/stampa/26302",
+     "fonte_tipo": "stampa",
+     "evidenza": "Consenso libero e attivo; 'X' con pari evidenza di 'Accetta'; scroll non è consenso; cookie wall vietati; riproposta non prima di sei mesi.",
+     "note": "solo snippet"
+    },
+    {
+     "id": "leg-10",
+     "area": "Privacy - Contenuti di terze parti",
+     "fatto": "Per i cookie di terze parti (per esempio quelli di video o social incorporati) gli obblighi di informativa e consenso spettano alle terze parti. Il gestore del sito, come intermediario, deve però inserire nell'informativa estesa i link aggiornati alle loro informative e ai loro moduli di consenso.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.puntosicuro.it/privacy-C-89/cookie-le-nuove-linee-guida-dal-garante-privacy-AR-21429/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Obblighi in capo alle terze parti; il titolare del sito deve inserire link aggiornati alle loro informative e moduli di consenso.",
+     "note": "solo snippet. Nessuna indicazione specifica trovata su youtube-nocookie nelle Linee guida"
+    },
+    {
+     "id": "leg-11",
+     "area": "Privacy - Analytics",
+     "fatto": "Vercel Web Analytics non usa cookie. Riconosce il visitatore con un hash calcolato dalla richiesta, valido un solo giorno e poi azzerato, quindi non si possono seguire i visitatori tra giorni diversi o tra siti diversi.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://vercel.com/docs/analytics",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'does not use cookies'; visitatori identificati da un hash della richiesta, valido per un solo giorno e poi azzerato.",
+     "note": "snippet ufficiale, da aprire. Vedi anche vercel.com/docs/analytics/privacy-policy"
+    },
+    {
+     "id": "leg-12",
+     "area": "Privacy - Minori",
+     "fatto": "In Italia l'art. 2-quinquies del Codice Privacy (introdotto dal D.lgs. 101/2018) fissa a 14 anni l'età per dare da soli il consenso ai servizi della società dell'informazione. Sotto i 14 anni il consenso lo dà chi ha la responsabilità genitoriale. L'informativa deve essere chiara e semplice per il minore.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.cybersecurity360.it/legal/privacy-dati-personali/gdpr-e-minori-gestire-consenso-e-privacy-sui-social-che-ce-da-sapere/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Art. 2-quinquies: consenso autonomo dai 14 anni per i servizi della società dell'informazione; sotto, lo danno i genitori.",
+     "note": "solo snippet; anche orizzontescuola.it"
+    },
+    {
+     "id": "leg-13",
+     "area": "Privacy - Email",
+     "fatto": "Con un provvedimento pubblicato il 4 giugno 2025 (n. 330/2025) il Garante ha multato di 45.000 euro un'azienda per email di marketing senza consenso provato. Il double opt-in (email di conferma con link) non è un obbligo di legge esplicito, ma è trattato di fatto come standard minimo per provare il consenso.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://privacymatters.dlapiper.com/2025/07/italy-marketing-privacy-consent-is-double-opt-in-now-mandatory/",
+     "fonte_tipo": "stampa",
+     "evidenza": "Provv. n. 330/2025, multa 45.000 euro; double opt-in non obbligo esplicito ma 'de facto' standard minimo di diligenza.",
+     "note": "solo snippet; anche iubenda.com e cms.law. Il caso riguarda email di marketing: per un semplice avviso 'avvisami' va valutato con un esperto"
+    },
+    {
+     "id": "leg-14",
+     "area": "Giochi e concorsi",
+     "fatto": "Il DPR 430/2001 regola le 'manifestazioni a premio'. Nei concorsi a premio l'assegnazione dei premi dipende dalla sorte, da un congegno o dall'abilità dei partecipanti. L'art. 6 esclude alcuni casi, per esempio i concorsi per opere letterarie, artistiche o scientifiche in cui il premio riconosce il merito personale.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.bo.camcom.gov.it/sites/default/files/Tutela-del-mercato-e-del-consumatore/concorsi-a-premio/DPR%2026%20ottobre%202001%20nr%20430.pdf",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Concorsi: attribuzione dei premi per sorte, congegno, abilità; art. 6 esclude premi come riconoscimento di merito personale.",
+     "note": "snippet ufficiale, da aprire (testo del DPR sul sito della Camera di Commercio di Bologna). Che un gioco di pronostici SENZA alcun premio sia fuori dal DPR è una deduzione, non trovata scritta in una fonte"
+    },
+    {
+     "id": "leg-15",
+     "area": "Giochi e concorsi",
+     "fatto": "Nei concorsi a premio italiani i premi non possono essere denaro, titoli, azioni, quote di fondi o polizze vita. Lo scopo è evitare che i concorsi diventino un modo per aggirare il monopolio statale su giochi e lotterie.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.filodiritto.com/concorsi-premio-la-normativa-e-il-chiarimento-dellagenzia-dei-monopoli-sui-premi-oro",
+     "fonte_tipo": "stampa",
+     "evidenza": "I premi non possono consistere in denaro, titoli, azioni o polizze vita, per non aggirare il monopolio statale dei giochi.",
+     "note": "solo snippet"
+    },
+    {
+     "id": "leg-16",
+     "area": "Giochi e concorsi",
+     "fatto": "Non ho trovato regole o chiarimenti specifici di ADM (Agenzia Dogane e Monopoli) su giochi di pronostici online gratuiti e senza premi.",
+     "stato": "NON_ANCORA_USCITO",
+     "fonte_url": "https://www.adm.gov.it/",
+     "fonte_tipo": "nessuna",
+     "evidenza": "Cercato 'concorsi a premio DPR 430 pronostici gratuiti senza premi ADM': solo guide generali delle Camere di Commercio, nulla di specifico.",
+     "note": "Il sito ADM non è stato aperto (WebFetch bloccato)"
+    },
+    {
+     "id": "leg-17",
+     "area": "Pubblicità - Influencer",
+     "fatto": "AGCOM ha approvato in via definitiva le Linee guida e il Codice di condotta per gli influencer il 23 luglio 2025, dopo la consultazione della delibera 472/24/CONS. Le regole valgono solo per gli influencer 'rilevanti': almeno 500.000 follower o 1 milione di visualizzazioni medie al mese su una piattaforma.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.teleborsa.it/DettaglioNews/17_2025-07-25_TLB/Influencer-Agcom-approva-Linee-guida-e-Codice-di-Condotta.html",
+     "fonte_tipo": "stampa",
+     "evidenza": "Approvate il 23 luglio 2025; si applicano a influencer con 500mila follower o un milione di visualizzazioni medie mensili.",
+     "note": "solo snippet. Il numero della delibera finale non è stato trovato. Un piccolo sito di fan probabilmente non rientra nella soglia (deduzione)"
+    },
+    {
+     "id": "leg-18",
+     "area": "Pubblicità - Autodisciplina",
+     "fatto": "La Digital Chart dell'IAP (Istituto dell'Autodisciplina Pubblicitaria) indica come rendere riconoscibile la pubblicità online. Si usano diciture come 'pubblicità/advertising', 'promosso da', 'sponsorizzato da' oppure 'adv/ad + marca'. La versione aggiornata dà regole anche su grandezza del testo, posizione, colore e contrasto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.osborneclarke.com/it/insights/influencer-marketing-le-novita-introdotte-nella-versione-aggiornata-del-regolamento",
+     "fonte_tipo": "stampa",
+     "evidenza": "Diciture ammesse: 'pubblicità/advertising', 'promosso da', 'sponsorizzato da', 'adv/ad + brand'; regole su font, posizione, contrasto.",
+     "note": "solo snippet. PDF IAP: iap.it/wp-content/uploads/2018/12/Digital-Chart-IAP-VERSIONE-ONLINE-ITA-2.pdf. Non ho trovato nello snippet una regola specifica sui link di affiliazione"
+    },
+    {
+     "id": "leg-19",
+     "area": "Pubblicità - AGCM",
+     "fatto": "Per il D.lgs. 145/2007 la pubblicità deve essere chiaramente riconoscibile come tale; se non lo è, si parla di pubblicità occulta. L'AGCM (Antitrust) interviene dal 2017 su influencer e marchi con azioni di moral suasion.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.agendadigitale.eu/mercati-digitali/influencer-e-pubblicita-quale-trasparenza-che-fare/",
+     "fonte_tipo": "stampa",
+     "evidenza": "La pubblicità deve essere 'chiaramente riconoscibile'; l'AGCM è intervenuta dal 2017 sugli influencer.",
+     "note": "solo snippet. Non ho trovato una guida AGCM dedicata ai link di affiliazione"
+    },
+    {
+     "id": "leg-20",
+     "area": "Privacy - Google Fonts",
+     "fatto": "Il Tribunale di Monaco di Baviera (LG München I, sentenza del 20/01/2022, n. 3 O 17493/20) ha condannato un sito a pagare 100 euro a un visitatore. Il sito caricava Google Fonts dai server di Google e così passava l'indirizzo IP a Google senza consenso (art. 82 GDPR).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.ihk.de/bergische/recht-und-steuern/wettbewerbsrecht/google-fonts-5646176",
+     "fonte_tipo": "altro",
+     "evidenza": "LG München, 20.01.2022, Az. 3 O 17493/20: 100 euro di danni per IP trasmesso a Google Fonts senza consenso.",
+     "note": "solo snippet; fonte della Camera di Commercio tedesca (IHK). È una sentenza tedesca, non italiana"
+    },
+    {
+     "id": "leg-21",
+     "area": "Privacy - Google Fonts",
+     "fatto": "Dopo la sentenza di Monaco molte aziende tedesche hanno ricevuto diffide con richieste di risarcimento da 100 a 170 euro per l'uso di Google Fonts caricati da remoto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.zdk-hamburg.de/blog/2022/10/warnung-vor-abmahnungen-wegen-google-fonts",
+     "fonte_tipo": "stampa",
+     "evidenza": "Ondata di diffide con richieste da 100 a 170 euro per Google Fonts incorporati.",
+     "note": "solo snippet"
+    },
+    {
+     "id": "tec-01",
+     "area": "Vercel - Errori",
+     "fatto": "L'errore Vercel 'git_info_fail' corrisponde al messaggio 'Fetching git information failed': il deploy fallisce subito perché Vercel non riesce a leggere i dati del commit dal repository. Tra le soluzioni riportate dagli utenti: fare il deploy con la CLI oppure scollegare e ricollegare l'account GitHub.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://github.com/vercel/vercel/discussions/4961",
+     "fonte_tipo": "altro",
+     "evidenza": "Discussione 'Suddenly can't deploy anymore with \"Fetching git information failed\"'; soluzioni proposte: CLI, riconnessione GitHub.",
+     "note": "solo snippet; anche community.vercel.com/t/push-and-deploy-fails/9159. La pagina ufficiale vercel.com/docs/errors/error-list compare nei risultati ma il significato non è stato verificato lì"
+    },
+    {
+     "id": "tec-02",
+     "area": "Vercel - Git",
+     "fatto": "Con il piano Hobby e un repository privato, il deploy viene bloccato se l'autore del commit non è il proprietario del team Hobby. Il messaggio dice che l'autore non ha accesso al progetto e che Hobby non supporta la collaborazione sui repository privati. Soluzioni: passare a Pro, rendere pubblico il repository o trasferire il progetto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://community.vercel.com/t/hobby-account-private-repo-collaborators-deployment-blocked/1030",
+     "fonte_tipo": "altro",
+     "evidenza": "'commit author did not have contributing access... The Hobby Plan does not support collaboration for private repositories.'",
+     "note": "solo snippet; forum ufficiale della community Vercel. Anche vercel.com/kb/guide/commits-not-triggering-deployments (ufficiale, da aprire)"
+    },
+    {
+     "id": "tec-03",
+     "area": "Vercel - Piani",
+     "fatto": "Il piano Hobby è solo per uso personale e non commerciale. Per Vercel è commerciale ogni deploy fatto per guadagno economico. Tra gli esempi: i link di affiliazione quando sono lo scopo principale del sito e la pubblicità tipo Google AdSense. Per l'uso commerciale serve Pro o Enterprise.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://vercel.com/docs/limits/fair-use-guidelines",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Esempi di uso commerciale: 'affiliate linking as the primary purpose of the site', pubblicità come Google AdSense.",
+     "note": "snippet ufficiale, da aprire. Pochi link di affiliazione secondari non sono citati come esempio: in caso di dubbio Vercel invita a contattare il supporto"
+    },
+    {
+     "id": "tec-04",
+     "area": "Vercel - Prezzi",
+     "fatto": "Il piano Vercel Pro costa 20 dollari al mese più l'eventuale consumo extra, con un costo di 20 dollari al mese per ogni membro del team.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://examples.vercel.com/docs/accounts/plans/pro",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'$20/month + additional usage'; '$20 per user / month' per ogni membro del team.",
+     "note": "snippet ufficiale, da aprire (mirror della documentazione Vercel)"
+    },
+    {
+     "id": "tec-05",
+     "area": "Vercel - Analytics",
+     "fatto": "Con Web Analytics il piano Hobby include 50.000 eventi al mese. Gli eventi personalizzati (custom events) e un periodo di report più lungo sono disponibili solo con Pro.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://vercel.com/docs/analytics/limits-and-pricing",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Hobby: 50.000 eventi al mese; custom events e report più lunghi solo con l'upgrade a Pro.",
+     "note": "snippet ufficiale, da aprire. La durata di conservazione dei dati non compare negli snippet"
+    },
+    {
+     "id": "tec-06",
+     "area": "Vercel - Cron",
+     "fatto": "Sul piano Hobby i Cron Jobs possono girare al massimo una volta al giorno, con una precisione di un'ora: un job impostato all'1:00 parte tra l'1:00 e l'1:59. Espressioni orarie o più frequenti fanno fallire il deploy. Pro permette job ogni minuto.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://vercel.com/docs/cron-jobs/usage-and-pricing",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Hobby: una volta al giorno, precisione ±59 minuti; espressioni orarie falliscono il deploy. Pro: una volta al minuto.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tec-07",
+     "area": "Supabase - Piano Free",
+     "fatto": "Supabase mette in pausa i progetti del piano Free con poca attività in un periodo di 7 giorni. Prima manda un'email di avviso (circa una settimana prima) e poi una di conferma. Un progetto in pausa si può riattivare dalla dashboard entro 90 giorni. I progetti a pagamento non vengono mai messi in pausa.",
+     "stato": "CONFERMATO",
+     "fonte_url": "https://supabase.com/docs/guides/platform/free-project-pausing",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'pauses Free Plan projects that show low activity over a 7-day period'; ripristino possibile 'for up to 90 days'.",
+     "note": "Testo letto per intero tramite lo strumento ufficiale di ricerca nella documentazione Supabase (non via browser)"
+    },
+    {
+     "id": "tec-08",
+     "area": "Supabase - Piano Free e Pro",
+     "fatto": "Quote ufficiali di Supabase: il piano Free include 50.000 utenti attivi al mese (MAU) e 5 GB di traffico in uscita (più 5 GB da cache). Il piano Pro costa 25 dollari al mese e include 100.000 MAU e 250 GB di traffico.",
+     "stato": "CONFERMATO",
+     "fonte_url": "https://supabase.com/docs/guides/platform/manage-your-usage/monthly-active-users",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Tabella MAU: Free 50,000, Pro 100,000; esempi di fattura 'Pro Plan $25'; egress Free 5 GB / 5 GB.",
+     "note": "Letto tramite lo strumento ufficiale di ricerca docs Supabase. Egress: supabase.com/docs/guides/platform/manage-your-usage/egress"
+    },
+    {
+     "id": "tec-09",
+     "area": "Supabase - Piano Free",
+     "fatto": "Secondo guide non ufficiali, il piano Free di Supabase offre 2 progetti attivi e un database da 500 MB per progetto. Per lo spazio file le fonti danno valori diversi (1 GB o 500 MB).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://makerkit.dev/blog/saas/supabase-pricing",
+     "fonte_tipo": "stampa",
+     "evidenza": "Free tier: due progetti gratuiti, database da 500 MB, pausa dopo una settimana di inattività.",
+     "note": "solo snippet; anche costbench.com e jetadmin.io. Verificare su supabase.com/pricing"
+    },
+    {
+     "id": "tec-10",
+     "area": "Supabase - Auth",
+     "fatto": "Supabase offre l'accesso anonimo (signInAnonymously): crea un utente vero senza email o password, che si può collegare più tardi a un'email. Usa il ruolo 'authenticated' e nel token ha il campo is_anonymous, da controllare nelle regole RLS. Limite: 30 richieste all'ora per IP. È consigliato un CAPTCHA e non c'è pulizia automatica degli utenti anonimi.",
+     "stato": "CONFERMATO",
+     "fonte_url": "https://supabase.com/docs/guides/auth/auth-anonymous",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Utenti anonimi usano il ruolo authenticated, claim is_anonymous; limite 30 richieste/ora per IP; 'Automatic cleanup... not available'.",
+     "note": "Letto tramite lo strumento ufficiale di ricerca docs Supabase. Se l'utente cancella i dati del browser perde l'account"
+    },
+    {
+     "id": "tec-11",
+     "area": "Supabase - Regioni UE",
+     "fatto": "Ogni progetto Supabase ha una regione principale. In Europa ci sono tra le altre Francoforte (eu-central-1), Irlanda (eu-west-1) e Parigi (eu-west-3). La regione generica 'Europe' include anche Londra e Zurigo, che non sono nell'UE: per tenere i dati nell'UE bisogna scegliere una regione UE specifica. Supabase offre anche un DPA (accordo sul trattamento dei dati).",
+     "stato": "CONFERMATO",
+     "fonte_url": "https://supabase.com/docs/guides/security/gdpr-compliance",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "La regione generica 'Europe' include London e Zurich; per restare nell'UE scegliere una regione UE specifica; DPA disponibile.",
+     "note": "Letto tramite lo strumento ufficiale docs Supabase; l'elenco delle regioni viene da supabase.com/docs/guides/functions/regional-invocation"
+    },
+    {
+     "id": "tec-12",
+     "area": "Astro",
+     "fatto": "Astro 7.0 è uscito in versione stabile il 22 giugno 2026: compilatore riscritto in Rust, Vite 8 con il bundler Rolldown, build più veloci del 15-61% nei benchmark e route caching stabile.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://astro.build/blog/astro-7/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'Astro 7 is here'; stabile dal 22 giugno 2026; compilatore in Rust, Vite 8, build 15-61% più veloci.",
+     "note": "snippet ufficiale, da aprire. La data del 22/06/2026 viene dal riassunto della ricerca, da verificare sul post"
+    },
+    {
+     "id": "tec-13",
+     "area": "Astro",
+     "fatto": "Precedente 2026: Astro 6.0 è uscito il 10 marzo 2026 con dev server rifatto, CSP e 'live content collections' per i contenuti dinamici. Le content collections classiche restano la funzione standard per i contenuti.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://astro.build/blog/whats-new-february-2026/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Astro 6.0 rilasciato il 10 marzo 2026: dev server rifatto, compilatore Rust sperimentale, live content collections, CSP.",
+     "note": "snippet ufficiale, da aprire. Uno snippet dice che Astro è mantenuto da Cloudflare da gennaio 2026: non verificato"
+    },
+    {
+     "id": "tec-14",
+     "area": "Astro",
+     "fatto": "Astro ha il routing multilingua (i18n) integrato: lingua predefinita, lingue di ripiego (fallback) e l'opzione prefixDefaultLocale per mettere o no il prefisso (es. /it/) alla lingua principale. Con l'adapter @astrojs/vercel (o @astrojs/node) si possono anche usare domini diversi per ogni lingua.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://docs.astro.build/en/guides/internationalization/",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "prefixDefaultLocale decide se la lingua predefinita ha il prefisso; domini per lingua con @astrojs/node o @astrojs/vercel.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tec-15",
+     "area": "Next.js",
+     "fatto": "L'ultima versione di Next.js è la 16.3, uscita il 3 agosto 2026. La 16.2 era uscita il 18 marzo 2026. Next.js 17 non risulta uscito.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://nextjs.org/blog",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'Next.js 16.3 is now available' (3 agosto 2026); 16.2 il 18 marzo 2026; security release 16.2.11 LTS a luglio.",
+     "note": "snippet ufficiale, da aprire. Era annunciata una security release per il 26/08/2026"
+    },
+    {
+     "id": "tec-16",
+     "area": "Email - Resend",
+     "fatto": "Il piano gratuito di Resend include 3.000 email al mese, con un massimo di 100 al giorno, 1 dominio verificato e 30 giorni di log.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.resend.com/pricing.md",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Free: 3,000 emails/month, 100 emails/day, one verified domain, 30-day log retention.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tec-17",
+     "area": "Email - Resend",
+     "fatto": "Con Resend, per mandare email a destinatari diversi da sé stessi bisogna verificare un proprio dominio e usare un indirizzo mittente di quel dominio. Non ho trovato una frase ufficiale che citi gmail.com, ma un indirizzo Gmail non può fare da mittente verificato perché non si controllano i DNS di gmail.com (deduzione).",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://resend.com/docs/knowledge-base/403-error-resend-dev-domain",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "Per inviare ad altri destinatari bisogna verificare un dominio su resend.com/domains e usare un 'from' di quel dominio.",
+     "note": "snippet ufficiale, da aprire. Vedi anche resend.com/docs/knowledge-base/403-error-domain-mismatch"
+    },
+    {
+     "id": "tec-18",
+     "area": "Email - Brevo",
+     "fatto": "Il piano gratuito 'per sempre' di Brevo permette di inviare fino a 300 email al giorno, con contatti illimitati.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://www.brevo.com/free-smtp-server",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "'On the forever free plan you can send up to 300 emails a day' con contatti illimitati.",
+     "note": "snippet ufficiale, da aprire"
+    },
+    {
+     "id": "tec-19",
+     "area": "Email - Brevo",
+     "fatto": "I domini delle email gratuite come @gmail.com non si possono autenticare su Brevo. Se il dominio del mittente non è autenticato, Brevo cambia l'indirizzo in uno @brevosend.com (per le regole di Gmail e Yahoo in vigore da febbraio 2024), e i destinatari potrebbero segnarlo come spam. Serve un dominio proprio.",
+     "stato": "ANNUNCIATO",
+     "fonte_url": "https://help.brevo.com/hc/en-us/articles/17286219877778",
+     "fonte_tipo": "ufficiale",
+     "evidenza": "I domini di email gratuite (@gmail.com) non si autenticano; i mittenti non autenticati diventano @brevosend.com.",
+     "note": "snippet ufficiale, da aprire. Il dettaglio sulla riscrittura del mittente viene anche da captaindns.com"
+    }
+   ],
+   "contraddizioni": [
+    {
+     "descrizione": "Spazio file del piano Free di Supabase: nei riassunti della ricerca compaiono sia 1 GB sia 500 MB. La documentazione ufficiale letta non dava questo dato. Verificare su supabase.com/pricing.",
+     "fonti": [
+      "https://makerkit.dev/blog/saas/supabase-pricing",
+      "https://costbench.com/software/database-as-service/supabase/free-plan/",
+      "https://supabase.com/pricing"
+     ]
+    },
+    {
+     "descrizione": "Versione di Next.js: una fonte secondaria dice che al 1° luglio 2026 la versione stabile era la 16.2.10, con la 16.3 in anteprima. Il blog ufficiale annuncia la 16.3 disponibile dal 3 agosto 2026. Probabilmente è solo una differenza di data (fonte secondaria più vecchia).",
+     "fonti": [
+      "https://www.versio.io/es/product-release-end-of-life-eol-vercel-nextjs.html",
+      "https://nextjs.org/blog"
+     ]
+    }
+   ],
+   "da_controllare_utente": [
+    {
+     "url": "https://www.tmview.europa.eu/",
+     "cosa": "Cercare 'AMERICA'S CUP', 'COPPA AMERICA' e 'LOUIS VUITTON CUP': titolare, classi e stato dei marchi UE e internazionali"
+    },
+    {
+     "url": "https://vercel.com/docs/limits/fair-use-guidelines",
+     "cosa": "Leggere la definizione esatta di uso commerciale e il punto sui link di affiliazione ('primary purpose') prima di usare il piano Hobby"
+    },
+    {
+     "url": "https://vercel.com/docs/errors/error-list",
+     "cosa": "Verificare se 'git_info_fail' è documentato ufficialmente e con quale spiegazione"
+    },
+    {
+     "url": "https://supabase.com/pricing",
+     "cosa": "Controllare le quote del piano Free (database 500 MB, spazio file, numero di progetti attivi)"
+    },
+    {
+     "url": "https://www.garanteprivacy.it/",
+     "cosa": "Aprire il testo ufficiale delle Linee guida cookie del 10/06/2021 (par. 7.2 sugli analytics) e il provvedimento n. 330/2025 sul double opt-in"
+    },
+    {
+     "url": "https://www.agcom.it/",
+     "cosa": "Trovare il numero della delibera finale di luglio 2025 su Linee guida e Codice di condotta per gli influencer"
+    },
+    {
+     "url": "https://www.adm.gov.it/",
+     "cosa": "Controllare se ADM o il MIMIT hanno chiarimenti sui giochi di pronostici gratuiti senza premi"
+    },
+    {
+     "url": "https://astro.build/blog/astro-7/",
+     "cosa": "Confermare la data di uscita di Astro 7.0 e le novità su i18n e content collections"
+    }
+   ],
+   "sintesi": "Ho raccolto 21 fatti legali e 19 fatti tecnici. Solo 5 sono CONFERMATI: sono pagine di Supabase lette per intero con lo strumento ufficiale della documentazione (pausa dopo 7 giorni e ripristino entro 90, MAU e prezzo Pro 25 dollari, accesso anonimo, regioni UE e DPA). WebFetch era bloccato, quindi tutto il resto si basa su snippet. Le pagine ufficiali di Vercel, Astro, Next.js, Resend e Brevo restano quindi ANNUNCIATO, con nota 'da aprire'. La ricerca nella documentazione Vercel via MCP non ha dato risultati utili. Parte legale: ACPI detiene gli 'America's Cup Marks' (lo dice la stampa) e il marchio USA risulta suo. 'Louis Vuitton Cup' è di Louis Vuitton Malletier. I registri UE e WIPO non sono stati trovati: vanno controllati su TMview. Secondo le Linee guida del Garante del 2021, gli analytics non richiedono consenso solo con dati aggregati, IP mascherato e nessun incrocio con altri dati. Vercel Analytics non usa cookie. L'età del consenso in Italia è 14 anni. Il double opt-in è uno standard di fatto dopo il provvedimento 330/2025. Nessuna fonte dice esplicitamente che un gioco di pronostici senza premi è fuori dal DPR 430/2001. Le regole AGCOM valgono solo per influencer oltre 500.000 follower. La sentenza di Monaco del 2022 su Google Fonts è tedesca. Parte tecnica: Hobby è solo per uso non commerciale, e i link di affiliazione sono commerciali se sono lo scopo principale del sito. I Cron Jobs su Hobby girano una volta al giorno. Web Analytics su Hobby include 50.000 eventi. Pro costa 20 dollari al mese per utente. Con repository privato su Hobby, i commit di autori che non sono il proprietario vengono bloccati. 'git_info_fail' significa 'Fetching git information failed' (dal forum, non dalla documentazione ufficiale). Versioni: Astro 7 stabile da giugno 2026, Next.js 16.3 da agosto 2026. Resend gratis: 3.000 email al mese, 100 al giorno. Brevo gratis: 300 al giorno. Con entrambi un mittente Gmail non va bene e serve un dominio proprio."
+  }
+ ],
+ "verify": {
+  "verifiche": [
+   {
+    "id": "big-01",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026: alla regata preliminare di Napoli (24-27 settembre 2026) il Race Village tra Piazza Vittoria e Rotonda Diaz era a ingresso gratuito (ingresso principale a Piazza Vittoria), con maxischermi per seguire le regate. Sport e Salute aveva anche allestito pontoni galleggianti con maxischermo, a turni fino a 150 persone per volta.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Ricontrollato: agi.it 21/09/2026 e geopop.it (snippet). Dettaglio pontoni da snippet ilfoglio.it. Nessuna pagina ufficiale aperta."
+   },
+   {
+    "id": "big-02",
+    "esito": "confermato",
+    "fatto_finale": "Per il 2027 il Race Village sarà sul lungomare di Viale Francesco Caracciolo; gli organizzatori parlano di punti di osservazione tipo tribuna sfruttando i promontori e del palco principale per le premiazioni. Nessuna fonte ufficiale dice ancora in modo esplicito che il Village 2027 sarà gratuito.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Testo coerente con gli snippet del comunicato ufficiale ripreso da sailingscuttlebutt (20/09/2025) e altri. Una sintesi di ricerca parla di 'eventi gratuiti' nel Village, ma senza fonte ufficiale."
+   },
+   {
+    "id": "big-03",
+    "esito": "confermato",
+    "fatto_finale": "Tribune a pagamento 2027: a fine settembre 2026 non risultano pubblicati posizioni, prezzi o date di vendita.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Ricontrollato: quifinanza.it dice che i prezzi ufficiali per Napoli 2027 non sono ancora stati annunciati. Assenza di annuncio, non prova definitiva."
+   },
+   {
+    "id": "big-04",
+    "esito": "non_verificabile",
+    "fatto_finale": "Alcuni blog non ufficiali riportano stime di prezzo (tribune 30-150 euro al giorno, hospitality 200-500 euro). Non sono dati degli organizzatori: da non usare come prezzi.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato. Meglio non citare cifre nella guida."
+   },
+   {
+    "id": "big-05",
+    "esito": "confermato",
+    "fatto_finale": "La piattaforma ufficiale di vendita biglietti per il 2027 non è ancora stata annunciata.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Nessuna ricerca ha trovato un canale di vendita ufficiale. È un'assenza di prove, non una conferma positiva."
+   },
+   {
+    "id": "big-06",
+    "esito": "confermato",
+    "fatto_finale": "Gli organizzatori hanno annunciato che nei mesi successivi saranno sviluppate esperienze VIP Hospitality, con pacchetti a terra e in mare. Fornitore, prezzi e pagina di registrazione non sono ancora pubblicati.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Frase 'VIP Hospitality experiences will be developed over the coming months offering on land and on water packages' vista negli snippet (settembre 2025). Pagina ufficiale non aperta."
+   },
+   {
+    "id": "big-07",
+    "esito": "confermato",
+    "fatto_finale": "BWA Yachting è l'Official Superyacht Programme Delivery Partner della 38a Coppa ed è l'unico canale per le prenotazioni ufficiali degli ormeggi per superyacht, gestite da un sistema centralizzato per Napoli e dintorni. In passato ha curato i programmi di Bermuda e Barcellona.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Snippet allatsea.co.uk, sailsmagazine, titolo news americascup.com/4263. Calendario sociale non ricontrollato."
+   },
+   {
+    "id": "big-08",
+    "esito": "non_verificabile",
+    "fatto_finale": "IMG Licensing gestisce le licenze ufficiali della 38a Coppa. Esiste uno shop online ufficiale; il primo Official Shop fisico ha aperto nel Race Village di Cagliari (maggio 2026) e un negozio era presente anche a Napoli a settembre 2026.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Gli snippet sul Village 2026 citano stand di merchandise, ma non IMG."
+   },
+   {
+    "id": "big-09",
+    "esito": "non_verificabile",
+    "fatto_finale": "North Sails è sponsor ufficiale per l'abbigliamento tecnico e ha lanciato la capsule 'Road to Naples', venduta nello shop ufficiale online e nei negozi del Village dal 21 maggio 2026.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "big-10",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non è emersa un'app ufficiale specifica per la 38a Coppa né una pagina newsletter per l'avviso vendita biglietti 2027. Le regate 2026 erano visibili gratis su YouTube.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato direttamente."
+   },
+   {
+    "id": "big-11",
+    "esito": "non_verificabile",
+    "fatto_finale": "americascupitalia.it ('Naples America's Cup') vende pacchetti evento, tour guidati e servizi VIP e si presenta come portale ufficiale, ma il gestore non è stato identificato. Il sito ufficiale dell'evento è americascup.com: trattarlo come sito non ufficiale.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Da segnalare ai lettori con cautela."
+   },
+   {
+    "id": "big-12",
+    "esito": "non_verificabile",
+    "fatto_finale": "Esistono altri siti con nomi simili all'evento (es. acnaples2027.com) e molti operatori privati che vendono uscite in barca (GetYourGuide, Ahoy Days, charter). Non sono canali ufficiali.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "big-13",
+    "esito": "non_verificabile",
+    "fatto_finale": "Nessun avviso ufficiale anti-truffa sui biglietti trovato. La stampa ha raccontato una truffa ai danni di aziende con 'contratti fantasma' legati all'America's Cup (non rivolta ai tifosi).",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "big-14",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente Barcellona 2024: Race Village al Moll de la Fusta e due Fanzone (Plaça del Mar e Bogatell) gratuiti, ma a capienza limitata.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "big-15",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente Barcellona 2024: l'hospitality ufficiale era l'AC37 Club (maxischermi, commento, cibo e bevande), da circa 500 euro al giorno; 550 euro per alcuni eventi; esperienze premium 750-5.000 euro.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Prezzi da stampa, non dalla pagina ufficiale."
+   },
+   {
+    "id": "big-16",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente Barcellona 2024: biglietti per barche spettatori vicino al campo di regata venduti da Las Golondrinas e altri operatori (catamarani, caicchi, yacht).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; non chiaro se operatori ufficiali."
+   },
+   {
+    "id": "big-17",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: non risultano hospitality ufficiale a pagamento né tribune a pagamento alla regata preliminare di Napoli.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato. Le fonti ricontrollate parlano solo di Village gratuito."
+   },
+   {
+    "id": "big-18",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: grande affluenza sul lungomare. Il Mattino parla di 135mila presenze nei primi tre giorni; ANSA di oltre 100mila ingressi nell'ultimo giorno. Le due cifre misurano cose diverse.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Prima dell'evento se ne attendevano oltre 60mila (geopop)."
+   },
+   {
+    "id": "big-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per il 2027 la stampa riporta che via Caracciolo potrebbe restare chiusa al traffico per circa 3 mesi, da maggio a luglio. Non esiste ancora un'ordinanza ufficiale.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Due ricerche mirate non hanno ritrovato l'articolo fanpage/napolitoday. Da trattare come voce di stampa."
+   },
+   {
+    "id": "big-20",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: il Comune di Napoli ha installato pedane accessibili sugli scogli e una passerella rialzata per far seguire le regate anche a persone con disabilità e bambini.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La passerella rialzata compare negli snippet (agi). Le pedane accessibili per disabili non sono state ritrovate."
+   },
+   {
+    "id": "mar-01",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026: l'ordinanza n. 99/2026 della Capitaneria di Porto di Napoli ha creato una 'Race Area' delimitata da boe e segnali elettronici, dove erano vietati navigazione, transito, sosta e ancoraggio alle unità non autorizzate.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da snippet italianismo.com.br e altri. Il testo dell'ordinanza non è stato aperto."
+   },
+   {
+    "id": "mar-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: secondo NapoliToday i divieti valevano dalle 8 di lunedì 21 settembre alle 8 del 28 settembre; Nautica Report indica il 22 settembre.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La data di inizio non è stata ritrovata. La contraddizione resta."
+   },
+   {
+    "id": "mar-03",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: navi e aliscafi per le isole hanno seguito rotte alternative fuori dal perimetro; circa 10 minuti in più per gli aliscafi e quasi 20 per i traghetti.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Le rotte alternative sono confermate; i minuti in più no."
+   },
+   {
+    "id": "mar-04",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: chi voleva vedere le regate con la propria barca doveva registrarsi online sul sito ufficiale (Watch on Water), indicando tipo e nome della barca, e riceveva briefing su orari, meteo e sicurezza.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Le aree spettatori in mare sono confermate (geopop), la procedura di registrazione no. Pagina ufficiale bloccata."
+   },
+   {
+    "id": "mar-05",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: zone a colori. Rossa = barche accreditate. Blu = spettatori: barche oltre 10 m sul lato est, sotto 10 m verso costa. Grigia = vietato fermarsi. 20 boe numerate.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato nel dettaglio."
+   },
+   {
+    "id": "mar-06",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: boe posizionate entro le 12:30, barche spettatori nelle aree entro le 13:30, regate tra le 14 e le 16 (25-27 settembre).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-07",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: velocità massima 5 nodi, vietato fare onda, obbligo di seguire i marshal in acqua.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-08",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: nelle zone spettatori le barche dovevano restare in moto e mobili, niente ancora (salvo emergenza) e niente navigazione a vela; le unità senza motore non potevano entrare nelle aree riservate.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. L'esclusione di kayak e SUP è una deduzione."
+   },
+   {
+    "id": "mar-09",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: vietato nuotare e tuffarsi vicino al campo di regata; vietato far volare droni non autorizzati.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-10",
+    "esito": "non_verificabile",
+    "fatto_finale": "Gli importi delle sanzioni per chi violava l'ordinanza 99/2026 non sono stati trovati.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Testo dell'ordinanza non disponibile."
+   },
+   {
+    "id": "mar-11",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: la Guardia Costiera ha impiegato oltre 150 persone tra mare e sala operativa e circa 30 mezzi navali.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-12",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: il Comune ha portato in mare barche inclusive, il Lorkinos di Isolahabile (24 m, accessibile) e le barche di Scugnizzi a Vela.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-13",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: la pagina ufficiale 'Esperienze in mare per gli spettatori' prevedeva 'barche a noleggio ufficiali' nella zona rossa, ma i nomi degli operatori e i prezzi non sono emersi.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-14",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: forte richiesta di tour in barca; molti operatori privati (es. 'Boat Experience Cup') non risultano ufficiali.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-15",
+    "esito": "non_verificabile",
+    "fatto_finale": "Nessuna ordinanza della Capitaneria per il 2027 è ancora stata pubblicata.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato. La frase attribuita ad Aulicino resta incerta: non usarla."
+   },
+   {
+    "id": "mar-16",
+    "esito": "confermato",
+    "fatto_finale": "Rete di marine del programma superyacht 2027: Nuova Marina di Bagnoli, Marina Molo Luise, Stabia Main Port, Marina di Stabia, Sud Cantieri Pozzuoli, Marina di Capri, Marina d'Arechi (Salerno), Marina di Procida. Luise Group collabora con BWA.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Elenco confermato dagli snippet allatsea/sailsmagazine. Ruolo 'Preferred Yacht Agent' di Luise non ricontrollato."
+   },
+   {
+    "id": "mar-17",
+    "esito": "non_verificabile",
+    "fatto_finale": "Avvisi ai naviganti specifici per le regate (2026 o 2027) non trovati.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Controllare sul sito della Guardia Costiera di Napoli."
+   },
+   {
+    "id": "mar-18",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente Barcellona 2024: zona di esclusione dal 22 agosto al 27 ottobre; navigazione autorizzata 10-20; registrazione di tutte le barche spettatori; quattro zone con marshal.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mar-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente Barcellona 2024: barche spettatori sempre in moto e mobili (mai all'ancora), ascolto VHF canale 72; la Capitanía Marítima autorizzava a parte il trasporto di più passeggeri.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-01",
+    "esito": "corretto",
+    "fatto_finale": "L'Alibus collega l'aeroporto di Capodichino con Napoli Centrale (piazza Garibaldi) e il Molo Beverello (fermata anche a Varco Immacolatella, da verificare su anm.it). Il biglietto costa 5 euro, vale 90 minuti dalla convalida e permette di usare anche gli altri mezzi ANM dell'area urbana. Si compra a bordo, alle macchinette in aeroporto, all'ANM Point di piazza Garibaldi, con Tap&Go o con l'app Unico Campania.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da snippet telepass/fanpage/Trenitalia. Precisato 'mezzi ANM urbani'. Immacolatella non vista negli snippet."
+   },
+   {
+    "id": "tra-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "Alibus: orari indicativi 5:30-24:00, una corsa ogni 15-25 minuti; circa 15-20 minuti fino alla stazione e 30-35 fino al porto (di più nelle ore di punta). Verificare su anm.it.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Fonte non ufficiale."
+   },
+   {
+    "id": "tra-03",
+    "esito": "confermato",
+    "fatto_finale": "La stazione Capodichino della metro Linea 1 non è ancora aperta. Il sindaco Manfredi punta al primo semestre 2027 (fanpage: 'entro i primi 6 mesi del 2027'; Railway Gazette: giugno 2027), ma altre fonti ipotizzano la fine del 2027. In alternativa è previsto un bus 'Capodichino Link'.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Date ricontrollate (fanpage, railwaygazette). Il bus Capodichino Link non è stato ricontrollato."
+   },
+   {
+    "id": "tra-04",
+    "esito": "confermato",
+    "fatto_finale": "I taxi di Napoli hanno tariffe fisse (predeterminate) dall'aeroporto: 21 euro fino alla Stazione Centrale o al Centro Direzionale, 24 euro fino a Molo Beverello/porto/piazza Municipio, circa 28,50 euro fino a Mergellina e agli hotel del lungomare. Sono comprese le maggiorazioni (notte, festivi, bagagli, animali); i pedaggi no; minivan +5 euro.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "21 e 24 euro confermati (sicurauto, che cita il tariffario comunale 2024; anche un PDF su aeroportodinapoli.it). 28,50 per Mergellina non ritrovato."
+   },
+   {
+    "id": "tra-05",
+    "esito": "confermato",
+    "fatto_finale": "La tariffa fissa va chiesta all'inizio della corsa e vale 24 ore su 24, anche nei festivi. Il tassista deve applicarla e rilasciare la ricevuta.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La validità H24 feriali e festivi è confermata; l'obbligo di ricevuta non è stato ricontrollato."
+   },
+   {
+    "id": "tra-06",
+    "esito": "corretto",
+    "fatto_finale": "Esiste un taxi collettivo Aeroporto - Stazione Centrale - Molo Beverello a 6 euro a persona. Validità del servizio oltre il 2026: non confermata.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Prezzo di 6 euro confermato; proroga al 31/12/2026 non ritrovata. Controllare la pagina del Comune."
+   },
+   {
+    "id": "tra-07",
+    "esito": "confermato",
+    "fatto_finale": "Con 'Napoli Air&Port Link' di Trenitalia si compra insieme il treno regionale fino a Napoli Centrale e l'Alibus per aeroporto o porto.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La pagina Trenitalia compare tra i risultati. Il sovrapprezzo di 5 euro non è stato ricontrollato."
+   },
+   {
+    "id": "tra-08",
+    "esito": "non_verificabile",
+    "fatto_finale": "Napoli Afragola (alta velocità) è a circa 12 km dal centro e non ha la metro. Dal 4 luglio 2026 ci fermano anche treni regionali Trenitalia.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-09",
+    "esito": "non_verificabile",
+    "fatto_finale": "La stazione di Napoli Mergellina serve la Linea 2 ed è vicina alla funicolare di Mergellina e alla Linea 6: è l'arrivo in treno più vicino al lungomare Caracciolo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato (Wikipedia)."
+   },
+   {
+    "id": "tra-10",
+    "esito": "corretto",
+    "fatto_finale": "Per l'America's Cup è prevista una nuova fermata della Linea 2 'Porta del Parco' a Bagnoli. Per costruirla la circolazione tra Pozzuoli e Napoli Campi Flegrei è interrotta dal 1 ottobre 2026 a gennaio 2027. La data di apertura (si parla di maggio 2027) non è confermata.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Interruzione confermata. Apertura a maggio 2027 e collegamento BRT non ricontrollati."
+   },
+   {
+    "id": "tra-11",
+    "esito": "non_verificabile",
+    "fatto_finale": "La Cumana (EAV) arriva a Bagnoli, zona delle basi dei team. Non risulta un piano specifico di corse extra per l'America's Cup.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-12",
+    "esito": "confermato",
+    "fatto_finale": "La Linea 6 va da Mostra (Fuorigrotta) a Municipio passando per Mergellina e Chiaia, parallela al lungomare; è aperta fino a Municipio da luglio 2024. Gli orari normali vanno verificati su ANM.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Tracciato e riapertura confermati (Wikipedia). L'orario 7:30-21:30 non è confermato: eliminarlo."
+   },
+   {
+    "id": "tra-13",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026 (24-27 settembre): Linea 1 aperta fino alle 2 di notte (ultime partenze 01:32 da Centro Direzionale e 01:20 da Piscinola); Linea 6 con ultime partenze alle 00:30 da Mostra e Municipio; funicolare di Mergellina fino alle 00:30 (25-27 settembre).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato dalla sintesi di fanpage, napolike e cronachedellacampania. C'è anche una pagina del Comune ('Servizi di trasporto Anm in occasione della Coppa America')."
+   },
+   {
+    "id": "tra-14",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026: il 25 e 26 settembre le funicolari di Chiaia e Centrale sono rimaste aperte fino alle 2 di notte, come di solito il venerdì e sabato.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato; la versione di seepompeii (Chiaia fino alle 00:30) sembra sbagliata."
+   },
+   {
+    "id": "tra-15",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: dal 25 al 27 settembre le principali linee di superficie ANM hanno fatto servizio fino alle 00:30, con corse aggiuntive su metro e funicolari.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Il servizio di superficie fino alle 00:30 è confermato. Elenco delle linee e numero di corse extra non ricontrollati."
+   },
+   {
+    "id": "tra-16",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026: il prolungamento notturno è stato deciso solo pochi giorni prima, dopo un accordo tra ANM e sindacati; le navette erano state escluse. Per il 2027 conviene controllare gli orari a ridosso delle gare.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Titoli fanpage e napolimilionaria (22/09/2026) ritrovati."
+   },
+   {
+    "id": "tra-17",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: dal 21 al 27 settembre divieto di transito su viale Anton Dohrn e via Caracciolo, con traffico deviato sulla Riviera di Chiaia (ordinanze 1496 e 1598).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. La chiusura di via Caracciolo durante il Village è però citata dalla stampa."
+   },
+   {
+    "id": "tra-18",
+    "esito": "confermato",
+    "fatto_finale": "Precedente 2026: l'ordinanza n. 99/2026 ha chiuso uno specchio d'acqua davanti al lungomare; aliscafi e traghetti per le isole sono rimasti fuori dal perimetro con rotte più lunghe. Nessuna sospensione generale.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Ordinanza e rotte alternative confermate; date e minuti in più non ricontrollati."
+   },
+   {
+    "id": "tra-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: il consiglio era di non cercare parcheggio sul lungomare e di arrivare a piedi o con i mezzi. Non risulta un elenco ufficiale di parcheggi di interscambio.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-20",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per il 2027 la stampa scrive che via Caracciolo potrebbe restare chiusa alle auto per circa 3 mesi (maggio-luglio) per il Race Village. Il Comune non ha ancora approvato un piano traffico definitivo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Nella ricerca di verifica l'articolo non è stato ritrovato: trattarlo come ipotesi di stampa."
+   },
+   {
+    "id": "tra-21",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per il 2027 non esiste ancora un piano trasporti ufficiale. Sono annunciati due villaggi: via Caracciolo e Bagnoli.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-22",
+    "esito": "non_verificabile",
+    "fatto_finale": "Con Tap&Go si paga con carta contactless sulla Linea 1, sulle funicolari Centrale e di Chiaia, sull'Alibus e su alcune linee EAV; bisogna fare 'tap' all'ingresso e all'uscita.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "L'uso sull'Alibus è citato dagli snippet (telepass). Il resto non è stato ricontrollato."
+   },
+   {
+    "id": "tra-23",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il biglietto ANM di corsa singola costa 1,50 euro. Dal 1° ottobre 2026 UnicoCampania aumenta i biglietti integrati (orario Napoli da 1,60 a 1,70 euro, secondo la stampa).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La ricerca non ha trovato conferme; verificare su unicocampania.it."
+   },
+   {
+    "id": "tra-24",
+    "esito": "non_verificabile",
+    "fatto_finale": "Precedente 2026: il Comune ha allestito sugli scogli del lungomare piattaforme panoramiche con rampe per persone con disabilità e bambini e un accesso preferenziale al Race Village.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ritrovato nella verifica."
+   },
+   {
+    "id": "tra-25",
+    "esito": "non_verificabile",
+    "fatto_finale": "RFI Sala Blu Napoli assiste le persone con disabilità nelle stazioni: numero verde 800 90 60 60, 02 32 32 32, salablu.napoli@rfi.it. Controllare prima che gli ascensori delle metro ANM funzionino.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato: verificare su rfi.it."
+   },
+   {
+    "id": "tra-26",
+    "esito": "non_verificabile",
+    "fatto_finale": "All'aeroporto di Napoli c'è la 'Sala Amica' per i passeggeri a mobilità ridotta; l'assistenza va chiesta alla compagnia aerea almeno 48 ore prima.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tra-27",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il Ministero della Salute pubblica bollettini sulle ondate di calore anche per Napoli (nel 2026 dal 25 maggio al 20 settembre); il numero 1500 dà consigli sul caldo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "squ-01",
+    "esito": "confermato",
+    "fatto_finale": "Alla 38a America's Cup partecipano 7 team: il Defender Emirates Team New Zealand e 6 sfidanti (GB1 Challenger of Record, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA, Team Australia).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato dalla sintesi del comunicato ufficiale sulle regate di flotta AC75 (americascup.com/news/4148, snippet)."
+   },
+   {
+    "id": "squ-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per la prima volta nell'era moderna tutte le nazioni che hanno già vinto la Coppa (USA, Australia, Svizzera, Nuova Zelanda) sono in gara nella stessa edizione.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; è coerente con l'elenco dei team."
+   },
+   {
+    "id": "squ-03",
+    "esito": "non_verificabile",
+    "fatto_finale": "Iscrizioni: prima chiusura il 31 ottobre 2025; iscrizioni tardive accettate fino al 31 marzo 2026.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "squ-04",
+    "esito": "confermato",
+    "fatto_finale": "GB1 è il nuovo nome del team britannico Athena Racing (fondato da Sir Ben Ainslie nel 2014), presentato a Napoli a gennaio 2026; rappresenta il Challenger of Record Royal Yacht Squadron Racing Ltd. Timoniere: Dylan Fletcher.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da rys.org.uk (21/01/2026) e altri."
+   },
+   {
+    "id": "squ-05",
+    "esito": "confermato",
+    "fatto_finale": "Luna Rossa: CEO Max Sirena; Peter Burling (ex Team New Zealand) è entrato nel team. A Cagliari la squadra principale era Burling, Tita, Molineris, Bissaro; a Napoli 2026 i co-timonieri erano Burling e Marco Gradoni.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Equipaggi di Cagliari e Napoli confermati (afloat, sailingscuttlebutt). Il ruolo di Sirena non è stato ricontrollato."
+   },
+   {
+    "id": "squ-06",
+    "esito": "non_verificabile",
+    "fatto_finale": "Tudor Team Alinghi (Svizzera): guidato da Paul Goodison; con lui Nathalie Brugger, Phil Robertson e Nicolas Rolaz.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "squ-07",
+    "esito": "non_verificabile",
+    "fatto_finale": "La Roche-Posay Racing Team (Francia, K-Challenge): co-CEO Stephan Kandler e Bruno Dubois, direttore sportivo Philippe Presti, skipper Quentin Delapierre.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "squ-08",
+    "esito": "corretto",
+    "fatto_finale": "American Racing Challenger Team USA (ARC Team USA): iscrizione tardiva annunciata ad aprile 2026, rappresenta Sail Newport (Rhode Island) dopo il ritiro del New York Yacht Club/American Magic (ottobre 2025). Guidato da Ken Read, nato da un'idea di Karel Komárek e Chris Welch. Ha rilevato l'AC75 'Patriot' e due AC40 di American Magic.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Il comunicato ufficiale (snippet americascup.com/news/3996) scrive 'Welch'. Il ruolo di Giles Scott non è stato ricontrollato."
+   },
+   {
+    "id": "squ-09",
+    "esito": "confermato",
+    "fatto_finale": "Team Australia rappresenta il Royal Prince Edward Yacht Club (Sydney); la sfida, accettata dal Royal New Zealand Yacht Squadron, è stata annunciata il 14 maggio 2026. CEO Grant Simmer, capo della vela Tom Slingsby, performance e design Glenn Ashby.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da mysailing/sailingworld. Il sostegno della famiglia Winning non è stato ricontrollato."
+   },
+   {
+    "id": "squ-10",
+    "esito": "corretto",
+    "fatto_finale": "Emirates Team New Zealand (Defender): skipper e timoniere Nathan Outteridge; AC75 'Taihoro'. Nel 2026 Seb Menzies e Chris Draper si sono alternati come co-timonieri; a Napoli ha timonato Menzies con Outteridge.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Il blog ufficiale (snippet) presenta Menzies e Draper come co-timonieri in prova: Menzies non risulta nominato in modo definitivo."
+   },
+   {
+    "id": "squ-11",
+    "esito": "confermato",
+    "fatto_finale": "Nell'AC38 l'AC75 ha 5 velisti, con almeno una donna a bordo. Almeno 3 (due velisti più la velista) devono avere la nazionalità del team; fino a 2 possono essere stranieri, purché non abbiano corso le fasi finali dell'AC37 per un altro team. Più funzioni a batteria, niente ciclisti.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da più fonti (sailingscuttlebutt 12/08/2025, Wikipedia). Il PDF del Protocollo non è stato aperto, quindi non CONFERMATO."
+   },
+   {
+    "id": "squ-12",
+    "esito": "non_verificabile",
+    "fatto_finale": "Nuova figura: un 'guest racer' (ospite) a bordo durante le regate; gli scafi devono essere quelli già varati per AC37 o AC36.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Una fonte parla di 'un solo nuovo AC75 per team': verificare."
+   },
+   {
+    "id": "squ-13",
+    "esito": "confermato",
+    "fatto_finale": "Regata preliminare di Cagliari (22-24 maggio 2026): 8 barche, 8 regate di flotta. Classifica: 1 Luna Rossa 63, 2 ETNZ 60, 3 Luna Rossa Women & Youth 59, 4 La Roche-Posay 55, 5 ETNZ Women & Youth 50, 6 Tudor Team Alinghi 40, 7 Athena Pathway Women & Youth 38, 8 GB1 27.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Punteggi confermati dalla sintesi di più fonti."
+   },
+   {
+    "id": "squ-14",
+    "esito": "confermato",
+    "fatto_finale": "Finale di Cagliari: Luna Rossa (Burling, Tita, Molineris, Bissaro) batte ETNZ di 33 secondi, dopo che i neozelandesi erano partiti in anticipo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato (afloat.ie). Il trofeo Women & Youth non è stato ricontrollato."
+   },
+   {
+    "id": "squ-15",
+    "esito": "confermato",
+    "fatto_finale": "Regata preliminare di Napoli (25-27 settembre 2026): 9 barche AC40, 8 regate di flotta. Classifica: 1 Luna Rossa 71, 2 ETNZ 56, 3 La Roche-Posay 48, 4 ARC Team USA 44 (a pari punti con ETNZ W&Y, Luna Rossa W&Y e Alinghi), poi GB1 42 e GB2 ultimo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "71/56/48 e ARC 44 al 4° posto confermati (sailingscuttlebutt 27/09/2026). L'ordine dei pari e i punti di GB2 non sono stati ricontrollati."
+   },
+   {
+    "id": "squ-16",
+    "esito": "non_verificabile",
+    "fatto_finale": "Finale di Napoli (27 settembre 2026): Luna Rossa (co-timonieri Burling e Gradoni) batte Emirates Team New Zealand; è la seconda finale vinta su ETNZ nel 2026.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Vittoria confermata (sport.virgilio, velablog). Il margine di circa 17 secondi e l'equipaggio completo non sono stati ritrovati: toglierli o citare la fonte."
+   },
+   {
+    "id": "squ-17",
+    "esito": "confermato",
+    "fatto_finale": "ARC Team USA ha vinto la prima regata di flotta a Napoli al debutto ed è arrivata quarta; Team Australia non ha partecipato.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato (sailingscuttlebutt, mysailing)."
+   },
+   {
+    "id": "squ-18",
+    "esito": "confermato",
+    "fatto_finale": "Youth America's Cup 2027: 2-6 giugno 2027 a Napoli (date annunciate a settembre 2026 al centro sportivo 'Pino Daniele' di Caivano). Women's America's Cup 2027: 5-9 luglio 2027. Entrambe su AC40.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Date viste negli snippet dei comunicati ufficiali 4332 e 'Grazie Napoli'. Sky a maggio 2026 dava entrambe a giugno: informazione superata."
+   },
+   {
+    "id": "squ-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "L'elenco ufficiale dei team di Youth e Women's America's Cup 2027 non è ancora pubblicato.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "squ-20",
+    "esito": "corretto",
+    "fatto_finale": "Louis Vuitton Cup: si apre il 22-23 maggio 2027 con sei regate di flotta che mettono in acqua tutti e sette gli AC75 (i sei sfidanti più il Defender ETNZ). Dal 26 maggio all'11 giugno si passa al match race. Il Match comincia il 10-11 luglio 2027 e lo vince chi arriva prima a 7 vittorie (massimo 13 regate); si chiude entro il 19 luglio.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "'Seven AC75' non è un errore: include il Defender (comunicato 4148, snippet). Pagine ufficiali non aperte."
+   },
+   {
+    "id": "mis-01",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il 31 agosto 2026 il New York Yacht Club ha chiesto al Procuratore Generale di New York di verificare se la nuova America's Cup Partnership sia compatibile con il Deed of Gift.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "med-01",
+    "esito": "non_verificabile",
+    "fatto_finale": "Le regate 2026/27 sono trasmesse in diretta gratuita sul canale YouTube ufficiale dell'America's Cup e su americascup.com.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Il nome del canale va verificato."
+   },
+   {
+    "id": "med-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non è verificato se i video ufficiali su YouTube si possano incorporare (embed).",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Provare a mano."
+   },
+   {
+    "id": "med-03",
+    "esito": "non_verificabile",
+    "fatto_finale": "Le regate preliminari di Napoli 2026 erano in diretta TV su Rai 2 e Sky Sport; in streaming su YouTube America's Cup, RaiPlay, Sky Go e NOW.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato nel dettaglio (canali specifici)."
+   },
+   {
+    "id": "med-04",
+    "esito": "confermato",
+    "fatto_finale": "La Rai ha i diritti esclusivi in chiaro per l'Italia: Louis Vuitton Cup, America's Cup Match, regate preliminari 'Road to Naples', Youth e Women's America's Cup 2027.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da pressmare 27/02/2026 e dal titolo ufficiale americascup.com/news/3923."
+   },
+   {
+    "id": "med-05",
+    "esito": "confermato",
+    "fatto_finale": "Sky ha i diritti pay-TV della 38a America's Cup: tutti gli eventi su Sky e in streaming su NOW, dalle preliminari fino al Match di Napoli, compresi Youth e Women's.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da sport.sky.it 13/05/2026 e dal titolo ufficiale americascup.com/news/4063."
+   },
+   {
+    "id": "med-06",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non è stata trovata con certezza un'app ufficiale dell'AC38.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Controllare negli store."
+   },
+   {
+    "id": "med-07",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non esiste un'API pubblica documentata per risultati o tracking dell'AC38.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "med-08",
+    "esito": "non_verificabile",
+    "fatto_finale": "Termini d'uso di americascup.com: marchi, foto e contenuti appartengono ad America's Cup o ai licenziatari; vietato l'uso commerciale senza autorizzazione scritta.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; la pagina risultava ancora intitolata 'AC37'."
+   },
+   {
+    "id": "mis-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "AC75 (dati edizione 2024): lunghezza circa 22,86 m fuori tutto, scafo 20,70 m, larghezza 5 m, albero 26,50 m.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; i valori potrebbero cambiare con la regola AC38."
+   },
+   {
+    "id": "mis-03",
+    "esito": "non_verificabile",
+    "fatto_finale": "Regola di classe AC75 per l'AC38: versione V3.01 del 9 settembre 2025, pubblicata con le Technical Regulations.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "La pubblicazione è confermata dal titolo americascup.com/news/3840; versione e nome RigEPS non ricontrollati."
+   },
+   {
+    "id": "mis-04",
+    "esito": "non_verificabile",
+    "fatto_finale": "Velocità massima AC75: 55,6 nodi di INEOS Britannia a Barcellona (ottobre 2024).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; fonte non ufficiale."
+   },
+   {
+    "id": "mis-05",
+    "esito": "non_verificabile",
+    "fatto_finale": "AC40: lunghezza 11,80 m, larghezza 3,38 m, albero circa 17,9 m, peso circa 2.000 kg, 4 persone a bordo.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mis-06",
+    "esito": "non_verificabile",
+    "fatto_finale": "Velocità massima di progetto AC40: circa 44 nodi (dato di progetto, non record misurato).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "mis-07",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non è stato trovato nessun modello 3D ufficiale di AC75/AC40 con licenza di riuso.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-01",
+    "esito": "non_verificabile",
+    "fatto_finale": "America's Cup Properties Inc. (ACPI) detiene i diritti sui marchi 'America's Cup'.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-02",
+    "esito": "non_verificabile",
+    "fatto_finale": "Negli USA il marchio 'AMERICA'S CUP' (USPTO 73084527) risulta intestato ad America's Cup Properties, Inc.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; verificare su USPTO."
+   },
+   {
+    "id": "leg-03",
+    "esito": "non_verificabile",
+    "fatto_finale": "Le registrazioni EUIPO/WIPO di 'America's Cup' vanno controllate su TMview o sul WIPO Global Brand Database.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-04",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il marchio 'LOUIS VUITTON CUP' appartiene a Louis Vuitton Malletier; lo stato attuale va verificato su TMview.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-05",
+    "esito": "non_verificabile",
+    "fatto_finale": "La modalità youtube-nocookie.com non imposta cookie al caricamento, ma li imposta quando si preme Play e usa il Local Storage.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-06",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il player YouTube incorporato è soggetto ai Termini delle API di YouTube: non si possono nascondere titolo, miniatura o funzioni del player.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-07",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il Garante Privacy ha approvato le Linee guida cookie il 10 giugno 2021 (Gazzetta Ufficiale 9 luglio 2021, adeguamento entro il 9 gennaio 2022).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-08",
+    "esito": "non_verificabile",
+    "fatto_finale": "I cookie analytics sono equiparati ai tecnici (niente consenso) solo con statistiche aggregate, IP mascherato per le terze parti e nessun incrocio dei dati.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-09",
+    "esito": "non_verificabile",
+    "fatto_finale": "Banner cookie secondo le Linee guida 2021: la 'X' vale come rifiuto, lo scroll non vale come consenso, niente cookie wall, non si ripropone la scelta prima di 6 mesi.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-10",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per i cookie di terze parti il gestore del sito deve inserire nell'informativa i link alle informative delle terze parti.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-11",
+    "esito": "non_verificabile",
+    "fatto_finale": "Vercel Web Analytics non usa cookie e riconosce il visitatore con un hash valido un solo giorno.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-12",
+    "esito": "non_verificabile",
+    "fatto_finale": "In Italia (art. 2-quinquies Codice Privacy) l'età per dare da soli il consenso ai servizi online è 14 anni.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-13",
+    "esito": "non_verificabile",
+    "fatto_finale": "Nel 2025 il Garante ha multato un'azienda per email di marketing senza consenso provato; il double opt-in è di fatto lo standard per provare il consenso.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-14",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il DPR 430/2001 regola concorsi e operazioni a premio. Che un gioco di pronostici senza premi ne sia escluso è una deduzione.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-15",
+    "esito": "non_verificabile",
+    "fatto_finale": "Nei concorsi a premio italiani i premi non possono essere denaro, titoli o polizze vita.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-16",
+    "esito": "non_verificabile",
+    "fatto_finale": "Non sono state trovate indicazioni specifiche di ADM su giochi di pronostici online gratuiti e senza premi.",
+    "stato_finale": "NON_ANCORA_USCITO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-17",
+    "esito": "non_verificabile",
+    "fatto_finale": "AGCOM ha approvato le Linee guida sugli influencer a luglio 2025; valgono per chi ha almeno 500.000 follower o 1 milione di visualizzazioni medie al mese.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-18",
+    "esito": "non_verificabile",
+    "fatto_finale": "La Digital Chart IAP indica come segnalare la pubblicità online (es. 'pubblicità', 'sponsorizzato da', 'adv').",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "Per il D.lgs. 145/2007 la pubblicità deve essere riconoscibile; l'AGCM interviene su influencer e marchi.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "leg-20",
+    "esito": "non_verificabile",
+    "fatto_finale": "Il Tribunale di Monaco (20/01/2022) ha condannato un sito a pagare 100 euro per aver caricato Google Fonts da remoto senza consenso.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato; è una sentenza tedesca."
+   },
+   {
+    "id": "leg-21",
+    "esito": "non_verificabile",
+    "fatto_finale": "Dopo quella sentenza molte aziende tedesche hanno ricevuto diffide da 100-170 euro per Google Fonts caricati da remoto.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tec-01",
+    "esito": "non_verificabile",
+    "fatto_finale": "L'errore Vercel 'git_info_fail' ('Fetching git information failed') indica che Vercel non riesce a leggere i dati del commit; tra le soluzioni proposte dagli utenti: deploy da CLI o ricollegare GitHub.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tec-02",
+    "esito": "confermato",
+    "fatto_finale": "Con il piano Hobby i repository privati non supportano la collaborazione: se l'autore del commit non è il proprietario del team Hobby, il deploy viene bloccato. Soluzioni: passare a Pro (trasferendo il progetto e aggiungendo l'autore come membro) oppure fare in modo che i commit risultino fatti dal proprietario.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Confermato da snippet della documentazione ufficiale Vercel ('Troubleshoot project collaboration') e dal forum. Pagina non aperta."
+   },
+   {
+    "id": "tec-03",
+    "esito": "corretto",
+    "fatto_finale": "Il piano Hobby di Vercel è solo per uso personale e non commerciale. È commerciale ogni deploy usato per un guadagno economico di chi partecipa al progetto: tra gli esempi ci sono i pagamenti chiesti ai visitatori e la pubblicità (es. Google AdSense). Le donazioni non contano come uso commerciale. Per l'uso commerciale serve Pro o Enterprise.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Visto negli snippet ufficiali. Che i link di affiliazione siano citati come esempio non è stato confermato in modo chiaro: nel dubbio chiedere al supporto."
+   },
+   {
+    "id": "tec-04",
+    "esito": "corretto",
+    "fatto_finale": "Il piano Vercel Pro costa 20 dollari al mese di quota piattaforma, che include 20 dollari di credito d'uso mensile e 1 posto a pagamento; oltre il credito si paga a consumo. Ogni membro in più con diritto di deploy costa 20 dollari al mese; i posti 'Viewer' sono gratuiti.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Snippet ufficiali vercel.com/docs/plans/pro-plan e changelog sul modello a crediti."
+   },
+   {
+    "id": "tec-05",
+    "esito": "confermato",
+    "fatto_finale": "Con Web Analytics il piano Hobby include 50.000 eventi al mese, senza possibilità di comprarne altri: raggiunto il limite, la raccolta si ferma fino al ciclo successivo. Eventi personalizzati e un periodo di report più lungo richiedono Pro.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Snippet ufficiale vercel.com/docs/analytics/limits-and-pricing."
+   },
+   {
+    "id": "tec-06",
+    "esito": "confermato",
+    "fatto_finale": "Sul piano Hobby i Cron Jobs girano al massimo una volta al giorno, con precisione di un'ora (un job alle 8:00 può partire tra le 8:00 e le 8:59). Espressioni orarie o più frequenti fanno fallire il deploy ('Hobby accounts are limited to daily cron jobs'). Sugli altri piani il job parte entro il minuto indicato.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Snippet ufficiale vercel.com/docs/cron-jobs/usage-and-pricing."
+   },
+   {
+    "id": "tec-07",
+    "esito": "confermato",
+    "fatto_finale": "Supabase mette in pausa i progetti Free con poca attività in un periodo di 7 giorni. Manda un'email di avviso circa una settimana prima e una di conferma dopo la pausa. Un progetto in pausa si può riattivare dalla dashboard entro 90 giorni. I progetti a pagamento non vengono mai messi in pausa.",
+    "stato_finale": "CONFERMATO",
+    "nota": "Testo completo della pagina ufficiale letto tramite lo strumento di ricerca della documentazione Supabase."
+   },
+   {
+    "id": "tec-08",
+    "esito": "confermato",
+    "fatto_finale": "Quote ufficiali di Supabase: il piano Free include 50.000 MAU e 5 GB di egress (più 5 GB di egress da cache). Il piano Pro (25 dollari al mese) include 100.000 MAU e 250 GB di egress (più 250 GB da cache). Le quote valgono per l'intera organizzazione, non per progetto.",
+    "stato_finale": "CONFERMATO",
+    "nota": "Tabelle ufficiali lette tramite lo strumento docs Supabase (billing-on-supabase, egress)."
+   },
+   {
+    "id": "tec-09",
+    "esito": "corretto",
+    "fatto_finale": "Il piano Free di Supabase offre 2 progetti gratuiti (quelli in pausa non contano), un database da 500 MB per progetto e 1 GB di spazio file (Storage) per organizzazione.",
+    "stato_finale": "CONFERMATO",
+    "nota": "Tabella ufficiale 'About billing on Supabase' letta tramite lo strumento docs: lo Storage è 1 GB, non 500 MB."
+   },
+   {
+    "id": "tec-10",
+    "esito": "confermato",
+    "fatto_finale": "Supabase offre l'accesso anonimo (signInAnonymously): crea un utente vero senza email o password, collegabile più tardi a un'email. Usa il ruolo 'authenticated' e nel token ha il campo is_anonymous, da controllare nelle regole RLS. Limite: 30 richieste all'ora per IP. È consigliato un CAPTCHA e gli utenti anonimi non vengono cancellati in automatico.",
+    "stato_finale": "CONFERMATO",
+    "nota": "Limite 30/ora per IP ricontrollato nella Production Checklist ufficiale; il resto era già stato letto dalla fonte ufficiale."
+   },
+   {
+    "id": "tec-11",
+    "esito": "non_verificabile",
+    "fatto_finale": "Ogni progetto Supabase ha una regione principale; in Europa ci sono tra le altre Francoforte (eu-central-1), Irlanda (eu-west-1) e Parigi (eu-west-3). Per tenere i dati nell'UE bisogna scegliere una regione UE specifica. Supabase offre un DPA.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato. Il dettaglio sulla regione generica 'Europe' (Londra, Zurigo) va verificato: declassato."
+   },
+   {
+    "id": "tec-12",
+    "esito": "confermato",
+    "fatto_finale": "Astro 7.0 è uscito in versione stabile: compilatore .astro riscritto in Rust, Vite 8 con il bundler Rolldown, build più veloci del 15-61% nei benchmark e route caching stabile.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Contenuto confermato dagli snippet del blog ufficiale. La data del 22/06/2026 non è stata ricontrollata."
+   },
+   {
+    "id": "tec-13",
+    "esito": "non_verificabile",
+    "fatto_finale": "Astro 6.0 è uscito a marzo 2026 con dev server rifatto, CSP e 'live content collections'.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tec-14",
+    "esito": "non_verificabile",
+    "fatto_finale": "Astro ha il routing multilingua (i18n) integrato, con lingua predefinita, fallback e prefixDefaultLocale.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tec-15",
+    "esito": "confermato",
+    "fatto_finale": "L'ultima versione minore di Next.js è la 16.3, uscita il 3 agosto 2026. Ad agosto 2026 è uscita anche una security release. Next.js 17 non risulta uscito.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Snippet nextjs.org/blog/next-16-3 e post sulla security release di agosto 2026."
+   },
+   {
+    "id": "tec-16",
+    "esito": "confermato",
+    "fatto_finale": "Il piano gratuito di Resend include 3.000 email al mese, con un massimo di 100 al giorno, 1 dominio e 30 giorni di conservazione dei dati.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "resend.com/pricing.md e recensioni coerenti."
+   },
+   {
+    "id": "tec-17",
+    "esito": "non_verificabile",
+    "fatto_finale": "Con Resend, per scrivere a destinatari diversi da sé stessi bisogna verificare un proprio dominio e usarlo come mittente. Un indirizzo Gmail non può essere un mittente verificato (deduzione).",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   },
+   {
+    "id": "tec-18",
+    "esito": "corretto",
+    "fatto_finale": "Il piano gratuito di Brevo permette di inviare fino a 300 email al giorno (non cumulabili) e di salvare fino a 100.000 contatti.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Il Centro assistenza Brevo (snippet) indica 100.000 contatti, non 'illimitati'."
+   },
+   {
+    "id": "tec-19",
+    "esito": "non_verificabile",
+    "fatto_finale": "I domini email gratuiti come @gmail.com non si possono autenticare su Brevo: senza un dominio proprio il mittente viene riscritto (es. @brevosend.com). Serve un dominio proprio.",
+    "stato_finale": "ANNUNCIATO",
+    "nota": "Non ricontrollato."
+   }
+  ],
+  "contraddizioni_globali": [
+   {
+    "descrizione": "Louis Vuitton Cup: il comunicato ufficiale parla di 'seven AC75' nelle regate di flotta iniziali. Non è un errore: sono i 6 sfidanti più il Defender ETNZ. Nella guida non scrivere 'sette sfidanti'.",
+    "fonti": [
+     "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+     "https://www.americascup.com/news/4372_GRAZIE-NAPOLI"
+    ]
+   },
+   {
+    "descrizione": "Women's America's Cup: Sky (maggio 2026) la collocava a giugno 2027 insieme alla Youth; i comunicati ufficiali di settembre 2026 danno 5-9 luglio (Women's) e 2-6 giugno (Youth).",
+    "fonti": [
+     "https://sport.sky.it/altri-sport/vela/2026/05/13/louis-vuitton-america-s-cup-cagliari-napoli-su-sky",
+     "https://www.americascup.com/news/4332_YOUTH-AMERICAS-CUP-DATES-ANNOUNCED-AS-THE-AMERICAS-CUP-CELEBRATES-THE-NEXT-GENERATION-AT-PINO-DANIELE-SPORTS-CENTRE-IN-CAIVANO"
+    ]
+   },
+   {
+    "descrizione": "Taxi aeroporto-Stazione Centrale: alcuni aggregatori danno 16 euro di giorno e 21 di notte (o 'da 16 euro'); il tariffario comunale 2024 ripreso dalla stampa dà 21 euro fisso H24, supplementi inclusi.",
+    "fonti": [
+     "https://www.airporttransferportal.com/en/airport-guides/nap",
+     "https://www.sicurauto.it/news/traffico-e-viabilita/taxi-napoli-aeroporto-numero-e-tariffe/",
+     "https://www.aeroportodinapoli.it/documents/d/gesac/tariffario-taxi-2024-ita-eng-4-pdf?download=true"
+    ]
+   },
+   {
+    "descrizione": "Emirates Team New Zealand: una fonte indica Seb Menzies come co-timoniere, ma il blog ufficiale presentava Menzies e Chris Draper entrambi in prova come co-timonieri di Outteridge.",
+    "fonti": [
+     "https://www.boatingnz.co.nz/2026/04/seb-menzies-steps-into-co-helm-pathway-with-emirates-team-new-zealand/",
+     "https://www.americascup.com/news/3936_CUP-BLOG-WHO-ARE-SEB-MENZIES-CHRIS-DRAPER-THE-CO-HELMS-WITH-SKIPPER-NATHAN-OUTTERIDGE-ON-TAIHORO"
+    ]
+   },
+   {
+    "descrizione": "Co-fondatore di ARC Team USA: 'Chris Welsh' in alcune fonti, 'Chris Welch' nel comunicato ufficiale.",
+    "fonti": [
+     "https://www.americascup.com/news/3996_A-LEGEND-REBORN-AMERICA-RETURNS-TO-CHALLENGE-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP",
+     "https://www.sailingscuttlebutt.com/2026/08/10/americas-cup-revealing-arc-team-usa/"
+    ]
+   },
+   {
+    "descrizione": "Via Caracciolo chiusa per 3 mesi nel 2027: il dato viene da fanpage/napolitoday (solo titoli), ma la ricerca di verifica non lo ha ritrovato e non c'è un'ordinanza. Non presentarlo come certo in nessuna sezione (bigmar e trasporti).",
+    "fonti": [
+     "https://www.fanpage.it/napoli/americas-cup-2027-via-caracciolo-chiusa-3-mesi-da-maggio-a-luglio-il-piano-traffico-per-le-regate/",
+     "https://www.napolitoday.it/attualita/america-cup-2027-via-caracciolo-chiusa-tre-mesi-viabilita.html"
+    ]
+   },
+   {
+    "descrizione": "Contatti del piano gratuito Brevo: 'illimitati' secondo la pagina marketing, fino a 100.000 secondo il Centro assistenza.",
+    "fonti": [
+     "https://www.brevo.com/free-smtp-server",
+     "https://help.brevo.com/hc/en-us/articles/208580669-FAQs-What-are-the-limits-of-the-Free-plan"
+    ]
+   },
+   {
+    "descrizione": "Spazio file del piano Free di Supabase: risolto. La documentazione ufficiale dà 1 GB (per organizzazione), non 500 MB.",
+    "fonti": [
+     "https://supabase.com/docs/guides/platform/billing-on-supabase",
+     "https://makerkit.dev/blog/saas/supabase-pricing"
+    ]
+   },
+   {
+    "descrizione": "Funicolare di Chiaia nel 2026: risolto a favore di fanpage/napolike (fino alle 2 il 25-26 settembre); seepompeii (00:30) sembra confondere Chiaia con Mergellina.",
+    "fonti": [
+     "https://www.fanpage.it/napoli/americas-cup-gli-orari-di-metro-e-funicolari-per-le-pre-regate-a-napoli-dal-24-al-27-settembre/",
+     "https://seepompeii.com/americas-cup-napoli-2026-dove-vederla-parcheggi-e-date/"
+    ]
+   },
+   {
+    "descrizione": "Inizio dei divieti dell'ordinanza 99/2026: 21 settembre (NapoliToday) o 22 settembre (Nautica Report). Non risolto; vale anche per tra-18 e mar-02.",
+    "fonti": [
+     "https://www.napolitoday.it/attualita/ritardi-aliscafi-traghetti-isole-settembre-2026-americas-cup.html",
+     "https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/"
+    ]
+   },
+   {
+    "descrizione": "Stazione Capodichino della Linea 1: primo semestre/giugno 2027 (sindaco, fanpage, Railway Gazette) contro fine 2027 (Terra Mia). Per l'arrivo dall'aeroporto nel 2027 non contare sulla metro.",
+    "fonti": [
+     "https://www.fanpage.it/napoli/la-metro-1-a-capodichino-entro-i-primi-6-mesi-del-2027/",
+     "https://www.terramiagiornale.it/metro-linea-1-avanti-verso-capodichino-ma-per-lamericas-cup-ci-sara-un-collegamento-alternativo/"
+    ]
+   }
+  ],
+  "link_utente": [
+   {
+    "url": "https://www.americascup.com/news/4372_GRAZIE-NAPOLI",
+    "perche": "Date ufficiali di Louis Vuitton Cup e Match 2027 e risultati di Napoli 2026: da citare come fonte principale del calendario."
+   },
+   {
+    "url": "https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP",
+    "perche": "Formato della Louis Vuitton Cup (regate di flotta con 7 AC75 il 22-23 maggio, match race 26 maggio-11 giugno) ed elenco ufficiale dei team."
+   },
+   {
+    "url": "https://www.americascup.com/news/4332_YOUTH-AMERICAS-CUP-DATES-ANNOUNCED-AS-THE-AMERICAS-CUP-CELEBRATES-THE-NEXT-GENERATION-AT-PINO-DANIELE-SPORTS-CENTRE-IN-CAIVANO",
+    "perche": "Date ufficiali della Youth America's Cup (2-6 giugno 2027); controllare anche quelle della Women's (5-9 luglio)."
+   },
+   {
+    "url": "https://www.americascup.com/news/3843_AMERICAS-CUP-EVENTS-SPORT-E-SALUTE-UNVEIL-THE-DRAMATIC-VISION-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-2027-AT-THE-65TH-GENOA-INTERNATIONAL-BOAT-SHOW",
+    "perche": "Unica fonte ufficiale su Race Village, punti tipo tribuna e hospitality 2027: controllare cosa dice sulla gratuità e sulla vendita."
+   },
+   {
+    "url": "https://www.americascup.com/it/watch-on-water",
+    "perche": "Regole ufficiali per gli spettatori in barca (registrazione, zone, velocità): verificare se sono già aggiornate per il 2027."
+   },
+   {
+    "url": "https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf",
+    "perche": "Protocollo AC38: regola dei 5 velisti, obbligo della donna a bordo e nazionalità. Serve per portare squ-11 a CONFERMATO."
+   },
+   {
+    "url": "https://www.comune.napoli.it/novita/servizi-di-trasporto-anm-in-occasione-della-coppa-america/",
+    "perche": "Pagina ufficiale del Comune con gli orari ANM straordinari del 2026: modello per il 2027."
+   },
+   {
+    "url": "https://www.aeroportodinapoli.it/documents/d/gesac/tariffario-taxi-2024-ita-eng-4-pdf?download=true",
+    "perche": "Tariffario ufficiale dei taxi dall'aeroporto: verificare 21/24/28,50 euro e le zone."
+   },
+   {
+    "url": "https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/taxi-e-ncc/taxi-collettivo/",
+    "perche": "Taxi collettivo a 6 euro: controllare fino a quando vale il servizio e se c'è una proroga al 2027."
+   },
+   {
+    "url": "https://www.americascup.com/news/4263_BWA-YACHTING-OPENS-OFFICIAL-BERTH-BOOKINGS-FOR-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-AND-GETS-READY-FOR-THE-PRELIMINARY-REGATTA-IN-NAPLES",
+    "perche": "Ormeggi ufficiali per superyacht ed elenco delle marine."
+   },
+   {
+    "url": "https://vercel.com/docs/limits/fair-use-guidelines",
+    "perche": "Uso commerciale sul piano Hobby: controllare se i link di affiliazione della guida lo rendono commerciale (serve Pro)."
+   },
+   {
+    "url": "https://supabase.com/docs/guides/platform/billing-on-supabase",
+    "perche": "Tabella ufficiale delle quote Free/Pro (progetti, DB 500 MB, Storage 1 GB, MAU, egress) per dimensionare il sito."
+   }
+  ]
+ }
+}
