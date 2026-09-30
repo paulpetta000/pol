@@ -19,7 +19,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
   - **Lighthouse mobile** (in locale): 99–100 in prestazioni, accessibilità, best practice e SEO su home, calendario, barche, archivio, mappa.
 
 - **Rilascio 1.1 · "Napoli a Vela"** (30/09/2026, ramo `claude/sharp-archimedes-nusxet`, solo anteprima):
-  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). Nuovo indirizzo gratuito **napoli-a-vela.vercel.app**; il vecchio `coppa-america-napoli.vercel.app` reindirizza al nuovo (regola in `vercel.json`).
+  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). Nuovo indirizzo gratuito **napoli-a-vela.vercel.app**; il vecchio `coppa-america-napoli.vercel.app` doveva reindirizzare al nuovo con una regola in `vercel.json`, ma al controllo del 30/09/2026 (dopo il Rilascio 2) **il reindirizzamento non scatta**: il vecchio indirizzo mostra il sito. Vedi «Cose che devi fare tu», punto 6.
   - Nuovo logo "Golfo e Vesuvio" (scelto tra 4 proposte): intestazione, favicon, icone dell'app, immagini di anteprima. Si rigenera con `node scripts/icone.mjs`.
   - Home: al posto del disegno, **foto vera di due AC75 in regata** (Auckland 2021, Geoff McKay, CC BY 2.0).
   - **Foto dei luoghi** con licenza libera (Wikimedia Commons) in 8 schede su 11, con didascalia, autore, licenza e link; elenco in `src/data/foto.yaml` e nelle note legali. Mancano foto adatte per via Aniello Falcone, via Petrarca e la terrazza di Sant'Antonio a Posillipo.
@@ -50,6 +50,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
 4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1, 1.1 e 2 online).
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
+6. **Reindirizzare il vecchio indirizzo** (1 minuto): Vercel → progetto *coppa-america-napoli* → **Settings → Domains** → `coppa-america-napoli.vercel.app` → **Edit** → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 (permanente) → **Save**. La regola in `vercel.json` non sta funzionando; dopo la modifica si può togliere.
 
 ## Note
 - Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`).
