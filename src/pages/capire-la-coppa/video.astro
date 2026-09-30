@@ -1,0 +1,59 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import VideoYT from '../../components/VideoYT.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti, getFonti } from '../../lib/fatti';
+
+const video = (await getCollection('video')).sort((a, b) => a.data.ordine - b.data.ordine);
+const f = await getFatti(['tv-youtube']);
+const extra = await getFonti(['yt-americascup']);
+const GRUPPI = [
+  { k: 'capire', t: 'Per capire', s: 'Come vola un AC75 e le regole di base, in pochi minuti.' },
+  { k: 'regate', t: 'Regate intere', s: 'Due finali da guardare dall\'inizio alla fine: Napoli 2026 e Barcellona 2024.' },
+  { k: 'storia', t: 'Storia', s: 'Dal 1851 a oggi, e l\'Italia in Coppa.' }
+] as const;
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'ItemList', name: 'Video ufficiali per capire l\'America\'s Cup',
+  itemListElement: video.map((v, i) => ({ '@type': 'ListItem', position: i + 1, url: `https://www.youtube.com/watch?v=${v.id}`, name: v.data.titolo }))
+}];
+---
+<Base title="Video per capire l'America's Cup" description="Otto video del canale ufficiale dell'America's Cup scelti per capire la Coppa: come volano gli AC75, le regole, la finale di Napoli 2026, la regata decisiva di Barcellona 2024 e la storia." jsonld={jsonld}>
+  <PageHead kicker="Capire la Coppa" title="Video da vedere" lead={`${video.length} video del canale ufficiale, scelti da noi e divisi per argomento. Titoli e descrizioni sono nostri; i video sono in inglese.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30" />
+
+  <section class="section">
+    <div class="wrap">
+      <div class="terzo terzo--sea privacy-vid">
+        <p><strong>Privacy:</strong> finché non tocchi <Icon name="play" size={16} label="play" />, YouTube non riceve nulla. Al tocco si apre il lettore ufficiale in modalità «privacy avanzata» (youtube-nocookie.com): da lì valgono le regole di YouTube. Dettagli nella pagina <a href="/privacy/">privacy</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  {GRUPPI.map(g => {
+    const lista = video.filter(v => v.data.gruppo === g.k);
+    return (
+      <section class="section" aria-labelledby={`g-${g.k}`}>
+        <div class="wrap">
+          <p class="kicker">{lista.length} video</p>
+          <h2 id={`g-${g.k}`}>{g.t}</h2>
+          <p class="lead">{g.s}</p>
+          <div class="vid-grid">
+            {lista.map(v => <VideoYT v={v} />)}
+          </div>
+        </div>
+      </section>
+    );
+  })}
+
+  <FontiPagina fatti={f.values()} extra={extra} />
+</Base>
+
+<style>
+  .privacy-vid p { margin: 0; }
+  .privacy-vid :global(svg) { vertical-align: -3px; color: var(--accent); }
+  .vid-grid { display: grid; gap: 2rem 1.5rem; margin-top: 1.2rem; }
+  @media (min-width: 700px) { .vid-grid { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .vid-grid { grid-template-columns: repeat(3, 1fr); } }
+</style>

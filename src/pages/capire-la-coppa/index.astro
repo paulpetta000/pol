@@ -1,0 +1,88 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import RegataIn60 from '../../components/RegataIn60.astro';
+import { getCollection } from 'astro:content';
+import { getFatti } from '../../lib/fatti';
+import { SCENE } from '../../lib/regata60';
+
+const idsRegole = ['reg-percorso', 'reg-partenza', 'reg-ocs', 'reg-precedenze', 'reg-penalita', 'reg-confini', 'reg-durata', 'reg-arrivo'];
+const idsFormato = ['cal-flotta', 'cal-rr', 'cal-semifinali', 'cal-finale-lvc', 'cal-match', 'cal-vento'];
+const f = await getFatti([...new Set([...idsRegole, ...idsFormato, ...SCENE.flatMap(s => s.fatti)])]);
+const [video, voci, quiz] = await Promise.all([getCollection('video'), getCollection('glossario'), getCollection('quiz')]);
+const VAI = [
+  { href: '/capire-la-coppa/video/', icon: 'video', t: 'Video da vedere', s: `${video.length} video del canale ufficiale: come vola un AC75, le regole, due finali intere` },
+  { href: '/capire-la-coppa/glossario/', icon: 'libro', t: 'Glossario', s: `${voci.length} parole, da «bolina» a «VMG»` },
+  { href: '/capire-la-coppa/storia/', icon: 'storia', t: 'Storia della Coppa', s: 'Dal 1851 a Napoli 2027, con tutti i Match dal 1983' },
+  { href: '/capire-la-coppa/quiz/', icon: 'quiz', t: 'Quiz', s: `${quiz.length} domande per mettersi alla prova` },
+  { href: '/squadre/barche/', icon: 'cubo', t: 'Le barche in 3D', s: 'AC75 e AC40 da esplorare, affiancati alla stessa scala' }
+] as const;
+---
+<Base title="Capire l'America's Cup: la regata in 60 secondi" description="Come funziona l'America's Cup, spiegato semplice: la regata in 60 secondi con partenza, bolina, poppa, precedenze e penalità, come si vince il Match, video ufficiali, glossario, storia e quiz.">
+  <PageHead illustrazione="barca" kicker="Capire la Coppa" title="Come funziona una regata" lead="Due barche, un campo di mare, poche regole. Prima la regata in 60 secondi, poi, se vuoi, video, parole, storia e un quiz." crumbs={[{ href: '/squadre/', label: 'Squadre' }]} aggiornato="2026-09-30" />
+
+  <section class="section" aria-labelledby="r60-h">
+    <div class="wrap">
+      <p class="kicker">In 60 secondi</p>
+      <h2 id="r60-h">Una regata, dal via all'arrivo</h2>
+      <RegataIn60 />
+      <div class="terzo terzo--sea flotta">
+        <p><strong>E le regate di flotta?</strong> {f.get('cal-flotta')!.data.testo} Partono tutte insieme e prendono punti in base all'ordine di arrivo.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="vince-h">
+    <div class="wrap">
+      <p class="kicker">Come si vince</p>
+      <h2 id="vince-h">I numeri da sapere</h2>
+      <div class="cifre">
+        <div><span class="num">7</span><span>vittorie per vincere il Match e la finale della Louis Vuitton Cup</span></div>
+        <div><span class="num">5</span><span>vittorie per passare le semifinali</span></div>
+        <div><span class="num">6,5–23</span><span>nodi di vento: fuori da qui non si parte</span></div>
+        <div><span class="num">75 m</span><span>da perdere per scontare una penalità (regole 2024)</span></div>
+      </div>
+      <div class="grid-2">
+        <div>
+          <h3>Il formato 2027</h3>
+          <Fatti f={f} ids={idsFormato} />
+        </div>
+        <div>
+          <h3>Le regole in regata</h3>
+          <p class="small muted">Le regole di regata del 2027 non sono ancora uscite: queste sono quelle del 2024, segnate come «Com'era nel 2024».</p>
+          <Fatti f={f} ids={idsRegole} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="app-h">
+    <div class="wrap">
+      <p class="kicker">Approfondisci</p>
+      <h2 id="app-h">Con calma</h2>
+      <ul class="vai">
+        {VAI.map(m => (
+          <li><a href={m.href}>
+            <span class="vai__icona"><Icon name={m.icon} /></span>
+            <span><span class="vai__titolo">{m.t}</span><span class="vai__sotto">{m.s}</span></span>
+            <span class="vai__freccia"><Icon name="freccia" /></span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} />
+</Base>
+
+<style>
+  .flotta { margin-top: 2rem; }
+  .flotta p { margin: 0; }
+  .cifre { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-bottom: 1.8rem; }
+  .cifre > div { background: var(--surface); padding: 1rem; display: flex; flex-direction: column; gap: .3rem; }
+  .cifre .num { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 600; color: var(--accent); line-height: 1; }
+  @media (min-width: 760px) { .cifre { grid-template-columns: repeat(4, 1fr); } }
+</style>

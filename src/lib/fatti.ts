@@ -33,6 +33,16 @@ export async function getFatti(ids: string[]): Promise<Map<string, Fatto>> {
   return out;
 }
 
+// Fonti richieste per id (glossario, storia, quiz): se una manca la build si ferma
+export async function getFonti(ids: Iterable<string>): Promise<Fonte[]> {
+  const tutte = await tutteLeFonti();
+  return [...new Set(ids)].map(id => {
+    const f = tutte.get(id);
+    if (!f) throw new Error(`Fonte "${id}" non trovata in src/data/fonti.yaml`);
+    return f;
+  });
+}
+
 export const fatto = (m: Map<string, Fatto>, id: string) => {
   const f = m.get(id);
   if (!f) throw new Error(`Scheda "${id}" non caricata: aggiungila all'elenco della pagina`);

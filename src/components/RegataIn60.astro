@@ -1,0 +1,180 @@
+---
+// "La regata in 60 secondi". Senza JavaScript, o con "riduci movimento", si vedono 6 immagini ferme
+// con le didascalie. Con JavaScript diventa un'animazione con play, pausa e le 6 scene.
+import CampoRegata from './CampoRegata.astro';
+import Icon from './Icon.astro';
+import { SCENE, stato } from '../lib/regata60';
+---
+<div class="r60" data-r60>
+  <div class="r60__player" data-player hidden>
+    <div class="r60__stage">
+      <CampoRegata s={stato(0)} live />
+      <button type="button" class="r60__avvia btn btn--primary" data-avvia><Icon name="play" size={20} /> Guarda la regata · 60 s</button>
+    </div>
+    <div class="r60__lato">
+      <div class="r60__barra" role="group" aria-label="Scene">
+        {SCENE.map((sc, i) => (
+          <button type="button" class="r60__seg" data-vai={i} aria-label={`Scena ${i + 1}: ${sc.titolo}`}><span class="r60__riemp" /></button>
+        ))}
+      </div>
+      <div class="r60__cap" aria-live="polite">
+        <p class="kicker" data-num>Scena 1 di {SCENE.length}</p>
+        <h3 data-tit>{SCENE[0].titolo}</h3>
+        <p data-txt>{SCENE[0].testo}</p>
+      </div>
+      <div class="r60__ctrl">
+        <button type="button" class="icon-btn" data-prec aria-label="Scena precedente"><Icon name="indietro" /></button>
+        <button type="button" class="btn r60__play" data-play aria-label="Avvia"><span data-ico-play><Icon name="play" size={20} /></span><span data-ico-pausa hidden><Icon name="pausa" size={20} /></span><span data-play-t>Avvia</span></button>
+        <button type="button" class="icon-btn" data-succ aria-label="Scena successiva"><Icon name="avanti" /></button>
+        <button type="button" class="icon-btn" data-da-capo aria-label="Ricomincia da capo"><Icon name="riprova" /></button>
+      </div>
+      <p class="small muted r60__nota">Schema non in scala. Le due barche sono inventate: blu e arancio.</p>
+    </div>
+  </div>
+
+  <ol class="r60__lista" data-lista>
+    {SCENE.map((sc, i) => (
+      <li class="r60__fig">
+        <figure>
+          <CampoRegata s={stato(sc.chiave)} titolo={`Schema della scena ${i + 1}: ${sc.titolo.toLowerCase()}`} />
+          <figcaption>
+            <p class="kicker">Scena {i + 1} di {SCENE.length}</p>
+            <h3>{sc.titolo}</h3>
+            <p>{sc.testo}</p>
+          </figcaption>
+        </figure>
+      </li>
+    ))}
+  </ol>
+</div>
+
+<script>
+  import { stato, SCENE as scene, DUR, TOT, SCALA } from '../lib/regata60';
+
+  const root = document.querySelector<HTMLElement>('[data-r60]');
+  const riduci = matchMedia('(prefers-reduced-motion: reduce)');
+  if (root && !riduci.matches) {
+    const player = root.querySelector<HTMLElement>('[data-player]')!;
+    const lista = root.querySelector<HTMLElement>('[data-lista]')!;
+    player.hidden = false;
+    lista.hidden = true;
+
+    const svg = player.querySelector('svg')!;
+    const q = <T extends Element = SVGElement>(k: string) => svg.querySelector<T>(`[data-r="${k}"]`)!;
+    const el = {
+      blu: q('blu'), bluVela: q('blu-vela'), bluScia: q('blu-scia'),
+      arancio: q('arancio'), arancioVela: q('arancio-vela'), arancioScia: q('arancio-scia'),
+      conto: q('conto'), pen: q('pen'), metriL: q('metri-l'), metriT: q('metri-t')
+    };
+    const ops = [...svg.querySelectorAll<SVGElement>('[data-op]')].map(n => ({ n, k: n.dataset.op!, v: -1 }));
+    const segs = [...player.querySelectorAll<HTMLElement>('[data-vai]')];
+    const num = player.querySelector('[data-num]')!, tit = player.querySelector('[data-tit]')!, txt = player.querySelector('[data-txt]')!;
+    const playBtn = player.querySelector<HTMLButtonElement>('[data-play]')!;
+    const avvia = player.querySelector<HTMLButtonElement>('[data-avvia]')!;
+
+    let t = 0, gira = false, ultimo = 0, raf = 0, scenaMostrata = -1, visibile = true;
+    const f1 = (n: number) => n.toFixed(1);
+
+    function disegna() {
+      const s = stato(t);
+      for (const [nome, b, vela, scia] of [['blu', el.blu, el.bluVela, el.bluScia], ['arancio', el.arancio, el.arancioVela, el.arancioScia]] as const) {
+        const x = s[nome];
+        b.setAttribute('transform', `translate(${f1(x.x)} ${f1(x.y)}) rotate(${f1(x.rotta)}) scale(${SCALA})`);
+        vela.setAttribute('transform', `rotate(${f1(-x.vela * x.apertura)} 3 0)`);
+        scia.setAttribute('points', x.scia);
+      }
+      el.pen.setAttribute('transform', `translate(${f1(s.blu.x)} ${f1(s.blu.y - 16)})`);
+      if (s.op.metri > 0) {
+        el.metriL.setAttribute('x1', f1(s.blu.x)); el.metriL.setAttribute('y1', f1(s.blu.y));
+        el.metriL.setAttribute('x2', f1(s.arancio.x)); el.metriL.setAttribute('y2', f1(s.arancio.y));
+        el.metriT.setAttribute('transform', `translate(${f1((s.blu.x + s.arancio.x) / 2)} ${f1((s.blu.y + s.arancio.y) / 2)})`);
+      }
+      if (s.op.countdown > 0) el.conto.textContent = s.conto;
+      for (const o of ops) { const v = Math.round(s.op[o.k] * 100) / 100; if (v !== o.v) { o.v = v; o.n.setAttribute('opacity', String(v)); } }
+      segs.forEach((g, i) => {
+        const p = Math.max(0, Math.min(1, (t - i * DUR) / DUR));
+        (g.firstElementChild as HTMLElement).style.transform = `scaleX(${p})`;
+        g.toggleAttribute('aria-current', i === s.scena);
+      });
+      if (s.scena !== scenaMostrata) {
+        scenaMostrata = s.scena;
+        num.textContent = `Scena ${s.scena + 1} di ${scene.length}`;
+        tit.textContent = scene[s.scena].titolo;
+        txt.textContent = scene[s.scena].testo;
+      }
+    }
+
+    const statoPlay = () => {
+      player.querySelector<HTMLElement>('[data-ico-play]')!.hidden = gira;
+      player.querySelector<HTMLElement>('[data-ico-pausa]')!.hidden = !gira;
+      player.querySelector('[data-play-t]')!.textContent = gira ? 'Pausa' : t >= TOT ? 'Rivedi' : 'Avvia';
+      playBtn.setAttribute('aria-label', gira ? 'Pausa' : t >= TOT ? 'Rivedi da capo' : 'Avvia');
+      svg.classList.toggle('r60-svg--live', gira);
+    };
+    function passo(ora: number) {
+      if (!gira) return;
+      const dt = Math.min(0.1, (ora - ultimo) / 1000);
+      ultimo = ora;
+      if (visibile && !document.hidden) t = Math.min(TOT, t + dt);
+      disegna();
+      if (t >= TOT) { gira = false; statoPlay(); return; }
+      raf = requestAnimationFrame(passo);
+    }
+    const play = () => {
+      if (t >= TOT) t = 0;
+      avvia.hidden = true;
+      gira = true; ultimo = performance.now(); statoPlay();
+      cancelAnimationFrame(raf); raf = requestAnimationFrame(passo);
+    };
+    const pausa = () => { gira = false; cancelAnimationFrame(raf); statoPlay(); };
+    const vai = (i: number) => {
+      t = Math.max(0, Math.min(scene.length - 1, i)) * DUR + 0.01;
+      avvia.hidden = true;
+      disegna(); statoPlay();
+    };
+
+    avvia.addEventListener('click', play);
+    playBtn.addEventListener('click', () => (gira ? pausa() : play()));
+    player.querySelector('[data-prec]')!.addEventListener('click', () => vai(Math.floor(t / DUR) - (t % DUR < 1.5 ? 1 : 0)));
+    player.querySelector('[data-succ]')!.addEventListener('click', () => vai(Math.floor(t / DUR) + 1));
+    player.querySelector('[data-da-capo]')!.addEventListener('click', () => { t = 0; play(); });
+    segs.forEach((g, i) => g.addEventListener('click', () => vai(i)));
+    new IntersectionObserver(([e]) => { visibile = e.isIntersecting; }).observe(player);
+    riduci.addEventListener?.('change', e => { if (e.matches) { pausa(); player.hidden = true; lista.hidden = false; } });
+
+    // Per i controlli: ?r60t=43.2 apre il lettore fermo a quell'istante
+    const qt = Number(new URLSearchParams(location.search).get('r60t'));
+    if (qt > 0) { t = Math.min(TOT, qt); avvia.hidden = true; }
+    disegna(); statoPlay();
+  }
+</script>
+
+<style>
+  .r60 { margin-top: 1rem; }
+  .r60__player { display: grid; gap: 1.2rem; align-items: start; }
+  @media (min-width: 860px) { .r60__player { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 2rem; } }
+  .r60__stage { position: relative; max-width: 520px; width: 100%; margin-inline: auto; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+  .r60__avvia { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); box-shadow: var(--shadow); white-space: nowrap; }
+  .r60__lato { display: flex; flex-direction: column; gap: 1rem; }
+  .r60__barra { display: grid; grid-template-columns: repeat(6, 1fr); gap: 4px; }
+  .r60__seg { position: relative; height: 26px; padding: 0; border: 0; background: none; cursor: pointer; }
+  .r60__seg::before { content: ''; position: absolute; left: 0; right: 0; top: 10px; height: 6px; background: var(--line); border-radius: 3px; }
+  .r60__riemp { position: absolute; left: 0; right: 0; top: 10px; height: 6px; background: var(--accent); border-radius: 3px; transform-origin: left; transform: scaleX(0); }
+  .r60__seg[aria-current]::before { background: var(--line-2); }
+  .r60__seg:focus-visible { outline: 3px solid var(--accent); outline-offset: 1px; }
+  .r60__cap { min-height: 11.5rem; }
+  .r60__cap h3 { font-size: clamp(1.5rem, 1.2rem + 1.2vw, 2rem); font-stretch: 76%; margin-bottom: .4rem; }
+  .r60__cap p:last-child { margin-bottom: 0; font-size: 1.08rem; }
+  .r60__ctrl { display: flex; align-items: center; gap: .4rem; flex-wrap: wrap; }
+  .r60__play { min-width: 8.5rem; }
+  .r60__play [hidden] { display: none; }
+  .r60__nota { margin: 0; }
+  .r60__lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 2rem; }
+  @media (min-width: 700px) { .r60__lista { grid-template-columns: 1fr 1fr; } }
+  @media (min-width: 1100px) { .r60__lista { grid-template-columns: repeat(3, 1fr); } }
+  .r60__fig { margin: 0; }
+  .r60__fig figure { margin: 0; display: grid; gap: .7rem; }
+  .r60__fig :global(svg) { border: 1px solid var(--line); }
+  .r60__fig h3 { margin-bottom: .3rem; }
+  .r60__fig p:last-child { margin: 0; }
+</style>

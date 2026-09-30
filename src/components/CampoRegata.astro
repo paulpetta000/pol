@@ -1,0 +1,140 @@
+---
+// Un fotogramma della "regata in 60 secondi" (vista dall'alto). Con live=true diventa il palco
+// dell'animazione: gli elementi hanno gli attributi data-r / data-op che lo script aggiorna.
+import { CAMPO, W, H, SCALA, type Stato } from '../lib/regata60';
+interface Props { s: Stato; live?: boolean; titolo?: string; id?: string }
+const { s, live = false, titolo, id } = Astro.props;
+const { confini: C, alto, basso, boa, giuria } = CAMPO;
+const op = (k: string) => s.op[k].toFixed(2);
+const b = s.blu, a = s.arancio;
+const tr = (x: number, y: number, r = 0) => `translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${r.toFixed(1)}) scale(${SCALA})`;
+const vela = (v: 1 | -1, ap: number) => `rotate(${(-v * ap).toFixed(1)} 3 0)`;
+const mid = [(b.x + a.x) / 2, (b.y + a.y) / 2];
+const onde = Array.from({ length: 11 }, (_, i) => 52 + i * 32);
+---
+<svg class:list={['r60-svg', { 'r60-svg--live': live }]} viewBox={`0 0 ${W} ${H}`} role={live ? undefined : 'img'} aria-hidden={live ? 'true' : undefined} aria-label={live ? undefined : titolo} id={id} focusable="false">
+  <rect width={W} height={H} class="r60-mare" />
+  {onde.map((y, i) => <path d={`M${10 + (i % 2) * 18} ${y} q9 -3 18 0 t18 0 M${120 + (i % 3) * 20} ${y + 14} q9 -3 18 0 t18 0 M${210 - (i % 2) * 14} ${y + 6} q9 -3 18 0 t18 0`} class="r60-onda" />)}
+
+  <!-- vento: sempre visibile in alto -->
+  <g class="r60-vento" transform="translate(150 4)">
+    {[-26, 0, 26].map(dx => <path d={`M${dx} 2 V20 M${dx - 5} 14 L${dx} 21 L${dx + 5} 14`} class="r60-vento__f" />)}
+    <text x="40" y="15" class="r60-t r60-t--vento">VENTO</text>
+  </g>
+
+  <!-- campo -->
+  <rect x={C.x} y={C.y} width={C.w} height={C.h} rx="6" class="r60-confini" data-op="confini" opacity={op('confini')} />
+  <g data-op="alto" opacity={op('alto')}>
+    <line x1={alto[0][0]} y1={alto[0][1]} x2={alto[1][0]} y2={alto[1][1]} class="r60-cancello" />
+    {alto.map(([x, y]) => <circle cx={x} cy={y} r="4.2" class="r60-boa" />)}
+  </g>
+  <g data-op="basso" opacity={op('basso')}>
+    <line x1={basso[0][0]} y1={basso[0][1]} x2={basso[1][0]} y2={basso[1][1]} class="r60-cancello" />
+    {basso.map(([x, y]) => <circle cx={x} cy={y} r="4.2" class="r60-boa" />)}
+  </g>
+  <g data-op="via" opacity={op('via')}>
+    <line x1={boa[0]} y1={boa[1]} x2={giuria[0]} y2={giuria[1]} class="r60-linea" />
+    <circle cx={boa[0]} cy={boa[1]} r="3.6" class="r60-boa r60-boa--via" />
+    <g transform={`translate(${giuria[0] + 2} ${giuria[1]})`}>
+      <path d="M-3 -4 H11 L14 0 L11 4 H-3 Z" class="r60-giuria" />
+      <path d="M4 -4 V-15 L11 -12 L4 -9" class="r60-bandiera" />
+    </g>
+  </g>
+
+  <!-- etichette della scena 1 -->
+  <g class="r60-lab" data-op="l-confini" opacity={op('l-confini')}><rect x="26" y="208" width="50" height="14" rx="2" /><text x="51" y="218" text-anchor="middle">CONFINI</text></g>
+  <g class="r60-lab" data-op="l-alto" opacity={op('l-alto')}><rect x="94" y="88" width="112" height="14" rx="2" /><text x="150" y="98" text-anchor="middle">CANCELLO IN ALTO</text></g>
+  <g class="r60-lab" data-op="l-basso" opacity={op('l-basso')}><rect x="90" y="270" width="120" height="14" rx="2" /><text x="150" y="280" text-anchor="middle">CANCELLO IN BASSO</text></g>
+  <g class="r60-lab" data-op="l-via" opacity={op('l-via')}><rect x="80" y="322" width="140" height="14" rx="2" /><text x="150" y="332" text-anchor="middle">PARTENZA E ARRIVO</text></g>
+
+  <!-- scie e barche -->
+  <polyline points={b.scia} class="r60-scia r60-scia--blu" data-r="blu-scia" />
+  <polyline points={a.scia} class="r60-scia r60-scia--arancio" data-r="arancio-scia" />
+  <g transform={tr(b.x, b.y, b.rotta)} data-r="blu">
+    <path d="M12 0 C8 -2.6 -4 -3.4 -9.5 -3.1 L-10 3.1 C-4 3.4 8 2.6 12 0 Z" class="r60-scafo r60-scafo--blu" />
+    <line x1="3" y1="0" x2="-9" y2="0" class="r60-vela" transform={vela(b.vela, b.apertura)} data-r="blu-vela" />
+  </g>
+  <g transform={tr(a.x, a.y, a.rotta)} data-r="arancio">
+    <path d="M12 0 C8 -2.6 -4 -3.4 -9.5 -3.1 L-10 3.1 C-4 3.4 8 2.6 12 0 Z" class="r60-scafo r60-scafo--arancio" />
+    <line x1="3" y1="0" x2="-9" y2="0" class="r60-vela" transform={vela(a.vela, a.apertura)} data-r="arancio-vela" />
+  </g>
+
+  <!-- scena 2: partenza -->
+  <g class="r60-lab" data-op="entra" opacity={op('entra')}><rect x="28" y="346" width="58" height="14" rx="2" /><text x="57" y="356" text-anchor="middle">ENTRA BLU</text><rect x="206" y="354" width="66" height="14" rx="2" /><text x="239" y="364" text-anchor="middle">ENTRA ARANCIO</text></g>
+  <g class="r60-tv" data-op="countdown" opacity={op('countdown')}><rect x="28" y="42" width="92" height="22" rx="2" /><text x="36" y="56.5" class="r60-tv__k">VIA TRA</text><text x="112" y="57" text-anchor="end" class="r60-tv__n" data-r="conto">{s.conto}</text></g>
+  <g class="r60-tv r60-tv--acc" data-op="partiti" opacity={op('partiti')}><rect x="118" y="236" width="64" height="20" rx="2" /><text x="150" y="250" text-anchor="middle" class="r60-tv__n">VIA!</text></g>
+
+  <!-- scena 3 e 4 -->
+  <g class="r60-lab" data-op="zigzag" opacity={op('zigzag')}><rect x="94" y="116" width="112" height="14" rx="2" /><text x="150" y="126" text-anchor="middle">CONTROVENTO A ZIG-ZAG</text></g>
+  <g class="r60-lab" data-op="sceglie" opacity={op('sceglie')}><rect x="96" y="100" width="108" height="14" rx="2" /><text x="150" y="110" text-anchor="middle">SI SCEGLIE LA BOA</text></g>
+  <g class="r60-lab" data-op="strambate" opacity={op('strambate')}><rect x="92" y="136" width="116" height="14" rx="2" /><text x="150" y="146" text-anchor="middle">IN POPPA: STRAMBATE</text></g>
+  <g class="r60-tv" data-op="record" opacity={op('record')}><rect x="28" y="42" width="112" height="22" rx="2" /><text x="36" y="56.5" class="r60-tv__k">RECORD</text><text x="132" y="57" text-anchor="end" class="r60-tv__n">55,6 NODI</text></g>
+
+  <!-- scena 5: precedenza e penalità -->
+  <g class="r60-lab" data-op="precedenza" opacity={op('precedenza')}><rect x="64" y="146" width="172" height="14" rx="2" /><text x="150" y="156" text-anchor="middle">MURE A DRITTA: HA LA PRECEDENZA</text></g>
+  <g class="r60-contatto" data-op="contatto" opacity={op('contatto')}><circle cx="162" cy="212" r="14" /><text x="162" y="217" text-anchor="middle">!</text></g>
+  <g data-op="metri" opacity={op('metri')}>
+    <line x1={b.x.toFixed(1)} y1={b.y.toFixed(1)} x2={a.x.toFixed(1)} y2={a.y.toFixed(1)} class="r60-metri" data-r="metri-l" />
+    <g transform={`translate(${mid[0].toFixed(1)} ${mid[1].toFixed(1)})`} data-r="metri-t" class="r60-tv"><rect x="-19" y="-9" width="38" height="16" rx="2" /><text x="0" y="3" text-anchor="middle" class="r60-tv__n r60-tv__n--s">75 m</text></g>
+  </g>
+  <g transform={`translate(${b.x.toFixed(1)} ${(b.y - 16).toFixed(1)})`} data-r="pen">
+    <g class="r60-tv r60-tv--acc" data-op="penalita" opacity={op('penalita')}><rect x="-32" y="-10" width="64" height="15" rx="2" /><text x="0" y="1" text-anchor="middle" class="r60-tv__n r60-tv__n--s">PENALITÀ</text></g>
+    <g class="r60-tv r60-tv--ok" data-op="scontata" opacity={op('scontata')}><rect x="-32" y="-10" width="64" height="15" rx="2" /><text x="0" y="1" text-anchor="middle" class="r60-tv__n r60-tv__n--s">SCONTATA</text></g>
+  </g>
+
+  <!-- scena 6: arrivo e Match -->
+  <g class="r60-lab" data-op="traguardo" opacity={op('traguardo')}><rect x="112" y="350" width="76" height="14" rx="2" /><text x="150" y="360" text-anchor="middle">TRAGUARDO</text></g>
+  <g class="r60-tv r60-tv--acc" data-op="vince" opacity={op('vince')}><rect x="92" y="306" width="116" height="20" rx="2" /><text x="150" y="320" text-anchor="middle" class="r60-tv__n">VINCE ARANCIO</text></g>
+  <g class="r60-tab" data-op="tabellone" opacity={op('tabellone')}>
+    <rect x="46" y="150" width="208" height="96" rx="3" />
+    <text x="60" y="170" class="r60-tab__k">IL MATCH · VINCE CHI ARRIVA A 7</text>
+    {[0, 1].map(r => (
+      <g transform={`translate(60 ${192 + r * 30})`}>
+        <text x="0" y="4" class="r60-tab__n">{r === 0 ? 'ARANCIO' : 'BLU'}</text>
+        {Array.from({ length: 7 }, (_, i) => <circle cx={66 + i * 16} cy="0" r="5.5" class:list={['r60-tab__p', { 'r60-tab__p--arancio': r === 0 && i === 0 }]} />)}
+        <text x="182" y="4" text-anchor="end" class="r60-tab__n">{r === 0 ? '1' : '0'}</text>
+      </g>
+    ))}
+  </g>
+</svg>
+
+<style>
+  .r60-svg { width: 100%; height: auto; display: block; background: var(--map-sea); border-radius: var(--r); }
+  .r60-mare { fill: var(--map-sea); }
+  .r60-onda { fill: none; stroke: var(--map-sea-line); stroke-width: 1; opacity: .7; }
+  .r60-vento__f { stroke: var(--ink-2); stroke-width: 1.8; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .r60-svg--live .r60-vento__f { stroke-dasharray: 5 3; animation: r60v 1.2s linear infinite; }
+  @keyframes r60v { to { stroke-dashoffset: -8; } }
+  .r60-t { font: 600 8px var(--f-mono); fill: var(--ink-2); letter-spacing: .08em; }
+  .r60-confini { fill: none; stroke: var(--line-2); stroke-width: 1.2; stroke-dasharray: 5 4; }
+  .r60-cancello { stroke: var(--ink-3); stroke-width: 1; stroke-dasharray: 2 3; }
+  .r60-boa { fill: var(--buoy); stroke: var(--ink); stroke-width: 1; }
+  .r60-linea { stroke: var(--ink); stroke-width: 1.2; stroke-dasharray: 3 3; }
+  .r60-giuria { fill: var(--surface); stroke: var(--ink); stroke-width: 1; }
+  .r60-bandiera { fill: var(--accent); stroke: var(--ink); stroke-width: .8; }
+  .r60-lab rect { fill: var(--ink); }
+  .r60-lab text { font: 600 7.5px var(--f-mono); fill: var(--bg); letter-spacing: .05em; }
+  .r60-scia { fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; opacity: .5; }
+  .r60-scia--blu { stroke: var(--blu); }
+  .r60-scia--arancio { stroke: var(--accent); }
+  .r60-scafo { stroke: var(--ink); stroke-width: .8; }
+  .r60-scafo--blu { fill: var(--blu); }
+  .r60-scafo--arancio { fill: var(--accent); }
+  .r60-vela { stroke: var(--ink); stroke-width: 1.7; stroke-linecap: round; }
+  .r60-tv rect { fill: var(--navy); }
+  .r60-tv__k { font: 600 7px var(--f-mono); fill: #A9BBC8; letter-spacing: .08em; }
+  .r60-tv__n { font: 600 11px var(--f-mono); fill: #EDF3F5; }
+  .r60-tv__n--s { font-size: 8px; }
+  .r60-tv--acc rect { fill: var(--accent); }
+  .r60-tv--acc .r60-tv__n { fill: var(--accent-ink); }
+  .r60-tv--ok rect { fill: var(--ok); }
+  .r60-tv--ok .r60-tv__n { fill: var(--sea-ink); }
+  .r60-contatto circle { fill: color-mix(in srgb, var(--accent) 25%, transparent); stroke: var(--accent); stroke-width: 1.5; }
+  .r60-contatto text { font: 800 14px var(--f-sans); fill: var(--accent); }
+  .r60-metri { stroke: var(--ink); stroke-width: 1; stroke-dasharray: 3 2; }
+  .r60-tab rect { fill: var(--navy); }
+  .r60-tab__k { font: 600 7.5px var(--f-mono); fill: #A9BBC8; letter-spacing: .05em; }
+  .r60-tab__n { font: 600 9px var(--f-mono); fill: #EDF3F5; }
+  .r60-tab__p { fill: none; stroke: #52636E; stroke-width: 1.5; }
+  .r60-tab__p--arancio { fill: var(--accent); stroke: var(--accent); }
+</style>

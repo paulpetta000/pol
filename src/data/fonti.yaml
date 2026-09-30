@@ -477,3 +477,135 @@
   tipo: altro
   controllato: 2026-09-30
   letta: true
+
+- id: ac-regola-ac75
+  titolo: "AC75 Class Rule V3.05: la regola di classe della barca"
+  editore: America's Cup
+  url: https://www.americascup.com/files/m32005_AC75-Class-Rules-305.pdf
+  tipo: ufficiale
+  pubblicato: 2026-06-26
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-regola-ac40
+  titolo: "AC40 Class Rule V2.11: la regola di classe della barca"
+  editore: America's Cup
+  url: https://www.americascup.com/files/m32006_AC40-Class-Rules-211.pdf
+  tipo: ufficiale
+  pubblicato: 2026-06-26
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-barche
+  titolo: "AC75, AC40 and eChase boats"
+  editore: America's Cup
+  url: https://www.americascup.com/the-boats
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+# ---------- Regole, storia e video ----------
+- id: rrsac-2024
+  titolo: "Racing Rules of Sailing – America's Cup Edition v4.07 (le regole di regata del 2024)"
+  editore: World Sailing, copia di Sailing Scuttlebutt
+  url: https://www.sailingscuttlebutt.com/wp-content/uploads/2024/10/RRSAC-v4.07.pdf
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+  nota: "Approvate da World Sailing per la 37ª America's Cup. Le regole di regata del 2027 non sono ancora uscite."
+
+- id: ac-sito
+  titolo: "Sito ufficiale dell'America's Cup"
+  editore: America's Cup
+  url: https://www.americascup.com/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: yt-americascup
+  titolo: "Canale YouTube ufficiale dell'America's Cup"
+  editore: America's Cup
+  url: https://www.youtube.com/@americascup
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-coppa
+  titolo: "America's Cup"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/America%27s_Cup
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-2013
+  titolo: "2013 America's Cup"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/2013_America%27s_Cup
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-1983
+  titolo: "1983 America's Cup"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/1983_America%27s_Cup
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: yacht-regole-2024
+  titolo: "America's Cup: the most important rules of the 37th edition"
+  editore: Yacht (Germania)
+  url: https://www.yacht.de/en/regatta/america-s-cup/america-s-cup-the-most-important-rules-of-the-37th-edition
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-andature
+  titolo: "Andatura (vela)"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Andatura_(vela)
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-virata
+  titolo: "Virata (nautica)"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Virata_(nautica)
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-abbattuta
+  titolo: "Abbattuta (strambata)"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Abbattuta
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-nodo
+  titolo: "Nodo (unità di misura)"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Nodo_(unit%C3%A0_di_misura)
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-vmg
+  titolo: "Velocity made good"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/Velocity_made_good
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-1992
+  titolo: "1992 America's Cup"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/1992_America%27s_Cup
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true

@@ -10,13 +10,15 @@ import au from 'flag-icons/flags/4x3/au.svg?raw';
 
 const FLAGS = { nz, it, gb, ch, fr, us, au } as const;
 const NOMI = { nz: 'Nuova Zelanda', it: 'Italia', gb: 'Gran Bretagna', ch: 'Svizzera', fr: 'Francia', us: 'Stati Uniti', au: 'Australia' } as const;
-interface Props { code: keyof typeof FLAGS; width?: number; decorative?: boolean; class?: string }
-const { code, width = 28, decorative = false, class: cls } = Astro.props;
+// uid: serve solo se la stessa bandiera compare più volte nella pagina (id interni unici)
+interface Props { code: keyof typeof FLAGS; width?: number; decorative?: boolean; class?: string; uid?: string }
+const { code, width = 28, decorative = false, class: cls, uid = '' } = Astro.props;
+const pre = `f${code}${uid}`;
 const svg = FLAGS[code]
   .replace(/<\?xml[^>]*>/, '')
-  .replace(/id="([^"]+)"/g, `id="f${code}-$1"`)
-  .replace(/url\(#([^)]+)\)/g, `url(#f${code}-$1)`)
-  .replace(/href="#([^"]+)"/g, `href="#f${code}-$1"`)
+  .replace(/id="([^"]+)"/g, `id="${pre}-$1"`)
+  .replace(/url\(#([^)]+)\)/g, `url(#${pre}-$1)`)
+  .replace(/href="#([^"]+)"/g, `href="#${pre}-$1"`)
   .replace(/<svg([^>]*?)\s(?:width|height)="[^"]*"/g, '<svg$1')
   .replace('<svg', `<svg width="${width}" height="${Math.round(width * 0.75)}" ${decorative ? 'aria-hidden="true"' : `role="img" aria-label="${NOMI[code]}"`} focusable="false"`);
 ---

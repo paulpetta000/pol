@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFonti, tutteLeFonti } from '../../lib/fatti';
+import { SITO } from '../../config/sito';
+
+const voci = (await getCollection('glossario')).sort((a, b) => a.data.termine.localeCompare(b.data.termine, 'it'));
+const extra = await getFonti(voci.flatMap(v => v.data.fonti.map(r => r.id)));
+const fonti = await tutteLeFonti();
+const iniziale = (t: string) => t[0].toUpperCase();
+const lettere = [...new Set(voci.map(v => iniziale(v.data.termine)))];
+const url = new URL('/capire-la-coppa/glossario/', SITO.url).href;
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: 'Glossario dell\'America\'s Cup', url, inLanguage: 'it-IT',
+  hasDefinedTerm: voci.map(v => ({ '@type': 'DefinedTerm', name: v.data.termine, description: v.data.testo, url: `${url}#${v.id}` }))
+}];
+---
+<Base title="Glossario dell'America's Cup: le parole della vela" description={`${voci.length} parole per seguire l'America's Cup: foil, bolina, strambata, cancello, OCS, penalità, Defender, Louis Vuitton Cup e altre, spiegate in breve e con la fonte.`} jsonld={jsonld}>
+  <PageHead kicker="Capire la Coppa" title="Glossario" lead={`${voci.length} parole per seguire una regata senza perdersi. Brevi, con la fonte.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30">
+    <nav class="lettere" aria-label="Vai alla lettera">
+      {lettere.map(l => <a href={`#lettera-${l}`}>{l}</a>)}
+    </nav>
+  </PageHead>
+
+  <section class="section">
+    <div class="wrap">
+      {lettere.map(l => (
+        <div class="gl-gruppo">
+          <h2 id={`lettera-${l}`} class="gl-lettera mono">{l}</h2>
+          <dl class="gl">
+            {voci.filter(v => iniziale(v.data.termine) === l).map(v => (
+              <div class="gl__voce" id={v.id}>
+                <dt>
+                  <span class="gl__termine">{v.data.termine}</span>
+                  {v.data.altri.length > 0 && <span class="gl__altri">{v.data.altri.join(' · ')}</span>}
+                </dt>
+                <dd>
+                  <p>{v.data.testo}</p>
+                  <p class="gl__meta small">
+                    Fonte: {v.data.fonti.map((r, i) => { const s = fonti.get(r.id)!; return <>{i > 0 && ', '}<a href={s.data.url} rel="noopener">{s.data.editore}</a></>; })}
+                    {v.data.vedi && <> · <a href={v.data.vedi} class="gl__vedi">Approfondisci <Icon name="freccia" size={14} /></a></>}
+                  </p>
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <FontiPagina fatti={[]} extra={extra} />
+</Base>
+
+<style>
+  .lettere { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .4rem; }
+  .lettere a { display: grid; place-items: center; min-width: 40px; height: 40px; border: 1.5px solid var(--line-2); border-radius: var(--r); font: 600 .95rem var(--f-mono); color: var(--ink); text-decoration: none; background: var(--surface); }
+  .lettere a:hover { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+  .gl-gruppo { display: grid; gap: .2rem; }
+  .gl-gruppo + .gl-gruppo { margin-top: 1.8rem; }
+  .gl-lettera { font-size: 1.6rem; color: var(--accent); margin: 0; border-bottom: 2px solid var(--ink); padding-bottom: .2rem; scroll-margin-top: calc(var(--head-h) + 12px); }
+  .gl { margin: 0; }
+  .gl__voce { display: grid; gap: .2rem 1.5rem; padding: .9rem 0; border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--head-h) + 12px); }
+  .gl__voce:target { background: var(--accent-soft); box-shadow: -8px 0 0 var(--accent-soft), 8px 0 0 var(--accent-soft); }
+  @media (min-width: 760px) { .gl__voce { grid-template-columns: 14rem 1fr; } }
+  .gl dt { display: flex; flex-direction: column; gap: .15rem; }
+  .gl__termine { font-weight: 800; font-stretch: 80%; font-size: 1.3rem; line-height: 1.1; }
+  .gl__altri { font-family: var(--f-mono); font-size: .74rem; color: var(--ink-3); letter-spacing: .03em; }
+  .gl dd { margin: 0; }
+  .gl dd p { margin: 0 0 .3rem; }
+  .gl__meta { color: var(--ink-3); }
+  .gl__meta a { color: var(--ink-2); }
+  .gl__vedi { display: inline-flex; align-items: center; gap: .2rem; }
+</style>

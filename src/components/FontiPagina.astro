@@ -7,7 +7,8 @@ interface Props { fatti: Iterable<Fatto>; extra?: Fonte[] }
 const { fatti, extra = [] } = Astro.props;
 const lista = [...fatti];
 const fonti = fontiDi(lista, extra);
-const ultimo = ultimoControllo(lista);
+// Senza schede (glossario, storia, quiz) vale la data di controllo più recente delle fonti
+const ultimo = ultimoControllo(lista) ?? extra.reduce<Date | null>((d, s) => (!d || s.data.controllato > d ? s.data.controllato : d), null);
 const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', altro: 'Altro' } as const;
 ---
 {fonti.length > 0 && (

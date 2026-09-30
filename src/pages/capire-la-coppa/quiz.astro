@@ -1,0 +1,174 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti, getFonti } from '../../lib/fatti';
+import { SITO } from '../../config/sito';
+
+const domande = (await getCollection('quiz')).sort((a, b) => a.data.ordine - b.data.ordine);
+const f = await getFatti([...new Set(domande.flatMap(q => q.data.fatti.map(r => r.id)))]);
+const extra = await getFonti(domande.flatMap(q => q.data.fonti.map(r => r.id)));
+const fonteDi = new Map(extra.map(s => [s.id, s]));
+// Fonti di ogni domanda: quelle delle schede e quelle citate direttamente
+const fontiDomanda = (q: typeof domande[number]) => {
+  const m = new Map<string, { url: string; editore: string }>();
+  q.data.fatti.forEach(r => f.get(r.id)!.fontiRisolte.forEach(s => m.set(s.id, { url: s.data.url, editore: s.data.editore })));
+  q.data.fonti.forEach(r => { const s = fonteDi.get(r.id)!; m.set(s.id, { url: s.data.url, editore: s.data.editore }); });
+  return [...m.values()];
+};
+const url = new URL('/capire-la-coppa/quiz/', SITO.url).href;
+---
+<Base title="Quiz sull'America's Cup: quanto ne sai?" description={`${domande.length} domande sull'America's Cup di Napoli 2027: barche, regole, record e storia. Tre risposte, spiegazione e fonte per ognuna. Nessun dato salvato.`}>
+  <PageHead kicker="Capire la Coppa" title="Quiz: quanto ne sai?" lead={`${domande.length} domande, tre risposte ciascuna. Dopo ogni risposta trovi la spiegazione e la fonte. Non salviamo nulla: il punteggio resta sul tuo telefono.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30" />
+
+  <section class="section">
+    <div class="wrap">
+      <form class="quiz" data-quiz data-url={url} data-totale={domande.length} onsubmit="return false">
+        <p class="quiz__stato mono" data-stato aria-live="polite" hidden></p>
+        <ol class="quiz__l">
+          {domande.map((q, i) => (
+            <li class="quiz__q" data-q data-giusta={q.data.giusta}>
+              <fieldset>
+                <legend><span class="quiz__n mono">{String(i + 1).padStart(2, '0')}</span><span>{q.data.domanda}</span></legend>
+                <div class="quiz__opz">
+                  {q.data.opzioni.map((o, k) => (
+                    <label class="quiz__o">
+                      <input type="radio" name={`q-${q.id}`} value={k} />
+                      <span class="quiz__lettera mono" aria-hidden="true">{'ABC'[k]}</span>
+                      <span class="quiz__testo">{o}</span>
+                    </label>
+                  ))}
+                </div>
+              </fieldset>
+              <details class="quiz__sol">
+                <summary>Mostra la risposta</summary>
+                <p class="quiz__esito" data-esito></p>
+                <p><strong>Risposta giusta: {q.data.opzioni[q.data.giusta]}.</strong> {q.data.spiegazione}</p>
+                <p class="quiz__fonte small">Fonte: {fontiDomanda(q).map((s, j) => <>{j > 0 && ', '}<a href={s.url} rel="noopener">{s.editore}</a></>)}</p>
+              </details>
+            </li>
+          ))}
+        </ol>
+        <div class="quiz__fine terzo" data-fine hidden tabindex="-1">
+          <p class="kicker">Risultato</p>
+          <p class="quiz__punti"><span class="num" data-punti>0</span><span class="mono">/ {domande.length}</span></p>
+          <p class="lead" data-messaggio></p>
+          <p class="btn-row">
+            <a class="btn btn--primary" data-wa href="#" rel="noopener"><Icon name="condividi" size={20} /> Sfida un amico su WhatsApp</a>
+            <button type="button" class="btn" data-copia><Icon name="link" size={20} /> Copia il link</button>
+            <button type="button" class="btn" data-ricomincia><Icon name="riprova" size={20} /> Ricomincia</button>
+          </p>
+          <p class="small muted" data-copiato aria-live="polite"></p>
+          <p>Per ripassare: <a href="/capire-la-coppa/">la regata in 60 secondi</a> e il <a href="/capire-la-coppa/glossario/">glossario</a>.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} extra={extra} />
+</Base>
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('[data-quiz]');
+  if (form) {
+    form.classList.add('quiz--js');
+    const qs = [...form.querySelectorAll<HTMLElement>('[data-q]')];
+    const stato = form.querySelector<HTMLElement>('[data-stato]')!;
+    const fine = form.querySelector<HTMLElement>('[data-fine]')!;
+    const totale = qs.length;
+    const MESSAGGI = [
+      [12, 'Perfetto: sei pronto per il lungomare.'],
+      [9, 'Ottimo: ti manca pochissimo per salire a bordo.'],
+      [5, 'Buona base. La regata in 60 secondi ti aiuta a completare.'],
+      [0, 'Si comincia così: guarda la regata in 60 secondi e riprova.']
+    ] as const;
+    let giuste = 0, date = 0;
+    const aggiorna = () => {
+      stato.hidden = date === 0;
+      stato.textContent = `Risposte ${date} di ${totale} · giuste ${giuste}`;
+      if (date < totale) return;
+      const msg = MESSAGGI.find(([min]) => giuste >= Math.min(min, totale))![1];
+      fine.querySelector('[data-punti]')!.textContent = String(giuste);
+      fine.querySelector('[data-messaggio]')!.textContent = msg;
+      const testo = `Ho fatto ${giuste} su ${totale} al quiz sull'America's Cup di Napoli a Vela. Tu quanto ne sai?`;
+      fine.querySelector<HTMLAnchorElement>('[data-wa]')!.href = `https://wa.me/?text=${encodeURIComponent(`${testo} ${form.dataset.url}`)}`;
+      fine.hidden = false;
+      fine.focus({ preventScroll: true });
+      fine.scrollIntoView({ behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'center' });
+    };
+    qs.forEach(q => {
+      const giusta = Number(q.dataset.giusta);
+      const radios = [...q.querySelectorAll<HTMLInputElement>('input[type="radio"]')];
+      const sol = q.querySelector<HTMLDetailsElement>('.quiz__sol')!;
+      radios.forEach(r => r.addEventListener('change', () => {
+        const scelta = Number(r.value);
+        const ok = scelta === giusta;
+        radios.forEach((x, k) => {
+          x.disabled = true;
+          const l = x.closest('label')!;
+          if (k === giusta) l.classList.add('is-giusta');
+          else if (k === scelta) l.classList.add('is-sbagliata');
+        });
+        q.classList.add(ok ? 'q-ok' : 'q-no');
+        q.querySelector('[data-esito]')!.textContent = ok ? 'Giusto!' : 'Non è questa.';
+        sol.open = true;
+        date++; if (ok) giuste++;
+        aggiorna();
+      }));
+    });
+    fine.querySelector('[data-copia]')!.addEventListener('click', async () => {
+      const out = fine.querySelector('[data-copiato]')!;
+      try { await navigator.clipboard.writeText(form.dataset.url!); out.textContent = 'Link copiato.'; }
+      catch { out.textContent = `Copia questo link: ${form.dataset.url}`; }
+    });
+    fine.querySelector('[data-ricomincia]')!.addEventListener('click', () => {
+      form.reset();
+      qs.forEach(q => {
+        q.classList.remove('q-ok', 'q-no');
+        q.querySelectorAll('label').forEach(l => l.classList.remove('is-giusta', 'is-sbagliata'));
+        q.querySelectorAll<HTMLInputElement>('input').forEach(x => (x.disabled = false));
+        q.querySelector<HTMLDetailsElement>('.quiz__sol')!.open = false;
+      });
+      giuste = 0; date = 0; fine.hidden = true; aggiorna();
+      qs[0].querySelector('input')?.focus({ preventScroll: true });
+      qs[0].scrollIntoView({ block: 'center' });
+    });
+  }
+</script>
+
+<style>
+  .quiz { max-width: 46rem; }
+  .quiz__stato { position: sticky; top: calc(var(--head-h) + 8px); z-index: 5; display: inline-block; margin: 0 0 1rem; padding: .35rem .7rem; background: var(--ink); color: var(--bg); border-radius: var(--r); font-size: .82rem; }
+  .quiz__l { list-style: none; padding: 0; margin: 0; display: grid; gap: 1.6rem; }
+  .quiz__q { margin: 0; padding-bottom: 1.4rem; border-bottom: 1px solid var(--line); }
+  .quiz fieldset { border: 0; padding: 0; margin: 0; min-width: 0; }
+  .quiz legend { display: flex; gap: .7rem; align-items: baseline; padding: 0; margin-bottom: .8rem; font-weight: 750; font-stretch: 88%; font-size: 1.2rem; line-height: 1.25; }
+  .quiz__n { color: var(--accent); font-size: .85rem; flex: none; }
+  .quiz__opz { display: grid; gap: .5rem; }
+  .quiz__o { display: grid; grid-template-columns: auto auto 1fr; align-items: center; gap: .6rem; min-height: 52px; padding: .55rem .8rem; border: 2px solid var(--line-2); border-radius: var(--r); background: var(--surface); cursor: pointer; }
+  .quiz__o:hover { border-color: var(--ink); }
+  .quiz__o input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); }
+  .quiz__lettera { font-size: .8rem; color: var(--ink-3); }
+  .quiz__o:has(input:focus-visible) { outline: 3px solid var(--accent); outline-offset: 2px; }
+  .quiz__o:has(input:disabled) { cursor: default; }
+  .quiz__o.is-giusta { border-color: var(--ok); background: color-mix(in srgb, var(--ok) 12%, var(--surface)); }
+  .quiz__o.is-giusta .quiz__testo::after { content: ' ✓'; color: var(--ok); font-weight: 800; }
+  .quiz__o.is-sbagliata { border-color: var(--accent); background: color-mix(in srgb, var(--accent) 10%, var(--surface)); }
+  .quiz__o.is-sbagliata .quiz__testo::after { content: ' ✗'; color: var(--accent); font-weight: 800; }
+  .quiz__sol { margin-top: .8rem; }
+  .quiz__sol summary { cursor: pointer; color: var(--sea); font-weight: 600; }
+  .quiz__sol p { margin: .4rem 0 0; }
+  .quiz__esito:empty { display: none; }
+  .q-ok .quiz__esito { color: var(--ok); font-weight: 800; }
+  .q-no .quiz__esito { color: var(--accent); font-weight: 800; }
+  .quiz__fonte { color: var(--ink-3); }
+  .quiz__fonte a { color: var(--ink-2); }
+  :global(.quiz--js) .quiz__sol > summary { display: none; }
+  .quiz__fine { margin-top: 2rem; }
+  .quiz__fine:focus { outline: none; }
+  .quiz__punti { display: flex; align-items: baseline; gap: .5rem; margin: 0 0 .5rem; }
+  .quiz__punti .num { font-size: clamp(3rem, 2rem + 5vw, 4.6rem); font-weight: 600; color: var(--accent); line-height: 1; }
+  .quiz__punti .mono { font-size: 1.4rem; color: var(--ink-3); }
+</style>

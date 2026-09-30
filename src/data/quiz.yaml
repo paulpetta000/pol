@@ -1,0 +1,99 @@
+# Quiz di "Capire la Coppa": 3 risposte, una giusta (giusta: 0, 1 o 2).
+# Ogni domanda ha una scheda (fatti) o una fonte (fonti) che conferma la risposta.
+
+- id: equipaggio
+  ordine: 1
+  domanda: "Quante persone regatano su un AC75 nel 2027?"
+  opzioni: ["8", "5", "4"]
+  giusta: 1
+  spiegazione: "Cinque velisti, e almeno una è donna. Nel 2024 erano otto: quattro velisti e quattro ciclisti."
+  fatti: [ac75-cinque, ac75-donna]
+
+- id: batterie
+  ordine: 2
+  domanda: "Chi dà energia a vele e foil al posto dei ciclisti?"
+  opzioni: ["Le batterie", "Un motore a benzina", "Un pilota automatico"]
+  giusta: 0
+  spiegazione: "Un sistema a batterie con la stessa potenza di quattro ciclisti. A mano si governa solo il timone."
+  fatti: [ac75-batterie]
+
+- id: precedenze
+  ordine: 3
+  domanda: "Due barche si incrociano: una ha il vento da destra, l'altra da sinistra. Chi deve lasciare strada?"
+  opzioni: ["La più lenta", "Quella con il vento da destra", "Quella con il vento da sinistra"]
+  giusta: 2
+  spiegazione: "Chi ha le mure a sinistra lascia passare chi ha le mure a dritta. Chi non lo fa viene penalizzato."
+  fatti: [reg-precedenze]
+
+- id: vittorie
+  ordine: 4
+  domanda: "Quante vittorie servono per vincere il Match della Coppa?"
+  opzioni: ["5", "9", "7"]
+  giusta: 2
+  spiegazione: "Vince chi arriva prima a 7. Nelle semifinali della Louis Vuitton Cup ne bastano 5."
+  fatti: [cal-match, cal-semifinali]
+
+- id: ocs
+  ordine: 5
+  domanda: "Cosa vuol dire OCS?"
+  opzioni: ["Una barca rovesciata", "Una barca oltre la linea al momento del via", "Una barca fuori dai confini"]
+  giusta: 1
+  spiegazione: "On Course Side: chi è già oltre la linea quando parte il via viene penalizzato."
+  fatti: [reg-ocs]
+
+- id: albero
+  ordine: 6
+  domanda: "Quanto è alto l'albero di un AC75?"
+  opzioni: ["26,5 metri", "17,9 metri", "40 metri"]
+  giusta: 0
+  spiegazione: "26,5 metri, come un palazzo di otto piani. 17,9 metri è l'albero dell'AC40."
+  fatti: [ac75-misure, ac40-misure]
+
+- id: record
+  ordine: 7
+  domanda: "Qual è il record di velocità di un AC75?"
+  opzioni: ["35 nodi", "80 nodi", "55,6 nodi"]
+  giusta: 2
+  spiegazione: "55,6 nodi, cioè 102,97 km/h: INEOS Britannia, Barcellona 2024."
+  fatti: [ac75-velocita]
+
+- id: penalita
+  ordine: 8
+  domanda: "Con le regole del 2024, cosa deve fare una barca penalizzata?"
+  opzioni: ["Fare un giro su se stessa", "Fermarsi per un minuto", "Rallentare finché non è 75 metri dietro l'avversario"]
+  giusta: 2
+  spiegazione: "Deve rallentare e perdere terreno finché non è 75 metri dietro l'avversario, ed entro 60 secondi."
+  fatti: [reg-penalita]
+
+- id: foil
+  ordine: 9
+  domanda: "A cosa servono i foil?"
+  opzioni: ["A sollevare la barca", "A frenare", "A tenere dritto l'albero"]
+  giusta: 0
+  spiegazione: "Sono ali sott'acqua: quando la barca prende velocità sollevano lo scafo, che vola sopra il mare."
+  fonti: [ac-press-kit]
+
+- id: prima-regata
+  ordine: 10
+  domanda: "In che anno si è corsa la prima regata della Coppa?"
+  opzioni: ["1983", "1851", "1920"]
+  giusta: 1
+  spiegazione: "Il 22 agosto 1851, attorno all'Isola di Wight: vinse la goletta America, che diede il nome alla Coppa."
+  fonti: [ac-press-kit]
+
+- id: piu-coppe
+  ordine: 11
+  domanda: "Quale squadra ha vinto più Coppe negli ultimi quarant'anni?"
+  opzioni: ["Team New Zealand", "Alinghi", "Luna Rossa"]
+  giusta: 0
+  spiegazione: "Cinque vittorie: 1995, 2000, 2017, 2021 e 2024, le ultime tre di fila. Alinghi ne ha vinte due, Luna Rossa nessuna."
+  fonti: [ac-press-kit]
+
+- id: napoli
+  ordine: 12
+  domanda: "Prima del 2027, Napoli aveva già ospitato regate dell'America's Cup?"
+  opzioni: ["No, mai", "Sì, nel 2012 e nel 2013", "Sì, nel 1992"]
+  giusta: 1
+  spiegazione: "Nel 2012 e nel 2013 due tappe dell'America's Cup World Series, e nel 2026 una regata preliminare."
+  fatti: [res-napoli]
+  fonti: [ac-press-kit]

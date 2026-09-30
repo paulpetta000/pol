@@ -1,0 +1,201 @@
+# Glossario di "Capire la Coppa". Ogni voce ha almeno una fonte (src/data/fonti.yaml).
+# id: diventa l'ancora della pagina (/capire-la-coppa/glossario/#foil)
+# vedi: pagina della guida dove approfondire (facoltativo)
+
+- id: coppa-america
+  termine: Coppa America
+  altri: [America's Cup]
+  testo: "Il trofeo sportivo internazionale più antico: si corre dal 1851. Si sfidano club velici di paesi diversi, con barche e regole che cambiano a ogni edizione."
+  fonti: [ac-press-kit]
+
+- id: ac75
+  termine: AC75
+  testo: "La barca della Coppa: scafo lungo fino a 20,7 metri, albero di 26,5, cinque velisti e un ospite. Il nome viene da «75 piedi», circa 23 metri."
+  fonti: [ac-regola-ac75, wiki-ac75]
+  vedi: /squadre/barche/
+
+- id: ac40
+  termine: AC40
+  testo: "La barca più piccola, lunga 11,8 metri, con quattro persone a bordo e tutte uguali. Si usa per le regate preliminari, la Youth e la Women's America's Cup."
+  fonti: [wiki-ac40, ac-barche]
+  vedi: /squadre/barche/
+
+- id: auld-mug
+  termine: Auld Mug
+  testo: "«Vecchia brocca»: il soprannome della Coppa, una brocca d'argento senza fondo fatta nel 1848 dai gioiellieri inglesi Garrard."
+  fonti: [wiki-coppa]
+  vedi: /capire-la-coppa/storia/
+
+- id: bolina
+  termine: Bolina
+  testo: "Andare controvento. Dritti contro il vento non si può: si risale a zig-zag, virando."
+  fonti: [wiki-andature]
+
+- id: cancello
+  termine: Cancello
+  altri: [gate]
+  testo: "Due boe vicine alla fine di un lato: si gira attorno all'una o all'altra, a scelta. La boa scelta decide da che parte del campo si riparte."
+  fonti: [rrsac-2024, yacht-regole-2024]
+
+- id: challenger-of-record
+  termine: Challenger of Record
+  testo: "Il primo sfidante, che scrive le regole insieme a chi difende la Coppa. Per il 2027 è il Royal Yacht Squadron, con il team GB1."
+  fonti: [ac-38, ac-protocollo]
+
+- id: confini
+  termine: Confini
+  altri: [boundary]
+  testo: "I limiti del campo di regata: linee virtuali, che si vedono sugli strumenti di bordo e in TV. Chi esce è penalizzato."
+  fonti: [ac-press-kit, rrsac-2024]
+
+- id: deed-of-gift
+  termine: Deed of Gift
+  testo: "L'«atto di donazione» del 1857, con cui la Coppa fu affidata al New York Yacht Club. Contiene le regole di base, valide ancora oggi."
+  fonti: [ac-press-kit]
+  vedi: /capire-la-coppa/storia/
+
+- id: defender
+  termine: Defender
+  testo: "Chi detiene la Coppa e la difende nel Match. Oggi è il Royal New Zealand Yacht Squadron, con Emirates Team New Zealand."
+  fonti: [ac-press-kit, ac-protocollo]
+
+- id: fiocco
+  termine: Fiocco
+  altri: [jib]
+  testo: "La vela davanti all'albero. Sull'AC75 ha un telo solo, mentre la randa ne ha due."
+  fonti: [ac-regola-ac75]
+
+- id: flight-controller
+  termine: Flight controller
+  testo: "Chi regola l'altezza di volo muovendo i flap dei foil, per tenere la barca stabile e veloce sopra l'acqua."
+  fonti: [ac-barche, ac-press-kit]
+
+- id: foil
+  termine: Foil
+  testo: "Ali sott'acqua in fondo a due bracci, uno per lato. Quando la barca prende velocità sollevano lo scafo, che «vola» sopra il mare."
+  fonti: [ac-press-kit]
+  vedi: /squadre/barche/
+
+- id: fcs
+  termine: FCS
+  altri: [Foil Cant System]
+  testo: "Il sistema che alza e abbassa i bracci dei foil. Sull'AC75 un braccio ruota di oltre 100 gradi: da tutto giù a tutto fuori dall'acqua."
+  fonti: [ac-press-kit, ac-regola-ac75]
+
+- id: louis-vuitton-cup
+  termine: Louis Vuitton Cup
+  testo: "La sfida tra gli sfidanti. Chi la vince affronta il Defender nel Match. Nel 2027 si corre dal 22 maggio al 4 luglio al più tardi."
+  fonti: [ac-formato-lvc, ac-grazie-napoli]
+  vedi: /calendario/
+
+- id: match
+  termine: Match
+  testo: "La sfida finale per la Coppa, a due barche. Nel 2027 comincia il 10 luglio e vince chi arriva prima a 7 vittorie."
+  fonti: [ac-grazie-napoli, ac-formato-lvc]
+  vedi: /calendario/
+
+- id: match-race
+  termine: Match race
+  testo: "Regata a due barche, testa a testa. Non conta il tempo: conta solo arrivare davanti all'altra."
+  fonti: [ac-formato-lvc]
+
+- id: mure
+  termine: Mure
+  altri: [mure a dritta, mure a sinistra]
+  testo: "Il lato della barca da cui arriva il vento: mure a dritta se arriva da destra, mure a sinistra se arriva da sinistra. Quando due barche si incrociano, quella con le mure a sinistra lascia strada."
+  fonti: [ac-press-kit, rrsac-2024]
+
+- id: nodo
+  termine: Nodo
+  testo: "La velocità in mare: un miglio nautico all'ora, cioè 1,852 km/h. 50 nodi sono circa 93 km/h."
+  fonti: [wiki-nodo]
+
+- id: ocs
+  termine: OCS
+  altri: [On Course Side]
+  testo: "Una barca oltre la linea di partenza al momento del via. È penalizzata: deve perdere terreno o tornare indietro."
+  fonti: [ac-press-kit, rrsac-2024]
+
+- id: ospite
+  termine: Ospite a bordo
+  altri: [guest racer]
+  testo: "Novità del 2027: un posto a bordo dell'AC75 per un ospite, per esempio uno sponsor o un giornalista. Non può aiutare l'equipaggio in nessun modo."
+  fonti: [ac-barche, ac-regola-ac75]
+
+- id: penalita
+  termine: Penalità
+  testo: "Chi infrange una regola deve rallentare e perdere terreno. Con le regole del 2024: finché non è 75 metri dietro l'avversario, entro 60 secondi."
+  fonti: [rrsac-2024]
+
+- id: poppa
+  termine: Poppa
+  testo: "La parte dietro della barca. Andare «in poppa» vuol dire andare con il vento alle spalle: anche qui si scende a zig-zag, con le strambate."
+  fonti: [wiki-andature]
+
+- id: randa
+  termine: Randa
+  testo: "La vela grande, dietro l'albero. Sull'AC75 ha due teli, come un'ala d'aereo, e si allarga fino a 7,8 metri."
+  fonti: [ac-regola-ac75]
+
+- id: regata-di-flotta
+  termine: Regata di flotta
+  testo: "Tutte le barche partono insieme e prendono punti in base all'arrivo. Il 22 e 23 maggio 2027 correranno così tutti e sette gli AC75."
+  fonti: [ac-formato-lvc, etnz-formato]
+  vedi: /calendario/
+
+- id: round-robin
+  termine: Round Robin
+  testo: "Il girone all'italiana: ogni barca incontra una volta tutte le altre. Nella Louis Vuitton Cup 2027 ce ne sono tre."
+  fonti: [ac-formato-lvc]
+
+- id: scuffia
+  termine: Scuffia
+  altri: [capsize]
+  testo: "Quando la barca si rovescia. Per le regole è scuffiata quando la testa dell'albero tocca l'acqua."
+  fonti: [ac-press-kit]
+
+- id: sfidante
+  termine: Sfidante
+  altri: [challenger]
+  testo: "Chi prova a strappare la Coppa al Defender. Nel 2027 gli sfidanti sono sei."
+  fonti: [etnz-formato]
+  vedi: /squadre/
+
+- id: sopravento
+  termine: Sopravento e sottovento
+  testo: "Sopravento è il lato da cui arriva il vento, sottovento quello opposto. Se due barche hanno le stesse mure, quella sopravento lascia strada."
+  fonti: [ac-press-kit, rrsac-2024]
+
+- id: strambata
+  termine: Strambata
+  altri: [abbattuta]
+  testo: "Il cambio di mure con il vento alle spalle: la poppa passa attraverso il vento."
+  fonti: [wiki-abbattuta]
+
+- id: timoniere
+  termine: Timoniere
+  altri: [helm]
+  testo: "Chi guida la barca. Sull'AC75 e sull'AC40 sono due, uno per lato, ognuno nel suo pozzetto."
+  fonti: [ac-press-kit, ac-barche]
+
+- id: timone
+  termine: Timone a T
+  testo: "La pinna a poppa che fa girare la barca. In fondo ha un'aletta orizzontale che dà stabilità in volo."
+  fonti: [ac-press-kit]
+
+- id: trimmer
+  termine: Trimmer
+  altri: [regolatore]
+  testo: "Chi regola le vele secondo per secondo, tra onde, calme e raffiche."
+  fonti: [ac-barche]
+
+- id: virata
+  termine: Virata
+  testo: "Il cambio di mure controvento: la prua passa attraverso il vento, da un bordo di bolina all'altro."
+  fonti: [wiki-virata]
+
+- id: vmg
+  termine: VMG
+  altri: [velocità utile]
+  testo: "La «velocità utile»: quanto in fretta ti avvicini davvero alla meta controvento o in poppa, contando lo zig-zag."
+  fonti: [wiki-vmg, rrsac-2024]

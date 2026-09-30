@@ -459,9 +459,9 @@
   controllato: 2026-09-29
 
 - id: tv-youtube
-  testo: "Il canale YouTube ufficiale è youtube.com/@americascup."
-  stato: stampa
-  fonti: [scuttlebutt-napoli]
+  testo: "Il canale YouTube ufficiale è youtube.com/@americascup: regate intere, riassunti e spiegazioni."
+  stato: confermato
+  fonti: [ac-sito, yt-americascup]
   controllato: 2026-09-30
 
 # ================= TRASPORTI =================
@@ -617,15 +617,15 @@
   controllato: 2026-09-30
 
 - id: ac75-una-nuova
-  testo: "Ogni squadra può costruire un solo AC75 nuovo."
+  testo: "Ogni squadra ha un solo AC75 e deve usare uno scafo già costruito per la Coppa del 2021 o del 2024, modificandolo. Le squadre nuove possono comprarne uno o copiarne il progetto."
   stato: confermato
-  fonti: [ac-38]
+  fonti: [ac-barche]
   controllato: 2026-09-30
 
 - id: ac75-velocita
-  testo: "Gli AC75 superano i 55 nodi, cioè più di 100 km/h: è successo a Barcellona nel 2024."
+  testo: "Il record dell'AC75 è di 55,6 nodi, cioè 102,97 km/h: lo ha fatto INEOS Britannia a Barcellona nel 2024, nella finale della Louis Vuitton Cup."
   stato: confermato
-  fonti: [etnz-formato]
+  fonti: [ac-barche, etnz-formato]
   controllato: 2026-09-30
 
 - id: ac40-uso
@@ -685,13 +685,118 @@
 
 # ================= MISURE DELLE BARCHE =================
 - id: ac75-misure
-  testo: "AC75 vuol dire «America's Cup 75 piedi»: circa 23 metri. Pesa circa 6,5 tonnellate a vuoto e 7,6 in regata; con i foil abbassati arriva a 5 metri sotto la superficie."
-  stato: stampa
-  fonti: [wiki-ac75]
+  testo: "Lo scafo dell'AC75 è lungo al massimo 20,70 metri e largo al massimo 5. L'albero è alto 26,5 metri, inclinato di 5 gradi verso poppa."
+  stato: confermato
+  fonti: [ac-regola-ac75]
+  controllato: 2026-09-30
+
+- id: ac75-peso
+  testo: "In regata l'AC75 pesa 6.435 kg: 5.875 la barca, 435 i cinque velisti con la loro attrezzatura, 125 l'ospite. Se l'equipaggio pesa meno, si aggiunge zavorra."
+  stato: confermato
+  fonti: [ac-regola-ac75]
+  controllato: 2026-09-30
+
+- id: ac75-pozzetti
+  testo: "A bordo ci sono 6 pozzetti, 3 per lato, tutti nella parte di poppa: 5 per l'equipaggio e 1 per l'ospite."
+  stato: confermato
+  fonti: [ac-regola-ac75]
+  controllato: 2026-09-30
+
+- id: ac75-ruoli
+  testo: "Due timonieri, uno per lato. Gli altri tre regolano il volo sui foil, le vele e la strategia; il quinto posto, nuovo, tiene d'occhio l'energia delle batterie."
+  stato: confermato
+  fonti: [ac-barche, ac-press-kit]
+  controllato: 2026-09-30
+
+- id: ac75-foil
+  testo: "I due foil si alzano e si abbassano ruotando attorno a un perno sul fianco. Abbassato, un foil arriva circa 5,2 metri sotto la linea di galleggiamento; l'ala in fondo può essere larga fino a 4,5 metri."
+  stato: confermato
+  fonti: [ac-regola-ac75]
+  controllato: 2026-09-30
+
+- id: ac75-vele
+  testo: "La randa ha due teli, come un'ala, e si allarga fino a 7,8 metri dietro l'albero. Il fiocco ha un telo solo."
+  stato: confermato
+  fonti: [ac-regola-ac75]
   controllato: 2026-09-30
 
 - id: ac40-misure
-  testo: "L'AC40 è lungo 11,80 metri e largo 3,38, con un albero di 17,92 metri e un peso di circa 2 tonnellate. È uguale per tutti e va tutto a batterie."
+  testo: "L'AC40 è lungo 11,80 metri e largo 3,38, con un albero di 17,92 metri. Le barche sono tutte uguali."
   stato: stampa
   fonti: [wiki-ac40]
+  controllato: 2026-09-30
+
+- id: ac40-peso
+  testo: "L'AC40 pesa circa 2.120 kg; con i quattro velisti si arriva a circa 2.480 kg."
+  stato: confermato
+  fonti: [ac-regola-ac40]
+  controllato: 2026-09-30
+
+- id: ac40-ruoli
+  testo: "Sull'AC40 ci sono due timonieri e due regolatori, per randa e fiocco. Nelle regate preliminari il volo sui foil lo gestisce un pilota automatico uguale per tutti."
+  stato: confermato
+  fonti: [ac-barche]
+  controllato: 2026-09-30
+
+- id: ac40-batteria
+  testo: "Una batteria al litio muove vele, albero e foil e dura fino a 8 ore."
+  stato: confermato
+  fonti: [ac-barche]
+  controllato: 2026-09-30
+
+# ================= COME SI REGATA =================
+# Le regole di regata del 2027 non sono ancora uscite: queste sono quelle del 2024 (anno: 2024)
+- id: reg-percorso
+  testo: "Si parte controvento e si va su e giù tra due «cancelli», coppie di boe in alto e in basso. Nel 2024 i percorsi avevano 4, 6 o 8 lati."
+  stato: stampa
+  anno: 2024
+  fonti: [yacht-regole-2024, rrsac-2024]
+  controllato: 2026-09-30
+
+- id: reg-durata
+  testo: "Nel 2024 il primo lato andava chiuso entro 12 minuti e la regata intera entro 45."
+  stato: stampa
+  anno: 2024
+  fonti: [yacht-regole-2024]
+  controllato: 2026-09-30
+
+- id: reg-partenza
+  testo: "Poco più di due minuti prima del via le due barche entrano nell'area di partenza da lati opposti e si studiano. Al segnale devono essere dietro la linea."
+  stato: confermato
+  anno: 2024
+  fonti: [rrsac-2024]
+  controllato: 2026-09-30
+
+- id: reg-ocs
+  testo: "Chi passa la linea prima del via è «OCS» e viene penalizzato; se è in anticipo di più di 3 secondi deve tornare indietro e ripassarla."
+  stato: confermato
+  anno: 2024
+  fonti: [rrsac-2024, ac-press-kit]
+  controllato: 2026-09-30
+
+- id: reg-precedenze
+  testo: "Quando due barche si incrociano, quella con le mure a sinistra (il vento da sinistra) lascia strada all'altra. Sullo stesso bordo, chi è sopravento lascia strada a chi è sottovento."
+  stato: confermato
+  anno: 2024
+  fonti: [rrsac-2024]
+  controllato: 2026-09-30
+
+- id: reg-penalita
+  testo: "Una barca penalizzata dagli arbitri deve rallentare finché non è 75 metri dietro l'avversario, ed entro 60 secondi."
+  stato: confermato
+  anno: 2024
+  fonti: [rrsac-2024]
+  controllato: 2026-09-30
+
+- id: reg-confini
+  testo: "Il campo ha confini virtuali, che si vedono solo sugli strumenti e in TV. Mentre regata una barca deve restare dentro: se esce, è penalizzata."
+  stato: confermato
+  anno: 2024
+  fonti: [rrsac-2024, ac-press-kit]
+  controllato: 2026-09-30
+
+- id: reg-arrivo
+  testo: "Una barca arriva quando taglia il traguardo dopo aver scontato tutte le penalità."
+  stato: confermato
+  fonti: [ac-press-kit]
   controllato: 2026-09-30

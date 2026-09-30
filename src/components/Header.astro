@@ -4,7 +4,7 @@ import Logo from './Logo.astro';
 import { SITO } from '../config/sito';
 import { MENU } from '../config/menu';
 const path = Astro.url.pathname;
-const attivo = (href: string) => path.startsWith(href);
+const attivo = (m: (typeof MENU)[number]) => [m.href, ...(m.anche ?? [])].some(h => path.startsWith(h));
 ---
 <header class="site-head">
   <div class="wrap site-head__in">
@@ -17,7 +17,7 @@ const attivo = (href: string) => path.startsWith(href);
     </a>
     <nav class="nav-desk" aria-label="Sezioni">
       <ul>
-        {MENU.map(m => <li><a href={m.href} aria-current={attivo(m.href) ? 'page' : undefined}>{m.label}</a></li>)}
+        {MENU.map(m => <li><a href={m.href} aria-current={attivo(m) ? 'page' : undefined}>{m.label}</a></li>)}
       </ul>
     </nav>
     <div class="head-tools">
@@ -36,7 +36,7 @@ const attivo = (href: string) => path.startsWith(href);
     <ul class="wrap">
       {MENU.map((m, i) => (
         <li>
-          <a href={m.href} aria-current={attivo(m.href) ? 'page' : undefined}>
+          <a href={m.href} aria-current={attivo(m) ? 'page' : undefined}>
             <span class="nav-mob__n mono">{String(i + 1).padStart(2, '0')}</span>
             <span><span class="nav-mob__t">{m.label}</span><span class="nav-mob__s">{m.sotto}</span></span>
             <Icon name="freccia" size={20} />
@@ -44,6 +44,7 @@ const attivo = (href: string) => path.startsWith(href);
         </li>
       ))}
       <li class="nav-mob__extra">
+        <a href="/capire-la-coppa/">Capire la Coppa</a>
         <a href="/domande-frequenti/">Domande frequenti</a>
         <a href="/archivio-2026/">Archivio 2026</a>
         <a href="/fonti/">Fonti</a>

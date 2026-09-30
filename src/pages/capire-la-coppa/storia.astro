@@ -1,0 +1,101 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Flag from '../../components/Flag.astro';
+import VideoYT from '../../components/VideoYT.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFonti, tutteLeFonti } from '../../lib/fatti';
+import { ALBO, FONTI_ALBO } from '../../data/albo';
+
+const tappe = (await getCollection('storia')).sort((a, b) => a.id.localeCompare(b.id));
+const video = (await getCollection('video')).filter(v => v.data.gruppo === 'storia').sort((a, b) => a.data.ordine - b.data.ordine);
+const extra = await getFonti([...tappe.flatMap(t => t.data.fonti.map(r => r.id)), ...FONTI_ALBO, 'yt-americascup']);
+const fonti = await tutteLeFonti();
+const BAND = { us: 'us', au: 'au', nz: 'nz', ch: 'ch', it: 'it', gb: 'gb' } as const;
+const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.paese] = (m[x.vincitore.paese] || 0) + 1; return m; }, {});
+---
+<Base title="Storia dell'America's Cup: dal 1851 a Napoli 2027" description="La storia della Coppa America in 14 tappe, dalla goletta America del 1851 alla prima volta in Italia nel 2027, con tutti i Match dal 1983 e le sfide di Luna Rossa e del Moro di Venezia.">
+  <PageHead kicker="Capire la Coppa" title="Storia della Coppa" lead="Il trofeo sportivo internazionale più antico: 175 anni, solo quattro nazioni vincitrici, e nel 2027 per la prima volta in Italia." crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30" />
+
+  <section class="section" aria-labelledby="tappe-h">
+    <div class="wrap">
+      <p class="kicker">1851 → 2027</p>
+      <h2 id="tappe-h">Le tappe che contano</h2>
+      <ol class="linea">
+        {tappe.map(t => (
+          <li class:list={['linea__i', { 'linea__i--it': t.data.italia }]} id={`anno-${t.id}`}>
+            <p class="linea__q num">{t.data.quando}</p>
+            <div class="linea__c">
+              <h3>{t.data.titolo}{t.data.italia && <span class="chip linea__chip">Italia</span>}</h3>
+              <p>{t.data.testo}</p>
+              <p class="linea__f small">Fonte: {t.data.fonti.map((r, i) => { const s = fonti.get(r.id)!; return <>{i > 0 && ', '}<a href={s.data.url} rel="noopener">{s.data.editore}</a></>; })}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="albo-h">
+    <div class="wrap">
+      <p class="kicker">Albo d'oro</p>
+      <h2 id="albo-h">Tutti i Match dal 1983</h2>
+      <p class="lead">Da quando la Coppa ha lasciato l'America: {ALBO.length} sfide, vinte da Nuova Zelanda ({vittorie.nz}), Stati Uniti ({vittorie.us}), Svizzera ({vittorie.ch}) e Australia ({vittorie.au}).</p>
+      <div class="tabella-wrap">
+        <table class="albo">
+          <caption class="visually-hidden">America's Cup: vincitori e sconfitti di ogni Match dal 1983</caption>
+          <thead><tr><th scope="col" class="num">Anno</th><th scope="col">Sede</th><th scope="col">Vince</th><th scope="col" class="num">Risultato</th><th scope="col">Perde</th></tr></thead>
+          <tbody>
+            {ALBO.map((m, i) => (
+              <tr class:list={[{ 'albo--it': m.sconfitto.paese === 'it' }]}>
+                <td class="num mono">{m.anno}</td>
+                <td>{m.sede}</td>
+                <th scope="row"><span class="albo__sq"><Flag code={BAND[m.vincitore.paese]} width={22} decorative uid={`v${i}`} /><span>{m.vincitore.squadra}<span class="albo__club">{m.vincitore.club}{m.difesa ? ' · difende' : ' · sfida'}</span></span></span></th>
+                <td class="num mono albo__ris">{m.risultato}</td>
+                <td><span class="albo__sq"><Flag code={BAND[m.sconfitto.paese]} width={22} decorative uid={`s${i}`} /><span>{m.sconfitto.squadra}<span class="albo__club">{m.sconfitto.club}</span></span></span></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.6rem">Dal 1851 al 1980 la Coppa è sempre rimasta al New York Yacht Club. Club e risultati dal press kit ufficiale; nomi delle barche da Wikipedia.</p>
+    </div>
+  </section>
+
+  {video.length > 0 && (
+    <section class="section" aria-labelledby="vs-h">
+      <div class="wrap">
+        <p class="kicker">Da guardare</p>
+        <h2 id="vs-h">La storia in video</h2>
+        <div class="vid-2">{video.map(v => <VideoYT v={v} />)}</div>
+        <p class="small muted" style="margin-top:1rem">Il video parte solo quando lo tocchi. Altri video nella pagina <a href="/capire-la-coppa/video/">video</a>.</p>
+      </div>
+    </section>
+  )}
+
+  <FontiPagina fatti={[]} extra={extra} />
+</Base>
+
+<style>
+  .linea { list-style: none; margin: 1.2rem 0 0; padding: 0; position: relative; }
+  .linea::before { content: ''; position: absolute; left: 4.6rem; top: .4rem; bottom: .4rem; width: 2px; background: var(--line); }
+  .linea__i { display: grid; grid-template-columns: 4.1rem 1fr; gap: 1.4rem; margin: 0; padding: .2rem 0 1.4rem; position: relative; }
+  .linea__i::before { content: ''; position: absolute; left: calc(4.6rem - 5px); top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--bg); border: 3px solid var(--sea); }
+  .linea__i--it::before { border-color: var(--accent); background: var(--accent); }
+  .linea__q { margin: 0; font-weight: 600; font-size: .98rem; color: var(--ink-2); text-align: right; padding-top: .1rem; line-height: 1.2; }
+  .linea__c h3 { margin: 0 0 .35rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
+  .linea__c p { margin: 0 0 .35rem; }
+  .linea__chip { color: var(--accent); }
+  .linea__f { color: var(--ink-3); }
+  .linea__f a { color: var(--ink-2); }
+  @media (min-width: 760px) { .linea::before { left: 6.6rem; } .linea__i { grid-template-columns: 6rem 1fr; gap: 1.8rem; } .linea__i::before { left: calc(6.6rem - 5px); } .linea__q { font-size: 1.15rem; } }
+  .albo th[scope="row"], .albo td { vertical-align: middle; }
+  .albo__sq { display: inline-flex; align-items: center; gap: .55rem; }
+  .albo__sq :global(svg), .albo__sq :global(img) { flex: none; }
+  .albo__club { display: block; font-size: .78rem; color: var(--ink-3); font-weight: 400; }
+  .albo__ris { font-weight: 600; font-size: 1.05rem; }
+  .albo--it { background: color-mix(in srgb, var(--accent) 7%, transparent); }
+  .vid-2 { display: grid; gap: 2rem 1.5rem; margin-top: 1rem; }
+  @media (min-width: 700px) { .vid-2 { grid-template-columns: 1fr 1fr; } }
+</style>

@@ -1,0 +1,91 @@
+# Storia della Coppa in tappe. Ogni tappa ha almeno una fonte (src/data/fonti.yaml).
+# italia: true evidenzia le tappe italiane e napoletane
+
+- id: "1851"
+  quando: "1851"
+  titolo: La prima regata
+  testo: "Il 22 agosto la goletta America, arrivata da New York, vince la regata attorno all'Isola di Wight del Royal Yacht Squadron. Il premio è una brocca d'argento senza fondo: diventerà l'America's Cup."
+  fonti: [ac-press-kit, wiki-coppa]
+
+- id: "1857"
+  quando: "1857"
+  titolo: Il Deed of Gift
+  testo: "I proprietari di America regalano la coppa al New York Yacht Club come trofeo di sfida «amichevole tra paesi stranieri». L'atto di donazione, il Deed of Gift, regola la Coppa ancora oggi."
+  fonti: [ac-press-kit]
+
+- id: "1870"
+  quando: "1870–1980"
+  titolo: 132 anni americani
+  testo: "Le barche americane difendono la Coppa 24 volte di fila. Contando dal 1851, il New York Yacht Club la tiene per 132 anni: la striscia vincente più lunga di tutto lo sport."
+  fonti: [ac-press-kit, wiki-coppa]
+
+- id: "1983"
+  quando: "1983"
+  titolo: Australia II
+  testo: "A Newport gli australiani vincono 4–3 con Australia II e la sua chiglia alata, un'idea rivoluzionaria. Per la prima volta la Coppa lascia gli Stati Uniti."
+  fonti: [ac-press-kit, wiki-1983]
+
+- id: "1992"
+  quando: "1992"
+  titolo: Il Moro di Venezia
+  italia: true
+  testo: "Per la prima volta una barca italiana arriva al Match: a San Diego Il Moro di Venezia vince una regata ma perde 4–1 contro America³."
+  fonti: [ac-press-kit, wiki-1992]
+
+- id: "1995"
+  quando: "1995"
+  titolo: La Nuova Zelanda
+  testo: "Team New Zealand vince 5–0 a San Diego con Black Magic e porta la Coppa ad Auckland."
+  fonti: [ac-press-kit, wiki-coppa]
+
+- id: "2000"
+  quando: "2000"
+  titolo: Luna Rossa ad Auckland
+  italia: true
+  testo: "Luna Rossa vince la selezione degli sfidanti e arriva al Match, ma Team New Zealand vince 5–0."
+  fonti: [ac-press-kit, wiki-coppa]
+
+- id: "2003"
+  quando: "2003"
+  titolo: Alinghi
+  testo: "Una squadra svizzera, di un paese senza mare, vince 5–0 ad Auckland. È la prima volta che la Coppa va in Europa, e la difende a Valencia nel 2007."
+  fonti: [ac-press-kit, wiki-coppa]
+
+- id: "2012"
+  quando: "2012–13"
+  titolo: Napoli c'era già
+  italia: true
+  testo: "Napoli ospita due tappe dell'America's Cup World Series. Secondo gli organizzatori locali, in una settimana più di un milione di persone guarda le regate dal lungomare."
+  fonti: [ac-press-kit]
+
+- id: "2013"
+  quando: "2013"
+  titolo: La rimonta
+  testo: "A San Francisco Team New Zealand è avanti 8–1. Oracle Team USA, con Ben Ainslie appena arrivato come tattico, vince otto regate di fila e tiene la Coppa: 9–8."
+  fonti: [wiki-2013, ac-press-kit]
+
+- id: "2017"
+  quando: "2017"
+  titolo: La rivincita
+  testo: "Alle Bermuda Team New Zealand batte Oracle 7–1 e si riprende la Coppa."
+  fonti: [ac-press-kit]
+
+- id: "2021"
+  quando: "2021"
+  titolo: Luna Rossa contro Team New Zealand
+  italia: true
+  testo: "Ad Auckland, nel primo Match con gli AC75, Luna Rossa sfida Team New Zealand e perde 7–3."
+  fonti: [ac-press-kit, ac-barche]
+
+- id: "2024"
+  quando: "2024"
+  titolo: Barcellona
+  testo: "Team New Zealand batte INEOS Britannia 7–2: è la sua quinta Coppa, la terza di fila. Nessuno ne ha vinte di più nell'era moderna."
+  fonti: [ac-press-kit]
+
+- id: "2027"
+  quando: "2027"
+  titolo: Napoli
+  italia: true
+  testo: "Per la prima volta la Coppa si corre in Italia: Louis Vuitton Cup dal 22 maggio, Match dal 10 luglio, nel golfo davanti al lungomare."
+  fonti: [ac-press-kit, ac-grazie-napoli]

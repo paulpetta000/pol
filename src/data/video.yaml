@@ -1,0 +1,84 @@
+# Video del canale YouTube ufficiale (youtube.com/@americascup), scelti per "Capire la Coppa".
+# id: codice del video su YouTube. Tutti verificati il 30/09/2026 con l'oEmbed di YouTube:
+# esistono, sono del canale ufficiale e si possono incorporare.
+# titolo: nostro, in italiano; originale: il titolo su YouTube.
+
+- id: sse4nX6q4qM
+  ordine: 1
+  titolo: "Come funziona l'America's Cup"
+  originale: "So, how does the America’s Cup actually work?"
+  durata: "1:21"
+  gruppo: capire
+  quando: "2026"
+  perche: "Il video ufficiale che risponde alla domanda più semplice, in poco più di un minuto."
+  controllato: 2026-09-30
+
+- id: Vs-gHWzN8oo
+  ordine: 2
+  titolo: "Come vola un AC75"
+  originale: "How the AC75 Flies"
+  durata: "3:16"
+  gruppo: capire
+  quando: "Coppa 2021"
+  perche: "Come i foil sollevano dall'acqua una barca di sei tonnellate. Le regole sono cambiate, la fisica no."
+  controllato: 2026-09-30
+
+- id: OQsXDdGxk3U
+  ordine: 3
+  titolo: "Tre volte più veloci del vento"
+  originale: "Sailing at Triple the Wind Speed"
+  durata: "3:01"
+  gruppo: capire
+  quando: "Coppa 2021"
+  perche: "Perché una barca con i foil può andare più veloce del vento che la spinge."
+  controllato: 2026-09-30
+
+- id: 0vU5iw_w6Yw
+  ordine: 4
+  titolo: "La regola delle mure"
+  originale: "Know the Game - Port Starboard Rule"
+  durata: "1:45"
+  gruppo: capire
+  quando: "Coppa 2021"
+  perche: "La regola di precedenza più importante: chi lascia strada quando due barche si incrociano."
+  controllato: 2026-09-30
+
+- id: kRoNMNJW0jg
+  ordine: 5
+  titolo: "Napoli 2026: la finale Luna Rossa – Team New Zealand"
+  originale: "Absolutely EPIC! | Luna Rossa vs Emirates Team New Zealand | Match Race | Preliminary Regatta Naples"
+  durata: "24:32"
+  gruppo: regate
+  quando: "Napoli, 27 settembre 2026"
+  perche: "La regata intera della finale a due, nel golfo davanti al lungomare: vince Luna Rossa."
+  controllato: 2026-09-30
+
+- id: ma-jP6BG7Ns
+  ordine: 6
+  titolo: "Barcellona 2024: la regata che assegna la Coppa"
+  originale: "EPIC RACING🔥| Louis Vuitton 37th America's Cup Race 9 | Emirates Team New Zealand vs INEOS Britannia"
+  durata: "30:59"
+  gruppo: regate
+  quando: "Barcellona, 19 ottobre 2024"
+  perche: "La nona regata del Match tra Emirates Team New Zealand e INEOS Britannia: con questa vittoria i neozelandesi chiudono 7–2."
+  controllato: 2026-09-30
+
+- id: I30FSVSdVhI
+  ordine: 7
+  titolo: "172 anni di storia"
+  originale: "The America's Cup – 172 Years of History"
+  durata: "6:06"
+  gruppo: storia
+  quando: "2023"
+  perche: "Dalla goletta America del 1851 alle barche che volano, in sei minuti."
+  controllato: 2026-09-30
+
+- id: ZVOq-a799hk
+  ordine: 8
+  titolo: "L'Italia e la Coppa: la storia di Luna Rossa"
+  originale: "ITALY AND THE AMERICA'S CUP – THE LUNA ROSSA STORY"
+  durata: "2:32"
+  gruppo: storia
+  quando: "2025"
+  perche: "Il legame tra l'Italia e l'America's Cup raccontato attraverso Luna Rossa."
+  controllato: 2026-09-30

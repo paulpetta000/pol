@@ -1,0 +1,189 @@
+{
+  "data": "2026-09-30",
+  "scopo": "Rilascio 2: misure dell'AC75 e dell'AC40, regole per la regata in 60 secondi, glossario, storia, video ufficiali",
+  "metodo": "Documenti ufficiali scaricati da americascup.com e letti per intero (testo estratto dai PDF, tavole guardate come immagini). Video verificati uno per uno con l'oEmbed di YouTube (canale, titolo, incorporabile).",
+  "fonti": [
+    {
+      "id": "ac-regola-ac75",
+      "titolo": "AC75 Class Rule V3.05 (26 giugno 2026)",
+      "url": "https://www.americascup.com/files/m32005_AC75-Class-Rules-305.pdf",
+      "letta": true,
+      "nota": "Valori chiave identici alla V3.01 del 9/9/2025 (https://www.americascup.com/files/m26296_2025-09-09-AC75-Class-Rule-V301.pdf)"
+    },
+    {
+      "id": "ac-regola-ac40",
+      "titolo": "AC40 Class Rule V2.11 (26 giugno 2026)",
+      "url": "https://www.americascup.com/files/m32006_AC40-Class-Rules-211.pdf",
+      "letta": true
+    },
+    {
+      "id": "ac-barche",
+      "titolo": "AC75, AC40 and eChase boats",
+      "url": "https://www.americascup.com/the-boats",
+      "letta": true
+    },
+    {
+      "id": "ac-press-kit",
+      "titolo": "Press kit ufficiale in italiano V4.5 (17/06/2026): storia, albo d'oro, glossario",
+      "url": "https://www.americascup.com/files/m30121_AC38-ITA-PressKit-V4-5-20260617.pdf",
+      "letta": true
+    },
+    {
+      "id": "rrsac-2024",
+      "titolo": "Racing Rules of Sailing – America's Cup Edition v4.07 (regole del 2024)",
+      "url": "https://www.sailingscuttlebutt.com/wp-content/uploads/2024/10/RRSAC-v4.07.pdf",
+      "letta": true,
+      "nota": "Copia pubblicata da Sailing Scuttlebutt; su americascup.com non si trova. Le regole 2027 non sono ancora uscite."
+    }
+  ],
+  "ac75": {
+    "scafo": "punta di prua tra 20,600 e 20,700 m dal piano di poppa (regola 9.4e)",
+    "larghezza": "massima distanza del bordo dalla mezzeria tra 2,400 e 2,500 m, quindi 4,8-5,0 m (9.4b); a 17 m da poppa al massimo 1,6 m, a 19 m al massimo 1,0 m (9.4c-d)",
+    "altezza_scafo": "solo foil, albero, vele e media possono stare più di 1,700 m sopra il piano di galleggiamento di misura (7.4)",
+    "volume": "almeno 60 m³ (9.8)",
+    "albero": "26,500 m dal punto di base (MRP), inclinato di 5° ±0,5 (tavola 17.1); MRP a 9,150 m da poppa e 1,500 m sopra il galleggiamento",
+    "strallo": "sull'albero a 24,000 m (IG), in coperta 8,200 m a prua dell'MRP (JG)",
+    "randa": "due teli (19.1); al massimo 7,800 m dietro l'albero (19.9); corde GF 7,0-7,4, G25 6,0-6,5, G50 5,0-5,6, G75 3,6-4,4, GH 2,0-3,0 m (19.3)",
+    "fiocco": "un solo telo (20.1); LP al massimo 7,050 m (20.2); massa di riferimento 54 kg",
+    "foil": "asse di rotazione a 2,050 m dalla mezzeria e 0,520 m sopra il galleggiamento; rotazione tra 10,0° e 119,5° (12.7c); a 10° pescaggio 5,187 m e sporgenza 4,081 m dalla mezzeria (tavola 12.2); ala entro un box di mezza apertura 2,250 m (tavola 12.1); ala 550-580 kg, braccio monotipo 464 kg (6.1)",
+    "timone": "parte bagnata entro 1,500 m dallo specchio di poppa e 1,500 m per lato dalla mezzeria (16.5-16.6)",
+    "masse": "barca 5.875 kg + equipaggio e dotazioni 435 kg + ospite 125 kg = 6.435 kg (6.1); batteria principale 125 kg; sistema dei foil (FCS) 315 kg",
+    "pozzetti": "6, simmetrici, 3 per lato, uno per l'ospite (11.2); 800 × 600 mm, tutti a poppa di un piano 9,000 m da poppa (11.1, 11.3)",
+    "equipaggio": "5 velisti, almeno una donna (39.1); ospite che non partecipa (40.2)",
+    "ruoli": "2 timonieri (uno per lato) + 3 tra flight controller, regolatori e stratega (press kit, glossario); il quinto ruolo analizza l'energia delle batterie (the-boats)",
+    "record": "INEOS Britannia, 55,6 nodi (102,97 km/h), regata 8 della finale della Louis Vuitton Cup 2024 (the-boats)",
+    "scafi": "ogni squadra ha un solo AC75 e usa uno scafo delle Coppe 2021 o 2024, modificato; le squadre nuove possono comprarne uno o copiarne il progetto (the-boats)"
+  },
+  "ac40": {
+    "masse": "barca 2.118-2.126 kg + equipaggio 360 kg = 2.478-2.486 kg (AC40 Class Rule 3.1)",
+    "equipaggio": "4 (10.1): 2 timonieri e 2 regolatori; nelle regate preliminari il volo è gestito da un pilota automatico (the-boats)",
+    "batteria": "batteria al litio per idraulica e PLC, fino a 8 ore (the-boats)",
+    "misure": "11,80 × 3,38 m, albero 17,92 m: non sono nella Class Rule (stanno nella AC40 Specification); fonte Wikipedia"
+  },
+  "regole_2024": {
+    "partenza": "3:00 segnale di avviso, 2:10 preparatorio, 1:00 fine del tempo per entrare, 0:00 partenza (RRSAC 26.1); entrata da lati opposti della linea (27.4)",
+    "precedenze": "mure a sinistra lascia passare mure a destra (10); sopravento lascia passare sottovento (11); chi è dietro lascia passare chi è davanti (12)",
+    "penalita": "rallentare finché si è 75 m dietro l'avversario, entro 60 s (44.2, 44.3)",
+    "ocs": "chi passa la linea entro 3 s prima del via può scegliere; oltre, deve ripassare la linea (44.2a)",
+    "confini": "mentre regata una barca deve stare dentro i confini (28.3)"
+  },
+  "video_canale": {
+    "nome": "Louis Vuitton 38th America's Cup Naples, Italy",
+    "url": "https://www.youtube.com/@americascup",
+    "id": "UCo15ZYO_XDRU9LI30OPtxAg"
+  },
+  "video_verificati": [
+    {
+      "id": "sse4nX6q4qM",
+      "titolo": "So, how does the America’s Cup actually work?",
+      "durata": "1:21",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=sse4nX6q4qM"
+    },
+    {
+      "id": "Vs-gHWzN8oo",
+      "titolo": "How the AC75 Flies",
+      "durata": "3:16",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=Vs-gHWzN8oo"
+    },
+    {
+      "id": "OQsXDdGxk3U",
+      "titolo": "Sailing at Triple the Wind Speed",
+      "durata": "3:01",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=OQsXDdGxk3U"
+    },
+    {
+      "id": "0vU5iw_w6Yw",
+      "titolo": "Know the Game - Port Starboard Rule",
+      "durata": "1:45",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=0vU5iw_w6Yw"
+    },
+    {
+      "id": "0auZuiM5j2I",
+      "titolo": "Know the Rules - The Course",
+      "durata": "1:37",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=0auZuiM5j2I"
+    },
+    {
+      "id": "2xHqvoxWmpk",
+      "titolo": "Behind the Scenes - On-Water Umpires",
+      "durata": "1:23",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=2xHqvoxWmpk"
+    },
+    {
+      "id": "14TYwonISH0",
+      "titolo": "Know the Game - VMG Explained by Nathan Outteridge",
+      "durata": "3:10",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=14TYwonISH0"
+    },
+    {
+      "id": "VQUl_hf6yo8",
+      "titolo": "The AC75 | Designed to Fly",
+      "durata": "7:25",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=VQUl_hf6yo8"
+    },
+    {
+      "id": "kRoNMNJW0jg",
+      "titolo": "Absolutely EPIC! | Luna Rossa vs Emirates Team New Zealand | Match Race | Preliminary Regatta Naples",
+      "durata": "24:32",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=kRoNMNJW0jg"
+    },
+    {
+      "id": "ma-jP6BG7Ns",
+      "titolo": "EPIC RACING🔥| Louis Vuitton 37th America's Cup Race 9 | Emirates Team New Zealand vs INEOS Britannia",
+      "durata": "30:59",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=ma-jP6BG7Ns"
+    },
+    {
+      "id": "nFslGFZyViM",
+      "titolo": "Virtual Walking Tour of the America's Cup Race Village | Naples Race Day",
+      "durata": "",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=nFslGFZyViM"
+    },
+    {
+      "id": "A9Z1iK5KU_w",
+      "titolo": "Viewing Practice Racing from the Shore in Naples | 1 Hour Relaxation",
+      "durata": "",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=A9Z1iK5KU_w"
+    },
+    {
+      "id": "I30FSVSdVhI",
+      "titolo": "The America's Cup – 172 Years of History",
+      "durata": "6:06",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=I30FSVSdVhI"
+    },
+    {
+      "id": "ZVOq-a799hk",
+      "titolo": "ITALY AND THE AMERICA'S CUP – THE LUNA ROSSA STORY",
+      "durata": "2:32",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=ZVOq-a799hk"
+    },
+    {
+      "id": "JPSuP5TWEis",
+      "titolo": "The Origin of Sport's Oldest and Strangest International Competition",
+      "durata": "2:55",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=JPSuP5TWEis"
+    },
+    {
+      "id": "muFmKGCNAjQ",
+      "titolo": "20 Years Ago, Alinghi Made History!",
+      "durata": "6:12",
+      "oembed": 200,
+      "url": "https://www.youtube.com/watch?v=muFmKGCNAjQ"
+    }
+  ]
+}

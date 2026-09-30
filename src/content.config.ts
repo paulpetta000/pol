@@ -122,4 +122,55 @@ const faq = defineCollection({
   })
 });
 
-export const collections = { fonti, fatti, squadre, foto, luoghi, faq };
+// ---------- Capire la Coppa ----------
+const glossario = defineCollection({
+  loader: file('src/data/glossario.yaml'),
+  schema: z.object({
+    termine: z.string(),
+    altri: z.array(z.string()).default([]),
+    testo: z.string().min(15),
+    fonti: z.array(reference('fonti')).min(1),
+    vedi: z.string().startsWith('/').optional()
+  })
+});
+
+const storia = defineCollection({
+  loader: file('src/data/storia.yaml'),
+  schema: z.object({
+    quando: z.string(),
+    titolo: z.string(),
+    testo: z.string().min(20),
+    italia: z.boolean().default(false),
+    fonti: z.array(reference('fonti')).min(1)
+  })
+});
+
+const quiz = defineCollection({
+  loader: file('src/data/quiz.yaml'),
+  schema: z.object({
+    ordine: z.number().int(),
+    domanda: z.string().endsWith('?'),
+    opzioni: z.array(z.string()).length(3),
+    giusta: z.number().int().min(0).max(2),
+    spiegazione: z.string().min(15),
+    fatti: z.array(reference('fatti')).default([]),
+    fonti: z.array(reference('fonti')).default([])
+  }).refine(q => q.fatti.length + q.fonti.length > 0, { message: 'Ogni domanda deve avere almeno una scheda o una fonte' })
+});
+
+// Video del canale ufficiale: l'id è il codice YouTube, verificato prima di pubblicarlo
+const video = defineCollection({
+  loader: file('src/data/video.yaml'),
+  schema: z.object({
+    ordine: z.number().int(),
+    titolo: z.string().min(5),
+    originale: z.string().min(3),
+    durata: z.string().regex(/^\d{1,2}:\d{2}(:\d{2})?$/),
+    gruppo: z.enum(['capire', 'regate', 'storia']),
+    quando: z.string(),
+    perche: z.string().min(20),
+    controllato: data
+  })
+});
+
+export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video };

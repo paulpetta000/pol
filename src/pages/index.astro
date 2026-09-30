@@ -9,6 +9,8 @@ import Avvisami from '../components/Avvisami.astro';
 import Fatto from '../components/Fatto.astro';
 import Mappa from '../components/Mappa.astro';
 import FontiPagina from '../components/FontiPagina.astro';
+import CampoRegata from '../components/CampoRegata.astro';
+import { stato } from '../lib/regata60';
 import { getCollection } from 'astro:content';
 import { getFatti } from '../lib/fatti';
 import { testoRicco, dataBreve } from '../lib/formato';
@@ -118,6 +120,20 @@ const podio = R.napoli.classifica.slice(0, 3);
     </div>
   </section>
 
+  <section class="section band band--blu" aria-labelledby="capire-h">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Nuovo alla vela?</p>
+        <h2 id="capire-h">La regata in 60 secondi</h2>
+        <p class="lead">Partenza, bolina, poppa, precedenze e penalità: quello che serve per seguire una regata, in un minuto. Poi video, glossario, storia e un quiz.</p>
+        <p class="btn-row"><a class="btn btn--primary" href="/capire-la-coppa/"><Icon name="play" size={20} /> Guarda la regata</a><a class="btn" href="/capire-la-coppa/quiz/"><Icon name="quiz" size={20} /> Fai il quiz</a></p>
+      </div>
+      <a href="/capire-la-coppa/" class="capire-anteprima"><span class="visually-hidden">Apri la regata in 60 secondi</span>
+        <CampoRegata s={stato(18.9)} titolo="Schema di una partenza: due barche passano la linea al segnale del via" />
+      </a>
+    </div>
+  </section>
+
   <section class="section band" aria-labelledby="arch-h">
     <div class="wrap split">
       <div>
@@ -181,6 +197,8 @@ const podio = R.napoli.classifica.slice(0, 3);
   .azione__t { font-weight: 800; font-stretch: 78%; font-size: 1.28rem; line-height: 1.05; }
   .azione__s { font-size: .86rem; color: inherit; opacity: .78; line-height: 1.25; }
   @media (min-width: 760px) { .azioni { grid-template-columns: repeat(3, 1fr); gap: .8rem; } .azione { min-height: 9.5rem; padding: 1.1rem; } .azione__t { font-size: 1.5rem; } }
+  .capire-anteprima { display: block; max-width: 360px; width: 100%; justify-self: center; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
+  .capire-anteprima:hover { border-color: var(--accent); }
   .map-link { display: block; text-decoration: none; }
   .map-link:hover :global(.mappa) { border-color: var(--accent); }
   .sq-strip { list-style: none; margin: 1rem 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); border-top: 2px solid var(--ink); }

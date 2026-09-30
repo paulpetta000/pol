@@ -1,6 +1,11 @@
 # Domande frequenti. Nel testo si possono usare [collegamenti](/percorso/) e **grassetto**.
 # fatti: le schede da cui viene la risposta (per le fonti)
 
+- id: come-funziona
+  domanda: "Come funziona una regata della Coppa?"
+  risposta: "Due barche partono insieme controvento e vanno su e giù tra due «cancelli» di boe: chi taglia per primo il traguardo vince la regata. Il Match è una serie: vince chi arriva prima a 7 vittorie. Tutto in un minuto nella [regata in 60 secondi](/capire-la-coppa/)."
+  fatti: [reg-percorso, reg-partenza, cal-match]
+
 - id: quando
   domanda: "Quando si corre l'America's Cup a Napoli?"
   risposta: "Dal 22 maggio al 19 luglio 2027. La Louis Vuitton Cup, che sceglie lo sfidante, va dal 22 maggio al 4 luglio al più tardi; il Match per la Coppa parte il 10 luglio e si chiude entro il 19. In mezzo: Youth America's Cup dal 2 al 6 giugno e Women's America's Cup dal 5 al 9 luglio. Tutte le date nel [calendario](/calendario/)."
