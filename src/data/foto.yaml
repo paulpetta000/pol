@@ -78,3 +78,34 @@
   fonte: https://commons.wikimedia.org/wiki/File:Floridiana2.jpg
   anno: 2018
   controllato: 2026-09-30
+
+- id: vista-monte-echia
+  src: ../assets/foto/vista-monte-echia.jpg
+  alt: "Dall'alto di Monte Echia: in primo piano i tetti e i palazzi di Santa Lucia, poi il mare del golfo e, sullo sfondo, il Vesuvio sotto un cielo con qualche nuvola."
+  didascalia: "Da Monte Echia: i tetti di Santa Lucia, il golfo e il Vesuvio."
+  autore: MentNFG
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Monte_Echia_25_001.jpg
+  anno: 2024
+  controllato: 2026-09-30
+
+- id: vista-via-orazio
+  src: ../assets/foto/vista-via-orazio.jpg
+  alt: "Il panorama da via Orazio: un grande pino davanti al golfo, a sinistra la città e il lungomare, a destra il porto di Mergellina, Castel dell'Ovo e il Vesuvio."
+  didascalia: "Il panorama da via Orazio: Mergellina, il lungomare, Castel dell'Ovo e il Vesuvio."
+  autore: Giuseppe Guida
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Via_Orazio._(6216).jpg
+  controllato: 2026-09-30
+
+- id: ac75-partenza-2021
+  src: ../assets/foto/ac75-partenza-2021.jpg
+  alt: "Due barche AC75 sollevate sui foil entrano nell'area di partenza, seguite da un gommone; sullo sfondo la costa con case e alberi."
+  didascalia: "Luna Rossa e INEOS Britannia entrano nell'area di partenza, Auckland 2021."
+  autore: Geoff McKay
+  autoreUrl: https://www.flickr.com/people/129472387@N07
+  licenza: CC BY 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Prada_Cup_Final_Race_One_-_Entering_the_Start_Box_(50951086996).jpg
+  anno: 2021
+  modifiche: "Ritagliata (tolta la cornice) e ridimensionata"
+  controllato: 2026-09-30

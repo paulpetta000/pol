@@ -1,0 +1,81 @@
+---
+// Illustrazioni semplici per gli argomenti (disegni piatti, colori del sito, validi in tema chiaro e scuro).
+// Sono decorative: il testo della pagina dice già tutto.
+type Nome = 'taxi' | 'metro' | 'barca' | 'calendario' | 'binocolo' | 'mappa' | 'squadre';
+interface Props { nome: Nome; size?: number; class?: string }
+const { nome, size = 150, class: cls } = Astro.props;
+---
+<svg class:list={['illu', cls]} width={size} height={size * 0.8} viewBox="0 0 160 128" aria-hidden="true" focusable="false">
+  <ellipse cx="80" cy="66" rx="74" ry="58" fill="var(--sea-soft)" />
+  <path d="M10 104 q10 -6 20 0 t20 0 t20 0 t20 0 t20 0 t20 0 t20 0" fill="none" stroke="var(--sea)" stroke-width="3" stroke-linecap="round" opacity=".55" />
+  {nome === 'taxi' && (
+    <g>
+      <rect x="62" y="30" width="36" height="12" rx="3" fill="var(--buoy)" />
+      <text x="80" y="39.5" text-anchor="middle" font-family="var(--f-sans)" font-weight="800" font-size="9" fill="#0F1519">TAXI</text>
+      <path d="M34 72 L48 48 H112 L126 72 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round" />
+      <path d="M54 52 H78 V70 H44 Z M82 52 H106 L116 70 H82 Z" fill="var(--sea)" opacity=".75" />
+      <rect x="24" y="70" width="112" height="24" rx="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="3" />
+      <rect x="28" y="76" width="14" height="7" rx="2" fill="var(--buoy)" /><rect x="118" y="76" width="14" height="7" rx="2" fill="var(--buoy)" />
+      <path d="M50 82 H110" stroke="var(--accent)" stroke-width="3" />
+      <circle cx="48" cy="96" r="10" fill="var(--ink)" /><circle cx="48" cy="96" r="4" fill="var(--surface)" />
+      <circle cx="112" cy="96" r="10" fill="var(--ink)" /><circle cx="112" cy="96" r="4" fill="var(--surface)" />
+    </g>
+  )}
+  {nome === 'metro' && (
+    <g>
+      <rect x="46" y="22" width="68" height="74" rx="14" fill="var(--sea)" />
+      <rect x="54" y="32" width="52" height="30" rx="5" fill="var(--sea-soft)" />
+      <rect x="66" y="26" width="28" height="4" rx="2" fill="var(--buoy)" />
+      <circle cx="60" cy="76" r="5" fill="var(--buoy)" /><circle cx="100" cy="76" r="5" fill="var(--buoy)" />
+      <rect x="72" y="72" width="16" height="8" rx="2" fill="var(--sea-soft)" />
+      <path d="M54 96 L44 110 M106 96 L116 110 M40 110 H120" stroke="var(--ink)" stroke-width="3.5" stroke-linecap="round" />
+      <circle cx="120" cy="34" r="13" fill="var(--accent)" /><text x="120" y="39" text-anchor="middle" font-family="var(--f-sans)" font-weight="800" font-size="14" fill="var(--accent-ink)">M</text>
+    </g>
+  )}
+  {nome === 'barca' && (
+    <g>
+      <path d="M82 14 V78 H44 Z" fill="var(--accent)" />
+      <path d="M88 26 V78 H116 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="2.5" stroke-linejoin="round" />
+      <path d="M85 12 V84" stroke="var(--ink)" stroke-width="3" />
+      <path d="M40 84 H128 L118 96 H52 Z" fill="var(--blu)" />
+      <path d="M84 96 V110 M76 110 H92" stroke="var(--buoy)" stroke-width="3.5" stroke-linecap="round" />
+    </g>
+  )}
+  {nome === 'calendario' && (
+    <g>
+      <rect x="36" y="24" width="88" height="80" rx="8" fill="var(--surface)" stroke="var(--ink)" stroke-width="3" />
+      <path d="M36 32 a8 8 0 0 1 8 -8 H116 a8 8 0 0 1 8 8 V44 H36 Z" fill="var(--accent)" />
+      <path d="M56 16 V32 M104 16 V32" stroke="var(--ink)" stroke-width="4" stroke-linecap="round" />
+      {[0, 1, 2, 3, 4].map(c => [0, 1, 2].map(r => <rect x={46 + c * 14.5} y={52 + r * 16} width="10" height="10" rx="2" fill={r === 0 && c >= 3 ? 'var(--accent)' : r === 1 && c <= 2 ? 'var(--sea)' : r === 2 && c >= 2 ? 'var(--blu)' : 'var(--line)'} />))}
+    </g>
+  )}
+  {nome === 'binocolo' && (
+    <g>
+      <rect x="44" y="40" width="30" height="44" rx="10" fill="var(--blu)" /><rect x="86" y="40" width="30" height="44" rx="10" fill="var(--blu)" />
+      <rect x="70" y="50" width="20" height="16" rx="4" fill="var(--ink)" />
+      <circle cx="59" cy="84" r="16" fill="var(--ink)" /><circle cx="101" cy="84" r="16" fill="var(--ink)" />
+      <circle cx="59" cy="84" r="9" fill="var(--sea)" /><circle cx="101" cy="84" r="9" fill="var(--sea)" />
+      <circle cx="55" cy="80" r="3" fill="var(--surface)" /><circle cx="97" cy="80" r="3" fill="var(--surface)" />
+      <path d="M124 26 V52 H110 Z" fill="var(--accent)" />
+    </g>
+  )}
+  {nome === 'mappa' && (
+    <g>
+      <path d="M30 34 L62 24 L98 34 L130 24 V96 L98 106 L62 96 L30 106 Z" fill="var(--surface)" stroke="var(--ink)" stroke-width="3" stroke-linejoin="round" />
+      <path d="M62 24 V96 M98 34 V106" stroke="var(--ink)" stroke-width="2" opacity=".35" />
+      <path d="M30 80 q20 -10 40 2 t60 -8 V96 L98 106 L62 96 L30 106 Z" fill="var(--sea)" opacity=".6" />
+      <path d="M80 26 c-12 0 -20 9 -20 19 c0 14 20 33 20 33 s20 -19 20 -33 c0 -10 -8 -19 -20 -19 Z" fill="var(--accent)" />
+      <circle cx="80" cy="45" r="7" fill="var(--surface)" />
+    </g>
+  )}
+  {nome === 'squadre' && (
+    <g>
+      {[['var(--accent)', 44], ['var(--sea)', 72], ['var(--blu)', 100]].map(([c, x]) => (
+        <g><path d={`M${x} 26 V100`} stroke="var(--ink)" stroke-width="3" stroke-linecap="round" /><path d={`M${x + 2} 28 h26 l-6 10 l6 10 h-26 Z`} fill={c as string} /></g>
+      ))}
+    </g>
+  )}
+</svg>
+<style>
+  .illu { display: block; flex: none; }
+</style>

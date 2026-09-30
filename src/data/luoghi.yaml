@@ -156,6 +156,7 @@
   servizi: "Nessun servizio ufficiale."
   arrivare: [chiaia-l6, municipio]
   perche: vista-echia-2026
+  foto: vista-monte-echia
   fatti: [vista-anfiteatro, echia-ascensore]
 
 # Posillipo
@@ -192,6 +193,7 @@
   servizi: "Qualche bar lungo la strada; nessun servizio ufficiale."
   arrivare: [fun-sant-antonio, mergellina-l6]
   perche: vista-colline-stampa
+  foto: vista-via-orazio
 
 - id: sant-antonio-posillipo
   nome: Terrazza di Sant'Antonio a Posillipo

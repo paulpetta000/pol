@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
+import Foto from '../../components/Foto.astro';
 import Icon from '../../components/Icon.astro';
 import Fatti from '../../components/Fatti.astro';
 import Avvisami from '../../components/Avvisami.astro';
@@ -17,10 +18,13 @@ const ZONE = [
 ];
 ---
 <Base title="Vedere l'America's Cup dal mare" description="Regole per vedere le regate dell'America's Cup a Napoli dalla propria barca: registrazione, zone, 5 nodi, niente ancora, radio VHF. Com'era nel 2026 e cosa manca per il 2027.">
-  <PageHead kicker="Vederla · dal mare" title="Dal mare" lead="Con la tua barca puoi stare vicino al campo, ma con regole precise. Quelle del 2027 non sono ancora uscite: qui ci sono quelle del 2026, il modello più probabile." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
+  <PageHead illustrazione="barca" kicker="Vederla · dal mare" title="Dal mare" lead="Con la tua barca puoi stare vicino al campo, ma con regole precise. Quelle del 2027 non sono ancora uscite: qui ci sono quelle del 2026, il modello più probabile." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
 
   <section class="section">
-    <div class="wrap split">
+    <div class="wrap">
+      <Foto id="ac75-partenza-2021" rapporto="21 / 9" class="foto-larga" sizes="(min-width: 1200px) 1150px, calc(100vw - 32px)" widths={[480, 800, 1200]} />
+    </div>
+    <div class="wrap split" style="margin-top:2rem">
       <div>
         <div class="terzo terzo--wait">
           <p class="kicker" style="color:var(--wait)">2027</p>

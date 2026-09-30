@@ -2,6 +2,7 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
+import Illustrazione from '../../components/Illustrazione.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getFatti } from '../../lib/fatti';
@@ -22,7 +23,7 @@ const TAXI = [
 ];
 ---
 <Base title="Come arrivare al lungomare di Napoli per l'America's Cup" description="Dall'aeroporto e dalla stazione al lungomare di Napoli: taxi a tariffa fissa (21, 24, 28,50 €), taxi collettivo, metro Linea 6 e 1, funicolari. Cosa si sa per il 2027.">
-  <PageHead kicker="Napoli · trasporti" title="Come arrivare e muoversi" lead="Regola numero uno: niente auto. Dall'aeroporto il taxi ha tariffe fisse; in città metro e funicolari ti portano a pochi passi dal lungomare." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
+  <PageHead illustrazione="taxi" kicker="Napoli · trasporti" title="Come arrivare e muoversi" lead="Regola numero uno: niente auto. Dall'aeroporto il taxi ha tariffe fisse; in città metro e funicolari ti portano a pochi passi dal lungomare." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
 
   <section class="section" aria-labelledby="aereo-h">
     <div class="wrap split">
@@ -47,6 +48,7 @@ const TAXI = [
 
   <section class="section band" aria-labelledby="citta-h">
     <div class="wrap">
+      <Illustrazione nome="metro" size={130} class="illu-dx" />
       <p class="kicker"><Icon name="treno" size={16} /> In città</p>
       <h2 id="citta-h">Metro e funicolari fino al lungomare</h2>
       <div class="grid-2">
@@ -81,3 +83,8 @@ const TAXI = [
 
   <FontiPagina fatti={f.values()} />
 </Base>
+
+<style>
+  :global(.illu-dx) { float: right; width: 90px; height: auto; margin: 0 0 .6rem 1rem; }
+  @media (min-width: 760px) { :global(.illu-dx) { width: 140px; } }
+</style>

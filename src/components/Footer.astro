@@ -8,7 +8,7 @@ import Logo from './Logo.astro';
   <div class="wrap">
     <div class="foot-top">
       <a class="foot-brand" href="/">
-        <Logo size={26} />
+        <Logo size={30} uid="logo-pie" />
         <span>{SITO.nome}</span>
       </a>
       <p class="foot-disclaimer">
@@ -53,7 +53,7 @@ import Logo from './Logo.astro';
 </footer>
 
 <style>
-  .site-foot { margin-top: clamp(3rem, 8vw, 5rem); background: var(--bg-2); border-top: 3px solid var(--ink); padding-block: 2.2rem 1.6rem; font-size: .95rem; }
+  .site-foot { margin-top: clamp(3rem, 8vw, 5rem); background: var(--navy); color: var(--navy-ink); border-top: 5px solid var(--sea); --ink: var(--navy-ink); --ink-2: #C9D6E0; --ink-3: #A9BBC8; --line: #25476B; --sea: #7FD6E0; padding-block: 2.2rem 1.6rem; font-size: .95rem; }
   .foot-top { display: grid; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); }
   .foot-brand { display: inline-flex; align-items: center; gap: .55rem; color: var(--ink); text-decoration: none; font-weight: 850; font-stretch: 68%; font-size: 1.2rem; text-transform: uppercase; }
   .foot-disclaimer { color: var(--ink-2); margin: 0; max-width: 72ch; }

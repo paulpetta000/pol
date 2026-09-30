@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 30/09/2026_
+_Ultimo aggiornamento: 30/09/2026 (Rilascio 1.1)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -18,6 +18,16 @@ _Ultimo aggiornamento: 30/09/2026_
   - **SEO**: titoli e descrizioni per pagina, sitemap, dati strutturati (eventi, domande frequenti, squadre), immagine di anteprima per ogni pagina.
   - **Lighthouse mobile** (in locale): 99–100 in prestazioni, accessibilità, best practice e SEO su home, calendario, barche, archivio, mappa.
 
+- **Rilascio 1.1 · "Napoli a Vela"** (30/09/2026, ramo `claude/sharp-archimedes-nusxet`, solo anteprima):
+  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). L'indirizzo resta `coppa-america-napoli.vercel.app`.
+  - Nuovo logo "Golfo e Vesuvio" (scelto tra 4 proposte): intestazione, favicon, icone dell'app, immagini di anteprima. Si rigenera con `node scripts/icone.mjs`.
+  - Home: al posto del disegno, **foto vera di due AC75 in regata** (Auckland 2021, Geoff McKay, CC BY 2.0).
+  - **Foto dei luoghi** con licenza libera (Wikimedia Commons) in 8 schede su 11, con didascalia, autore, licenza e link; elenco in `src/data/foto.yaml` e nelle note legali. Mancano foto adatte per via Aniello Falcone, via Petrarca e la terrazza di Sant'Antonio a Posillipo.
+  - **Calendario mese per mese** (maggio, giugno, luglio 2027) al posto del grafico a barre; versione compatta in home.
+  - **Mappa interattiva**: si sposta con un dito, si ingrandisce con due dita o con + e −, pulsante per tornare alla vista iniziale, tocco su un punto = scheda. Simboli sempre della stessa misura. Resta disegnata da noi, offline.
+  - **Punti da cui guardare**: tolti Parco Virgiliano e Capo Posillipo; aggiunti via Aniello Falcone e via Tasso, belvedere della Villa Floridiana, via Orazio, via Petrarca, terrazza di Sant'Antonio a Posillipo. 11 punti in 3 gruppi (Lungomare 1–4, Colline 5–8, Posillipo 9–11), ognuno con stato e fonte. Nuovo stato **"Segnalato da siti non ufficiali"**.
+  - Più colore: fasce turchesi, piè di pagina blu notte, riga arancio-turchese-blu sotto i titoli, illustrazioni per argomento (taxi, metro, barca, calendario, mappa, binocolo, squadre).
+
 ## Da fare
 - Rilascio 2: la regata in 60 secondi, video ufficiali, AC75 in 3D e confronto, "Capire la Coppa" (glossario, storia, quiz dal sito 2026 in `ricerca/sito-2026/`).
 - Rilasci 3-5 come da `PIANO.md`.
@@ -27,7 +37,7 @@ _Ultimo aggiornamento: 30/09/2026_
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. Dopo il tuo OK: unire il ramo in `main` per pubblicare il Rilascio 1.
+4. Dopo il tuo OK: unire il ramo in `main` per pubblicare il Rilascio 1 e 1.1.
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
 
 ## Note

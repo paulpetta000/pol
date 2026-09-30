@@ -7,6 +7,8 @@ import satori from 'satori';
 import sharp from 'sharp';
 import { PAGINE, slugOg } from '../../data/pagine';
 import { SITO } from '../../config/sito';
+import { svg as logoSvg } from '../../lib/logo.mjs';
+const LOGO = 'data:image/svg+xml;base64,' + Buffer.from(logoSvg()).toString('base64');
 
 const font = (f: string) => fs.readFileSync(path.join(process.cwd(), 'node_modules', f));
 const FONTS = [
@@ -32,7 +34,7 @@ export const GET: APIRoute = async ({ props }) => {
     h('div', { position: 'absolute', left: 0, right: 0, bottom: 0, height: 170, background: '#0B2A30', display: 'flex' }),
     h('div', { position: 'absolute', left: 0, right: 0, bottom: 170, height: 4, background: '#2CC4D8', display: 'flex' }),
     h('div', { display: 'flex', alignItems: 'center', gap: 18 }, [
-      h('div', { width: 56, height: 56, background: '#FF7A3D', borderRadius: 6, display: 'flex' }),
+      { type: 'img', props: { src: LOGO, width: 64, height: 64 } },
       h('div', { display: 'flex', flexDirection: 'column' }, [
         h('div', { fontSize: 30, fontWeight: 800, letterSpacing: 1 }, SITO.nome.toUpperCase()),
         h('div', { fontSize: 18, fontFamily: 'Plex', color: '#8C9CA6', letterSpacing: 3 }, 'GUIDA NON UFFICIALE 2027')
@@ -43,7 +45,7 @@ export const GET: APIRoute = async ({ props }) => {
       h('div', { fontSize: titolo.length > 30 ? 72 : 88, fontWeight: 800, lineHeight: 1.02, letterSpacing: -1, maxWidth: 1000 }, titolo)
     ]),
     h('div', { position: 'absolute', left: 72, bottom: 58, display: 'flex', gap: 28, fontFamily: 'Plex', fontSize: 26, color: '#EDF3F5' }, [
-      h('div', { background: '#FFD84D', color: '#0F1519', padding: '4px 12px', display: 'flex' }, '22.05 → 19.07.2027'),
+      h('div', { background: '#FFD84D', color: '#0F1519', padding: '4px 12px', display: 'flex' }, '22.05 – 19.07.2027'),
       h('div', { display: 'flex', color: '#B7C5CD' }, 'Golfo di Napoli')
     ])
   ]);

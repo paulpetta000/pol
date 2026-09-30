@@ -2,16 +2,18 @@
 // Intestazione delle pagine interne, con briciole di pane e data di controllo
 import { SITO } from '../config/sito';
 import { dataBreve } from '../lib/formato';
-interface Props { kicker?: string; title: string; lead?: string; crumbs?: { href: string; label: string }[]; aggiornato?: Date | string }
-const { kicker, title, lead, crumbs = [], aggiornato } = Astro.props;
+import Illustrazione from './Illustrazione.astro';
+interface Props { kicker?: string; title: string; lead?: string; crumbs?: { href: string; label: string }[]; aggiornato?: Date | string; illustrazione?: 'taxi' | 'metro' | 'barca' | 'calendario' | 'binocolo' | 'mappa' | 'squadre' }
+const { kicker, title, lead, crumbs = [], aggiornato, illustrazione } = Astro.props;
 const trail = [{ href: '/', label: 'Home' }, ...crumbs];
 const ld = {
   '@context': 'https://schema.org', '@type': 'BreadcrumbList',
   itemListElement: [...trail, { href: Astro.url.pathname, label: title }].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: new URL(c.href, SITO.url).href }))
 };
 ---
-<div class="page-head">
-  <div class="wrap">
+<div class:list={['page-head', { 'page-head--illu': illustrazione }]}>
+  <div class="wrap page-head__in">
+    {illustrazione && <Illustrazione nome={illustrazione} class="page-head__illu" />}
     <nav class="breadcrumbs" aria-label="Sei qui">
       <ol>
         {trail.map(c => <li><a href={c.href}>{c.label}</a></li>)}

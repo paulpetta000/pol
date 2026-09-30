@@ -18,10 +18,13 @@ npm run build    # costruisce il sito in dist/
 | `src/data/fonti.yaml` | Le fonti, con indirizzo e data di controllo |
 | `src/data/eventi.ts` | Il calendario 2027 (anche i file .ics) |
 | `src/data/squadre.yaml` | Le 7 squadre |
-| `src/data/luoghi.yaml` | Punti della mappa e schede "Dove mi metto?" |
+| `src/data/luoghi.yaml` | Punti della mappa e schede "Dove mi metto?" (gruppo, fonte `perche`, foto) |
+| `src/data/foto.yaml` | Foto con licenza libera: file in `src/assets/foto/`, autore, licenza, origine, descrizione |
 | `src/data/faq.yaml` | Domande frequenti |
 | `src/data/risultati-2026.json` | Risultati ufficiali 2026 |
 | `src/config/sito.ts` | Nome del sito, titolare, date chiave |
+
+Stati delle schede: `confermato`, `stampa` (giornali), `segnalato` (blog e siti non ufficiali), `atteso`.
 
 Regola: **nessuna informazione senza fonte**. Se una scheda non ha fonte, stato o data, la build si ferma.
 Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da ricontrollare]`.
@@ -37,6 +40,7 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 
 - Mappa: `scripts/mappa/` (dati © OpenStreetMap, ODbL).
 - Font: `scripts/font/prepara.py` (licenza SIL OFL).
-- Icone dell'app: `node scripts/icone.mjs`.
+- Logo: `src/lib/logo.mjs`; icone dell'app e favicon: `node scripts/icone.mjs`.
+- Un nuovo punto panoramico entra solo con due fonti indipendenti, o una fonte affidabile più i dati di OpenStreetMap; aggiungilo anche in `ORDINE_VISTE` (`src/lib/luoghi.ts`).
 - Database "Avvisami": `supabase/migrations/`.
 - Motore 3D dell'AC40: `src/lib/3d/`.

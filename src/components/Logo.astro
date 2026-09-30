@@ -1,13 +1,7 @@
 ---
-// Marchio della guida: un AC75 in volo dentro un quadrato arancio, e il nome in caratteri stretti
-interface Props { size?: number }
-const { size = 30 } = Astro.props;
+// Marchio della guida: il golfo con il Vesuvio e una vela arancio (disegno in src/lib/logo.mjs)
+import { disegno } from '../lib/logo.mjs';
+interface Props { size?: number; uid?: string }
+const { size = 34, uid = 'logo' } = Astro.props;
 ---
-<svg class="logo-mark" width={size} height={size} viewBox="0 0 32 32" aria-hidden="true" focusable="false">
-  <rect width="32" height="32" rx="4" fill="var(--accent)" />
-  <g fill="none" stroke="var(--accent-ink)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M5 18h17.5l3.5-3.5H8.5z" fill="var(--accent-ink)" />
-    <path d="M14.5 14.5V5l7.5 9.5" />
-    <path d="M11 18v5h4M20.5 18v7.5M17 25.5h7" />
-  </g>
-</svg>
+<svg class="logo-mark" width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false" set:html={disegno(uid)} />

@@ -2,6 +2,8 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import { SITO } from '../config/sito';
+import { getCollection } from 'astro:content';
+const foto = await getCollection('foto');
 const t = SITO.titolare;
 ---
 <Base title="Note legali" description={`Note legali di ${SITO.nome}, guida non ufficiale all'America's Cup di Napoli 2027: sito indipendente, marchi dei rispettivi titolari, fonti, foto e mappe con licenza libera.`}>
@@ -14,8 +16,13 @@ const t = SITO.titolare;
       <p>«America's Cup», «Louis Vuitton Cup», i nomi delle squadre e i loro marchi appartengono ai rispettivi titolari. Li usiamo solo per indicare di quale evento e di quali squadre parliamo. Le barche 3D sono ricostruzioni nostre, senza loghi.</p>
       <h2>Informazioni</h2>
       <p>Le informazioni vengono dalle fonti indicate in ogni pagina e nella pagina <a href="/fonti/">fonti</a>, con la data del controllo. Possono cambiare: per decisioni importanti (viaggi, prenotazioni, uscite in mare) verifica sempre sui canali ufficiali.</p>
+      <h2>Foto</h2>
+      <p>Usiamo solo foto con licenza libera, prese da Wikimedia Commons, e nessuna foto ufficiale dell'America's Cup, delle squadre o di Louis Vuitton. I marchi che si vedono sulle vele appartengono ai rispettivi titolari. Le foto con licenza CC BY-SA, ritagliate da noi, restano con la stessa licenza.</p>
+      <ul class="crediti">
+        {foto.map(f => <li><strong>{f.data.didascalia}</strong> Foto di {f.data.autore}, {f.data.licenza}{f.data.modifiche && `, ${f.data.modifiche.toLowerCase()}`}. <a href={f.data.fonte} rel="noopener">Pagina di origine</a>.</li>)}
+      </ul>
       <h2>Mappe, font e bandiere</h2>
-      <p>Mappe disegnate con dati © collaboratori di <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>, licenza ODbL. Font Archivo e IBM Plex Mono, licenza SIL Open Font License (<a href="/fonts/LICENSE-Archivo.txt">testo</a>, <a href="/fonts/LICENSE-IBM-Plex-Mono.txt">testo</a>). Bandiere dal progetto flag-icons, licenza MIT.</p>
+      <p>Mappe disegnate da noi (si spostano e si ingrandiscono, funzionano senza rete) con dati © collaboratori di <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a>, licenza ODbL. Font Archivo e IBM Plex Mono, licenza SIL Open Font License (<a href="/fonts/LICENSE-Archivo.txt">testo</a>, <a href="/fonts/LICENSE-IBM-Plex-Mono.txt">testo</a>). Bandiere dal progetto flag-icons, licenza MIT.</p>
       <h2>Contatti</h2>
       <p>Titolare del sito: <strong>{t.nome || '[da completare]'}</strong> · {t.email || '[email da completare]'}.</p>
     </div>
