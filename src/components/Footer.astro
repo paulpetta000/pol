@@ -1,0 +1,69 @@
+---
+import { SITO } from '../config/sito';
+import { MENU } from '../config/menu';
+import { dataBreve } from '../lib/formato';
+import Logo from './Logo.astro';
+---
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <a class="foot-brand" href="/">
+        <Logo size={26} />
+        <span>{SITO.nome}</span>
+      </a>
+      <p class="foot-disclaimer">
+        Guida indipendente e <strong>non ufficiale</strong>. Non è collegata ad America's Cup Partnership, ACE, Louis Vuitton,
+        Sport e Salute, Comune di Napoli o alle squadre. I nomi dell'evento e delle squadre appartengono ai rispettivi titolari
+        e sono usati solo per descrivere. Il sito ufficiale è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>.
+      </p>
+    </div>
+    <div class="foot-cols">
+      <nav aria-label="Sezioni della guida">
+        <p class="foot-h">La guida</p>
+        <ul>
+          <li><a href="/">Home</a></li>
+          {MENU.map(m => <li><a href={m.href}>{m.label}</a></li>)}
+          <li><a href="/archivio-2026/">Archivio 2026</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Informazioni utili">
+        <p class="foot-h">Utile</p>
+        <ul>
+          <li><a href="/domande-frequenti/">Domande frequenti</a></li>
+          <li><a href="/napoli/mappa/">Mappa</a></li>
+          <li><a href="/calendario/#iscriviti">Calendario da seguire</a></li>
+          <li><a href="/come-vederla/biglietti-e-ospitalita/#avvisami">Avvisami</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Note legali">
+        <p class="foot-h">Trasparenza</p>
+        <ul>
+          <li><a href="/fonti/">Fonti e controlli</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/note-legali/">Note legali</a></li>
+          <li><a href="/accessibilita/">Accessibilità del sito</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="foot-bottom mono">
+      <span>Controllo generale delle informazioni: {dataBreve(SITO.aggiornato)}</span>
+      <span>Mappe: © collaboratori di <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a></span>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-foot { margin-top: clamp(3rem, 8vw, 5rem); background: var(--bg-2); border-top: 3px solid var(--ink); padding-block: 2.2rem 1.6rem; font-size: .95rem; }
+  .foot-top { display: grid; gap: 1rem; padding-bottom: 1.6rem; border-bottom: 1px solid var(--line); }
+  .foot-brand { display: inline-flex; align-items: center; gap: .55rem; color: var(--ink); text-decoration: none; font-weight: 850; font-stretch: 68%; font-size: 1.2rem; text-transform: uppercase; }
+  .foot-disclaimer { color: var(--ink-2); margin: 0; max-width: 72ch; }
+  .foot-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)); gap: 1.4rem; padding-block: 1.6rem; }
+  .foot-h { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .6rem; font-weight: 600; }
+  .foot-cols ul { list-style: none; padding: 0; margin: 0; }
+  .foot-cols li + li { margin-top: .5rem; }
+  .foot-cols a { color: var(--ink); text-decoration: none; }
+  .foot-cols a:hover { text-decoration: underline; }
+  .foot-bottom { display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between; font-size: .74rem; color: var(--ink-3); padding-top: 1.2rem; border-top: 1px solid var(--line); }
+  .foot-bottom a { color: var(--ink-2); }
+  @media (min-width: 760px) { .foot-top { grid-template-columns: auto 1fr; align-items: start; gap: 2.5rem; } }
+</style>

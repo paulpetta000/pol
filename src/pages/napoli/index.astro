@@ -1,0 +1,41 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Mappa from '../../components/Mappa.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getFatti } from '../../lib/fatti';
+
+const ids = ['trasporti-2027-atteso', 'caracciolo-chiusa', 'vil-2026-folla', 'caldo-bollettini'];
+const f = await getFatti(ids);
+const PAGINE = [
+  { href: '/napoli/mappa/', icon: 'mappa', t: 'Mappa', s: 'Punti da cui guardare, stazioni, villaggi' },
+  { href: '/napoli/come-arrivare/', icon: 'percorso', t: 'Come arrivare e muoversi', s: 'Aereo, treno, taxi a prezzo fisso, metro' },
+  { href: '/napoli/accessibilita/', icon: 'accessibilita', t: 'Accessibilità', s: 'Pedane, ascensori, assistenza' }
+] as const;
+---
+<Base title="Napoli durante l'America's Cup: mappa, trasporti, accessibilità" description="Muoversi a Napoli durante l'America's Cup 2027: mappa del lungomare, come arrivare dall'aeroporto e dalla stazione, metro e funicolari, accessibilità.">
+  <PageHead kicker="Napoli" title="Napoli, istruzioni per l'uso" lead="Con 100.000 persone sul lungomare conviene muoversi a piedi e con metro e funicolari, non in auto. Qui trovi mappa, trasporti e accessibilità." aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <ul class="vai">
+          {PAGINE.map(p => (
+            <li><a href={p.href}><span class="vai__icona"><Icon name={p.icon} /></span><span><span class="vai__titolo">{p.t}</span><span class="vai__sotto">{p.s}</span></span><span class="vai__freccia"><Icon name="freccia" /></span></a></li>
+          ))}
+          <li><span class="vai__prossimo"><span class="vai__icona" aria-hidden="true"><Icon name="lista" /></span><span><span class="vai__titolo">Itinerari di 1, 2 e 3 giorni</span><span class="vai__sotto">In arrivo in primavera</span></span></span></li>
+        </ul>
+        <h2 class="mt">Da sapere prima di partire</h2>
+        <Fatti f={f} ids={ids} />
+      </div>
+      <a href="/napoli/mappa/" class="map-link" aria-label="Apri la mappa completa"><Mappa anteprima id="mappa-napoli" /></a>
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .mt { margin-top: 2rem; }
+  .vai__prossimo { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: .9rem; padding: 1rem .2rem; color: var(--ink-3); }
+  .map-link { display: block; }
+</style>

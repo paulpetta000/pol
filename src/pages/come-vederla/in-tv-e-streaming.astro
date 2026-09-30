@@ -1,0 +1,47 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getFatti } from '../../lib/fatti';
+
+const ids = ['tv-rai', 'tv-sky', 'tv-youtube', 'vil-2026-radio', 'cal-orari'];
+const f = await getFatti(ids);
+const CANALI = [
+  { t: 'Rai', s: 'In chiaro, gratis', d: 'Diritti per l\'Italia di tutte le regate 2027', ok: true },
+  { t: 'Sky e NOW', s: 'A pagamento', d: 'Diritti a pagamento per l\'Italia (dalla stampa)', ok: false },
+  { t: 'Radio ufficiale', s: 'Gratis, dal telefono', d: 'Nel 2026: commento in diretta senza ritardo', ok: true }
+];
+---
+<Base title="L'America's Cup 2027 in TV e in streaming" description="Dove vedere l'America's Cup 2027 in TV: Rai in chiaro per l'Italia, Sky e NOW a pagamento, radio ufficiale e canale YouTube. Orari ancora da pubblicare.">
+  <PageHead kicker="Vederla · da casa" title="In TV e in streaming" lead="In Italia le regate sono in chiaro sulla Rai. Sky e NOW le trasmettono a pagamento. Gli orari 2027 non sono ancora usciti." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap">
+      <ul class="canali">
+        {CANALI.map(c => (
+          <li class:list={['terzo', { 'terzo--sea': c.ok }]}>
+            <span class="canali__ico"><Icon name={c.t === 'Radio ufficiale' ? 'cuffie' : 'tv'} size={28} /></span>
+            <h2 class="canali__t">{c.t}</h2>
+            <p class="canali__s mono">{c.s}</p>
+            <p class="canali__d">{c.d}</p>
+          </li>
+        ))}
+      </ul>
+      <h2 class="mt">Le informazioni, con la fonte</h2>
+      <Fatti f={f} ids={ids} />
+      <p class="nota">Sul lungomare, per ascoltare il commento mentre guardi le barche, porta le cuffie: nel 2026 la radio ufficiale si ascoltava dal browser del telefono.</p>
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .canali { list-style: none; padding: 0; margin: 0; display: grid; gap: 1rem; }
+  @media (min-width: 760px) { .canali { grid-template-columns: repeat(3, 1fr); } }
+  .canali li { margin: 0; }
+  .canali__ico { color: var(--accent); }
+  .canali__t { font-size: 1.7rem; margin: .4rem 0 .1rem; }
+  .canali__s { font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); margin-bottom: .5rem; }
+  .canali__d { margin: 0; color: var(--ink-2); }
+  .mt { margin-top: 2.2rem; }
+</style>

@@ -1,0 +1,337 @@
+{
+ "cagliari": {
+  "classifica": [
+   {
+    "pos": 1,
+    "barca": "Luna Rossa",
+    "squadra": "luna-rossa",
+    "wy": false,
+    "punti": 63,
+    "regate": [
+     4,
+     8,
+     8,
+     9,
+     7,
+     8,
+     9,
+     10
+    ],
+    "finale": "vince"
+   },
+   {
+    "pos": 2,
+    "barca": "Emirates Team New Zealand",
+    "squadra": "emirates-team-new-zealand",
+    "wy": false,
+    "punti": 60,
+    "regate": [
+     7,
+     10,
+     3,
+     10,
+     8,
+     9,
+     7,
+     6
+    ],
+    "finale": null
+   },
+   {
+    "pos": 3,
+    "barca": "Luna Rossa Women & Youth",
+    "squadra": "luna-rossa",
+    "wy": true,
+    "punti": 59,
+    "regate": [
+     10,
+     9,
+     10,
+     7,
+     9,
+     10,
+     0,
+     4
+    ],
+    "finale": null
+   },
+   {
+    "pos": 4,
+    "barca": "La Roche-Posay Racing Team",
+    "squadra": "la-roche-posay-racing-team",
+    "wy": false,
+    "punti": 55,
+    "regate": [
+     9,
+     5,
+     5,
+     6,
+     6,
+     7,
+     8,
+     9
+    ],
+    "finale": null
+   },
+   {
+    "pos": 5,
+    "barca": "Emirates Team New Zealand Women & Youth",
+    "squadra": "emirates-team-new-zealand",
+    "wy": true,
+    "punti": 50,
+    "regate": [
+     6,
+     7,
+     7,
+     8,
+     5,
+     6,
+     6,
+     5
+    ],
+    "finale": null
+   },
+   {
+    "pos": 6,
+    "barca": "Tudor Team Alinghi",
+    "squadra": "tudor-team-alinghi",
+    "wy": false,
+    "punti": 40,
+    "regate": [
+     8,
+     6,
+     6,
+     4,
+     1,
+     4,
+     4,
+     7
+    ],
+    "finale": null
+   },
+   {
+    "pos": 7,
+    "barca": "Athena Pathway Women & Youth",
+    "squadra": "gb1",
+    "wy": true,
+    "punti": 38,
+    "regate": [
+     5,
+     1,
+     4,
+     5,
+     10,
+     5,
+     5,
+     3
+    ],
+    "finale": null
+   },
+   {
+    "pos": 8,
+    "barca": "GB1",
+    "squadra": "gb1",
+    "wy": false,
+    "punti": 27,
+    "regate": [
+     0,
+     0,
+     9,
+     0,
+     0,
+     0,
+     10,
+     8
+    ],
+    "finale": null
+   }
+  ],
+  "vincitori": [
+   "Luna Rossa Women & Youth",
+   "Emirates Team New Zealand",
+   "Luna Rossa Women & Youth",
+   "Emirates Team New Zealand",
+   "Athena Pathway Women & Youth",
+   "Luna Rossa Women & Youth",
+   "GB1",
+   "Luna Rossa"
+  ]
+ },
+ "napoli": {
+  "classifica": [
+   {
+    "pos": 1,
+    "barca": "Luna Rossa",
+    "squadra": "luna-rossa",
+    "wy": false,
+    "punti": 71,
+    "regate": [
+     9,
+     10,
+     10,
+     5,
+     9,
+     8,
+     10,
+     10
+    ],
+    "finale": "vince"
+   },
+   {
+    "pos": 2,
+    "barca": "Emirates Team New Zealand",
+    "squadra": "emirates-team-new-zealand",
+    "wy": false,
+    "punti": 56,
+    "regate": [
+     6,
+     8,
+     3,
+     9,
+     8,
+     9,
+     9,
+     4
+    ],
+    "finale": null
+   },
+   {
+    "pos": 3,
+    "barca": "La Roche-Posay Racing Team",
+    "squadra": "la-roche-posay-racing-team",
+    "wy": false,
+    "punti": 48,
+    "regate": [
+     5,
+     0,
+     5,
+     10,
+     1,
+     10,
+     8,
+     9
+    ],
+    "finale": null
+   },
+   {
+    "pos": 4,
+    "barca": "ARC Team USA",
+    "squadra": "arc-team-usa",
+    "wy": false,
+    "punti": 44,
+    "regate": [
+     10,
+     4,
+     6,
+     4,
+     7,
+     3,
+     2,
+     8
+    ],
+    "finale": null
+   },
+   {
+    "pos": 5,
+    "barca": "Emirates Team New Zealand Women & Youth",
+    "squadra": "emirates-team-new-zealand",
+    "wy": true,
+    "punti": 44,
+    "regate": [
+     4,
+     7,
+     2,
+     7,
+     10,
+     2,
+     6,
+     6
+    ],
+    "finale": null
+   },
+   {
+    "pos": 6,
+    "barca": "Luna Rossa Women & Youth",
+    "squadra": "luna-rossa",
+    "wy": true,
+    "punti": 44,
+    "regate": [
+     7,
+     6,
+     7,
+     6,
+     3,
+     6,
+     4,
+     5
+    ],
+    "finale": null
+   },
+   {
+    "pos": 7,
+    "barca": "Tudor Team Alinghi",
+    "squadra": "tudor-team-alinghi",
+    "wy": false,
+    "punti": 44,
+    "regate": [
+     2,
+     9,
+     9,
+     8,
+     6,
+     4,
+     3,
+     3
+    ],
+    "finale": null
+   },
+   {
+    "pos": 8,
+    "barca": "GB1",
+    "squadra": "gb1",
+    "wy": false,
+    "punti": 42,
+    "regate": [
+     3,
+     3,
+     8,
+     2,
+     5,
+     7,
+     7,
+     7
+    ],
+    "finale": null
+   },
+   {
+    "pos": 9,
+    "barca": "Cobham-Ultra GB2 (Women & Youth)",
+    "squadra": "gb1",
+    "wy": true,
+    "punti": 36,
+    "regate": [
+     8,
+     5,
+     4,
+     3,
+     4,
+     5,
+     5,
+     2
+    ],
+    "finale": null
+   }
+  ],
+  "vincitori": [
+   "ARC Team USA",
+   "Luna Rossa",
+   "Luna Rossa",
+   "La Roche-Posay Racing Team",
+   "Emirates Team New Zealand Women & Youth",
+   "La Roche-Posay Racing Team",
+   "Luna Rossa",
+   "Luna Rossa"
+  ]
+ },
+ "fonte": "Feed ufficiale dei risultati americascup.com (results/feed/seasons.json), letto il 2026-09-30"
+}

@@ -1,0 +1,39 @@
+---
+// Illustrazione della home: il golfo con il Vesuvio, una boa e un AC75 che vola sui foil
+---
+<svg class="hero-art" viewBox="0 0 800 420" aria-hidden="true" focusable="false" preserveAspectRatio="xMaxYMax slice">
+  <defs>
+    <linearGradient id="ha-cielo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="var(--bg)" stop-opacity="0" />
+      <stop offset="1" stop-color="var(--sea-soft)" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="420" fill="url(#ha-cielo)" />
+  <!-- Vesuvio e monte Somma -->
+  <path d="M300 262 C360 250 400 214 440 170 C455 154 470 150 486 158 L500 150 C512 142 528 146 540 160 C572 196 610 236 700 256 L800 262 L800 270 L300 270 Z" fill="var(--ink)" fill-opacity=".10" />
+  <path d="M486 158 L494 150 L500 150" stroke="var(--ink)" stroke-opacity=".25" stroke-width="2" fill="none" />
+  <!-- orizzonte e mare -->
+  <rect x="0" y="266" width="800" height="154" fill="var(--sea)" fill-opacity=".10" />
+  <path d="M0 266 H800" stroke="var(--sea)" stroke-opacity=".5" stroke-width="2" />
+  <g stroke="var(--sea)" stroke-opacity=".35" stroke-width="2" fill="none">
+    <path d="M40 300 q20 -6 40 0 t40 0" /><path d="M620 320 q20 -6 40 0 t40 0" /><path d="M280 360 q20 -6 40 0 t40 0" /><path d="M520 390 q20 -6 40 0 t40 0" />
+  </g>
+  <!-- linee di bolina tratteggiate e boa -->
+  <path d="M120 400 L330 290 M470 400 L330 290" stroke="var(--accent)" stroke-opacity=".55" stroke-width="2" stroke-dasharray="8 8" fill="none" />
+  <path d="M330 272 l10 18 h-20 z" fill="var(--buoy)" />
+  <path d="M318 292 q12 6 24 0" stroke="var(--sea)" stroke-width="2" fill="none" />
+  <!-- AC75 in volo -->
+  <g class="hero-art__barca">
+    <path d="M520 326 L706 326 L738 306 L556 306 Z" fill="var(--ink)" />
+    <path d="M630 306 L630 150 L704 306 Z" fill="var(--accent)" />
+    <path d="M630 170 L604 306 L630 306 Z" fill="var(--ink)" fill-opacity=".7" />
+    <path d="M586 326 V368 H616 M690 326 V376 M672 376 H712" stroke="var(--ink)" stroke-width="5" fill="none" stroke-linecap="round" />
+    <path d="M660 376 q40 10 80 0" stroke="var(--sea)" stroke-width="3" stroke-opacity=".6" fill="none" />
+  </g>
+</svg>
+<style>
+  .hero-art { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 58%; z-index: 0; }
+  @media (min-width: 900px) { .hero-art { height: 100%; } }
+  .hero-art__barca { transform-origin: 630px 330px; animation: vola 5s ease-in-out infinite; }
+  @keyframes vola { 0%, 100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-6px) rotate(-.6deg); } }
+</style>

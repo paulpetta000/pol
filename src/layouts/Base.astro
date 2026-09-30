@@ -1,0 +1,69 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITO } from '../config/sito';
+
+interface Props {
+  title: string;
+  description: string;
+  og?: string;
+  jsonld?: object[];
+  noindex?: boolean;
+}
+const { title, description, og, jsonld = [], noindex = false } = Astro.props;
+const path = Astro.url.pathname;
+const canonical = new URL(path, SITO.url).href;
+const fullTitle = path === '/' ? `${SITO.nome} · ${SITO.sottotitolo}` : `${title} · ${SITO.nome}`;
+const ogSlug = og ?? (path === '/' ? 'home' : path.replace(/^\/|\/$/g, '').replace(/\//g, '--'));
+const ogImage = new URL(`/og/${ogSlug}.png`, SITO.url).href;
+const ld = [
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITO.nome, alternateName: SITO.sottotitolo, url: SITO.url + '/', inLanguage: 'it-IT' },
+  ...jsonld
+];
+---
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>{fullTitle}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+  <link rel="alternate" hreflang="it" href={canonical} />
+  <link rel="alternate" hreflang="x-default" href={canonical} />
+  {noindex && <meta name="robots" content="noindex" />}
+  <meta name="theme-color" content="#F3F6F7" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#090D10" media="(prefers-color-scheme: dark)" />
+  <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/icons/icon-192.png" sizes="192x192" type="image/png" />
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+  <link rel="manifest" href="/manifest.webmanifest" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content={SITO.nome} />
+  <meta property="og:locale" content="it_IT" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <script is:inline>
+    try { var t = localStorage.getItem('tema'); if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+  {ld.map(o => <script type="application/ld+json" set:html={JSON.stringify(o)} />)}
+</head>
+<body>
+  <a class="skip" href="#contenuto">Vai al contenuto</a>
+  <Header />
+  <main id="contenuto">
+    <slot />
+  </main>
+  <Footer />
+  <script>
+    import '../scripts/sito';
+  </script>
+</body>
+</html>

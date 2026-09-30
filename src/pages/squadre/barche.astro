@@ -1,0 +1,166 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getFatti } from '../../lib/fatti';
+import TAPPE from '../../data/tappe-ac40.json';
+
+const idsRegole = ['ac75-cinque', 'ac75-donna', 'ac75-nazionalita', 'ac75-batterie', 'ac75-ospite', 'ac75-una-nuova', 'cal-vento'];
+const idsMisure = ['ac75-misure', 'ac75-velocita', 'ac40-misure', 'ac40-uso'];
+const f = await getFatti([...idsRegole, ...idsMisure]);
+const SQUADRE = [['lr', 'Luna Rossa'], ['nz', 'Team New Zealand'], ['gb', 'GB1'], ['al', 'Alinghi'], ['fr', 'La Roche-Posay'], ['us', 'ARC Team USA'], ['au', 'Team Australia']];
+// Scala: 1 m = 20 unità
+const S = 20;
+---
+<Base title="AC75 e AC40: le barche dell'America's Cup" description="Le barche dell'America's Cup 2027: l'AC75 con 5 velisti e almeno una donna, l'AC40 delle regate preliminari. Misure a confronto e modello 3D da esplorare.">
+  <PageHead kicker="Squadre · barche" title="Le barche" lead="Per il Match e la Louis Vuitton Cup si corre sugli AC75, monoscafi che volano sui foil. Youth, Women's e regate preliminari si corrono sugli AC40, più piccoli e tutti uguali." crumbs={[{ href: '/squadre/', label: 'Squadre' }]} aggiornato="2026-09-30" />
+
+  <section class="section" aria-labelledby="scala-h">
+    <div class="wrap">
+      <p class="kicker">In scala</p>
+      <h2 id="scala-h">AC75 contro AC40</h2>
+      <figure class="scala">
+        <svg viewBox={`0 0 ${25 * S + 40} 250`} role="img" aria-labelledby="scala-t">
+          <title id="scala-t">Confronto in scala: AC75 lungo circa 23 metri, AC40 lungo 11,8 metri, accanto a una persona di 1,8 metri</title>
+          <g transform="translate(20,0)">
+            <line x1="0" y1="112" x2={25 * S} y2="112" stroke="var(--line)" />
+            <g transform="translate(0,10)">
+              <path d={`M0 90 L${23 * S} 90 L${23 * S + 12} 78 L14 78 Z`} fill="var(--ink)" />
+              <path d={`M${11 * S} 78 V-6 L${16 * S} 78 Z`} fill="var(--accent)" opacity=".9" />
+              <text x="0" y="104" class="scala__t">AC75 · circa 23 m</text>
+            </g>
+            <line x1="0" y1="230" x2={25 * S} y2="230" stroke="var(--line)" />
+            <g transform="translate(0,120)">
+              <path d={`M0 92 L${11.8 * S} 92 L${11.8 * S + 8} 84 L10 84 Z`} fill="var(--ink)" />
+              <path d={`M${5.6 * S} 84 L${5.6 * S} ${84 - 17.9 * S * 0.3} L${8.6 * S} 84 Z`} fill="var(--sea)" opacity=".9" />
+              <text x="0" y="106" class="scala__t">AC40 · 11,8 m</text>
+              <g transform={`translate(${14 * S},${92 - 1.8 * S})`} fill="var(--ink-2)">
+                <circle cx="6" cy="4" r="4" /><rect x="3" y="9" width="6" height="18" rx="2" /><rect x="3" y="24" width="2.5" height="12" /><rect x="6.5" y="24" width="2.5" height="12" />
+              </g>
+              <text x={14 * S + 16} y="90" class="scala__p">persona · 1,8 m</text>
+            </g>
+          </g>
+        </svg>
+        <figcaption class="small muted">Lunghezze in scala; le vele sono disegnate più basse per stare nel riquadro.</figcaption>
+      </figure>
+      <Fatti f={f} ids={idsMisure} />
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="reg-h">
+    <div class="wrap">
+      <p class="kicker">Cosa cambia nel 2027</p>
+      <h2 id="reg-h">Le regole dell'AC75</h2>
+      <div class="cifre">
+        <div><span class="num">5</span><span>velisti a bordo</span></div>
+        <div><span class="num">1+</span><span>donna in ogni equipaggio</span></div>
+        <div><span class="num">0</span><span>ciclisti: energia dalle batterie</span></div>
+        <div><span class="num">6,5–23</span><span>nodi di vento per partire</span></div>
+      </div>
+      <Fatti f={f} ids={idsRegole} />
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="x3d-h">
+    <div class="wrap">
+      <p class="kicker">Esplora</p>
+      <h2 id="x3d-h">L'AC40 in 3D, pezzo per pezzo</h2>
+      <p>Ricostruzione <strong>non ufficiale</strong>, fatta con le misure pubbliche della classe. I colori delle squadre sono indicativi. Il modello si carica solo quando lo avvii (circa 150 KB compressi).</p>
+      <div class="x3d" data-x3d>
+        <div class="x3d__stage" data-stage>
+          <div class="x3d__poster">
+            <Icon name="cubo" size={44} />
+            <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
+            <p class="small" data-msg>Trascina per ruotare la barca.</p>
+          </div>
+        </div>
+        <div class="x3d__panel">
+          <div class="x3d__nav">
+            <button type="button" class="icon-btn" data-prev aria-label="Tappa precedente"><Icon name="freccia" class="flip" /></button>
+            <span class="mono" data-pos aria-live="polite">1 / {TAPPE.length}</span>
+            <button type="button" class="icon-btn" data-next aria-label="Tappa successiva"><Icon name="freccia" /></button>
+          </div>
+          {TAPPE.map((t, i) => (
+            <article class="x3d__tappa" data-tappa={i} data-part={t.id ?? ''} hidden={i > 0}>
+              <p class="kicker">{t.k}</p>
+              <h3>{t.h}</h3>
+              <p>{t.p}</p>
+              <p class="x3d__num num">{t.num}</p>
+              <p class="small muted">Curiosità: {t.fun}</p>
+            </article>
+          ))}
+          <label class="x3d__team">
+            <span class="mono small">Colori</span>
+            <select data-team>{SQUADRE.map(([k, n]) => <option value={k}>{n}</option>)}</select>
+          </label>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} />
+</Base>
+
+<script>
+  const box = document.querySelector<HTMLElement>('[data-x3d]');
+  if (box) {
+    const tappe = [...box.querySelectorAll<HTMLElement>('[data-tappa]')];
+    const pos = box.querySelector('[data-pos]')!;
+    const team = box.querySelector<HTMLSelectElement>('[data-team]')!;
+    const REL: Record<string, string[]> = { top: ['main'], deck: ['main'], crew: ['hull'], batt: ['hull'], water: ['hull', 'arm', 'wing', 'rudder'] };
+    let i = 0;
+    let api: any = null;
+    const vai = (n: number) => {
+      i = Math.max(0, Math.min(tappe.length - 1, n));
+      tappe.forEach((t, k) => (t.hidden = k !== i));
+      pos.textContent = `${i + 1} / ${tappe.length}`;
+      if (api) { const id = tappe[i].dataset.part || null; api.view(i, 0); api.active(id, id ? REL[id] || [] : []); }
+    };
+    box.querySelector('[data-prev]')!.addEventListener('click', () => vai(i - 1));
+    box.querySelector('[data-next]')!.addEventListener('click', () => vai(i + 1));
+    team.addEventListener('change', () => api?.livery(team.value));
+    box.querySelector('[data-avvia]')!.addEventListener('click', async () => {
+      const stage = box.querySelector<HTMLElement>('[data-stage]')!;
+      const msg = box.querySelector('[data-msg]')!;
+      msg.textContent = 'Carico il modello…';
+      try {
+        const m = await import('../../lib/3d/boat3d.js');
+        stage.querySelector('.x3d__poster')?.remove();
+        api = m.mount(stage, { team: team.value });
+        api.start();
+        vai(i);
+        const io = new IntersectionObserver(([e]) => (e.isIntersecting ? api.start() : api.stop()));
+        io.observe(stage);
+      } catch {
+        msg.textContent = 'Il 3D non funziona su questo dispositivo: le spiegazioni qui accanto restano disponibili.';
+      }
+    });
+  }
+</script>
+
+<style>
+  .scala { margin: 0 0 1.4rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+  .scala svg { width: 100%; height: auto; display: block; }
+  .scala__t { font: 700 15px var(--f-sans); fill: var(--ink); }
+  .scala__p { font: 500 12px var(--f-mono); fill: var(--ink-3); }
+  .cifre { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-bottom: 1.4rem; }
+  .cifre > div { background: var(--surface); padding: 1rem; display: flex; flex-direction: column; gap: .2rem; }
+  .cifre .num { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 600; color: var(--accent); line-height: 1; }
+  @media (min-width: 760px) { .cifre { grid-template-columns: repeat(4, 1fr); } }
+  .x3d { display: grid; gap: 1rem; margin-top: 1rem; }
+  @media (min-width: 900px) { .x3d { grid-template-columns: 1.4fr 1fr; align-items: stretch; } }
+  .x3d__stage { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(var(--sea-soft), var(--map-sea)); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+  @media (min-width: 900px) { .x3d__stage { aspect-ratio: 16 / 11; } }
+  .x3d__stage :global(canvas) { display: block; width: 100% !important; height: 100% !important; }
+  .x3d__poster { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .8rem; text-align: center; padding: 1rem; color: var(--ink-2); }
+  .x3d__poster > :global(.icon) { color: var(--accent); }
+  .x3d__panel { display: flex; flex-direction: column; gap: .6rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+  .x3d__nav { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
+  .x3d__nav :global(.flip) { transform: scaleX(-1); }
+  .x3d__tappa h3 { font-size: 1.5rem; }
+  .x3d__num { font-size: 1.15rem; color: var(--accent); font-weight: 600; }
+  .x3d__team { display: flex; gap: .6rem; align-items: center; margin-top: auto; padding-top: .6rem; border-top: 1px solid var(--line); }
+  .x3d__team select { min-height: 44px; font: inherit; padding: .3rem .5rem; border: 2px solid var(--line-2); border-radius: var(--r); background: var(--bg); color: var(--ink); }
+</style>

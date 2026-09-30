@@ -1,0 +1,114 @@
+[
+ {
+  "id": null,
+  "k": "Inizio",
+  "h": "Questo è un AC40",
+  "p": "Ricostruito in 3D con le misure ufficiali della classe. Usa le frecce: partiamo dalla cima dell'albero e finiamo sotto il mare, dove succede la magia.",
+  "num": "11,8 m di lunghezza",
+  "fun": "Sullo sfondo, la sagoma del Vesuvio: è qui che si correrà la Coppa del 2027."
+ },
+ {
+  "id": "top",
+  "k": "In cima",
+  "h": "La testa della vela",
+  "p": "La vela è tagliata quasi dritta in alto (in gergo “square top”): c'è più superficie in alto, dove il vento soffia più forte.",
+  "num": "17,9 m: l'albero",
+  "fun": "è alto come un palazzo di 6 piani, su una barca lunga meno di 12 metri."
+ },
+ {
+  "id": "main",
+  "k": "Il motore",
+  "h": "La randa a doppia pelle",
+  "p": "La vela principale è fatta di due teli che avvolgono l'albero. Insieme formano un profilo spesso, come l'ala di un aereo, che spinge molto di più di una vela normale.",
+  "num": "63 m² di superficie",
+  "fun": "la regola uno dei due trimmer, e cambia forma di continuo in base al vento."
+ },
+ {
+  "id": "jib",
+  "k": "Davanti all'albero",
+  "h": "Il fiocco",
+  "p": "La vela davanti. Ce ne sono tre misure: prima della regata si sceglie quella adatta al vento del giorno.",
+  "num": "da 26 a 38 m²",
+  "fun": "con vento forte si monta la più piccola, per non sovraccaricare la barca."
+ },
+ {
+  "id": "deck",
+  "k": "Dove la vela finisce",
+  "h": "Vela quasi sulla coperta",
+  "p": "La vela scende fino a sfiorare la coperta. Così l'aria non scappa sotto e la vela lavora su tutta la sua altezza.",
+  "num": "nessun boma",
+  "fun": "sulle barche normali c'è il boma, il palo orizzontale che fa abbassare la testa a chi sta a bordo. Qui non c'è."
+ },
+ {
+  "id": "crew",
+  "k": "Chi guida",
+  "h": "I quattro a bordo",
+  "p": "Stanno seduti in piccoli abitacoli, due per lato: due timonieri e due trimmer. Guida chi sta sul lato da cui arriva il vento, e a ogni virata si scambiano il comando.",
+  "num": "4 velisti",
+  "fun": "indossano casco e giubbotto protettivo. A queste velocità cadere in acqua fa male."
+ },
+ {
+  "id": "hull",
+  "k": "Il corpo",
+  "h": "Lo scafo",
+  "p": "Guscio in carbonio, leggerissimo. Quando la barca vola, lo scafo non tocca l'acqua: serve a tenere insieme tutto.",
+  "num": "circa 2.000 kg",
+  "fun": "pesa quanto un grosso SUV, ma in volo tocca l'acqua solo con due piccole ali."
+ },
+ {
+  "id": "batt",
+  "k": "Dentro lo scafo",
+  "h": "Le batterie",
+  "p": "Sulle AC75 del 2024 servivano quattro atleti a pedalare per dare energia ai comandi idraulici. Qui c'è un pacco batterie al litio.",
+  "num": "tutto a batterie",
+  "fun": "per questo sull'AC40 bastano 4 persone."
+ },
+ {
+  "id": "wfoil",
+  "k": "Fuori dall'acqua",
+  "h": "Il foil alzato",
+  "p": "I foil sono due, uno per lato. Quello dalla parte del vento resta alzato in aria: in punta ha una zavorra e fa da contrappeso, come chi si sporge da una barca a vela.",
+  "num": "2 foil: uno su, uno giù",
+  "fun": "a ogni virata si abbassa quello alzato e si alza l'altro, in pochi secondi."
+ },
+ {
+  "id": "water",
+  "k": "Il pelo dell'acqua",
+  "h": "Vola!",
+  "p": "Ecco il trucco: tra lo scafo e il mare c'è aria. Senza attrito la barca accelera fino a superare la velocità del vento.",
+  "num": "45+ nodi, oltre 83 km/h",
+  "fun": "se vola troppo alta perde il controllo, se vola troppo bassa tocca e frena. Il trimmer la tiene “in quota”."
+ },
+ {
+  "id": "arm",
+  "k": "Sott'acqua",
+  "h": "Il braccio del foil",
+  "p": "Collega lo scafo all'ala. Un sistema a batteria lo fa ruotare su e giù, e si comanda dall'abitacolo.",
+  "num": "si alza e si abbassa a comando",
+  "fun": "se l'ala esce dall'acqua per sbaglio, la barca ricade di colpo sullo scafo."
+ },
+ {
+  "id": "wing",
+  "k": "Il cuore",
+  "h": "L'ala del foil",
+  "p": "Un'ala a T, come quella di un aereo ma sott'acqua. Ha un'aletta mobile, il flap: alzandola o abbassandola il trimmer decide quanto la barca sale.",
+  "num": "acqua 800 volte più densa dell'aria",
+  "fun": "per questo un'ala così piccola riesce a sollevare due tonnellate."
+ },
+ {
+  "id": "rudder",
+  "k": "A poppa",
+  "h": "Il timone con l'ala",
+  "p": "Anche il timone ha un'alettina orizzontale in fondo. Tiene la barca in assetto e aiuta a non far piantare la prua in acqua.",
+  "num": "timone a T",
+  "fun": "se il timone esce dall'acqua, la barca non si governa più: succede nelle manovre più strette."
+ },
+ {
+  "id": null,
+  "k": "Fine",
+  "h": "Ora sai com'è fatto",
+  "p": "Quando guardi la regata, osserva le barche in poppa: sono quelle che volano più veloci. E fai attenzione alle virate: è lì che si vincono e si perdono le regate.",
+  "num": "barche identiche",
+  "fun": "le barche sono uguali, quindi ogni metro guadagnato è merito dell'equipaggio."
+ }
+]

@@ -1,0 +1,61 @@
+---
+// Linea del tempo 20 maggio – 20 luglio 2027, in stile grafica TV
+import { EVENTI, GARE } from '../data/eventi';
+import { d, mono, intervallo } from '../lib/formato';
+interface Props { compatta?: boolean }
+const { compatta = false } = Astro.props;
+const START = d('2027-05-20').getTime();
+const END = d('2027-07-21').getTime();
+const pct = (x: string) => ((d(x).getTime() - START) / (END - START)) * 100;
+const larg = (a: string, b: string) => ((d(b).getTime() + 86400000 - d(a).getTime()) / (END - START)) * 100;
+const RIGHE = [
+  { gara: 'lvc', eventi: EVENTI.filter(e => e.gara === 'lvc' || e.gara === 'pausa') },
+  { gara: 'youth', eventi: EVENTI.filter(e => e.gara === 'youth') },
+  { gara: 'womens', eventi: EVENTI.filter(e => e.gara === 'womens') },
+  { gara: 'match', eventi: EVENTI.filter(e => e.gara === 'match') }
+] as const;
+const TACCHE = ['2027-06-01', '2027-06-15', '2027-07-01', '2027-07-15'];
+---
+<figure class="tl" aria-labelledby="tl-cap">
+  <figcaption id="tl-cap" class="visually-hidden">Calendario 2027: Louis Vuitton Cup dal 22 maggio al 4 luglio, Youth America's Cup dal 2 al 6 giugno, Women's America's Cup dal 5 al 9 luglio, Match dal 10 al 19 luglio.</figcaption>
+  <div class="tl__scala" aria-hidden="true">
+    {TACCHE.map(t => <span class="tl__tacca mono" style={`left:${pct(t)}%`}>{mono(t)}</span>)}
+  </div>
+  {RIGHE.map(r => (
+    <div class={`tl__riga tl__riga--${r.gara}`}>
+      <p class="tl__nome">{GARE[r.gara].nome}</p>
+      <div class="tl__pista" aria-hidden="true">
+        {TACCHE.map(t => <span class="tl__griglia" style={`left:${pct(t)}%`} />)}
+        {r.eventi.map(e => (
+          <span class={`tl__seg tl__seg--${e.gara}${e.condizionale && e.chi === 'sfidanti' ? ' tl__seg--ko' : ''}`} style={`left:${pct(e.inizio)}%;width:${larg(e.inizio, e.fine)}%`} title={`${e.breve}: ${intervallo(e.inizio, e.fine)}`} />
+        ))}
+      </div>
+      {!compatta && (
+        <p class="tl__date mono">
+          {r.gara === 'lvc' ? '22.05 → 04.07' : `${mono(r.eventi[0].inizio)} → ${mono(r.eventi[0].fine)}`}
+        </p>
+      )}
+    </div>
+  ))}
+</figure>
+<style>
+  .tl { margin: 0; padding: 1rem 1rem 1.1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }
+  .tl__scala { position: relative; height: 1.1rem; margin-bottom: .4rem; }
+  .tl__tacca { position: absolute; transform: translateX(-50%); font-size: .68rem; color: var(--ink-3); }
+  .tl__riga { display: grid; grid-template-columns: 1fr auto; gap: .2rem .8rem; align-items: end; padding-block: .45rem; border-top: 1px solid var(--line); }
+  .tl__nome { margin: 0; font-weight: 750; font-stretch: 86%; font-size: .95rem; line-height: 1.1; }
+  .tl__date { margin: 0; font-size: .74rem; color: var(--ink-2); text-align: right; }
+  .tl__pista { grid-column: 1 / -1; position: relative; height: 14px; background: var(--bg-2); border-radius: 2px; overflow: hidden; }
+  .tl__griglia { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); }
+  .tl__seg { position: absolute; top: 0; bottom: 0; border-right: 2px solid var(--surface); }
+  .tl__seg--lvc { background: var(--accent); }
+  .tl__seg--ko { background: repeating-linear-gradient(135deg, var(--accent) 0 5px, color-mix(in srgb, var(--accent) 55%, var(--surface)) 5px 8px); }
+  .tl__seg--pausa { background: repeating-linear-gradient(90deg, var(--line-2) 0 2px, transparent 2px 6px); opacity: .6; }
+  .tl__seg--youth, .tl__seg--womens { background: var(--sea); }
+  .tl__seg--match { background: var(--ink); }
+  @media (min-width: 720px) {
+    .tl__riga { grid-template-columns: 11.5rem 1fr 7.5rem; align-items: center; }
+    .tl__pista { grid-column: auto; height: 18px; }
+    .tl__scala { margin-left: 12.3rem; margin-right: 8.3rem; }
+  }
+</style>

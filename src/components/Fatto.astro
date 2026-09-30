@@ -1,0 +1,23 @@
+---
+// Una scheda: testo, stato e fonte con la data del controllo
+import type { Fatto } from '../lib/fatti';
+import { ETICHETTA_STATO, SPIEGA_STATO } from '../lib/fatti';
+import { dataBreve } from '../lib/formato';
+interface Props { f: Fatto; as?: 'li' | 'div'; compatto?: boolean }
+const { f, as = 'li', compatto = false } = Astro.props;
+const Tag = as;
+const s = f.data.stato;
+---
+<Tag class="fatto" data-stato={s}>
+  <p class="fatto__testo">{f.data.testo}</p>
+  <p class="fatto__meta">
+    <span class={`chip chip--${s}`} title={SPIEGA_STATO[s]}>{ETICHETTA_STATO[s]}</span>
+    {f.data.anno !== 2027 && <span class="chip chip--anno" title="Com'era alla regata del 2026: utile come riferimento">Com'era nel {f.data.anno}</span>}
+    {!compatto && (
+      <span>
+        Fonte: {f.fontiRisolte.map((x, i) => <>{i > 0 && ', '}<a href={x.data.url} rel="noopener">{x.data.editore}</a></>)}
+      </span>
+    )}
+    <span class="mono">controllato il {dataBreve(f.data.controllato)}</span>
+  </p>
+</Tag>

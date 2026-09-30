@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import FontiPagina from '../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti } from '../lib/fatti';
+import { testoRicco, dataBreve } from '../lib/formato';
+
+const faq = await getCollection('faq');
+const f = await getFatti([...new Set(faq.flatMap(q => q.data.fatti.map(r => r.id)))]);
+const jsonld = [{
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: faq.map(q => ({ '@type': 'Question', name: q.data.domanda, acceptedAnswer: { '@type': 'Answer', text: q.data.risposta.replace(/\[([^\]]+)\]\([^)]+\)/g, '$1').replace(/\*\*/g, '') } }))
+}];
+---
+<Base title="Domande frequenti sull'America's Cup a Napoli" description="Risposte brevi: quando si corre, se si vede gratis, dove guardare, biglietti, TV, barche, trasporti, bambini e accessibilità. America's Cup 2027 a Napoli." jsonld={jsonld}>
+  <PageHead kicker="Domande frequenti" title="Domande frequenti" lead={`${faq.length} risposte brevi. Ogni risposta indica da quali informazioni viene, con fonte e data.`} aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap">
+      <div class="faq">
+        {faq.map(q => (
+          <details id={q.id}>
+            <summary>{q.data.domanda}</summary>
+            <div class="faq__r">
+              <p set:html={testoRicco(q.data.risposta)} />
+              <p class="faq__f small">
+                Fonti: {q.data.fatti.map((r, i) => { const x = f.get(r.id)!; return <>{i > 0 && ' · '}{x.fontiRisolte.map((s, j) => <>{j > 0 && ', '}<a href={s.data.url} rel="noopener">{s.data.editore}</a></>)}</>; })}
+                {' '}<span class="mono">({dataBreve(f.get(q.data.fatti[0].id)!.data.controllato)})</span>
+              </p>
+            </div>
+          </details>
+        ))}
+      </div>
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .faq { border-top: 2px solid var(--ink); }
+  .faq details { border-bottom: 1px solid var(--line); scroll-margin-top: calc(var(--head-h) + 12px); }
+  .faq summary { cursor: pointer; padding: 1.05rem 2.2rem 1.05rem 0; font-weight: 750; font-stretch: 88%; font-size: 1.15rem; list-style: none; position: relative; line-height: 1.25; }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: '+'; position: absolute; right: .3rem; top: .85rem; font: 500 1.5rem var(--f-mono); color: var(--accent); }
+  .faq details[open] summary::after { content: '−'; }
+  .faq__r { padding-bottom: 1rem; }
+  .faq__r p { margin-bottom: .5rem; }
+  .faq__f { color: var(--ink-3); }
+  .faq__f a { color: var(--ink-2); }
+</style>

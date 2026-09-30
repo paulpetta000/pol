@@ -1,0 +1,116 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Flag from '../../components/Flag.astro';
+import Fatti from '../../components/Fatti.astro';
+import Countdown from '../../components/Countdown.astro';
+import Timeline2027 from '../../components/Timeline2027.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti } from '../../lib/fatti';
+import { EVENTI, GARE } from '../../data/eventi';
+import { intervallo, giornoSettimana, mono, d } from '../../lib/formato';
+import { SITO } from '../../config/sito';
+
+const idsFormato = ['cal-lvc-periodo', 'cal-flotta', 'cal-rr', 'cal-defender-gironi', 'cal-ripescaggio', 'cal-semifinali', 'cal-finale-lvc', 'cal-match-preparazione', 'cal-match', 'cal-match-riserva', 'cal-youth', 'cal-womens'];
+const idsDaSapere = ['cal-orari', 'cal-giorni-match', 'cal-orari-2026', 'cal-vento', 'cal-preliminari-2027'];
+const f = await getFatti([...idsFormato, ...idsDaSapere]);
+const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
+const host = SITO.url.replace(/^https?:\/\//, '');
+
+const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
+  '@context': 'https://schema.org', '@type': 'SportsEvent', name: e.titolo, startDate: e.inizio, endDate: e.fine,
+  eventStatus: 'https://schema.org/EventScheduled', eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+  location: { '@type': 'Place', name: 'Golfo di Napoli', address: { '@type': 'PostalAddress', addressLocality: 'Napoli', addressCountry: 'IT' } },
+  description: e.testo, sport: 'Vela', url: `${SITO.url}/calendario/`
+}));
+---
+<Base title="Calendario dell'America's Cup 2027 a Napoli" description="Tutte le date dell'America's Cup 2027 a Napoli: Louis Vuitton Cup dal 22 maggio al 4 luglio, Youth 2-6 giugno, Women's 5-9 luglio, Match dal 10 al 19 luglio. Calendario da aggiungere al telefono." jsonld={jsonld}>
+  <PageHead kicker="Calendario" title="Le date del 2027" lead="Dal 22 maggio al 19 luglio, quasi due mesi di regate nel golfo. Gli orari non sono ancora usciti: aggiungi il calendario al telefono e si aggiornerà da solo." aggiornato="2026-09-30">
+    <Countdown al="2027-05-22" testo="alla prima regata (22 maggio 2027)" />
+  </PageHead>
+
+  <section class="section">
+    <div class="wrap">
+      <Timeline2027 />
+      <ol class="agenda">
+        {EVENTI.map(e => (
+          <li class={`agenda__i agenda__i--${e.gara}`}>
+            <div class="agenda__data">
+              <span class="agenda__gg num">{mono(e.inizio)}{e.fine !== e.inizio && <> → {mono(e.fine)}</>}</span>
+              <span class="agenda__sett">{giornoSettimana(e.inizio)}{e.fine !== e.inizio && ` – ${giornoSettimana(e.fine)}`}</span>
+            </div>
+            <div>
+              <p class="agenda__gara mono">{GARE[e.gara].nome}</p>
+              <h3 class="agenda__t">{e.breve}</h3>
+              <p class="agenda__d">{e.testo}</p>
+              {e.chi === 'sfidanti' && <p class="agenda__chi small">Solo sfidanti · {e.condizionale}</p>}
+              {e.chi === 'match' && <p class="agenda__chi small">Emirates Team New Zealand contro il vincitore della Louis Vuitton Cup</p>}
+            </div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section band" id="iscriviti" aria-labelledby="isc-h">
+    <div class="wrap split">
+      <div>
+        <p class="kicker">Segui la tua squadra</p>
+        <h2 id="isc-h">Aggiungi il calendario al telefono</h2>
+        <p>Iscriviti una volta: quando escono gli orari, o se una data cambia, il calendario del telefono si aggiorna da solo. Le date delle fasi a eliminazione compaiono con la nota «se si qualifica».</p>
+        <p class="btn-row">
+          <a class="btn btn--primary" href={`webcal://${host}/calendario/ac38.ics`}><Icon name="calendario" size={20} /> Iscriviti a tutto il 2027</a>
+          <a class="btn" href="/calendario/ac38.ics" download><Icon name="download" size={20} /> Scarica il file</a>
+        </p>
+        <p class="small muted">Su iPhone il primo pulsante apre Calendario. Su Android: in Google Calendar scegli «Altri calendari → Da URL» e incolla <span class="mono">{SITO.url}/calendario/ac38.ics</span></p>
+      </div>
+      <div>
+        <h3>Solo le date della tua squadra</h3>
+        <ul class="cal-sq">
+          {squadre.map(s => (
+            <li><a href={`webcal://${host}/calendario/${s.id}.ics`}><Flag code={s.data.bandiera} width={26} decorative /><span>{s.data.nome}</span><Icon name="calendario" size={18} /></a></li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="form-h">
+    <div class="wrap">
+      <p class="kicker">Come funziona</p>
+      <h2 id="form-h">Il formato, fase per fase</h2>
+      <Fatti f={f} ids={idsFormato} />
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="ds-h">
+    <div class="wrap">
+      <h2 id="ds-h">Orari e cose ancora da sapere</h2>
+      <Fatti f={f} ids={idsDaSapere} />
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .agenda { list-style: none; margin: 1.6rem 0 0; padding: 0; border-top: 2px solid var(--ink); }
+  .agenda__i { display: grid; grid-template-columns: 7.2rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); margin: 0; position: relative; }
+  .agenda__i::before { content: ''; position: absolute; left: -12px; top: 1.1rem; bottom: 1.1rem; width: 4px; border-radius: 2px; background: var(--accent); }
+  .agenda__i--youth::before, .agenda__i--womens::before { background: var(--sea); }
+  .agenda__i--match::before { background: var(--ink); }
+  .agenda__i--pausa::before { background: repeating-linear-gradient(180deg, var(--line-2) 0 3px, transparent 3px 6px); }
+  .agenda__gg { display: block; font-size: 1.05rem; font-weight: 600; }
+  .agenda__sett { display: block; font-size: .8rem; color: var(--ink-3); margin-top: .15rem; }
+  .agenda__gara { font-size: .7rem; text-transform: uppercase; letter-spacing: .07em; color: var(--ink-3); margin: 0; }
+  .agenda__t { margin: .1rem 0 .25rem; font-size: 1.3rem; }
+  .agenda__d { margin: 0; color: var(--ink-2); }
+  .agenda__chi { margin: .3rem 0 0; color: var(--accent); font-weight: 600; }
+  @media (max-width: 420px) { .agenda__i { grid-template-columns: 1fr; gap: .3rem; } }
+  .cal-sq { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
+  .cal-sq li { margin: 0; border-bottom: 1px solid var(--line); }
+  .cal-sq a { display: grid; grid-template-columns: auto 1fr auto; gap: .7rem; align-items: center; padding: .75rem .2rem; color: var(--ink); text-decoration: none; font-weight: 700; font-stretch: 88%; }
+  .cal-sq a:hover { background: var(--bg-2); }
+  .cal-sq :global(.icon) { color: var(--accent); }
+</style>

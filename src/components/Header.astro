@@ -1,0 +1,93 @@
+---
+import Icon from './Icon.astro';
+import Logo from './Logo.astro';
+import { SITO } from '../config/sito';
+import { MENU } from '../config/menu';
+const path = Astro.url.pathname;
+const attivo = (href: string) => path.startsWith(href);
+---
+<header class="site-head">
+  <div class="wrap site-head__in">
+    <a class="brand" href="/" aria-label={`${SITO.nome}, ${SITO.sottotitolo}: vai alla home`}>
+      <Logo />
+      <span class="brand__txt">
+        <span class="brand__nome">{SITO.nome}</span>
+        <span class="brand__sotto">{SITO.sottotitolo}</span>
+      </span>
+    </a>
+    <nav class="nav-desk" aria-label="Sezioni">
+      <ul>
+        {MENU.map(m => <li><a href={m.href} aria-current={attivo(m.href) ? 'page' : undefined}>{m.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="head-tools">
+      <button class="icon-btn" type="button" id="tema-btn" aria-label="Tema: automatico. Cambia tema" title="Cambia tema">
+        <span class="tema-ico tema-ico--auto"><Icon name="auto" size={22} /></span>
+        <span class="tema-ico tema-ico--light"><Icon name="sole" size={22} /></span>
+        <span class="tema-ico tema-ico--dark"><Icon name="luna" size={22} /></span>
+      </button>
+      <button class="icon-btn menu-btn" type="button" id="menu-btn" aria-expanded="false" aria-controls="menu-mob" aria-label="Apri il menu">
+        <span class="menu-ico menu-ico--open"><Icon name="menu" size={24} /></span>
+        <span class="menu-ico menu-ico--close"><Icon name="chiudi" size={24} /></span>
+      </button>
+    </div>
+  </div>
+  <nav class="nav-mob" id="menu-mob" aria-label="Menu" hidden>
+    <ul class="wrap">
+      {MENU.map((m, i) => (
+        <li>
+          <a href={m.href} aria-current={attivo(m.href) ? 'page' : undefined}>
+            <span class="nav-mob__n mono">{String(i + 1).padStart(2, '0')}</span>
+            <span><span class="nav-mob__t">{m.label}</span><span class="nav-mob__s">{m.sotto}</span></span>
+            <Icon name="freccia" size={20} />
+          </a>
+        </li>
+      ))}
+      <li class="nav-mob__extra">
+        <a href="/domande-frequenti/">Domande frequenti</a>
+        <a href="/archivio-2026/">Archivio 2026</a>
+        <a href="/fonti/">Fonti</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+  .site-head { position: sticky; top: 0; z-index: 50; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: saturate(1.4) blur(10px); -webkit-backdrop-filter: saturate(1.4) blur(10px); border-bottom: 1px solid var(--line); }
+  .site-head__in { height: var(--head-h); display: flex; align-items: center; gap: 1rem; }
+  .brand { display: inline-flex; align-items: center; gap: .6rem; color: var(--ink); text-decoration: none; min-width: 0; }
+  .brand :global(.logo-mark) { flex: none; }
+  .brand__txt { display: flex; flex-direction: column; line-height: 1; min-width: 0; }
+  .brand__nome { font-weight: 850; font-stretch: 68%; font-size: 1.12rem; letter-spacing: .01em; text-transform: uppercase; white-space: nowrap; }
+  .brand__sotto { font-family: var(--f-mono); font-size: .64rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); margin-top: .22rem; white-space: nowrap; }
+  .nav-desk { display: none; margin-left: auto; }
+  .nav-desk ul { display: flex; gap: .25rem; list-style: none; margin: 0; padding: 0; }
+  .nav-desk li { margin: 0; }
+  .nav-desk a { display: block; padding: .5rem .8rem; color: var(--ink); text-decoration: none; font-weight: 700; font-stretch: 86%; border-radius: var(--r); position: relative; }
+  .nav-desk a:hover { background: var(--bg-2); }
+  .nav-desk a[aria-current="page"]::after { content: ''; position: absolute; left: .8rem; right: .8rem; bottom: -9px; height: 3px; background: var(--accent); }
+  .head-tools { margin-left: auto; display: flex; gap: .25rem; }
+  .icon-btn { width: 44px; height: 44px; display: grid; place-items: center; border: 0; background: transparent; color: var(--ink); border-radius: var(--r); cursor: pointer; }
+  .icon-btn:hover { background: var(--bg-2); }
+  .tema-ico, .menu-ico { display: none; line-height: 0; }
+  :global(html:not([data-theme])) .tema-ico--auto,
+  :global(html[data-theme="light"]) .tema-ico--light,
+  :global(html[data-theme="dark"]) .tema-ico--dark { display: block; }
+  .menu-btn[aria-expanded="false"] .menu-ico--open, .menu-btn[aria-expanded="true"] .menu-ico--close { display: block; }
+  .nav-mob { border-top: 1px solid var(--line); background: var(--bg); max-height: calc(100dvh - var(--head-h)); overflow-y: auto; }
+  .nav-mob ul { list-style: none; margin: 0; padding-block: .4rem 1.2rem; }
+  .nav-mob li { margin: 0; }
+  .nav-mob a { display: grid; grid-template-columns: 2.2rem 1fr auto; align-items: center; gap: .5rem; padding: .95rem 0; border-bottom: 1px solid var(--line); color: var(--ink); text-decoration: none; }
+  .nav-mob__n { color: var(--accent); font-size: .8rem; }
+  .nav-mob__t { display: block; font-weight: 800; font-stretch: 74%; font-size: 1.7rem; line-height: 1; }
+  .nav-mob__s { display: block; color: var(--ink-3); font-size: .9rem; margin-top: .25rem; }
+  .nav-mob__extra { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; padding-top: 1rem; }
+  .nav-mob__extra a { display: inline; padding: .4rem 0; border: 0; color: var(--sea); text-decoration: underline; font-size: .98rem; }
+  @media (min-width: 900px) {
+    .nav-desk { display: block; }
+    .head-tools { margin-left: .5rem; }
+    .menu-btn { display: none; }
+    .nav-mob { display: none !important; }
+  }
+  @media (max-width: 380px) { .brand__nome { font-size: 1rem; } }
+</style>

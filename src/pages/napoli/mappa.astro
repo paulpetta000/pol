@@ -1,0 +1,55 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Mappa from '../../components/Mappa.astro';
+import Spot from '../../components/Spot.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti, tutteLeFonti } from '../../lib/fatti';
+
+const ids = ['campo-mappa-atteso', 'vil-caracciolo', 'vil-bagnoli', 'sq-basi', 'linea6-fermate', 'echia-ascensore'];
+const f = await getFatti(ids);
+const luoghi = await getCollection('luoghi');
+const viste = luoghi.filter(l => l.data.tipo === 'vista');
+const stazioni = luoghi.filter(l => l.data.tipo === 'stazione' || l.data.tipo === 'porto');
+const osm = (await tutteLeFonti()).get('osm')!;
+---
+<Base title="Mappa: dove vedere le regate a Napoli" description="Mappa del lungomare di Napoli per l'America's Cup 2027: punti da cui guardare le regate, Race Village, basi di Bagnoli, stazioni della metro e delle funicolari. Funziona anche offline.">
+  <PageHead kicker="Napoli · mappa" title="Mappa" lead="Disegnata su misura con i dati di OpenStreetMap: funziona anche senza rete. Il campo di regata e le zone dei villaggi sono indicativi, finché non esce la mappa ufficiale." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap">
+      <Mappa vista="lungomare" id="mappa-grande" />
+    </div>
+  </section>
+  <section class="section band" aria-labelledby="pt-h">
+    <div class="wrap">
+      <p class="kicker">Dove mi metto?</p>
+      <h2 id="pt-h">I punti della mappa</h2>
+      <p>Sole, gradini e folla sono valutazioni nostre, non informazioni ufficiali.</p>
+      <div class="spots">{viste.map((l, i) => <Spot l={l} n={i + 1} />)}</div>
+    </div>
+  </section>
+  <section class="section" aria-labelledby="st-h">
+    <div class="wrap split">
+      <div>
+        <h2 id="st-h">Stazioni e porti sulla mappa</h2>
+        <div class="tabella-wrap">
+          <table>
+            <thead><tr><th scope="col">Fermata</th><th scope="col">Linea</th></tr></thead>
+            <tbody>{stazioni.map(s => <tr><th scope="row">{s.data.nome}</th><td>{s.data.linea}</td></tr>)}</tbody>
+          </table>
+        </div>
+      </div>
+      <div>
+        <h2>Da sapere</h2>
+        <Fatti f={f} ids={ids} />
+      </div>
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} extra={[osm]} />
+</Base>
+<style>
+  .spots { display: grid; gap: 1rem; margin-top: 1.2rem; }
+  @media (min-width: 760px) { .spots { grid-template-columns: 1fr 1fr; } }
+</style>

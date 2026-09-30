@@ -1,4 +1,4 @@
 node_modules
-site/vendor/
-site/og.png
-site/icon-*.png
+dist
+.astro
+.vercel

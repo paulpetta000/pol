@@ -1,0 +1,77 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Flag from '../../components/Flag.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection } from 'astro:content';
+import { getFatti } from '../../lib/fatti';
+
+const ids = ['sq-sette', 'sq-vincitori', 'sq-cor', 'cal-defender-gironi', 'sq-basi', 'sq-acp', 'sq-nyyc'];
+const f = await getFatti(ids);
+const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
+const RUOLO = { defender: 'Defender · difende la Coppa', 'challenger-of-record': 'Challenger of Record', sfidante: 'Sfidante' } as const;
+const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.risultati2026.find(r => r.evento === ev && !/Women|GB2|Pathway/.test(r.barca));
+---
+<Base title="Le squadre dell'America's Cup 2027" description="Le 7 squadre della 38ª America's Cup a Napoli: Emirates Team New Zealand, Luna Rossa, GB1, Tudor Team Alinghi, La Roche-Posay Racing Team, ARC Team USA, Team Australia. Chi sono e come sono andate nel 2026.">
+  <PageHead kicker="Squadre" title="Chi gareggia" lead="Una squadra difende la Coppa, sei la sfidano. Per la prima volta ci sono tutte le nazioni che l'hanno già vinta." aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap">
+      <ul class="sq">
+        {squadre.map(s => {
+          const c = esito(s, 'cagliari'), n = esito(s, 'napoli');
+          return (
+            <li class="sq__i" style={`--team:${s.data.colore}`}>
+              <a href={`/squadre/${s.id}/`} class="sq__a">
+                <Flag code={s.data.bandiera} width={44} decorative />
+                <span class="sq__main">
+                  <span class="sq__ruolo mono">{RUOLO[s.data.ruolo]}</span>
+                  <span class="sq__nome">{s.data.nome}</span>
+                  <span class="sq__sintesi">{s.data.sintesi}</span>
+                </span>
+                <span class="sq__res" aria-label="Piazzamenti 2026">
+                  <span><span class="mono sq__ev">CAG</span><span class="num">{c ? `${c.pos}°` : '—'}</span></span>
+                  <span><span class="mono sq__ev">NAP</span><span class="num">{n ? `${n.pos}°` : '—'}</span></span>
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
+      <p class="small muted">CAG e NAP: posizione della barca principale alle regate preliminari 2026 di Cagliari e Napoli. «—»: non ha corso.</p>
+    </div>
+  </section>
+  <section class="section band">
+    <div class="wrap split">
+      <div>
+        <h2>Da sapere</h2>
+        <Fatti f={f} ids={ids} />
+      </div>
+      <div class="stack">
+        <a class="vai-box" href="/squadre/barche/"><Icon name="cubo" size={30} /><span><strong>Le barche</strong><br />AC75 e AC40 in cifre, con il modello 3D</span><Icon name="freccia" /></a>
+        <a class="vai-box" href="/archivio-2026/"><Icon name="trofeo" size={30} /><span><strong>Archivio 2026</strong><br />Tutti i risultati di Cagliari e Napoli</span><Icon name="freccia" /></a>
+      </div>
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .sq { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }
+  .sq__i { margin: 0; border-bottom: 1px solid var(--line); position: relative; }
+  .sq__i::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--team); }
+  .sq__a { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1rem; align-items: start; padding: 1.1rem .4rem 1.1rem 1rem; color: var(--ink); text-decoration: none; }
+  .sq__a:hover { background: var(--bg-2); }
+  .sq__main { display: flex; flex-direction: column; gap: .2rem; }
+  .sq__ruolo { font-size: .7rem; letter-spacing: .07em; text-transform: uppercase; color: var(--accent); }
+  .sq__nome { font-weight: 850; font-stretch: 74%; font-size: 1.55rem; line-height: 1.02; }
+  .sq__sintesi { color: var(--ink-2); font-size: .95rem; }
+  .sq__res { grid-column: 2; display: flex; gap: 1.2rem; }
+  .sq__res > span { display: inline-flex; gap: .4rem; align-items: baseline; }
+  .sq__ev { font-size: .68rem; color: var(--ink-3); letter-spacing: .06em; }
+  .sq__res .num { font-size: 1.1rem; font-weight: 600; }
+  @media (min-width: 760px) { .sq__a { grid-template-columns: auto 1fr auto; align-items: center; } .sq__res { grid-column: auto; } }
+  .vai-box { display: grid; grid-template-columns: auto 1fr auto; gap: 1rem; align-items: center; padding: 1.1rem; border: 2px solid var(--ink); border-radius: var(--r); color: var(--ink); text-decoration: none; background: var(--surface); }
+  .vai-box:hover { background: var(--ink); color: var(--bg); }
+  .vai-box :global(.icon:first-child) { color: var(--accent); }
+</style>

@@ -1,0 +1,109 @@
+---
+// Modulo "Avvisami": salva l'email su Supabase (solo inserimento). Nessun invio automatico per ora.
+import Icon from './Icon.astro';
+import { SITO } from '../config/sito';
+interface Props { titolo?: string; predefinito?: string[] }
+const { titolo = 'Avvisami quando escono i biglietti', predefinito = ['biglietti'] } = Astro.props;
+const ARGOMENTI = [
+  { id: 'biglietti', label: 'Biglietti e tribune' },
+  { id: 'ospitalita', label: 'Pacchetti di ospitalità' },
+  { id: 'calendario', label: 'Orari delle regate' },
+  { id: 'village', label: 'Apertura dei villaggi' },
+  { id: 'mare', label: 'Regole per vedere dal mare' },
+  { id: 'trasporti', label: 'Trasporti e strade chiuse' }
+];
+---
+<section class="avv" id="avvisami" aria-labelledby="avv-h">
+  <div class="avv__head">
+    <span class="avv__ico"><Icon name="campana" size={26} /></span>
+    <div>
+      <h2 id="avv-h" class="avv__h">{titolo}</h2>
+      <p class="avv__sub">Lascia l'email: la usiamo solo per questo avviso. Niente pubblicità.</p>
+    </div>
+  </div>
+  <form class="avv__form" data-avvisami data-url={SITO.supabase.url} data-key={SITO.supabase.chiave} data-privacy={SITO.versionePrivacy} novalidate>
+    <label class="avv__label" for="avv-email">La tua email</label>
+    <div class="avv__riga">
+      <input id="avv-email" name="email" type="email" inputmode="email" autocomplete="email" required maxlength="254" placeholder="nome@esempio.it" />
+      <button class="btn btn--primary" type="submit">Avvisami</button>
+    </div>
+    <fieldset class="avv__arg">
+      <legend>Cosa ti interessa</legend>
+      {ARGOMENTI.map(a => (
+        <label class="avv__check"><input type="checkbox" name="argomenti" value={a.id} checked={predefinito.includes(a.id)} /> <span>{a.label}</span></label>
+      ))}
+    </fieldset>
+    <label class="avv__check avv__consenso">
+      <input type="checkbox" name="consenso" required />
+      <span>Ho letto la <a href="/privacy/">privacy</a> e accetto che la mia email sia salvata per ricevere questo avviso. Ho almeno 14 anni.</span>
+    </label>
+    <div class="avv__hp" aria-hidden="true">
+      <label>Non compilare <input type="text" name="sito" tabindex="-1" autocomplete="off" /></label>
+    </div>
+    <p class="avv__stato" role="status" aria-live="polite"></p>
+    <p class="avv__nota small muted">Per ora salviamo le email e ti scriviamo a mano quando c'è una novità. Puoi chiedere la cancellazione quando vuoi.</p>
+  </form>
+</section>
+
+<script>
+  const MSG = {
+    ok: 'Fatto! Ti scriveremo appena escono novità. Puoi chiedere di cancellare l\'email quando vuoi.',
+    email: 'Controlla l\'email: sembra incompleta.',
+    consenso: 'Per salvare l\'email serve la spunta sulla privacy.',
+    argomenti: 'Scegli almeno un argomento.',
+    troppi: 'Troppe richieste in questo momento: riprova tra un minuto.',
+    rete: 'Non riesco a salvare: controlla la connessione e riprova.'
+  };
+  document.querySelectorAll<HTMLFormElement>('form[data-avvisami]').forEach(form => {
+    const stato = form.querySelector<HTMLElement>('.avv__stato')!;
+    const btn = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    const dire = (t: string, tipo: 'ok' | 'err') => { stato.textContent = t; stato.dataset.tipo = tipo; };
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      const fd = new FormData(form);
+      if (fd.get('sito')) { dire(MSG.ok, 'ok'); return; }
+      const email = String(fd.get('email') || '').trim();
+      const argomenti = fd.getAll('argomenti').map(String);
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(email)) { dire(MSG.email, 'err'); form.querySelector<HTMLInputElement>('#avv-email')?.focus(); return; }
+      if (!argomenti.length) { dire(MSG.argomenti, 'err'); return; }
+      if (!fd.get('consenso')) { dire(MSG.consenso, 'err'); return; }
+      btn.disabled = true;
+      try {
+        const res = await fetch(`${form.dataset.url}/rest/v1/avvisami`, {
+          method: 'POST',
+          headers: { apikey: form.dataset.key!, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
+          body: JSON.stringify({ email, argomenti, lingua: 'it', consenso: true, versione_privacy: form.dataset.privacy })
+        });
+        // 409 = email già presente: per chi scrive è comunque un successo
+        if (res.ok || res.status === 409) { dire(MSG.ok, 'ok'); form.reset(); }
+        else {
+          const body = await res.json().catch(() => ({}));
+          dire(body && body.code === '54000' ? MSG.troppi : MSG.rete, 'err');
+        }
+      } catch { dire(MSG.rete, 'err'); }
+      finally { btn.disabled = false; }
+    });
+  });
+</script>
+
+<style>
+  .avv { background: var(--surface); border: 2px solid var(--ink); border-radius: var(--r); padding: clamp(1.1rem, 3vw, 1.8rem); box-shadow: var(--shadow); scroll-margin-top: calc(var(--head-h) + 16px); }
+  .avv__head { display: grid; grid-template-columns: auto 1fr; gap: .9rem; align-items: start; margin-bottom: 1.1rem; }
+  .avv__ico { width: 48px; height: 48px; display: grid; place-items: center; background: var(--accent); color: var(--accent-ink); border-radius: var(--r); }
+  .avv__h { font-size: clamp(1.4rem, 1.1rem + 1.3vw, 1.9rem); margin-bottom: .25rem; }
+  .avv__sub { margin: 0; color: var(--ink-2); }
+  .avv__label { display: block; font-weight: 700; margin-bottom: .35rem; }
+  .avv__riga { display: flex; flex-wrap: wrap; gap: .5rem; }
+  .avv__riga input { flex: 1 1 14rem; min-height: 48px; padding: .6rem .8rem; font: inherit; color: var(--ink); background: var(--bg); border: 2px solid var(--line-2); border-radius: var(--r); }
+  .avv__riga input:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 30%, transparent); }
+  .avv__arg { border: 0; padding: 0; margin: 1.1rem 0 .6rem; display: grid; grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr)); gap: .1rem 1rem; }
+  .avv__arg legend { font-family: var(--f-mono); font-size: .72rem; letter-spacing: .07em; text-transform: uppercase; color: var(--ink-3); margin-bottom: .4rem; font-weight: 600; }
+  .avv__check { display: flex; gap: .6rem; align-items: flex-start; padding: .4rem 0; cursor: pointer; line-height: 1.35; }
+  .avv__check input { width: 20px; height: 20px; margin: .1rem 0 0; accent-color: var(--accent); flex: none; }
+  .avv__consenso { font-size: .92rem; color: var(--ink-2); border-top: 1px solid var(--line); padding-top: .8rem; margin-top: .4rem; }
+  .avv__hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+  .avv__stato { margin: .6rem 0 0; font-weight: 700; min-height: 1.2em; }
+  .avv__stato[data-tipo="ok"] { color: var(--ok); }
+  .avv__stato[data-tipo="err"] { color: var(--accent); }
+  .avv__nota { margin: .4rem 0 0; }
+</style>

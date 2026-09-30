@@ -1,0 +1,72 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import Fatti from '../components/Fatti.astro';
+import FontiPagina from '../components/FontiPagina.astro';
+import { getFatti } from '../lib/fatti';
+import R from '../data/risultati-2026.json';
+
+const ids = ['res-napoli', 'res-cagliari', 'res-punteggio', 'res-wy', 'res-non-contano', 'vil-2026-folla', 'campo-2026'];
+const f = await getFatti(ids);
+const EVENTI = [
+  { k: 'napoli', t: 'Napoli', date: '25–27 settembre 2026', nota: 'Nove AC40, otto regate di flotta e la finale a due. ARC Team USA vince la prima regata al debutto; La Roche-Posay vince due regate ma si rovescia due volte.' },
+  { k: 'cagliari', t: 'Cagliari', date: '22–24 maggio 2026', nota: 'Otto AC40 nel Golfo degli Angeli. Le squadre americana e australiana, iscritte in ritardo, non c\'erano.' }
+] as const;
+---
+<Base title="Archivio 2026: risultati delle regate preliminari" description="Risultati ufficiali delle regate preliminari dell'America's Cup 2026: Napoli (25-27 settembre) e Cagliari (22-24 maggio), entrambe vinte da Luna Rossa. Classifica e punti regata per regata.">
+  <PageHead kicker="Archivio" title="Le regate del 2026" lead="Due regate di prova sulla strada per Napoli 2027, tutte e due vinte da Luna Rossa contro Emirates Team New Zealand. Punti regata per regata dai dati ufficiali." aggiornato="2026-09-30" />
+
+  {EVENTI.map(ev => {
+    const c = R[ev.k].classifica;
+    const n = c[0].regate.length;
+    return (
+      <section class="section" aria-labelledby={`h-${ev.k}`}>
+        <div class="wrap">
+          <p class="kicker">{ev.date}</p>
+          <h2 id={`h-${ev.k}`}>{ev.t}</h2>
+          <p class="lead">{ev.nota}</p>
+          <div class="tabella-wrap">
+            <table class="ris">
+              <caption class="visually-hidden">Classifica di {ev.t} 2026, con i punti di ogni regata</caption>
+              <thead>
+                <tr><th scope="col" class="num">Pos.</th><th scope="col">Barca</th>{Array.from({ length: n }, (_, i) => <th scope="col" class="num">R{i + 1}</th>)}<th scope="col" class="num">Tot.</th></tr>
+              </thead>
+              <tbody>
+                {c.map(r => (
+                  <tr class:list={[{ 'ris--wy': r.wy }]}>
+                    <td class="num mono">{r.pos}</td>
+                    <th scope="row">{r.barca}{r.finale === 'vince' && <span class="chip chip--solid">Vince la finale</span>}</th>
+                    {r.regate.map(p => <td class:list={['num', 'mono', { 'ris--win': p === 10, 'ris--zero': p === 0 }]}>{p}</td>)}
+                    <td class="num mono ris__tot">{r.punti}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p class="small muted" style="margin-top:.6rem">10 punti a chi vince una regata, 9 al secondo e così via; 0 a chi non finisce. In arancio le vittorie. Le prime due si sfidano nella finale.</p>
+          <h3>Vincitori regata per regata</h3>
+          <ol class="vinc">{R[ev.k].vincitori.map(v => <li>{v}</li>)}</ol>
+        </div>
+      </section>
+    );
+  })}
+
+  <section class="section band">
+    <div class="wrap">
+      <h2>Da sapere</h2>
+      <Fatti f={f} ids={ids} />
+    </div>
+  </section>
+  <FontiPagina fatti={f.values()} />
+</Base>
+<style>
+  .ris { min-width: 40rem; }
+  .ris th[scope="row"] { font-size: .95rem; }
+  .ris th[scope="row"] .chip { margin-left: .5rem; vertical-align: middle; }
+  .ris--wy th[scope="row"] { font-weight: 500; color: var(--ink-2); }
+  .ris--win { color: var(--accent); font-weight: 600; }
+  .ris--zero { color: var(--ink-3); }
+  .ris__tot { font-weight: 600; font-size: 1.05rem; }
+  .vinc { columns: 2; column-gap: 2rem; padding-left: 1.6rem; }
+  @media (min-width: 760px) { .vinc { columns: 4; } }
+</style>

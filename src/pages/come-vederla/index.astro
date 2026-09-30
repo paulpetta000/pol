@@ -1,0 +1,60 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getFatti } from '../../lib/fatti';
+
+const ids = ['vista-vicino', 'vil-caracciolo', 'vil-bagnoli', 'vil-caracciolo-gratis', 'big-niente', 'tv-rai', 'mare-2027-atteso'];
+const f = await getFatti(ids);
+
+const MODI = [
+  { href: '/come-vederla/dal-lungomare/', icon: 'binocolo', t: 'Dal lungomare, gratis', s: 'Via Caracciolo, Castel dell\'Ovo e le colline', costo: 'Gratis', vicino: 'Vicinissimo', stato: 'Il modo più semplice' },
+  { href: '/come-vederla/dal-mare/', icon: 'barca', t: 'Dal mare', s: 'Con la tua barca o con un\'uscita organizzata', costo: 'Carburante o gita', vicino: 'Vicino, fuori dal campo', stato: 'Regole 2027 in arrivo' },
+  { href: '/come-vederla/biglietti-e-ospitalita/', icon: 'biglietto', t: 'Tribune e ospitalità', s: 'Posti a sedere e pacchetti', costo: 'A pagamento', vicino: 'Vicino', stato: 'Non ancora in vendita' },
+  { href: '/come-vederla/in-tv-e-streaming/', icon: 'tv', t: 'In TV e in streaming', s: 'Rai in chiaro, Sky e NOW a pagamento', costo: 'Gratis o abbonamento', vicino: 'Da casa', stato: 'Confermato' }
+] as const;
+---
+<Base title="Come vedere l'America's Cup a Napoli" description="Tutti i modi di vedere l'America's Cup 2027 a Napoli a confronto: gratis dal lungomare, dal mare in barca, tribune e ospitalità, in TV e streaming.">
+  <PageHead kicker="Vederla" title="Come vedere la Coppa" lead="Quattro modi, dal più semplice al più comodo. Il lungomare è gratis e in prima fila; tribune e pacchetti non sono ancora in vendita." aggiornato="2026-09-30" />
+
+  <section class="section">
+    <div class="wrap">
+      <ul class="vai">
+        {MODI.map(m => (
+          <li><a href={m.href}>
+            <span class="vai__icona"><Icon name={m.icon} /></span>
+            <span><span class="vai__titolo">{m.t}</span><span class="vai__sotto">{m.s}</span></span>
+            <span class="vai__freccia"><Icon name="freccia" /></span>
+          </a></li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="conf-h">
+    <div class="wrap">
+      <p class="kicker">A confronto</p>
+      <h2 id="conf-h">Quale fa per te</h2>
+      <div class="tabella-wrap">
+        <table>
+          <thead><tr><th scope="col">Modo</th><th scope="col">Costo</th><th scope="col">Distanza</th><th scope="col">Oggi</th></tr></thead>
+          <tbody>
+            {MODI.map(m => <tr><th scope="row"><a href={m.href}>{m.t}</a></th><td>{m.costo}</td><td>{m.vicino}</td><td>{m.stato}</td></tr>)}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="sa-h">
+    <div class="wrap">
+      <p class="kicker">Cosa si sa oggi</p>
+      <h2 id="sa-h">Le informazioni, con la loro fonte</h2>
+      <Fatti f={f} ids={ids} />
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} />
+</Base>

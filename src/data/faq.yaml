@@ -1,0 +1,117 @@
+# Domande frequenti. Nel testo si possono usare [collegamenti](/percorso/) e **grassetto**.
+# fatti: le schede da cui viene la risposta (per le fonti)
+
+- id: quando
+  domanda: "Quando si corre l'America's Cup a Napoli?"
+  risposta: "Dal 22 maggio al 19 luglio 2027. La Louis Vuitton Cup, che sceglie lo sfidante, va dal 22 maggio al 4 luglio al più tardi; il Match per la Coppa parte il 10 luglio e si chiude entro il 19. In mezzo: Youth America's Cup dal 2 al 6 giugno e Women's America's Cup dal 5 al 9 luglio. Tutte le date nel [calendario](/calendario/)."
+  fatti: [cal-lvc-periodo, cal-match, cal-youth, cal-womens]
+
+- id: gratis
+  domanda: "Si può vedere gratis?"
+  risposta: "Sì: dal lungomare e dalle colline si vede senza pagare. Nel 2026 anche il Race Village era gratuito; per il 2027 il Comune scrive che il villaggio di Bagnoli sarà gratuito, mentre per quello di via Caracciolo gli organizzatori non l'hanno ancora detto. Consigli nella pagina [dal lungomare](/come-vederla/dal-lungomare/)."
+  fatti: [vil-2026-gratis, vil-bagnoli-gratis, vil-caracciolo-gratis]
+
+- id: dove-meglio
+  domanda: "Da dove si vede meglio?"
+  risposta: "Per stare vicino alle barche: il lungomare tra la Rotonda Diaz e Castel dell'Ovo. Per vedere tutto il campo: Monte Echia, il belvedere di San Martino e Posillipo, meglio con un binocolo. Tutti i punti sulla [mappa](/napoli/mappa/)."
+  fatti: [vista-vicino, vista-anfiteatro, campo-ovo]
+
+- id: biglietti
+  domanda: "Quanto costano le tribune e quando escono i biglietti?"
+  risposta: "Non si sa ancora: al 30 settembre 2026 non c'è niente in vendita e non sono usciti prezzi né date. Diffida di chi vende biglietti o pacchetti «ufficiali» fuori da americascup.com. Con [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami) ti scriviamo quando escono."
+  fatti: [big-niente, big-tribune, big-sito-ufficiale]
+
+- id: village-dove
+  domanda: "Dove sarà il Race Village?"
+  risposta: "Il villaggio ufficiale sarà lungo viale Francesco Caracciolo, con tribune sui promontori e il palco. A Bagnoli, vicino alle basi delle squadre, ci sarà una Fan Zone con maxischermi. Date e orari di apertura non sono ancora usciti."
+  fatti: [vil-caracciolo, vil-bagnoli, vil-orari-2027]
+
+- id: orari
+  domanda: "A che ora ci sono le regate?"
+  risposta: "Gli orari 2027 non sono ancora usciti. Come riferimento: nel 2026 a Napoli si partiva alle 14:00 e si finiva verso le 16:00. Arriva con largo anticipo per trovare posto."
+  fatti: [cal-orari, cal-orari-2026, mare-orari]
+
+- id: barca
+  domanda: "Posso andare a vedere con la mia barca?"
+  risposta: "Nel 2026 sì, ma con regole precise: registrazione online, zone a colori, massimo 5 nodi, niente ancora e radio VHF a bordo. Le regole 2027 non sono ancora uscite. Tutto nella pagina [dal mare](/come-vederla/dal-mare/)."
+  fatti: [mare-registrazione, mare-velocita, mare-motore, mare-vhf, mare-2027-atteso]
+
+- id: tv
+  domanda: "Dove si vede in TV?"
+  risposta: "In chiaro sulla Rai, che ha i diritti per l'Italia di tutte le regate. A pagamento su Sky e NOW. Dettagli in [TV e streaming](/come-vederla/in-tv-e-streaming/)."
+  fatti: [tv-rai, tv-sky]
+
+- id: squadre
+  domanda: "Quante squadre ci sono?"
+  risposta: "Sette: Emirates Team New Zealand, che difende la Coppa, e sei sfidanti: GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA e Team Australia. Schede nella pagina [squadre](/squadre/)."
+  fatti: [sq-sette]
+
+- id: defender
+  domanda: "Chi è il «Defender» e perché non corre la Louis Vuitton Cup fino in fondo?"
+  risposta: "È chi ha vinto l'ultima edizione e difende la Coppa: Emirates Team New Zealand. Non deve qualificarsi. Corre regate di flotta e Round Robin per allenarsi, ma i suoi risultati non contano e non entra in semifinale né in finale."
+  fatti: [cal-defender-gironi]
+
+- id: lvc-formato
+  domanda: "Come funziona la Louis Vuitton Cup?"
+  risposta: "Due giorni di regate di flotta, poi tre Round Robin di duelli a due barche. I primi 3 sfidanti vanno in semifinale, gli altri 3 si giocano il quarto posto nel ripescaggio. Semifinali al meglio delle 5 vittorie, finale al meglio delle 7."
+  fatti: [cal-flotta, cal-rr, cal-ripescaggio, cal-semifinali, cal-finale-lvc]
+
+- id: youth-women
+  domanda: "Cosa sono la Youth e la Women's America's Cup?"
+  risposta: "Due regate a parte, su barche AC40 con 4 persone a bordo: una per velisti giovani, una per equipaggi femminili. Le squadre della Coppa devono partecipare e possono essere invitati anche altri club."
+  fatti: [cal-youth, cal-womens, ac40-uso, yw-nazionalita]
+
+- id: novita-2027
+  domanda: "Cosa cambia nel 2027 sulle barche?"
+  risposta: "Sugli AC75 ci sono 5 velisti e almeno una donna, per la prima volta nella storia. Niente più ciclisti: l'energia per le vele arriva dalle batterie. A bordo c'è anche un posto per un ospite."
+  fatti: [ac75-cinque, ac75-donna, ac75-batterie, ac75-ospite]
+
+- id: aeroporto
+  domanda: "Come arrivo dall'aeroporto al lungomare?"
+  risposta: "In taxi a tariffa fissa: 28,50 € fino a via Partenope o a Mergellina, da chiedere all'inizio della corsa. Oppure il taxi collettivo (6 € a persona) fino a Stazione Centrale o Molo Beverello, e da lì la metro. Tutto in [come arrivare](/napoli/come-arrivare/)."
+  fatti: [taxi-aeroporto, taxi-regole, taxi-collettivo]
+
+- id: metro-notte
+  domanda: "La metro resta aperta la sera delle regate?"
+  risposta: "Per il 2027 non è ancora deciso. Nel 2026 la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30."
+  fatti: [anm-2026, trasporti-2027-atteso]
+
+- id: caracciolo-chiusa
+  domanda: "Via Caracciolo sarà chiusa alle auto?"
+  risposta: "Probabile, ma non ancora deciso. La stampa locale parla di circa tre mesi di chiusura; il piano del traffico 2027 non è ancora uscito. Nel dubbio non venire in auto."
+  fatti: [caracciolo-chiusa, trasporti-2027-atteso]
+
+- id: droni
+  domanda: "Posso portare un drone?"
+  risposta: "Nel 2026 era vietato far volare droni sopra il campo di regata e le zone del pubblico, anche da terra. Aspettati la stessa regola nel 2027."
+  fatti: [droni-2026]
+
+- id: bambini
+  domanda: "È adatto ai bambini?"
+  risposta: "Sì, ma pensa a caldo e folla: a luglio il sole è forte e sul lungomare non c'è ombra. Scegli un punto con un po' di spazio, porta acqua e cappello e concorda un punto di ritrovo. Consigli nella pagina [dal lungomare](/come-vederla/dal-lungomare/#cosa-portare)."
+  fatti: [caldo-bollettini, vil-2026-folla]
+
+- id: disabilita
+  domanda: "Ci sono servizi per persone con disabilità?"
+  risposta: "Per il 2027 non sono ancora stati annunciati. Nel 2026 il Comune aveva allestito pedane sugli scogli raggiungibili con passerelle. Informazioni nella pagina [accessibilità](/napoli/accessibilita/)."
+  fatti: [acc-2027-atteso, ped-2026]
+
+- id: preliminari
+  domanda: "Ci saranno altre regate prima di maggio 2027?"
+  risposta: "Per ora no: dopo Cagliari e Napoli nel 2026 non è stata annunciata nessun'altra regata preliminare. I risultati del 2026 sono nell'[archivio](/archivio-2026/)."
+  fatti: [cal-preliminari-2027, res-napoli, res-cagliari]
+
+- id: ufficiale
+  domanda: "Questo sito è ufficiale?"
+  risposta: "No. È una guida indipendente, non legata agli organizzatori né alle squadre. Ogni informazione ha la sua fonte e la data in cui l'abbiamo controllata: le trovi in fondo a ogni pagina e nella pagina [fonti](/fonti/)."
+  fatti: [big-sito-ufficiale]
+
+- id: siti-non-ufficiali
+  domanda: "americascupitalia.it è il sito ufficiale?"
+  risposta: "No, per quanto abbiamo potuto verificare. Si presenta come portale dell'evento e vende pacchetti, ma non abbiamo trovato legami con gli organizzatori. Il sito ufficiale è americascup.com."
+  fatti: [big-sito-ufficiale]
+
+- id: avvisami
+  domanda: "Come vengo a sapere quando escono biglietti e orari?"
+  risposta: "Lascia la tua email in [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami): la usiamo solo per questo e puoi chiedere di cancellarla quando vuoi. Oppure iscriviti al [calendario](/calendario/#iscriviti), che si aggiorna da solo."
+  fatti: [big-niente]

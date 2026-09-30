@@ -1,0 +1,29 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { SITO } from '../config/sito';
+---
+<Base title="Accessibilità del sito" description="Com'è costruita la guida perché la possano usare tutti: contrasti, tastiera, lettori di schermo, movimento ridotto, uso senza rete.">
+  <PageHead kicker="Trasparenza" title="Accessibilità del sito" lead="Vogliamo che la guida funzioni per tutti, anche con un telefono vecchio, sotto il sole e con poca rete." aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Cosa facciamo</h2>
+      <ul>
+        <li>Obiettivo: livello AA delle linee guida WCAG 2.2.</li>
+        <li>Testi e colori con contrasto sufficiente, sia nel tema chiaro sia in quello scuro.</li>
+        <li>Tutto si usa con la tastiera, con un segnale visibile su dove ti trovi.</li>
+        <li>Mappe, grafici e 3D hanno sempre una versione in testo: l'elenco dei punti, il calendario, le spiegazioni pezzo per pezzo.</li>
+        <li>Se sul telefono hai attivato «riduci movimento», le animazioni si fermano.</li>
+        <li>Le pagine pratiche restano disponibili anche senza rete, se le hai già aperte o se hai installato l'app.</li>
+      </ul>
+      <h2>Limiti che conosciamo</h2>
+      <ul>
+        <li>Il modello 3D della barca non è utilizzabile con un lettore di schermo: le stesse informazioni sono nel testo accanto.</li>
+        <li>La mappa si ingrandisce con i pulsanti delle zone, non con il gesto delle dita.</li>
+      </ul>
+      <h2>Segnalaci un problema</h2>
+      <p>Scrivi a <strong>{SITO.titolare.email || '[email da completare]'}</strong>: rispondiamo e, se possibile, correggiamo.</p>
+    </div>
+  </section>
+</Base>
+<style>.prose h2 { font-size: 1.5rem; margin-top: 2rem; } .prose h2:first-of-type { margin-top: .5rem; }</style>

@@ -1,0 +1,28 @@
+---
+// Intestazione delle pagine interne, con briciole di pane e data di controllo
+import { SITO } from '../config/sito';
+import { dataBreve } from '../lib/formato';
+interface Props { kicker?: string; title: string; lead?: string; crumbs?: { href: string; label: string }[]; aggiornato?: Date | string }
+const { kicker, title, lead, crumbs = [], aggiornato } = Astro.props;
+const trail = [{ href: '/', label: 'Home' }, ...crumbs];
+const ld = {
+  '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+  itemListElement: [...trail, { href: Astro.url.pathname, label: title }].map((c, i) => ({ '@type': 'ListItem', position: i + 1, name: c.label, item: new URL(c.href, SITO.url).href }))
+};
+---
+<div class="page-head">
+  <div class="wrap">
+    <nav class="breadcrumbs" aria-label="Sei qui">
+      <ol>
+        {trail.map(c => <li><a href={c.href}>{c.label}</a></li>)}
+        <li aria-current="page">{title}</li>
+      </ol>
+    </nav>
+    {kicker && <p class="kicker">{kicker}</p>}
+    <h1>{title}</h1>
+    {lead && <p class="lead">{lead}</p>}
+    <slot />
+    {aggiornato && <p class="aggiornato">Ultimo controllo: {dataBreve(aggiornato)}</p>}
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+</div>

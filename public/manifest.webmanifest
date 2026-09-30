@@ -1,0 +1,16 @@
+{
+  "name": "Coppa America Napoli · Guida non ufficiale 2027",
+  "short_name": "Napoli 2027",
+  "description": "Come vedere le regate dell'America's Cup a Napoli nel 2027: date, lungomare, mare, trasporti, squadre.",
+  "lang": "it",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F3F6F7",
+  "theme_color": "#C2410C",
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

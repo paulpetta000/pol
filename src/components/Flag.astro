@@ -1,0 +1,27 @@
+---
+// Bandiere vere in SVG (pacchetto flag-icons, licenza MIT). Gli id interni vengono resi unici.
+import nz from 'flag-icons/flags/4x3/nz.svg?raw';
+import it from 'flag-icons/flags/4x3/it.svg?raw';
+import gb from 'flag-icons/flags/4x3/gb.svg?raw';
+import ch from 'flag-icons/flags/4x3/ch.svg?raw';
+import fr from 'flag-icons/flags/4x3/fr.svg?raw';
+import us from 'flag-icons/flags/4x3/us.svg?raw';
+import au from 'flag-icons/flags/4x3/au.svg?raw';
+
+const FLAGS = { nz, it, gb, ch, fr, us, au } as const;
+const NOMI = { nz: 'Nuova Zelanda', it: 'Italia', gb: 'Gran Bretagna', ch: 'Svizzera', fr: 'Francia', us: 'Stati Uniti', au: 'Australia' } as const;
+interface Props { code: keyof typeof FLAGS; width?: number; decorative?: boolean; class?: string }
+const { code, width = 28, decorative = false, class: cls } = Astro.props;
+const svg = FLAGS[code]
+  .replace(/<\?xml[^>]*>/, '')
+  .replace(/id="([^"]+)"/g, `id="f${code}-$1"`)
+  .replace(/url\(#([^)]+)\)/g, `url(#f${code}-$1)`)
+  .replace(/href="#([^"]+)"/g, `href="#f${code}-$1"`)
+  .replace(/<svg([^>]*?)\s(?:width|height)="[^"]*"/g, '<svg$1')
+  .replace('<svg', `<svg width="${width}" height="${Math.round(width * 0.75)}" ${decorative ? 'aria-hidden="true"' : `role="img" aria-label="${NOMI[code]}"`} focusable="false"`);
+---
+<span class={['flag', cls].filter(Boolean).join(' ')} set:html={svg} />
+<style>
+  .flag { display: inline-flex; line-height: 0; flex: none; }
+  .flag :global(svg) { border-radius: 2px; box-shadow: 0 0 0 1px color-mix(in srgb, var(--ink) 18%, transparent); }
+</style>

@@ -1,0 +1,21 @@
+---
+// "Mancano N giorni": calcolato alla build e aggiornato nel browser all'ora di Napoli
+import { giorniTra } from '../lib/formato';
+interface Props { al: string; testo: string; grande?: boolean }
+const { al, testo, grande = false } = Astro.props;
+const n = giorniTra(new Date().toISOString().slice(0, 10), al);
+---
+<p class:list={['countdown', { 'countdown--grande': grande }]} data-countdown={al} data-passato="È iniziata!">
+  <span class="countdown__pre">Mancano</span>
+  <span class="countdown__n num" data-n>{n}</span>
+  <span class="countdown__t" data-t>giorni</span>
+  <span class="countdown__txt">{testo}</span>
+</p>
+<style>
+  .countdown { display: flex; flex-wrap: wrap; align-items: baseline; gap: .1rem .45rem; margin: 0; font-weight: 600; }
+  .countdown__n { font-size: 1.6rem; font-weight: 600; color: var(--accent); line-height: 1; }
+  .countdown__t { font-weight: 750; }
+  .countdown__txt { color: var(--ink-2); font-weight: 500; }
+  .countdown--grande .countdown__n { font-size: clamp(2.6rem, 2rem + 3vw, 3.6rem); letter-spacing: -.03em; }
+  .countdown.is-oggi .countdown__pre { display: none; }
+</style>

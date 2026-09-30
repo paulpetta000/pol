@@ -1,0 +1,113 @@
+---
+import Base from '../../layouts/Base.astro';
+import PageHead from '../../components/PageHead.astro';
+import Icon from '../../components/Icon.astro';
+import Flag from '../../components/Flag.astro';
+import Fatti from '../../components/Fatti.astro';
+import FontiPagina from '../../components/FontiPagina.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import { getFatti, tutteLeFonti } from '../../lib/fatti';
+import { SITO } from '../../config/sito';
+
+export async function getStaticPaths() {
+  const squadre = await getCollection('squadre');
+  return squadre.map(s => ({ params: { slug: s.id }, props: { s } }));
+}
+interface Props { s: CollectionEntry<'squadre'> }
+const { s } = Astro.props;
+const d = s.data;
+const tutte = await tutteLeFonti();
+const fonti = [...new Set([...d.fonti.map(r => r.id), ...d.protagonisti.flatMap(p => p.fonti.map(r => r.id))])].map(id => tutte.get(id)!);
+const ids = d.ruolo === 'defender' ? ['cal-defender-gironi', 'cal-match'] : ['cal-lvc-periodo', 'cal-ripescaggio', 'cal-match'];
+const f = await getFatti([...ids, 'ac75-donna', 'ac75-nazionalita']);
+const RUOLO = { defender: 'Defender', 'challenger-of-record': 'Challenger of Record', sfidante: 'Sfidante' } as const;
+const EV = { cagliari: 'Cagliari, maggio 2026', napoli: 'Napoli, settembre 2026' } as const;
+const host = SITO.url.replace(/^https?:\/\//, '');
+const jsonld = [{ '@context': 'https://schema.org', '@type': 'SportsTeam', name: d.nome, sport: 'Vela', memberOf: { '@type': 'SportsOrganization', name: "America's Cup" }, ...(d.sito ? { url: d.sito } : {}) }];
+---
+<Base title={`${d.nome} all'America's Cup 2027`} description={`${d.nome} (${d.paese}) alla 38ª America's Cup di Napoli 2027: ${d.sintesi} Persone, storia e risultati 2026.`} og={`squadre--${s.id}`} jsonld={jsonld}>
+  <PageHead kicker={`${RUOLO[d.ruolo]} · ${d.paese}`} title={d.nome} lead={d.sintesi} crumbs={[{ href: '/squadre/', label: 'Squadre' }]} aggiornato="2026-09-30">
+    <div class="team-id" style={`--team:${d.colore}`}>
+      <Flag code={d.bandiera} width={56} />
+      {d.club && <span class="mono small">Club: {d.club}</span>}
+      {d.sito && <a class="small" href={d.sito} rel="noopener">Sito della squadra <Icon name="esterno" size={14} /></a>}
+    </div>
+  </PageHead>
+
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>Storia</h2>
+        <ul class="linea">{d.storia.map(t => <li>{t}</li>)}</ul>
+        <h2 class="mt">Da sapere</h2>
+        <ul>{d.daSapere.map(t => <li>{t}</li>)}</ul>
+      </div>
+      <div class="stack">
+        <h2>Chi la guida</h2>
+        <dl class="righe">{d.persone.map(p => <><dt>{p.nome}</dt><dd>{p.ruolo}</dd></>)}</dl>
+        {d.protagonisti.map(p => (
+          <div class="terzo">
+            <h3>{p.nome} <span class="mono small muted">· {p.paese}</span></h3>
+            <p>{p.testo}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="ris-h">
+    <div class="wrap">
+      <p class="kicker">Regate preliminari 2026</p>
+      <h2 id="ris-h">Com'è andata nel 2026</h2>
+      {d.risultati2026.length === 0 ? <p>Non ha corso le regate preliminari del 2026: la prima regata sarà la Louis Vuitton Cup.</p> : (
+        <div class="tabella-wrap">
+          <table>
+            <thead><tr><th scope="col">Regata</th><th scope="col">Barca</th><th scope="col" class="num">Posto</th><th scope="col" class="num">Punti</th></tr></thead>
+            <tbody>
+              {d.risultati2026.map(r => <tr><td>{EV[r.evento]}</td><td>{r.barca}{r.nota && <><br /><span class="small muted">{r.nota}</span></>}</td><td class="num mono">{r.pos}°</td><td class="num mono">{r.punti}</td></tr>)}
+            </tbody>
+          </table>
+        </div>
+      )}
+      <p><a href="/archivio-2026/">Tutti i risultati del 2026 →</a></p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="eq-h">
+    <div class="wrap">
+      <h2 id="eq-h">{d.risultati2026.length ? 'Gli equipaggi di Napoli 2026' : 'La squadra velica'}</h2>
+      <div class="grid-2">
+        {d.equipaggi.map(e => (
+          <div>
+            <h3>{e.barca}</h3>
+            <dl class="righe">{e.velisti.map(v => <><dt>{v.ruolo ?? 'velista'}</dt><dd>{v.nome}</dd></>)}</dl>
+          </div>
+        ))}
+      </div>
+      <p class="small muted" style="margin-top:1rem">Sull'AC40 regatano in 4: due timonieri e due trimmer, che regolano le vele. Nel 2027 sull'AC75 saranno in 5, con almeno una donna.</p>
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="c-h">
+    <div class="wrap split">
+      <div>
+        <h2 id="c-h">Il suo 2027</h2>
+        <Fatti f={f} ids={ids} />
+      </div>
+      <div class="terzo terzo--sea">
+        <h3><Icon name="calendario" size={22} /> Segui {d.breve}</h3>
+        <p>Aggiungi al telefono solo le date di {d.nome}: si aggiorna da solo quando escono gli orari.</p>
+        <p class="btn-row"><a class="btn btn--primary" href={`webcal://${host}/calendario/${s.id}.ics`}>Iscriviti al calendario</a></p>
+      </div>
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} extra={fonti} />
+</Base>
+<style>
+  .team-id { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1.2rem; margin-top: .4rem; padding-left: .8rem; border-left: 4px solid var(--team); }
+  .linea { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--line-2); }
+  .linea li { position: relative; padding: 0 0 1rem 1.1rem; margin: 0; }
+  .linea li::before { content: ''; position: absolute; left: -6px; top: .45rem; width: 10px; height: 10px; border-radius: 50%; background: var(--accent); }
+  .mt { margin-top: 2rem; }
+</style>

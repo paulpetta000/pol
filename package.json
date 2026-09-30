@@ -1,1 +1,26 @@
-{"name":"coppa-america-napoli","private":true,"type":"module","scripts":{"build":"node build.mjs && node gen.mjs"},"devDependencies":{"sharp":"0.33.5","three":"0.170.0"}}
+{
+  "name": "coppa-america-napoli",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check:links": "node scripts/check-links.mjs"
+  },
+  "dependencies": {
+    "astro": "7.3.5",
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/archivo": "5.3.0",
+    "@fontsource/archivo": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0",
+    "flag-icons": "7.5.0",
+    "satori": "0.33.5",
+    "sharp": "0.33.5"
+  }
+}

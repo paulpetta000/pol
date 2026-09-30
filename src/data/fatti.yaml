@@ -1,0 +1,661 @@
+# Schede delle informazioni. Campi obbligatori: testo, stato, fonti, controllato.
+# stato: confermato (letto su fonte ufficiale o dati pubblici) | stampa (solo giornali o siti non ufficiali) | atteso (non ancora uscito)
+# anno: 2027 se riguarda l'evento; 2026 se racconta com'era alla regata di prova (precedente utile)
+# ricontrollare: entro questa data la build avvisa che la scheda va ricontrollata
+
+# ================= CALENDARIO 2027 =================
+- id: cal-lvc-periodo
+  testo: "Louis Vuitton Cup, la sfida tra chi vuole conquistare la Coppa: dal 22 maggio al 4 luglio 2027 al più tardi."
+  stato: confermato
+  fonti: [ac-grazie-napoli, ac-formato-lvc]
+  controllato: 2026-09-30
+  ricontrollare: 2027-01-31
+
+- id: cal-flotta
+  testo: "Sabato 22 e domenica 23 maggio: regate di flotta, tre al giorno, con tutti e 7 gli AC75 sulla stessa linea di partenza. È la prima volta nella storia della Coppa."
+  stato: confermato
+  fonti: [ac-formato-lvc, etnz-formato]
+  controllato: 2026-09-30
+  ricontrollare: 2027-01-31
+
+- id: cal-rr
+  testo: "Poi i duelli a due barche (match race) in tre Round Robin da 21 regate: 26–28 maggio, 29–31 maggio e 9–11 giugno."
+  stato: confermato
+  fonti: [ac-formato-lvc]
+  controllato: 2026-09-30
+  ricontrollare: 2027-01-31
+
+- id: cal-pausa
+  testo: "Dal 1° all'8 giugno le squadre si fermano: una settimana di pausa tra il secondo e il terzo Round Robin."
+  stato: confermato
+  fonti: [ac-formato-lvc]
+  controllato: 2026-09-30
+
+- id: cal-defender-gironi
+  testo: "Emirates Team New Zealand, che difende la Coppa, corre le regate di flotta e i tre Round Robin, ma i suoi risultati non contano nella classifica degli sfidanti. Non corre ripescaggio, semifinali e finale."
+  stato: confermato
+  fonti: [ac-formato-lvc, etnz-formato, ac-protocollo]
+  controllato: 2026-09-30
+
+- id: cal-ripescaggio
+  testo: "Dopo il terzo Round Robin i primi 3 sfidanti vanno dritti in semifinale. Gli altri 3 si giocano il quarto posto nel ripescaggio del 12–13 giugno: in ogni turno passa chi arriva prima a 3 punti."
+  stato: confermato
+  fonti: [ac-formato-lvc, etnz-formato]
+  controllato: 2026-09-30
+
+- id: cal-semifinali
+  testo: "Semifinali dal 16 al 20 giugno, con il 21 come giorno di riserva: passa chi arriva prima a 5 vittorie. Lo sfidante primo in classifica sceglie l'avversario."
+  stato: confermato
+  fonti: [ac-formato-lvc, ac-protocollo]
+  controllato: 2026-09-30
+
+- id: cal-finale-lvc
+  testo: "Finale della Louis Vuitton Cup dal weekend del 26–27 giugno; se serve, si chiude nel weekend del 3–4 luglio. Vince chi arriva prima a 7 vittorie, su 13 regate al massimo."
+  stato: confermato
+  fonti: [ac-formato-lvc]
+  controllato: 2026-09-30
+
+- id: cal-youth
+  testo: "Youth America's Cup, per velisti giovani: dal 2 al 6 giugno 2027, su AC40. Si chiude con una finale secca a due barche."
+  stato: confermato
+  fonti: [ac-youth-date, ac-grazie-napoli]
+  controllato: 2026-09-30
+
+- id: cal-womens
+  testo: "Women's America's Cup, per equipaggi femminili: dal 5 al 9 luglio 2027 compresi, su AC40."
+  stato: confermato
+  fonti: [ac-grazie-napoli]
+  controllato: 2026-09-30
+
+- id: cal-match
+  testo: "America's Cup Match, la sfida finale tra Emirates Team New Zealand e il vincitore della Louis Vuitton Cup: dal 10 luglio 2027, entro il 19 luglio. Vince chi arriva prima a 7 vittorie."
+  stato: confermato
+  fonti: [ac-grazie-napoli, ac-formato-lvc, etnz-formato]
+  controllato: 2026-09-30
+
+- id: cal-match-riserva
+  testo: "Il 19 luglio è l'ultimo giorno in programma, ma se il meteo fa saltare delle regate il direttore di regata può aggiungere giorni."
+  stato: confermato
+  fonti: [ac-formato-lvc]
+  controllato: 2026-09-30
+
+- id: cal-match-preparazione
+  testo: "Tra la finale della Louis Vuitton Cup e il Match ci sono almeno cinque giorni di pausa."
+  stato: confermato
+  fonti: [ac-formato-lvc, etnz-formato]
+  controllato: 2026-09-30
+
+- id: cal-orari
+  testo: "Gli orari delle regate 2027 non sono ancora usciti: non si sa a che ora si parte ogni giorno."
+  stato: atteso
+  fonti: [ac-formato-lvc, ac-38]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: cal-giorni-match
+  testo: "Non è ancora uscito il programma giorno per giorno del Match: quali giorni si regata e quali sono di riposo."
+  stato: atteso
+  fonti: [ac-formato-lvc]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: cal-preliminari-2027
+  testo: "Prima del 22 maggio 2027 non è stata annunciata nessun'altra regata preliminare."
+  stato: atteso
+  fonti: [ac-38, scuttlebutt-napoli]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: cal-orari-2026
+  testo: "Nel 2026 a Napoli si partiva ogni giorno alle 14:00, con tre regate al giorno venerdì e sabato e due più la finale la domenica."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2]
+  controllato: 2026-09-30
+
+- id: cal-vento
+  testo: "Gli AC75 possono partire con un vento reale tra 6,5 e 23 nodi. Fuori da questi limiti la regata aspetta o salta."
+  stato: confermato
+  fonti: [ac-press-kit]
+  controllato: 2026-09-30
+
+# ================= DOVE SI VEDE =================
+- id: vil-caracciolo
+  testo: "Il Race Village 2027 sarà lungo viale Francesco Caracciolo: punti di osservazione tipo tribuna ricavati sui promontori e il palco ufficiale per presentazioni e premiazioni."
+  stato: confermato
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+
+- id: vil-bagnoli
+  testo: "A Bagnoli, accanto alle basi delle squadre, ci sarà una AC Tech Fan Zone con maxischermi per le regate, spettacoli, cibo e negozi."
+  stato: confermato
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+
+- id: vil-bagnoli-gratis
+  testo: "Il Comune di Napoli scrive che il villaggio di Bagnoli, vicino alle basi, sarà a ingresso gratuito."
+  stato: confermato
+  fonti: [comune-citta-ospitante]
+  controllato: 2026-09-30
+
+- id: vil-caracciolo-gratis
+  testo: "Per il villaggio di via Caracciolo gli organizzatori non hanno ancora detto se l'ingresso sarà gratuito."
+  stato: atteso
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: vil-formato-stampa
+  testo: "Secondo la stampa locale il villaggio di via Caracciolo avrà lo stesso formato del 2026: stand, negozio ufficiale, cibo, maxischermi, palco alla Rotonda Diaz e pedane sugli scogli."
+  stato: stampa
+  fonti: [napolike-caracciolo, 2anews-lungomare]
+  controllato: 2026-09-30
+
+- id: vil-due
+  testo: "Il sindaco Gaetano Manfredi ha annunciato due Race Village: uno in via Caracciolo e uno a Bagnoli."
+  stato: stampa
+  fonti: [napolimagazine-due-village]
+  controllato: 2026-09-30
+
+- id: vil-bagnoli-accesso
+  testo: "A Bagnoli il pubblico non entra nei piazzali davanti agli hangar. Sul retro delle basi ci saranno simulatori, negozi delle squadre, bar e ristoranti, aperti a tutti."
+  stato: confermato
+  fonti: [ac-bagnoli]
+  controllato: 2026-09-30
+
+- id: vil-orari-2027
+  testo: "Date e orari di apertura dei villaggi 2027 non sono ancora usciti."
+  stato: atteso
+  fonti: [ac-host-venue, comune-citta-ospitante]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: vil-2026-gratis
+  testo: "Nel 2026 il Race Village era gratuito: sul lungomare Caracciolo, chiuso alle auto, con il palco principale alla Rotonda Diaz."
+  stato: confermato
+  anno: 2026
+  fonti: [comune-citta-ospitante, ac-naples, ac-programma-pr2]
+  controllato: 2026-09-30
+
+- id: vil-2026-orari
+  testo: "Nel 2026 il villaggio apriva alle 11 e chiudeva alle 21 (sabato alle 20:30, domenica alle 22)."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2, comune-citta-ospitante]
+  controllato: 2026-09-30
+
+- id: vil-2026-show
+  testo: "Nel 2026 sul palco c'erano gli show di uscita e rientro delle barche alle 12:00 e alle 17:00, con le squadre presentate al pubblico."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2]
+  controllato: 2026-09-30
+
+- id: vil-2026-schermi
+  testo: "Nel 2026 la diretta si vedeva su grandi schermi nel villaggio e lungo via Caracciolo."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2]
+  controllato: 2026-09-30
+
+- id: vil-2026-radio
+  testo: "Nel 2026 la radio ufficiale dell'America's Cup trasmetteva il commento in diretta, senza ritardo, da ascoltare in cuffia dal telefono (americascup.livefeed.fm)."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2]
+  controllato: 2026-09-30
+
+- id: vil-2026-folla
+  testo: "Nel 2026, l'ultimo giorno di regate, l'ANSA ha contato oltre 100.000 ingressi sul lungomare."
+  stato: stampa
+  anno: 2026
+  fonti: [ansa-100mila]
+  controllato: 2026-09-30
+
+- id: vil-2026-sicurezza
+  testo: "Nel 2026 la Prefettura ha impiegato 1.630 agenti delle forze di polizia dal 22 al 27 settembre."
+  stato: stampa
+  anno: 2026
+  fonti: [mattino-sicurezza]
+  controllato: 2026-09-30
+
+- id: ped-2026
+  testo: "Nel 2026 il Comune ha montato quattro pedane panoramiche sugli scogli, raggiungibili con passerelle e pensate anche per persone con disabilità e bambini."
+  stato: stampa
+  anno: 2026
+  fonti: [opinione-pedane-accessibili]
+  controllato: 2026-09-30
+
+- id: ped-2027
+  testo: "La Soprintendenza ha permesso pedane e piattaforme sugli scogli di via Caracciolo, via Partenope e via Nazario Sauro per un anno, fino a luglio 2027: potrebbero tornare per le regate."
+  stato: stampa
+  fonti: [ilroma-pedane]
+  controllato: 2026-09-30
+
+- id: vista-anfiteatro
+  testo: "Gli organizzatori descrivono Napoli come un anfiteatro: il golfo si vede dal lungomare e dall'alto, da Pizzofalcone, dalla collina del Vomero con la Certosa di San Martino e da Posillipo."
+  stato: confermato
+  fonti: [ac-anfiteatro]
+  controllato: 2026-09-30
+
+- id: vista-vicino
+  testo: "Il campo di regata è vicino alla riva: gli AC75 passeranno a piena velocità a pochi metri dal lungomare."
+  stato: confermato
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+
+- id: campo-ovo
+  testo: "Castel dell'Ovo segna un'estremità del campo di regata."
+  stato: confermato
+  fonti: [ac-naples]
+  controllato: 2026-09-30
+
+- id: campo-posillipo
+  testo: "Secondo la stampa, nel 2027 si regata tra Castel dell'Ovo e Capo Posillipo."
+  stato: stampa
+  fonti: [2anews-lungomare]
+  controllato: 2026-09-30
+
+- id: campo-mappa-atteso
+  testo: "La mappa ufficiale del campo di regata 2027, con i confini e le zone per il pubblico, non è ancora uscita."
+  stato: atteso
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: campo-2026
+  testo: "Nel 2026 gli AC40 hanno regatato davanti al lungomare Caracciolo, tra Castel dell'Ovo e la Rotonda Diaz."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-anfiteatro]
+  controllato: 2026-09-30
+
+- id: vento-golfo
+  testo: "Nel golfo di solito soffia una brezza di mare costante, con salti di vento e a volte venti termici."
+  stato: confermato
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+
+- id: regole-pubblico-atteso
+  testo: "Le regole per il pubblico 2027 (borse, bottiglie, animali, bagni, punti acqua) non sono ancora uscite."
+  stato: atteso
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+- id: droni-2026
+  testo: "Nel 2026 era vietato far volare droni sopra il campo di regata e le zone del pubblico, anche partendo da terra."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: caldo-bollettini
+  testo: "Da fine maggio il Ministero della Salute pubblica ogni giorno un bollettino sulle ondate di calore per 27 città, Napoli compresa, con 4 livelli di rischio."
+  stato: confermato
+  fonti: [salute-caldo]
+  controllato: 2026-09-30
+
+# ================= DAL MARE =================
+- id: mare-registrazione
+  testo: "Nel 2026 chi voleva vedere le regate con la propria barca doveva registrarsi online. In cambio riceveva ogni mattina il programma, il meteo e gli avvisi di sicurezza."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-orari
+  testo: "Nel 2026 le 20 boe del campo erano in posizione entro le 12:30, le barche del pubblico dovevano essere nelle loro zone entro le 13:30, le regate andavano dalle 14 alle 16."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-velocita
+  testo: "Nel 2026: massimo 5 nodi e divieto di fare onda, per tutte le barche."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water, nauticareport-regole]
+  controllato: 2026-09-30
+
+- id: mare-motore
+  testo: "Nel 2026: solo barche a motore, sempre in movimento e pronte a spostarsi, mai all'ancora salvo emergenza, con le vele ammainate. Niente barche senza motore."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-vhf
+  testo: "Nel 2026 la radio VHF a bordo era obbligatoria, sintonizzata sul canale indicato dagli organizzatori."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-zone
+  testo: "Nel 2026 le zone erano a colori: rossa per le barche accreditate e i noleggi ufficiali; blu per il pubblico, con le barche sopra i 10 metri sul lato est e quelle più piccole verso costa; grigia solo per il passaggio, senza fermarsi."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-marshal
+  testo: "Nel 2026 bisognava seguire sempre le indicazioni dei marshal in acqua, della polizia e della Capitaneria di porto."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-bagno
+  testo: "Nel 2026 era vietato nuotare e tuffarsi vicino al campo di regata."
+  stato: stampa
+  anno: 2026
+  fonti: [nauticareport-regole]
+  controllato: 2026-09-30
+
+- id: mare-ordinanza
+  testo: "Nel 2026 l'ordinanza n. 99/2026 della Capitaneria di porto ha chiuso alla navigazione non autorizzata uno specchio d'acqua davanti al lungomare."
+  stato: stampa
+  anno: 2026
+  fonti: [ansa-rotte]
+  controllato: 2026-09-30
+
+- id: mare-aliscafi
+  testo: "Nel 2026 aliscafi e traghetti per le isole hanno fatto rotte più lunghe per girare intorno al campo: quasi dieci minuti in più per gli aliscafi."
+  stato: stampa
+  anno: 2026
+  fonti: [ansa-rotte]
+  controllato: 2026-09-30
+
+- id: mare-noleggi
+  testo: "Nel 2026 nella zona rossa c'erano anche barche a noleggio ufficiali, ma nomi degli operatori e prezzi non sono stati pubblicati."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+
+- id: mare-2027-atteso
+  testo: "L'ordinanza 2027 della Capitaneria e la registrazione delle barche per il 2027 non sono ancora uscite."
+  stato: atteso
+  fonti: [ac-watch-on-water]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+# ================= BIGLIETTI E OSPITALITÀ =================
+- id: big-niente
+  testo: "Al 30 settembre 2026 non sono in vendita biglietti, tribune o pacchetti ufficiali per il 2027."
+  stato: atteso
+  fonti: [ac-38, ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-11-15
+
+- id: big-tribune
+  testo: "Posizione, prezzi e data di vendita delle tribune 2027 non sono ancora usciti."
+  stato: atteso
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-11-15
+
+- id: big-ospitalita
+  testo: "Pacchetti di ospitalità a terra e in mare: fornitore, prezzi e pagina di iscrizione non sono ancora usciti."
+  stato: atteso
+  fonti: [ac-host-venue]
+  controllato: 2026-09-30
+  ricontrollare: 2026-11-15
+
+- id: big-sito-ufficiale
+  testo: "Il sito ufficiale dell'evento è americascup.com, anche in italiano."
+  stato: confermato
+  fonti: [ac-38]
+  controllato: 2026-09-30
+
+# ================= TV E STREAMING =================
+- id: tv-rai
+  testo: "La Rai ha i diritti in chiaro per l'Italia: Louis Vuitton Cup, Match, regate preliminari, Youth e Women's America's Cup, su più canali e piattaforme."
+  stato: confermato
+  fonti: [ac-rai]
+  controllato: 2026-09-30
+
+- id: tv-sky
+  testo: "Sky ha i diritti a pagamento per l'Italia: le regate su Sky e in streaming su NOW."
+  stato: stampa
+  fonti: [stampa-sky-diritti]
+  controllato: 2026-09-29
+
+- id: tv-youtube
+  testo: "Il canale YouTube ufficiale è youtube.com/@americascup."
+  stato: stampa
+  fonti: [scuttlebutt-napoli]
+  controllato: 2026-09-30
+
+# ================= TRASPORTI =================
+- id: taxi-aeroporto
+  testo: "Taxi dall'aeroporto a tariffa fissa: 21 € fino alla Stazione Centrale, 24 € fino a Molo Beverello e al porto, 28,50 € fino a via Partenope (alberghi del lungomare) o a Mergellina."
+  stato: confermato
+  fonti: [comune-tariffe-taxi]
+  controllato: 2026-09-30
+
+- id: taxi-altre
+  testo: "Altre tariffe fisse utili: Stazione Centrale–via Partenope 17,50 €, Stazione Centrale–Mergellina 17,50 €, Molo Beverello–via Partenope 10 €."
+  stato: confermato
+  fonti: [comune-tariffe-taxi]
+  controllato: 2026-09-30
+
+- id: taxi-regole
+  testo: "La tariffa fissa va chiesta all'inizio: il tassista non può rifiutarla e deve darti la ricevuta prima di partire. Vale 24 ore su 24, festivi compresi. Si pagano a parte i pedaggi e il supplemento minivan di 5 €."
+  stato: confermato
+  fonti: [comune-taxi, comune-tariffe-taxi]
+  controllato: 2026-09-30
+
+- id: taxi-collettivo
+  testo: "Taxi collettivo Aeroporto–Stazione Centrale–Molo Beverello: 6 € a persona. Il servizio è prorogato fino al 31 dicembre 2026: per il 2027 non si sa ancora."
+  stato: confermato
+  fonti: [comune-taxi-collettivo]
+  controllato: 2026-09-30
+  ricontrollare: 2027-01-15
+
+- id: anm-2026
+  testo: "Nel 2026, per le regate, la metro Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30; la funicolare di Mergellina ha fatto l'ultima corsa alle 00:30; quelle di Chiaia e Centrale, come di consueto, arrivavano alle 2."
+  stato: confermato
+  anno: 2026
+  fonti: [comune-anm-2026]
+  controllato: 2026-09-30
+
+- id: trasporti-2027-atteso
+  testo: "Il piano dei trasporti e del traffico per il 2027 non è ancora uscito."
+  stato: atteso
+  fonti: [comune-citta-ospitante]
+  controllato: 2026-09-30
+  ricontrollare: 2027-02-28
+
+- id: caracciolo-chiusa
+  testo: "Secondo la stampa locale via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia. Non c'è ancora nessun provvedimento."
+  stato: stampa
+  fonti: [napolike-caracciolo, 2anews-lungomare]
+  controllato: 2026-09-30
+
+- id: linea2-bagnoli
+  testo: "È in progetto una nuova fermata della Linea 2 a Bagnoli, «Porta del Parco», vicino alle basi. La data di apertura non è confermata."
+  stato: stampa
+  fonti: [ansa-linea2]
+  controllato: 2026-09-30
+
+- id: metro-aeroporto
+  testo: "La fermata della metro Linea 1 all'aeroporto non è ancora aperta e le date annunciate cambiano: per il 2027 non contarci."
+  stato: stampa
+  fonti: [stampa-metro-capodichino]
+  controllato: 2026-09-29
+
+- id: linea6-fermate
+  testo: "La Linea 6 corre parallela al lungomare, sotto la Riviera di Chiaia: fermate Mergellina, Arco Mirelli–Repubblica, San Pasquale, Chiaia–Monte di Dio e Municipio."
+  stato: confermato
+  fonti: [osm]
+  controllato: 2026-09-30
+
+- id: echia-ascensore
+  testo: "A Monte Echia (Pizzofalcone) si sale anche con un ascensore pubblico. Secondo OpenStreetMap è a pagamento e aperto lunedì–sabato 7–22, domenica e festivi 7:30–22: verifica sul posto."
+  stato: confermato
+  fonti: [osm]
+  controllato: 2026-09-30
+
+# ================= ACCESSIBILITÀ =================
+- id: acc-2027-atteso
+  testo: "Servizi 2027 per persone con disabilità (accessi, posti riservati, bagni) non ancora annunciati."
+  stato: atteso
+  fonti: [ac-host-venue, comune-citta-ospitante]
+  controllato: 2026-09-30
+  ricontrollare: 2027-02-28
+
+- id: acc-isolahabile-2026
+  testo: "Nel 2026 il Comune ha coinvolto Isolahabile, impresa sociale di Napoli che porta in mare persone con disabilità."
+  stato: stampa
+  anno: 2026
+  fonti: [opinione-pedane-accessibili]
+  controllato: 2026-09-30
+
+# ================= SQUADRE E REGOLE =================
+- id: sq-sette
+  testo: "Le squadre sono 7: Emirates Team New Zealand, che difende la Coppa, e 6 sfidanti: GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA e Team Australia."
+  stato: confermato
+  fonti: [etnz-formato, ac-bagnoli]
+  controllato: 2026-09-30
+
+- id: sq-vincitori
+  testo: "Per la prima volta nella storia moderna della Coppa gareggiano insieme tutte le nazioni che l'hanno già vinta: Stati Uniti, Australia, Svizzera e Nuova Zelanda."
+  stato: confermato
+  fonti: [etnz-formato]
+  controllato: 2026-09-30
+
+- id: sq-cor
+  testo: "Il Challenger of Record, lo sfidante che scrive le regole con chi difende la Coppa, è il britannico Royal Yacht Squadron, con il team GB1."
+  stato: confermato
+  fonti: [ac-38, ac-protocollo]
+  controllato: 2026-09-30
+
+- id: sq-basi
+  testo: "Le basi delle squadre sono a Bagnoli. Da nord a sud: Emirates Team New Zealand, GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, Team Australia e ARC Team USA."
+  stato: confermato
+  fonti: [ac-bagnoli]
+  controllato: 2026-09-30
+
+- id: sq-acp
+  testo: "Organizza l'America's Cup Partnership (ACP): presidente Grant Dalton, amministratore delegato Marzio Perrelli."
+  stato: confermato
+  fonti: [ac-countdown, ac-youth-date]
+  controllato: 2026-09-30
+
+- id: sq-nyyc
+  testo: "Il 31 agosto 2026 il New York Yacht Club ha chiesto alla Procura generale di New York di verificare se l'ACP sia compatibile con il Deed of Gift, l'atto che regola la Coppa dal 1857."
+  stato: stampa
+  fonti: [scuttlebutt-nyyc]
+  controllato: 2026-09-30
+
+- id: ac75-cinque
+  testo: "Sugli AC75 regatano 5 velisti. Nel 2024 erano 4, più 4 ciclisti che producevano l'energia."
+  stato: confermato
+  fonti: [ac-press-kit, ac-protocollo]
+  controllato: 2026-09-30
+
+- id: ac75-donna
+  testo: "Almeno una donna in ogni equipaggio: è la prima volta nella storia della Coppa."
+  stato: confermato
+  fonti: [ac-protocollo, ac-team-australia]
+  controllato: 2026-09-30
+
+- id: ac75-nazionalita
+  testo: "La velista e almeno altri due membri dell'equipaggio devono avere la nazionalità della squadra: al massimo 2 possono essere stranieri."
+  stato: confermato
+  fonti: [ac-protocollo]
+  controllato: 2026-09-30
+
+- id: ac75-batterie
+  testo: "Niente più ciclisti: le vele si regolano con un sistema a batterie che dà la stessa potenza di quattro ciclisti. A mano si governa solo il timone."
+  stato: confermato
+  fonti: [ac-protocollo]
+  controllato: 2026-09-30
+
+- id: ac75-ospite
+  testo: "A bordo c'è anche un posto per un ospite, che non partecipa alla regata."
+  stato: confermato
+  fonti: [ac-protocollo]
+  controllato: 2026-09-30
+
+- id: ac75-una-nuova
+  testo: "Ogni squadra può costruire un solo AC75 nuovo."
+  stato: confermato
+  fonti: [ac-38]
+  controllato: 2026-09-30
+
+- id: ac75-velocita
+  testo: "Gli AC75 superano i 55 nodi, cioè più di 100 km/h: è successo a Barcellona nel 2024."
+  stato: confermato
+  fonti: [etnz-formato]
+  controllato: 2026-09-30
+
+- id: ac40-uso
+  testo: "Gli AC40, più piccoli, si usano per le regate preliminari, la Youth e la Women's America's Cup, con 4 persone a bordo."
+  stato: confermato
+  fonti: [ac-38, ac-protocollo]
+  controllato: 2026-09-30
+
+- id: yw-nazionalita
+  testo: "Nella Youth e nella Women's America's Cup tutto l'equipaggio deve avere la nazionalità della squadra. Possono essere invitati anche club che non corrono la Coppa."
+  stato: confermato
+  fonti: [ac-protocollo]
+  controllato: 2026-09-30
+
+- id: yw-bando-atteso
+  testo: "Il bando ufficiale di Youth e Women's America's Cup 2027, con squadre iscritte e formato di gara, non l'abbiamo ancora trovato."
+  stato: atteso
+  fonti: [ac-protocollo, ac-youth-date]
+  controllato: 2026-09-30
+  ricontrollare: 2026-12-31
+
+# ================= ARCHIVIO 2026 =================
+- id: res-napoli
+  testo: "Napoli, 25–27 settembre 2026: vince Luna Rossa, che nella finale a due batte Emirates Team New Zealand senza mai farsi superare."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-finale-napoli, ac-risultati]
+  controllato: 2026-09-30
+
+- id: res-cagliari
+  testo: "Cagliari, 21–24 maggio 2026: vince Luna Rossa, che in finale batte Emirates Team New Zealand."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-risultati, scuttlebutt-cagliari]
+  controllato: 2026-09-30
+
+- id: res-punteggio
+  testo: "Nelle regate di flotta chi vince prende 10 punti, il secondo 9 e così via. Dopo 8 regate le prime due barche si giocano la vittoria in una finale a due."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-programma-pr2, ac-risultati]
+  controllato: 2026-09-30
+
+- id: res-non-contano
+  testo: "I risultati delle regate preliminari 2026 non contano per la classifica della Louis Vuitton Cup."
+  stato: stampa
+  anno: 2026
+  fonti: [scuttlebutt-cagliari]
+  controllato: 2026-09-30
+
+- id: res-wy
+  testo: "Le squadre potevano schierare una seconda barca con un equipaggio di donne e giovani (Women & Youth)."
+  stato: confermato
+  anno: 2026
+  fonti: [ac-38]
+  controllato: 2026-09-30
+
+# ================= MISURE DELLE BARCHE =================
+- id: ac75-misure
+  testo: "AC75 vuol dire «America's Cup 75 piedi»: circa 23 metri. Pesa circa 6,5 tonnellate a vuoto e 7,6 in regata; con i foil abbassati arriva a 5 metri sotto la superficie."
+  stato: stampa
+  fonti: [wiki-ac75]
+  controllato: 2026-09-30
+
+- id: ac40-misure
+  testo: "L'AC40 è lungo 11,80 metri e largo 3,38, con un albero di 17,92 metri e un peso di circa 2 tonnellate. È uguale per tutti e va tutto a batterie."
+  stato: stampa
+  fonti: [wiki-ac40]
+  controllato: 2026-09-30

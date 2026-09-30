@@ -1,0 +1,432 @@
+# Fonti usate nella guida. Ogni scheda in fatti.yaml deve citarne almeno una.
+# tipo: ufficiale (organizzatori, enti pubblici, squadre) | stampa | dati | altro
+# letta: true se la pagina è stata aperta e letta per intero (non solo il riassunto di un motore di ricerca)
+
+# ---------- Organizzatori e squadre ----------
+- id: ac-grazie-napoli
+  titolo: "Grazie Napoli"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4372_GRAZIE-NAPOLI
+  tipo: ufficiale
+  pubblicato: 2026-09-28
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-formato-lvc
+  titolo: "Fleet racing AC75's to kick-start the Louis Vuitton Cup"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4148_FLEET-RACING-AC75-s-TO-KICK-START-THE-LOUIS-VUITTON-CUP
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-youth-date
+  titolo: "Youth America's Cup dates announced"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4332_YOUTH-AMERICAS-CUP-DATES-ANNOUNCED-AS-THE-AMERICAS-CUP-CELEBRATES-THE-NEXT-GENERATION-AT-PINO-DANIELE-SPORTS-CENTRE-IN-CAIVANO
+  tipo: ufficiale
+  pubblicato: 2026-09-23
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-38
+  titolo: "The Louis Vuitton 38th America's Cup"
+  editore: America's Cup
+  url: https://www.americascup.com/38th-americascup
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-host-venue
+  titolo: "Host Venue"
+  editore: America's Cup
+  url: https://www.americascup.com/host-venue
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-naples
+  titolo: "Preliminary Regatta Naples"
+  editore: America's Cup
+  url: https://www.americascup.com/naples
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-watch-on-water
+  titolo: "Esperienze in mare per gli spettatori"
+  editore: America's Cup
+  url: https://www.americascup.com/it/watch-on-water
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+  nota: Regole scritte per la regata preliminare di settembre 2026.
+
+- id: ac-anfiteatro
+  titolo: "Napoli, un anfiteatro naturale per l'America's Cup"
+  editore: America's Cup
+  url: https://www.americascup.com/it/news/4176_NAPOLI-UN-ANFITEATRO-NATURALE-PER-L-AMERICA-S-CUP
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-rai
+  titolo: "L'America's Cup Partnership assegna alla Rai i diritti media per l'Italia"
+  editore: America's Cup
+  url: https://www.americascup.com/it/news/3924_LAMERICAS-CUP-PARTNERSHIP-ASSEGNA-ALLA-RAI-I-DIRITTI-MEDIA-PER-LITALIA-DELLA-LOUIS-VUITTON-38-AMERICAS-CUP
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-bagnoli
+  titolo: "Bagnoli development continues at astonishing pace"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4370_BAGNOLI-DEVELOPMENT-CONTINUES-AT-ASTONISHING-PACE
+  tipo: ufficiale
+  pubblicato: 2026-09-27
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-finale-napoli
+  titolo: "Luna Rossa score an outstanding statement win in Naples"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4373_LUNA-ROSSA-SCORE-AN-OUTSTANDING-STATEMENT-WIN-IN-NAPLES
+  tipo: ufficiale
+  pubblicato: 2026-09-27
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-programma-pr2
+  titolo: "Mark your diaries – PR2 Naples is all set"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4270_MARK-YOUR-DIARIES-PR2-NAPLES-IS-ALL-SET
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-countdown
+  titolo: "The countdown clock to the Louis Vuitton 38th America's Cup has lit up on Lungomare Caracciolo"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4320_THE-COUNTDOWN-CLOCK-TO-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP-IN-NAPLES-HAS-LIT-UP-ON-LUNGOMARE-CARACCIOLO
+  tipo: ufficiale
+  pubblicato: 2026-09-22
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-team-australia
+  titolo: "Team Australia unveils elite Australian seven-sailor team"
+  editore: America's Cup
+  url: https://www.americascup.com/news/4275_TEAM-AUSTRALIA-UNVEILS-ELITE-AUSTRALIAN-SEVEN-SAILOR-TEAM-FOR-THE-LOUIS-VUITTON-38TH-AMERICAS-CUP
+  tipo: ufficiale
+  pubblicato: 2026-09-09
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-risultati
+  titolo: "Results & Standings (dati ufficiali delle regate preliminari)"
+  editore: America's Cup
+  url: https://www.americascup.com/results
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+  nota: Punti regata per regata letti dal feed ufficiale dei risultati.
+
+- id: ac-protocollo
+  titolo: "Protocollo della Louis Vuitton 38ª America's Cup (12 agosto 2025)"
+  editore: America's Cup
+  url: https://www.americascup.com/files/m26244_FINAL-PROTOCOL-12-AUGUST-2025.pdf
+  tipo: ufficiale
+  pubblicato: 2025-08-12
+  controllato: 2026-09-30
+  letta: true
+
+- id: ac-press-kit
+  titolo: "Press kit ufficiale in italiano (versione 4.5)"
+  editore: America's Cup
+  url: https://www.americascup.com/files/m30121_AC38-ITA-PressKit-V4-5-20260617.pdf
+  tipo: ufficiale
+  pubblicato: 2026-06-17
+  controllato: 2026-09-30
+  letta: true
+
+- id: etnz-formato
+  titolo: "2027: The Louis Vuitton 38th America's Cup – May–July 2027"
+  editore: Emirates Team New Zealand
+  url: https://emirates-team-new-zealand.americascup.com/en/news/813_2027-THE-LOUIS-VUITTON-38TH-AMERICA-S-CUP-MAY-JULY-2027.html
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+# ---------- Comune di Napoli ----------
+- id: comune-citta-ospitante
+  titolo: "Napoli Città Ospitante della 38ª edizione della Louis Vuitton America's Cup"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/napoli-citta-ospitante-della-38esima-edizione-della-americas-cup/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: comune-anm-2026
+  titolo: "Servizi di trasporto Anm in occasione della Coppa America"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/servizi-di-trasporto-anm-in-occasione-della-coppa-america/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: comune-village-2026
+  titolo: "Regata Preliminare di America's Cup: il Comune al Race Village"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/americas-cup-race-village/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: comune-taxi
+  titolo: "Servizio taxi"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/taxi-e-ncc/taxi/servizio-taxi/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: comune-tariffe-taxi
+  titolo: "Tariffe taxi (delibera di Giunta n. 258 del 27 giugno 2024)"
+  editore: Comune di Napoli
+  url: https://static-www.comune.napoli.it/wp-content/uploads/2025/05/Tariffario_Taxi_2024.pdf
+  tipo: ufficiale
+  pubblicato: 2024-06-27
+  controllato: 2026-09-30
+  letta: true
+
+- id: comune-taxi-collettivo
+  titolo: "Taxi collettivo"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/taxi-e-ncc/taxi-collettivo/
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+- id: salute-caldo
+  titolo: "Estate 2026, dal 25 maggio disponibili i bollettini sulle ondate di calore"
+  editore: Ministero della Salute
+  url: https://www.salute.gov.it/new/it/news-e-media/notizie/estate-2026-dal-25-maggio-disponibili-i-bollettini-sulle-ondate-di-calore
+  tipo: ufficiale
+  controllato: 2026-09-30
+  letta: true
+
+# ---------- Stampa ----------
+- id: scuttlebutt-napoli
+  titolo: "America's Cup: Italy remains on form"
+  editore: Scuttlebutt Sailing News
+  url: https://www.sailingscuttlebutt.com/2026/09/27/americas-cup-italy-remains-on-form/
+  tipo: stampa
+  pubblicato: 2026-09-27
+  controllato: 2026-09-30
+  letta: true
+
+- id: scuttlebutt-cagliari
+  titolo: "Italy grabs bragging rights in Sardinia"
+  editore: Scuttlebutt Sailing News
+  url: https://www.sailingscuttlebutt.com/2026/05/24/italy-grabs-bragging-rights-in-sardinia/
+  tipo: stampa
+  pubblicato: 2026-05-24
+  controllato: 2026-09-30
+  letta: true
+
+- id: scuttlebutt-nyyc
+  titolo: "New challenge for America's Cup"
+  editore: Scuttlebutt Sailing News
+  url: https://www.sailingscuttlebutt.com/2026/08/31/new-challenge-for-americas-cup/
+  tipo: stampa
+  pubblicato: 2026-08-31
+  controllato: 2026-09-30
+  letta: true
+
+- id: napolimagazine-due-village
+  titolo: "Manfredi: «America's Cup? Tutti entusiasti, saranno realizzati due Race Village»"
+  editore: Napoli Magazine (da un'intervista a Repubblica Napoli)
+  url: https://www.napolimagazine.com/in-evidenza/articolo/il-sindaco-manfredi-america-s-cup-tutti-entusiasti-saranno-realizzati-due-race-village-29-09-2026
+  tipo: stampa
+  pubblicato: 2026-09-29
+  controllato: 2026-09-30
+  letta: true
+
+- id: napolike-caracciolo
+  titolo: "America's Cup 2027: via Caracciolo chiusa per tre mesi"
+  editore: Napolike
+  url: https://www.napolike.it/americas-cup-2027-via-caracciolo-chiusa-tre-mesi
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: 2anews-lungomare
+  titolo: "America's Cup 2027: lungomare chiuso per 3 mesi e novità a Bagnoli"
+  editore: 2anews (su notizie di Fanpage.it)
+  url: https://www.2anews.it/americas-cup-2027-lungomare-chiuso-per-3-mesi/
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: ilroma-pedane
+  titolo: "America's Cup, la Soprintendenza approva le pedane, ma per un anno"
+  editore: Il Roma
+  url: https://www.ilroma.net/news/cronaca/864725/americas-cup-la-soprintendenza-approva-le-pedane-ma-per-un-anno.html
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: opinione-pedane-accessibili
+  titolo: "Comune di Napoli: pedane accessibili sugli scogli e imbarcazioni inclusive"
+  editore: Agenzia giornalistica Opinione (comunicato del Comune)
+  url: https://www.agenziagiornalisticaopinione.it/opinionmix/comune-di-napoli-americas-cup-pedane-accessibili-sugli-scogli-e-imbarcazioni-inclusive-per-vivere-le-regate-dal-mare/
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: nauticareport-regole
+  titolo: "America's Cup Napoli: regole per spettatori in acqua e sicurezza"
+  editore: Nautica Report
+  url: https://www.nauticareport.it/dettnews/eventi_mostre_e_incontri/americas_cup_napoli_regole_per_spettatori_in_acqua_e_sicurezza-2-32587/
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: ansa-rotte
+  titolo: "America's Cup, rotte più lunghe per navi e aliscafi verso le isole"
+  editore: ANSA
+  url: https://www.ansa.it/campania/notizie/2026/09/19/americas-cup-rotte-piu-lunghe-per-navi-e-aliscafi-verso-le-isole_4a223961-609a-4655-a57e-eb59c560e62c.html
+  tipo: stampa
+  pubblicato: 2026-09-19
+  controllato: 2026-09-30
+  letta: true
+
+- id: ansa-100mila
+  titolo: "America's Cup: oltre 100mila ingressi sul lungomare"
+  editore: ANSA
+  url: https://www.ansa.it/campania/notizie/2026/09/27/americas-cup-oltre-100mila-ingressi-sul-lungomare-per-il-successo-di-luna_c1638251-2464-4907-88bf-27d2e37fbcf4.html
+  tipo: stampa
+  pubblicato: 2026-09-27
+  controllato: 2026-09-30
+  letta: true
+
+- id: ansa-linea2
+  titolo: "America's Cup: pronto progetto per stazione a Bagnoli linea 2 della metro"
+  editore: ANSA
+  url: https://www.ansa.it/campania/notizie/2026/03/26/americas-cup-pronto-progetto-per-stazione-a-bagnoli-linea-2-della-metro_b7c4149a-5f7c-43de-8452-e1d03178f17f.html
+  tipo: stampa
+  pubblicato: 2026-03-26
+  controllato: 2026-09-30
+  letta: true
+
+- id: mattino-sicurezza
+  titolo: "America's Cup a Napoli, maxi piano sicurezza: 1.630 agenti"
+  editore: Il Mattino
+  url: https://www.ilmattino.it/sport/vela/americas_cup_napoli_sicurezza_1630_agenti_prefettura_regate_settembre-9779238.html
+  tipo: stampa
+  controllato: 2026-09-30
+  letta: true
+
+- id: stampa-sky-diritti
+  titolo: "America's Cup 2027: Sky ha i diritti tv"
+  editore: Sport e Finanza
+  url: https://www.sportefinanza.it/2026/05/13/americas-cup-2027-sky-diritti-tv-italia/
+  tipo: stampa
+  pubblicato: 2026-05-13
+  controllato: 2026-09-29
+  letta: false
+  nota: Letta nel riassunto della ricerca; confermata anche dal titolo del comunicato ufficiale americascup.com/news/4063.
+
+- id: stampa-metro-capodichino
+  titolo: "Metro linea 1 verso Capodichino: per l'America's Cup un collegamento alternativo"
+  editore: Terra Mia Giornale
+  url: https://www.terramiagiornale.it/metro-linea-1-avanti-verso-capodichino-ma-per-lamericas-cup-ci-sara-un-collegamento-alternativo/
+  tipo: stampa
+  controllato: 2026-09-29
+  letta: false
+
+# ---------- Dati ----------
+- id: osm
+  titolo: "OpenStreetMap"
+  editore: Collaboratori di OpenStreetMap (licenza ODbL)
+  url: https://www.openstreetmap.org/copyright
+  tipo: dati
+  controllato: 2026-09-30
+  letta: true
+  nota: Costa, strade, stazioni e punti panoramici della mappa.
+
+# ---------- Altro ----------
+- id: americascupitalia
+  titolo: "americascupitalia.it"
+  editore: Sito non ufficiale (gestore non identificato)
+  url: https://americascupitalia.it/
+  tipo: altro
+  controllato: 2026-09-29
+  letta: false
+
+# ---------- Schede dei velisti (fonti già usate dal sito 2026) ----------
+- id: wiki-burling
+  titolo: "Peter Burling (sailor)"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/Peter_Burling_(sailor)
+  tipo: altro
+  controllato: 2026-09-27
+  letta: false
+
+- id: ws-gradoni
+  titolo: "Gradoni youngest Rolex World Sailor of the Year"
+  editore: World Sailing
+  url: https://www.sailing.org/news/89461.php
+  tipo: stampa
+  controllato: 2026-09-27
+  letta: false
+
+- id: hof-outteridge
+  titolo: "Nathan Outteridge OAM and Iain Jensen OAM"
+  editore: Australian Sailing Hall of Fame
+  url: https://www.sailing.org.au/hall-of-fame/nathan-outteridge-oam-and-iain-jensen-oam
+  tipo: altro
+  controllato: 2026-09-27
+  letta: false
+
+- id: ws-women-2024
+  titolo: "Luna Rossa Prada Pirelli win inaugural Puig Women's America's Cup"
+  editore: World Sailing
+  url: https://www.sailing.org/2024/10/13/womens-americas-cup-luna-rossa-prada-pirelli-win-inaugural-puig-womens-americas-cup/
+  tipo: stampa
+  pubblicato: 2024-10-13
+  controllato: 2026-09-27
+  letta: false
+
+- id: gb1-fletcher
+  titolo: "Britain's America's Cup Team unveils GB1 identity and confirms Dylan Fletcher as helm"
+  editore: GB1
+  url: https://www.gb1.com/en/articles/710_Britain-s-America-s-Cup-Team-unveils-GB1-identity-and-confirms-Dylan-Fletcher-as-helm-for-38th-America-s-Cup.html
+  tipo: ufficiale
+  controllato: 2026-09-27
+  letta: false
+
+- id: allatsea-gb2
+  titolo: "Cobham-Ultra GB2 set for Naples racing debut"
+  editore: All At Sea
+  url: https://www.allatsea.co.uk/news/british-americas-cup-women-youth-squad-cobham-ultra-gb2-set-for-napless-racing-debut/
+  tipo: stampa
+  controllato: 2026-09-27
+  letta: false
+
+# ---------- Barche ----------
+- id: wiki-ac75
+  titolo: "AC75"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/AC75
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true
+
+- id: wiki-ac40
+  titolo: "AC40"
+  editore: Wikipedia
+  url: https://en.wikipedia.org/wiki/AC40
+  tipo: altro
+  controllato: 2026-09-30
+  letta: true

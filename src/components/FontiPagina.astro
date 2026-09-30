@@ -1,0 +1,29 @@
+---
+// Elenco delle fonti usate nella pagina, con la data dell'ultimo controllo
+import type { Fatto, Fonte } from '../lib/fatti';
+import { fontiDi, ultimoControllo } from '../lib/fatti';
+import { dataBreve } from '../lib/formato';
+interface Props { fatti: Iterable<Fatto>; extra?: Fonte[] }
+const { fatti, extra = [] } = Astro.props;
+const lista = [...fatti];
+const fonti = fontiDi(lista, extra);
+const ultimo = ultimoControllo(lista);
+const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', altro: 'Altro' } as const;
+---
+{fonti.length > 0 && (
+  <section class="section fonti-pagina" aria-labelledby="fonti-h">
+    <div class="wrap">
+      <p class="kicker">Trasparenza</p>
+      <h2 id="fonti-h">Fonti di questa pagina</h2>
+      {ultimo && <p class="aggiornato">Informazioni controllate il {dataBreve(ultimo)}. Elenco completo nella pagina <a href="/fonti/">fonti</a>.</p>}
+      <ol>
+        {fonti.map(f => (
+          <li>
+            <a href={f.data.url} rel="noopener">{f.data.titolo}</a> · {f.data.editore}
+            {' '}<span class="tipo">{TIPO[f.data.tipo]}</span>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+)}

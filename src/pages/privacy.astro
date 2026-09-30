@@ -1,0 +1,36 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { SITO } from '../config/sito';
+import { dataLunga } from '../lib/formato';
+const t = SITO.titolare;
+const manca = !t.nome || !t.email;
+---
+<Base title="Privacy" description="Informativa privacy della guida non ufficiale all'America's Cup di Napoli 2027: quali dati raccogliamo (solo l'email di Avvisami), dove li salviamo e come cancellarli.">
+  <PageHead kicker="Trasparenza" title="Privacy" lead="In breve: nessun cookie, nessuna pubblicità, nessun tracciamento. L'unico dato che raccogliamo è l'email che scegli di lasciare in «Avvisami»." aggiornato={SITO.versionePrivacy} />
+  <section class="section">
+    <div class="wrap prose">
+      {manca && <div class="avviso no-print"><strong>!</strong><p>Bozza: nome ed email del titolare sono da completare prima della pubblicazione.</p></div>}
+      <h2>Chi è il titolare</h2>
+      <p>Titolare del trattamento: <strong>{t.nome || '[nome del titolare da completare]'}</strong>, contatto: <strong>{t.email || '[email da completare]'}</strong>.</p>
+
+      <h2>Quali dati raccogliamo</h2>
+      <p>Solo se usi il modulo <strong>Avvisami</strong>: il tuo indirizzo email, gli argomenti che scegli, la lingua, il consenso e la data dell'iscrizione. Non chiediamo nome, telefono o altro.</p>
+      <p>Il sito <strong>non usa cookie</strong> e non contiene pubblicità o sistemi di statistiche. Salva nel tuo browser solo la scelta del tema chiaro o scuro e una copia delle pagine per usarle senza rete: restano sul tuo telefono.</p>
+
+      <h2>Perché e su quale base</h2>
+      <p>Usiamo l'email solo per avvisarti quando escono le novità che hai scelto (biglietti, orari, regole). La base è il tuo consenso, che puoi ritirare quando vuoi. Il servizio è riservato a chi ha almeno 14 anni.</p>
+
+      <h2>Dove li salviamo e per quanto</h2>
+      <p>Le email sono salvate su <strong>Supabase</strong>, in un server nell'Unione Europea (Francoforte). Dal sito si può solo aggiungere un'iscrizione: nessuno può leggere l'elenco se non il titolare. Le conserviamo fino al 31 dicembre 2027, poi le cancelliamo, o prima se ce lo chiedi.</p>
+      <p>Il sito è ospitato da <strong>Vercel</strong>, che per sicurezza registra dati tecnici delle visite (per esempio l'indirizzo IP) nei suoi log.</p>
+      <p>I font sono salvati sul nostro sito: le pagine non contattano Google o altri servizi esterni. Le mappe sono disegnate da noi con i dati di OpenStreetMap, senza chiamate esterne.</p>
+
+      <h2>I tuoi diritti</h2>
+      <p>Puoi chiedere di vedere, correggere o cancellare i tuoi dati, e ritirare il consenso, scrivendo al titolare. Se pensi che i tuoi dati siano trattati male puoi rivolgerti al Garante per la protezione dei dati personali (garanteprivacy.it).</p>
+
+      <p class="small muted">Versione del {dataLunga(SITO.versionePrivacy)}. Testo da far verificare a un avvocato prima della pubblicazione.</p>
+    </div>
+  </section>
+</Base>
+<style>.prose h2 { font-size: 1.5rem; margin-top: 2rem; } .prose h2:first-of-type { margin-top: 1rem; } .avviso { margin-bottom: 1.5rem; }</style>

@@ -1,0 +1,180 @@
+# Punti della mappa. Coordinate da OpenStreetMap (ODbL).
+# tipo: vista (dove guardare) | village | stazione | porto | area
+# Le schede "vista" hanno anche la valutazione della guida (vicino, visuale, sole, gradini, folla):
+# sono consigli nostri, non informazioni ufficiali.
+
+# ---------- Dove guardare ----------
+- id: rotonda-diaz
+  nome: Rotonda Diaz
+  tipo: vista
+  zona: Lungomare
+  lat: 40.83228
+  lon: 14.23033
+  testo: "Il cuore del lungomare. Nel 2026 qui c'era il palco principale, con la spiaggia della Mappatella davanti."
+  vicino: prima-fila
+  visuale: "Passaggi ravvicinati davanti alla scogliera e il palco con le premiazioni."
+  sole: "Pieno sole nel pomeriggio, guardando verso il mare: niente ombra sugli scogli."
+  gradini: "In piano."
+  folla: "La zona più affollata: nel 2026 file lunghe per le pedane."
+  servizi: "Nel 2026: maxischermi, cibo e negozio ufficiale nel villaggio."
+  arrivare: [san-pasquale, arco-mirelli, fun-chiaia]
+  fatti: [vil-2026-gratis, ped-2026, campo-2026]
+
+- id: villa-comunale
+  nome: Via Caracciolo e Villa Comunale
+  tipo: vista
+  zona: Lungomare
+  lat: 40.83090
+  lon: 14.22560
+  testo: "Il lungo tratto tra Mergellina e la Rotonda Diaz, dove nel 2027 sarà il Race Village."
+  vicino: prima-fila
+  visuale: "Lunga fila di posti sul mare: si segue la barca che passa lungo la costa."
+  sole: "Sole nel pomeriggio; un po' d'ombra solo sotto gli alberi della Villa, lontano dal mare."
+  gradini: "In piano."
+  folla: "Molta gente, ma più spazio che alla Rotonda."
+  servizi: "Nel 2026: schermi lungo la strada."
+  arrivare: [arco-mirelli, mergellina-l6, san-pasquale]
+  fatti: [vil-caracciolo, vil-2026-schermi]
+
+- id: via-partenope
+  nome: Via Partenope
+  tipo: vista
+  zona: Santa Lucia
+  lat: 40.83118
+  lon: 14.24399
+  testo: "Il lungomare degli alberghi, tra piazza Vittoria e Castel dell'Ovo."
+  vicino: vicino
+  visuale: "Vista aperta verso Posillipo e l'estremità est del campo."
+  sole: "Sole nel pomeriggio."
+  gradini: "In piano."
+  folla: "Molta gente, soprattutto verso piazza Vittoria."
+  servizi: "Bar e ristoranti lungo la strada."
+  arrivare: [chiaia-l6, municipio]
+  fatti: [ped-2027]
+
+- id: castel-dell-ovo
+  nome: Castel dell'Ovo e Borgo Marinari
+  tipo: vista
+  zona: Santa Lucia
+  lat: 40.82836
+  lon: 14.24848
+  testo: "Il castello sull'isolotto di Megaride segna un'estremità del campo di regata."
+  vicino: prima-fila
+  visuale: "Sull'acqua da tre lati: si vede bene la fine del campo."
+  sole: "Sole pieno, pochissima ombra."
+  gradini: "Si arriva a piedi dal ponte, in piano; dentro il castello ci sono rampe."
+  folla: "Spazio limitato sul borgo: si riempie presto."
+  servizi: "Ristoranti del Borgo Marinari."
+  arrivare: [chiaia-l6, municipio]
+  fatti: [campo-ovo]
+
+- id: monte-echia
+  nome: Monte Echia (Pizzofalcone)
+  tipo: vista
+  zona: Pizzofalcone
+  lat: 40.83123
+  lon: 14.24792
+  testo: "La collina sopra Castel dell'Ovo: un balcone sul golfo e sul campo di regata."
+  vicino: dall-alto
+  visuale: "Tutto il campo dall'alto, con il Vesuvio alle spalle."
+  sole: "Sole pieno nel pomeriggio."
+  gradini: "Salita ripida a piedi; c'è anche un ascensore pubblico."
+  folla: "Meno gente che sul lungomare (nostra stima)."
+  servizi: "Nessun servizio ufficiale."
+  arrivare: [chiaia-l6, municipio]
+  fatti: [vista-anfiteatro, echia-ascensore]
+
+- id: san-martino
+  nome: Belvedere di San Martino (Vomero)
+  tipo: vista
+  zona: Vomero
+  lat: 40.84411
+  lon: 14.24086
+  testo: "Accanto alla Certosa di San Martino e a Castel Sant'Elmo: la vista più ampia sul golfo."
+  vicino: dall-alto
+  visuale: "Tutto il golfo, ma le barche si vedono piccole: porta un binocolo."
+  sole: "Esposto, poca ombra."
+  gradini: "Si sale in funicolare e poi a piedi, con salite e scale."
+  folla: "Meno gente che sul lungomare (nostra stima)."
+  servizi: "Nessun servizio ufficiale."
+  arrivare: [fun-chiaia, fun-centrale]
+  fatti: [vista-anfiteatro]
+
+- id: capo-posillipo
+  nome: Belvedere di Capo Posillipo
+  tipo: vista
+  zona: Posillipo
+  lat: 40.80457
+  lon: 14.18513
+  testo: "Sulla punta di Posillipo, verso Nisida e Bagnoli."
+  vicino: dall-alto
+  visuale: "Vista verso ovest e sulle basi di Bagnoli; il campo resta lontano."
+  sole: "Sole di fronte nel tardo pomeriggio."
+  gradini: "Strade in salita, pochi mezzi."
+  folla: "Poca gente (nostra stima)."
+  servizi: "Nessun servizio ufficiale."
+  arrivare: [cavalleggeri]
+  fatti: [campo-posillipo]
+
+- id: parco-virgiliano
+  nome: Parco Virgiliano
+  tipo: vista
+  zona: Posillipo
+  lat: 40.79841
+  lon: 14.17933
+  testo: "Il parco in cima a Posillipo, con terrazze sul golfo, su Nisida e verso Capri."
+  vicino: dall-alto
+  visuale: "Panorama molto ampio; per il campo di regata serve un binocolo."
+  sole: "Alberi e un po' d'ombra nel parco."
+  gradini: "In cima alla collina: bus o auto, poi a piedi in piano nel parco."
+  folla: "Poca gente (nostra stima)."
+  servizi: "Nessun servizio ufficiale per le regate; il parco ha orari di apertura."
+  arrivare: [cavalleggeri]
+  fatti: [vista-anfiteatro]
+
+# ---------- Villaggi e zone dell'evento ----------
+- id: village-caracciolo
+  nome: Race Village di via Caracciolo
+  tipo: village
+  zona: Lungomare
+  lat: 40.83180
+  lon: 14.22900
+  testo: "Race Village 2027: tribune sui promontori, palco ufficiale, negozi e cibo."
+  fatti: [vil-caracciolo, vil-caracciolo-gratis]
+
+- id: village-bagnoli
+  nome: Bagnoli · basi delle squadre e Fan Zone
+  tipo: village
+  zona: Bagnoli
+  lat: 40.80700
+  lon: 14.16900
+  indicativo: true
+  testo: "Basi delle 7 squadre e AC Tech Fan Zone. Posizione indicativa: la mappa ufficiale non è ancora uscita."
+  fatti: [vil-bagnoli, vil-bagnoli-gratis, sq-basi]
+
+- id: countdown
+  nome: Orologio del conto alla rovescia
+  tipo: village
+  zona: Piazza Vittoria
+  lat: 40.83250
+  lon: 14.24130
+  testo: "Dal 22 settembre 2026 accanto al villaggio c'è l'orologio con il conto alla rovescia verso la Louis Vuitton Cup."
+  fatti: [vil-caracciolo]
+
+# ---------- Stazioni e porti ----------
+- { id: mergellina-l6, nome: "Mergellina", linea: "Metro Linea 6", tipo: stazione, lat: 40.83060, lon: 14.21737 }
+- { id: arco-mirelli, nome: "Arco Mirelli–Repubblica", linea: "Metro Linea 6", tipo: stazione, lat: 40.83254, lon: 14.22669 }
+- { id: san-pasquale, nome: "San Pasquale", linea: "Metro Linea 6", tipo: stazione, lat: 40.83362, lon: 14.23470 }
+- { id: chiaia-l6, nome: "Chiaia–Monte di Dio", linea: "Metro Linea 6", tipo: stazione, lat: 40.83555, lon: 14.24503 }
+- { id: municipio, nome: "Municipio", linea: "Metro Linea 1 e 6", tipo: stazione, lat: 40.83939, lon: 14.25284 }
+- { id: toledo, nome: "Toledo", linea: "Metro Linea 1", tipo: stazione, lat: 40.84244, lon: 14.24887 }
+- { id: mergellina-l2, nome: "Napoli Mergellina", linea: "Linea 2 (treni)", tipo: stazione, lat: 40.83157, lon: 14.21870 }
+- { id: piazza-amedeo, nome: "Piazza Amedeo", linea: "Linea 2 (treni)", tipo: stazione, lat: 40.83848, lon: 14.23312 }
+- { id: cavalleggeri, nome: "Cavalleggeri Aosta", linea: "Linea 2 (treni)", tipo: stazione, lat: 40.81988, lon: 14.18763 }
+- { id: bagnoli-l2, nome: "Bagnoli–Agnano Terme", linea: "Linea 2 (treni)", tipo: stazione, lat: 40.81942, lon: 14.16667 }
+- { id: bagnoli-cumana, nome: "Bagnoli–Città della Scienza", linea: "Cumana (EAV)", tipo: stazione, lat: 40.81510, lon: 14.16679 }
+- { id: fun-chiaia, nome: "Parco Margherita", linea: "Funicolare di Chiaia", tipo: stazione, lat: 40.83812, lon: 14.23470 }
+- { id: fun-centrale, nome: "Augusteo", linea: "Funicolare Centrale", tipo: stazione, lat: 40.83894, lon: 14.24769 }
+- { id: fun-mergellina, nome: "Mergellina", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82635, lon: 14.21941 }
+- { id: molo-beverello, nome: "Molo Beverello", linea: "Aliscafi e traghetti", tipo: porto, lat: 40.83735, lon: 14.25475 }
+- { id: molo-mergellina, nome: "Molo Mergellina", linea: "Aliscafi", tipo: porto, lat: 40.82885, lon: 14.22272 }

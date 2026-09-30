@@ -1,0 +1,64 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { getCollection } from 'astro:content';
+import { tutteLeFonti, ETICHETTA_STATO, SPIEGA_STATO } from '../lib/fatti';
+import { dataBreve } from '../lib/formato';
+
+const fonti = [...(await tutteLeFonti()).values()];
+const fatti = await getCollection('fatti');
+const uso = new Map<string, number>();
+for (const f of fatti) for (const r of f.data.fonti) uso.set(r.id, (uso.get(r.id) || 0) + 1);
+const conta = { confermato: 0, stampa: 0, atteso: 0 } as Record<string, number>;
+for (const f of fatti) conta[f.data.stato]++;
+const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati', 'Dati aperti'], ['altro', 'Altre fonti']] as const;
+---
+<Base title="Fonti e controlli" description="Tutte le fonti della guida all'America's Cup di Napoli 2027, con la data dell'ultimo controllo. Come distinguiamo le informazioni confermate, quelle della stampa e quelle non ancora uscite.">
+  <PageHead kicker="Trasparenza" title="Fonti e controlli" lead="Ogni informazione della guida è una scheda con la sua fonte, lo stato e la data in cui l'abbiamo controllata. Se manca la fonte, il sito non si pubblica." aggiornato="2026-09-30" />
+  <section class="section">
+    <div class="wrap split">
+      <div>
+        <h2>Come leggere le etichette</h2>
+        <dl class="righe">
+          {(['confermato', 'stampa', 'atteso'] as const).map(s => <><dt><span class={`chip chip--${s}`}>{ETICHETTA_STATO[s]}</span></dt><dd>{SPIEGA_STATO[s]}. <span class="mono small muted">{conta[s]} schede</span></dd></>)}
+          <dt><span class="chip chip--anno">Com'era nel 2026</span></dt><dd>Racconta la regata di prova di settembre 2026: è un riferimento, non una regola per il 2027.</dd>
+        </dl>
+      </div>
+      <div class="terzo">
+        <h3>Come controlliamo</h3>
+        <ul>
+          <li>Apriamo la pagina originale e la leggiamo per intero: se abbiamo letto solo un riassunto lo scriviamo.</li>
+          <li>Diamo la precedenza alle fonti ufficiali: organizzatori, squadre, Comune, ministeri.</li>
+          <li>Quando le fonti si contraddicono usiamo la più recente e lo diciamo.</li>
+          <li>Ogni scheda ha una data entro cui va ricontrollata: quando scade, il sito ci avvisa.</li>
+        </ul>
+        <p class="small">Hai trovato un errore? Scrivici: lo correggiamo e aggiorniamo la data.</p>
+      </div>
+    </div>
+  </section>
+  {GRUPPI.map(([tipo, titolo]) => {
+    const lista = fonti.filter(f => f.data.tipo === tipo).sort((a, b) => a.data.editore.localeCompare(b.data.editore));
+    return lista.length > 0 && (
+      <section class="section band">
+        <div class="wrap">
+          <h2>{titolo} <span class="mono small muted">({lista.length})</span></h2>
+          <div class="tabella-wrap">
+            <table>
+              <thead><tr><th scope="col">Fonte</th><th scope="col">Editore</th><th scope="col">Controllata</th><th scope="col" class="num">Schede</th></tr></thead>
+              <tbody>
+                {lista.map(f => (
+                  <tr>
+                    <td><a href={f.data.url} rel="noopener">{f.data.titolo}</a>{!f.data.letta && <><br /><span class="small muted">Letta solo nel riassunto</span></>}{f.data.nota && <><br /><span class="small muted">{f.data.nota}</span></>}</td>
+                    <td>{f.data.editore}</td>
+                    <td class="mono">{dataBreve(f.data.controllato)}</td>
+                    <td class="num mono">{uso.get(f.id) || '—'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    );
+  })}
+</Base>
