@@ -178,15 +178,15 @@ const CSS = `
 .b3-ui{position:absolute;inset:0;pointer-events:none}
 .b3-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 80% 75% at 50% 48%,rgba(0,0,0,0) 60%,rgba(0,8,14,.3) 100%)}
 .b3-label{position:absolute;left:0;top:0;display:flex;align-items:center;gap:8px;transition:opacity .3s;will-change:transform}
-.b3-label i{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#43D1C6;box-shadow:0 0 0 4px rgba(67,209,198,.28),0 0 18px #43D1C6;animation:b3p 1.6s ease-in-out infinite}
-.b3-label span{font:700 13px/1 'Barlow Condensed',sans-serif;letter-spacing:.1em;text-transform:uppercase;color:#E6F0F5;background:rgba(6,19,29,.78);border:1px solid rgba(67,209,198,.5);padding:5px 8px;border-radius:6px;white-space:nowrap}
-@keyframes b3p{50%{box-shadow:0 0 0 9px rgba(67,209,198,0),0 0 22px #43D1C6}}
-.b3-hint{position:absolute;left:50%;top:76px;transform:translateX(-50%);font:600 13px/1.2 'Source Sans 3',sans-serif;color:#E6F0F5;background:rgba(6,19,29,.72);border:1px solid rgba(120,190,220,.3);padding:7px 12px;border-radius:99px;transition:opacity .5s;white-space:nowrap}
+.b3-label i{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#2CC4D8;box-shadow:0 0 0 4px rgba(44,196,216,.28),0 0 18px #2CC4D8;animation:b3p 1.6s ease-in-out infinite}
+.b3-label span{font:600 12px/1 var(--f-mono,monospace);letter-spacing:.08em;text-transform:uppercase;color:#EDF3F5;background:rgba(9,13,16,.8);border:1px solid rgba(44,196,216,.5);padding:5px 8px;border-radius:3px;white-space:nowrap}
+@keyframes b3p{50%{box-shadow:0 0 0 9px rgba(44,196,216,0),0 0 22px #2CC4D8}}
+.b3-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font:600 13px/1.2 var(--f-sans,sans-serif);color:#EDF3F5;background:rgba(9,13,16,.72);border:1px solid rgba(120,190,220,.3);padding:7px 12px;border-radius:99px;transition:opacity .5s;white-space:nowrap}
 .b3-ui.used .b3-hint{opacity:0}
-.b3-ctrl{position:absolute;left:16px;top:76px;display:flex;gap:6px;pointer-events:auto}
-.b3-ctrl button{min-width:40px;height:36px;padding:0 10px;border-radius:99px;background:rgba(6,19,29,.78);border:1px solid rgba(120,190,220,.35);color:#E6F0F5;font:700 14px 'Barlow Condensed',sans-serif;letter-spacing:.06em}
-.b3-ctrl button:hover{border-color:#43D1C6}
-@media(max-width:899px){.b3-hint{top:118px}}
+.b3-ctrl{position:absolute;left:10px;top:10px;display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto}
+.b3-ctrl button{min-width:44px;height:44px;padding:0 10px;border-radius:3px;background:rgba(9,13,16,.78);border:1px solid rgba(120,190,220,.35);color:#EDF3F5;font:600 15px var(--f-mono,monospace);cursor:pointer}
+.b3-ctrl button:hover,.b3-ctrl button:focus-visible{border-color:#2CC4D8;outline:none}
+.b3-scala{position:absolute;right:10px;top:10px;font:600 11px var(--f-mono,monospace);letter-spacing:.06em;color:#EDF3F5;background:rgba(9,13,16,.72);padding:6px 8px;border-radius:3px;pointer-events:none}
 `;
 
 export { NOISE, waterVS, waterFS, cloudVS, cloudFS, landVS, landFS, sprayVS, sprayFS, CSS };

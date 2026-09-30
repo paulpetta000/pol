@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import { L, rng, canvasTex } from './model.js';
+import { rng, canvasTex } from './model.js';
 
 /* ---------- texture ---------- */
 function carbonTex() {
@@ -25,7 +25,8 @@ function noiseTex(seed, lo, hi) {
   return t;
 }
 // Livrea dello scafo: metà alta = lato +Z (prua a destra), metà bassa = lato −Z (prua a sinistra)
-function hullTexture(lv, girthAt, metalPass = false, q = 1) {
+// L: lunghezza dello scafo, per le proporzioni della sigla sulla fiancata
+function hullTexture(lv, girthAt, metalPass = false, q = 1, L = 11.8) {
   const mv = Math.round(lv.metal * 255), metal = `rgb(${mv},${mv},${mv})`, k = metalPass ? q / 2 : q;
   return canvasTex(2048 * k, 1024 * k, g => {
     g.scale(k, k);
