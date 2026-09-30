@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 30/09/2026 (Rilascio 2 costruito, in anteprima)_
+_Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -28,7 +28,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 costruito, in anteprima)_
   - **Punti da cui guardare**: tolti Parco Virgiliano e Capo Posillipo; aggiunti via Aniello Falcone e via Tasso, belvedere della Villa Floridiana, via Orazio, via Petrarca, terrazza di Sant'Antonio a Posillipo. 11 punti in 3 gruppi (Lungomare 1–4, Colline 5–8, Posillipo 9–11), ognuno con stato e fonte. Nuovo stato **"Segnalato da siti non ufficiali"**.
   - Più colore: fasce turchesi, piè di pagina blu notte, riga arancio-turchese-blu sotto i titoli, illustrazioni per argomento (taxi, metro, barca, calendario, mappa, binocolo, squadre).
 
-- **Rilascio 2 · "Spiegazioni e 3D" costruito** (30/09/2026) sul ramo `ccr-64b507b1-t4ste6`, solo anteprima (si pubblica su `main` dopo il tuo OK):
+- **Rilascio 2 · "Spiegazioni e 3D" pubblicato** (30/09/2026, dopo il tuo OK): costruito sul ramo `ccr-64b507b1-t4ste6` e portato su `main`. Contiene:
   - Nuova sezione **Capire la Coppa** (`/capire-la-coppa/`), sotto Squadre nel menu, collegata da home, pagina Squadre, piè di pagina e domande frequenti.
   - **La regata in 60 secondi**: disegno animato in 6 scene (campo e vento, partenza, bolina, poppa, precedenze e penalità, arrivo e come si vince) con play, pausa e scene. Con «riduci movimento» o senza JavaScript diventa 6 immagini ferme con didascalia. Modello in `src/lib/regata60.ts`; per i controlli `?r60t=43` apre il lettore fermo a quell'istante.
   - **Video**: 8 video del canale ufficiale, verificati con l'oEmbed di YouTube; copertina disegnata da noi e YouTube (youtube-nocookie) caricato solo al tocco. Privacy e note legali aggiornate. Elenco in `src/data/video.yaml`.
@@ -41,7 +41,6 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 costruito, in anteprima)_
   - **Controlli** (in locale, telefono simulato): Lighthouse 99–100 in prestazioni, accessibilità, best practice e SEO su home, Capire la Coppa, video, glossario, storia, quiz e barche; axe senza violazioni; nessun errore in console; «riduci movimento» provato; 1559 link interni tutti validi (`npm run check:links`, script aggiunto ora: prima mancava).
 
 ## Da fare
-- **Il tuo OK per pubblicare il Rilascio 2 su `main`** (dopo aver visto l'anteprima).
 - Rilasci 3-5 come da `PIANO.md`.
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo. Aggiornare le schede "Non ancora uscito".
 
@@ -49,7 +48,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 costruito, in anteprima)_
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1 e 1.1 online).
+4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1, 1.1 e 2 online).
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
 
 ## Note

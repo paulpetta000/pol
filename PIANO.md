@@ -1,6 +1,6 @@
 # PIANO — Guida alla 38ª America's Cup a Napoli (2027)
 
-_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilascio 1 costruito il 30/09/2026; Rilascio 2 costruito il 30/09/2026, in anteprima (vedi PROGRESS.md)_
+_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilasci 1 e 2 costruiti e pubblicati il 30/09/2026 (vedi PROGRESS.md)_
 
 ## Cosa cambierà per te
 
@@ -404,4 +404,4 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 
 ---
 
-**Rilascio 1 fatto. Rilascio 2 costruito, in attesa del tuo OK per la pubblicazione. Per il Rilascio 3 (Pronostici) usa effort alto.**
+**Rilasci 1 e 2 fatti e pubblicati. Per il Rilascio 3 (Pronostici) usa effort alto.**
