@@ -3,7 +3,7 @@ export const SITO = {
   nome: 'Napoli a Vela',
   // Identificatore breve (calendari .ics, nomi tecnici)
   sigla: 'napoli-a-vela',
-  sottotitolo: 'Guida non ufficiale 2027',
+  sottotitolo: 'Guida per il 2027',
   url: 'https://coppa-america-napoli.vercel.app',
   lingua: 'it',
   // Data dell'ultimo controllo generale delle informazioni

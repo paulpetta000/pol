@@ -2,7 +2,7 @@
 export type Pagina = { path: string; titolo: string; kicker: string };
 
 export const PAGINE: Pagina[] = [
-  { path: '/', titolo: "L'America's Cup è a Napoli", kicker: 'Guida non ufficiale 2027' },
+  { path: '/', titolo: "L'America's Cup è a Napoli", kicker: 'Guida per il 2027' },
   { path: '/come-vederla/', titolo: 'Come vedere la Coppa', kicker: 'Vederla' },
   { path: '/come-vederla/dal-lungomare/', titolo: 'Gratis dal lungomare', kicker: 'Vederla' },
   { path: '/come-vederla/dal-mare/', titolo: 'Dal mare, con la tua barca', kicker: 'Vederla' },

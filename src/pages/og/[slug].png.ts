@@ -37,7 +37,7 @@ export const GET: APIRoute = async ({ props }) => {
       { type: 'img', props: { src: LOGO, width: 64, height: 64 } },
       h('div', { display: 'flex', flexDirection: 'column' }, [
         h('div', { fontSize: 30, fontWeight: 800, letterSpacing: 1 }, SITO.nome.toUpperCase()),
-        h('div', { fontSize: 18, fontFamily: 'Plex', color: '#8C9CA6', letterSpacing: 3 }, 'GUIDA NON UFFICIALE 2027')
+        h('div', { fontSize: 18, fontFamily: 'Plex', color: '#8C9CA6', letterSpacing: 3 }, SITO.sottotitolo.toUpperCase())
       ])
     ]),
     h('div', { display: 'flex', flexDirection: 'column', gap: 18, marginBottom: 150 }, [
