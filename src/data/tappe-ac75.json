@@ -1,0 +1,106 @@
+[
+  {
+    "id": null,
+    "k": "Inizio",
+    "h": "Questo è un AC75",
+    "p": "La barca della Coppa, ricostruita da noi in 3D con le misure della regola di classe 2027. Usa le frecce: dalla testa dell'albero fino ai foil sott'acqua.",
+    "num": "20,7 m di scafo",
+    "fun": "è lungo quasi il doppio di un AC40, ma l'albero non è il doppio più alto: 26,5 m contro 17,9."
+  },
+  {
+    "id": "top",
+    "k": "In cima",
+    "h": "Un albero di 26,5 metri",
+    "p": "Forma del tubo e sartie sono uguali per tutte le squadre: lo stabilisce la regola di classe. L'albero è inclinato di 5 gradi verso poppa.",
+    "num": "26,5 m",
+    "fun": "è alto come un palazzo di otto piani, su una barca larga al massimo 5 metri."
+  },
+  {
+    "id": "main",
+    "k": "Il motore",
+    "h": "La randa a doppia pelle",
+    "p": "Due teli che avvolgono l'albero e formano un profilo spesso, come un'ala. In basso la vela si allarga fino a 7,8 metri dietro l'albero.",
+    "num": "2 teli, fino a 7,8 m",
+    "fun": "non c'è il boma: la base della vela si regola con meccanismi vicino alla coperta."
+  },
+  {
+    "id": "jib",
+    "k": "Davanti all'albero",
+    "h": "Il fiocco",
+    "p": "Un telo solo, attaccato allo strallo che arriva a 24 metri sull'albero. Le squadre preparano fiocchi di misure diverse, già misurati dai giudici.",
+    "num": "strallo a 24 m",
+    "fun": "si può scegliere quale fiocco usare fino al segnale di avviso della regata."
+  },
+  {
+    "id": "crew",
+    "k": "Chi c'è a bordo",
+    "h": "Cinque velisti e un ospite",
+    "p": "Sei pozzetti, tre per lato, tutti nella parte di poppa. Due timonieri, uno per lato; tre tra flight controller, regolatori e stratega; e un posto per un ospite, che non può aiutare.",
+    "num": "5 + 1",
+    "fun": "in ogni equipaggio c'è almeno una donna: è la prima volta nella storia della Coppa."
+  },
+  {
+    "id": "batt",
+    "k": "Dentro lo scafo",
+    "h": "Batterie al posto dei ciclisti",
+    "p": "Nel 2024 quattro atleti pedalavano per dare energia ai comandi. Dal 2027 un sistema a batterie dà la stessa potenza: ogni manovra consuma, e un velista tiene d'occhio l'energia.",
+    "num": "potenza di 4 ciclisti",
+    "fun": "a mano si governa solo il timone."
+  },
+  {
+    "id": "hull",
+    "k": "Il corpo",
+    "h": "Lo scafo",
+    "p": "Tutto in carbonio, lungo al massimo 20,70 metri e largo al massimo 5. Nel 2027 si usano scafi già costruiti per il 2021 o il 2024: la differenza la fanno foil, comandi e vele.",
+    "num": "6.435 kg in regata",
+    "fun": "il peso è fissato: se l'equipaggio pesa meno, si aggiunge zavorra."
+  },
+  {
+    "id": "wfoil",
+    "k": "Fuori dall'acqua",
+    "h": "Il foil alzato",
+    "p": "I foil sono due. Quello sopravento resta alzato e fa da contrappeso; a ogni virata si abbassa uno e si alza l'altro.",
+    "num": "ruota di oltre 100 gradi",
+    "fun": "il braccio è uguale per tutte le squadre e pesa 464 kg."
+  },
+  {
+    "id": "water",
+    "k": "Il pelo dell'acqua",
+    "h": "Vola!",
+    "p": "Con abbastanza velocità lo scafo si solleva: in acqua restano solo un foil e il timone. Meno attrito, più velocità.",
+    "num": "record: 55,6 nodi",
+    "fun": "più di 100 km/h: INEOS Britannia, Barcellona 2024."
+  },
+  {
+    "id": "arm",
+    "k": "Sott'acqua",
+    "h": "Il braccio del foil",
+    "p": "Ruota attorno a un perno sul fianco dello scafo, a 2,05 metri dalla mezzeria. Abbassato, porta l'ala a circa 5,2 metri sotto la linea di galleggiamento.",
+    "num": "5,2 m di pescaggio",
+    "fun": "il sistema che lo muove si chiama FCS, Foil Cant System."
+  },
+  {
+    "id": "wing",
+    "k": "Il cuore",
+    "h": "L'ala del foil",
+    "p": "Un'ala a T con un flap: muovendolo, il flight controller decide quanto la barca sale. Ogni squadra disegna le sue ali, ed è qui che si cerca la velocità.",
+    "num": "fino a 4,5 m di larghezza",
+    "fun": "ala e flap insieme pesano tra 550 e 580 kg."
+  },
+  {
+    "id": "rudder",
+    "k": "A poppa",
+    "h": "Il timone a T",
+    "p": "Anche il timone ha un'aletta orizzontale che tiene la barca in assetto. Sta tutto entro 1,5 metri dallo specchio di poppa.",
+    "num": "timone a T",
+    "fun": "i due timonieri, uno per lato, si parlano via radio."
+  },
+  {
+    "id": null,
+    "k": "Fine",
+    "h": "Ora sai com'è fatto",
+    "p": "Prova «Affiancate» per vedere AC75 e AC40 alla stessa scala. E quando guardi una regata, osserva i foil nelle virate: uno scende, l'altro sale.",
+    "num": "20,7 m contro 11,8",
+    "fun": "l'AC40 è la barca scuola per chi vuole arrivare sull'AC75."
+  }
+]

@@ -23,6 +23,11 @@ npm run build    # costruisce il sito in dist/
 | `src/data/faq.yaml` | Domande frequenti |
 | `src/data/risultati-2026.json` | Risultati ufficiali 2026 |
 | `src/config/sito.ts` | Nome del sito, titolare, date chiave |
+| `src/data/glossario.yaml` | Glossario di Capire la Coppa (ogni voce con fonte) |
+| `src/data/storia.yaml`, `src/data/albo.ts` | Tappe della storia e albo d'oro dal 1983 |
+| `src/data/quiz.yaml` | Domande del quiz, con spiegazione e scheda o fonte |
+| `src/data/video.yaml` | Video del canale ufficiale (codice YouTube, titolo nostro, durata) |
+| `src/data/tappe-ac75.json`, `src/data/tappe-ac40.json` | Le tappe del 3D |
 
 Stati delle schede: `confermato`, `stampa` (giornali), `segnalato` (blog e siti non ufficiali), `atteso`.
 
@@ -43,4 +48,6 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 - Logo: `src/lib/logo.mjs`; icone dell'app e favicon: `node scripts/icone.mjs`.
 - Un nuovo punto panoramico entra solo con due fonti indipendenti, o una fonte affidabile più i dati di OpenStreetMap; aggiungilo anche in `ORDINE_VISTE` (`src/lib/luoghi.ts`).
 - Database "Avvisami": `supabase/migrations/`.
-- Motore 3D dell'AC40: `src/lib/3d/`.
+- Motore 3D: `src/lib/3d/`. Le misure di AC75 e AC40 stanno nella tabella `CLASSI` di `src/lib/3d/b3/model.js`; `mount(stage, { classe: 'ac75' | 'ac40' | 'confronto' })`. Con `?b3q=low` si prova la qualità più bassa.
+- La regata in 60 secondi: `src/lib/regata60.ts` (percorsi, scritte, testi delle scene). Con `?r60t=43` il lettore si apre fermo a quell'istante.
+- Un nuovo video entra solo se è del canale ufficiale e si può incorporare: prova `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=CODICE` (deve rispondere 200).

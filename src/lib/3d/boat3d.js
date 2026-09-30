@@ -733,7 +733,7 @@ void main(){ float y = vP.y;
   }
   applyTier();
   addEventListener('resize', resize);
-  metti(opts.classe || opts.modo || 'ac40');
+  metti(opts.classe || 'ac75');
 
   const underFog = new THREE.FogExp2(0xffffff, 0.05); underFog.color.copy(UW_H);
   const clock = new THREE.Clock();

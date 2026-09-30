@@ -1,0 +1,87 @@
+---
+// AC75 e AC40 di fianco, in volo, alla stessa scala, con una persona. I profili vengono dallo stesso
+// modello del 3D (src/lib/3d/b3/model.js), quindi misure e proporzioni sono le stesse.
+import * as THREE from 'three';
+import { classe } from '../lib/3d/b3/model.js';
+
+type Punto = [number, number];
+const profilo = (nome: 'ac75' | 'ac40', ox: number) => {
+  const M = classe(nome), C = M.C, D = M.DECK;
+  const P = (x: number, y: number): Punto => [x + ox, y + D];
+  const us = Array.from({ length: 61 }, (_, i) => i / 60);
+  const sopra = us.map(u => P(M.ux(u), M.SHEER(u) + M.CROWN(u)));
+  const sotto = us.slice().reverse().map(u => P(M.ux(u), M.KEEL(u) - M.BUST(u)));
+  const top = M.mastAt(M.MAST_H);
+  const albero = [P(M.MBASE.x, M.MBASE.y), P(top.x, top.y)];
+  const v = new THREE.Vector3(), ts = Array.from({ length: 21 }, (_, i) => i / 20);
+  const inferitura = ts.map(t => { M.mainPoint(0, t, 0, v); return P(v.x, v.y); });
+  const balumina = ts.slice().reverse().map(t => { M.mainPoint(1, t, 0, v); return P(v.x, v.y); });
+  const fiocco = [P(M.TACK.x, M.TACK.y), P(M.JHEAD.x, M.JHEAD.y), P(M.JCLEW.x, M.JCLEW.y)];
+  // foil sottovento visto di lato: dal perno all'ala, e l'ala in sezione
+  const giu = M.ARM * Math.cos(M.CANT) + C.FOIL.bend[1] * Math.sin(M.CANT);
+  const perno = P(M.PIV_X, M.PIV_Y), ala = P(M.PIV_X, M.PIV_Y - giu);
+  const timone = [P(M.RX, 0), P(M.RX - 0.05, M.RUD_BOT)];
+  return { M, C, sopra, sotto, albero, vela: [...inferitura, ...balumina], fiocco, perno, ala, corda: C.FOIL.root, timone, testa: P(top.x, top.y), prua: P(M.L / 2, 0)[0], poppa: P(-M.L / 2, 0)[0] };
+};
+const a40 = profilo('ac40', 6.9), a75 = profilo('ac75', 27.2);
+const X0 = -1, X1 = 44, Y0 = -5.2, Y1 = 32.5;
+const f = (p: Punto) => `${p[0].toFixed(2)},${(-p[1]).toFixed(2)}`;
+const poli = (pts: Punto[]) => pts.map(f).join(' ');
+const barche = [
+  { p: a75, nome: 'AC75', lung: '20,7 m', alt: '26,5 m', cls: 'cs--75' },
+  { p: a40, nome: 'AC40', lung: '11,8 m', alt: '17,9 m', cls: 'cs--40' }
+];
+const PX = 41.2; // persona, in piedi su un pontile
+---
+<figure class="cs">
+  <svg viewBox={`${X0} ${-Y1} ${X1 - X0} ${Y1 - Y0}`} role="img" aria-labelledby="cs-t" focusable="false">
+    <title id="cs-t">AC75 e AC40 in volo, alla stessa scala: l'AC75 ha lo scafo di 20,7 metri e l'albero di 26,5; l'AC40 11,8 e 17,9. A destra una persona alta 1,8 metri.</title>
+    <rect x={X0} y="0" width={X1 - X0} height={-Y0} class="cs-mare" />
+    <line x1={X0} y1="0" x2={X1} y2="0" class="cs-acqua" />
+    {barche.map(({ p, nome, lung, alt, cls }) => (
+      <g class={cls}>
+        <polygon points={poli(p.vela)} class="cs-vela" />
+        <polygon points={poli(p.fiocco)} class="cs-vela cs-vela--f" />
+        <line x1={p.albero[0][0]} y1={-p.albero[0][1]} x2={p.albero[1][0]} y2={-p.albero[1][1]} class="cs-albero" />
+        <line x1={p.perno[0]} y1={-p.perno[1]} x2={p.ala[0]} y2={-p.ala[1]} class="cs-foil" />
+        <ellipse cx={p.ala[0]} cy={-p.ala[1]} rx={p.corda / 2} ry={p.corda / 7} class="cs-ala" />
+        <line x1={p.timone[0][0]} y1={-p.timone[0][1]} x2={p.timone[1][0]} y2={-p.timone[1][1]} class="cs-foil" />
+        <polygon points={poli([...p.sopra, ...p.sotto])} class="cs-scafo" />
+        <!-- quote: lunghezza sotto lo scafo, altezza accanto all'albero -->
+        <g class="cs-quota">
+          <path d={`M${p.poppa} 2.1 v1 M${p.prua} 2.1 v1 M${p.poppa} 2.6 H${p.prua}`} />
+          <text x={(p.poppa + p.prua) / 2} y="4.6" text-anchor="middle">{lung}</text>
+        </g>
+        <text x={p.testa[0] + 1.1} y={-p.testa[1] + 1.2} class="cs-nome">{nome}</text>
+        <text x={p.testa[0] + 1.1} y={-p.testa[1] + 3.2} class="cs-dato">albero {alt}</text>
+      </g>
+    ))}
+    <g class="cs-persona" transform={`translate(${PX} 0)`}>
+      <rect x="-1.4" y="-0.25" width="2.8" height="0.5" class="cs-pontile" />
+      <circle cx="0" cy="-1.62" r="0.14" />
+      <path d="M-0.2 -1.44 H0.2 L0.24 -0.82 H0.12 L0.1 -0.25 H-0.1 L-0.12 -0.82 H-0.24 Z" />
+      <text x="0" y="-2.5" text-anchor="middle" class="cs-dato">1,8 m</text>
+    </g>
+  </svg>
+  <figcaption class="small muted">In volo, alla stessa scala, disegnate con le misure delle regole di classe. La persona sul pontile è alta 1,8 metri.</figcaption>
+</figure>
+
+<style>
+  .cs { margin: 0 0 1.4rem; padding: .8rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+  .cs svg { width: 100%; height: auto; display: block; max-height: 70vh; }
+  .cs-mare { fill: var(--sea-soft); }
+  .cs-acqua { stroke: var(--sea); stroke-width: .12; }
+  .cs-scafo { stroke: var(--ink); stroke-width: .08; stroke-linejoin: round; }
+  .cs--75 .cs-scafo { fill: var(--accent); }
+  .cs--40 .cs-scafo { fill: var(--blu); }
+  .cs-vela { fill: color-mix(in srgb, var(--ink) 16%, transparent); stroke: var(--ink-2); stroke-width: .07; stroke-linejoin: round; }
+  .cs-vela--f { fill: color-mix(in srgb, var(--ink) 9%, transparent); }
+  .cs-albero { stroke: var(--ink); stroke-width: .28; stroke-linecap: round; }
+  .cs-foil { stroke: var(--ink); stroke-width: .22; stroke-linecap: round; }
+  .cs-ala { fill: var(--ink); }
+  .cs-quota path { stroke: var(--ink-2); stroke-width: .09; fill: none; }
+  .cs-quota text, .cs-dato { font: 600 1.55px var(--f-mono); fill: var(--ink-2); }
+  .cs-nome { font: 800 2.6px var(--f-sans); font-stretch: 78%; fill: var(--ink); }
+  .cs-persona { fill: var(--ink); }
+  .cs-pontile { fill: var(--line-2); }
+</style>

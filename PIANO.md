@@ -1,6 +1,6 @@
 # PIANO — Guida alla 38ª America's Cup a Napoli (2027)
 
-_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilascio 1 costruito il 30/09/2026 (vedi PROGRESS.md)_
+_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilascio 1 costruito il 30/09/2026; Rilascio 2 costruito il 30/09/2026, in anteprima (vedi PROGRESS.md)_
 
 ## Cosa cambierà per te
 
@@ -29,6 +29,8 @@ Si può togliere il blocco: nelle impostazioni dell'ambiente Claude (menu dell'a
 **Data di controllo di tutte le righe: 29-30/09/2026.**
 
 > **Aggiornamento 30/09/2026 (Rilascio 1).** La rete dell'ambiente ora apre americascup.com, comune.napoli.it e gli altri siti ufficiali. Le pagine principali sono state aperte e lette: date 2027, formato della Louis Vuitton Cup, Protocollo definitivo, diritti Rai, Race Village, basi di Bagnoli, tariffe dei taxi, orari ANM 2026, risultati ufficiali 2026. Nel sito i livelli A1/A2 sono diventati tre etichette: **Confermato** (fonte ufficiale o dati aperti, letta), **Dalla stampa**, **Non ancora uscito**, più **Com'era nel 2026** per i precedenti. Le schede sono in `src/data/fatti.yaml`. Restano chiusi guardiacostiera.gov.it (blocca i programmi automatici) e anm.it (la pagina non si carica).
+
+> **Aggiornamento 30/09/2026 (Rilascio 2).** Aperte e lette per intero le regole di classe ufficiali (AC75 Class Rule V3.05 e AC40 Class Rule V2.11, 26/06/2026) e la pagina ufficiale sulle barche: le misure dell'AC75 ora sono **confermate** (scafo al massimo 20,70 m, largo al massimo 5 m, albero 26,5 m, 6.435 kg in regata con equipaggio e ospite, 6 pozzetti). Il press kit ufficiale in italiano dà storia, albo d'oro e glossario. Le regole di regata del 2027 non sono ancora uscite: nel sito si usano quelle del 2024, segnate come tali. Note in `ricerca/2026-09-30-rilascio-2.json`.
 
 ### ✅ CONFERMATO (pagina ufficiale aperta davvero)
 
@@ -402,4 +404,4 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 
 ---
 
-**Rilascio 1 fatto. Prima del Rilascio 2 usa lo stesso effort (alto).**
+**Rilascio 1 fatto. Rilascio 2 costruito, in attesa del tuo OK per la pubblicazione. Per il Rilascio 3 (Pronostici) usa effort alto.**

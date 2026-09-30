@@ -4,93 +4,90 @@ import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
-import { getFatti } from '../../lib/fatti';
-import TAPPE from '../../data/tappe-ac40.json';
+import ConfrontoScala from '../../components/ConfrontoScala.astro';
+import { getFatti, getFonti } from '../../lib/fatti';
+import TAPPE40 from '../../data/tappe-ac40.json';
+import TAPPE75 from '../../data/tappe-ac75.json';
 
 const idsRegole = ['ac75-cinque', 'ac75-donna', 'ac75-nazionalita', 'ac75-batterie', 'ac75-ospite', 'ac75-una-nuova', 'cal-vento'];
-const idsMisure = ['ac75-misure', 'ac75-velocita', 'ac40-misure', 'ac40-uso'];
+const idsMisure = ['ac75-misure', 'ac75-peso', 'ac75-pozzetti', 'ac75-ruoli', 'ac75-foil', 'ac75-vele', 'ac75-velocita', 'ac40-misure', 'ac40-peso', 'ac40-ruoli', 'ac40-batteria', 'ac40-uso'];
 const f = await getFatti([...idsRegole, ...idsMisure]);
+const idsFonti = ['ac-regola-ac75', 'ac-regola-ac40', 'wiki-ac40', 'ac-barche', 'ac-press-kit', 'ac-38', 'ac-protocollo'];
+const fonti = new Map((await getFonti(idsFonti)).map(s => [s.id, s]));
+const BREVE: Record<string, string> = { 'ac-regola-ac75': 'Regola AC75', 'ac-regola-ac40': 'Regola AC40', 'wiki-ac40': 'Wikipedia', 'ac-barche': 'America\'s Cup', 'ac-press-kit': 'Press kit', 'ac-38': 'America\'s Cup', 'ac-protocollo': 'Protocollo' };
 const SQUADRE = [['lr', 'Luna Rossa'], ['nz', 'Team New Zealand'], ['gb', 'GB1'], ['al', 'Alinghi'], ['fr', 'La Roche-Posay'], ['us', 'ARC Team USA'], ['au', 'Team Australia']];
-// Scala: 1 m = 20 unità
-const S = 20;
+const MODI = [
+  { k: 'ac75', t: 'AC75', s: 'la barca della Coppa' },
+  { k: 'ac40', t: 'AC40', s: 'preliminari, Youth e Women\'s' },
+  { k: 'confronto', t: 'Affiancate', s: 'alla stessa scala' }
+] as const;
+const TOUR = [['ac75', TAPPE75], ['ac40', TAPPE40]] as const;
+const NUMERI = [
+  { t: 'Lunghezza dello scafo', a: 'fino a 20,70 m', b: '11,80 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
+  { t: 'Larghezza', a: 'fino a 5,00 m', b: '3,38 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
+  { t: 'Albero', a: '26,5 m', b: '17,92 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
+  { t: 'Peso in regata', a: '6.435 kg', b: 'circa 2.480 kg', f: ['ac-regola-ac75', 'ac-regola-ac40'] },
+  { t: 'A bordo', a: '5 velisti e un ospite', b: '4 velisti', f: ['ac-regola-ac75', 'ac-regola-ac40'] },
+  { t: 'Energia per i comandi', a: 'batterie con la potenza di 4 ciclisti', b: 'batteria al litio, fino a 8 ore', f: ['ac-press-kit', 'ac-barche'] },
+  { t: 'Foil', a: '2; ognuno ruota di oltre 100°, pescaggio circa 5,2 m', b: '2, uguali per tutti', f: ['ac-regola-ac75', 'ac-barche'] },
+  { t: 'Record di velocità', a: '55,6 nodi (102,97 km/h)', b: '—', f: ['ac-barche'] },
+  { t: 'Quante barche', a: 'una per squadra, con scafo del 2021 o del 2024', b: 'tutte uguali', f: ['ac-barche'] },
+  { t: 'Dove si usa nel 2027', a: 'Louis Vuitton Cup e Match', b: 'regate preliminari, Youth e Women\'s', f: ['ac-38', 'ac-protocollo'] }
+];
 ---
-<Base title="AC75 e AC40: le barche dell'America's Cup" description="Le barche dell'America's Cup 2027: l'AC75 con 5 velisti e almeno una donna, l'AC40 delle regate preliminari. Misure a confronto e modello 3D da esplorare.">
+<Base title="AC75 e AC40: le barche dell'America's Cup in 3D" description="Le barche dell'America's Cup 2027 in 3D e alla stessa scala: l'AC75 (scafo 20,7 m, albero 26,5 m, 5 velisti e un ospite) e l'AC40. Misure dalla regola di classe, con le fonti.">
   <PageHead kicker="Squadre · barche" title="Le barche" lead="Per il Match e la Louis Vuitton Cup si corre sugli AC75, monoscafi che volano sui foil. Youth, Women's e regate preliminari si corrono sugli AC40, più piccoli e tutti uguali." crumbs={[{ href: '/squadre/', label: 'Squadre' }]} aggiornato="2026-09-30" />
-
-  <section class="section" aria-labelledby="scala-h">
-    <div class="wrap">
-      <p class="kicker">In scala</p>
-      <h2 id="scala-h">AC75 contro AC40</h2>
-      <figure class="scala">
-        <svg viewBox={`0 0 ${25 * S + 40} 250`} role="img" aria-labelledby="scala-t">
-          <title id="scala-t">Confronto in scala: AC75 lungo circa 23 metri, AC40 lungo 11,8 metri, accanto a una persona di 1,8 metri</title>
-          <g transform="translate(20,0)">
-            <line x1="0" y1="112" x2={25 * S} y2="112" stroke="var(--line)" />
-            <g transform="translate(0,10)">
-              <path d={`M0 90 L${23 * S} 90 L${23 * S + 12} 78 L14 78 Z`} fill="var(--ink)" />
-              <path d={`M${11 * S} 78 V-6 L${16 * S} 78 Z`} fill="var(--accent)" opacity=".9" />
-              <text x="0" y="104" class="scala__t">AC75 · circa 23 m</text>
-            </g>
-            <line x1="0" y1="230" x2={25 * S} y2="230" stroke="var(--line)" />
-            <g transform="translate(0,120)">
-              <path d={`M0 92 L${11.8 * S} 92 L${11.8 * S + 8} 84 L10 84 Z`} fill="var(--ink)" />
-              <path d={`M${5.6 * S} 84 L${5.6 * S} ${84 - 17.9 * S * 0.3} L${8.6 * S} 84 Z`} fill="var(--sea)" opacity=".9" />
-              <text x="0" y="106" class="scala__t">AC40 · 11,8 m</text>
-              <g transform={`translate(${14 * S},${92 - 1.8 * S})`} fill="var(--ink-2)">
-                <circle cx="6" cy="4" r="4" /><rect x="3" y="9" width="6" height="18" rx="2" /><rect x="3" y="24" width="2.5" height="12" /><rect x="6.5" y="24" width="2.5" height="12" />
-              </g>
-              <text x={14 * S + 16} y="90" class="scala__p">persona · 1,8 m</text>
-            </g>
-          </g>
-        </svg>
-        <figcaption class="small muted">Lunghezze in scala; le vele sono disegnate più basse per stare nel riquadro.</figcaption>
-      </figure>
-      <Fatti f={f} ids={idsMisure} />
-    </div>
-  </section>
-
-  <section class="section band" aria-labelledby="reg-h">
-    <div class="wrap">
-      <p class="kicker">Cosa cambia nel 2027</p>
-      <h2 id="reg-h">Le regole dell'AC75</h2>
-      <div class="cifre">
-        <div><span class="num">5</span><span>velisti a bordo</span></div>
-        <div><span class="num">1+</span><span>donna in ogni equipaggio</span></div>
-        <div><span class="num">0</span><span>ciclisti: energia dalle batterie</span></div>
-        <div><span class="num">6,5–23</span><span>nodi di vento per partire</span></div>
-      </div>
-      <Fatti f={f} ids={idsRegole} />
-    </div>
-  </section>
 
   <section class="section" aria-labelledby="x3d-h">
     <div class="wrap">
       <p class="kicker">Esplora</p>
-      <h2 id="x3d-h">L'AC40 in 3D, pezzo per pezzo</h2>
-      <p>Ricostruzione <strong>non ufficiale</strong>, fatta con le misure pubbliche della classe. I colori delle squadre sono indicativi. Il modello si carica solo quando lo avvii (circa 150 KB compressi).</p>
+      <h2 id="x3d-h">Le barche in 3D, pezzo per pezzo</h2>
+      <p>Ricostruzioni <strong>non ufficiali</strong>, fatte da noi con le misure delle regole di classe. I colori delle squadre sono indicativi. Il modello si carica solo quando lo avvii (circa 150 KB compressi).</p>
       <div class="x3d" data-x3d>
+        <div class="x3d__scelta" role="group" aria-label="Che cosa vedere in 3D">
+          {MODI.map((m, i) => (
+            <button type="button" class="x3d__modo" data-modo={m.k} aria-pressed={i === 0 ? 'true' : 'false'}>
+              <span class="x3d__modo-t">{m.t}</span><span class="x3d__modo-s">{m.s}</span>
+            </button>
+          ))}
+        </div>
         <div class="x3d__stage" data-stage>
           <div class="x3d__poster">
             <Icon name="cubo" size={44} />
             <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
-            <p class="small" data-msg>Trascina per ruotare la barca.</p>
+            <p class="small" data-msg>Trascina per ruotare, due dita per ingrandire.</p>
           </div>
         </div>
         <div class="x3d__panel">
-          <div class="x3d__nav">
-            <button type="button" class="icon-btn" data-prev aria-label="Tappa precedente"><Icon name="freccia" class="flip" /></button>
-            <span class="mono" data-pos aria-live="polite">1 / {TAPPE.length}</span>
-            <button type="button" class="icon-btn" data-next aria-label="Tappa successiva"><Icon name="freccia" /></button>
-          </div>
-          {TAPPE.map((t, i) => (
-            <article class="x3d__tappa" data-tappa={i} data-part={t.id ?? ''} hidden={i > 0}>
-              <p class="kicker">{t.k}</p>
-              <h3>{t.h}</h3>
-              <p>{t.p}</p>
-              <p class="x3d__num num">{t.num}</p>
-              <p class="small muted">Curiosità: {t.fun}</p>
-            </article>
+          {TOUR.map(([k, T]) => (
+            <div class="x3d__tour" data-tour={k} hidden={k !== 'ac75'}>
+              <div class="x3d__nav">
+                <button type="button" class="icon-btn" data-prev aria-label="Tappa precedente"><Icon name="freccia" class="flip" /></button>
+                <span class="mono" data-pos aria-live="polite">1 / {T.length}</span>
+                <button type="button" class="icon-btn" data-next aria-label="Tappa successiva"><Icon name="freccia" /></button>
+              </div>
+              {T.map((t, i) => (
+                <article class="x3d__tappa" data-tappa={i} data-part={t.id ?? ''} hidden={i > 0}>
+                  <p class="kicker">{t.k}</p>
+                  <h3>{t.h}</h3>
+                  <p>{t.p}</p>
+                  <p class="x3d__num num">{t.num}</p>
+                  <p class="small muted">Curiosità: {t.fun}</p>
+                </article>
+              ))}
+            </div>
           ))}
+          <div class="x3d__tour" data-tour="confronto" hidden>
+            <p class="kicker">Stessa scala</p>
+            <h3>AC75 e AC40 in fila</h3>
+            <p>Davanti l'AC75, dietro l'AC40, alla stessa distanza da te: le proporzioni sono quelle vere. Nei pozzetti ci sono persone della stessa altezza.</p>
+            <p class="x3d__num num">20,7 m contro 11,8 · albero 26,5 m contro 17,9</p>
+            <div class="x3d__viste" role="group" aria-label="Punto di vista">
+              <button type="button" class="btn btn--small" data-vista="0">Di lato</button>
+              <button type="button" class="btn btn--small" data-vista="1">Di tre quarti</button>
+              <button type="button" class="btn btn--small" data-vista="2">Dall'alto</button>
+            </div>
+          </div>
           <label class="x3d__team">
             <span class="mono small">Colori</span>
             <select data-team>{SQUADRE.map(([k, n]) => <option value={k}>{n}</option>)}</select>
@@ -100,26 +97,87 @@ const S = 20;
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <section class="section band" aria-labelledby="scala-h">
+    <div class="wrap">
+      <p class="kicker">In scala</p>
+      <h2 id="scala-h">AC75 contro AC40</h2>
+      <ConfrontoScala />
+      <h3 id="num-h">I numeri a confronto</h3>
+      <div class="tabella-wrap">
+        <table aria-labelledby="num-h">
+          <thead><tr><th scope="col"><span class="visually-hidden">Misura</span></th><th scope="col">AC75</th><th scope="col">AC40</th></tr></thead>
+          <tbody>
+            {NUMERI.map(r => (
+              <tr>
+                <th scope="row">{r.t}<span class="num-fonte">Fonte: {r.f.map((id, i) => { const s = fonti.get(id)!; return <>{i > 0 && ' · '}<a href={s.data.url} rel="noopener">{BREVE[id]}</a></>; })}</span></th>
+                <td>{r.a}</td>
+                <td>{r.b}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="small muted" style="margin-top:.6rem">Le misure dell'AC75 sono i massimi della regola di classe 2027. Lunghezza, larghezza e albero dell'AC40 non sono nella sua regola di classe: vengono da Wikipedia.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="mis-h">
+    <div class="wrap">
+      <p class="kicker">Com'è fatto</p>
+      <h2 id="mis-h">Le misure, con la fonte</h2>
+      <Fatti f={f} ids={idsMisure} />
+    </div>
+  </section>
+
+  <section class="section band" aria-labelledby="reg-h">
+    <div class="wrap">
+      <p class="kicker">Cosa cambia nel 2027</p>
+      <h2 id="reg-h">Le regole dell'AC75</h2>
+      <div class="cifre">
+        <div><span class="num">5</span><span>velisti a bordo, più un ospite</span></div>
+        <div><span class="num">1+</span><span>donna in ogni equipaggio</span></div>
+        <div><span class="num">0</span><span>ciclisti: energia dalle batterie</span></div>
+        <div><span class="num">6,5–23</span><span>nodi di vento per partire</span></div>
+      </div>
+      <Fatti f={f} ids={idsRegole} />
+      <p style="margin-top:1.2rem"><a class="btn" href="/capire-la-coppa/"><Icon name="play" size={20} /> Come si regata: la regata in 60 secondi</a></p>
+    </div>
+  </section>
+
+  <FontiPagina fatti={f.values()} extra={[...fonti.values()]} />
 </Base>
 
 <script>
   const box = document.querySelector<HTMLElement>('[data-x3d]');
   if (box) {
-    const tappe = [...box.querySelectorAll<HTMLElement>('[data-tappa]')];
-    const pos = box.querySelector('[data-pos]')!;
-    const team = box.querySelector<HTMLSelectElement>('[data-team]')!;
     const REL: Record<string, string[]> = { top: ['main'], deck: ['main'], crew: ['hull'], batt: ['hull'], water: ['hull', 'arm', 'wing', 'rudder'] };
-    let i = 0;
+    const team = box.querySelector<HTMLSelectElement>('[data-team]')!;
+    const bottoni = [...box.querySelectorAll<HTMLButtonElement>('[data-modo]')];
+    const tours = [...box.querySelectorAll<HTMLElement>('[data-tour]')];
+    let modo = 'ac75', i = 0;
     let api: any = null;
+    const tour = () => box.querySelector<HTMLElement>(`[data-tour="${modo}"]`)!;
     const vai = (n: number) => {
+      const t = tour(), tappe = [...t.querySelectorAll<HTMLElement>('[data-tappa]')];
+      if (!tappe.length) { api?.view(Math.max(0, n), 0); api?.active(null, []); return; }
       i = Math.max(0, Math.min(tappe.length - 1, n));
-      tappe.forEach((t, k) => (t.hidden = k !== i));
-      pos.textContent = `${i + 1} / ${tappe.length}`;
+      tappe.forEach((x, k) => (x.hidden = k !== i));
+      t.querySelector('[data-pos]')!.textContent = `${i + 1} / ${tappe.length}`;
       if (api) { const id = tappe[i].dataset.part || null; api.view(i, 0); api.active(id, id ? REL[id] || [] : []); }
     };
-    box.querySelector('[data-prev]')!.addEventListener('click', () => vai(i - 1));
-    box.querySelector('[data-next]')!.addEventListener('click', () => vai(i + 1));
+    const scegli = (m: string) => {
+      modo = m; i = 0;
+      bottoni.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modo === m)));
+      tours.forEach(t => (t.hidden = t.dataset.tour !== m));
+      if (api) api.modello(m);
+      vai(0);
+    };
+    bottoni.forEach(b => b.addEventListener('click', () => scegli(b.dataset.modo!)));
+    tours.forEach(t => {
+      t.querySelector('[data-prev]')?.addEventListener('click', () => vai(i - 1));
+      t.querySelector('[data-next]')?.addEventListener('click', () => vai(i + 1));
+    });
+    box.querySelectorAll<HTMLButtonElement>('[data-vista]').forEach(b => b.addEventListener('click', () => vai(Number(b.dataset.vista))));
     team.addEventListener('change', () => api?.livery(team.value));
     box.querySelector('[data-avvia]')!.addEventListener('click', async () => {
       const stage = box.querySelector<HTMLElement>('[data-stage]')!;
@@ -128,39 +186,45 @@ const S = 20;
       try {
         const m = await import('../../lib/3d/boat3d.js');
         stage.querySelector('.x3d__poster')?.remove();
-        api = m.mount(stage, { team: team.value });
+        api = m.mount(stage, { team: team.value, classe: modo });
         api.start();
         vai(i);
         const io = new IntersectionObserver(([e]) => (e.isIntersecting ? api.start() : api.stop()));
         io.observe(stage);
       } catch {
-        msg.textContent = 'Il 3D non funziona su questo dispositivo: le spiegazioni qui accanto restano disponibili.';
+        msg.textContent = 'Il 3D non funziona su questo dispositivo: le spiegazioni qui accanto e il disegno in scala qui sotto restano disponibili.';
       }
     });
   }
 </script>
 
 <style>
-  .scala { margin: 0 0 1.4rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
-  .scala svg { width: 100%; height: auto; display: block; }
-  .scala__t { font: 700 15px var(--f-sans); fill: var(--ink); }
-  .scala__p { font: 500 12px var(--f-mono); fill: var(--ink-3); }
   .cifre { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; margin-bottom: 1.4rem; }
   .cifre > div { background: var(--surface); padding: 1rem; display: flex; flex-direction: column; gap: .2rem; }
   .cifre .num { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 600; color: var(--accent); line-height: 1; }
   @media (min-width: 760px) { .cifre { grid-template-columns: repeat(4, 1fr); } }
+  .num-fonte { display: block; margin-top: .2rem; font: 400 .74rem var(--f-sans); color: var(--ink-3); }
+  .num-fonte a { color: var(--ink-2); }
   .x3d { display: grid; gap: 1rem; margin-top: 1rem; }
-  @media (min-width: 900px) { .x3d { grid-template-columns: 1.4fr 1fr; align-items: stretch; } }
+  @media (min-width: 900px) { .x3d { grid-template-columns: 1.4fr 1fr; align-items: stretch; } .x3d__scelta { grid-column: 1 / -1; } }
+  .x3d__scelta { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; }
+  .x3d__modo { display: flex; flex-direction: column; align-items: flex-start; gap: .1rem; min-height: 52px; padding: .5rem .7rem; border: 2px solid var(--line-2); border-radius: var(--r); background: var(--surface); color: var(--ink); font: inherit; cursor: pointer; text-align: left; }
+  .x3d__modo:hover { border-color: var(--ink); }
+  .x3d__modo[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+  .x3d__modo-t { font-weight: 800; font-stretch: 80%; font-size: 1.15rem; line-height: 1; }
+  .x3d__modo-s { font-size: .78rem; color: var(--ink-3); line-height: 1.2; }
   .x3d__stage { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(var(--sea-soft), var(--map-sea)); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
   @media (min-width: 900px) { .x3d__stage { aspect-ratio: 16 / 11; } }
   .x3d__stage :global(canvas) { display: block; width: 100% !important; height: 100% !important; }
   .x3d__poster { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .8rem; text-align: center; padding: 1rem; color: var(--ink-2); }
   .x3d__poster > :global(.icon) { color: var(--accent); }
   .x3d__panel { display: flex; flex-direction: column; gap: .6rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
+  .x3d__tour { display: flex; flex-direction: column; gap: .6rem; }
   .x3d__nav { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }
   .x3d__nav :global(.flip) { transform: scaleX(-1); }
-  .x3d__tappa h3 { font-size: 1.5rem; }
+  .x3d__tappa h3, .x3d__tour > h3 { font-size: 1.5rem; }
   .x3d__num { font-size: 1.15rem; color: var(--accent); font-weight: 600; }
+  .x3d__viste { display: flex; flex-wrap: wrap; gap: .4rem; }
   .x3d__team { display: flex; gap: .6rem; align-items: center; margin-top: auto; padding-top: .6rem; border-top: 1px solid var(--line); }
   .x3d__team select { min-height: 44px; font: inherit; padding: .3rem .5rem; border: 2px solid var(--line-2); border-radius: var(--r); background: var(--bg); color: var(--ink); }
 </style>
