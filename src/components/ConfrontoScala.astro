@@ -52,8 +52,9 @@ const PX = 41.2; // persona, in piedi su un pontile
           <path d={`M${p.poppa} 2.1 v1 M${p.prua} 2.1 v1 M${p.poppa} 2.6 H${p.prua}`} />
           <text x={(p.poppa + p.prua) / 2} y="4.6" text-anchor="middle">{lung}</text>
         </g>
-        <text x={p.testa[0] + 1.1} y={-p.testa[1] + 1.2} class="cs-nome">{nome}</text>
-        <text x={p.testa[0] + 1.1} y={-p.testa[1] + 3.2} class="cs-dato">albero {alt}</text>
+        <!-- scritte a destra della testa d'albero, abbastanza lontane da non toccare il fiocco -->
+        <text x={p.testa[0] + 1.8} y={-p.testa[1] + 1.2} class="cs-nome">{nome}</text>
+        <text y={-p.testa[1] + 3.2} class="cs-dato"><tspan x={p.testa[0] + 1.8}>albero</tspan><tspan x={p.testa[0] + 1.8} dy="1.8">{alt}</tspan></text>
       </g>
     ))}
     <g class="cs-persona" transform={`translate(${PX} 0)`}>

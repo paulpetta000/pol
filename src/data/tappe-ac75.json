@@ -11,7 +11,7 @@
     "id": "top",
     "k": "In cima",
     "h": "Un albero di 26,5 metri",
-    "p": "Forma del tubo e sartie sono uguali per tutte le squadre: lo stabilisce la regola di classe. L'albero è inclinato di 5 gradi verso poppa.",
+    "p": "L'albero è alto 26,5 metri dal punto di base ed è inclinato di 5 gradi verso poppa: sono misure fissate dalla regola di classe.",
     "num": "26,5 m",
     "fun": "è alto come un palazzo di otto piani, su una barca larga al massimo 5 metri."
   },
@@ -21,15 +21,15 @@
     "h": "La randa a doppia pelle",
     "p": "Due teli che avvolgono l'albero e formano un profilo spesso, come un'ala. In basso la vela si allarga fino a 7,8 metri dietro l'albero.",
     "num": "2 teli, fino a 7,8 m",
-    "fun": "non c'è il boma: la base della vela si regola con meccanismi vicino alla coperta."
+    "fun": "a metà altezza la randa è larga tra 5 e 5,6 metri, in cima tra 2 e 3."
   },
   {
     "id": "jib",
     "k": "Davanti all'albero",
     "h": "Il fiocco",
-    "p": "Un telo solo, attaccato allo strallo che arriva a 24 metri sull'albero. Le squadre preparano fiocchi di misure diverse, già misurati dai giudici.",
+    "p": "Un telo solo, attaccato allo strallo: lo strallo arriva a 24 metri sull'albero e parte dalla coperta 8,2 metri davanti all'albero.",
     "num": "strallo a 24 m",
-    "fun": "si può scegliere quale fiocco usare fino al segnale di avviso della regata."
+    "fun": "misurato dall'angolo di poppa fino allo strallo, il fiocco è largo al massimo 7,05 metri."
   },
   {
     "id": "crew",
@@ -37,7 +37,7 @@
     "h": "Cinque velisti e un ospite",
     "p": "Sei pozzetti, tre per lato, tutti nella parte di poppa. Due timonieri, uno per lato; tre tra flight controller, regolatori e stratega; e un posto per un ospite, che non può aiutare.",
     "num": "5 + 1",
-    "fun": "in ogni equipaggio c'è almeno una donna: è la prima volta nella storia della Coppa."
+    "fun": "in ogni equipaggio deve esserci almeno una donna: è una delle novità del 2027."
   },
   {
     "id": "batt",
@@ -45,7 +45,7 @@
     "h": "Batterie al posto dei ciclisti",
     "p": "Nel 2024 quattro atleti pedalavano per dare energia ai comandi. Dal 2027 un sistema a batterie dà la stessa potenza: ogni manovra consuma, e un velista tiene d'occhio l'energia.",
     "num": "potenza di 4 ciclisti",
-    "fun": "a mano si governa solo il timone."
+    "fun": "la batteria principale pesa 125 kg; il sistema che muove i foil 315 kg."
   },
   {
     "id": "hull",
@@ -93,7 +93,7 @@
     "h": "Il timone a T",
     "p": "Anche il timone ha un'aletta orizzontale che tiene la barca in assetto. Sta tutto entro 1,5 metri dallo specchio di poppa.",
     "num": "timone a T",
-    "fun": "i due timonieri, uno per lato, si parlano via radio."
+    "fun": "anche in larghezza: al massimo 1,5 metri per lato dalla mezzeria."
   },
   {
     "id": null,
@@ -101,6 +101,6 @@
     "h": "Ora sai com'è fatto",
     "p": "Prova «Affiancate» per vedere AC75 e AC40 alla stessa scala. E quando guardi una regata, osserva i foil nelle virate: uno scende, l'altro sale.",
     "num": "20,7 m contro 11,8",
-    "fun": "l'AC40 è la barca scuola per chi vuole arrivare sull'AC75."
+    "fun": "sugli AC40 si corrono le regate preliminari, la Youth e la Women's America's Cup."
   }
 ]

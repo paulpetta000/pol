@@ -5,6 +5,10 @@ import Icon from '../../components/Icon.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import ConfrontoScala from '../../components/ConfrontoScala.astro';
+import { Picture } from 'astro:assets';
+import posterAc75 from '../../assets/barche/ac75.jpg';
+import posterAc40 from '../../assets/barche/ac40.jpg';
+import posterConfronto from '../../assets/barche/confronto.jpg';
 import { getFatti, getFonti } from '../../lib/fatti';
 import TAPPE40 from '../../data/tappe-ac40.json';
 import TAPPE75 from '../../data/tappe-ac75.json';
@@ -17,9 +21,9 @@ const fonti = new Map((await getFonti(idsFonti)).map(s => [s.id, s]));
 const BREVE: Record<string, string> = { 'ac-regola-ac75': 'Regola AC75', 'ac-regola-ac40': 'Regola AC40', 'wiki-ac40': 'Wikipedia', 'ac-barche': 'America\'s Cup', 'ac-press-kit': 'Press kit', 'ac-38': 'America\'s Cup', 'ac-protocollo': 'Protocollo' };
 const SQUADRE = [['lr', 'Luna Rossa'], ['nz', 'Team New Zealand'], ['gb', 'GB1'], ['al', 'Alinghi'], ['fr', 'La Roche-Posay'], ['us', 'ARC Team USA'], ['au', 'Team Australia']];
 const MODI = [
-  { k: 'ac75', t: 'AC75', s: 'la barca della Coppa' },
-  { k: 'ac40', t: 'AC40', s: 'preliminari, Youth e Women\'s' },
-  { k: 'confronto', t: 'Affiancate', s: 'alla stessa scala' }
+  { k: 'ac75', t: 'AC75', s: 'la barca della Coppa', img: posterAc75, alt: 'La nostra ricostruzione 3D dell\'AC75 in volo sul foil sottovento' },
+  { k: 'ac40', t: 'AC40', s: 'preliminari, Youth e Women\'s', img: posterAc40, alt: 'La nostra ricostruzione 3D dell\'AC40 in volo sul foil sottovento' },
+  { k: 'confronto', t: 'Affiancate', s: 'alla stessa scala', img: posterConfronto, alt: 'AC75 e AC40 ricostruiti in 3D, uno dietro l\'altro alla stessa scala' }
 ] as const;
 const TOUR = [['ac75', TAPPE75], ['ac40', TAPPE40]] as const;
 const NUMERI = [
@@ -53,9 +57,13 @@ const NUMERI = [
         </div>
         <div class="x3d__stage" data-stage>
           <div class="x3d__poster">
-            <Icon name="cubo" size={44} />
-            <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
-            <p class="small" data-msg>Trascina per ruotare, due dita per ingrandire.</p>
+            {MODI.map((m, i) => (
+              <Picture src={m.img} alt={m.alt} widths={[480, 800, 1200]} sizes="(min-width: 1240px) 700px, (min-width: 900px) 57vw, calc(100vw - 32px)" formats={['avif', 'webp']} quality={55} class="x3d__img" data-poster={m.k} hidden={i > 0} />
+            ))}
+            <div class="x3d__avvio">
+              <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
+              <p class="small" data-msg aria-live="polite"></p>
+            </div>
           </div>
         </div>
         <div class="x3d__panel">
@@ -80,7 +88,7 @@ const NUMERI = [
           <div class="x3d__tour" data-tour="confronto" hidden>
             <p class="kicker">Stessa scala</p>
             <h3>AC75 e AC40 in fila</h3>
-            <p>Davanti l'AC75, dietro l'AC40, alla stessa distanza da te: le proporzioni sono quelle vere. Nei pozzetti ci sono persone della stessa altezza.</p>
+            <p>Davanti l'AC75, dietro l'AC40. Nella vista di lato sono alla stessa distanza da te, quindi le proporzioni sono quelle vere. Nei pozzetti ci sono persone della stessa altezza.</p>
             <p class="x3d__num num">20,7 m contro 11,8 · albero 26,5 m contro 17,9</p>
             <div class="x3d__viste" role="group" aria-label="Punto di vista">
               <button type="button" class="btn btn--small" data-vista="0">Di lato</button>
@@ -169,6 +177,7 @@ const NUMERI = [
       modo = m; i = 0;
       bottoni.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.modo === m)));
       tours.forEach(t => (t.hidden = t.dataset.tour !== m));
+      box.querySelectorAll<HTMLElement>('[data-poster]').forEach(im => (im.hidden = im.dataset.poster !== m));
       if (api) api.modello(m);
       vai(0);
     };
@@ -185,14 +194,14 @@ const NUMERI = [
       msg.textContent = 'Carico il modello…';
       try {
         const m = await import('../../lib/3d/boat3d.js');
-        stage.querySelector('.x3d__poster')?.remove();
         api = m.mount(stage, { team: team.value, classe: modo });
+        stage.querySelector('.x3d__poster')?.remove();
         api.start();
         vai(i);
         const io = new IntersectionObserver(([e]) => (e.isIntersecting ? api.start() : api.stop()));
         io.observe(stage);
       } catch {
-        msg.textContent = 'Il 3D non funziona su questo dispositivo: le spiegazioni qui accanto e il disegno in scala qui sotto restano disponibili.';
+        msg.textContent = 'Il 3D non funziona su questo dispositivo: restano l\'immagine, le spiegazioni delle tappe e il disegno in scala.';
       }
     });
   }
@@ -216,8 +225,12 @@ const NUMERI = [
   .x3d__stage { position: relative; aspect-ratio: 1 / 1; background: linear-gradient(var(--sea-soft), var(--map-sea)); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
   @media (min-width: 900px) { .x3d__stage { aspect-ratio: 16 / 11; } }
   .x3d__stage :global(canvas) { display: block; width: 100% !important; height: 100% !important; }
-  .x3d__poster { position: absolute; inset: 0; display: grid; place-content: center; justify-items: center; gap: .8rem; text-align: center; padding: 1rem; color: var(--ink-2); }
-  .x3d__poster > :global(.icon) { color: var(--accent); }
+  /* il pulsante sta in alto a destra, sul cielo: la barca resta tutta visibile */
+  .x3d__poster { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; padding: .8rem; }
+  .x3d__poster :global(.x3d__img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .x3d__avvio { position: relative; display: grid; justify-items: end; gap: .5rem; max-width: min(24rem, 100%); }
+  .x3d__avvio .small { margin: 0; }
+  .x3d__avvio .small:not(:empty) { padding: .4rem .7rem; border-radius: var(--r); background: rgb(6 14 20 / .8); color: #eef3f5; }
   .x3d__panel { display: flex; flex-direction: column; gap: .6rem; padding: 1rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); }
   .x3d__tour { display: flex; flex-direction: column; gap: .6rem; }
   .x3d__nav { display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); padding-bottom: .5rem; }

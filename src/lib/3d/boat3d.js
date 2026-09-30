@@ -35,15 +35,15 @@ const VIEWS = {
     { t: [0, 2.8, 0], d: 28, az: 90, el: 4 },
     { t: [0.7, 6.4, 4.6], d: 14, az: 40, el: 12 },
     { t: [-1.5, 0.5, -1.8], d: 20, az: -60, el: 3 },
-    { t: [0.7, -0.6, -2.4], d: 10, az: -70, el: -4 },
-    { t: [0.6, -1.7, -2.3], d: 7, az: -40, el: 10 },
-    { t: [-10.3, -1.0, 0], d: 6.5, az: -140, el: 2 },
+    { t: [0.7, -0.7, -3.4], d: 8, az: -70, el: -4 },
+    { t: [0.7, -1.4, -3.6], d: 7.5, az: -40, el: 7 },
+    { t: [-10.3, -1.1, -0.1], d: 5, az: -140, el: 5 },
     { t: [0, 11, 0], d: 42, az: 215, el: 10 }
   ],
   confronto: [
-    { t: [-7.5, 9, 0], d: 58, az: -90, el: 4 },
-    { t: [-7.5, 8, 0], d: 58, az: -42, el: 14 },
-    { t: [-7.5, 6, 0], d: 62, az: 90, el: 30 }
+    { t: [-7.5, 12.5, 0], d: 61, az: -90, el: 4 },
+    { t: [-7.5, 11, 0], d: 64, az: -42, el: 14 },
+    { t: [-7.5, 9, 0], d: 68, az: 90, el: 30 }
   ]
 };
 
@@ -688,11 +688,13 @@ void main(){ float y = vP.y;
     const a = VW[Math.min(i, VW.length - 1)], b = VW[Math.min(i + 1, VW.length - 1)];
     goal = { t: a.t.map((v, k) => v + (b.t[k] - v) * t), d: Math.exp(Math.log(a.d) + (Math.log(b.d) - Math.log(a.d)) * t), az: lerpA(a.az, b.az, t), el: a.el + (b.el - a.el) * t };
   };
+  // punto dell'etichetta: centro della parte (senza i cavi delle batterie); con la camera sott'acqua, solo la parte immersa
   const anchorOf = id => {
     if (!principale) return null;
     if (id === 'water') return principale.src[0].clone();
-    const arr = principale.parts[id]; if (!arr || !arr.length) return null;
+    const arr = (principale.parts[id] || []).filter(m => m.userData.mk !== 'hv'); if (!arr.length) return null;
     const box = new THREE.Box3(); arr.forEach(m => box.expandByObject(m));
+    if (goal.t[1] + goal.d * Math.sin(rad(goal.el)) < 0 && box.min.y < -0.1) box.max.y = Math.min(box.max.y, -0.05);
     return box.getCenter(V3());
   };
   let labelId = null, labelAt = null;
@@ -807,7 +809,8 @@ void main(){ float y = vP.y;
   };
 
   const api = {
-    view: setView,
+    // ogni tappa riparte dalla sua inquadratura, anche se prima si è ruotato o ingrandito
+    view(i, t) { setView(i, t); userYaw = 0; userZoom = 1; },
     active(id, rel) { setActive(id, rel); setLabel(id && LABELS[id] ? id : null); },
     altitude: () => view.t.y,
     livery,
