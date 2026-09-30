@@ -6,12 +6,13 @@ import Spot from '../../components/Spot.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
+import { vistaOrdinata } from '../../lib/luoghi';
 import { getFatti, tutteLeFonti } from '../../lib/fatti';
 
 const ids = ['campo-mappa-atteso', 'vil-caracciolo', 'vil-bagnoli', 'sq-basi', 'linea6-fermate', 'echia-ascensore'];
 const f = await getFatti(ids);
 const luoghi = await getCollection('luoghi');
-const viste = luoghi.filter(l => l.data.tipo === 'vista');
+const viste = await vistaOrdinata();
 const stazioni = luoghi.filter(l => l.data.tipo === 'stazione' || l.data.tipo === 'porto');
 const osm = (await tutteLeFonti()).get('osm')!;
 ---

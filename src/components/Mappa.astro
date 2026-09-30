@@ -2,6 +2,7 @@
 // Mappa disegnata dai dati OpenStreetMap (src/data/mappa.json), senza servizi esterni:
 // funziona anche offline. I punti vengono da src/data/luoghi.yaml.
 import { getCollection } from 'astro:content';
+import { vistaOrdinata } from '../lib/luoghi';
 import M from '../data/mappa.json';
 
 interface Props { vista?: 'panoramica' | 'lungomare' | 'bagnoli'; anteprima?: boolean; id?: string }
@@ -19,12 +20,13 @@ const VISTE = {
 };
 
 const luoghi = (await getCollection('luoghi')).map(l => ({ ...l, xy: P(l.data.lat, l.data.lon) }));
-const viste = luoghi.filter(l => l.data.tipo === 'vista');
+const P2 = P;
+const viste = (await vistaOrdinata()).map(l => ({ ...l, xy: P2(l.data.lat, l.data.lon) }));
 const stazioni = luoghi.filter(l => l.data.tipo === 'stazione' || l.data.tipo === 'porto');
 const village = luoghi.filter(l => l.data.tipo === 'village');
 
 // Campo di regata: zona INDICATIVA davanti al lungomare (la mappa ufficiale 2027 non è ancora uscita)
-const campo = poly([[40.8272, 14.2462], [40.8284, 14.2330], [40.8272, 14.2230], [40.8222, 14.2135], [40.8150, 14.2140], [40.8168, 14.2300], [40.8196, 14.2465]]);
+const campo = poly([[40.8282, 14.2468], [40.8296, 14.2400], [40.8296, 14.2320], [40.8281, 14.2278], [40.8252, 14.2255], [40.8208, 14.2190], [40.8160, 14.2205], [40.8180, 14.2340], [40.8212, 14.2470]]);
 const caracciolo = M.roadLabels.find(r => r.name === 'Via Francesco Caracciolo');
 const numero = new Map(viste.map((v, i) => [v.id, i + 1]));
 ---
@@ -59,7 +61,7 @@ const numero = new Map(viste.map((v, i) => [v.id, i + 1]));
 
     <g class="mappa__campo">
       <path d={campo} fill={`url(#${id}-tratteggio)`} stroke="var(--accent)" stroke-width="3" stroke-dasharray="12 8" />
-      {!anteprima && (() => { const [x, y] = P(40.8215, 14.2290); return (
+      {!anteprima && (() => { const [x, y] = P(40.8238, 14.2300); return (
         <text x={x} y={y} class="mappa__lab mappa__lab--campo" text-anchor="middle">
           <tspan x={x}>CAMPO DI REGATA</tspan><tspan x={x} dy="26">zona indicativa</tspan>
         </text>); })()}
@@ -67,20 +69,20 @@ const numero = new Map(viste.map((v, i) => [v.id, i + 1]));
 
     {caracciolo && <path d={caracciolo.d} fill="none" stroke="var(--accent)" stroke-width="16" stroke-opacity=".45" stroke-linecap="round" />}
 
-    {!anteprima && M.roadLabels.filter(r => r.len > 120).map((r, i) => (
+    {!anteprima && M.roadLabels.filter(r => ['Via Posillipo', 'Via Coroglio'].includes(r.name)).map((r, i) => (
       <>
         <path id={`${id}-rl${i}`} d={r.d} fill="none" />
         <text class="mappa__via"><textPath href={`#${id}-rl${i}`} startOffset="50%" text-anchor="middle">{r.name}</textPath></text>
       </>
     ))}
-    {!anteprima && M.places.map(p => <text x={p.x} y={p.y} class="mappa__zona" text-anchor="middle">{p.name.toUpperCase()}</text>)}
+    {!anteprima && M.places.filter(p => !['Pizzofalcone', 'San Ferdinando'].includes(p.name)).map(p => <text x={p.x} y={p.y} class="mappa__zona" text-anchor="middle">{p.name.toUpperCase()}</text>)}
 
     {village.map(v => {
       const [x, y] = v.xy;
       return v.data.indicativo
         ? <g><circle cx={x} cy={y} r="70" fill={`url(#${id}-tratteggio)`} stroke="var(--accent)" stroke-width="3" stroke-dasharray="10 7" />{!anteprima && <text x={x} y={y + 105} class="mappa__lab" text-anchor="middle">Basi e Fan Zone</text>}</g>
         : v.id === 'countdown' ? null
-        : !anteprima && <text x={x} y={y - 26} class="mappa__lab mappa__lab--village" text-anchor="middle">RACE VILLAGE</text>;
+        : !anteprima && <text x={x} y={y - 48} class="mappa__lab mappa__lab--village" text-anchor="middle">RACE VILLAGE</text>;
     })}
 
     {stazioni.map(s => {
@@ -100,10 +102,12 @@ const numero = new Map(viste.map((v, i) => [v.id, i + 1]));
       const [x, y] = v.xy;
       const n = numero.get(v.id);
       return (
-        <a href={anteprima ? undefined : `#luogo-${v.id}`} class="mappa__pt" aria-label={`${n}. ${v.data.nome}`}>
-          <circle cx={x} cy={y} r="19" fill="var(--accent)" stroke="var(--surface)" stroke-width="4" />
-          <text x={x} y={y + 7.5} text-anchor="middle" class="mappa__n">{n}</text>
-        </a>
+        anteprima
+          ? <g><circle cx={x} cy={y} r="19" fill="var(--accent)" stroke="var(--surface)" stroke-width="4" /><text x={x} y={y + 7.5} text-anchor="middle" class="mappa__n">{n}</text></g>
+          : <a href={`#luogo-${v.id}`} class="mappa__pt" aria-label={`${n}. ${v.data.nome}`}>
+              <circle cx={x} cy={y} r="19" fill="var(--accent)" stroke="var(--surface)" stroke-width="4" />
+              <text x={x} y={y + 7.5} text-anchor="middle" class="mappa__n">{n}</text>
+            </a>
       );
     })}
   </svg>
@@ -131,15 +135,16 @@ const numero = new Map(viste.map((v, i) => [v.id, i + 1]));
 
 <style>
   .mappa { margin: 0; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--map-sea); position: relative; }
-  .mappa svg { display: block; width: 100%; height: auto; aspect-ratio: 980 / 700; max-height: 76vh; }
+  .mappa svg { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; max-height: 76vh; }
+  @media (min-width: 760px) { .mappa svg { aspect-ratio: 980 / 700; max-height: none; } .mappa:not(.mappa--anteprima) { max-width: 60rem; } }
   .mappa--anteprima svg { aspect-ratio: 16 / 10; }
   .mappa__bar { display: flex; gap: 0; border-bottom: 1px solid var(--line); background: var(--surface); overflow-x: auto; }
   .mappa__bar button { flex: 1 0 auto; min-height: 44px; padding: .5rem .9rem; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink-2); font: inherit; font-weight: 700; font-stretch: 88%; cursor: pointer; }
   .mappa__bar button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
-  .mappa__via { font: 600 19px var(--f-sans); fill: var(--map-label); paint-order: stroke; stroke: var(--map-land); stroke-width: 5px; letter-spacing: .02em; }
+  .mappa__via { font: 600 20px var(--f-sans); fill: var(--map-label); paint-order: stroke; stroke: var(--map-land); stroke-width: 5px; letter-spacing: .02em; }
   .mappa__zona { font: 600 22px var(--f-mono); fill: var(--ink-3); letter-spacing: .14em; paint-order: stroke; stroke: var(--map-land); stroke-width: 5px; }
-  .mappa__lab { font: 800 22px var(--f-sans); font-stretch: 80%; fill: var(--accent); paint-order: stroke; stroke: var(--map-sea); stroke-width: 6px; letter-spacing: .04em; }
-  .mappa__lab--campo tspan + tspan { font: 500 17px var(--f-mono); fill: var(--ink-2); letter-spacing: .06em; }
+  .mappa__lab { font: 800 24px var(--f-sans); font-stretch: 80%; fill: var(--accent); paint-order: stroke; stroke: var(--map-sea); stroke-width: 6px; letter-spacing: .04em; }
+  .mappa__lab--campo tspan + tspan { font: 500 18px var(--f-mono); fill: var(--ink-2); letter-spacing: .06em; }
   .mappa__lab--village { stroke: var(--map-land); }
   .mappa__n { font: 600 21px var(--f-mono); fill: var(--accent-ink); pointer-events: none; }
   .mappa__m { font: 700 14px var(--f-sans); fill: #fff; pointer-events: none; }

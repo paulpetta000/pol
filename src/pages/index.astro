@@ -86,7 +86,7 @@ const podio = R.napoli.classifica.slice(0, 3);
         <p>{f.get('vista-vicino')!.data.testo} Otto punti da cui guardare, con sole, gradini e folla: scegli il tuo.</p>
         <p class="btn-row"><a class="btn btn--primary" href="/napoli/mappa/"><Icon name="mappa" size={20} /> Apri la mappa</a><a class="btn" href="/come-vederla/dal-lungomare/">Consigli per il lungomare</a></p>
       </div>
-      <a href="/napoli/mappa/" class="map-link" aria-label="Apri la mappa completa">
+      <a href="/napoli/mappa/" class="map-link"><span class="visually-hidden">Apri la mappa completa</span>
         <Mappa anteprima id="mappa-home" />
       </a>
     </div>

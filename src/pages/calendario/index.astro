@@ -34,6 +34,7 @@ const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
   <section class="section">
     <div class="wrap">
       <Timeline2027 />
+      <h2 class="visually-hidden">Le fasi, una per una</h2>
       <ol class="agenda">
         {EVENTI.map(e => (
           <li class={`agenda__i agenda__i--${e.gara}`}>

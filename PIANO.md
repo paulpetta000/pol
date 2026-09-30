@@ -1,11 +1,11 @@
 # PIANO — Guida alla 38ª America's Cup a Napoli (2027)
 
-_Fase 1 · scritto il 30/09/2026 · stato: in attesa del tuo OK_
+_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilascio 1 costruito il 30/09/2026 (vedi PROGRESS.md)_
 
 ## Cosa cambierà per te
 
 1. Il sito diventa una **guida a più pagine** per maggio-luglio 2027. La home "Cosa vuoi fare?" porta a ogni risposta in 1 tocco, al massimo 2.
-2. **Nuovo design**, chiaro e scuro. Scegli tu tra 2 stili: consiglio "Golfo", caldo e napoletano. Veloce sul telefono, funziona anche senza rete sul lungomare affollato.
+2. **Nuovo design**, chiaro e scuro. Scelto lo stile B **"Regata"** (30/09/2026). Veloce sul telefono, funziona anche senza rete sul lungomare affollato.
 3. **Ogni informazione ha fonte e data di controllo.** Oggi biglietti, tribune, ospitalità e regole per le barche 2027 **non sono ancora usciti**: il sito lo dirà chiaramente e offrirà "Avvisami".
 4. Passiamo ad **Astro**, uno strumento per siti con molte pagine e più lingue. I **risultati 2026** e il **3D** si salvano e migliorano.
 5. **Pubblicazione automatica** da GitHub a Vercel: devi collegarli una volta (5 minuti).
@@ -27,6 +27,8 @@ _Fase 1 · scritto il 30/09/2026 · stato: in attesa del tuo OK_
 Si può togliere il blocco: nelle impostazioni dell'ambiente Claude (menu dell'ambiente nella barra del titolo della sessione → *Edit* → *Network access*) aggiungi `americascup.com`, `comune.napoli.it`, `guardiacostiera.gov.it` e `anm.it`, oppure scegli un accesso più ampio. Al Rilascio 1 riapro le pagine e porto i dati a "Confermato".
 
 **Data di controllo di tutte le righe: 29-30/09/2026.**
+
+> **Aggiornamento 30/09/2026 (Rilascio 1).** La rete dell'ambiente ora apre americascup.com, comune.napoli.it e gli altri siti ufficiali. Le pagine principali sono state aperte e lette: date 2027, formato della Louis Vuitton Cup, Protocollo definitivo, diritti Rai, Race Village, basi di Bagnoli, tariffe dei taxi, orari ANM 2026, risultati ufficiali 2026. Nel sito i livelli A1/A2 sono diventati tre etichette: **Confermato** (fonte ufficiale o dati aperti, letta), **Dalla stampa**, **Non ancora uscito**, più **Com'era nel 2026** per i precedenti. Le schede sono in `src/data/fatti.yaml`. Restano chiusi guardiacostiera.gov.it (blocca i programmi automatici) e anm.it (la pagina non si carica).
 
 ### ✅ CONFERMATO (pagina ufficiale aperta davvero)
 
@@ -267,7 +269,7 @@ Sotto: prossimo appuntamento, "Avvisami quando escono i biglietti", anteprima de
 
 Regole valide per tutte e due: niente gradienti viola, niente emoji al posto delle icone, niente griglie di schede tutte uguali (alterno liste, mappe, linee del tempo, blocchi grandi e piccoli). Font salvati sul nostro sito, tutti con licenza libera. Tema chiaro e scuro studiati uno per uno, non uno il "negativo" dell'altro. Tutte le animazioni si fermano se sul telefono è attiva l'opzione "riduci movimento". Ho controllato i colori: tutti i testi superano il contrasto minimo richiesto dalle regole di accessibilità (WCAG AA). Il giallo/oro serve solo per decorazioni, mai per il testo sul chiaro.
 
-### A · "Golfo" (consigliata)
+### A · "Golfo" (non scelta)
 *Come una bella guida di viaggio stampata: carta calda, titoli eleganti, i colori di Napoli.*
 
 | | |
@@ -280,7 +282,7 @@ Regole valide per tutte e due: niente gradienti viola, niente emoji al posto del
 | **Animazioni** | Lente e morbide: onde che si muovono piano, la barca che si alza sui foil mentre scorri, contenuti che compaiono con dolcezza |
 | **Tono dei testi** | Caldo e pratico, come un amico napoletano che ti accompagna. Esempio: "Da Castel dell'Ovo sei in prima fila. Porta acqua e cappello: a luglio il sole picchia." |
 
-### B · "Regata"
+### B · "Regata" (scelta il 30/09/2026)
 *Come la grafica TV delle regate e gli strumenti di bordo: preciso, veloce, numeri in primo piano.*
 
 | | |
@@ -293,7 +295,7 @@ Regole valide per tutte e due: niente gradienti viola, niente emoji al posto del
 | **Animazioni** | Rapide e precise: numeri che scorrono, rotte che si disegnano, frecce del vento |
 | **Tono dei testi** | Diretto ed energico, prima i numeri. Esempio: "Partenza 14:10. Vento 12 nodi. Punto migliore: Rotonda Diaz." |
 
-**Il mio consiglio: A.** Il pubblico è fatto di turisti e famiglie, e A è più accogliente. Nessun altro sito sull'evento ha un'identità "napoletana" come questa, e il tema chiaro si legge meglio al sole. Da B prenderei la precisione per calendario, risultati e 3D. Il sito attuale è già in stile "B scuro": A è un salto netto.
+**Il mio consiglio era A; hai scelto B, ed è lo stile del Rilascio 1.** Il pubblico è fatto di turisti e famiglie, e A è più accogliente. Nessun altro sito sull'evento ha un'identità "napoletana" come questa, e il tema chiaro si legge meglio al sole. Da B prenderei la precisione per calendario, risultati e 3D. Il sito attuale è già in stile "B scuro": A è un salto netto.
 
 ## 6. Funzioni
 
@@ -400,4 +402,4 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 
 ---
 
-**Prima del Rilascio 1 usa: `/effort ultracode off` (resta max)**
+**Rilascio 1 fatto. Prima del Rilascio 2 usa lo stesso effort (alto).**

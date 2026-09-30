@@ -8,13 +8,14 @@ import Mappa from '../../components/Mappa.astro';
 import Avvisami from '../../components/Avvisami.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
+import { vistaOrdinata } from '../../lib/luoghi';
 import { getFatti } from '../../lib/fatti';
 
 const ids2027 = ['vista-vicino', 'vista-anfiteatro', 'vil-caracciolo', 'vil-bagnoli', 'vil-bagnoli-gratis', 'vil-caracciolo-gratis', 'vil-formato-stampa', 'vil-due', 'vil-orari-2027', 'ped-2027', 'campo-ovo', 'campo-posillipo', 'campo-mappa-atteso'];
 const ids2026 = ['vil-2026-gratis', 'vil-2026-orari', 'vil-2026-show', 'vil-2026-schermi', 'vil-2026-radio', 'ped-2026', 'vil-2026-folla', 'vil-2026-sicurezza', 'campo-2026'];
 const idsRegole = ['regole-pubblico-atteso', 'droni-2026', 'caldo-bollettini', 'vento-golfo'];
 const f = await getFatti([...ids2027, ...ids2026, ...idsRegole]);
-const viste = (await getCollection('luoghi')).filter(l => l.data.tipo === 'vista');
+const viste = await vistaOrdinata();
 ---
 <Base title="Vedere l'America's Cup gratis dal lungomare" description="Dove mettersi per vedere gratis le regate dell'America's Cup 2027 a Napoli: via Caracciolo, Rotonda Diaz, Castel dell'Ovo, Monte Echia, San Martino. Sole, gradini, folla e cosa portare.">
   <PageHead kicker="Vederla · gratis" title="Dal lungomare" lead="Il campo di regata è a pochi metri dalla riva: dal lungomare vedi gli AC75 passare a tutta velocità, dalle colline tutto il golfo. Qui trovi dove metterti, quando arrivare e cosa portare." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
