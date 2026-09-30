@@ -26,7 +26,7 @@ _Ultimo aggiornamento: 30/09/2026_
 ## Cose che devi fare tu
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
-3. **Nome ed email del titolare** per privacy e note legali (in `src/config/sito.ts`, campo `titolare`). Finché mancano, le pagine mostrano "[da completare]": vanno inseriti **prima di pubblicare**.
+3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
 4. Dopo il tuo OK: unire il ramo in `main` per pubblicare il Rilascio 1.
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
 

@@ -6,10 +6,10 @@ export const SITO = {
   lingua: 'it',
   // Data dell'ultimo controllo generale delle informazioni
   aggiornato: '2026-09-30',
-  // Titolare del sito (pagina privacy): da completare prima della pubblicazione
+  // Titolare del sito (pagine privacy, note legali, accessibilità)
   titolare: {
-    nome: '',
-    email: ''
+    nome: 'Enrico Licenziati',
+    email: 'napoliavela.guida@gmail.com'
   },
   // Supabase: chiave pubblica ("publishable"), pensata per stare nel browser.
   // La tabella accetta solo nuove iscrizioni: non si può leggere nulla.
