@@ -7,7 +7,13 @@ _Ultimo aggiornamento: 30/09/2026_
 - Ricerca 2027 salvata in `ricerca/` (date, luoghi, biglietti, mare, trasporti, squadre, video, misure, legale, tecnica).
 - Analisi del sito attuale, controllo di Vercel, GitHub e Supabase (sola lettura), Lighthouse di partenza (95/94/96/100 in locale).
 
+## Fatto il 30/09/2026 (dopo l'approvazione)
+- Creato il ramo `main` su GitHub (copia dello stato attuale).
+- Creato il progetto Supabase gratuito `coppa-america-napoli` (regione Francoforte, eu-central-1, id `hcicqbcmtfksraabphie`). Nessuna tabella ancora.
+- Collegamento GitHub → Vercel verificato: funziona (anteprime automatiche).
+
 ## Da fare
+- Su Vercel: impostare `main` come Production Branch (Settings → Git).
 - Rilascio 1: Base (nuova struttura in Astro, design, contenuti principali, privacy, SEO, "Avvisami", app installabile).
 - Rilasci 2-5 come da PIANO.md.
 
@@ -20,7 +26,7 @@ _Ultimo aggiornamento: 30/09/2026_
 ## Cose che devi fare tu
 1. ~~Rispondere alle 3 domande~~ (fatto). Dare l'OK esplicito a partire con il Rilascio 1.
 2. Collegare GitHub a Vercel (Settings → Git → Connect Git Repository → paulpetta000/pol).
-3. Dare l'OK a creare il ramo `main`.
+3. ~~OK al ramo main~~ (fatto). Impostare `main` come Production Branch su Vercel.
 4. Nome ed email del titolare per la pagina privacy.
 5. Facoltativo: sbloccare la rete dell'ambiente per americascup.com, comune.napoli.it, guardiacostiera.gov.it, anm.it.
 6. Controllare i 10 link elencati in PIANO.md (punto 1).
