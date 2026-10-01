@@ -42,6 +42,10 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 3. Se la fonte è nuova, aggiungila in `fonti.yaml`.
 4. `npm run build` per controllare.
 
+## Skill nel progetto
+
+- `.claude/skills/ui-ux-pro-max/`: skill di design UI/UX di NextLevelBuilder (MIT), versione 2.13.0, commit `09170ee` di `nextlevelbuilder/ui-ux-pro-max-skill`. Codice letto il 01/10/2026: funziona in locale, senza rete e senza hook. I test della skill sono stati tolti. Per i controlli: `python3 .claude/skills/ui-ux-pro-max/scripts/search.py "<domanda>" --domain ux`. Per un nuovo aspetto del sito non usare `--design-system` così com'è: il sito ha già il suo stile (Regata).
+
 ## Altro
 
 - Mappa: `scripts/mappa/` (dati © OpenStreetMap, ODbL).
