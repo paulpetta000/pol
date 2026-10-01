@@ -1,6 +1,6 @@
 # PIANO — Guida alla 38ª America's Cup a Napoli (2027)
 
-_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilasci 1 e 2 costruiti e pubblicati il 30/09/2026 (vedi PROGRESS.md)_
+_Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilasci 1 e 2 costruiti e pubblicati il 30/09/2026, Rilascio 2.1 il 01/10/2026 (vedi PROGRESS.md)_
 
 ## Cosa cambierà per te
 
@@ -363,6 +363,23 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 - Unico dato: il soprannome. Cancellazione dei dati del gioco qualche mese dopo la Coppa, più un tasto "Cancella i miei dati".
 - ⚠️ Supabase **mette in pausa i progetti gratuiti** dopo 7 giorni con poca attività (fonte ufficiale, letta). Soluzione gratuita: un controllo automatico giornaliero che lo tiene attivo. Soluzione a pagamento: Pro a 25 $/mese nei mesi di gara.
 
+**Regolamento del gioco: testo pronto per il sito** (bozza del 01/10/2026, da pubblicare con il Rilascio 3)
+
+1. **Chi organizza.** Enrico Licenziati, titolare di Napoli a Vela (napoliavela.guida@gmail.com).
+2. **Che cos'è.** Un gioco gratuito di pronostici tra amici sulle regate della Louis Vuitton 38ª America's Cup (Napoli, 2027). Nessun premio in denaro o in natura, nessuna scommessa, nessun acquisto: si gioca solo per la classifica. Il gioco non è organizzato né approvato dagli organizzatori dell'evento o dalle squadre.
+3. **Chi può giocare.** Chi ha almeno 14 anni. Un solo soprannome a persona.
+4. **Come si gioca.** Scegli un soprannome (meglio non il tuo nome vero; niente parole offensive), crei una lega e mandi il codice agli amici, oppure entri con il codice di qualcun altro. Il telefono ti riconosce da solo con un'identità anonima; con il codice personale segreto ritrovi i tuoi pronostici su un altro telefono.
+5. **Cosa si pronostica.** Chi vince ogni regata; chi vince ogni sfida (semifinali e finale della Louis Vuitton Cup, Match); il risultato esatto della sfida; chi vince Youth e Women's America's Cup. Una volta per fase puoi giocare il jolly, che raddoppia i punti di un pronostico.
+6. **Quando si chiude.** Ogni pronostico si blocca all'ora di partenza prevista, secondo l'orologio del nostro server: se la regata slitta, il blocco resta all'ora prevista. I pronostici degli altri si vedono solo dopo il blocco.
+7. **Punti.** 3 per il vincitore di una regata, 10 per il vincitore di una sfida, 10 in più per il risultato esatto, 5 per il vincitore di Youth e Women's; il jolly raddoppia. A parità vince chi ha più risultati esatti, poi chi ha indovinato più regate.
+8. **Risultati.** Li inserisce l'organizzatore dai risultati ufficiali su americascup.com. Se la giuria cambia un risultato lo correggiamo e i punti si ricalcolano. Una regata annullata non dà punti.
+9. **Correttezza.** Niente soprannomi offensivi, account doppi o programmi automatici. L'organizzatore e chi ha creato una lega possono rinominare o togliere un partecipante.
+10. **Dati personali.** Soprannome e identità anonima, spiegati nella pagina privacy (da aggiornare con il gioco). Puoi cancellare i tuoi dati con «Cancella i miei dati»; tutti i dati del gioco si cancellano entro il 31 dicembre 2027.
+11. **Durata e modifiche.** Dall'apertura del gioco alla fine del Match. Se cambia il calendario ufficiale possiamo adattare il regolamento, scrivendolo nella pagina con la data. I punti già assegnati cambiano solo per correggere un risultato.
+12. **Nessuna garanzia.** Il gioco può fermarsi per problemi tecnici. Vale la legge italiana.
+
+Regola da non dimenticare: se un giorno arrivasse un premio, anche piccolo, o uno sponsor del gioco, il DPR 430/2001 cita proprio i concorsi basati su «pronostici relativi a determinate manifestazioni sportive» (art. 2, comma 1, lettera c): prima va rifatta l'analisi.
+
 ## 8. Stima per rilascio
 
 | Rilascio | Grandezza | Rischi | Cosa serve da te |
@@ -374,6 +391,15 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 | **5 · Lingue** | Media | Termini di vela corretti; 5 lingue da tenere aggiornate | Facoltativo: un madrelingua che rilegge |
 
 **Tempi suggeriti**: Rilascio 1 entro novembre 2026; 2 in inverno; 3 almeno un mese prima del 22 maggio 2027; 4 e 5 in primavera. Valuta di anticipare le lingue (5) prima di Vivi Napoli (4): i turisti stranieri prenotano presto.
+
+**Link di affiliazione (Rilascio 4): come segnarli sul sito** (testo pronto, 01/10/2026)
+- Accanto a ogni link o pulsante, visibile prima del tocco: «Pubblicità · Link affiliato Booking.com»; sul pulsante «Vedi su Booking.com (link affiliato)». È la formula del regolamento Digital Chart dello IAP («link affiliato + brand» insieme a «pubblicità» o simili); la legge chiede che la pubblicità sia «chiaramente riconoscibile» (D.Lgs. 145/2007, art. 5).
+- In cima alle pagine che ne hanno: «In questa pagina ci sono link di affiliazione: se prenoti o compri da questi link, Napoli a Vela riceve una commissione. Per te il prezzo non cambia.» (l'ultima frase solo se è vera per quel programma).
+- Amazon chiede questa frase esatta: «In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei».
+- Nel codice `rel="sponsored noopener"` sui link di affiliazione.
+- Mai «ufficiale», «partner», loghi dell'evento o titoli come «Gli hotel ufficiali della Coppa America»: il D.L. 16/2020 (artt. 10–12) vieta di far credere a un legame con l'evento per guadagnarci, con multe da 100.000 a 2,5 milioni di euro, fino a 180 giorni dopo la fine dell'evento. Meglio «Dove dormire a Napoli durante le regate».
+- Mai link o pubblicità di scommesse (D.L. 87/2018, art. 9: la multa colpisce anche il proprietario del sito, almeno 50.000 euro).
+- Prima di mettere i link: passare a Vercel Pro (il piano gratuito è solo per uso non commerciale e non ha il contratto sul trattamento dei dati).
 
 **Da far verificare a un avvocato**
 1. Uso di "America's Cup", "Coppa America", "Louis Vuitton Cup" e dei nomi delle squadre nel **nome del sito**, nel **dominio** e nei titoli. Il marchio "America's Cup" risulta di America's Cup Properties Inc.; "Louis Vuitton Cup" di Louis Vuitton Malletier (fonti secondarie).

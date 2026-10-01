@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
+_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.1 pubblicato)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -40,11 +40,23 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
   - **Immagine fissa** per ogni modo (`src/assets/barche/`, rigenerabile dal 3D): la vedi prima di avviare il 3D e resta se il dispositivo non lo supporta, con un messaggio.
   - **Controlli** (in locale, telefono simulato): Lighthouse 99–100 in prestazioni, accessibilità, best practice e SEO su home, Capire la Coppa, video, glossario, storia, quiz e barche; axe senza violazioni; nessun errore in console; «riduci movimento» provato; 1559 link interni tutti validi (`npm run check:links`, script aggiunto ora: prima mancava).
 
-## Da fare
-- Rilasci 3-5 come da `PIANO.md`.
-- Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo. Aggiornare le schede "Non ancora uscito".
+- **Rilascio 2.1 · «Più chiaro» pubblicato** (01/10/2026, ramo `ccr-2ebe6f48-tdkrwv` portato su `main` su tua richiesta). Contiene:
+  - **Testi discorsivi al posto delle schede, pagina campione `/capire-la-coppa/`** (sezione «I numeri da sapere»): niente più etichette, «Fonte:» e «controllato il» nei paragrafi; fonti solo in fondo, con una sola data («informazioni controllate il …», la più vecchia tra le schede) e la spiegazione del segno `*`. La data in alto sotto il titolo è stata tolta.
+  - **Sistema dei testi** (`src/testi/<pagina>.yaml`, `src/lib/testi.ts`, `src/components/Testo.astro`): ogni blocco dichiara le schede che usa (`usa`) e l'elenco delle fonti nasce da lì. La build si ferma se una scheda manca o non ha fonte; se un'informazione non confermata per il 2027 (stampa, siti non ufficiali, non ancora uscita, 2024 o 2026) non ha il segno `{?id}` o la frase non lo dice a parole; se una scheda cambia dopo che il testo è stato scritto (rileggere il testo, poi `npm run testi:firma`). L'avviso «da ricontrollare» resta.
+  - Schede: `reg-penalita` più precisa (riletta la regola 44 delle regole 2024); nuova `reg-2027-attese` (regole di regata 2027 non ancora uscite). Nella «regata in 60 secondi» una riga dice che le regole sono quelle del 2024.
+  - **Il 3D in alto** in `/squadre/` (con la scelta dei colori) e nelle 7 pagine delle squadre (con i colori della squadra): prima l'immagine, il modello si carica con «Avvia il 3D». Componente `src/components/Barca3D.astro`; immagini `src/assets/barche/ac75-<squadra>.jpg` fatte dal 3D con `scripts/barche-immagini.cjs`. In `/squadre/barche/` il 3D resta primo.
+  - **3D che gira in ogni direzione**: trascinando anche dall'alto in basso (da sotto il pelo dell'acqua a quasi dall'alto), pulsanti ↑ e ↓, zoom con due dita, con i pulsanti e con ctrl+rotella. I 7 pulsanti stanno su una riga a 390 px.
+  - **Mappa più larga**: da Nisida alla Stazione Centrale e da Posillipo a Capodimonte (riquadro in `scripts/mappa/riquadro.mjs`), con centro storico, porto e 8 stazioni in più; nuovo pulsante «Centro e stazione», «Tutta la mappa» al posto di «Tutto il golfo». La vista iniziale «Lungomare» non cambia.
+  - **Statistiche senza cookie**, solo sul sito pubblico e mai con «Do Not Track» o «Global Privacy Control»: Vercel Web Analytics (persone, pagine, provenienza, dispositivi) e un contatore nostro del tempo passato sulle pagine (tabella `letture` su Supabase: pagina, secondi, telefono/tablet/computer, giorno; nessun IP né identificativo; massimo 600 righe al minuto).
+  - **Privacy riscritta** dopo un controllo vero del sito (nessun cookie; nel browser solo il tema e la copia offline; nessun servizio esterno prima del tocco su un video; YouTube salva dati nel browser dopo il tocco), con le statistiche. **Pagina nuova `/termini/`** (Termini d'uso). Piè di pagina, note legali e descrizione della home con la formula sui marchi e «guida indipendente».
+  - Dal ramo della sessione precedente: etichette piccole portate a 12 px e link del logo alti 44 px.
+  - **Controlli** (in locale, telefono simulato): build, `npm run check:links` (nessun link rotto), axe senza violazioni in chiaro e scuro, nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», nessun errore in console, Lighthouse su tutte le 32 pagine: prestazioni 98–100, accessibilità, best practice e SEO 100 (la pagina 404 ha SEO 66 perché non deve essere indicizzata). Corretto anche un problema trovato da axe: le tabelle larghe dell'Archivio 2026 ora si scorrono anche da tastiera.
+  - Il gioco dei pronostici e i link di affiliazione hanno i testi pronti in `PIANO.md` (punti 7 e 8).
 
-- **Controllo UX con la skill UI/UX Pro Max** (01/10/2026, solo ramo di lavoro): su 31 pagine a 390 px, tutti i bersagli da toccare ora sono almeno 44 px (prima: i due link del logo erano 34 e 30 px) e nessun testo è sotto 12 px (prima: 248 testi tra 10,2 e 11,8 px, tutte etichette in maiuscolo). Nessuno scorrimento orizzontale a 320 e 390 px. La skill, provata e poi tolta dal progetto (il suo generatore di «design system» non era adatto al sito), non c'è più; restano i risultati del controllo e le piccole modifiche, solo sul ramo di lavoro (non su `main`).
+## Da fare
+- **Riscrivere tutte le altre pagine** con il sistema dei testi, come la pagina campione: tutte, non solo le 15 dell'elenco iniziale (home, Vederla e sottopagine, Calendario, Napoli e sottopagine, Squadre, barche e 7 squadre, Capire la Coppa e sottopagine, Archivio, Domande frequenti, schede dei punti panoramici, tabella delle barche). Poi togliere i componenti `Fatti`/`Fatto` non più usati e aggiornare la pagina Fonti.
+- Rilasci 3-5 come da `PIANO.md` (testi pronti per il regolamento del gioco e per i link di affiliazione nel punto 7 e 8).
+- Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede "Non ancora uscito".
 
 ## Skill: quali, e quando (01/10/2026)
 Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della fase in corso, spegnere le altre. Le skill del tuo account si accendono e spengono dalle impostazioni di Claude; i plugin dalla scheda di installazione (chiedere a Claude di cercarli di nuovo con SearchPlugins).
@@ -69,22 +81,25 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
 ## Prossima sessione
-Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: pagine più discorsive con le fonti solo in fondo (A), il 3D in alto nella sezione Squadre (B), privacy, termini, marchi e `LEGALE.md` (C).
+Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: riscrivere tutte le altre pagine come la pagina campione.
 
 ## Cose che devi fare tu
-1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
-2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
+1. ~~Vercel → Production Branch = `main`~~ (il sito pubblico si aggiorna da `main`).
+2. **Guardare il sito sul telefono** e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1, 1.1 e 2 online).
-5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
+4. ~~Pubblicare su `main`~~ (Rilasci 1, 1.1 e 2 il 30/09/2026; Rilascio 2.1 il 01/10/2026).
+5. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni). Da sapere: sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati (c'è da Pro in su).
 6. **Reindirizzare il vecchio indirizzo** (1 minuto): Vercel → progetto *coppa-america-napoli* → **Settings → Domains** → `coppa-america-napoli.vercel.app` → **Edit** → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 (permanente) → **Save**. La regola in `vercel.json` non sta funzionando; dopo la modifica si può togliere.
+7. ~~Attivare Vercel Web Analytics~~ (attivo dal 01/10/2026).
 
 ## Note
 - Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`).
-- Aggiornare un'informazione: modificare la scheda in `src/data/fatti.yaml` (e la fonte in `src/data/fonti.yaml`), cambiare la data `controllato`. Vedi `README.md`.
-- Rigenerare la mappa: `scripts/mappa/scarica.sh <cartella>` e poi `node scripts/mappa/costruisci.mjs <cartella>`.
+- Aggiornare un'informazione: modificare la scheda in `src/data/fatti.yaml` (e la fonte in `src/data/fonti.yaml`), cambiare la data `controllato`. Se la scheda è usata da un testo in `src/testi/`, la build si ferma: rileggere il testo, correggerlo e poi `npm run testi:firma`. Vedi `README.md`.
+- **Statistiche**: persone, pagine e provenienza nell'app Vercel → progetto → **Analytics** (sul piano gratuito si vede l'ultimo mese, al massimo 50.000 eventi al mese). Tempo sulle pagine nella dashboard Supabase → **Table editor** → viste `letture_per_giorno` e `letture_per_pagina`.
+- Rigenerare la mappa: `node scripts/mappa/scarica.mjs <cartella>` e poi `node scripts/mappa/costruisci.mjs <cartella>`.
 - Leggere le iscrizioni ad Avvisami: dalla dashboard Supabase (Table editor → `avvisami`).
-- Supabase gratuito va in pausa dopo 7 giorni senza attività: se succede, riattivarlo dalla dashboard (le iscrizioni restano). Un controllo automatico si può aggiungere al Rilascio 3.
+- Supabase gratuito va in pausa dopo 7 giorni senza attività: se succede, riattivarlo dalla dashboard (iscrizioni e statistiche restano). Con il contatore delle visite il database ora riceve richieste ogni giorno.
 
 ## Effort consigliato per il prossimo passo
+- Riscrittura di tutte le pagine → effort alto (tanto testo da scrivere bene, con le fonti giuste).
 - Rilascio 3 (Pronostici) → effort alto.

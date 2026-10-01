@@ -16,6 +16,7 @@ npm run check:links  # dopo la build: controlla che ogni link interno porti a un
 | File | Cosa contiene |
 |---|---|
 | `src/data/fatti.yaml` | Le schede: testo, stato (`confermato` / `stampa` / `atteso`), fonti, data di controllo, data entro cui ricontrollare |
+| `src/testi/*.yaml` | I testi discorsivi delle pagine, con le schede che usano (vedi sotto) |
 | `src/data/fonti.yaml` | Le fonti, con indirizzo e data di controllo |
 | `src/data/eventi.ts` | Il calendario 2027 (anche i file .ics) |
 | `src/data/squadre.yaml` | Le 7 squadre |
@@ -35,12 +36,32 @@ Stati delle schede: `confermato`, `stampa` (giornali), `segnalato` (blog e siti 
 Regola: **nessuna informazione senza fonte**. Se una scheda non ha fonte, stato o data, la build si ferma.
 Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da ricontrollare]`.
 
+## Testi discorsivi delle pagine
+
+Le pagine nuove non mostrano le schede una per una: hanno testi normali, scritti in `src/testi/<pagina>.yaml` (un blocco per argomento) e mostrati con `<Testo b={T.b('nome')} />` dopo `const T = await getTesti('<pagina>')`. Le fonti finiscono da sole in fondo alla pagina (`<FontiPagina testi={T} />`).
+
+```yaml
+formato:
+  usa: [cal-flotta, cal-rr]          # le schede di fatti.yaml usate dal testo
+  testo: |
+    ### Titoletto
+
+    Paragrafo. **Grassetto**, *corsivo*, [link](/calendario/).
+
+    Secondo la stampa i percorsi avevano 8 lati{?reg-percorso}.
+```
+
+Regole controllate dalla build (se non sono rispettate si ferma):
+- ogni scheda in `usa` deve esistere, con la sua fonte; per un consiglio nostro senza fonte si scrive `senzaFonte: "perché"`;
+- un'informazione non confermata per il 2027 (stato `stampa`, `segnalato` o `atteso`, oppure `anno` 2024 o 2026) va segnata con `{?id}` (sul sito diventa un piccolo `*`, spiegato in fondo) e la frase deve dirlo a parole: «secondo la stampa», «non è ancora uscito», «nel 2024»…;
+- ogni testo è «firmato» con le schede che usava quando è stato scritto (`src/testi/firme.json`): se una scheda cambia, la build si ferma finché qualcuno non rilegge il testo e lo firma di nuovo con `npm run testi:firma`.
+
 ## Aggiornare un'informazione
 
 1. Apri la fonte e controlla.
 2. Cambia il `testo` della scheda in `fatti.yaml`, lo `stato` se serve, e la data `controllato`.
 3. Se la fonte è nuova, aggiungila in `fonti.yaml`.
-4. `npm run build` per controllare.
+4. `npm run build` per controllare. Se la scheda è usata da un testo in `src/testi/`, rileggi il testo, correggilo e poi `npm run testi:firma`.
 
 ## Altro
 
@@ -48,7 +69,9 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 - Font: `scripts/font/prepara.py` (licenza SIL OFL).
 - Logo: `src/lib/logo.mjs`; icone dell'app e favicon: `node scripts/icone.mjs`.
 - Un nuovo punto panoramico entra solo con due fonti indipendenti, o una fonte affidabile più i dati di OpenStreetMap; aggiungilo anche in `ORDINE_VISTE` (`src/lib/luoghi.ts`).
-- Database "Avvisami": `supabase/migrations/`.
+- Database "Avvisami" e statistiche del tempo sulle pagine (tabella `letture`, viste `letture_per_giorno` e `letture_per_pagina`): `supabase/migrations/`.
+- Statistiche: partono solo sul sito pubblico (`src/scripts/sito.ts`) e mai con «Do Not Track» o «Global Privacy Control».
+- 3D in alto in Squadre e nelle pagine delle squadre: `src/components/Barca3D.astro`. Le immagini con i colori delle squadre si rifanno con `node scripts/barche-immagini.cjs <indirizzo> '' nz,gb,al,fr,us,au`.
 - Motore 3D: `src/lib/3d/`. Le misure di AC75 e AC40 stanno nella tabella `CLASSI` di `src/lib/3d/b3/model.js`; `mount(stage, { classe: 'ac75' | 'ac40' | 'confronto' })`. Con `?b3q=low` si prova la qualità più bassa.
 - Immagini fisse del 3D (`src/assets/barche/ac75.jpg`, `ac40.jpg`, `confronto.jpg`): sono schermate del 3D stesso, a 2x, senza pulsanti. Se cambi il modello, rifalle con `node scripts/barche-immagini.cjs` (serve Playwright; istruzioni in testa al file).
 - La regata in 60 secondi: `src/lib/regata60.ts` (percorsi, scritte, testi delle scene). Con `?r60t=43` il lettore si apre fermo a quell'istante.
