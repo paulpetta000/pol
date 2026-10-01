@@ -50,8 +50,6 @@ const squadre = defineCollection({
     sito: z.string().url().optional(),
     ordine: z.number(),
     sintesi: z.string(),
-    storia: z.array(z.string()),
-    daSapere: z.array(z.string()),
     persone: z.array(persona),
     risultati2026: z.array(z.object({
       evento: z.enum(['cagliari', 'napoli']),
@@ -61,12 +59,6 @@ const squadre = defineCollection({
       nota: z.string().optional()
     })),
     equipaggi: z.array(z.object({ barca: z.string(), velisti: z.array(persona) })),
-    protagonisti: z.array(z.object({
-      nome: z.string(),
-      paese: z.string(),
-      testo: z.string(),
-      fonti: z.array(reference('fonti')).min(1)
-    })).default([]),
     fonti: z.array(reference('fonti')).min(1)
   })
 });
@@ -154,11 +146,8 @@ const quiz = defineCollection({
     ordine: z.number().int(),
     domanda: z.string().endsWith('?'),
     opzioni: z.array(z.string()).length(3),
-    giusta: z.number().int().min(0).max(2),
-    spiegazione: z.string().min(15),
-    fatti: z.array(reference('fatti')).default([]),
-    fonti: z.array(reference('fonti')).default([])
-  }).refine(q => q.fatti.length + q.fonti.length > 0, { message: 'Ogni domanda deve avere almeno una scheda o una fonte' })
+    giusta: z.number().int().min(0).max(2)
+  })
 });
 
 // Video del canale ufficiale: l'id è il codice YouTube, verificato prima di pubblicarlo

@@ -1,4 +1,5 @@
 # Le 7 squadre della 38ª America's Cup. Ogni scheda ha le sue fonti.
+# Storia, «da sapere» e protagonisti sono testi: src/testi/squadra-<id>.yaml
 # risultati2026: posizione e punti delle regate preliminari (feed ufficiale americascup.com/results)
 
 - id: emirates-team-new-zealand
@@ -12,14 +13,6 @@
   sito: https://emirates-team-new-zealand.americascup.com/
   ordine: 1
   sintesi: "Difende la Coppa. Ha vinto le ultime tre edizioni (2017, 2021, 2024) e a Napoli punta alla quarta di fila."
-  storia:
-    - "La prima vittoria arriva nel 1995 a San Diego: la Coppa va in Nuova Zelanda."
-    - "Nel 2000 la difende ad Auckland battendo Luna Rossa 5–0. Nel 2003 la perde contro gli svizzeri di Alinghi."
-    - "La riconquista alle Bermuda nel 2017 (7–1 contro gli americani), la difende nel 2021 contro Luna Rossa e nel 2024 a Barcellona contro i britannici (7–2)."
-  daSapere:
-    - "Da Defender non deve qualificarsi: aspetta al Match il vincitore della Louis Vuitton Cup."
-    - "Corre comunque regate di flotta e Round Robin della Louis Vuitton Cup, ma i suoi risultati non contano per gli sfidanti."
-    - "Il suo AC75 si chiama Taihoro."
   persone:
     - { nome: Grant Dalton, ruolo: "Amministratore delegato; presiede anche l'America's Cup Partnership" }
     - { nome: Nathan Outteridge, ruolo: "Skipper e timoniere" }
@@ -41,11 +34,6 @@
         - { nome: Erica Dawson, ruolo: timoniera }
         - { nome: Serena Woodall, ruolo: trimmer }
         - { nome: Josh Armit, ruolo: trimmer }
-  protagonisti:
-    - nome: Nathan Outteridge
-      paese: Australia
-      testo: "Australiano, guida i neozelandesi. Con Iain Jensen, oggi suo trimmer, ha vinto l'oro olimpico nel 49er a Londra 2012 e l'argento a Rio 2016."
-      fonti: [hof-outteridge, ac-finale-napoli]
   fonti: [ac-host-venue, ac-formato-lvc, etnz-formato, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli]
 
 - id: luna-rossa
@@ -57,13 +45,6 @@
   colore: "#C8102E"
   ordine: 2
   sintesi: "La sfida italiana, a Napoli in casa. Ha vinto tutte e due le regate preliminari del 2026, Cagliari e Napoli."
-  storia:
-    - "Ha raggiunto il Match due volte, nel 2000 e nel 2021, perdendo entrambe contro i neozelandesi. L'Italia non ha mai vinto la Coppa."
-    - "Nel 2024 a Barcellona ha vinto la prima Women's America's Cup."
-    - "Per il 2027 ha preso Peter Burling, tre volte vincitore della Coppa con Team New Zealand."
-  daSapere:
-    - "A Napoli 2026 non è mai stata superata in nessuna boa nelle ultime tre regate, finale compresa."
-    - "Marco Gradoni e Maria Giubilei vengono dal percorso giovani e donne: sono la generazione della Youth e della Women's America's Cup."
   persone:
     - { nome: Max Sirena, ruolo: "Amministratore delegato" }
     - { nome: Peter Burling, ruolo: "Skipper e timoniere" }
@@ -86,15 +67,6 @@
         - { nome: Max Antoniazzi, ruolo: timoniere }
         - { nome: Maria Vittoria Marchesini, ruolo: trimmer }
         - { nome: Giovanni Santi, ruolo: trimmer }
-  protagonisti:
-    - nome: Peter Burling
-      paese: Nuova Zelanda
-      testo: "Ha vinto la Coppa da timoniere con Team New Zealand nel 2017, 2021 e 2024. Oro olimpico nel 49er a Rio 2016. Ora guida Luna Rossa."
-      fonti: [wiki-burling, ac-finale-napoli]
-    - nome: Marco Gradoni
-      paese: Italia
-      testo: "Ha vinto tre Mondiali Optimist di fila ed è stato il più giovane Rolex World Sailor of the Year (2019). Nel 2024 ha vinto la Youth America's Cup."
-      fonti: [ws-gradoni, ac-youth-date]
   fonti: [ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, ws-women-2024]
 
 - id: gb1
@@ -108,12 +80,6 @@
   sito: https://www.gb1.com/
   ordine: 3
   sintesi: "La sfida britannica guidata da Sir Ben Ainslie. È il Challenger of Record: scrive le regole insieme a chi difende la Coppa."
-  storia:
-    - "La Coppa nasce nel 1851 da una regata intorno all'isola di Wight organizzata proprio dal Royal Yacht Squadron. La Gran Bretagna non l'ha mai vinta."
-    - "Nel 2024, come INEOS Britannia, è arrivata al Match per la prima volta dal 1964 e ha perso 7–2 contro i neozelandesi."
-  daSapere:
-    - "Il nome della società è Athena Racing; GB1 è il nome della squadra."
-    - "A Napoli 2026 ha schierato anche la barca Women & Youth Cobham-Ultra GB2."
   persone:
     - { nome: Sir Ben Ainslie, ruolo: "Guida la sfida" }
     - { nome: Ian Walker, ruolo: "Dirigente del Challenger of Record" }
@@ -136,15 +102,6 @@
         - { nome: Ellie Aldridge, ruolo: timoniera }
         - { nome: Sam Webb, ruolo: trimmer }
         - { nome: Matt Beck, ruolo: trimmer }
-  protagonisti:
-    - nome: Dylan Fletcher
-      paese: Gran Bretagna
-      testo: "Campione olimpico nel 49er a Tokyo 2020, timoniere della squadra britannica nel 2024. Dice che la priorità è portare in acqua l'AC75."
-      fonti: [gb1-fletcher, ac-finale-napoli]
-    - nome: Hannah Mills
-      paese: Gran Bretagna
-      testo: "Due ori olimpici nel 470 (Rio 2016, Tokyo 2020). A Napoli ha timonato la barca Women & Youth con Ellie Aldridge, oro olimpico di kitefoil a Parigi 2024."
-      fonti: [allatsea-gb2]
   fonti: [ac-38, ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli]
 
 - id: tudor-team-alinghi
@@ -156,11 +113,6 @@
   colore: "#D52B1E"
   ordine: 4
   sintesi: "La squadra svizzera che vinse la Coppa nel 2003 e nel 2007. Oggi la guida il britannico Paul Goodison."
-  storia:
-    - "Nel 2003 la Svizzera, un paese senza mare, vince la Coppa alla prima partecipazione."
-    - "Nel 2007 a Valencia la difende battendo Emirates Team New Zealand."
-  daSapere:
-    - "A Napoli 2026 era terza dopo la seconda giornata, poi è scivolata al 7° posto."
   persone:
     - { nome: Paul Goodison, ruolo: "Skipper e timoniere" }
   risultati2026:
@@ -184,11 +136,6 @@
   colore: "#2F6FD6"
   ordine: 5
   sintesi: "La sfida francese, la più spettacolare del 2026: a Napoli ha vinto due regate e si è rovesciata due volte."
-  storia:
-    - "La Francia non ha mai vinto la Coppa."
-    - "A Cagliari 2026 è arrivata quarta, a Napoli terza."
-  daSapere:
-    - "In equipaggio ci sono gli spagnoli Diego Botín e Florian Trittel, oro olimpico nel 49er a Parigi 2024."
   persone:
     - { nome: Bruno Dubois, ruolo: "Co-amministratore delegato" }
     - { nome: Quentin Delapierre, ruolo: "Skipper e timoniere" }
@@ -213,11 +160,6 @@
   colore: "#1C2F5A"
   ordine: 6
   sintesi: "Il nuovo sfidante americano. Alla prima regata della sua storia, a Napoli nel 2026, ha vinto."
-  storia:
-    - "Gli Stati Uniti hanno tenuto la Coppa per 132 anni con il New York Yacht Club, fino alla sconfitta del 1983."
-    - "L'hanno poi rivinta più volte: nel 1987 con Dennis Conner, nel 1988, nel 1992, nel 2010 e nel 2013."
-  daSapere:
-    - "Iscritta in ritardo, non ha corso a Cagliari. Il debutto è stato Napoli 2026: vittoria nella prima regata e 4° posto finale."
   persone:
     - { nome: Lucas Calabrese, ruolo: "Timoniere" }
     - { nome: Harry Melges IV, ruolo: "Timoniere" }
@@ -242,12 +184,6 @@
   colore: "#00843D"
   ordine: 7
   sintesi: "L'Australia torna in Coppa con una squadra di soli australiani. La sua prima regata sarà la Louis Vuitton Cup del 2027."
-  storia:
-    - "Nel 1983 Australia II vinse la Coppa a Newport, interrompendo 132 anni di vittorie americane."
-    - "La sfida è stata accettata a maggio 2026 come sesta iscrizione."
-  daSapere:
-    - "Non ha corso le regate preliminari del 2026."
-    - "I sette velisti hanno vinto insieme 24 titoli mondiali e 13 campionati SailGP."
   persone:
     - { nome: Grant Simmer, ruolo: "Amministratore delegato; era nell'equipaggio di Australia II" }
     - { nome: Tom Slingsby, ruolo: "Capo della squadra velica" }
@@ -263,9 +199,4 @@
         - { nome: Tom Needham }
         - { nome: Sam Newton }
         - { nome: Kinley Fowler }
-  protagonisti:
-    - nome: Tom Slingsby
-      paese: Australia
-      testo: "Oro olimpico nel Laser a Londra 2012, nove volte campione del mondo, tre volte campione SailGP. Nel 2013 era nell'equipaggio americano che rimontò e vinse la Coppa."
-      fonti: [ac-team-australia]
   fonti: [ac-team-australia, ac-host-venue, scuttlebutt-cagliari, ac-bagnoli]

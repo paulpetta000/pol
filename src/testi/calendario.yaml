@@ -12,11 +12,11 @@ formato:
     In mezzo, sugli AC40, si corrono la Youth America's Cup, per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup, per gli equipaggi femminili, dal 5 al 9 luglio. Il formato spiegato con calma è in [Capire la Coppa](/capire-la-coppa/).
 
 da-sapere:
-  usa: [cal-orari, cal-orari-2026, cal-giorni-match, cal-vento, cal-preliminari-2027]
+  usa: [cal-orari, cal-orari-2026, cal-giorni-match, yw-bando-atteso, cal-vento, cal-preliminari-2027]
   testo: |
     Gli orari del 2027 non sono ancora usciti: non si sa a che ora si parte ogni giorno{?cal-orari}. Per farti un'idea, nel 2026 a Napoli si partiva sempre alle 14, con tre regate al giorno il venerdì e il sabato e due più la finale la domenica{?cal-orari-2026}.
 
-    Non c'è ancora nemmeno il programma giorno per giorno del Match, con i giorni di regata e quelli di riposo{?cal-giorni-match}. Se ti iscrivi al calendario, il telefono si aggiorna da solo quando escono.
+    Non c'è ancora nemmeno il programma giorno per giorno del Match, con i giorni di regata e quelli di riposo{?cal-giorni-match}. Per la Youth e la Women's America's Cup, poi, non abbiamo ancora trovato il bando ufficiale, con le squadre iscritte e il formato di gara{?yw-bando-atteso}. Se ti iscrivi al calendario, il telefono si aggiorna da solo quando esce qualcosa di nuovo.
 
     Ogni regata dipende dal vento: gli AC75 partono solo se soffia tra 6,5 e 23 nodi. Fuori da questi limiti si aspetta, e se non cambia nulla la regata salta.
 

@@ -56,6 +56,8 @@ function inline(s: string) {
     .replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => `<a href="${u}"${/^https?:/.test(u) ? ' rel="noopener"' : ''}>${t}</a>`)
     // numero e unità restano sulla stessa riga
     .replace(/(\d) (m|km|kg|t|nodi|metri|minuti|secondi|ore|giorni|€|%)(?=[\s.,;:!?)]|$)/g, '$1 $2')
+    // anche risultati e intervalli («7–2», «6,5–23», «22–24») non vanno a capo
+    .replace(/(\d)–(\d)/g, '$1\u2060–\u2060$2')
     .replace(/\u0001/g, '<sup class="cautela" aria-hidden="true">*</sup>');
 }
 

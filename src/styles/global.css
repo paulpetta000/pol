@@ -229,26 +229,13 @@ h4 { font-size: 1rem; font-stretch: 90%; font-weight: 750; }
 .btn svg { flex: none; }
 .btn-row { display: flex; flex-wrap: wrap; gap: .6rem; }
 
-/* ---------- etichette e stati ---------- */
+/* ---------- etichette ---------- */
 .chip {
   display: inline-flex; align-items: center; gap: .35em;
   font-family: var(--f-mono); font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
   padding: .18rem .45rem; border: 1.5px solid currentColor; border-radius: 2px; line-height: 1.2; white-space: nowrap;
 }
-.chip--confermato { color: var(--ok); }
-.chip--stampa { color: var(--press); }
-.chip--segnalato { color: var(--seg); border-style: dotted; }
-.chip--atteso { color: var(--wait); border-style: dashed; }
-.chip--anno { color: var(--ink-2); border-color: var(--line-2); }
 .chip--solid { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
-
-/* ---------- schede delle informazioni ---------- */
-.fatti { list-style: none; padding: 0; margin: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
-.fatto { padding: .95rem 0 1rem; border-bottom: 1px solid var(--line); margin: 0; }
-.fatto__testo { margin: 0 0 .45rem; max-width: 70ch; }
-.fatto__meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem .6rem; font-size: .8rem; color: var(--ink-3); }
-.fatto__meta a { color: var(--ink-2); }
-.fatto[data-stato="atteso"] .fatto__testo { color: var(--ink-2); }
 
 /* Riquadro "terzo inferiore" della TV */
 .terzo { position: relative; padding: 1rem 1.1rem 1rem 1.25rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); }

@@ -1,0 +1,12 @@
+# Testi di /squadre/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+da-sapere:
+  usa: [sq-sette, sq-vincitori, sq-cor, cal-defender-gironi, sq-basi, sq-acp, sq-nyyc]
+  testo: |
+    Le squadre sono sette: Emirates Team New Zealand difende la Coppa, le altre sei la sfidano. Per la prima volta nella storia moderna della Coppa gareggiano insieme tutte le nazioni che l'hanno già vinta: Stati Uniti, Australia, Svizzera e Nuova Zelanda.
+
+    Lo sfidante che scrive le regole insieme a chi difende la Coppa, il «Challenger of Record», è il britannico Royal Yacht Squadron, con il team GB1. I neozelandesi corrono le regate di flotta e i Round Robin con gli altri, ma i loro risultati non contano per la classifica degli sfidanti.
+
+    Le basi sono tutte a Bagnoli. Da nord a sud: Emirates Team New Zealand, GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, Team Australia e ARC Team USA.
+
+    L'evento lo organizza l'America's Cup Partnership (ACP), con Grant Dalton presidente e Marzio Perrelli amministratore delegato. C'è anche una questione aperta: secondo la stampa specializzata, il 31 agosto 2026 il New York Yacht Club ha chiesto alla Procura generale di New York di verificare se l'ACP sia compatibile con il Deed of Gift, l'atto che regola la Coppa dal 1857{?sq-nyyc}.

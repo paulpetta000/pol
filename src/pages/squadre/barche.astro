@@ -2,23 +2,21 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import ConfrontoScala from '../../components/ConfrontoScala.astro';
 import { Picture } from 'astro:assets';
 import posterAc75 from '../../assets/barche/ac75.jpg';
 import posterAc40 from '../../assets/barche/ac40.jpg';
 import posterConfronto from '../../assets/barche/confronto.jpg';
-import { getFatti, getFonti } from '../../lib/fatti';
+import { getFonti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 import TAPPE40 from '../../data/tappe-ac40.json';
 import TAPPE75 from '../../data/tappe-ac75.json';
 
-const idsRegole = ['ac75-cinque', 'ac75-donna', 'ac75-nazionalita', 'ac75-batterie', 'ac75-ospite', 'ac75-una-nuova', 'cal-vento'];
-const idsMisure = ['ac75-misure', 'ac75-peso', 'ac75-pozzetti', 'ac75-ruoli', 'ac75-foil', 'ac75-vele', 'ac75-velocita', 'ac40-misure', 'ac40-peso', 'ac40-ruoli', 'ac40-batteria', 'ac40-uso'];
-const f = await getFatti([...idsRegole, ...idsMisure]);
-const idsFonti = ['ac-regola-ac75', 'ac-regola-ac40', 'wiki-ac40', 'ac-barche', 'ac-press-kit', 'ac-38', 'ac-protocollo'];
-const fonti = new Map((await getFonti(idsFonti)).map(s => [s.id, s]));
-const BREVE: Record<string, string> = { 'ac-regola-ac75': 'Regola AC75', 'ac-regola-ac40': 'Regola AC40', 'wiki-ac40': 'Wikipedia', 'ac-barche': 'America\'s Cup', 'ac-press-kit': 'Press kit', 'ac-38': 'America\'s Cup', 'ac-protocollo': 'Protocollo' };
+const T = await getTesti('barche');
+// Il giro in 3D e il disegno in scala usano le misure delle regole di classe e della pagina ufficiale delle barche
+const fonti3d = await getFonti(['ac-regola-ac75', 'ac-regola-ac40', 'ac-barche', 'wiki-ac40']);
 const SQUADRE = [['lr', 'Luna Rossa'], ['nz', 'Team New Zealand'], ['gb', 'GB1'], ['al', 'Alinghi'], ['fr', 'La Roche-Posay'], ['us', 'ARC Team USA'], ['au', 'Team Australia']];
 const MODI = [
   { k: 'ac75', t: 'AC75', s: 'la barca della Coppa', img: posterAc75, alt: 'La nostra ricostruzione 3D dell\'AC75 in volo sul foil sottovento' },
@@ -26,21 +24,12 @@ const MODI = [
   { k: 'confronto', t: 'Affiancate', s: 'alla stessa scala', img: posterConfronto, alt: 'AC75 e AC40 ricostruiti in 3D, uno dietro l\'altro alla stessa scala' }
 ] as const;
 const TOUR = [['ac75', TAPPE75], ['ac40', TAPPE40]] as const;
-const NUMERI = [
-  { t: 'Lunghezza dello scafo', a: 'fino a 20,70 m', b: '11,80 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
-  { t: 'Larghezza', a: 'fino a 5,00 m', b: '3,38 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
-  { t: 'Albero', a: '26,5 m', b: '17,92 m', f: ['ac-regola-ac75', 'wiki-ac40'] },
-  { t: 'Peso in regata', a: '6.435 kg', b: 'circa 2.480 kg', f: ['ac-regola-ac75', 'ac-regola-ac40'] },
-  { t: 'A bordo', a: '5 velisti e un ospite', b: '4 velisti', f: ['ac-regola-ac75', 'ac-regola-ac40'] },
-  { t: 'Energia per i comandi', a: 'batterie con la potenza di 4 ciclisti', b: 'batteria al litio, fino a 8 ore', f: ['ac-press-kit', 'ac-barche'] },
-  { t: 'Foil', a: '2; ognuno ruota di oltre 100°, pescaggio circa 5,2 m', b: '2, uguali per tutti', f: ['ac-regola-ac75', 'ac-barche'] },
-  { t: 'Record di velocità', a: '55,6 nodi (102,97 km/h)', b: '—', f: ['ac-barche'] },
-  { t: 'Quante barche', a: 'una per squadra, con scafo del 2021 o del 2024', b: 'tutte uguali', f: ['ac-barche'] },
-  { t: 'Dove si usa nel 2027', a: 'Louis Vuitton Cup e Match', b: 'regate preliminari, Youth e Women\'s', f: ['ac-38', 'ac-protocollo'] }
-];
+// Tabella «I numeri a confronto»: ogni riga è «AC75 | AC40» (src/testi/barche.yaml#numeri)
+const numeri = T.b('numeri');
+const NUMERI = numeri.voci.map(v => { const [a, b] = v.html.split(' | '); return { t: v.num, a, b }; });
 ---
 <Base title="AC75 e AC40: le barche dell'America's Cup in 3D" description="Le barche dell'America's Cup 2027 in 3D e alla stessa scala: l'AC75 (scafo 20,7 m, albero 26,5 m, 5 velisti e un ospite) e l'AC40. Misure dalla regola di classe, con le fonti.">
-  <PageHead kicker="Squadre · barche" title="Le barche" lead="Per il Match e la Louis Vuitton Cup si corre sugli AC75, monoscafi che volano sui foil. Youth, Women's e regate preliminari si corrono sugli AC40, più piccoli e tutti uguali." crumbs={[{ href: '/squadre/', label: 'Squadre' }]} aggiornato="2026-09-30" />
+  <PageHead kicker="Squadre · barche" title="Le barche" lead="Per il Match e la Louis Vuitton Cup si corre sugli AC75, monoscafi che volano sui foil. Youth, Women's e regate preliminari si corrono sugli AC40, più piccoli e tutti uguali." crumbs={[{ href: '/squadre/', label: 'Squadre' }]} />
 
   <section class="section" aria-labelledby="x3d-h">
     <div class="wrap">
@@ -117,23 +106,23 @@ const NUMERI = [
           <tbody>
             {NUMERI.map(r => (
               <tr>
-                <th scope="row">{r.t}<span class="num-fonte">Fonte: {r.f.map((id, i) => { const s = fonti.get(id)!; return <>{i > 0 && ' · '}<a href={s.data.url} rel="noopener">{BREVE[id]}</a></>; })}</span></th>
-                <td>{r.a}</td>
-                <td>{r.b}</td>
+                <th scope="row">{r.t}</th>
+                <td set:html={r.a} />
+                <td set:html={r.b} />
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-      <p class="small muted" style="margin-top:.6rem">Le misure dell'AC75 sono i massimi della regola di classe 2027. Lunghezza, larghezza e albero dell'AC40 non sono nella sua regola di classe: vengono da Wikipedia.</p>
+      <Testo b={numeri} class="small muted nota-numeri" />
     </div>
   </section>
 
   <section class="section" aria-labelledby="mis-h">
     <div class="wrap">
       <p class="kicker">Com'è fatto</p>
-      <h2 id="mis-h">Le misure, con la fonte</h2>
-      <Fatti f={f} ids={idsMisure} />
+      <h2 id="mis-h">Le misure</h2>
+      <Testo b={T.b('misure')} />
     </div>
   </section>
 
@@ -142,17 +131,14 @@ const NUMERI = [
       <p class="kicker">Cosa cambia nel 2027</p>
       <h2 id="reg-h">Le regole dell'AC75</h2>
       <div class="cifre">
-        <div><span class="num">5</span><span>velisti a bordo, più un ospite</span></div>
-        <div><span class="num">1+</span><span>donna in ogni equipaggio</span></div>
-        <div><span class="num">0</span><span>ciclisti: energia dalle batterie</span></div>
-        <div><span class="num">6,5–23</span><span>nodi di vento per partire</span></div>
+        {T.b('cifre').voci.map(v => <div><span class="num">{v.num}</span><span set:html={v.html} /></div>)}
       </div>
-      <Fatti f={f} ids={idsRegole} />
+      <Testo b={T.b('regole')} />
       <p style="margin-top:1.2rem"><a class="btn" href="/capire-la-coppa/"><Icon name="play" size={20} /> Come si regata: la regata in 60 secondi</a></p>
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} extra={[...fonti.values()]} />
+  <FontiPagina testi={T} extra={fonti3d} />
 </Base>
 
 <script>
@@ -212,8 +198,7 @@ const NUMERI = [
   .cifre > div { background: var(--surface); padding: 1rem; display: flex; flex-direction: column; gap: .2rem; }
   .cifre .num { font-size: clamp(1.8rem, 1.4rem + 1.6vw, 2.6rem); font-weight: 600; color: var(--accent); line-height: 1; }
   @media (min-width: 760px) { .cifre { grid-template-columns: repeat(4, 1fr); } }
-  .num-fonte { display: block; margin-top: .2rem; font: 400 .75rem var(--f-sans); color: var(--ink-3); }
-  .num-fonte a { color: var(--ink-2); }
+  :global(.nota-numeri) { margin-top: .6rem; }
   .x3d { display: grid; gap: 1rem; margin-top: 1rem; }
   @media (min-width: 900px) { .x3d { grid-template-columns: 1.4fr 1fr; align-items: stretch; } .x3d__scelta { grid-column: 1 / -1; } }
   .x3d__scelta { display: grid; grid-template-columns: repeat(3, 1fr); gap: .4rem; }

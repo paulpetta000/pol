@@ -64,17 +64,3 @@ export function controlloMenoRecente(fatti: Iterable<Fatto>, fonti: Iterable<Fon
   for (const x of [...fatti, ...fonti]) if (!d || x.data.controllato < d) d = x.data.controllato;
   return d;
 }
-
-export const ETICHETTA_STATO = {
-  confermato: 'Confermato',
-  stampa: 'Dalla stampa',
-  segnalato: 'Segnalato da siti non ufficiali',
-  atteso: 'Non ancora uscito'
-} as const;
-
-export const SPIEGA_STATO = {
-  confermato: 'Letto su una fonte ufficiale o su dati pubblici',
-  stampa: 'Riportato da giornali e testate, senza conferma ufficiale',
-  segnalato: 'Indicato da blog o altri siti non ufficiali (non giornali), senza conferma ufficiale',
-  atteso: 'Cercato: gli organizzatori non l\'hanno ancora pubblicato'
-} as const;

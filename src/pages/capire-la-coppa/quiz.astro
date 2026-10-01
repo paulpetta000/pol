@@ -3,25 +3,20 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
+import Testo from '../../components/Testo.astro';
 import { getCollection } from 'astro:content';
-import { getFatti, getFonti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 import { SITO } from '../../config/sito';
 
-const domande = (await getCollection('quiz')).sort((a, b) => a.data.ordine - b.data.ordine);
-const f = await getFatti([...new Set(domande.flatMap(q => q.data.fatti.map(r => r.id)))]);
-const extra = await getFonti(domande.flatMap(q => q.data.fonti.map(r => r.id)));
-const fonteDi = new Map(extra.map(s => [s.id, s]));
-// Fonti di ogni domanda: quelle delle schede e quelle citate direttamente
-const fontiDomanda = (q: typeof domande[number]) => {
-  const m = new Map<string, { url: string; editore: string }>();
-  q.data.fatti.forEach(r => f.get(r.id)!.fontiRisolte.forEach(s => m.set(s.id, { url: s.data.url, editore: s.data.editore })));
-  q.data.fonti.forEach(r => { const s = fonteDi.get(r.id)!; m.set(s.id, { url: s.data.url, editore: s.data.editore }); });
-  return [...m.values()];
-};
+// Le spiegazioni sono in src/testi/quiz.yaml: ogni domanda deve avere la sua (T.b si ferma se manca)
+const T = await getTesti('quiz');
+const domande = (await getCollection('quiz')).sort((a, b) => a.data.ordine - b.data.ordine).map(q => ({ ...q, spiega: T.b(q.id) }));
+const senzaDomanda = T.blocchi.filter(n => !domande.some(q => q.id === n));
+if (senzaDomanda.length) throw new Error(`Spiegazioni senza domanda in src/data/quiz.yaml: ${senzaDomanda.join(', ')}`);
 const url = new URL('/capire-la-coppa/quiz/', SITO.url).href;
 ---
-<Base title="Quiz sull'America's Cup: quanto ne sai?" description={`${domande.length} domande sull'America's Cup di Napoli 2027: barche, regole, record e storia. Tre risposte, spiegazione e fonte per ognuna. Nessun dato salvato.`}>
-  <PageHead kicker="Capire la Coppa" title="Quiz: quanto ne sai?" lead={`${domande.length} domande, tre risposte ciascuna. Dopo ogni risposta trovi la spiegazione e la fonte. Non salviamo nulla: il punteggio resta sul tuo telefono.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30" />
+<Base title="Quiz sull'America's Cup: quanto ne sai?" description={`${domande.length} domande sull'America's Cup di Napoli 2027: barche, regole, record e storia. Tre risposte e la spiegazione per ognuna. Nessun dato salvato.`}>
+  <PageHead kicker="Capire la Coppa" title="Quiz: quanto ne sai?" lead={`${domande.length} domande, tre risposte ciascuna. Dopo ogni risposta trovi la spiegazione; le fonti sono in fondo alla pagina. Non salviamo nulla: il punteggio resta sul tuo telefono.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} />
 
   <section class="section">
     <div class="wrap">
@@ -45,8 +40,8 @@ const url = new URL('/capire-la-coppa/quiz/', SITO.url).href;
               <details class="quiz__sol">
                 <summary>Mostra la risposta</summary>
                 <p class="quiz__esito" data-esito></p>
-                <p><strong>Risposta giusta: {q.data.opzioni[q.data.giusta]}.</strong> {q.data.spiegazione}</p>
-                <p class="quiz__fonte small">Fonte: {fontiDomanda(q).map((s, j) => <>{j > 0 && ', '}<a href={s.url} rel="noopener">{s.editore}</a></>)}</p>
+                <p><strong>Risposta giusta: {q.data.opzioni[q.data.giusta]}.</strong></p>
+                <Testo b={q.spiega} />
               </details>
             </li>
           ))}
@@ -67,7 +62,7 @@ const url = new URL('/capire-la-coppa/quiz/', SITO.url).href;
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} extra={extra} />
+  <FontiPagina testi={T} />
 </Base>
 
 <script>
@@ -163,8 +158,6 @@ const url = new URL('/capire-la-coppa/quiz/', SITO.url).href;
   .quiz__esito:empty { display: none; }
   .q-ok .quiz__esito { color: var(--ok); font-weight: 800; }
   .q-no .quiz__esito { color: var(--accent); font-weight: 800; }
-  .quiz__fonte { color: var(--ink-3); }
-  .quiz__fonte a { color: var(--ink-2); }
   :global(.quiz--js) .quiz__sol > summary { display: none; }
   .quiz__fine { margin-top: 2rem; }
   .quiz__fine:focus { outline: none; }

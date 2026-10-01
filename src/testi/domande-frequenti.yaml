@@ -62,9 +62,9 @@ lvc-formato:
     Si comincia con due giorni di regate di flotta, poi tre Round Robin di duelli a due barche. I primi 3 sfidanti vanno in semifinale, gli altri 3 si giocano il quarto posto nel ripescaggio. In semifinale passa chi arriva prima a 5 vittorie; la finale la vince chi arriva prima a 7.
 
 youth-women:
-  usa: [cal-youth, cal-womens, ac40-uso, yw-nazionalita]
+  usa: [cal-youth, cal-womens, ac40-uso, yw-nazionalita, yw-bando-atteso]
   testo: |
-    Due regate a parte, sugli AC40 con 4 persone a bordo: la Youth America's Cup per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup per gli equipaggi femminili, dal 5 al 9 luglio. Tutto l'equipaggio deve avere la nazionalità della squadra, e possono essere invitati anche club che non corrono la Coppa.
+    Due regate a parte, sugli AC40 con 4 persone a bordo: la Youth America's Cup per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup per gli equipaggi femminili, dal 5 al 9 luglio. Tutto l'equipaggio deve avere la nazionalità della squadra, e possono essere invitati anche club che non corrono la Coppa. Il bando ufficiale, con le squadre iscritte e il formato di gara, non l'abbiamo ancora trovato{?yw-bando-atteso}.
 
 novita-2027:
   usa: [ac75-cinque, ac75-donna, ac75-batterie, ac75-ospite]

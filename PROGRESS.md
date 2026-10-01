@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.1 pubblicato)_
+_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 in anteprima, da pubblicare dopo il tuo OK)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -53,9 +53,21 @@ _Ultimo aggiornamento: 01/10/2026 (Rilascio 2.1 pubblicato)_
   - **Controlli** (in locale, telefono simulato): build, `npm run check:links` (nessun link rotto), axe senza violazioni in chiaro e scuro, nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», nessun errore in console, Lighthouse su tutte le 32 pagine: prestazioni 98–100, accessibilità, best practice e SEO 100 (la pagina 404 ha SEO 66 perché non deve essere indicizzata). Corretto anche un problema trovato da axe: le tabelle larghe dell'Archivio 2026 ora si scorrono anche da tastiera.
   - Il gioco dei pronostici e i link di affiliazione hanno i testi pronti in `PIANO.md` (punti 7 e 8).
 
+- **Rilascio 2.2 · «Tutto discorsivo»** (01/10/2026, ramo `ccr-2ebe6f48-tdkrwv`, **in anteprima: su `main` solo dopo il tuo OK**). Contiene:
+  - **Tutte le pagine riscritte con il sistema dei testi**, non solo la pagina campione: home, Vederla e le 4 sottopagine, Calendario, Napoli e le 3 sottopagine, Squadre, barche e le 7 pagine delle squadre, Archivio 2026, Domande frequenti, quiz, glossario, storia, video, Fonti. Niente più schede con etichetta, «Fonte:» e «controllato il» nelle pagine: testi per argomento, fonti solo in fondo con una sola data. Tolta anche la data «Ultimo controllo» sotto i titoli (resta su privacy, termini e accessibilità del sito).
+  - **Schede dei punti panoramici**: via l'etichetta e la riga delle fonti; ogni punto ha un breve testo (`src/testi/punti.yaml`) che dice perché è in elenco e, se viene dalla stampa o da un blog, lo dice. Le loro fonti ora finiscono in fondo a `/come-vederla/dal-lungomare/` e a `/napoli/mappa/` (prima mancavano).
+  - **Domande frequenti e spiegazioni del quiz** passate nel sistema dei testi (`domande-frequenti.yaml`, `quiz.yaml`): la home usa le stesse risposte controllate.
+  - **Squadre**: storia, «da sapere» e protagonisti di ogni squadra sono testi (`squadra-<id>.yaml`); «Il suo 2027» è un testo comune (`squadre-2027.yaml`). La **tabella dei numeri** delle barche non ha più la fonte sotto ogni riga; le misure dell'AC40 prese da Wikipedia hanno il segno * e lo dice la nota.
+  - Tabella delle **tariffe dei taxi** e cifre in evidenza nate dai testi controllati: se una scheda cambia, la build chiede di rileggerle.
+  - Tolte frasi senza fonte: «nel 2026 le pedane si riempivano ore prima», «bagagli compresi» nelle tariffe dei taxi, «con 100.000 persone sul lungomare» detto come se fosse il 2027, «aspettati la stessa regola» sui droni, «le squadre della Coppa devono partecipare» a Youth e Women's.
+  - Sistema dei testi: un `*` per frase al massimo, `storico: true` per i risultati del passato (niente `*`), le voci di un elenco valgono con la prima frase del blocco, più file di testi nella stessa pagina, punteggi come «7–2» che non vanno a capo. Pagina **Fonti** con la nuova legenda («Come leggere i testi»). Componenti `Fatti` e `Fatto` eliminati.
+  - La scheda `vil-due` (il sindaco annuncia due villaggi) non è più usata: i due villaggi sono già confermati da fonti ufficiali. La scheda `yw-bando-atteso` (bando di Youth e Women's non ancora trovato), prima mai mostrata, ora è nel Calendario e nelle domande frequenti.
+  - **Controlli** (in locale, telefono simulato): build, `npm run check:links` (nessun link rotto), axe senza violazioni in chiaro e scuro su tutte le 34 pagine, nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», Lighthouse su tutte le pagine riscritte: vedi sotto.
+
 ## Da fare
-- **Riscrivere tutte le altre pagine** con il sistema dei testi, come la pagina campione: tutte, non solo le 15 dell'elenco iniziale (home, Vederla e sottopagine, Calendario, Napoli e sottopagine, Squadre, barche e 7 squadre, Capire la Coppa e sottopagine, Archivio, Domande frequenti, schede dei punti panoramici, tabella delle barche). Poi togliere i componenti `Fatti`/`Fatto` non più usati e aggiornare la pagina Fonti.
-- Rilasci 3-5 come da `PIANO.md` (testi pronti per il regolamento del gioco e per i link di affiliazione nel punto 7 e 8).
+- **Pubblicare il Rilascio 2.2 su `main`** dopo il tuo OK sull'anteprima.
+- Testi del giro in 3D delle barche (`src/data/tappe-ac75.json`, `tappe-ac40.json`): vengono dalle regole di classe e dalla pagina ufficiale delle barche (elencate in fondo alla pagina), ma non sono schede una per una. Da trasformare in schede se vuoi lo stesso controllo delle pagine.
+- Rilasci 3-5 come da `PIANO.md`, **solo dopo il tuo OK** (testi pronti per il regolamento del gioco e per i link di affiliazione nel punto 7 e 8).
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede "Non ancora uscito".
 
 ## Skill: quali, e quando (01/10/2026)
@@ -81,13 +93,13 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
 ## Prossima sessione
-Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: riscrivere tutte le altre pagine come la pagina campione.
+Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`.
 
 ## Cose che devi fare tu
 1. ~~Vercel → Production Branch = `main`~~ (il sito pubblico si aggiorna da `main`).
 2. **Guardare il sito sul telefono** e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. ~~Pubblicare su `main`~~ (Rilasci 1, 1.1 e 2 il 30/09/2026; Rilascio 2.1 il 01/10/2026).
+4. ~~Pubblicare su `main`~~ (Rilasci 1, 1.1 e 2 il 30/09/2026; Rilascio 2.1 il 01/10/2026). **Rilascio 2.2: guardare l'anteprima e dare l'OK.**
 5. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni). Da sapere: sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati (c'è da Pro in su).
 6. **Reindirizzare il vecchio indirizzo** (1 minuto): Vercel → progetto *coppa-america-napoli* → **Settings → Domains** → `coppa-america-napoli.vercel.app` → **Edit** → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 (permanente) → **Save**. La regola in `vercel.json` non sta funzionando; dopo la modifica si può togliere.
 7. ~~Attivare Vercel Web Analytics~~ (attivo dal 01/10/2026).
@@ -101,5 +113,4 @@ Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: riscrivere tu
 - Supabase gratuito va in pausa dopo 7 giorni senza attività: se succede, riattivarlo dalla dashboard (iscrizioni e statistiche restano). Con il contatore delle visite il database ora riceve richieste ogni giorno.
 
 ## Effort consigliato per il prossimo passo
-- Riscrittura di tutte le pagine → effort alto (tanto testo da scrivere bene, con le fonti giuste).
 - Rilascio 3 (Pronostici) → effort alto.

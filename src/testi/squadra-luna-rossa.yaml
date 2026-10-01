@@ -1,0 +1,25 @@
+# Testi della pagina /squadre/luna-rossa/. Come si scrivono: vedi src/lib/testi.ts e il README.
+# I dati (persone, risultati, equipaggi) sono in src/data/squadre.yaml.
+
+storia:
+  fonti: [ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, ws-women-2024, ac-press-kit, wiki-coppa]
+  testo: |
+    Luna Rossa è arrivata al Match due volte, nel 2000 e nel 2021, e tutte e due le volte ha perso contro i neozelandesi: l'Italia la Coppa non l'ha mai vinta. Nel 2024, a Barcellona, ha vinto la prima Women's America's Cup.
+
+    Per il 2027 ha preso Peter Burling, che la Coppa l'ha vinta tre volte da timoniere con Team New Zealand.
+
+da-sapere:
+  fonti: [ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, ws-women-2024]
+  testo: |
+    A Napoli, nel 2026, nelle ultime tre regate non si è mai fatta superare a nessuna boa, finale compresa. Marco Gradoni e Maria Giubilei vengono dal percorso per giovani e donne: sono la generazione della Youth e della Women's America's Cup.
+
+protagonisti:
+  fonti: [wiki-burling, ac-finale-napoli, ws-gradoni, ac-youth-date]
+  testo: |
+    ### Peter Burling
+
+    Neozelandese, ha vinto la Coppa da timoniere con Team New Zealand nel 2017, nel 2021 e nel 2024, e l'oro olimpico nel 49er a Rio 2016. Ora guida Luna Rossa.
+
+    ### Marco Gradoni
+
+    Ha vinto tre Mondiali Optimist di fila ed è stato il più giovane Rolex World Sailor of the Year, nel 2019. Nel 2024 ha vinto la Youth America's Cup.

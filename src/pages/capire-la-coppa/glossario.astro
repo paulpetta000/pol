@@ -4,12 +4,11 @@ import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
-import { getFonti, tutteLeFonti } from '../../lib/fatti';
+import { getFonti } from '../../lib/fatti';
 import { SITO } from '../../config/sito';
 
 const voci = (await getCollection('glossario')).sort((a, b) => a.data.termine.localeCompare(b.data.termine, 'it'));
 const extra = await getFonti(voci.flatMap(v => v.data.fonti.map(r => r.id)));
-const fonti = await tutteLeFonti();
 const iniziale = (t: string) => t[0].toUpperCase();
 const lettere = [...new Set(voci.map(v => iniziale(v.data.termine)))];
 const url = new URL('/capire-la-coppa/glossario/', SITO.url).href;
@@ -18,8 +17,8 @@ const jsonld = [{
   hasDefinedTerm: voci.map(v => ({ '@type': 'DefinedTerm', name: v.data.termine, description: v.data.testo, url: `${url}#${v.id}` }))
 }];
 ---
-<Base title="Glossario dell'America's Cup: le parole della vela" description={`${voci.length} parole per seguire l'America's Cup: foil, bolina, strambata, cancello, OCS, penalità, Defender, Louis Vuitton Cup e altre, spiegate in breve e con la fonte.`} jsonld={jsonld}>
-  <PageHead kicker="Capire la Coppa" title="Glossario" lead={`${voci.length} parole per seguire una regata senza perdersi. Brevi, con la fonte.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30">
+<Base title="Glossario dell'America's Cup: le parole della vela" description={`${voci.length} parole per seguire l'America's Cup: foil, bolina, strambata, cancello, OCS, penalità, Defender, Louis Vuitton Cup e altre, spiegate in breve.`} jsonld={jsonld}>
+  <PageHead kicker="Capire la Coppa" title="Glossario" lead={`${voci.length} parole per seguire una regata senza perdersi, spiegate in breve. Le fonti sono in fondo alla pagina.`} crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]}>
     <nav class="lettere" aria-label="Vai alla lettera">
       {lettere.map(l => <a href={`#lettera-${l}`}>{l}</a>)}
     </nav>
@@ -39,10 +38,7 @@ const jsonld = [{
                 </dt>
                 <dd>
                   <p>{v.data.testo}</p>
-                  <p class="gl__meta small">
-                    Fonte: {v.data.fonti.map((r, i) => { const s = fonti.get(r.id)!; return <>{i > 0 && ', '}<a href={s.data.url} rel="noopener">{s.data.editore}</a></>; })}
-                    {v.data.vedi && <> · <a href={v.data.vedi} class="gl__vedi">Approfondisci <Icon name="freccia" size={14} /></a></>}
-                  </p>
+                  {v.data.vedi && <p class="gl__meta small"><a href={v.data.vedi} class="gl__vedi">Approfondisci <Icon name="freccia" size={14} /></a></p>}
                 </dd>
               </div>
             ))}
@@ -52,7 +48,7 @@ const jsonld = [{
     </div>
   </section>
 
-  <FontiPagina fatti={[]} extra={extra} />
+  <FontiPagina extra={extra} />
 </Base>
 
 <style>

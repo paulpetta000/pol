@@ -3,20 +3,22 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import Flag from '../../components/Flag.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import Barca3D from '../../components/Barca3D.astro';
 import { getCollection } from 'astro:content';
-import { getFatti } from '../../lib/fatti';
+import { getFonti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const ids = ['sq-sette', 'sq-vincitori', 'sq-cor', 'cal-defender-gironi', 'sq-basi', 'sq-acp', 'sq-nyyc'];
-const f = await getFatti(ids);
+const T = await getTesti('squadre');
+// I piazzamenti 2026 nell'elenco vengono dai risultati ufficiali
+const risultati = await getFonti(['ac-risultati']);
 const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
 const RUOLO = { defender: 'Defender · difende la Coppa', 'challenger-of-record': 'Challenger of Record', sfidante: 'Sfidante' } as const;
 const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.risultati2026.find(r => r.evento === ev && !/Women|GB2|Pathway/.test(r.barca));
 ---
 <Base title="Le squadre dell'America's Cup 2027" description="Le 7 squadre della 38ª America's Cup a Napoli: Emirates Team New Zealand, Luna Rossa, GB1, Tudor Team Alinghi, La Roche-Posay Racing Team, ARC Team USA, Team Australia. Chi sono e come sono andate nel 2026.">
-  <PageHead illustrazione="squadre" kicker="Squadre" title="Chi gareggia" lead="Una squadra difende la Coppa, sei la sfidano. Per la prima volta ci sono tutte le nazioni che l'hanno già vinta." aggiornato="2026-09-30" />
+  <PageHead illustrazione="squadre" kicker="Squadre" title="Chi gareggia" lead="Una squadra difende la Coppa, sei la sfidano. Per la prima volta ci sono tutte le nazioni che l'hanno già vinta." />
   <Barca3D id="b3d-h" titolo="La barca della Coppa, in 3D" scelta />
   <section class="section" aria-labelledby="sq-h">
     <div class="wrap">
@@ -49,7 +51,7 @@ const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.r
     <div class="wrap split">
       <div>
         <h2>Da sapere</h2>
-        <Fatti f={f} ids={ids} />
+        <Testo b={T.b('da-sapere')} />
       </div>
       <div class="stack">
         <a class="vai-box" href="/capire-la-coppa/"><Icon name="play" size={30} /><span><strong>Capire la Coppa</strong><br />Come funziona una regata, in 60 secondi</span><Icon name="freccia" /></a>
@@ -57,7 +59,7 @@ const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.r
       </div>
     </div>
   </section>
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} extra={risultati} />
 </Base>
 <style>
   .sq { list-style: none; margin: 0; padding: 0; border-top: 2px solid var(--ink); }

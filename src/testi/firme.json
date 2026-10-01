@@ -1,4 +1,63 @@
 {
+  "archivio-2026#napoli": {
+    "res-napoli": "7fc1ff31a3"
+  },
+  "archivio-2026#cagliari": {
+    "res-cagliari": "9a580c8fc5"
+  },
+  "archivio-2026#punteggio": {
+    "res-punteggio": "4858c83858"
+  },
+  "archivio-2026#da-sapere": {
+    "res-non-contano": "dc62c32b86",
+    "res-wy": "da330f3733",
+    "campo-2026": "70ed2ec151",
+    "vil-2026-folla": "9428eaa6cd"
+  },
+  "barche#numeri": {
+    "ac75-misure": "1a51b00ce3",
+    "ac40-misure": "20561583e6",
+    "ac75-peso": "e3756c7bba",
+    "ac40-peso": "78b979055c",
+    "ac75-pozzetti": "a3a38b892f",
+    "ac40-uso": "532cabe8de",
+    "ac75-batterie": "e619967a8f",
+    "ac40-batteria": "df8a370c3f",
+    "ac75-foil": "65623c23d6",
+    "ac75-velocita": "79e9c6871c",
+    "ac75-una-nuova": "b86419b9ec",
+    "cal-flotta": "590fe580b1"
+  },
+  "barche#misure": {
+    "ac75-misure": "1a51b00ce3",
+    "ac75-vele": "31c82deb4f",
+    "ac75-peso": "e3756c7bba",
+    "ac75-foil": "65623c23d6",
+    "ac75-velocita": "79e9c6871c",
+    "ac75-pozzetti": "a3a38b892f",
+    "ac75-ruoli": "976243b844",
+    "ac40-misure": "20561583e6",
+    "ac40-peso": "78b979055c",
+    "ac40-ruoli": "0b3ad9d72e",
+    "ac40-batteria": "df8a370c3f",
+    "ac40-uso": "532cabe8de"
+  },
+  "barche#cifre": {
+    "ac75-cinque": "bda70095e7",
+    "ac75-ospite": "8d9073954d",
+    "ac75-donna": "a8004d10ce",
+    "ac75-batterie": "e619967a8f",
+    "cal-vento": "7c2a7c48e5"
+  },
+  "barche#regole": {
+    "ac75-cinque": "bda70095e7",
+    "ac75-batterie": "e619967a8f",
+    "ac75-donna": "a8004d10ce",
+    "ac75-nazionalita": "b5864c3975",
+    "ac75-ospite": "8d9073954d",
+    "ac75-una-nuova": "b86419b9ec",
+    "cal-vento": "7c2a7c48e5"
+  },
   "biglietti#cosa-si-sa": {
     "big-niente": "001e59421c",
     "big-tribune": "70c447952f",
@@ -29,6 +88,7 @@
     "cal-orari": "f52b029084",
     "cal-orari-2026": "84169bb83f",
     "cal-giorni-match": "1131be0a56",
+    "yw-bando-atteso": "bd811f0749",
     "cal-vento": "7c2a7c48e5",
     "cal-preliminari-2027": "06f90e178c"
   },
@@ -252,7 +312,8 @@
     "cal-youth": "38a7b85ee8",
     "cal-womens": "c28a1f080e",
     "ac40-uso": "532cabe8de",
-    "yw-nazionalita": "5b7aed571e"
+    "yw-nazionalita": "5b7aed571e",
+    "yw-bando-atteso": "bd811f0749"
   },
   "domande-frequenti#novita-2027": {
     "ac75-cinque": "bda70095e7",
@@ -367,6 +428,80 @@
   },
   "punti#sant-antonio-posillipo": {
     "vista-sant-antonio": "bbdfe4543c"
+  },
+  "quiz#equipaggio": {
+    "ac75-cinque": "bda70095e7",
+    "ac75-donna": "a8004d10ce"
+  },
+  "quiz#batterie": {
+    "ac75-batterie": "e619967a8f"
+  },
+  "quiz#precedenze": {
+    "reg-precedenze": "97f47a1f4b",
+    "reg-2027-attese": "f2fea92874"
+  },
+  "quiz#vittorie": {
+    "cal-match": "14d6c6b3b5",
+    "cal-semifinali": "914eea9df8"
+  },
+  "quiz#ocs": {
+    "reg-ocs": "1c5c9e2c5f"
+  },
+  "quiz#albero": {
+    "ac75-misure": "1a51b00ce3",
+    "ac40-misure": "20561583e6"
+  },
+  "quiz#record": {
+    "ac75-velocita": "79e9c6871c"
+  },
+  "quiz#penalita": {
+    "reg-penalita": "e9440e0c4f"
+  },
+  "quiz#foil": {},
+  "quiz#prima-regata": {},
+  "quiz#piu-coppe": {},
+  "quiz#napoli": {
+    "res-napoli": "7fc1ff31a3"
+  },
+  "squadra-arc-team-usa#storia": {},
+  "squadra-arc-team-usa#da-sapere": {},
+  "squadra-emirates-team-new-zealand#storia": {},
+  "squadra-emirates-team-new-zealand#protagonisti": {},
+  "squadra-gb1#storia": {},
+  "squadra-gb1#da-sapere": {},
+  "squadra-gb1#protagonisti": {},
+  "squadra-la-roche-posay-racing-team#storia": {},
+  "squadra-la-roche-posay-racing-team#da-sapere": {},
+  "squadra-luna-rossa#storia": {},
+  "squadra-luna-rossa#da-sapere": {},
+  "squadra-luna-rossa#protagonisti": {},
+  "squadra-team-australia#storia": {},
+  "squadra-team-australia#da-sapere": {},
+  "squadra-team-australia#protagonisti": {},
+  "squadra-tudor-team-alinghi#storia": {},
+  "squadra-tudor-team-alinghi#da-sapere": {},
+  "squadre-2027#defender": {
+    "cal-defender-gironi": "1caa4f7beb",
+    "cal-match": "14d6c6b3b5"
+  },
+  "squadre-2027#sfidante": {
+    "cal-lvc-periodo": "cf17fb9ab2",
+    "cal-ripescaggio": "c0cb0ad1e3",
+    "cal-match": "14d6c6b3b5"
+  },
+  "squadre-2027#equipaggi": {
+    "ac40-ruoli": "0b3ad9d72e",
+    "ac75-cinque": "bda70095e7",
+    "ac75-donna": "a8004d10ce"
+  },
+  "squadre#da-sapere": {
+    "sq-sette": "5b2577d182",
+    "sq-vincitori": "67945b8181",
+    "sq-cor": "fa78ea2752",
+    "cal-defender-gironi": "1caa4f7beb",
+    "sq-basi": "fac7c17f31",
+    "sq-acp": "c3a16848db",
+    "sq-nyyc": "ca9cee7ca6"
   },
   "tv#rai": {
     "tv-rai": "89acd5c9b3",

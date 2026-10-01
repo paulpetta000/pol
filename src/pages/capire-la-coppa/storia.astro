@@ -5,18 +5,17 @@ import Flag from '../../components/Flag.astro';
 import VideoYT from '../../components/VideoYT.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
-import { getFonti, tutteLeFonti } from '../../lib/fatti';
+import { getFonti } from '../../lib/fatti';
 import { ALBO, FONTI_ALBO } from '../../data/albo';
 
 const tappe = (await getCollection('storia')).sort((a, b) => a.id.localeCompare(b.id));
 const video = (await getCollection('video')).filter(v => v.data.gruppo === 'storia').sort((a, b) => a.data.ordine - b.data.ordine);
 const extra = await getFonti([...tappe.flatMap(t => t.data.fonti.map(r => r.id)), ...FONTI_ALBO, 'yt-americascup']);
-const fonti = await tutteLeFonti();
 const BAND = { us: 'us', au: 'au', nz: 'nz', ch: 'ch', it: 'it', gb: 'gb' } as const;
 const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.paese] = (m[x.vincitore.paese] || 0) + 1; return m; }, {});
 ---
 <Base title="Storia dell'America's Cup: dal 1851 a Napoli 2027" description="La storia della Coppa America in 14 tappe, dalla goletta America del 1851 alla prima volta in Italia nel 2027, con tutti i Match dal 1983 e le sfide di Luna Rossa e del Moro di Venezia.">
-  <PageHead kicker="Capire la Coppa" title="Storia della Coppa" lead="Il trofeo sportivo internazionale più antico: 175 anni, solo quattro nazioni vincitrici, e nel 2027 per la prima volta in Italia." crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} aggiornato="2026-09-30" />
+  <PageHead kicker="Capire la Coppa" title="Storia della Coppa" lead="Il trofeo sportivo internazionale più antico: 175 anni, solo quattro nazioni vincitrici, e nel 2027 per la prima volta in Italia." crumbs={[{ href: '/squadre/', label: 'Squadre' }, { href: '/capire-la-coppa/', label: 'Capire la Coppa' }]} />
 
   <section class="section" aria-labelledby="tappe-h">
     <div class="wrap">
@@ -29,7 +28,6 @@ const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.p
             <div class="linea__c">
               <h3>{t.data.titolo}{t.data.italia && <span class="chip linea__chip">Italia</span>}</h3>
               <p>{t.data.testo}</p>
-              <p class="linea__f small">Fonte: {t.data.fonti.map((r, i) => { const s = fonti.get(r.id)!; return <>{i > 0 && ', '}<a href={s.data.url} rel="noopener">{s.data.editore}</a></>; })}</p>
             </div>
           </li>
         ))}
@@ -60,7 +58,7 @@ const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.p
           </tbody>
         </table>
       </div>
-      <p class="small muted" style="margin-top:.6rem">Dal 1851 al 1980 la Coppa è sempre rimasta al New York Yacht Club. Club e risultati dal press kit ufficiale; nomi delle barche da Wikipedia.</p>
+      <p class="small muted" style="margin-top:.6rem">Dal 1851 al 1980 la Coppa è sempre rimasta al New York Yacht Club.</p>
     </div>
   </section>
 
@@ -88,8 +86,6 @@ const vittorie = ALBO.reduce<Record<string, number>>((m, x) => { m[x.vincitore.p
   .linea__c h3 { margin: 0 0 .35rem; display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; }
   .linea__c p { margin: 0 0 .35rem; }
   .linea__chip { color: var(--accent); }
-  .linea__f { color: var(--ink-3); }
-  .linea__f a { color: var(--ink-2); }
   @media (min-width: 760px) { .linea::before { left: 6.6rem; } .linea__i { grid-template-columns: 6rem 1fr; gap: 1.8rem; } .linea__i::before { left: calc(6.6rem - 5px); } .linea__q { font-size: 1.15rem; } }
   .albo th[scope="row"], .albo td { vertical-align: middle; }
   .albo__sq { display: inline-flex; align-items: center; gap: .55rem; }

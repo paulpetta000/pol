@@ -1,20 +1,19 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
-import Fatti from '../components/Fatti.astro';
+import Testo from '../components/Testo.astro';
 import FontiPagina from '../components/FontiPagina.astro';
-import { getFatti } from '../lib/fatti';
+import { getTesti } from '../lib/testi';
 import R from '../data/risultati-2026.json';
 
-const ids = ['res-napoli', 'res-cagliari', 'res-punteggio', 'res-wy', 'res-non-contano', 'vil-2026-folla', 'campo-2026'];
-const f = await getFatti(ids);
+const T = await getTesti('archivio-2026');
 const EVENTI = [
-  { k: 'napoli', t: 'Napoli', date: '25–27 settembre 2026', nota: 'Nove AC40, otto regate di flotta e la finale a due. ARC Team USA vince la prima regata al debutto; La Roche-Posay vince due regate ma si rovescia due volte.' },
-  { k: 'cagliari', t: 'Cagliari', date: '22–24 maggio 2026', nota: 'Otto AC40 nel Golfo degli Angeli. Le squadre americana e australiana, iscritte in ritardo, non c\'erano.' }
+  { k: 'napoli', t: 'Napoli', date: '25–27 settembre 2026' },
+  { k: 'cagliari', t: 'Cagliari', date: '22–24 maggio 2026' }
 ] as const;
 ---
 <Base title="Archivio 2026: risultati delle regate preliminari" description="Risultati ufficiali delle regate preliminari dell'America's Cup 2026: Napoli (25-27 settembre) e Cagliari (22-24 maggio), entrambe vinte da Luna Rossa. Classifica e punti regata per regata.">
-  <PageHead kicker="Archivio" title="Le regate del 2026" lead="Due regate di prova sulla strada per Napoli 2027, tutte e due vinte da Luna Rossa contro Emirates Team New Zealand. Punti regata per regata dai dati ufficiali." aggiornato="2026-09-30" />
+  <PageHead kicker="Archivio" title="Le regate del 2026" lead="Due regate di prova sulla strada per Napoli 2027, tutte e due vinte da Luna Rossa contro Emirates Team New Zealand. Punti regata per regata dai dati ufficiali." />
 
   {EVENTI.map(ev => {
     const c = R[ev.k].classifica;
@@ -24,7 +23,7 @@ const EVENTI = [
         <div class="wrap">
           <p class="kicker">{ev.date}</p>
           <h2 id={`h-${ev.k}`}>{ev.t}</h2>
-          <p class="lead">{ev.nota}</p>
+          <Testo b={T.b(ev.k)} class="lead" />
           <div class="tabella-wrap" tabindex="0" role="region" aria-label={`Classifica di ${ev.t} 2026`}>
             <table class="ris">
               <caption class="visually-hidden">Classifica di {ev.t} 2026, con i punti di ogni regata</caption>
@@ -43,7 +42,7 @@ const EVENTI = [
               </tbody>
             </table>
           </div>
-          <p class="small muted" style="margin-top:.6rem">10 punti a chi vince una regata, 9 al secondo e così via; 0 a chi non finisce. In arancio le vittorie. Le prime due si sfidano nella finale.</p>
+          <Testo b={T.b('punteggio')} class="small muted nota-punti" />
           <h3>Vincitori regata per regata</h3>
           <ol class="vinc">{R[ev.k].vincitori.map(v => <li>{v}</li>)}</ol>
         </div>
@@ -54,13 +53,14 @@ const EVENTI = [
   <section class="section band">
     <div class="wrap">
       <h2>Da sapere</h2>
-      <Fatti f={f} ids={ids} />
+      <Testo b={T.b('da-sapere')} />
     </div>
   </section>
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} />
 </Base>
 <style>
   .ris { min-width: 40rem; }
+  :global(.nota-punti) { margin-top: .6rem; }
   .ris th[scope="row"] { font-size: .95rem; }
   .ris th[scope="row"] .chip { margin-left: .5rem; vertical-align: middle; }
   .ris--wy th[scope="row"] { font-weight: 500; color: var(--ink-2); }

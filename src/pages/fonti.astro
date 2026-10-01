@@ -2,7 +2,7 @@
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
 import { getCollection } from 'astro:content';
-import { tutteLeFonti, ETICHETTA_STATO, SPIEGA_STATO } from '../lib/fatti';
+import { tutteLeFonti } from '../lib/fatti';
 import { dataBreve } from '../lib/formato';
 
 const fonti = [...(await tutteLeFonti()).values()];
@@ -11,17 +11,27 @@ const uso = new Map<string, number>();
 for (const f of fatti) for (const r of f.data.fonti) uso.set(r.id, (uso.get(r.id) || 0) + 1);
 const conta = { confermato: 0, stampa: 0, segnalato: 0, atteso: 0 } as Record<string, number>;
 for (const f of fatti) conta[f.data.stato]++;
+const vecchie = fatti.filter(f => f.data.anno !== 2027).length;
+const schede = (n: number) => `${n} ${n === 1 ? 'scheda' : 'schede'}`;
+// Come le schede compaiono nei testi
+const STATI = [
+  ['confermato', 'Confermate', 'Lette su una fonte ufficiale o su dati pubblici. Nei testi non hanno nessun segno.'],
+  ['stampa', 'Dalla stampa', 'Riportate da giornali e testate, senza conferma ufficiale. La frase lo dice («secondo la stampa», «scrivono i giornali») e ha il segno *.'],
+  ['segnalato', 'Da siti non ufficiali', 'Indicate da blog o altri siti che non sono giornali. La frase lo dice e ha il segno *.'],
+  ['atteso', 'Non ancora uscite', 'Le abbiamo cercate, ma gli organizzatori non le hanno ancora pubblicate. La frase lo dice («non è ancora uscito») e ha il segno *.']
+] as const;
 const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati', 'Dati aperti'], ['altro', 'Altre fonti']] as const;
 ---
 <Base title="Fonti e controlli" description="Tutte le fonti della guida all'America's Cup di Napoli 2027, con la data dell'ultimo controllo. Come distinguiamo le informazioni confermate, quelle della stampa e quelle non ancora uscite.">
-  <PageHead kicker="Trasparenza" title="Fonti e controlli" lead="Ogni informazione della guida è una scheda con la sua fonte, lo stato e la data in cui l'abbiamo controllata. Se manca la fonte, il sito non si pubblica." aggiornato="2026-09-30" />
+  <PageHead kicker="Trasparenza" title="Fonti e controlli" lead="Dietro ogni informazione della guida c'è una scheda con la sua fonte e la data in cui l'abbiamo controllata. Se manca la fonte, il sito non si pubblica." />
   <section class="section">
     <div class="wrap split">
       <div>
-        <h2>Come leggere le etichette</h2>
-        <dl class="righe">
-          {(['confermato', 'stampa', 'segnalato', 'atteso'] as const).map(s => <><dt><span class={`chip chip--${s}`}>{ETICHETTA_STATO[s]}</span></dt><dd>{SPIEGA_STATO[s]}. <span class="mono small muted">{conta[s]} schede</span></dd></>)}
-          <dt><span class="chip chip--anno">Com'era nel 2026</span></dt><dd>Racconta la regata di prova di settembre 2026: è un riferimento, non una regola per il 2027.</dd>
+        <h2>Come leggere i testi</h2>
+        <p>Nelle pagine trovi testi normali, senza etichette. Quando un'informazione non è ufficiale per il 2027 lo dice la frase stessa, e accanto c'è un piccolo segno <strong class="segno">*</strong>. Le fonti di ogni pagina sono in fondo, con la data del controllo.</p>
+        <dl class="righe leggere">
+          {STATI.map(([k, t, d]) => <><dt>{t}</dt><dd>{d} <span class="mono small muted">{schede(conta[k])}</span></dd></>)}
+          <dt>Com'era nel 2024 o nel 2026</dt><dd>Raccontano le regole del 2024 o la regata di prova di settembre 2026: sono un riferimento, non una regola per il 2027. La frase dice l'anno e ha il segno *, tranne i risultati. <span class="mono small muted">{schede(vecchie)}</span></dd>
         </dl>
       </div>
       <div class="terzo">
@@ -31,6 +41,7 @@ const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati',
           <li>Diamo la precedenza alle fonti ufficiali: organizzatori, squadre, Comune, ministeri.</li>
           <li>Quando le fonti si contraddicono usiamo la più recente e lo diciamo.</li>
           <li>Ogni scheda ha una data entro cui va ricontrollata: quando scade, il sito ci avvisa.</li>
+          <li>Se una scheda cambia, i testi che la usano vanno riletti: finché non lo facciamo, il sito non si pubblica.</li>
         </ul>
         <p class="small">Hai trovato un errore? Scrivici: lo correggiamo e aggiorniamo la data.</p>
       </div>
@@ -62,3 +73,11 @@ const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati',
     );
   })}
 </Base>
+<style>
+  .segno { color: var(--accent); }
+  /* sul telefono la spiegazione va sotto il nome, non accanto */
+  .leggere { grid-template-columns: 1fr; }
+  .leggere > dt { border-bottom: 0; padding-bottom: .1rem; }
+  .leggere > dd { padding-top: 0; }
+  @media (min-width: 1100px) { .leggere { grid-template-columns: minmax(7.5rem, max-content) 1fr; } .leggere > dt { border-bottom: 1px solid var(--line); padding-bottom: .65rem; } .leggere > dd { padding-top: .65rem; } }
+</style>

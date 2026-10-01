@@ -1,0 +1,12 @@
+# Testi della pagina /squadre/arc-team-usa/. Come si scrivono: vedi src/lib/testi.ts e il README.
+# I dati (persone, risultati, equipaggi) sono in src/data/squadre.yaml.
+
+storia:
+  fonti: [ac-host-venue, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, scuttlebutt-cagliari, ac-press-kit, wiki-coppa]
+  testo: |
+    Gli Stati Uniti hanno tenuto la Coppa per 132 anni con il New York Yacht Club, fino alla sconfitta del 1983. Poi l'hanno rivinta più volte: nel 1987 con Dennis Conner, nel 1988, nel 1992, nel 2010 e nel 2013.
+
+da-sapere:
+  fonti: [ac-host-venue, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, scuttlebutt-cagliari]
+  testo: |
+    Si è iscritta in ritardo e non ha corso a Cagliari. Ha debuttato a Napoli nel 2026, vincendo la prima regata, e ha chiuso al quarto posto.

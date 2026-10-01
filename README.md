@@ -38,7 +38,7 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 
 ## Testi discorsivi delle pagine
 
-Le pagine nuove non mostrano le schede una per una: hanno testi normali, scritti in `src/testi/<pagina>.yaml` (un blocco per argomento) e mostrati con `<Testo b={T.b('nome')} />` dopo `const T = await getTesti('<pagina>')`. Le fonti finiscono da sole in fondo alla pagina (`<FontiPagina testi={T} />`).
+Nessuna pagina mostra le schede una per una: tutte hanno testi normali, scritti in `src/testi/<pagina>.yaml` (un blocco per argomento) e mostrati con `<Testo b={T.b('nome')} />` dopo `const T = await getTesti('<pagina>')`. Le fonti finiscono da sole in fondo alla pagina (`<FontiPagina testi={T} />`; con più file di testi `testi={[T, P]}`).
 
 ```yaml
 formato:
@@ -55,6 +55,12 @@ Regole controllate dalla build (se non sono rispettate si ferma):
 - ogni scheda in `usa` deve esistere, con la sua fonte; per un consiglio nostro senza fonte si scrive `senzaFonte: "perché"`;
 - un'informazione non confermata per il 2027 (stato `stampa`, `segnalato` o `atteso`, oppure `anno` 2024 o 2026) va segnata con `{?id}` (sul sito diventa un piccolo `*`, spiegato in fondo) e la frase deve dirlo a parole: «secondo la stampa», «non è ancora uscito», «nel 2024»…;
 - ogni testo è «firmato» con le schede che usava quando è stato scritto (`src/testi/firme.json`): se una scheda cambia, la build si ferma finché qualcuno non rilegge il testo e lo firma di nuovo con `npm run testi:firma`.
+
+Altre cose utili:
+- un blocco può avere anche `fonti: [id]` (fonti senza scheda, per esempio OpenStreetMap o le fonti di una squadra) e `voci:` (elenchi di `num` e `testo`: le cifre in evidenza, le tariffe dei taxi, la tabella AC75–AC40). Le voci valgono con la prima frase del blocco: se dice «Nel 2026 funzionava così», le voci non devono ripeterlo;
+- i risultati del passato hanno `storico: true` in `fatti.yaml`: la frase dice l'anno, ma non serve il `*`;
+- un `*` per frase al massimo: se una frase usa più schede, si scrive `{?id1,id2}` alla fine;
+- dove sono i testi: un file per pagina (`home.yaml`, `calendario.yaml`, `dal-lungomare.yaml`…), `punti.yaml` per le schede dei punti panoramici (stesso id di `luoghi.yaml`), `domande-frequenti.yaml` per le risposte (stesso id di `faq.yaml`), `quiz.yaml` per le spiegazioni del quiz (stesso id di `quiz.yaml` in `src/data`), `squadra-<id>.yaml` per storia, «da sapere» e protagonisti di ogni squadra, `squadre-2027.yaml` per le parti comuni alle 7 squadre.
 
 ## Aggiornare un'informazione
 

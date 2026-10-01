@@ -1,0 +1,25 @@
+# Testi della pagina /squadre/gb1/. Come si scrivono: vedi src/lib/testi.ts e il README.
+# I dati (persone, risultati, equipaggi) sono in src/data/squadre.yaml.
+
+storia:
+  fonti: [ac-38, ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli, ac-press-kit, wiki-coppa]
+  testo: |
+    La Coppa nasce nel 1851 da una regata intorno all'isola di Wight, organizzata proprio dal Royal Yacht Squadron, il club di GB1. Eppure la Gran Bretagna non l'ha mai vinta.
+
+    Nel 2024, con il nome di INEOS Britannia, è arrivata al Match per la prima volta dal 1964 e ha perso 7–2 contro i neozelandesi.
+
+da-sapere:
+  fonti: [ac-38, ac-host-venue, ac-youth-date, ac-risultati, ac-finale-napoli, scuttlebutt-napoli]
+  testo: |
+    La società si chiama Athena Racing; GB1 è il nome della squadra. A Napoli, nel 2026, ha schierato anche una seconda barca per donne e giovani, Cobham-Ultra GB2.
+
+protagonisti:
+  fonti: [gb1-fletcher, ac-finale-napoli, allatsea-gb2]
+  testo: |
+    ### Dylan Fletcher
+
+    Campione olimpico nel 49er a Tokyo 2020 e timoniere della squadra britannica nel 2024. Dice che la priorità è portare in acqua l'AC75.
+
+    ### Hannah Mills
+
+    Due ori olimpici nel 470, a Rio 2016 e a Tokyo 2020. A Napoli, nel 2026, ha timonato la barca Women & Youth con Ellie Aldridge, oro olimpico di kitefoil a Parigi 2024.
