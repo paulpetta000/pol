@@ -18,7 +18,8 @@ const fullTitle = path === '/' ? `${SITO.nome} · ${SITO.sottotitolo}` : `${titl
 const ogSlug = og ?? (path === '/' ? 'home' : path.replace(/^\/|\/$/g, '').replace(/\//g, '--'));
 const ogImage = new URL(`/og/${ogSlug}.png`, SITO.url).href;
 const ld = [
-  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITO.nome, alternateName: SITO.sottotitolo, url: SITO.url + '/', inLanguage: 'it-IT' },
+  // Il nome che vogliamo vedere su Google (non «Vercel»): alternateName sono le alternative accettabili
+  { '@context': 'https://schema.org', '@type': 'WebSite', name: SITO.nome, alternateName: [`${SITO.nome} 2027`, SITO.url.replace(/^https?:\/\//, '')], url: SITO.url + '/', inLanguage: 'it-IT' },
   ...jsonld
 ];
 ---
@@ -36,8 +37,10 @@ const ld = [
   <meta name="theme-color" content="#F3F6F7" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#090D10" media="(prefers-color-scheme: dark)" />
   <link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin />
+  <!-- prima le icone che legge anche Google (ICO e PNG), poi la SVG per i browser -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" href="/icons/favicon-96.png" sizes="96x96" type="image/png" />
   <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="icon" href="/icons/icon-192.png" sizes="192x192" type="image/png" />
   <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
   <link rel="manifest" href="/manifest.webmanifest" />
   <meta property="og:type" content="website" />

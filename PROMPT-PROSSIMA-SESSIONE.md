@@ -71,6 +71,10 @@ Quando gli itinerari sono pronti (o prima, se te lo dico io), rendi il sito più
 6. «Avvisami» intero solo nella pagina Biglietti; altrove una riga con un pulsante.
 7. Il 3D non in cima alla pagina. In «Squadre» va dopo l'elenco delle 7 squadre e prima di «Da sapere»; nelle pagine delle squadre dopo la storia e prima dei risultati 2026. Nella pagina «Le barche» resta il primo blocco.
 
+## Quando il design è finito: fermati
+
+Appena hai finito tutta la parte di design (gli itinerari e il sito più ordinato, con le anteprime che ho approvato), **fermati** e scrivimi: «Ho finito il design: adesso spegni VectorLab UI/UX Skills e consistent-ui». Non andare avanti finché non ti rispondo OK. Dopo il mio OK riparti e continua con il resto (controlli finali, `PROGRESS.md`, pubblicazione su `main` solo con il mio OK).
+
 ## Domande da farmi all'inizio (al massimo 3)
 
 - Gli itinerari: voce nuova nel menu («Itinerari») o dentro «Napoli», sempre in una pagina tutta loro?
