@@ -19,7 +19,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
   - **Lighthouse mobile** (in locale): 99–100 in prestazioni, accessibilità, best practice e SEO su home, calendario, barche, archivio, mappa.
 
 - **Rilascio 1.1 · "Napoli a Vela"** (30/09/2026, ramo `claude/sharp-archimedes-nusxet`, solo anteprima):
-  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). Nuovo indirizzo gratuito **napoli-a-vela.vercel.app**; il vecchio `coppa-america-napoli.vercel.app` reindirizza al nuovo (regola in `vercel.json`).
+  - Nuovo nome **Napoli a Vela** (intestazione, piè di pagina, titoli, app, anteprime, calendari .ics, pagine legali). Nuovo indirizzo gratuito **napoli-a-vela.vercel.app**; il vecchio `coppa-america-napoli.vercel.app` doveva reindirizzare al nuovo con una regola in `vercel.json`, ma al controllo del 30/09/2026 (dopo il Rilascio 2) **il reindirizzamento non scatta**: il vecchio indirizzo mostra il sito. Vedi «Cose che devi fare tu», punto 6.
   - Nuovo logo "Golfo e Vesuvio" (scelto tra 4 proposte): intestazione, favicon, icone dell'app, immagini di anteprima. Si rigenera con `node scripts/icone.mjs`.
   - Home: al posto del disegno, **foto vera di due AC75 in regata** (Auckland 2021, Geoff McKay, CC BY 2.0).
   - **Foto dei luoghi** con licenza libera (Wikimedia Commons) in 8 schede su 11, con didascalia, autore, licenza e link; elenco in `src/data/foto.yaml` e nelle note legali. Mancano foto adatte per via Aniello Falcone, via Petrarca e la terrazza di Sant'Antonio a Posillipo.
@@ -44,12 +44,40 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
 - Rilasci 3-5 come da `PIANO.md`.
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo. Aggiornare le schede "Non ancora uscito".
 
+- **Controllo UX con la skill UI/UX Pro Max** (01/10/2026, solo ramo di lavoro): su 31 pagine a 390 px, tutti i bersagli da toccare ora sono almeno 44 px (prima: i due link del logo erano 34 e 30 px) e nessun testo è sotto 12 px (prima: 248 testi tra 10,2 e 11,8 px, tutte etichette in maiuscolo). Nessuno scorrimento orizzontale a 320 e 390 px. La skill, provata e poi tolta dal progetto (il suo generatore di «design system» non era adatto al sito), non c'è più; restano i risultati del controllo e le piccole modifiche, solo sul ramo di lavoro (non su `main`).
+
+## Skill: quali, e quando (01/10/2026)
+Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della fase in corso, spegnere le altre. Le skill del tuo account si accendono e spengono dalle impostazioni di Claude; i plugin dalla scheda di installazione (chiedere a Claude di cercarli di nuovo con SearchPlugins).
+
+**Scelte, da attivare quando vuoi** (catalogo «Anthropic Directory»):
+- **frontend-design** (Anthropic): una sola skill, per interfacce curate. La prima da attivare.
+- **Modern Web Guidance** (Google Chrome): buone pratiche del web moderno. La skill per le estensioni di Chrome non serve.
+
+**Valutate e messe da parte:**
+- **Design** (Anthropic): 7 skill utili (critica, accessibilità, UX writing, design system), ma collega anche Asana, Atlassian, Figma, Gmail, Google Calendar, Intercom, Linear, Notion e Slack. Utile solo per un restyling completo.
+- **UI Consistency**, **Backend Design**: partono da soli (comandi automatici) e hanno accesso ampio. Backend Design da rivalutare per il Rilascio 3, dopo un controllo.
+- **Fairmind Design**, **Rayden UI**, **jp-web-design**, **inhabited design**: non adatte.
+- Controllate fuori catalogo: **UI/UX Pro Max** (provata e tolta: il generatore di design system non era adatto), **Graphify** (non serve a un sito piccolo), **ECC** (293 skill e 24 comandi automatici: consuma molti token, sconsigliata).
+
+**Quali accendere, fase per fase:**
+| Fase | Skill utili | Note |
+|---|---|---|
+| Restyling completo del sito (solo se deciso) | frontend-design, Design, Modern Web Guidance | Le «pesanti» servono qui; poi spegnerle |
+| Rilascio 3 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
+| Rilascio 4 · Vivi Napoli | deep-research, frontend-design per le schede | Le informazioni vanno ricontrollate vicino alle date |
+| Rilascio 5 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
+| Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
+
+## Prossima sessione
+Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: pagine più discorsive con le fonti solo in fondo (A), il 3D in alto nella sezione Squadre (B), privacy, termini, marchi e `LEGALE.md` (C).
+
 ## Cose che devi fare tu
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
 4. ~~Pubblicare su `main`~~ (fatto il 30/09/2026: Rilascio 1, 1.1 e 2 online).
 5. Far vedere a un avvocato l'elenco del punto 8 di `PIANO.md` e i testi di privacy e note legali.
+6. **Reindirizzare il vecchio indirizzo** (1 minuto): Vercel → progetto *coppa-america-napoli* → **Settings → Domains** → `coppa-america-napoli.vercel.app` → **Edit** → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 (permanente) → **Save**. La regola in `vercel.json` non sta funzionando; dopo la modifica si può togliere.
 
 ## Note
 - Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`).
