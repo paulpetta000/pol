@@ -53,7 +53,7 @@ Li voglio **componibili**: la guida propone una serie di cose da fare, e io mi c
 Per me la cosa più importante è il design: la pagina deve essere bella, chiara e facile da usare con una mano sul telefono.
 
 - Prima del codice mostrami 2 proposte di come appare sul telefono, in chiaro e in scuro: l'elenco delle tappe, l'itinerario che si compone, la mappa. Scegliamo insieme, poi costruisci.
-- Usa la skill frontend-design, se è attiva.
+- Usa le skill di design che trovi attive: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills e, per il sito più ordinato, consistent-ui. Per orari e prezzi delle tappe usa deep-research. Se ti servono e non sono attive, dimmelo.
 - Stile coerente con «Regata», quello del sito, ma più ordinato: pochi tipi di riquadri, tanto spazio, gerarchia chiara.
 - Aggiungere e togliere una tappa con un tocco; riordinare trascinando, ma anche con i pulsanti (per chi usa la tastiera o un lettore di schermo).
 - Stati chiari: itinerario vuoto, giornata piena, tappa lontana.

@@ -70,15 +70,22 @@ _Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 pubblicato)_
 - Rilasci 3-5 come da `PIANO.md`, **nel nuovo ordine deciso il 01/10/2026: 3 · Vivi Napoli, 4 · Lingue, 5 · Pronostici**. Ognuno parte solo dopo il tuo OK. Testi già pronti per i link di affiliazione (Rilascio 3, `PIANO.md` punto 8) e per il regolamento del gioco (Rilascio 5, punto 7). I pronostici vanno finiti almeno un mese prima del 22 maggio 2027.
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede "Non ancora uscito".
 
-## Skill: quali, e quando (01/10/2026)
+## Skill: quali, e quando (01/10/2026, ricontrollate la sera per il design degli itinerari)
 Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della fase in corso, spegnere le altre. Le skill del tuo account si accendono e spengono dalle impostazioni di Claude; i plugin dalla scheda di installazione (chiedere a Claude di cercarli di nuovo con SearchPlugins).
 
 **Scelte, da attivare quando vuoi** (catalogo «Anthropic Directory»):
 - **frontend-design** (Anthropic): una sola skill, per interfacce curate. La prima da attivare.
-- **Modern Web Guidance** (Google Chrome): buone pratiche del web moderno. La skill per le estensioni di Chrome non serve.
+- **Modern Web Guidance** (Google Chrome): buone pratiche del web moderno (CSS, prestazioni, accessibilità). La skill per le estensioni di Chrome non serve.
+- **VectorLab UI/UX Skills** (comunità, 21 skill senza servizi esterni né comandi automatici): spazi, tipografia, riquadri, stati vuoti, errori, pulsanti, animazioni, «riduci movimento», controllo UX. Utile per il compositore degli itinerari e per il sito più ordinato. Accenderla solo durante il lavoro di design.
+- **consistent-ui** (comunità, 1 skill, nessun servizio esterno): trova le differenze di spazi, caratteri, colori e componenti tra le pagine e prepara un elenco di correzioni. Per il «sito più ordinato».
+- Già collegato: **Figma**, utile se vuoi vedere le proposte di design anche lì.
 
 **Valutate e messe da parte:**
 - **Design** (Anthropic): 7 skill utili (critica, accessibilità, UX writing, design system), ma collega anche Asana, Atlassian, Figma, Gmail, Google Calendar, Intercom, Linear, Notion e Slack. Utile solo per un restyling completo.
+- **design-skills** (comunità): 10 skill soprattutto di ricerca e strategia UX; per noi fa doppione con VectorLab.
+- **Axe Accessibility** (Deque): server esterno; i controlli axe li facciamo già prima di ogni anteprima.
+- **MapMap**: calcola percorsi su un servizio esterno a pagamento; le distanze degli itinerari le calcoliamo noi, senza servizi esterni.
+- **Critique**, **perception-first-design**, **ultrapowers-dev**: partono da sole su ogni messaggio o sono troppo grandi (55 skill).
 - **UI Consistency**, **Backend Design**: partono da soli (comandi automatici) e hanno accesso ampio. Backend Design da rivalutare per il Rilascio 5 (Pronostici), dopo un controllo.
 - **Fairmind Design**, **Rayden UI**, **jp-web-design**, **inhabited design**: non adatte.
 - Controllate fuori catalogo: **UI/UX Pro Max** (provata e tolta: il generatore di design system non era adatto), **Graphify** (non serve a un sito piccolo), **ECC** (293 skill e 24 comandi automatici: consuma molti token, sconsigliata).
@@ -87,7 +94,7 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Fase | Skill utili | Note |
 |---|---|---|
 | Restyling completo del sito (solo se deciso) | frontend-design, Design, Modern Web Guidance | Le «pesanti» servono qui; poi spegnerle |
-| Rilascio 3 · Vivi Napoli | deep-research, frontend-design per le schede | Le informazioni vanno ricontrollate vicino alle date |
+| Rilascio 3 · Itinerari e sito più ordinato | frontend-design, Modern Web Guidance, VectorLab UI/UX Skills, consistent-ui; deep-research (già attiva) per orari e prezzi | Dopo il lavoro di design spegnere VectorLab e consistent-ui |
 | Rilascio 4 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
