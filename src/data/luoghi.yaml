@@ -259,5 +259,14 @@
 - { id: fun-sant-antonio, nome: "Sant'Antonio", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82605, lon: 14.21767 }
 - { id: fun-manzoni, nome: "Manzoni", linea: "Funicolare di Mergellina", tipo: stazione, lat: 40.82588, lon: 14.21291 }
 - { id: fun-cimarosa, nome: "Cimarosa", linea: "Funicolare di Chiaia", tipo: stazione, lat: 40.84232, lon: 14.23202 }
+# Aggiunte il 01/10/2026 con la mappa più larga (coordinate OpenStreetMap)
+- { id: napoli-centrale, nome: "Napoli Centrale–Garibaldi", linea: "Treni, Metro Linea 1 e 2, Circumvesuviana", tipo: stazione, lat: 40.85302, lon: 14.27314 }
+- { id: museo, nome: "Museo–Piazza Cavour", linea: "Metro Linea 1 e Linea 2", tipo: stazione, lat: 40.85342, lon: 14.25170 }
+- { id: dante, nome: "Dante", linea: "Metro Linea 1", tipo: stazione, lat: 40.84894, lon: 14.25012 }
+- { id: universita, nome: "Università", linea: "Metro Linea 1", tipo: stazione, lat: 40.84359, lon: 14.25552 }
+- { id: montesanto, nome: "Montesanto", linea: "Cumana, Circumflegrea, Linea 2 e Funicolare di Montesanto", tipo: stazione, lat: 40.84717, lon: 14.24567 }
+- { id: vanvitelli, nome: "Vanvitelli", linea: "Metro Linea 1", tipo: stazione, lat: 40.84392, lon: 14.23175 }
+- { id: campi-flegrei, nome: "Napoli Campi Flegrei", linea: "Linea 2 (treni)", tipo: stazione, lat: 40.82218, lon: 14.19464 }
+- { id: mostra, nome: "Mostra", linea: "Metro Linea 6 e Cumana", tipo: stazione, lat: 40.82434, lon: 14.19366 }
 - { id: molo-beverello, nome: "Molo Beverello", linea: "Aliscafi e traghetti", tipo: porto, lat: 40.83735, lon: 14.25475 }
 - { id: molo-mergellina, nome: "Molo Mergellina", linea: "Aliscafi", tipo: porto, lat: 40.82885, lon: 14.22272 }

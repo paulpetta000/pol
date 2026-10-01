@@ -1,14 +1,13 @@
 // Costruisce la base della mappa (src/data/mappa.json) dai riquadri OpenStreetMap.
 // Uso: node scripts/mappa/costruisci.mjs <cartella-riquadri>
-// I riquadri si scaricano con scripts/mappa/scarica.sh (API di OpenStreetMap, dati ODbL).
+// I riquadri si scaricano con scripts/mappa/scarica.mjs (API di OpenStreetMap, dati ODbL).
 import fs from 'node:fs';
 import { loadTiles } from './osm.mjs';
+import { BOX } from './riquadro.mjs';
 
 const dir = process.argv[2];
 if (!dir) throw new Error('Indica la cartella con i riquadri XML');
 
-// Riquadro della mappa: da Bagnoli al porto, da Nisida al Vomero
-const BOX = { w: 14.150, e: 14.264, s: 40.790, n: 40.852 };
 const M_PER_UNIT = 5;
 const LAT0 = (BOX.s + BOX.n) / 2;
 const KX = 111320 * Math.cos((LAT0 * Math.PI) / 180) / M_PER_UNIT;
@@ -223,13 +222,16 @@ for (const w of ways.values()) {
 }
 
 // Nomi di quartiere (place=suburb/quarter/neighbourhood)
-const WANT = ['Bagnoli', 'Posillipo', 'Mergellina', 'Chiaia', 'Vomero', 'Fuorigrotta', 'Santa Lucia', 'Coroglio', 'Marechiaro', 'Pizzofalcone', 'Arenella', 'San Ferdinando'];
+const WANT = ['Bagnoli', 'Posillipo', 'Mergellina', 'Chiaia', 'Vomero', 'Fuorigrotta', 'Santa Lucia', 'Coroglio', 'Marechiaro', 'Pizzofalcone', 'Arenella', 'San Ferdinando', 'San Lorenzo', 'Porto', 'Capodimonte'];
+// Nome da mostrare, se diverso da quello di OpenStreetMap
+const MOSTRA = { 'San Lorenzo': 'Centro storico' };
 const places = [];
 for (const n of nodes.values()) {
   const t = n.tags;
   if (!t.place || !WANT.includes(t.name)) continue;
   const [x, y] = proj(n.lat, n.lon);
-  if (inside([x, y]) && !places.some(p => p.name === t.name)) places.push({ name: t.name, x: r(x), y: r(y) });
+  const name = MOSTRA[t.name] || t.name;
+  if (inside([x, y]) && !places.some(p => p.name === name)) places.push({ name, x: r(x), y: r(y) });
 }
 
 const out = {

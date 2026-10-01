@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 import { vistaOrdinata, GRUPPI } from '../lib/luoghi';
 import M from '../data/mappa.json';
 
-interface Props { vista?: 'panoramica' | 'lungomare' | 'bagnoli'; anteprima?: boolean; id?: string }
+interface Props { vista?: 'panoramica' | 'lungomare' | 'bagnoli' | 'centro'; anteprima?: boolean; id?: string }
 const { vista = 'lungomare', anteprima = false, id = 'mappa' } = Astro.props;
 
 const KX = M.w / (M.box.e - M.box.w);
@@ -15,12 +15,15 @@ const KY = M.h / (M.box.n - M.box.s);
 const P = (lat: number, lon: number) => [Math.round((lon - M.box.w) * KX), Math.round((M.box.n - lat) * KY)] as const;
 const poly = (pts: [number, number][]) => 'M' + pts.map(([la, lo]) => P(la, lo).join(' ')).join('L') + 'Z';
 
-// Viste dei pulsanti di zona (x y larghezza altezza, in unità della mappa)
+// Viste dei pulsanti di zona: riquadri in coordinate (nord, ovest, sud, est), poi in unità della mappa
+const riquadro = (n: number, w: number, s: number, e: number) => { const [x1, y1] = P(n, w), [x2, y2] = P(s, e); return `${x1} ${y1} ${x2 - x1} ${y2 - y1}`; };
 const VISTE = {
-  panoramica: `0 0 ${M.w} ${M.h}`,
-  lungomare: '960 110 860 760',
-  bagnoli: '0 560 900 700'
+  lungomare: riquadro(40.8470, 14.2070, 40.8128, 14.2580),
+  bagnoli: riquadro(40.8268, 14.1500, 40.7952, 14.2034),
+  centro: riquadro(40.8640, 14.2330, 40.8350, 14.2870),
+  panoramica: `0 0 ${M.w} ${M.h}`
 };
+const ANTEPRIMA = riquadro(40.8443, 14.2058, 40.8173, 14.2628);
 
 const luoghi = (await getCollection('luoghi')).map(l => ({ ...l, xy: P(l.data.lat, l.data.lon) }));
 const viste = (await vistaOrdinata()).map((l, i) => ({ ...l, n: i + 1, xy: P(l.data.lat, l.data.lon) }));
@@ -40,13 +43,14 @@ const zone = M.places.filter(p => !['Pizzofalcone', 'San Ferdinando'].includes(p
   {!anteprima && (
     <div class="mappa__bar" role="group" aria-label="Zona della mappa">
       <button type="button" data-vista="lungomare" aria-pressed={vista === 'lungomare'}>Lungomare</button>
-      <button type="button" data-vista="panoramica" aria-pressed={vista === 'panoramica'}>Tutto il golfo</button>
       <button type="button" data-vista="bagnoli" aria-pressed={vista === 'bagnoli'}>Bagnoli</button>
+      <button type="button" data-vista="centro" aria-pressed={vista === 'centro'}>Centro e stazione</button>
+      <button type="button" data-vista="panoramica" aria-pressed={vista === 'panoramica'}>Tutta la mappa</button>
     </div>
   )}
   <div class="mappa__area">
-    <svg viewBox={anteprima ? '940 170 960 600' : VISTE[vista]} role="img" aria-labelledby={`${id}-t`} preserveAspectRatio={anteprima ? 'xMidYMid slice' : 'xMidYMid meet'}>
-      <title id={`${id}-t`}>Mappa del lungomare di Napoli con i punti da cui guardare le regate, le stazioni e la zona indicativa del campo di regata</title>
+    <svg viewBox={anteprima ? ANTEPRIMA : VISTE[vista]} role="img" aria-labelledby={`${id}-t`} preserveAspectRatio={anteprima ? 'xMidYMid slice' : 'xMidYMid meet'}>
+      <title id={`${id}-t`}>Mappa di Napoli, da Bagnoli alla Stazione Centrale, con i punti da cui guardare le regate, le stazioni e la zona indicativa del campo di regata</title>
       <defs>
         <pattern id={`${id}-tratteggio`} width="14" height="14" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
           <rect width="14" height="14" fill="var(--accent)" fill-opacity=".10" />
@@ -277,8 +281,10 @@ const zone = M.places.filter(p => !['Pizzofalcone', 'San Ferdinando'].includes(p
   .mappa:not(.mappa--anteprima) .mappa__area > svg:active { cursor: grabbing; }
   @media (min-width: 760px) { .mappa__area > svg { aspect-ratio: 980 / 700; max-height: 70vh; } .mappa:not(.mappa--anteprima) { max-width: 60rem; } }
   .mappa--anteprima .mappa__area > svg { aspect-ratio: 16 / 10; max-height: none; }
-  .mappa__bar { display: flex; gap: 0; border-bottom: 1px solid var(--line); background: var(--surface); overflow-x: auto; }
-  .mappa__bar button { flex: 1 0 auto; min-height: 44px; padding: .5rem .9rem; border: 0; border-right: 1px solid var(--line); background: transparent; color: var(--ink-2); font: inherit; font-weight: 700; font-stretch: 88%; cursor: pointer; }
+  /* due righe da due sul telefono, una riga da quattro sugli schermi larghi; le righe sottili sono lo sfondo */
+  .mappa__bar { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border-bottom: 1px solid var(--line); background: var(--line); }
+  @media (min-width: 620px) { .mappa__bar { grid-template-columns: repeat(4, 1fr); } }
+  .mappa__bar button { min-height: 44px; padding: .5rem .6rem; border: 0; background: var(--surface); color: var(--ink-2); font: inherit; font-weight: 700; font-stretch: 88%; cursor: pointer; }
   .mappa__bar button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
   .mappa__zoom { position: absolute; right: 10px; top: 10px; display: grid; gap: 6px; }
   .mappa__zoom button { width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid var(--line-2); border-radius: var(--r); background: var(--surface); color: var(--ink); font: 700 1.5rem/1 var(--f-sans); cursor: pointer; box-shadow: var(--shadow); }

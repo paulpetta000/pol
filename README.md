@@ -44,7 +44,7 @@ Quando una scheda supera la data `ricontrollare`, la build scrive un avviso `[da
 
 ## Altro
 
-- Mappa: `scripts/mappa/` (dati © OpenStreetMap, ODbL).
+- Mappa: `scripts/mappa/` (dati © OpenStreetMap, ODbL). Il riquadro è in `scripts/mappa/riquadro.mjs`; per rifarla: `node scripts/mappa/scarica.mjs <cartella>` e poi `node scripts/mappa/costruisci.mjs <cartella>`.
 - Font: `scripts/font/prepara.py` (licenza SIL OFL).
 - Logo: `src/lib/logo.mjs`; icone dell'app e favicon: `node scripts/icone.mjs`.
 - Un nuovo punto panoramico entra solo con due fonti indipendenti, o una fonte affidabile più i dati di OpenStreetMap; aggiungilo anche in `ORDINE_VISTE` (`src/lib/luoghi.ts`).

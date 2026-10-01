@@ -95,8 +95,9 @@ const luoghi = defineCollection({
     // Solo per i punti da cui guardare: gruppo sulla mappa e nell'elenco
     gruppo: z.enum(['lungomare', 'colline', 'posillipo']).optional(),
     linea: z.string().optional(),
-    lat: z.number().min(40.79).max(40.852),
-    lon: z.number().min(14.15).max(14.264),
+    // dentro il riquadro della mappa (scripts/mappa/riquadro.mjs)
+    lat: z.number().min(40.786).max(40.874),
+    lon: z.number().min(14.135).max(14.29),
     indicativo: z.boolean().default(false),
     testo: z.string().optional(),
     vicino: z.enum(['prima-fila', 'vicino', 'dall-alto']).optional(),
