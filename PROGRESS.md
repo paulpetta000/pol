@@ -44,7 +44,7 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
 - Rilasci 3-5 come da `PIANO.md`.
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo. Aggiornare le schede "Non ancora uscito".
 
-- **Controllo UX con la skill UI/UX Pro Max** (01/10/2026, solo ramo di lavoro): su 31 pagine a 390 px, tutti i bersagli da toccare ora sono almeno 44 px (prima: i due link del logo erano 34 e 30 px) e nessun testo è sotto 12 px (prima: 248 testi tra 10,2 e 11,8 px, tutte etichette in maiuscolo). Nessuno scorrimento orizzontale a 320 e 390 px. Skill copiata in `.claude/skills/ui-ux-pro-max/`.
+- **Controllo UX con la skill UI/UX Pro Max** (01/10/2026, solo ramo di lavoro): su 31 pagine a 390 px, tutti i bersagli da toccare ora sono almeno 44 px (prima: i due link del logo erano 34 e 30 px) e nessun testo è sotto 12 px (prima: 248 testi tra 10,2 e 11,8 px, tutte etichette in maiuscolo). Nessuno scorrimento orizzontale a 320 e 390 px. La skill, provata e poi tolta dal progetto (il suo generatore di «design system» non era adatto al sito), non c'è più; restano i risultati del controllo e le piccole modifiche, solo sul ramo di lavoro (non su `main`).
 
 ## Cose che devi fare tu
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
