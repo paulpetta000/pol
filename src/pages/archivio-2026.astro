@@ -25,7 +25,7 @@ const EVENTI = [
           <p class="kicker">{ev.date}</p>
           <h2 id={`h-${ev.k}`}>{ev.t}</h2>
           <p class="lead">{ev.nota}</p>
-          <div class="tabella-wrap">
+          <div class="tabella-wrap" tabindex="0" role="region" aria-label={`Classifica di ${ev.t} 2026`}>
             <table class="ris">
               <caption class="visually-hidden">Classifica di {ev.t} 2026, con i punti di ogni regata</caption>
               <thead>

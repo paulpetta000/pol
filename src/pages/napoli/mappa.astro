@@ -33,7 +33,7 @@ const osm = (await tutteLeFonti()).get('osm')!;
     <div class="wrap split">
       <div>
         <h2 id="st-h">Stazioni e porti sulla mappa</h2>
-        <div class="tabella-wrap">
+        <div class="tabella-wrap" tabindex="0" role="region" aria-label="Tabella delle fermate e delle linee">
           <table>
             <thead><tr><th scope="col">Fermata</th><th scope="col">Linea</th></tr></thead>
             <tbody>{stazioni.map(s => <tr><th scope="row">{s.data.nome}</th><td>{s.data.linea}</td></tr>)}</tbody>

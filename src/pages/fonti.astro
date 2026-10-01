@@ -42,7 +42,7 @@ const GRUPPI = [['ufficiale', 'Fonti ufficiali'], ['stampa', 'Stampa'], ['dati',
       <section class="section band">
         <div class="wrap">
           <h2>{titolo} <span class="mono small muted">({lista.length})</span></h2>
-          <div class="tabella-wrap">
+          <div class="tabella-wrap" tabindex="0" role="region" aria-label={`Fonti: ${titolo}`}>
             <table>
               <thead><tr><th scope="col">Fonte</th><th scope="col">Editore</th><th scope="col">Controllata</th><th scope="col" class="num">Schede</th></tr></thead>
               <tbody>

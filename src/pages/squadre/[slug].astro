@@ -63,7 +63,7 @@ const jsonld = [{ '@context': 'https://schema.org', '@type': 'SportsTeam', name:
       <p class="kicker">Regate preliminari 2026</p>
       <h2 id="ris-h">Com'è andata nel 2026</h2>
       {d.risultati2026.length === 0 ? <p>Non ha corso le regate preliminari del 2026: la prima regata sarà la Louis Vuitton Cup.</p> : (
-        <div class="tabella-wrap">
+        <div class="tabella-wrap" tabindex="0" role="region" aria-label="Risultati 2026">
           <table>
             <thead><tr><th scope="col">Regata</th><th scope="col">Barca</th><th scope="col" class="num">Posto</th><th scope="col" class="num">Punti</th></tr></thead>
             <tbody>
