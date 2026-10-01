@@ -113,6 +113,7 @@ const luoghi = defineCollection({
 const faq = defineCollection({
   loader: file('src/data/faq.yaml'),
   schema: z.object({
+    ordine: z.number().int(),
     domanda: z.string().endsWith('?')
   })
 });

@@ -1,73 +1,97 @@
-# Domande frequenti, in ordine. Le risposte sono in src/testi/domande-frequenti.yaml (stesso id).
+# Domande frequenti; «ordine» decide la posizione nella pagina. Le risposte sono in src/testi/domande-frequenti.yaml (stesso id).
 
 - id: come-funziona
+  ordine: 1
   domanda: "Come funziona una regata della Coppa?"
 
 - id: quando
+  ordine: 2
   domanda: "Quando si corre l'America's Cup a Napoli?"
 
 - id: gratis
+  ordine: 3
   domanda: "Si può vedere gratis?"
 
 - id: dove-meglio
+  ordine: 4
   domanda: "Da dove si vede meglio?"
 
 - id: biglietti
+  ordine: 5
   domanda: "Quanto costano le tribune e quando escono i biglietti?"
 
 - id: village-dove
+  ordine: 6
   domanda: "Dove sarà il Race Village?"
 
 - id: orari
+  ordine: 7
   domanda: "A che ora ci sono le regate?"
 
 - id: barca
+  ordine: 8
   domanda: "Posso andare a vedere con la mia barca?"
 
 - id: tv
+  ordine: 9
   domanda: "Dove si vede in TV?"
 
 - id: squadre
+  ordine: 10
   domanda: "Quante squadre ci sono?"
 
 - id: defender
+  ordine: 11
   domanda: "Chi è il «Defender» e perché non corre la Louis Vuitton Cup fino in fondo?"
 
 - id: lvc-formato
+  ordine: 12
   domanda: "Come funziona la Louis Vuitton Cup?"
 
 - id: youth-women
+  ordine: 13
   domanda: "Cosa sono la Youth e la Women's America's Cup?"
 
 - id: novita-2027
+  ordine: 14
   domanda: "Cosa cambia nel 2027 sulle barche?"
 
 - id: aeroporto
+  ordine: 15
   domanda: "Come arrivo dall'aeroporto al lungomare?"
 
 - id: metro-notte
+  ordine: 16
   domanda: "La metro resta aperta la sera delle regate?"
 
 - id: caracciolo-chiusa
+  ordine: 17
   domanda: "Via Caracciolo sarà chiusa alle auto?"
 
 - id: droni
+  ordine: 18
   domanda: "Posso portare un drone?"
 
 - id: bambini
+  ordine: 19
   domanda: "È adatto ai bambini?"
 
 - id: disabilita
+  ordine: 20
   domanda: "Ci sono servizi per persone con disabilità?"
 
 - id: preliminari
+  ordine: 21
   domanda: "Ci saranno altre regate prima di maggio 2027?"
 
 - id: ufficiale
+  ordine: 22
   domanda: "Questo sito è ufficiale?"
 
 - id: siti-non-ufficiali
+  ordine: 23
   domanda: "americascupitalia.it è il sito ufficiale?"
 
 - id: avvisami
+  ordine: 24
   domanda: "Come vengo a sapere quando escono biglietti e orari?"

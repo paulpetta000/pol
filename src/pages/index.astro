@@ -18,7 +18,7 @@ import R from '../data/risultati-2026.json';
 const T = await getTesti('home');
 const D = await getTesti('domande-frequenti');
 const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
-const faq = (await getCollection('faq')).filter(q => ['quando', 'gratis', 'dove-meglio', 'biglietti', 'tv'].includes(q.id)).map(q => ({ q, b: D.b(q.id) }));
+const faq = (await getCollection('faq')).filter(q => ['quando', 'gratis', 'dove-meglio', 'biglietti', 'tv'].includes(q.id)).sort((a, b) => a.data.ordine - b.data.ordine).map(q => ({ q, b: D.b(q.id) }));
 
 const AZIONI = [
   { href: '/come-vederla/dal-lungomare/', icon: 'binocolo', t: 'Vederla gratis', s: 'dal lungomare e dalle colline' },

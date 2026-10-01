@@ -7,7 +7,7 @@ import { getCollection } from 'astro:content';
 import { getTesti } from '../lib/testi';
 
 const T = await getTesti('domande-frequenti');
-const faq = (await getCollection('faq')).map(q => ({ q, b: T.b(q.id) }));
+const faq = (await getCollection('faq')).sort((a, b) => a.data.ordine - b.data.ordine).map(q => ({ q, b: T.b(q.id) }));
 // Ogni risposta deve avere la sua domanda in src/data/faq.yaml
 const senzaDomanda = T.blocchi.filter(n => !faq.some(x => x.q.id === n));
 if (senzaDomanda.length) throw new Error(`Risposte senza domanda in src/data/faq.yaml: ${senzaDomanda.join(', ')}`);
