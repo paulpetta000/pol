@@ -100,7 +100,12 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
 ## Prossima sessione
-Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: **Rilascio 3, itinerari componibili** (pagina tutta loro, senza link di affiliazione, tappe da aggiungere e togliere tenendo conto delle distanze, design prima di tutto), poi il **sito più ordinato** (7 proposte del 01/10/2026: pagine più corte, «In breve» in cima, home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso).
+Il Rilascio 3 è diviso in **3 blocchi, uno per sessione**, con un prompt pronto per ciascuno:
+1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design**: le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
+2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina**: il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
+3. `PROMPT-BLOCCO-3.md` · **il sito più ordinato**: controllo di coerenza e le 7 proposte del 01/10/2026 (pagine più corte, «In breve», home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui.
+
+Alla fine di ogni blocco la sessione **si ferma**: manda le cose da rivedere (anteprima, immagini, tabelle), aspetta l'OK e dice quali skill accendere o spegnere per il blocco dopo. Alla fine del blocco 3 chiede di spegnere VectorLab UI/UX Skills e consistent-ui.
 
 ## Cose che devi fare tu
 1. ~~Vercel → Production Branch = `main`~~ (il sito pubblico si aggiorna da `main`).

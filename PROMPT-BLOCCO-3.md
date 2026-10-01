@@ -1,0 +1,49 @@
+# Prompt · Blocco 3 di 3 · Il sito più ordinato (scritto il 01/10/2026)
+
+Incollare questo testo all'inizio di una sessione nuova, dopo aver finito il blocco 2.
+
+---
+
+Lavora sul sito "Napoli a Vela" (repository paulpetta000/pol, Astro, online su https://napoli-a-vela.vercel.app dal ramo `main`). Prima leggi `PROGRESS.md`, `PIANO.md` e `README.md`. Parlami in italiano semplice: uso il telefono.
+
+Questo è il **blocco 3 di 3** del Rilascio 3:
+1. itinerari: contenuti e proposte di design;
+2. itinerari: la pagina;
+3. il sito più ordinato.
+
+## Regole di lavoro
+
+- Parti da un ramo nuovo creato da `main`. Su `main` non pubblicare niente senza il mio OK esplicito: prima mostrami l'anteprima di Vercel (link e immagini su telefono, tema chiaro e scuro).
+- Prima di scrivere codice dimmi in poche righe il piano e fammi al massimo 2-3 domande, se servono davvero.
+- Prima di ogni anteprima controlla: build, `npm run check:links`, accessibilità (axe) in chiaro e scuro, Lighthouse su telefono (almeno 95 ovunque), nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», nessun errore in console. Aggiorna `PROGRESS.md` e fai commit chiari.
+- Tutti i testi stanno in `src/testi/` e passano dai controlli della build (vedi `README.md`, «Testi discorsivi delle pagine»): niente schede con etichette, fonti solo in fondo, `*` sulle informazioni non ufficiali per il 2027, dette anche a parole.
+- Ogni informazione ha la sua fonte (`src/data/fatti.yaml` e `fonti.yaml`); orari e prezzi hanno la data «da ricontrollare».
+- Niente link di affiliazione, niente «ufficiale», niente loghi dell'evento.
+- Skill per questo blocco: frontend-design, VectorLab UI/UX Skills e consistent-ui. Se ti serve una skill che non è attiva, dimmelo invece di andare avanti senza.
+
+## Blocco 3 · Il sito più ordinato
+
+Gli itinerari sono online. Ora rendi tutto il sito più ordinato: oggi alcune pagine sono lunghe e mettono troppe cose insieme.
+
+Prima fai un controllo di coerenza con consistent-ui (spazi, caratteri, colori e componenti che cambiano da una pagina all'altra) e mostrami l'elenco dei problemi trovati. Poi applica queste proposte, del 01/10/2026:
+
+1. **«Dal lungomare»** (quasi 22 schermate sul telefono) e **«Mappa»** (19): schede dei punti più corte (foto piccola, nome e una riga; il resto si apre toccando) e linguette Lungomare / Colline / Posillipo. Nella pagina della mappa solo la mappa e l'elenco dei nomi, senza ripetere le schede.
+2. Un riquadro **«In breve»** in cima alle pagine lunghe, con 3-4 risposte veloci e i link alle parti della pagina.
+3. **Home più leggera:** oggi ha 11 blocchi (quasi 10 schermate). Tenere titolo e conto alla rovescia, «Cosa vuoi fare?», prossimo appuntamento, dove guardare, domande veloci.
+4. **«Fonti di questa pagina» chiuse a tendina**, con il numero delle fonti e la data sempre visibili.
+5. **Meno tipi di riquadri**, più spazio tra un argomento e l'altro.
+6. **«Avvisami»** intero solo nella pagina Biglietti; altrove una riga con un pulsante.
+7. **Il 3D non in cima alla pagina.** In «Squadre» va dopo l'elenco delle 7 squadre e prima di «Da sapere»; nelle pagine delle squadre dopo la storia e prima dei risultati 2026. Nella pagina «Le barche» resta il primo blocco.
+
+### Domanda da farmi all'inizio
+
+- Il 3D: va bene la posizione del punto 7?
+
+### Fine del blocco: fermati
+
+1. Mandami il link dell'anteprima e le immagini da telefono di **prima e dopo**, in chiaro e in scuro, delle pagine che cambiano di più: home, «Dal lungomare», «Mappa», «Squadre» e una pagina squadra. Aggiungi le misure: quante schermate sono lunghe prima e dopo.
+2. Scrivimi: «Ho finito il design: adesso spegni VectorLab UI/UX Skills e consistent-ui». **Aspetta il mio OK.**
+3. Dopo il mio OK:
+   - porta tutto su `main`, sempre solo con il mio OK esplicito;
+   - aggiorna `PROGRESS.md` e scrivi il prompt per il passo successivo (Rilascio 4, le lingue);
+   - dimmi quali skill servono per quel passo.
