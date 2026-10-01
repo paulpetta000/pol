@@ -46,6 +46,28 @@ _Ultimo aggiornamento: 30/09/2026 (Rilascio 2 pubblicato)_
 
 - **Controllo UX con la skill UI/UX Pro Max** (01/10/2026, solo ramo di lavoro): su 31 pagine a 390 px, tutti i bersagli da toccare ora sono almeno 44 px (prima: i due link del logo erano 34 e 30 px) e nessun testo è sotto 12 px (prima: 248 testi tra 10,2 e 11,8 px, tutte etichette in maiuscolo). Nessuno scorrimento orizzontale a 320 e 390 px. La skill, provata e poi tolta dal progetto (il suo generatore di «design system» non era adatto al sito), non c'è più; restano i risultati del controllo e le piccole modifiche, solo sul ramo di lavoro (non su `main`).
 
+## Skill: quali, e quando (01/10/2026)
+Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della fase in corso, spegnere le altre. Le skill del tuo account si accendono e spengono dalle impostazioni di Claude; i plugin dalla scheda di installazione (chiedere a Claude di cercarli di nuovo con SearchPlugins).
+
+**Scelte, da attivare quando vuoi** (catalogo «Anthropic Directory»):
+- **frontend-design** (Anthropic): una sola skill, per interfacce curate. La prima da attivare.
+- **Modern Web Guidance** (Google Chrome): buone pratiche del web moderno. La skill per le estensioni di Chrome non serve.
+
+**Valutate e messe da parte:**
+- **Design** (Anthropic): 7 skill utili (critica, accessibilità, UX writing, design system), ma collega anche Asana, Atlassian, Figma, Gmail, Google Calendar, Intercom, Linear, Notion e Slack. Utile solo per un restyling completo.
+- **UI Consistency**, **Backend Design**: partono da soli (comandi automatici) e hanno accesso ampio. Backend Design da rivalutare per il Rilascio 3, dopo un controllo.
+- **Fairmind Design**, **Rayden UI**, **jp-web-design**, **inhabited design**: non adatte.
+- Controllate fuori catalogo: **UI/UX Pro Max** (provata e tolta: il generatore di design system non era adatto), **Graphify** (non serve a un sito piccolo), **ECC** (293 skill e 24 comandi automatici: consuma molti token, sconsigliata).
+
+**Quali accendere, fase per fase:**
+| Fase | Skill utili | Note |
+|---|---|---|
+| Restyling completo del sito (solo se deciso) | frontend-design, Design, Modern Web Guidance | Le «pesanti» servono qui; poi spegnerle |
+| Rilascio 3 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
+| Rilascio 4 · Vivi Napoli | deep-research, frontend-design per le schede | Le informazioni vanno ricontrollate vicino alle date |
+| Rilascio 5 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
+| Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
+
 ## Cose che devi fare tu
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
