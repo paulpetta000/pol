@@ -4,36 +4,58 @@ import PageHead from '../components/PageHead.astro';
 import { SITO } from '../config/sito';
 import { dataLunga } from '../lib/formato';
 const t = SITO.titolare;
-const manca = !t.nome || !t.email;
+const host = SITO.url.replace(/^https?:\/\//, '');
 ---
-<Base title="Privacy" description={`Informativa privacy di ${SITO.nome}, guida non ufficiale all'America's Cup di Napoli 2027: quali dati raccogliamo (solo l'email di Avvisami), dove li salviamo e come cancellarli.`}>
-  <PageHead kicker="Trasparenza" title="Privacy" lead="In breve: nessun cookie, nessuna pubblicità, nessun tracciamento. L'unico dato che raccogliamo è l'email che scegli di lasciare in «Avvisami»." aggiornato={SITO.versionePrivacy} />
+<Base title="Privacy" description={`Informativa privacy di ${SITO.nome}, guida indipendente all'America's Cup di Napoli 2027: nessun cookie, visite contate in forma anonima, l'email di Avvisami solo se la lasci tu.`}>
+  <PageHead kicker="Trasparenza" title="Privacy" lead="In breve: niente cookie, niente pubblicità, nessun profilo su di te. Contiamo le visite in forma anonima, e l'unico dato personale che raccogliamo è l'email che scegli di lasciare in «Avvisami»." aggiornato={SITO.versionePrivacy} />
   <section class="section">
     <div class="wrap prose">
-      {manca && <div class="avviso no-print"><strong>!</strong><p>Bozza: nome ed email del titolare sono da completare prima della pubblicazione.</p></div>}
       <h2>Chi è il titolare</h2>
-      <p>Il sito si chiama <strong>{SITO.nome}</strong> ({SITO.url.replace(/^https?:\/\//, '')}). Titolare del trattamento: <strong>{t.nome || '[nome del titolare da completare]'}</strong>, contatto: <strong>{t.email || '[email da completare]'}</strong>.</p>
+      <p>Il sito si chiama <strong>{SITO.nome}</strong> ({host}) ed è gestito da una persona, non da un'azienda. Titolare del trattamento: <strong>{t.nome}</strong>. Per qualsiasi domanda sui tuoi dati scrivi a <a href={`mailto:${t.email}`}>{t.email}</a>.</p>
 
-      <h2>Quali dati raccogliamo</h2>
-      <p>Solo se usi il modulo <strong>Avvisami</strong>: il tuo indirizzo email, gli argomenti che scegli, la lingua, il consenso e la data dell'iscrizione. Non chiediamo nome, telefono o altro.</p>
-      <p>Il sito <strong>non usa cookie</strong> e non contiene pubblicità o sistemi di statistiche. Salva nel tuo browser solo la scelta del tema chiaro o scuro e una copia delle pagine per usarle senza rete: restano sul tuo telefono.</p>
+      <h2>Cosa resta nel tuo browser</h2>
+      <p>Il sito non usa cookie. Nel tuo browser possono restare solo due cose, ed entrambe servono a farti usare il sito come chiedi tu:</p>
+      <ul>
+        <li><strong>la scelta del tema</strong> chiaro o scuro, ma solo se tocchi il pulsante del tema;</li>
+        <li><strong>una copia delle pagine</strong> e dei file del sito, così le pagine pratiche si aprono anche senza rete.</li>
+      </ul>
+      <p>Sono strumenti tecnici: per questo non ti chiediamo il consenso e non c'è nessun banner. Puoi cancellarli quando vuoi dalle impostazioni del browser, alla voce dei dati dei siti.</p>
 
-      <h2>Perché e su quale base</h2>
-      <p>Usiamo l'email solo per avvisarti quando escono le novità che hai scelto (biglietti, orari, regole). La base è il tuo consenso, che puoi ritirare quando vuoi. Il servizio è riservato a chi ha almeno 14 anni.</p>
+      <h2>Chi contattiamo quando apri una pagina</h2>
+      <p>Font, foto, mappe e modello 3D stanno sul nostro sito: aprendo le pagine non contatti Google, Wikimedia, OpenStreetMap o altri servizi. Le eccezioni sono queste:</p>
+      <ul>
+        <li><strong>Vercel</strong>, che ospita il sito, riceve ogni richiesta (vedi sotto);</li>
+        <li><strong>YouTube</strong>, solo se avvii un video (vedi sotto);</li>
+        <li><strong>Supabase</strong>, il database dove salviamo le iscrizioni ad «Avvisami» e il conteggio anonimo del tempo, solo quando invii il modulo o lasci una pagina.</li>
+      </ul>
 
-      <h2>Dove li salviamo e per quanto</h2>
-      <p>Le email sono salvate su <strong>Supabase</strong>, in un server nell'Unione Europea (Francoforte). Dal sito si può solo aggiungere un'iscrizione: nessuno può leggere l'elenco se non il titolare. Le conserviamo fino al 31 dicembre 2027, poi le cancelliamo, o prima se ce lo chiedi.</p>
-      <p>Il sito è ospitato da <strong>Vercel</strong>, che per sicurezza registra dati tecnici delle visite (per esempio l'indirizzo IP) nei suoi log.</p>
-      <p>Font e foto sono salvati sul nostro sito: le pagine non contattano Google, Wikimedia o altri servizi esterni. Le mappe sono disegnate da noi con i dati di OpenStreetMap, senza chiamate esterne. L'unica eccezione sono i video, e solo se decidi di guardarli (qui sotto).</p>
+      <h2>Le statistiche, senza sapere chi sei</h2>
+      <p>Vogliamo capire se la guida viene letta e quali pagine migliorare. Per questo contiamo le visite in due modi, entrambi senza cookie:</p>
+      <ul>
+        <li><strong>Vercel Web Analytics</strong> conta le visite, le pagine viste, il sito da cui arrivi, il paese e il tipo di dispositivo e di browser. Per non contarti due volte nello stesso giorno, Vercel usa un codice ricavato dalla richiesta, che scarta dopo 24 ore. Noi vediamo solo numeri complessivi.</li>
+        <li><strong>Il nostro contatore del tempo</strong>: quando lasci una pagina, il browser ci manda l'indirizzo della pagina, i secondi in cui l'hai tenuta aperta in primo piano e se usi un telefono, un tablet o un computer. Lo salviamo senza indirizzo IP e senza nessun altro dato; il giorno lo aggiunge il database.</li>
+      </ul>
+      <p>Se nel browser hai attivato «Global Privacy Control» o «Do Not Track», il sito non ti conta affatto. Le statistiche si basano sul nostro interesse a far funzionare la guida (articolo 6, paragrafo 1, lettera f del Regolamento europeo 2016/679, il GDPR). Il contatore del tempo lo conserviamo fino al 31 dicembre 2027; Vercel, sul nostro piano gratuito, mostra i dati dell'ultimo mese.</p>
+
+      <h2>«Avvisami»</h2>
+      <p>Se usi il modulo <strong>Avvisami</strong> salviamo la tua email, gli argomenti che scegli, la lingua, il consenso, la data e la versione di questa pagina che hai accettato. Non chiediamo nome, telefono o altro.</p>
+      <p>L'email serve solo ad avvisarti quando escono le novità che hai scelto (biglietti, orari, regole): niente pubblicità. Per ora ti scriviamo a mano, uno per uno. La base è il tuo consenso (articolo 6, paragrafo 1, lettera a del GDPR), che puoi ritirare quando vuoi scrivendoci. Il servizio è riservato a chi ha almeno 14 anni, l'età prevista dalla legge italiana per dare da solo il consenso a questi servizi.</p>
+      <p>Le email sono salvate su Supabase, in un server a Francoforte, nell'Unione europea. Dal sito si può solo aggiungere un'iscrizione: l'elenco lo legge soltanto il titolare. Le conserviamo fino al 31 dicembre 2027, poi le cancelliamo, o prima se ce lo chiedi.</p>
+
+      <h2>Chi ospita il sito</h2>
+      <p>Il sito è ospitato da <strong>Vercel Inc.</strong>, una società degli Stati Uniti. Come ogni servizio di hosting, Vercel registra dati tecnici delle richieste (per esempio l'indirizzo IP, il browser, la pagina e l'ora) per far funzionare il sito e proteggerlo, secondo la <a href="https://vercel.com/legal/privacy-notice" rel="noopener">sua informativa</a>. Vale anche per i calendari a cui ti iscrivi: l'app del calendario scarica di tanto in tanto il file dal nostro sito.</p>
 
       <h2>Video di YouTube</h2>
-      <p>Nelle pagine di <a href="/capire-la-coppa/video/">Capire la Coppa</a> ci sono alcuni video del canale ufficiale dell'America's Cup. Finché non tocchi il pulsante di avvio, la pagina non contatta YouTube: vedi solo un disegno fatto da noi. Quando lo tocchi, il video si carica da YouTube in modalità «privacy avanzata» (youtube-nocookie.com): da quel momento YouTube (Google) riceve dati tecnici come l'indirizzo IP e può usare cookie o strumenti simili, secondo la <a href="https://policies.google.com/privacy?hl=it" rel="noopener">sua informativa</a>. In alternativa puoi aprire il video direttamente su YouTube.</p>
+      <p>Nelle pagine di <a href="/capire-la-coppa/video/">Capire la Coppa</a> ci sono alcuni video del canale ufficiale dell'America's Cup. Finché non tocchi il pulsante di avvio, la pagina non contatta YouTube: vedi solo un disegno fatto da noi. Quando lo tocchi, il video si carica da YouTube in modalità «privacy avanzata» (youtube-nocookie.com). Da quel momento YouTube, cioè Google, riceve dati tecnici come l'indirizzo IP e salva alcune informazioni nel tuo browser, secondo la <a href="https://policies.google.com/privacy?hl=it" rel="noopener">sua informativa</a>. In alternativa puoi aprire il video direttamente su YouTube.</p>
+
+      <h2>Dati fuori dall'Unione europea</h2>
+      <p>Vercel e Google sono società degli Stati Uniti. Supabase ha sede a Singapore, ma i nostri dati stanno nel suo server di Francoforte; per i dati che dovessero uscire dall'Unione europea, il suo accordo sul trattamento dei dati prevede le clausole contrattuali standard approvate dalla Commissione europea. Vercel e Google trattano i dati secondo le loro informative, linkate qui sopra.</p>
 
       <h2>I tuoi diritti</h2>
-      <p>Puoi chiedere di vedere, correggere o cancellare i tuoi dati, e ritirare il consenso, scrivendo al titolare. Se pensi che i tuoi dati siano trattati male puoi rivolgerti al Garante per la protezione dei dati personali (garanteprivacy.it).</p>
+      <p>Puoi chiederci di vedere, correggere o cancellare i tuoi dati, di limitarne l'uso, di opporti al trattamento e di riceverli in un formato leggibile; puoi anche ritirare il consenso ad «Avvisami». Basta scrivere a <a href={`mailto:${t.email}`}>{t.email}</a>. Se pensi che i tuoi dati siano trattati male puoi rivolgerti al <a href="https://www.garanteprivacy.it" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
 
-      <p class="small muted">Versione del {dataLunga(SITO.versionePrivacy)}. Testo da far verificare a un avvocato prima della pubblicazione.</p>
+      <p class="small muted">Ultimo aggiornamento: {dataLunga(SITO.versionePrivacy)}. Se cambiamo qualcosa lo scriviamo qui, con la data.</p>
     </div>
   </section>
 </Base>
-<style>.prose h2 { font-size: 1.5rem; margin-top: 2rem; } .prose h2:first-of-type { margin-top: 1rem; } .avviso { margin-bottom: 1.5rem; }</style>
+<style>.prose h2 { font-size: 1.5rem; margin-top: 2rem; } .prose h2:first-of-type { margin-top: 1rem; }</style>

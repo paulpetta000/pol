@@ -1,0 +1,47 @@
+---
+import Base from '../layouts/Base.astro';
+import PageHead from '../components/PageHead.astro';
+import { SITO } from '../config/sito';
+import { dataLunga } from '../lib/formato';
+const t = SITO.titolare;
+const host = SITO.url.replace(/^https?:\/\//, '');
+---
+<Base title="Termini d'uso" description={`Termini d'uso di ${SITO.nome}: guida indipendente e non ufficiale all'America's Cup di Napoli 2027, gratuita, con informazioni che possono cambiare. Link esterni, contenuti di terzi, 3D, diritti.`}>
+  <PageHead kicker="Trasparenza" title="Termini d'uso" lead="Le regole del gioco, in parole semplici: che cos'è questa guida, cosa puoi aspettarti e cosa no." aggiornato={SITO.versioneTermini} />
+  <section class="section">
+    <div class="wrap prose">
+      <h2>Chi siamo</h2>
+      <p><strong>{SITO.nome}</strong> ({host}) è una guida gratuita, scritta e gestita da <strong>{t.nome}</strong>, una persona e non un'azienda. Per contatti: <a href={`mailto:${t.email}`}>{t.email}</a>. Usando il sito accetti questi termini; se non ti vanno bene, ti chiediamo di non usarlo.</p>
+
+      <h2>Una guida indipendente, non il sito ufficiale</h2>
+      <p>Questa guida non è gestita, approvata o sponsorizzata da America's Cup Partnership, America's Cup Event, Louis Vuitton, Sport e Salute, Comune di Napoli, Regione Campania o dalle squadre in gara, e non vende biglietti o pacchetti. Il sito ufficiale dell'evento è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>.</p>
+
+      <h2>Le informazioni possono cambiare</h2>
+      <p>Raccontiamo date, orari, regole e luoghi come li riportano le fonti indicate in fondo a ogni pagina e nella pagina <a href="/fonti/">fonti</a>, con la data dell'ultimo controllo. Gli organizzatori e le autorità però possono cambiarli in qualsiasi momento, e anche noi possiamo sbagliare. Le informazioni non ancora ufficiali sono segnate come tali. Prima di decisioni importanti (un viaggio, una prenotazione, un'uscita in barca) controlla sempre sui canali ufficiali. Se trovi un errore, scrivici: lo correggiamo.</p>
+      <p>Le valutazioni su sole, gradini e folla nei punti da cui guardare le regate sono opinioni nostre, non informazioni ufficiali. In mare valgono solo le regole e le ordinanze delle autorità.</p>
+
+      <h2>Fin dove arriva la nostra responsabilità</h2>
+      <p>Facciamo del nostro meglio perché la guida sia corretta e funzioni, ma la offriamo così com'è, senza garanzie. Per quanto la legge lo permette, non rispondiamo dei danni che derivano dall'aver usato solo le informazioni di questo sito, dei contenuti dei siti esterni o dei periodi in cui il sito non è raggiungibile. Questo non vale nei casi in cui la legge non consente di limitare la responsabilità, per esempio per dolo o colpa grave.</p>
+
+      <h2>Link e contenuti di altri</h2>
+      <p>Mettiamo link a siti ufficiali, giornali e altri servizi perché tu possa controllare le fonti. Non li gestiamo noi: un link non vuol dire che approviamo tutto quello che c'è dall'altra parte. Se un giorno ci saranno link pubblicitari o di affiliazione, li segneremo in modo chiaro accanto al link.</p>
+      <p>Alcuni contenuti sono di altri e li usiamo come permettono le loro licenze: foto di Wikimedia Commons, dati di OpenStreetMap, video del canale ufficiale dell'America's Cup mostrati con il lettore di YouTube. Autori e licenze sono nella pagina <a href="/note-legali/">note legali</a>.</p>
+
+      <h2>Il 3D e i disegni</h2>
+      <p>Le barche in 3D, il disegno in scala e «La regata in 60 secondi» sono <strong>ricostruzioni non ufficiali</strong>, fatte da noi con le misure pubbliche delle regole di classe. Servono a capire, non sono documenti tecnici: forme e proporzioni sono approssimate, i colori delle squadre sono indicativi e non ci sono loghi.</p>
+
+      <h2>Nomi, marchi e diritti</h2>
+      <p>«America's Cup», «Louis Vuitton Cup», i nomi delle squadre e i loro marchi appartengono ai rispettivi titolari. Li usiamo solo per dire di quale evento e di quali squadre parliamo.</p>
+      <p>Testi, disegni, mappe e modelli 3D di questa guida sono nostri, salvo i contenuti di altri indicati sopra. Puoi linkare qualsiasi pagina e citarne brevi parti indicando la fonte; per altri usi chiedici prima il permesso.</p>
+
+      <h2>Usare il sito con buon senso</h2>
+      <p>Non usare il sito o i suoi moduli per inviare spam, per provare a forzarne la sicurezza o per scaricarne i contenuti in massa con programmi automatici. Il servizio «Avvisami» è gratuito: possiamo cambiarlo o chiuderlo, e tu puoi chiedere in ogni momento di cancellare la tua email. Come trattiamo i tuoi dati è spiegato nella pagina <a href="/privacy/">privacy</a>.</p>
+
+      <h2>Modifiche e legge applicabile</h2>
+      <p>Possiamo aggiornare questi termini: la data in alto dice quando è successo l'ultima volta. Il sito e questi termini sono regolati dalla legge italiana; restano ferme le tutele che la legge riconosce ai consumatori.</p>
+
+      <p class="small muted">Ultimo aggiornamento: {dataLunga(SITO.versioneTermini)}.</p>
+    </div>
+  </section>
+</Base>
+<style>.prose h2 { font-size: 1.5rem; margin-top: 2rem; } .prose h2:first-of-type { margin-top: 1rem; }</style>

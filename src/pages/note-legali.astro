@@ -7,13 +7,14 @@ const foto = await getCollection('foto');
 const t = SITO.titolare;
 ---
 <Base title="Note legali" description={`Note legali di ${SITO.nome}, guida non ufficiale all'America's Cup di Napoli 2027: sito indipendente, marchi dei rispettivi titolari, fonti, foto e mappe con licenza libera.`}>
-  <PageHead kicker="Trasparenza" title="Note legali" aggiornato="2026-09-30" />
+  <PageHead kicker="Trasparenza" title="Note legali" lead="Chi ha fatto cosa: marchi, foto, video, mappe e font di altri, con autori e licenze. Le regole d'uso del sito sono nei termini d'uso." aggiornato={SITO.versioneTermini} />
   <section class="section">
     <div class="wrap prose">
+      <p>Le regole per usare il sito (informazioni, responsabilità, diritti) sono nella pagina <a href="/termini/">termini d'uso</a>; i dati personali nella pagina <a href="/privacy/">privacy</a>.</p>
       <h2>Sito non ufficiale</h2>
       <p><strong>{SITO.nome}</strong> è una guida <strong>indipendente</strong>. Non è gestita, approvata o sponsorizzata da America's Cup Partnership, America's Cup Event, Louis Vuitton, Sport e Salute, Comune di Napoli, Regione Campania o dalle squadre in gara. Il sito ufficiale dell'evento è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>.</p>
       <h2>Marchi</h2>
-      <p>«America's Cup», «Louis Vuitton Cup», i nomi delle squadre e i loro marchi appartengono ai rispettivi titolari. Li usiamo solo per indicare di quale evento e di quali squadre parliamo. Le barche 3D sono ricostruzioni nostre, senza loghi.</p>
+      <p>«America's Cup», «Louis Vuitton Cup», i nomi delle squadre e i loro marchi appartengono ai rispettivi titolari. Li usiamo solo per indicare di quale evento e di quali squadre parliamo, senza loghi e senza grafica ufficiale. Le barche 3D sono ricostruzioni non ufficiali fatte da noi: colori indicativi, nessun logo.</p>
       <h2>Informazioni</h2>
       <p>Le informazioni vengono dalle fonti indicate in ogni pagina e nella pagina <a href="/fonti/">fonti</a>, con la data del controllo. Possono cambiare: per decisioni importanti (viaggi, prenotazioni, uscite in mare) verifica sempre sui canali ufficiali.</p>
       <h2>Foto</h2>

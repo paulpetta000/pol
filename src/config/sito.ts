@@ -19,7 +19,9 @@ export const SITO = {
     url: 'https://hcicqbcmtfksraabphie.supabase.co',
     chiave: 'sb_publishable_0vL-4Jmm2LItXJM9B0x6cA_dkClq8zt'
   },
-  versionePrivacy: '2026-09-30'
+  // Data dell'ultima modifica di privacy e termini (va anche nelle iscrizioni ad Avvisami)
+  versionePrivacy: '2026-10-01',
+  versioneTermini: '2026-10-01'
 } as const;
 
 // Le date chiave del 2027 (fonte: americascup.com, comunicati 4148 e 4372)

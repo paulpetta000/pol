@@ -24,6 +24,7 @@ export const PAGINE: Pagina[] = [
   { path: '/domande-frequenti/', titolo: 'Domande frequenti', kicker: 'Risposte veloci' },
   { path: '/fonti/', titolo: 'Fonti e controlli', kicker: 'Trasparenza' },
   { path: '/privacy/', titolo: 'Privacy', kicker: 'Trasparenza' },
+  { path: '/termini/', titolo: "Termini d'uso", kicker: 'Trasparenza' },
   { path: '/note-legali/', titolo: 'Note legali', kicker: 'Trasparenza' },
   { path: '/accessibilita/', titolo: 'Accessibilità del sito', kicker: 'Trasparenza' }
 ];
