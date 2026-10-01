@@ -1,0 +1,38 @@
+{
+  "capire-la-coppa#flotta": {
+    "cal-flotta": "590fe580b1"
+  },
+  "capire-la-coppa#cifre": {
+    "cal-match": "14d6c6b3b5",
+    "cal-finale-lvc": "e999a947e6",
+    "cal-semifinali": "914eea9df8",
+    "cal-vento": "7c2a7c48e5",
+    "reg-penalita": "e9440e0c4f"
+  },
+  "capire-la-coppa#formato": {
+    "cal-lvc-periodo": "cf17fb9ab2",
+    "sq-sette": "5b2577d182",
+    "cal-match": "14d6c6b3b5",
+    "cal-flotta": "590fe580b1",
+    "cal-rr": "fb6a0cc875",
+    "cal-pausa": "b5c5adf672",
+    "cal-defender-gironi": "1caa4f7beb",
+    "cal-ripescaggio": "c0cb0ad1e3",
+    "cal-semifinali": "914eea9df8",
+    "cal-finale-lvc": "e999a947e6",
+    "cal-match-preparazione": "ac9499ecb3",
+    "cal-match-riserva": "3d6e36a644",
+    "cal-vento": "7c2a7c48e5"
+  },
+  "capire-la-coppa#regole": {
+    "reg-2027-attese": "f2fea92874",
+    "reg-percorso": "32facfadd0",
+    "reg-partenza": "7c058f4d3c",
+    "reg-ocs": "1c5c9e2c5f",
+    "reg-precedenze": "97f47a1f4b",
+    "reg-penalita": "e9440e0c4f",
+    "reg-confini": "ddcf7b07ab",
+    "reg-durata": "83efad5c05",
+    "reg-arrivo": "bc1c1dd26d"
+  }
+}

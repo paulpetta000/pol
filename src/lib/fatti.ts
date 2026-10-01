@@ -58,10 +58,10 @@ export function fontiDi(fatti: Iterable<Fatto>, extra: Fonte[] = []): Fonte[] {
   return [...m.values()].sort((a, b) => peso[a.data.tipo] - peso[b.data.tipo] || a.data.editore.localeCompare(b.data.editore));
 }
 
-// Data di controllo più recente di un gruppo di schede
-export function ultimoControllo(fatti: Iterable<Fatto>): Date | null {
+// Data di controllo più vecchia tra schede e fonti: tutto è stato controllato almeno da quel giorno
+export function controlloMenoRecente(fatti: Iterable<Fatto>, fonti: Iterable<Fonte> = []): Date | null {
   let d: Date | null = null;
-  for (const f of fatti) if (!d || f.data.controllato > d) d = f.data.controllato;
+  for (const x of [...fatti, ...fonti]) if (!d || x.data.controllato < d) d = x.data.controllato;
   return d;
 }
 

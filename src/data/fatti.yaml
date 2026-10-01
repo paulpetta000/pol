@@ -782,11 +782,11 @@
   controllato: 2026-09-30
 
 - id: reg-penalita
-  testo: "Una barca penalizzata dagli arbitri deve rallentare finché non è 75 metri dietro l'avversario, ed entro 60 secondi."
+  testo: "Una barca penalizzata dagli arbitri deve rallentare finché non è 75 metri dietro l'avversario, e ha 60 secondi per farlo: se non ci riesce, prende un'altra penalità."
   stato: confermato
   anno: 2024
   fonti: [rrsac-2024]
-  controllato: 2026-09-30
+  controllato: 2026-10-01
 
 - id: reg-confini
   testo: "Il campo ha confini virtuali, che si vedono solo sugli strumenti e in TV. Mentre regata una barca deve restare dentro: se esce, è penalizzata."
@@ -800,3 +800,10 @@
   stato: confermato
   fonti: [ac-press-kit]
   controllato: 2026-09-30
+
+- id: reg-2027-attese
+  testo: "Le regole di regata del 2027 (le Racing Rules of Sailing nell'edizione per l'America's Cup) non sono ancora uscite: per ora si conoscono quelle del 2024."
+  stato: atteso
+  fonti: [ac-38, rrsac-2024]
+  controllato: 2026-10-01
+  ricontrollare: 2026-12-31

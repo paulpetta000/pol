@@ -309,11 +309,26 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 .avviso { display: grid; grid-template-columns: auto 1fr; gap: .8rem; align-items: start; padding: 1rem; border: 1.5px solid var(--press); border-radius: var(--r); background: color-mix(in srgb, var(--press) 8%, transparent); }
 .avviso p:last-child { margin-bottom: 0; }
 
+/* Testi discorsivi (src/testi/) */
+.testo > :first-child { margin-top: 0; }
+.testo > :last-child { margin-bottom: 0; }
+.testo h3 { margin: 1.8rem 0 .55rem; }
+.testo h4 { margin: 1.4rem 0 .4rem; }
+.testo p, .testo ul { max-width: 64ch; }
+.testo li + li { margin-top: .45em; }
+/* Il segno * di un'informazione non ufficiale per il 2027: la frase lo dice già, il segno rimanda alla nota in fondo */
+.cautela { font-size: .82em; font-weight: 700; color: var(--accent); margin-left: .06em; line-height: 0; }
+.grid-2--testi { gap: 2rem; }
+@media (min-width: 760px) { .grid-2--testi { gap: 3rem; } }
+
 /* Fonti a fondo pagina */
 .fonti-pagina { font-size: .9rem; }
+.fonti-pagina h2 { font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.8rem); }
+.fonti-pagina__data, .fonti-pagina__segno { color: var(--ink-2); }
+.fonti-pagina__segno > span { color: var(--accent); font-weight: 700; }
 .fonti-pagina ol { padding-left: 1.4em; }
 .fonti-pagina li { color: var(--ink-2); }
-.fonti-pagina .tipo { font-family: var(--f-mono); font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
+.fonti-pagina .tipo { font-family: var(--f-mono); font-size: .75rem; text-transform: uppercase; letter-spacing: .06em; color: var(--ink-3); }
 
 /* Stampa */
 @media print {

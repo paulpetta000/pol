@@ -1,7 +1,7 @@
 // Collezioni di dati della guida. Se manca un campo obbligatorio (fonte, stato, data di controllo)
 // la build si ferma: nessuna informazione va online senza fonte.
 import { defineCollection, reference } from 'astro:content';
-import { file } from 'astro/loaders';
+import { file, glob } from 'astro/loaders';
 import { z } from 'astro/zod';
 
 const data = z.coerce.date();
@@ -173,4 +173,25 @@ const video = defineCollection({
   })
 });
 
-export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video };
+// ---------- Testi discorsivi ----------
+// Un file per pagina (src/testi/<pagina>.yaml), un blocco per argomento. Ogni blocco dichiara le schede
+// (usa) o le fonti che usa: l'elenco «Fonti di questa pagina» nasce da qui. Gli altri controlli
+// (segni di cautela, firme delle schede) sono in src/lib/testi.ts.
+const blocco = z.object({
+  usa: z.array(reference('fatti')).default([]),
+  fonti: z.array(reference('fonti')).default([]),
+  // Solo per consigli nostri, che non hanno bisogno di una fonte: perché
+  senzaFonte: z.string().min(10).optional(),
+  testo: z.string().min(20).optional(),
+  // Numeri in evidenza: cifra grande e spiegazione
+  voci: z.array(z.object({ num: z.string(), testo: z.string().min(5) })).optional()
+})
+  .refine(b => b.testo || b.voci, { message: 'Ogni blocco deve avere un testo o delle voci' })
+  .refine(b => b.usa.length + b.fonti.length > 0 || b.senzaFonte, { message: 'Ogni blocco deve dire quali schede (usa) o fonti usa. Se è solo un consiglio nostro, scrivi senzaFonte: "perché"' });
+
+const testi = defineCollection({
+  loader: glob({ pattern: '**/*.yaml', base: './src/testi' }),
+  schema: z.record(z.string().regex(/^[a-z0-9-]+$/), blocco)
+});
+
+export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video, testi };

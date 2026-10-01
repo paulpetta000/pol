@@ -1,0 +1,7 @@
+---
+// Un blocco di testo discorsivo (src/testi/<pagina>.yaml), già controllato da getTesti
+import type { Blocco } from '../lib/testi';
+interface Props { b: Blocco; class?: string }
+const { b, class: cls } = Astro.props;
+---
+<div class:list={['testo', cls]} set:html={b.html} />

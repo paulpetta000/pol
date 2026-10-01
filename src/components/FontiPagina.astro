@@ -1,22 +1,25 @@
 ---
-// Elenco delle fonti usate nella pagina, con la data dell'ultimo controllo
+// Fonti usate nella pagina, con una sola data di controllo e, se serve, la spiegazione del segno *
 import type { Fatto, Fonte } from '../lib/fatti';
-import { fontiDi, ultimoControllo } from '../lib/fatti';
-import { dataBreve } from '../lib/formato';
-interface Props { fatti: Iterable<Fatto>; extra?: Fonte[] }
-const { fatti, extra = [] } = Astro.props;
-const lista = [...fatti];
-const fonti = fontiDi(lista, extra);
-// Senza schede (glossario, storia, quiz) vale la data di controllo più recente delle fonti
-const ultimo = ultimoControllo(lista) ?? extra.reduce<Date | null>((d, s) => (!d || s.data.controllato > d ? s.data.controllato : d), null);
+import type { TestiPagina } from '../lib/testi';
+import { fontiDi, controlloMenoRecente } from '../lib/fatti';
+import { dataLunga } from '../lib/formato';
+interface Props { fatti?: Iterable<Fatto>; extra?: Fonte[]; testi?: TestiPagina; cautela?: boolean }
+const { fatti = [], extra = [], testi, cautela = false } = Astro.props;
+const lista = [...(testi?.fatti ?? []), ...fatti];
+const altre = [...(testi?.fonti ?? []), ...extra];
+const fonti = fontiDi(lista, altre);
+// La data più vecchia tra schede e fonti: tutto è stato controllato almeno da quel giorno
+const quando = controlloMenoRecente(lista, altre);
+const segno = cautela || testi?.cautela;
 const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', altro: 'Altro' } as const;
 ---
 {fonti.length > 0 && (
   <section class="section fonti-pagina" aria-labelledby="fonti-h">
     <div class="wrap">
-      <p class="kicker">Trasparenza</p>
       <h2 id="fonti-h">Fonti di questa pagina</h2>
-      {ultimo && <p class="aggiornato">Informazioni controllate il {dataBreve(ultimo)}. Elenco completo nella pagina <a href="/fonti/">fonti</a>.</p>}
+      {quando && <p class="fonti-pagina__data">Informazioni controllate il {dataLunga(quando)}. L'elenco di tutte le fonti è nella pagina <a href="/fonti/">fonti</a>.</p>}
+      {segno && <p class="fonti-pagina__segno" id="segno"><span>*</span> Il segno accanto a una frase vuol dire che l'informazione non è ufficiale per il 2027: viene dai giornali o da siti non ufficiali, racconta com'era nel 2024 o nel 2026, oppure non è ancora stata pubblicata. Lo dice la frase stessa.</p>}
       <ol>
         {fonti.map(f => (
           <li>

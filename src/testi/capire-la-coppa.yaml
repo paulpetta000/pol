@@ -1,0 +1,56 @@
+# Testi di /capire-la-coppa/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+flotta:
+  usa: [cal-flotta]
+  testo: |
+    **E le regate di flotta?** Qui sopra vedi un duello, come nel Match. Nelle regate di flotta invece partono tutte le barche insieme, ed è così che comincia la Louis Vuitton Cup 2027. Le date sono qui sotto, nel formato.
+
+cifre:
+  usa: [cal-match, cal-finale-lvc, cal-semifinali, cal-vento, reg-penalita]
+  voci:
+    - num: "7"
+      testo: vittorie per chiudere il Match, e anche la finale della Louis Vuitton Cup
+    - num: "5"
+      testo: vittorie per superare una semifinale
+    - num: "6,5–23"
+      testo: "nodi di vento: fuori da questa forbice non si parte"
+    - num: "75 m"
+      testo: di ritardo per scontare una penalità, con le regole del 2024{?reg-penalita}
+
+formato:
+  usa: [cal-lvc-periodo, sq-sette, cal-match, cal-flotta, cal-rr, cal-pausa, cal-defender-gironi, cal-ripescaggio, cal-semifinali, cal-finale-lvc, cal-match-preparazione, cal-match-riserva, cal-vento]
+  testo: |
+    ### Il formato 2027
+
+    La Coppa si gioca in due tempi. Prima la Louis Vuitton Cup, dal 22 maggio al 4 luglio al più tardi: sei squadre si sfidano per conquistare il diritto di provarci. Poi, dal 10 luglio, il Match vero e proprio, tra chi ha vinto la Louis Vuitton Cup ed Emirates Team New Zealand, che la Coppa la difende.
+
+    Si comincia sabato 22 e domenica 23 maggio con le regate di flotta, tre al giorno: tutti e sette gli AC75 sulla stessa linea di partenza, una cosa mai vista nella storia della Coppa.
+
+    Dal 26 maggio si passa ai duelli, una barca contro l'altra, in tre giri in cui tutti affrontano tutti: sono i Round Robin, da 21 regate ciascuno. Si corrono dal 26 al 28 maggio, dal 29 al 31 maggio e dal 9 all'11 giugno, con una settimana di pausa in mezzo, dal 1° all'8 giugno.
+
+    Emirates Team New Zealand corre anche i Round Robin, ma i suoi risultati non contano per la classifica degli sfidanti. Alla fine i primi tre sfidanti vanno dritti in semifinale, mentre gli altri tre si giocano il quarto posto nel ripescaggio del 12 e 13 giugno.
+
+    Le semifinali vanno dal 16 al 20 giugno, con il 21 di riserva: passa chi vince per primo 5 regate. Lo sfidante primo in classifica sceglie il suo avversario.
+
+    La finale della Louis Vuitton Cup comincia nel fine settimana del 26 e 27 giugno e, se serve, si chiude il 3 e 4 luglio. Vince chi arriva per primo a 7 vittorie, su un massimo di 13 regate.
+
+    Dopo almeno cinque giorni di pausa parte il Match, con la stessa formula: servono 7 vittorie per portarsi a casa la Coppa. L'ultimo giorno in programma è il 19 luglio, ma se il meteo fa saltare delle regate se ne possono aggiungere altri.
+
+    E il vento? Gli AC75 partono solo se soffia tra 6,5 e 23 nodi. Con troppo poco o con troppo vento la regata aspetta, e se non cambia nulla salta.
+
+regole:
+  usa: [reg-2027-attese, reg-percorso, reg-partenza, reg-ocs, reg-precedenze, reg-penalita, reg-confini, reg-durata, reg-arrivo]
+  testo: |
+    ### Le regole in regata
+
+    Le regole di regata del 2027 non sono ancora uscite{?reg-2027-attese}. Qui trovi come funzionava all'ultima edizione, nel 2024: qualche dettaglio potrebbe cambiare.
+
+    Si parte controvento e si fa avanti e indietro tra due «cancelli», cioè coppie di boe, uno in alto e uno in basso. Secondo la stampa specializzata, nel 2024 i percorsi avevano 4, 6 o 8 lati{?reg-percorso}.
+
+    La partenza è il momento più teso. Poco più di due minuti prima del via le due barche entrano nell'area di partenza da lati opposti e si studiano; al segnale devono essere dietro la linea. Chi la passa in anticipo è «OCS» e viene penalizzato, e se è avanti di più di 3 secondi deve tornare indietro e ripassarla{?reg-partenza,reg-ocs}.
+
+    Quando due barche si incrociano, quella con le mure a sinistra, cioè con il vento che arriva da sinistra, lascia strada all'altra. Se hanno le mure dallo stesso lato, chi è sopravento lascia strada a chi è sottovento{?reg-precedenze}.
+
+    Chi infrange una regola viene penalizzato dagli arbitri: deve rallentare finché non si trova 75 metri dietro l'avversario, e ha 60 secondi per farlo, altrimenti si prende un'altra penalità. Lo stesso vale per chi esce dal campo, che ha confini invisibili: si vedono solo sugli strumenti di bordo e nella grafica della TV{?reg-penalita,reg-confini}.
+
+    Le regate sono brevi. Nel 2024, scrivevano i giornali di vela, il primo lato andava chiuso entro 12 minuti e la regata intera entro 45{?reg-durata}. Vince chi taglia per primo il traguardo con tutte le penalità scontate.
