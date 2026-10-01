@@ -3,45 +3,33 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import Illustrazione from '../../components/Illustrazione.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
-import { getFatti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const idsAereo = ['taxi-aeroporto', 'taxi-regole', 'taxi-collettivo', 'metro-aeroporto'];
-const idsCitta = ['linea6-fermate', 'anm-2026', 'taxi-altre', 'linea2-bagnoli'];
-const idsAuto = ['caracciolo-chiusa', 'trasporti-2027-atteso'];
-const idsMare = ['mare-aliscafi'];
-const f = await getFatti([...idsAereo, ...idsCitta, ...idsAuto, ...idsMare]);
-const TAXI = [
-  { da: 'Aeroporto', a: 'Stazione Centrale', p: '21,00' },
-  { da: 'Aeroporto', a: 'Molo Beverello, porto', p: '24,00' },
-  { da: 'Aeroporto', a: 'Via Partenope (alberghi)', p: '28,50' },
-  { da: 'Aeroporto', a: 'Mergellina', p: '28,50' },
-  { da: 'Stazione Centrale', a: 'Via Partenope', p: '17,50' },
-  { da: 'Stazione Centrale', a: 'Mergellina', p: '17,50' },
-  { da: 'Molo Beverello', a: 'Via Partenope', p: '10,00' }
-];
+const T = await getTesti('come-arrivare');
+// Tabella delle tariffe: «Da → A» e prezzo (src/testi/come-arrivare.yaml#tariffe)
+const TAXI = T.b('tariffe').voci.map(v => { const [da, a] = v.html.split(' → '); return { da, a, p: v.num }; });
 ---
 <Base title="Come arrivare al lungomare di Napoli per l'America's Cup" description="Dall'aeroporto e dalla stazione al lungomare di Napoli: taxi a tariffa fissa (21, 24, 28,50 €), taxi collettivo, metro Linea 6 e 1, funicolari. Cosa si sa per il 2027.">
-  <PageHead illustrazione="taxi" kicker="Napoli · trasporti" title="Come arrivare e muoversi" lead="Regola numero uno: niente auto. Dall'aeroporto il taxi ha tariffe fisse; in città metro e funicolari ti portano a pochi passi dal lungomare." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
+  <PageHead illustrazione="taxi" kicker="Napoli · trasporti" title="Come arrivare e muoversi" lead="Regola numero uno: niente auto. Dall'aeroporto il taxi ha tariffe fisse; in città metro e funicolari ti portano a pochi passi dal lungomare." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} />
 
   <section class="section" aria-labelledby="aereo-h">
     <div class="wrap split">
       <div>
         <p class="kicker"><Icon name="aereo" size={16} /> Dall'aeroporto</p>
         <h2 id="aereo-h">Taxi a tariffa fissa</h2>
-        <p>Chiedi la tariffa fissa <strong>prima di partire</strong>: il tassista non può rifiutarla e deve darti la ricevuta. Il prezzo è per auto, bagagli e notte compresi.</p>
+        <Testo b={T.b('taxi')} />
         <div class="tabella-wrap" tabindex="0" role="region" aria-label="Tariffe fisse dei taxi">
           <table>
             <caption class="visually-hidden">Tariffe fisse dei taxi di Napoli</caption>
             <thead><tr><th scope="col">Da</th><th scope="col">A</th><th scope="col" class="num">Euro</th></tr></thead>
-            <tbody>{TAXI.map(t => <tr><td>{t.da}</td><td>{t.a}</td><td class="num mono">{t.p}</td></tr>)}</tbody>
+            <tbody>{TAXI.map(t => <tr><td set:html={t.da} /><td set:html={t.a} /><td class="num mono">{t.p}</td></tr>)}</tbody>
           </table>
         </div>
-        <p class="small muted" style="margin-top:.6rem">Tariffe del Comune di Napoli (delibera 258/2024). Minivan +5 €; pedaggi esclusi.</p>
       </div>
       <div>
-        <Fatti f={f} ids={idsAereo} />
+        <Testo b={T.b('aereo-altro')} />
       </div>
     </div>
   </section>
@@ -51,17 +39,11 @@ const TAXI = [
       <Illustrazione nome="metro" size={130} class="illu-dx" />
       <p class="kicker"><Icon name="treno" size={16} /> In città</p>
       <h2 id="citta-h">Metro e funicolari fino al lungomare</h2>
-      <div class="grid-2">
-        <div class="terzo terzo--sea">
-          <h3>Linea 6</h3>
-          <p>Corre sotto la Riviera di Chiaia, parallela al lungomare: scendi a <strong>Arco Mirelli</strong> o <strong>San Pasquale</strong> per la Rotonda Diaz, a <strong>Chiaia–Monte di Dio</strong> per via Partenope e Castel dell'Ovo.</p>
-        </div>
-        <div class="terzo terzo--sea">
-          <h3>Linea 1 e funicolari</h3>
-          <p>Dalla Stazione Centrale la <strong>Linea 1</strong> porta a Municipio e Toledo. Dal Vomero scendi con la <strong>funicolare di Chiaia</strong> (Parco Margherita) o con la <strong>Centrale</strong> (Augusteo).</p>
-        </div>
+      <div class="grid-2 grid-2--testi">
+        <Testo b={T.b('linea6')} />
+        <Testo b={T.b('linea1')} />
       </div>
-      <div style="margin-top:1.4rem"><Fatti f={f} ids={idsCitta} /></div>
+      <Testo b={T.b('citta')} class="citta" />
     </div>
   </section>
 
@@ -70,21 +52,21 @@ const TAXI = [
       <div>
         <p class="kicker"><Icon name="macchina" size={16} /> In auto</p>
         <h2 id="auto-h">Meglio di no</h2>
-        <Fatti f={f} ids={idsAuto} />
+        <Testo b={T.b('auto')} />
       </div>
       <div>
         <p class="kicker"><Icon name="nave" size={16} /> In traghetto</p>
         <h2>Dalle isole</h2>
-        <p>Aliscafi e traghetti arrivano a Molo Beverello e, per gli aliscafi, anche a Mergellina: tutti e due sono a pochi minuti a piedi dal lungomare.</p>
-        <Fatti f={f} ids={idsMare} />
+        <Testo b={T.b('isole')} />
       </div>
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} />
 </Base>
 
 <style>
+  :global(.citta) { margin-top: 1.6rem; }
   :global(.illu-dx) { float: right; width: 90px; height: auto; margin: 0 0 .6rem 1rem; }
   @media (min-width: 760px) { :global(.illu-dx) { width: 140px; } }
 </style>

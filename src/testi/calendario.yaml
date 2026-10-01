@@ -1,0 +1,23 @@
+# Testi di /calendario/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+formato:
+  usa: [cal-flotta, cal-rr, cal-defender-gironi, cal-ripescaggio, cal-semifinali, cal-finale-lvc, cal-match-preparazione, cal-match, cal-match-riserva, cal-youth, cal-womens]
+  testo: |
+    Le prime tre settimane sono di tutti: dalle regate di flotta del 22 e 23 maggio ai tre Round Robin, in acqua ci sono tutti e sette gli AC75. Emirates Team New Zealand, che difende la Coppa, regata con gli altri, ma i suoi risultati non contano per la classifica degli sfidanti.
+
+    Dopo il terzo Round Robin, l'11 giugno, i primi tre sfidanti vanno dritti in semifinale. Gli altri tre si giocano l'ultimo posto nel ripescaggio del 12 e 13 giugno, dove in ogni turno passa chi arriva prima a 3 punti. Le semifinali si vincono a 5 e la finale della Louis Vuitton Cup a 7, su 13 regate al massimo.
+
+    Chi vince la Louis Vuitton Cup sfida i neozelandesi nel Match, dal 10 luglio, dopo almeno cinque giorni di pausa. Anche qui servono 7 vittorie. L'ultimo giorno in programma è il 19 luglio, ma se il meteo fa saltare delle regate se ne possono aggiungere altri.
+
+    In mezzo, sugli AC40, si corrono la Youth America's Cup, per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup, per gli equipaggi femminili, dal 5 al 9 luglio. Il formato spiegato con calma è in [Capire la Coppa](/capire-la-coppa/).
+
+da-sapere:
+  usa: [cal-orari, cal-orari-2026, cal-giorni-match, cal-vento, cal-preliminari-2027]
+  testo: |
+    Gli orari del 2027 non sono ancora usciti: non si sa a che ora si parte ogni giorno{?cal-orari}. Per farti un'idea, nel 2026 a Napoli si partiva sempre alle 14, con tre regate al giorno il venerdì e il sabato e due più la finale la domenica{?cal-orari-2026}.
+
+    Non c'è ancora nemmeno il programma giorno per giorno del Match, con i giorni di regata e quelli di riposo{?cal-giorni-match}. Se ti iscrivi al calendario, il telefono si aggiorna da solo quando escono.
+
+    Ogni regata dipende dal vento: gli AC75 partono solo se soffia tra 6,5 e 23 nodi. Fuori da questi limiti si aspetta, e se non cambia nulla la regata salta.
+
+    Prima del 22 maggio, per ora, non è stata annunciata nessun'altra regata preliminare{?cal-preliminari-2027}.

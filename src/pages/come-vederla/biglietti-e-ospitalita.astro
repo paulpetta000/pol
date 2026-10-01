@@ -2,42 +2,38 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import Avvisami from '../../components/Avvisami.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
-import { getFatti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const ids = ['big-niente', 'big-tribune', 'big-ospitalita', 'vil-caracciolo', 'vil-caracciolo-gratis', 'vil-bagnoli-gratis', 'vil-2026-gratis', 'big-sito-ufficiale'];
-const f = await getFatti(ids);
+const T = await getTesti('biglietti');
 ---
 <Base title="Biglietti, tribune e ospitalità per l'America's Cup 2027" description="Biglietti e tribune per l'America's Cup di Napoli 2027: cosa si sa, cosa non è ancora uscito, come evitare le truffe. Iscriviti ad Avvisami per sapere quando apre la vendita.">
-  <PageHead kicker="Vederla · a pagamento" title="Biglietti e ospitalità" lead="Oggi non c'è niente in vendita: né tribune, né pacchetti. Chi ti vende un biglietto «ufficiale» adesso non lo è. Lascia l'email e ti avvisiamo quando apre la vendita." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
+  <PageHead kicker="Vederla · a pagamento" title="Biglietti e ospitalità" lead="Oggi non c'è niente in vendita: né tribune, né pacchetti. Chi ti vende un biglietto «ufficiale» adesso non lo è. Lascia l'email e ti avvisiamo quando apre la vendita." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} />
 
   <section class="section">
     <div class="wrap split">
       <div>
         <div class="stato-big">
-          <span class="stato-big__k mono">Stato al 30.09.2026</span>
+          <span class="stato-big__k mono">In breve</span>
           <span class="stato-big__v">Niente in vendita</span>
-          <span class="stato-big__s">Prezzi, posti e date di vendita non ancora annunciati</span>
+          <span class="stato-big__s">Prezzi, posti e date di vendita non sono ancora usciti</span>
         </div>
         <h2 class="mt">Cosa si sa</h2>
-        <Fatti f={f} ids={ids} />
+        <Testo b={T.b('cosa-si-sa')} />
       </div>
       <div class="stack">
         <Avvisami predefinito={['biglietti', 'ospitalita']} />
         <div class="avviso">
           <Icon name="attenzione" />
-          <div>
-            <p><strong>Attenzione ai siti non ufficiali.</strong> Il sito ufficiale è <a href="https://www.americascup.com/it/home" rel="noopener">americascup.com</a>. Altri siti con nomi simili vendono pacchetti e gadget: <strong>americascupitalia.it</strong>, per esempio, si presenta come portale dell'evento ma non abbiamo trovato legami con gli organizzatori.</p>
-            <p>Non circolano ancora prezzi ufficiali: le cifre che trovi sui blog sono stime.</p>
-          </div>
+          <Testo b={T.b('truffe')} />
         </div>
       </div>
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} />
 </Base>
 <style>
   .mt { margin-top: 2rem; }

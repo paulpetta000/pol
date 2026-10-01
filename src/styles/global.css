@@ -310,6 +310,7 @@ td.num, th.num { text-align: right; white-space: nowrap; }
 .avviso p:last-child { margin-bottom: 0; }
 
 /* Testi discorsivi (src/testi/) */
+.testo:not(:last-child) { margin-bottom: 1em; }
 .testo > :first-child { margin-top: 0; }
 .testo > :last-child { margin-bottom: 0; }
 .testo h3 { margin: 1.8rem 0 .55rem; }

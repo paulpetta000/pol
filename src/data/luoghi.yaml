@@ -1,11 +1,13 @@
 # Punti della mappa. Coordinate da OpenStreetMap (ODbL).
 # tipo: vista (dove guardare) | village | stazione | porto | area
 # Le schede "vista" hanno anche la valutazione della guida (vicino, visuale, sole, gradini, folla):
-# sono consigli nostri, non informazioni ufficiali.
+# sono consigli nostri, non informazioni ufficiali. Il testo di ogni punto, con le sue fonti,
+# è in src/testi/punti.yaml.
 
 # ---------- Dove guardare ----------
 # gruppo: lungomare | colline | posillipo (numeri e colori sulla mappa)
-# perche: la scheda di fatti.yaml che spiega perché il punto è in elenco (stato + fonte)
+# perche: la scheda di fatti.yaml che spiega perché il punto è in elenco; fatti: altre schede del punto.
+# Il testo in src/testi/punti.yaml deve usarle tutte (lo controlla la build).
 # Un punto nuovo entra solo se lo indicano due fonti indipendenti, oppure una fonte affidabile più i dati di OpenStreetMap.
 
 # Lungomare
@@ -16,13 +18,11 @@
   zona: Chiaia
   lat: 40.83090
   lon: 14.22560
-  testo: "Il lungo tratto tra Mergellina e la Rotonda Diaz, dove nel 2027 sarà il Race Village."
   vicino: prima-fila
   visuale: "Lunga fila di posti sul mare: si segue la barca che passa lungo la costa."
   sole: "Sole nel pomeriggio; un po' d'ombra solo sotto gli alberi della Villa, lontano dal mare."
   gradini: "In piano."
   folla: "Molta gente, ma più spazio che alla Rotonda."
-  servizi: "Nel 2026: schermi lungo la strada."
   arrivare: [arco-mirelli, mergellina-l6, san-pasquale]
   perche: vil-caracciolo
   foto: acws-2013-caracciolo
@@ -35,13 +35,11 @@
   zona: Chiaia
   lat: 40.83228
   lon: 14.23033
-  testo: "Il cuore del lungomare. Nel 2026 qui c'era il palco principale, con la spiaggia della Mappatella davanti."
   vicino: prima-fila
   visuale: "Passaggi ravvicinati davanti alla scogliera e il palco con le premiazioni."
   sole: "Pieno sole nel pomeriggio, guardando verso il mare: niente ombra sugli scogli."
   gradini: "In piano."
-  folla: "La zona più affollata: nel 2026 file lunghe per le pedane."
-  servizi: "Nel 2026: maxischermi, cibo e negozio ufficiale nel villaggio."
+  folla: "La zona più affollata: arriva presto (nostra stima)."
   arrivare: [san-pasquale, arco-mirelli, fun-chiaia]
   perche: campo-2026
   foto: acws-2013-partenope
@@ -54,7 +52,6 @@
   zona: Santa Lucia
   lat: 40.83118
   lon: 14.24399
-  testo: "Il lungomare degli alberghi, tra piazza Vittoria e Castel dell'Ovo."
   vicino: vicino
   visuale: "Vista aperta verso Posillipo e l'estremità est del campo."
   sole: "Sole nel pomeriggio."
@@ -73,7 +70,6 @@
   zona: Santa Lucia
   lat: 40.82836
   lon: 14.24848
-  testo: "Il castello sull'isolotto di Megaride segna un'estremità del campo di regata."
   vicino: prima-fila
   visuale: "Sull'acqua da tre lati: si vede bene la fine del campo."
   sole: "Sole pieno, pochissima ombra."
@@ -93,7 +89,6 @@
   zona: Vomero
   lat: 40.83972
   lon: 14.22723
-  testo: "La lunga balconata del Vomero sopra Chiaia e Mergellina; poco più in basso c'è la parte alta di via Tasso."
   vicino: dall-alto
   visuale: "Tutto il golfo dall'alto, da Posillipo a Castel dell'Ovo: si capisce la regata, non i dettagli delle manovre."
   sole: "Guardi verso sud: nel pomeriggio il sole è di fronte."
@@ -111,7 +106,6 @@
   zona: Vomero
   lat: 40.83987
   lon: 14.23406
-  testo: "Il parco storico del Vomero: dal belvedere in fondo al parco si vede il golfo dall'alto."
   vicino: dall-alto
   visuale: "Il mare davanti a Chiaia dall'alto, in un angolo più tranquillo di via Falcone."
   sole: "Alberi e ombra nel parco; sul belvedere sole nel pomeriggio."
@@ -129,7 +123,6 @@
   zona: Vomero
   lat: 40.84411
   lon: 14.24086
-  testo: "Accanto alla Certosa di San Martino e a Castel Sant'Elmo: la vista più ampia sul golfo."
   vicino: dall-alto
   visuale: "Tutto il golfo, ma le barche si vedono piccole: porta un binocolo."
   sole: "Esposto, poca ombra."
@@ -147,7 +140,6 @@
   zona: Pizzofalcone
   lat: 40.83123
   lon: 14.24792
-  testo: "La collina sopra Castel dell'Ovo: un balcone sul golfo e sul campo di regata."
   vicino: dall-alto
   visuale: "Tutto il campo dall'alto, con il Vesuvio alle spalle."
   sole: "Sole pieno nel pomeriggio."
@@ -167,7 +159,6 @@
   zona: Posillipo
   lat: 40.82215
   lon: 14.21284
-  testo: "La strada panoramica in cima alla collina di Posillipo, famosa per la vista sul golfo."
   vicino: dall-alto
   visuale: "Il golfo intero, con il campo di regata lontano e più in basso: porta un binocolo."
   sole: "Guardi verso sud-est: nel tardo pomeriggio il sole è alle spalle."
@@ -184,7 +175,6 @@
   zona: Posillipo
   lat: 40.82569
   lon: 14.21734
-  testo: "La strada a tornanti che sale da Mergellina verso via Petrarca, con tratti a balcone sul golfo."
   vicino: dall-alto
   visuale: "Il campo di regata dall'alto e tutto il golfo: si vede l'insieme, non i dettagli."
   sole: "Guardi verso sud-est: nel pomeriggio il sole è alle spalle o di lato."
@@ -202,7 +192,6 @@
   zona: Posillipo
   lat: 40.82807
   lon: 14.21781
-  testo: "Il piazzale della chiesa di Sant'Antonio, sopra Mergellina: la classica cartolina di Napoli con il Vesuvio."
   vicino: dall-alto
   visuale: "Il golfo con il Vesuvio di fronte e il campo di regata più in basso."
   sole: "Guardi verso est: il sole del pomeriggio è alle spalle."

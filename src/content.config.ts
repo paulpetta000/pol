@@ -26,6 +26,9 @@ const fatti = defineCollection({
     testo: z.string().min(10),
     stato: z.enum(['confermato', 'stampa', 'segnalato', 'atteso']),
     anno: z.number().int().default(2027),
+    // Un fatto del passato che non può valere per il 2027 (un risultato): nei testi l'anno va detto,
+    // ma non serve il segno * (src/lib/testi.ts)
+    storico: z.boolean().default(false),
     fonti: z.array(reference('fonti')).min(1),
     controllato: data,
     ricontrollare: data.optional()
@@ -114,12 +117,11 @@ const luoghi = defineCollection({
   }).refine(l => l.tipo !== 'vista' || (l.gruppo && l.perche), { message: 'Ogni punto "vista" deve avere gruppo e perche (la scheda con la fonte)' })
 });
 
+// Le risposte sono in src/testi/domande-frequenti.yaml, controllate come gli altri testi
 const faq = defineCollection({
   loader: file('src/data/faq.yaml'),
   schema: z.object({
-    domanda: z.string().endsWith('?'),
-    risposta: z.string().min(20),
-    fatti: z.array(reference('fatti')).min(1)
+    domanda: z.string().endsWith('?')
   })
 });
 

@@ -1,4 +1,37 @@
 {
+  "biglietti#cosa-si-sa": {
+    "big-niente": "001e59421c",
+    "big-tribune": "70c447952f",
+    "big-ospitalita": "a032beb844",
+    "vil-bagnoli-gratis": "72f9601221",
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-caracciolo-gratis": "781e3682b4",
+    "vil-2026-gratis": "67971577d8"
+  },
+  "biglietti#truffe": {
+    "big-sito-ufficiale": "41ac7f3be5",
+    "big-tribune": "70c447952f"
+  },
+  "calendario#formato": {
+    "cal-flotta": "590fe580b1",
+    "cal-rr": "fb6a0cc875",
+    "cal-defender-gironi": "1caa4f7beb",
+    "cal-ripescaggio": "c0cb0ad1e3",
+    "cal-semifinali": "914eea9df8",
+    "cal-finale-lvc": "e999a947e6",
+    "cal-match-preparazione": "ac9499ecb3",
+    "cal-match": "14d6c6b3b5",
+    "cal-match-riserva": "3d6e36a644",
+    "cal-youth": "38a7b85ee8",
+    "cal-womens": "c28a1f080e"
+  },
+  "calendario#da-sapere": {
+    "cal-orari": "f52b029084",
+    "cal-orari-2026": "84169bb83f",
+    "cal-giorni-match": "1131be0a56",
+    "cal-vento": "7c2a7c48e5",
+    "cal-preliminari-2027": "06f90e178c"
+  },
   "capire-la-coppa#flotta": {
     "cal-flotta": "590fe580b1"
   },
@@ -34,5 +67,318 @@
     "reg-confini": "ddcf7b07ab",
     "reg-durata": "83efad5c05",
     "reg-arrivo": "bc1c1dd26d"
+  },
+  "come-arrivare#taxi": {
+    "taxi-regole": "39cb5382be",
+    "taxi-aeroporto": "c00a31766e",
+    "taxi-altre": "6f8ddb0b31"
+  },
+  "come-arrivare#tariffe": {
+    "taxi-aeroporto": "c00a31766e",
+    "taxi-altre": "6f8ddb0b31"
+  },
+  "come-arrivare#aereo-altro": {
+    "taxi-collettivo": "de43fa21a1",
+    "metro-aeroporto": "1dcf69e73d"
+  },
+  "come-arrivare#linea6": {
+    "linea6-fermate": "c9e46d686c"
+  },
+  "come-arrivare#linea1": {},
+  "come-arrivare#citta": {
+    "anm-2026": "f97e8ad4f8",
+    "trasporti-2027-atteso": "8b175e8ad6",
+    "linea2-bagnoli": "3dbd356817"
+  },
+  "come-arrivare#auto": {
+    "trasporti-2027-atteso": "8b175e8ad6",
+    "caracciolo-chiusa": "ffc11bca28"
+  },
+  "come-arrivare#isole": {
+    "mare-aliscafi": "08a9054523"
+  },
+  "come-vederla#lungomare": {
+    "vista-vicino": "4173a09439",
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-caracciolo-gratis": "781e3682b4",
+    "vil-bagnoli": "341a218184",
+    "vil-bagnoli-gratis": "72f9601221"
+  },
+  "come-vederla#mare": {
+    "mare-2027-atteso": "effd9b2d48"
+  },
+  "come-vederla#tribune": {
+    "big-niente": "001e59421c"
+  },
+  "come-vederla#tv": {
+    "tv-rai": "89acd5c9b3",
+    "tv-sky": "5ddaf8ba4a"
+  },
+  "dal-lungomare#punti": {
+    "campo-mappa-atteso": "6daa8cb230"
+  },
+  "dal-lungomare#villaggi": {
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-caracciolo-gratis": "781e3682b4",
+    "vil-formato-stampa": "8cdc80ff86",
+    "ped-2027": "a4dd13f939",
+    "vil-bagnoli": "341a218184",
+    "vil-bagnoli-gratis": "72f9601221",
+    "vil-bagnoli-accesso": "11e5bc054b",
+    "vil-orari-2027": "ff2fcf4291"
+  },
+  "dal-lungomare#campo": {
+    "vista-vicino": "4173a09439",
+    "campo-ovo": "f87914e57b",
+    "campo-posillipo": "36b1fb5f90",
+    "campo-mappa-atteso": "6daa8cb230",
+    "vista-anfiteatro": "6ed9a8f45c",
+    "vento-golfo": "4d991070f7"
+  },
+  "dal-lungomare#com-era-2026": {
+    "vil-2026-gratis": "67971577d8",
+    "vil-2026-orari": "3b4d83e4f7",
+    "vil-2026-show": "8e1773b1e8",
+    "vil-2026-schermi": "d3e142da71",
+    "vil-2026-radio": "05666fe824",
+    "ped-2026": "3cac4e2c3c",
+    "vil-2026-folla": "9428eaa6cd",
+    "vil-2026-sicurezza": "a691669b29",
+    "campo-2026": "70ed2ec151"
+  },
+  "dal-lungomare#regole": {
+    "regole-pubblico-atteso": "301c33c4fe",
+    "droni-2026": "124f9398c7",
+    "caldo-bollettini": "524cf0ff1b"
+  },
+  "dal-mare#anno-2027": {
+    "mare-2027-atteso": "effd9b2d48"
+  },
+  "dal-mare#in-breve": {
+    "mare-registrazione": "25c02e170d",
+    "mare-orari": "7897f768c3",
+    "mare-velocita": "9ffa0e99ef",
+    "mare-motore": "9ddc837e4f",
+    "mare-vhf": "982096b7c2",
+    "mare-marshal": "c2f4054d83"
+  },
+  "dal-mare#zone": {
+    "mare-zone": "705d85bb34",
+    "mare-orari": "7897f768c3",
+    "mare-motore": "9ddc837e4f"
+  },
+  "dal-mare#dettaglio": {
+    "mare-registrazione": "25c02e170d",
+    "mare-vhf": "982096b7c2",
+    "mare-orari": "7897f768c3",
+    "mare-motore": "9ddc837e4f",
+    "mare-velocita": "9ffa0e99ef",
+    "mare-zone": "705d85bb34",
+    "mare-marshal": "c2f4054d83",
+    "mare-bagno": "d338e11bb5",
+    "droni-2026": "124f9398c7"
+  },
+  "dal-mare#traghetti": {
+    "mare-ordinanza": "04f75d235f",
+    "mare-aliscafi": "08a9054523",
+    "mare-noleggi": "794082cb80"
+  },
+  "dal-mare#avviso": {
+    "mare-zone": "705d85bb34"
+  },
+  "domande-frequenti#come-funziona": {
+    "reg-percorso": "32facfadd0",
+    "reg-partenza": "7c058f4d3c",
+    "cal-match": "14d6c6b3b5"
+  },
+  "domande-frequenti#quando": {
+    "cal-lvc-periodo": "cf17fb9ab2",
+    "cal-match": "14d6c6b3b5",
+    "cal-youth": "38a7b85ee8",
+    "cal-womens": "c28a1f080e"
+  },
+  "domande-frequenti#gratis": {
+    "vil-bagnoli-gratis": "72f9601221",
+    "vil-caracciolo-gratis": "781e3682b4",
+    "vil-2026-gratis": "67971577d8"
+  },
+  "domande-frequenti#dove-meglio": {
+    "vista-vicino": "4173a09439",
+    "campo-ovo": "f87914e57b",
+    "vista-anfiteatro": "6ed9a8f45c"
+  },
+  "domande-frequenti#biglietti": {
+    "big-niente": "001e59421c",
+    "big-tribune": "70c447952f",
+    "big-sito-ufficiale": "41ac7f3be5"
+  },
+  "domande-frequenti#village-dove": {
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-bagnoli": "341a218184",
+    "vil-orari-2027": "ff2fcf4291"
+  },
+  "domande-frequenti#orari": {
+    "cal-orari": "f52b029084",
+    "cal-orari-2026": "84169bb83f",
+    "mare-orari": "7897f768c3"
+  },
+  "domande-frequenti#barca": {
+    "mare-registrazione": "25c02e170d",
+    "mare-zone": "705d85bb34",
+    "mare-velocita": "9ffa0e99ef",
+    "mare-motore": "9ddc837e4f",
+    "mare-vhf": "982096b7c2",
+    "mare-2027-atteso": "effd9b2d48"
+  },
+  "domande-frequenti#tv": {
+    "tv-rai": "89acd5c9b3",
+    "tv-sky": "5ddaf8ba4a"
+  },
+  "domande-frequenti#squadre": {
+    "sq-sette": "5b2577d182"
+  },
+  "domande-frequenti#defender": {
+    "sq-sette": "5b2577d182",
+    "cal-defender-gironi": "1caa4f7beb"
+  },
+  "domande-frequenti#lvc-formato": {
+    "cal-flotta": "590fe580b1",
+    "cal-rr": "fb6a0cc875",
+    "cal-ripescaggio": "c0cb0ad1e3",
+    "cal-semifinali": "914eea9df8",
+    "cal-finale-lvc": "e999a947e6"
+  },
+  "domande-frequenti#youth-women": {
+    "cal-youth": "38a7b85ee8",
+    "cal-womens": "c28a1f080e",
+    "ac40-uso": "532cabe8de",
+    "yw-nazionalita": "5b7aed571e"
+  },
+  "domande-frequenti#novita-2027": {
+    "ac75-cinque": "bda70095e7",
+    "ac75-donna": "a8004d10ce",
+    "ac75-batterie": "e619967a8f",
+    "ac75-ospite": "8d9073954d"
+  },
+  "domande-frequenti#aeroporto": {
+    "taxi-aeroporto": "c00a31766e",
+    "taxi-regole": "39cb5382be",
+    "taxi-collettivo": "de43fa21a1"
+  },
+  "domande-frequenti#metro-notte": {
+    "trasporti-2027-atteso": "8b175e8ad6",
+    "anm-2026": "f97e8ad4f8"
+  },
+  "domande-frequenti#caracciolo-chiusa": {
+    "caracciolo-chiusa": "ffc11bca28",
+    "trasporti-2027-atteso": "8b175e8ad6"
+  },
+  "domande-frequenti#droni": {
+    "droni-2026": "124f9398c7"
+  },
+  "domande-frequenti#bambini": {
+    "caldo-bollettini": "524cf0ff1b",
+    "vil-2026-folla": "9428eaa6cd"
+  },
+  "domande-frequenti#disabilita": {
+    "acc-2027-atteso": "05bf41f34d",
+    "ped-2026": "3cac4e2c3c"
+  },
+  "domande-frequenti#preliminari": {
+    "cal-preliminari-2027": "06f90e178c",
+    "res-cagliari": "9a580c8fc5",
+    "res-napoli": "7fc1ff31a3"
+  },
+  "domande-frequenti#ufficiale": {
+    "big-sito-ufficiale": "41ac7f3be5"
+  },
+  "domande-frequenti#siti-non-ufficiali": {
+    "big-sito-ufficiale": "41ac7f3be5"
+  },
+  "domande-frequenti#avvisami": {},
+  "home#prossimo": {
+    "cal-flotta": "590fe580b1",
+    "cal-match": "14d6c6b3b5"
+  },
+  "home#dove": {
+    "vista-vicino": "4173a09439",
+    "vista-anfiteatro": "6ed9a8f45c"
+  },
+  "home#archivio": {
+    "res-napoli": "7fc1ff31a3"
+  },
+  "mappa#da-sapere": {
+    "campo-mappa-atteso": "6daa8cb230",
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-bagnoli": "341a218184",
+    "sq-basi": "fac7c17f31",
+    "linea6-fermate": "c9e46d686c",
+    "echia-ascensore": "983a51e6bb"
+  },
+  "napoli-accessibilita#cosa-si-sa": {
+    "acc-2027-atteso": "05bf41f34d",
+    "ped-2026": "3cac4e2c3c",
+    "acc-isolahabile-2026": "48b646bcfd",
+    "ped-2027": "a4dd13f939",
+    "echia-ascensore": "983a51e6bb"
+  },
+  "napoli#prima-di-partire": {
+    "trasporti-2027-atteso": "8b175e8ad6",
+    "caracciolo-chiusa": "ffc11bca28",
+    "vil-2026-folla": "9428eaa6cd",
+    "caldo-bollettini": "524cf0ff1b"
+  },
+  "punti#villa-comunale": {
+    "vil-caracciolo": "c8fd6023fa",
+    "vil-2026-schermi": "d3e142da71"
+  },
+  "punti#rotonda-diaz": {
+    "campo-2026": "70ed2ec151",
+    "vil-2026-gratis": "67971577d8",
+    "ped-2026": "3cac4e2c3c",
+    "vil-formato-stampa": "8cdc80ff86"
+  },
+  "punti#via-partenope": {
+    "ped-2027": "a4dd13f939"
+  },
+  "punti#castel-dell-ovo": {
+    "campo-ovo": "f87914e57b"
+  },
+  "punti#via-aniello-falcone": {
+    "vista-colline-stampa": "2a03f972f8",
+    "vista-falcone-tasso": "271469f3ac"
+  },
+  "punti#villa-floridiana": {
+    "vista-floridiana": "a0041a109a"
+  },
+  "punti#san-martino": {
+    "vista-anfiteatro": "6ed9a8f45c"
+  },
+  "punti#monte-echia": {
+    "vista-echia-2026": "638fee11fe",
+    "vista-anfiteatro": "6ed9a8f45c",
+    "echia-ascensore": "983a51e6bb"
+  },
+  "punti#via-petrarca": {
+    "vista-colline-stampa": "2a03f972f8"
+  },
+  "punti#via-orazio": {
+    "vista-colline-stampa": "2a03f972f8"
+  },
+  "punti#sant-antonio-posillipo": {
+    "vista-sant-antonio": "bbdfe4543c"
+  },
+  "tv#rai": {
+    "tv-rai": "89acd5c9b3",
+    "cal-orari": "f52b029084"
+  },
+  "tv#sky": {
+    "tv-sky": "5ddaf8ba4a"
+  },
+  "tv#youtube": {
+    "tv-youtube": "1c370c26be"
+  },
+  "tv#radio": {
+    "vil-2026-radio": "05666fe824"
   }
 }

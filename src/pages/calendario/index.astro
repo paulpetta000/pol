@@ -3,19 +3,20 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
 import Flag from '../../components/Flag.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import Countdown from '../../components/Countdown.astro';
 import CalendarioMesi from '../../components/CalendarioMesi.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
 import { getFatti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 import { EVENTI, GARE } from '../../data/eventi';
 import { intervallo, giornoSettimana, mono, d } from '../../lib/formato';
 import { SITO } from '../../config/sito';
 
-const idsFormato = ['cal-lvc-periodo', 'cal-flotta', 'cal-rr', 'cal-defender-gironi', 'cal-ripescaggio', 'cal-semifinali', 'cal-finale-lvc', 'cal-match-preparazione', 'cal-match', 'cal-match-riserva', 'cal-youth', 'cal-womens'];
-const idsDaSapere = ['cal-orari', 'cal-giorni-match', 'cal-orari-2026', 'cal-vento', 'cal-preliminari-2027'];
-const f = await getFatti([...idsFormato, ...idsDaSapere]);
+const T = await getTesti('calendario');
+// Le schede delle fasi in agenda (src/data/eventi.ts) vanno tra le fonti della pagina
+const fasi = await getFatti([...new Set(['cal-lvc-periodo', ...EVENTI.map(e => e.fatto)])]);
 const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
 const host = SITO.url.replace(/^https?:\/\//, '');
 
@@ -27,7 +28,7 @@ const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
 }));
 ---
 <Base title="Calendario dell'America's Cup 2027 a Napoli" description="Tutte le date dell'America's Cup 2027 a Napoli: Louis Vuitton Cup dal 22 maggio al 4 luglio, Youth 2-6 giugno, Women's 5-9 luglio, Match dal 10 al 19 luglio. Calendario da aggiungere al telefono." jsonld={jsonld}>
-  <PageHead illustrazione="calendario" kicker="Calendario" title="Le date del 2027" lead="Dal 22 maggio al 19 luglio, quasi due mesi di regate nel golfo. Gli orari non sono ancora usciti: aggiungi il calendario al telefono e si aggiornerà da solo." aggiornato="2026-09-30">
+  <PageHead illustrazione="calendario" kicker="Calendario" title="Le date del 2027" lead="Dal 22 maggio al 19 luglio, quasi due mesi di regate nel golfo. Gli orari non sono ancora usciti: aggiungi il calendario al telefono e si aggiornerà da solo.">
     <Countdown al="2027-05-22" testo="alla prima regata (22 maggio 2027)" />
   </PageHead>
 
@@ -82,19 +83,19 @@ const jsonld = EVENTI.filter(e => e.gara !== 'pausa').map(e => ({
   <section class="section" aria-labelledby="form-h">
     <div class="wrap">
       <p class="kicker">Come funziona</p>
-      <h2 id="form-h">Il formato, fase per fase</h2>
-      <Fatti f={f} ids={idsFormato} />
+      <h2 id="form-h">Chi corre, e quando</h2>
+      <Testo b={T.b('formato')} />
     </div>
   </section>
 
   <section class="section band" aria-labelledby="ds-h">
     <div class="wrap">
       <h2 id="ds-h">Orari e cose ancora da sapere</h2>
-      <Fatti f={f} ids={idsDaSapere} />
+      <Testo b={T.b('da-sapere')} />
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} fatti={fasi.values()} />
 </Base>
 <style>
   .agenda-h { margin-top: 2.4rem; }

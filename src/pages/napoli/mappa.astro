@@ -3,19 +3,21 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Mappa from '../../components/Mappa.astro';
 import SpotGruppi from '../../components/SpotGruppi.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getCollection } from 'astro:content';
-import { getFatti, tutteLeFonti } from '../../lib/fatti';
+import { tutteLeFonti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const ids = ['campo-mappa-atteso', 'vil-caracciolo', 'vil-bagnoli', 'sq-basi', 'linea6-fermate', 'echia-ascensore'];
-const f = await getFatti(ids);
+const T = await getTesti('mappa');
+// Testi delle schede dei punti (componente Spot): anche le loro fonti vanno in fondo alla pagina
+const P = await getTesti('punti');
 const luoghi = await getCollection('luoghi');
 const stazioni = luoghi.filter(l => l.data.tipo === 'stazione' || l.data.tipo === 'porto');
 const osm = (await tutteLeFonti()).get('osm')!;
 ---
 <Base title="Mappa: dove vedere le regate a Napoli" description="Mappa del lungomare di Napoli per l'America's Cup 2027: punti da cui guardare le regate, Race Village, basi di Bagnoli, stazioni della metro e delle funicolari. Funziona anche offline.">
-  <PageHead illustrazione="mappa" kicker="Napoli · mappa" title="Mappa" lead="Disegnata su misura con i dati di OpenStreetMap: funziona anche senza rete. Il campo di regata e le zone dei villaggi sono indicativi, finché non esce la mappa ufficiale." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
+  <PageHead illustrazione="mappa" kicker="Napoli · mappa" title="Mappa" lead="Disegnata su misura con i dati di OpenStreetMap: funziona anche senza rete. Il campo di regata e le zone dei villaggi sono indicativi, finché non esce la mappa ufficiale." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} />
   <section class="section">
     <div class="wrap">
       <Mappa vista="lungomare" id="mappa-grande" />
@@ -42,9 +44,9 @@ const osm = (await tutteLeFonti()).get('osm')!;
       </div>
       <div>
         <h2>Da sapere</h2>
-        <Fatti f={f} ids={ids} />
+        <Testo b={T.b('da-sapere')} />
       </div>
     </div>
   </section>
-  <FontiPagina fatti={f.values()} extra={[osm]} />
+  <FontiPagina testi={[T, P]} extra={[osm]} />
 </Base>

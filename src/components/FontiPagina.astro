@@ -4,14 +4,16 @@ import type { Fatto, Fonte } from '../lib/fatti';
 import type { TestiPagina } from '../lib/testi';
 import { fontiDi, controlloMenoRecente } from '../lib/fatti';
 import { dataLunga } from '../lib/formato';
-interface Props { fatti?: Iterable<Fatto>; extra?: Fonte[]; testi?: TestiPagina; cautela?: boolean }
-const { fatti = [], extra = [], testi, cautela = false } = Astro.props;
-const lista = [...(testi?.fatti ?? []), ...fatti];
-const altre = [...(testi?.fonti ?? []), ...extra];
+interface Props { fatti?: Iterable<Fatto>; extra?: Fonte[]; testi?: TestiPagina | TestiPagina[]; cautela?: boolean }
+const { fatti = [], extra = [], cautela = false } = Astro.props;
+// Una pagina può usare più file di testi (per esempio i suoi e quelli dei punti panoramici)
+const testi = [Astro.props.testi ?? []].flat();
+const lista = [...testi.flatMap(t => t.fatti), ...fatti];
+const altre = [...testi.flatMap(t => t.fonti), ...extra];
 const fonti = fontiDi(lista, altre);
 // La data più vecchia tra schede e fonti: tutto è stato controllato almeno da quel giorno
 const quando = controlloMenoRecente(lista, altre);
-const segno = cautela || testi?.cautela;
+const segno = cautela || testi.some(t => t.cautela);
 const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', altro: 'Altro' } as const;
 ---
 {fonti.length > 0 && (

@@ -1,0 +1,64 @@
+# Testi delle schede dei punti da cui guardare (componente Spot): un blocco per punto, con lo stesso id
+# di src/data/luoghi.yaml. Ogni blocco deve usare la scheda «perche» del punto e le schede del suo elenco «fatti».
+# Sole, gradini e folla restano in luoghi.yaml: sono valutazioni della guida, non informazioni.
+
+villa-comunale:
+  usa: [vil-caracciolo, vil-2026-schermi]
+  testo: |
+    Il lungo tratto tra Mergellina e la Rotonda Diaz. Qui nel 2027 ci sarà il Race Village, con punti di osservazione tipo tribuna ricavati sui promontori.
+
+    Nel 2026 la diretta passava anche sui grandi schermi lungo la strada{?vil-2026-schermi}.
+
+rotonda-diaz:
+  usa: [campo-2026, vil-2026-gratis, ped-2026, vil-formato-stampa]
+  testo: |
+    Il cuore del lungomare, con la spiaggia della Mappatella davanti. Nel 2026 gli AC40 regatavano proprio qui davanti, e qui c'era il palco principale del villaggio; sugli scogli, raccontavano i giornali, il Comune aveva montato le pedane panoramiche{?campo-2026,vil-2026-gratis,ped-2026}.
+
+    Secondo la stampa locale nel 2027 il villaggio avrà lo stesso formato, con maxischermi, cibo e negozio ufficiale{?vil-formato-stampa}.
+
+via-partenope:
+  usa: [ped-2027]
+  testo: |
+    Il lungomare degli alberghi, tra piazza Vittoria e Castel dell'Ovo. Secondo la stampa, la Soprintendenza ha permesso pedane e piattaforme sugli scogli anche qui, fino a luglio 2027: potrebbero tornare per le regate{?ped-2027}.
+
+castel-dell-ovo:
+  usa: [campo-ovo]
+  testo: |
+    Il castello, sull'isolotto di Megaride, segna un'estremità del campo di regata. Dal ponte e dal Borgo Marinari sei sull'acqua.
+
+via-aniello-falcone:
+  usa: [vista-colline-stampa, vista-falcone-tasso]
+  testo: |
+    La lunga balconata del Vomero sopra Chiaia e Mergellina; poco più in basso c'è la parte alta di via Tasso. Per le regate del 2026 la stampa locale, Il Mattino compreso, la indicava come un unico lungo belvedere da cui vedere tutto il campo{?vista-colline-stampa,vista-falcone-tasso}. Da lassù però si perde il dettaglio delle manovre.
+
+villa-floridiana:
+  usa: [vista-floridiana]
+  testo: |
+    Il parco storico del Vomero: dal belvedere in fondo al parco vedi il golfo dall'alto. Il quotidiano Il Mattino lo metteva tra i punti panoramici per le regate del 2026{?vista-floridiana}.
+
+san-martino:
+  usa: [vista-anfiteatro]
+  testo: |
+    Accanto alla Certosa di San Martino e a Castel Sant'Elmo, la vista più ampia sul golfo. Sono gli stessi organizzatori a citare la collina del Vomero, con la Certosa, tra i posti da cui il golfo si vede dall'alto.
+
+monte-echia:
+  usa: [vista-echia-2026, vista-anfiteatro, echia-ascensore]
+  testo: |
+    La collina sopra Castel dell'Ovo, che gli organizzatori chiamano Pizzofalcone: un balcone sul golfo. Per le regate del 2026 il quotidiano Il Mattino e un blog di viaggi napoletano la mettevano tra i punti migliori, con la vista sul mare davanti a Castel dell'Ovo e a via Caracciolo{?vista-echia-2026}.
+
+    Se la salita ti spaventa c'è un ascensore pubblico. Secondo OpenStreetMap è a pagamento e funziona dal lunedì al sabato dalle 7 alle 22, la domenica e i festivi dalle 7:30 alle 22: controlla sul posto.
+
+via-petrarca:
+  usa: [vista-colline-stampa]
+  testo: |
+    La strada panoramica in cima alla collina di Posillipo, famosa per la vista sul golfo. Per le regate del 2026 la stampa locale la indicava, insieme a via Orazio, per vedere tutto il campo dall'alto{?vista-colline-stampa}.
+
+via-orazio:
+  usa: [vista-colline-stampa]
+  testo: |
+    La strada a tornanti che sale da Mergellina verso via Petrarca, con tratti a balcone sul golfo. Anche questa era tra i punti indicati dalla stampa locale per le regate del 2026{?vista-colline-stampa}.
+
+sant-antonio-posillipo:
+  usa: [vista-sant-antonio]
+  testo: |
+    Il piazzale della chiesa di Sant'Antonio, sopra Mergellina: la classica cartolina di Napoli con il Vesuvio. Per le regate del 2026 la consigliava un blog di viaggi napoletano, non un sito ufficiale{?vista-sant-antonio}; su OpenStreetMap la terrazza è segnata come punto panoramico.

@@ -1,0 +1,67 @@
+# Testi di /come-vederla/dal-mare/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+anno-2027:
+  usa: [mare-2027-atteso]
+  testo: |
+    **Per il 2027 mancano ancora l'ordinanza della Capitaneria di porto e la registrazione delle barche**{?mare-2027-atteso}. Prima di uscire in mare controlla sempre la pagina ufficiale e gli avvisi della Capitaneria di porto di Napoli.
+
+in-breve:
+  usa: [mare-registrazione, mare-orari, mare-velocita, mare-motore, mare-vhf, mare-marshal]
+  testo: |
+    A settembre 2026, per vedere le regate dalla propria barca, si faceva così{?mare-registrazione,mare-orari,mare-velocita,mare-motore,mare-vhf,mare-marshal}:
+  voci:
+    - num: "01"
+      testo: "**Registrazione online**, sulla pagina ufficiale «Watch on Water»."
+    - num: "13:30"
+      testo: "**Nella propria zona** entro mezz'ora prima della partenza."
+    - num: 5 kn
+      testo: "**Velocità massima 5 nodi**, senza fare onda."
+    - num: "✕"
+      testo: "**Mai all'ancora**: motore acceso, sempre pronti a spostarsi, vele giù."
+    - num: VHF
+      testo: "**Radio VHF accesa** sul canale indicato dagli organizzatori."
+    - num: "!"
+      testo: "**Le indicazioni dei marshal**, della polizia e della Capitaneria, da seguire sempre."
+
+zone:
+  usa: [mare-zone, mare-orari, mare-motore]
+  testo: |
+    Nel 2026 il campo era segnato da 20 boe numerate, con intorno tre zone colorate{?mare-zone,mare-orari}. Le barche senza motore, come kayak, SUP e barche a vela, non potevano starci{?mare-motore}.
+  voci:
+    - num: Zona rossa
+      testo: barche accreditate e noleggi ufficiali
+    - num: Zona blu
+      testo: pubblico, con le barche sopra i 10 metri sul lato est e le più piccole verso costa
+    - num: Zona grigia
+      testo: solo per passare, senza fermarsi
+
+dettaglio:
+  usa: [mare-registrazione, mare-vhf, mare-orari, mare-motore, mare-velocita, mare-zone, mare-marshal, mare-bagno, droni-2026]
+  testo: |
+    ### Prima di uscire
+
+    Nel 2026 chi voleva vedere le regate con la propria barca doveva registrarsi online. In cambio riceveva ogni mattina il programma, il meteo e gli avvisi di sicurezza. A bordo la radio VHF era obbligatoria, sintonizzata sul canale indicato dagli organizzatori{?mare-registrazione,mare-vhf}.
+
+    ### In acqua
+
+    Nel 2026 le 20 boe del campo erano in posizione entro le 12:30, le barche del pubblico dovevano essere nelle loro zone entro le 13:30 e le regate andavano dalle 14 alle 16{?mare-orari}.
+
+    Potevano stare solo barche a motore, sempre in movimento e pronte a spostarsi, con le vele ammainate: mai all'ancora, se non per un'emergenza. La velocità massima era di 5 nodi, per tutti, senza fare onda{?mare-motore,mare-velocita}.
+
+    La zona rossa era per le barche accreditate e per i noleggi ufficiali; la blu per il pubblico, con le barche sopra i 10 metri sul lato est e quelle più piccole verso costa; la grigia serviva solo per passare. E bisognava seguire sempre le indicazioni dei marshal in acqua, della polizia e della Capitaneria di porto{?mare-zone,mare-marshal}.
+
+    ### Cosa non si poteva fare
+
+    Nel 2026, secondo la stampa, era vietato nuotare e tuffarsi vicino al campo di regata{?mare-bagno}. Ed era vietato far volare droni sopra il campo e sopra le zone del pubblico, anche partendo da terra{?droni-2026}.
+
+traghetti:
+  usa: [mare-ordinanza, mare-aliscafi, mare-noleggi]
+  testo: |
+    Nel 2026, scrivevano i giornali, l'ordinanza n. 99/2026 della Capitaneria di porto ha chiuso alla navigazione non autorizzata uno specchio d'acqua davanti al lungomare. Aliscafi e traghetti per le isole hanno fatto rotte più lunghe per girare intorno al campo: quasi dieci minuti in più per gli aliscafi{?mare-ordinanza,mare-aliscafi}. Se nei giorni di regata devi andare a Capri, Ischia o Procida, tienine conto.
+
+    Nel 2026 nella zona rossa c'erano anche barche a noleggio ufficiali, ma i nomi degli operatori e i prezzi non sono stati pubblicati{?mare-noleggi}.
+
+avviso:
+  usa: [mare-zone]
+  testo: |
+    Se qualcuno ti vende un'uscita in barca «per vedere la Coppa», prima di pagare chiedi se è registrata e in quale zona potrà stare: nel 2026 nella zona rossa entravano solo le barche accreditate e i noleggi ufficiali{?mare-zone}.

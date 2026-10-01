@@ -1,0 +1,52 @@
+# Testi di /come-vederla/dal-lungomare/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+punti:
+  usa: [campo-mappa-atteso]
+  testo: |
+    Sono divisi in tre zone, con lo stesso numero e colore della mappa. Sul lungomare sei in prima fila; dalle colline e da Posillipo vedi tutto il campo dall'alto e capisci meglio la regata, ma le barche sono più piccole.
+
+    Sole, gradini e folla sono valutazioni nostre, per aiutarti a scegliere. La mappa ufficiale del campo 2027 non è ancora uscita{?campo-mappa-atteso}, quindi le distanze sono indicative.
+
+villaggi:
+  usa: [vil-caracciolo, vil-caracciolo-gratis, vil-formato-stampa, ped-2027, vil-bagnoli, vil-bagnoli-gratis, vil-bagnoli-accesso, vil-orari-2027]
+  testo: |
+    ### I villaggi per il pubblico
+
+    I villaggi saranno due. Quello principale, il **Race Village**, sarà lungo viale Francesco Caracciolo, con punti di osservazione tipo tribuna ricavati sui promontori e il palco ufficiale per presentazioni e premiazioni. Se l'ingresso sarà libero, gli organizzatori non l'hanno ancora detto{?vil-caracciolo-gratis}.
+
+    Secondo la stampa locale il villaggio avrà lo stesso formato del 2026: stand, negozio ufficiale, cibo, maxischermi, palco alla Rotonda Diaz e pedane sugli scogli. I giornali scrivono anche che la Soprintendenza ha permesso pedane e piattaforme sugli scogli di via Caracciolo, via Partenope e via Nazario Sauro fino a luglio 2027{?vil-formato-stampa,ped-2027}.
+
+    L'altro villaggio è a **Bagnoli**, accanto alle basi delle squadre: la AC Tech Fan Zone, con maxischermi per le regate, spettacoli, cibo e negozi. Il Comune di Napoli scrive che sarà a ingresso gratuito. Nei piazzali davanti agli hangar il pubblico non entra, ma sul retro delle basi ci saranno simulatori, negozi delle squadre, bar e ristoranti aperti a tutti.
+
+    Date e orari di apertura dei due villaggi non sono ancora usciti{?vil-orari-2027}.
+
+campo:
+  usa: [vista-vicino, campo-ovo, campo-posillipo, campo-mappa-atteso, vista-anfiteatro, vento-golfo]
+  testo: |
+    ### Il campo di regata
+
+    Il campo è vicinissimo alla riva. Castel dell'Ovo ne segna un'estremità; l'altra, secondo la stampa, sarà Capo Posillipo{?campo-posillipo}. La mappa ufficiale, con i confini e le zone per il pubblico, non è ancora uscita{?campo-mappa-atteso}.
+
+    Gli organizzatori descrivono Napoli come un anfiteatro: il golfo si vede dal lungomare e dall'alto, da Pizzofalcone, dal Vomero con la Certosa di San Martino e da Posillipo. Nel golfo di solito soffia una brezza di mare costante, con qualche salto di vento e a volte venti termici.
+
+com-era-2026:
+  usa: [vil-2026-gratis, vil-2026-orari, vil-2026-show, vil-2026-schermi, vil-2026-radio, ped-2026, vil-2026-folla, vil-2026-sicurezza, campo-2026]
+  testo: |
+    A settembre 2026 gli AC40 hanno regatato davanti al lungomare Caracciolo, tra Castel dell'Ovo e la Rotonda Diaz{?campo-2026}. È il modello più vicino a quello che vedremo nel 2027.
+
+    Il Race Village era gratuito e stava sul lungomare, chiuso alle auto, con il palco principale alla Rotonda Diaz. Apriva alle 11 e chiudeva alle 21; il sabato alle 20:30, la domenica alle 22{?vil-2026-gratis,vil-2026-orari}.
+
+    Sul palco, alle 12 e alle 17, c'erano gli show per l'uscita e il rientro delle barche, con le squadre presentate al pubblico. La diretta passava sui grandi schermi del villaggio e lungo via Caracciolo; per sentire il commento senza ritardo bastava la radio ufficiale in cuffia, dal telefono, su americascup.livefeed.fm{?vil-2026-show,vil-2026-schermi,vil-2026-radio}.
+
+    Sugli scogli il Comune aveva montato quattro pedane panoramiche, raggiungibili con passerelle e pensate anche per persone con disabilità e bambini, come hanno raccontato i giornali{?ped-2026}.
+
+    E la gente? L'ultimo giorno di regate, secondo l'ANSA, sul lungomare ci sono stati oltre 100.000 ingressi. Per la sicurezza, scrivevano i giornali, la Prefettura ha impiegato 1.630 agenti dal 22 al 27 settembre{?vil-2026-folla,vil-2026-sicurezza}.
+
+regole:
+  usa: [regole-pubblico-atteso, droni-2026, caldo-bollettini]
+  testo: |
+    Le regole per il pubblico del 2027, cioè cosa si può portare (borse, bottiglie, animali) e dove saranno bagni e punti acqua, non sono ancora uscite{?regole-pubblico-atteso}.
+
+    Il drone lascialo a casa: nel 2026 era vietato farlo volare sopra il campo e sopra le zone del pubblico, anche partendo da terra{?droni-2026}.
+
+    Per il caldo, da fine maggio il Ministero della Salute pubblica ogni giorno un bollettino sulle ondate di calore per 27 città, Napoli compresa, con 4 livelli di rischio. Guardalo la mattina e, nelle ore più calde, cerca l'ombra.

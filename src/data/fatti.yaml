@@ -652,6 +652,7 @@
   testo: "Napoli, 25–27 settembre 2026: vince Luna Rossa, che nella finale a due batte Emirates Team New Zealand senza mai farsi superare."
   stato: confermato
   anno: 2026
+  storico: true
   fonti: [ac-finale-napoli, ac-risultati]
   controllato: 2026-09-30
 
@@ -659,6 +660,7 @@
   testo: "Cagliari, 21–24 maggio 2026: vince Luna Rossa, che in finale batte Emirates Team New Zealand."
   stato: confermato
   anno: 2026
+  storico: true
   fonti: [ac-risultati, scuttlebutt-cagliari]
   controllato: 2026-09-30
 

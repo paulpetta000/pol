@@ -3,22 +3,19 @@ import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Foto from '../../components/Foto.astro';
 import Icon from '../../components/Icon.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import Avvisami from '../../components/Avvisami.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
-import { getFatti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const idsRegole = ['mare-registrazione', 'mare-orari', 'mare-velocita', 'mare-motore', 'mare-vhf', 'mare-zone', 'mare-marshal', 'mare-bagno', 'droni-2026'];
-const idsAltro = ['mare-ordinanza', 'mare-aliscafi', 'mare-noleggi', 'mare-2027-atteso'];
-const f = await getFatti([...idsRegole, ...idsAltro]);
-const ZONE = [
-  { c: 'rossa', t: 'Zona rossa', s: 'Barche accreditate: squadre, sponsor, noleggi ufficiali' },
-  { c: 'blu', t: 'Zona blu', s: 'Pubblico: sopra i 10 m sul lato est, sotto i 10 m verso costa' },
-  { c: 'grigia', t: 'Zona grigia', s: 'Solo passaggio autorizzato, senza fermarsi' }
-];
+const T = await getTesti('dal-mare');
+const breve = T.b('in-breve');
+const zone = T.b('zone');
+// «Zona rossa» → rossa: il colore del quadratino
+const colore = (n: string) => n.toLowerCase().replace('zona ', '');
 ---
 <Base title="Vedere l'America's Cup dal mare" description="Regole per vedere le regate dell'America's Cup a Napoli dalla propria barca: registrazione, zone, 5 nodi, niente ancora, radio VHF. Com'era nel 2026 e cosa manca per il 2027.">
-  <PageHead illustrazione="barca" kicker="Vederla · dal mare" title="Dal mare" lead="Con la tua barca puoi stare vicino al campo, ma con regole precise. Quelle del 2027 non sono ancora uscite: qui ci sono quelle del 2026, il modello più probabile." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} aggiornato="2026-09-30" />
+  <PageHead illustrazione="barca" kicker="Vederla · dal mare" title="Dal mare" lead="Con la tua barca puoi stare vicino al campo, ma con regole precise. Quelle del 2027 non sono ancora uscite: qui ci sono quelle del 2026, il modello più probabile." crumbs={[{ href: '/come-vederla/', label: 'Vederla' }]} />
 
   <section class="section">
     <div class="wrap">
@@ -28,24 +25,20 @@ const ZONE = [
       <div>
         <div class="terzo terzo--wait">
           <p class="kicker" style="color:var(--wait)">2027</p>
-          <p><strong>Ordinanza della Capitaneria e registrazione delle barche per il 2027: non ancora uscite.</strong> Prima di uscire in mare controlla sempre la pagina ufficiale e gli avvisi della Capitaneria di porto di Napoli.</p>
+          <Testo b={T.b('anno-2027')} />
         </div>
         <h2 class="mt">Le regole del 2026, in breve</h2>
+        <Testo b={breve} class="regole-intro" />
         <ol class="regole">
-          <li><span class="num">01</span><span><strong>Registrati online</strong> sulla pagina ufficiale «Watch on Water».</span></li>
-          <li><span class="num">13:30</span><span><strong>Entra nella tua zona</strong> entro mezz'ora prima della partenza.</span></li>
-          <li><span class="num">5 kn</span><span><strong>Velocità massima 5 nodi</strong>, niente onda.</span></li>
-          <li><span class="num">✕</span><span><strong>Mai all'ancora</strong>: motore acceso, sempre pronto a spostarti. Vele giù.</span></li>
-          <li><span class="num">VHF</span><span><strong>Radio VHF accesa</strong> sul canale indicato.</span></li>
-          <li><span class="num">!</span><span><strong>Segui i marshal</strong> e non entrare mai dentro le boe.</span></li>
+          {breve.voci.map(v => <li><span class="num">{v.num}</span><span set:html={v.html} /></li>)}
         </ol>
       </div>
       <div>
         <h3>Le zone del 2026</h3>
         <ul class="zone">
-          {ZONE.map(z => <li class={`zone__${z.c}`}><span class="zone__sw" aria-hidden="true"></span><span><strong>{z.t}</strong><br /><span class="muted">{z.s}</span></span></li>)}
+          {zone.voci.map(v => <li class={`zone__${colore(v.num)}`}><span class="zone__sw" aria-hidden="true"></span><span><strong>{v.num}</strong><br /><span class="muted" set:html={v.html} /></span></li>)}
         </ul>
-        <p class="nota">Nel 2026 il campo era segnato da 20 boe numerate. Barche senza motore (kayak, SUP, vela) escluse.</p>
+        <Testo b={zone} class="nota" />
       </div>
     </div>
   </section>
@@ -53,18 +46,18 @@ const ZONE = [
   <section class="section band" aria-labelledby="det-h">
     <div class="wrap">
       <p class="kicker">Nel dettaglio</p>
-      <h2 id="det-h">Regole del 2026, con la fonte</h2>
-      <Fatti f={f} ids={idsRegole} />
+      <h2 id="det-h">Le regole del 2026, una per una</h2>
+      <Testo b={T.b('dettaglio')} />
     </div>
   </section>
 
   <section class="section" aria-labelledby="alt-h">
     <div class="wrap">
       <h2 id="alt-h">Traghetti, aliscafi e uscite in barca</h2>
-      <Fatti f={f} ids={idsAltro} />
+      <Testo b={T.b('traghetti')} />
       <div class="avviso" style="margin-top:1.4rem">
         <Icon name="attenzione" />
-        <p>Molti operatori privati vendono uscite «per vedere la Coppa». Nel 2026 gli unici noleggi con accesso alla zona rossa erano quelli ufficiali: prima di pagare chiedi se l'uscita è registrata e in quale zona potrà stare.</p>
+        <Testo b={T.b('avviso')} />
       </div>
     </div>
   </section>
@@ -75,10 +68,11 @@ const ZONE = [
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} />
 </Base>
 <style>
   .mt { margin-top: 1.8rem; }
+  :global(.regole-intro) { margin-bottom: .8rem; }
   .regole { list-style: none; padding: 0; margin: 0; border-top: 2px solid var(--ink); }
   .regole li { display: grid; grid-template-columns: 4.2rem 1fr; gap: .8rem; align-items: baseline; padding: .8rem 0; border-bottom: 1px solid var(--line); margin: 0; }
   .regole .num { color: var(--accent); font-weight: 600; font-size: 1.05rem; }

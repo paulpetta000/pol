@@ -2,21 +2,20 @@
 import Base from '../../layouts/Base.astro';
 import PageHead from '../../components/PageHead.astro';
 import Icon from '../../components/Icon.astro';
-import Fatti from '../../components/Fatti.astro';
+import Testo from '../../components/Testo.astro';
 import Avvisami from '../../components/Avvisami.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
-import { getFatti } from '../../lib/fatti';
+import { getTesti } from '../../lib/testi';
 
-const ids = ['acc-2027-atteso', 'ped-2026', 'ped-2027', 'acc-isolahabile-2026', 'echia-ascensore'];
-const f = await getFatti(ids);
+const T = await getTesti('napoli-accessibilita');
 ---
 <Base title="America's Cup a Napoli: accessibilità" description="Vedere l'America's Cup a Napoli con una disabilità: pedane accessibili sugli scogli nel 2026, lungomare in piano, ascensore di Monte Echia. Servizi 2027 non ancora annunciati.">
-  <PageHead kicker="Napoli · accessibilità" title="Accessibilità" lead="Il lungomare è in piano e senza gradini: è il posto più comodo per chi si muove in carrozzina. Per il 2027 i servizi dedicati non sono ancora stati annunciati." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} aggiornato="2026-09-30" />
+  <PageHead kicker="Napoli · accessibilità" title="Accessibilità" lead="Il lungomare è in piano e senza gradini: è il posto più comodo per chi si muove in carrozzina. Per il 2027 i servizi dedicati non sono ancora stati annunciati." crumbs={[{ href: '/napoli/', label: 'Napoli' }]} />
   <section class="section">
     <div class="wrap split">
       <div>
         <h2>Cosa si sa</h2>
-        <Fatti f={f} ids={ids} />
+        <Testo b={T.b('cosa-si-sa')} />
       </div>
       <div class="stack">
         <div class="terzo">
@@ -24,7 +23,7 @@ const f = await getFatti(ids);
           <ul>
             <li>Via Caracciolo, via Partenope e il ponte di Castel dell'Ovo sono in piano.</li>
             <li>Le colline (Vomero, Posillipo) hanno salite e scale: controlla prima ascensori e funicolari.</li>
-            <li>Arriva presto: nel 2026 le pedane si riempivano ore prima delle regate.</li>
+            <li>Arriva presto: le pedane e i posti in prima fila si riempiono per primi.</li>
             <li>Prima di partire controlla sul sito dell'azienda dei trasporti che gli ascensori delle stazioni funzionino.</li>
           </ul>
         </div>
@@ -32,5 +31,5 @@ const f = await getFatti(ids);
       </div>
     </div>
   </section>
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} />
 </Base>

@@ -1,0 +1,122 @@
+# Risposte delle domande frequenti (/domande-frequenti/ e home): un blocco per domanda,
+# con lo stesso id di src/data/faq.yaml. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+come-funziona:
+  usa: [reg-percorso, reg-partenza, cal-match]
+  testo: |
+    Due barche partono insieme e vanno avanti e indietro tra due «cancelli» di boe, uno in alto e uno in basso: chi taglia per primo il traguardo vince la regata. Così era nel 2024, scrive la stampa specializzata; le regole del 2027 non sono ancora uscite{?reg-percorso,reg-partenza}. Il Match è una serie: vince chi arriva prima a 7 vittorie. Tutto in un minuto nella [regata in 60 secondi](/capire-la-coppa/).
+
+quando:
+  usa: [cal-lvc-periodo, cal-match, cal-youth, cal-womens]
+  testo: |
+    Dal 22 maggio al 19 luglio 2027. La Louis Vuitton Cup, che sceglie lo sfidante, va dal 22 maggio al 4 luglio al più tardi; il Match per la Coppa parte il 10 luglio e si chiude entro il 19. In mezzo ci sono la Youth America's Cup, dal 2 al 6 giugno, e la Women's America's Cup, dal 5 al 9 luglio. Tutte le date sono nel [calendario](/calendario/).
+
+gratis:
+  usa: [vil-bagnoli-gratis, vil-caracciolo-gratis, vil-2026-gratis]
+  testo: |
+    Dai belvedere delle colline e di Posillipo sì: sono strade e piazze pubbliche. Per i villaggi, il Comune scrive che quello di Bagnoli sarà gratuito, mentre per quello di via Caracciolo gli organizzatori non hanno ancora detto se si pagherà{?vil-caracciolo-gratis}. Nel 2026 il villaggio sul lungomare era gratuito{?vil-2026-gratis}. Consigli nella pagina [dal lungomare](/come-vederla/dal-lungomare/).
+
+dove-meglio:
+  usa: [vista-vicino, campo-ovo, vista-anfiteatro]
+  testo: |
+    Per stare vicino alle barche, il lungomare: il campo di regata è a pochi metri dalla riva e Castel dell'Ovo ne segna un'estremità. Per vedere tutto il campo, Monte Echia, il belvedere di San Martino e Posillipo, meglio con un binocolo. Tutti i punti sono sulla [mappa](/napoli/mappa/).
+
+biglietti:
+  usa: [big-niente, big-tribune, big-sito-ufficiale]
+  testo: |
+    Non si sa ancora: biglietti, tribune e pacchetti non sono in vendita, e non sono usciti né prezzi né date{?big-niente,big-tribune}. Diffida di chi vende biglietti o pacchetti «ufficiali» fuori da americascup.com. Con [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami) ti scriviamo quando escono.
+
+village-dove:
+  usa: [vil-caracciolo, vil-bagnoli, vil-orari-2027]
+  testo: |
+    Il villaggio ufficiale sarà lungo viale Francesco Caracciolo, con punti di osservazione tipo tribuna sui promontori e il palco ufficiale. A Bagnoli, vicino alle basi delle squadre, ci sarà una Fan Zone con maxischermi. Date e orari di apertura non sono ancora usciti{?vil-orari-2027}.
+
+orari:
+  usa: [cal-orari, cal-orari-2026, mare-orari]
+  testo: |
+    Gli orari 2027 non sono ancora usciti{?cal-orari}. Per farti un'idea: nel 2026 a Napoli si partiva alle 14 e si finiva verso le 16{?cal-orari-2026,mare-orari}. Arriva con largo anticipo per trovare posto.
+
+barca:
+  usa: [mare-registrazione, mare-zone, mare-velocita, mare-motore, mare-vhf, mare-2027-atteso]
+  testo: |
+    Nel 2026 sì, ma con regole precise: registrazione online, zone a colori, massimo 5 nodi, niente ancora e radio VHF a bordo{?mare-registrazione,mare-zone,mare-velocita,mare-motore,mare-vhf}. Le regole del 2027 non sono ancora uscite{?mare-2027-atteso}. Tutto nella pagina [dal mare](/come-vederla/dal-mare/).
+
+tv:
+  usa: [tv-rai, tv-sky]
+  testo: |
+    In chiaro sulla Rai, che ha i diritti per l'Italia di tutte le regate. A pagamento, secondo la stampa, su Sky e NOW{?tv-sky}. Dettagli in [TV e streaming](/come-vederla/in-tv-e-streaming/).
+
+squadre:
+  usa: [sq-sette]
+  testo: |
+    Sette: Emirates Team New Zealand, che difende la Coppa, e sei sfidanti: GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA e Team Australia. Le schede sono nella pagina [squadre](/squadre/).
+
+defender:
+  usa: [sq-sette, cal-defender-gironi]
+  testo: |
+    È la squadra che difende la Coppa, cioè chi l'ha vinta l'ultima volta: Emirates Team New Zealand. Non deve qualificarsi. Corre le regate di flotta e i Round Robin con gli altri, ma i suoi risultati non contano per la classifica degli sfidanti, e non corre ripescaggio, semifinali e finale: il suo posto nel Match ce l'ha già.
+
+lvc-formato:
+  usa: [cal-flotta, cal-rr, cal-ripescaggio, cal-semifinali, cal-finale-lvc]
+  testo: |
+    Si comincia con due giorni di regate di flotta, poi tre Round Robin di duelli a due barche. I primi 3 sfidanti vanno in semifinale, gli altri 3 si giocano il quarto posto nel ripescaggio. In semifinale passa chi arriva prima a 5 vittorie; la finale la vince chi arriva prima a 7.
+
+youth-women:
+  usa: [cal-youth, cal-womens, ac40-uso, yw-nazionalita]
+  testo: |
+    Due regate a parte, sugli AC40 con 4 persone a bordo: la Youth America's Cup per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup per gli equipaggi femminili, dal 5 al 9 luglio. Tutto l'equipaggio deve avere la nazionalità della squadra, e possono essere invitati anche club che non corrono la Coppa.
+
+novita-2027:
+  usa: [ac75-cinque, ac75-donna, ac75-batterie, ac75-ospite]
+  testo: |
+    Sugli AC75 ci sono 5 velisti e almeno una donna, per la prima volta nella storia. Niente più ciclisti: l'energia per le vele arriva dalle batterie. A bordo c'è anche un posto per un ospite.
+
+aeroporto:
+  usa: [taxi-aeroporto, taxi-regole, taxi-collettivo]
+  testo: |
+    In taxi a tariffa fissa: 28,50 € fino a via Partenope o a Mergellina, da chiedere all'inizio della corsa. Oppure il taxi collettivo, a 6 € a persona, fino alla Stazione Centrale o al Molo Beverello, e da lì la metro: è prorogato fino al 31 dicembre 2026, e per il 2027 non si sa ancora. Tutto in [come arrivare](/napoli/come-arrivare/).
+
+metro-notte:
+  usa: [trasporti-2027-atteso, anm-2026]
+  testo: |
+    Per il 2027 non è ancora deciso: il piano dei trasporti non è uscito{?trasporti-2027-atteso}. Nel 2026 la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30{?anm-2026}.
+
+caracciolo-chiusa:
+  usa: [caracciolo-chiusa, trasporti-2027-atteso]
+  testo: |
+    Secondo la stampa locale via Caracciolo potrebbe restare chiusa alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia{?caracciolo-chiusa}. Ma non c'è ancora nessun provvedimento, e il piano del traffico 2027 non è ancora uscito{?trasporti-2027-atteso}. Nel dubbio, non venire in auto.
+
+droni:
+  usa: [droni-2026]
+  testo: |
+    Nel 2026 era vietato far volare droni sopra il campo di regata e sopra le zone del pubblico, anche partendo da terra{?droni-2026}. Nel dubbio, lascialo a casa.
+
+bambini:
+  usa: [caldo-bollettini, vil-2026-folla]
+  testo: |
+    Sì, ma pensa al caldo e alla folla. Da fine maggio il Ministero della Salute pubblica ogni giorno un bollettino sulle ondate di calore per Napoli: guardalo prima di uscire, e porta acqua e cappello, perché sul lungomare non c'è ombra. Nel 2026, l'ultimo giorno di regate, secondo l'ANSA sul lungomare ci sono stati oltre 100.000 ingressi{?vil-2026-folla}: scegli un punto con un po' di spazio e decidete prima un punto di ritrovo. Altri consigli nella pagina [dal lungomare](/come-vederla/dal-lungomare/#cosa-portare).
+
+disabilita:
+  usa: [acc-2027-atteso, ped-2026]
+  testo: |
+    Per il 2027 non sono ancora stati annunciati{?acc-2027-atteso}. Nel 2026, raccontavano i giornali, il Comune aveva allestito pedane sugli scogli raggiungibili con passerelle{?ped-2026}. Informazioni nella pagina [accessibilità](/napoli/accessibilita/).
+
+preliminari:
+  usa: [cal-preliminari-2027, res-cagliari, res-napoli]
+  testo: |
+    Per ora no: dopo Cagliari e Napoli, nel 2026, non è stata annunciata nessun'altra regata preliminare{?cal-preliminari-2027}. I risultati del 2026 sono nell'[archivio](/archivio-2026/).
+
+ufficiale:
+  usa: [big-sito-ufficiale]
+  testo: |
+    No. È una guida indipendente, non legata agli organizzatori né alle squadre: il sito ufficiale dell'evento è americascup.com. Le fonti di ogni pagina sono in fondo alla pagina stessa, con la data dell'ultimo controllo, e tutte insieme nella pagina [fonti](/fonti/).
+
+siti-non-ufficiali:
+  usa: [big-sito-ufficiale]
+  testo: |
+    No, per quanto abbiamo potuto verificare. Si presenta come portale dell'evento e vende pacchetti, ma non abbiamo trovato legami con gli organizzatori. Il sito ufficiale è americascup.com.
+
+avvisami:
+  senzaFonte: Parla dei servizi di questa guida, Avvisami e il calendario da aggiungere al telefono.
+  testo: |
+    Lascia la tua email in [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami): la usiamo solo per questo e puoi chiedere di cancellarla quando vuoi. Oppure iscriviti al [calendario](/calendario/#iscriviti), che si aggiorna da solo.

@@ -1,0 +1,70 @@
+# Testi di /napoli/come-arrivare/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+taxi:
+  usa: [taxi-regole, taxi-aeroporto, taxi-altre]
+  testo: |
+    Dall'aeroporto, e per i tragitti più comuni in città, il taxi ha tariffe fisse decise dal Comune di Napoli. Chiedi la tariffa fissa **prima di partire**: il tassista non può rifiutarla e deve darti la ricevuta prima di mettersi in marcia. Vale 24 ore su 24, festivi compresi; a parte si pagano solo i pedaggi e, se prendi un minivan, un supplemento di 5 €.
+
+tariffe:
+  usa: [taxi-aeroporto, taxi-altre]
+  voci:
+    - num: "21,00"
+      testo: Aeroporto → Stazione Centrale
+    - num: "24,00"
+      testo: Aeroporto → Molo Beverello e porto
+    - num: "28,50"
+      testo: Aeroporto → Via Partenope (alberghi del lungomare)
+    - num: "28,50"
+      testo: Aeroporto → Mergellina
+    - num: "17,50"
+      testo: Stazione Centrale → Via Partenope
+    - num: "17,50"
+      testo: Stazione Centrale → Mergellina
+    - num: "10,00"
+      testo: Molo Beverello → Via Partenope
+
+aereo-altro:
+  usa: [taxi-collettivo, metro-aeroporto]
+  testo: |
+    ### Spendendo meno
+
+    C'è il taxi collettivo Aeroporto–Stazione Centrale–Molo Beverello, a 6 € a persona; da lì prosegui in metro. Per ora è prorogato fino al 31 dicembre 2026: per il 2027 non si sa ancora.
+
+    ### E la metro?
+
+    La fermata della Linea 1 all'aeroporto non è ancora aperta, scrivono i giornali, e le date annunciate continuano a cambiare: per il 2027 non contarci{?metro-aeroporto}.
+
+linea6:
+  usa: [linea6-fermate]
+  fonti: [osm]
+  testo: |
+    ### Linea 6
+
+    Corre sotto la Riviera di Chiaia, parallela al lungomare. Per la Rotonda Diaz scendi ad **Arco Mirelli** o a **San Pasquale**; per via Partenope e Castel dell'Ovo a **Chiaia–Monte di Dio**. Le altre fermate sono Mergellina e Municipio.
+
+linea1:
+  fonti: [osm]
+  testo: |
+    ### Linea 1 e funicolari
+
+    Dalla Stazione Centrale la **Linea 1** ti porta a Municipio e a Toledo. Dal Vomero scendi con la **funicolare di Chiaia**, fino a Parco Margherita, o con la **Centrale**, fino all'Augusteo.
+
+citta:
+  usa: [anm-2026, trasporti-2027-atteso, linea2-bagnoli]
+  testo: |
+    Nel 2026, per le regate, la metro ha fatto orari lunghi: la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30; la funicolare di Mergellina ha fatto l'ultima corsa alle 00:30, mentre quelle di Chiaia e Centrale, come di consueto, arrivavano alle 2{?anm-2026}. Il piano dei trasporti per il 2027 non è ancora uscito{?trasporti-2027-atteso}.
+
+    È in progetto, scrive la stampa, una nuova fermata della Linea 2 a Bagnoli, «Porta del Parco», vicino alle basi delle squadre; la data di apertura però non è confermata{?linea2-bagnoli}.
+
+auto:
+  usa: [trasporti-2027-atteso, caracciolo-chiusa]
+  testo: |
+    Nei giorni di regata lascia stare l'auto. Il piano del traffico per il 2027 non è ancora uscito{?trasporti-2027-atteso}, ma secondo la stampa locale via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia{?caracciolo-chiusa}.
+
+isole:
+  usa: [mare-aliscafi]
+  fonti: [osm]
+  testo: |
+    Aliscafi e traghetti arrivano al Molo Beverello e, solo gli aliscafi, anche a Mergellina: da tutti e due il lungomare è a pochi minuti a piedi.
+
+    Nel 2026, scrivevano i giornali, durante le regate le corse per le isole hanno fatto rotte più lunghe per girare intorno al campo: quasi dieci minuti in più per gli aliscafi{?mare-aliscafi}.

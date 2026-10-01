@@ -17,8 +17,8 @@ import { getFatti, getFonti, type Fatto, type Fonte } from './fatti';
 import firmeSalvate from '../testi/firme.json';
 
 type Cautela = 'stampa' | 'segnalato' | 'atteso' | 'anno';
-export type Blocco = { nome: string; html: string; voci: { num: string; html: string }[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean };
-export type TestiPagina = { pagina: string; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean; b: (nome: string) => Blocco };
+export type Blocco = { nome: string; html: string; nudo: string; voci: { num: string; html: string }[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean };
+export type TestiPagina = { pagina: string; blocchi: string[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean; b: (nome: string) => Blocco };
 
 // Impronta di una scheda: cambia se cambiano testo, stato o anno (stessa formula di scripts/testi-firma.mjs)
 export const firma = (f: { testo: string; stato: string; anno: number }) =>
@@ -26,14 +26,14 @@ export const firma = (f: { testo: string; stato: string; anno: number }) =>
 
 const cauteleDi = (f: Fatto): Cautela[] => [
   ...(f.data.stato !== 'confermato' ? [f.data.stato] : []),
-  ...(f.data.anno !== 2027 ? ['anno' as const] : [])
+  ...(f.data.anno !== 2027 && !f.data.storico ? ['anno' as const] : [])
 ];
 
 // Parole che, nella frase, dicono che l'informazione non è confermata per il 2027
 const PAROLE: Record<Cautela, (f: Fatto) => RegExp> = {
   stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|voc[ei] /i,
   segnalato: () => /siti non ufficiali|blog|segnalat|non ufficial/i,
-  atteso: () => /non (è|sono) ancora|ancora non|non ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere)|in attesa|quando usci/i,
+  atteso: () => /non (?:\S+ ){0,2}ancora|ancora non|manca(?:no)? ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere)|in attesa|quando usci/i,
   anno: f => (f.data.anno === 2024 ? /2024|Barcellona/ : new RegExp(String(f.data.anno)))
 };
 const SPIEGA: Record<Cautela, string> = {
@@ -100,8 +100,15 @@ function controllaSegni(chiave: string, frasi: { testo: string; intro?: string }
   }
 }
 
-// Carica i testi di una pagina, li controlla e li trasforma in HTML
-export async function getTesti(pagina: string): Promise<TestiPagina> {
+// Carica i testi di una pagina, li controlla e li trasforma in HTML (una volta sola per build)
+const giaCaricati = new Map<string, Promise<TestiPagina>>();
+export function getTesti(pagina: string): Promise<TestiPagina> {
+  if (import.meta.env.DEV) return carica(pagina);
+  if (!giaCaricati.has(pagina)) giaCaricati.set(pagina, carica(pagina));
+  return giaCaricati.get(pagina)!;
+}
+
+async function carica(pagina: string): Promise<TestiPagina> {
   const entry = await getEntry('testi', pagina);
   if (!entry) throw new Error(`Testi della pagina "${pagina}" non trovati: manca src/testi/${pagina}.yaml`);
   const firme = firmeSalvate as Record<string, Record<string, string>>;
@@ -130,13 +137,17 @@ export async function getTesti(pagina: string): Promise<TestiPagina> {
       if (intro === undefined && p.tipo === 'p') intro = righe[0];
       for (const r of righe) frasi.push({ testo: r, intro });
     }
-    for (const v of d.voci ?? []) frasi.push({ testo: v.testo });
+    // Le voci di un elenco valgono con la frase d'apertura del blocco (per esempio «Nel 2026 funzionava così»)
+    const introVoci = ps.find(p => p.tipo === 'p')?.righe[0];
+    for (const v of d.voci ?? []) frasi.push({ testo: v.testo, intro: introVoci });
     controllaSegni(chiave, frasi, f, errori);
 
     const cautela = frasi.some(x => x.testo.match(SEGNO));
     blocchi.set(nome, {
       nome,
       html: ps.map(html).join('\n'),
+      // testo senza segni e senza formattazione (per i dati strutturati, per esempio le domande frequenti)
+      nudo: ps.map(p => p.righe.map(nudo).join(' ')).join('\n\n'),
       voci: (d.voci ?? []).map(v => ({ num: v.num, html: inline(v.testo) })),
       fatti: [...f.values()],
       fonti,
@@ -149,6 +160,7 @@ export async function getTesti(pagina: string): Promise<TestiPagina> {
 
   return {
     pagina,
+    blocchi: [...blocchi.keys()],
     fatti: [...tuttiFatti.values()],
     fonti: [...tutteFonti.values()],
     cautela: [...blocchi.values()].some(b => b.cautela),

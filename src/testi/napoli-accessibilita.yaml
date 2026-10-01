@@ -1,0 +1,12 @@
+# Testi di /napoli/accessibilita/. Come si scrivono: vedi src/lib/testi.ts e il README.
+
+cosa-si-sa:
+  usa: [acc-2027-atteso, ped-2026, acc-isolahabile-2026, ped-2027, echia-ascensore]
+  testo: |
+    Per il 2027 i servizi per le persone con disabilità, cioè accessi, posti riservati e bagni, non sono ancora stati annunciati{?acc-2027-atteso}.
+
+    Nel 2026, raccontavano i giornali, il Comune aveva montato quattro pedane panoramiche sugli scogli, raggiungibili con passerelle e pensate anche per persone con disabilità e bambini. Aveva coinvolto anche Isolahabile, un'impresa sociale di Napoli che porta in mare persone con disabilità{?ped-2026,acc-isolahabile-2026}.
+
+    Le pedane potrebbero tornare: secondo la stampa, la Soprintendenza le ha permesse sugli scogli di via Caracciolo, via Partenope e via Nazario Sauro per un anno, fino a luglio 2027{?ped-2027}.
+
+    A Monte Echia, la collina sopra Castel dell'Ovo, si sale anche con un ascensore pubblico. Secondo OpenStreetMap è a pagamento e funziona dal lunedì al sabato dalle 7 alle 22, la domenica e i festivi dalle 7:30 alle 22: controlla sul posto.

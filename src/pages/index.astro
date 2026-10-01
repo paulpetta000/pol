@@ -6,20 +6,19 @@ import Foto from '../components/Foto.astro';
 import Countdown from '../components/Countdown.astro';
 import CalendarioMesi from '../components/CalendarioMesi.astro';
 import Avvisami from '../components/Avvisami.astro';
-import Fatto from '../components/Fatto.astro';
+import Testo from '../components/Testo.astro';
 import Mappa from '../components/Mappa.astro';
 import FontiPagina from '../components/FontiPagina.astro';
 import CampoRegata from '../components/CampoRegata.astro';
 import { stato } from '../lib/regata60';
 import { getCollection } from 'astro:content';
-import { getFatti } from '../lib/fatti';
-import { testoRicco, dataBreve } from '../lib/formato';
-import { SITO } from '../config/sito';
+import { getTesti } from '../lib/testi';
 import R from '../data/risultati-2026.json';
 
-const f = await getFatti(['cal-lvc-periodo', 'cal-match', 'cal-flotta', 'big-niente', 'sq-sette', 'res-napoli', 'vista-vicino']);
+const T = await getTesti('home');
+const D = await getTesti('domande-frequenti');
 const squadre = (await getCollection('squadre')).sort((a, b) => a.data.ordine - b.data.ordine);
-const faq = (await getCollection('faq')).filter(q => ['quando', 'gratis', 'dove-meglio', 'biglietti', 'tv'].includes(q.id));
+const faq = (await getCollection('faq')).filter(q => ['quando', 'gratis', 'dove-meglio', 'biglietti', 'tv'].includes(q.id)).map(q => ({ q, b: D.b(q.id) }));
 
 const AZIONI = [
   { href: '/come-vederla/dal-lungomare/', icon: 'binocolo', t: 'Vederla gratis', s: 'dal lungomare e dalle colline' },
@@ -38,7 +37,7 @@ const podio = R.napoli.classifica.slice(0, 3);
   <section class="hero">
     <div class="wrap hero__in">
       <div class="hero__txt">
-        <p class="hero__meta mono">Guida per il 2027 · controllata il {dataBreve(SITO.aggiornato)}</p>
+        <p class="hero__meta mono">Guida indipendente per il 2027</p>
         <h1>L'America's Cup è a Napoli</h1>
         <p class="hero__date"><span class="num">22.05 → 19.07.2027</span> Regate nel golfo, davanti al lungomare</p>
         <Countdown al="2027-05-22" testo="alla prima regata" grande />
@@ -70,14 +69,11 @@ const podio = R.napoli.classifica.slice(0, 3);
       <div>
         <p class="kicker">Prossimo appuntamento</p>
         <h2 id="prossimo-h">Sabato 22 maggio 2027: 7 AC75 sulla stessa linea di partenza</h2>
-        <p class="lead">Si apre la Louis Vuitton Cup con due giorni di regate di flotta. Poi duelli, semifinali, finale e dal 10 luglio il Match per la Coppa.</p>
+        <Testo b={T.b('prossimo')} class="lead" />
         <p class="btn-row"><a class="btn btn--primary" href="/calendario/"><Icon name="calendario" size={20} /> Tutte le date</a><a class="btn" href="/calendario/#iscriviti">Aggiungi al tuo calendario</a></p>
       </div>
-      <div class="stack">
+      <div>
         <CalendarioMesi compatto />
-        <ul class="fatti">
-          <Fatto f={f.get('cal-flotta')!} />
-        </ul>
       </div>
     </div>
   </section>
@@ -87,7 +83,7 @@ const podio = R.napoli.classifica.slice(0, 3);
       <div>
         <p class="kicker">Dove guardare</p>
         <h2 id="dove-h">In prima fila sul lungomare, o dall'alto</h2>
-        <p>{f.get('vista-vicino')!.data.testo} Undici punti da cui guardare, sul lungomare, sulle colline e a Posillipo: scegli il tuo.</p>
+        <Testo b={T.b('dove')} />
         <p class="btn-row"><a class="btn btn--primary" href="/napoli/mappa/"><Icon name="mappa" size={20} /> Apri la mappa</a><a class="btn" href="/come-vederla/dal-lungomare/">Consigli per il lungomare</a></p>
       </div>
       <a href="/napoli/mappa/" class="map-link"><span class="visually-hidden">Apri la mappa completa</span>
@@ -139,7 +135,7 @@ const podio = R.napoli.classifica.slice(0, 3);
       <div>
         <p class="kicker">Archivio 2026</p>
         <h2 id="arch-h">Napoli 2026: vince Luna Rossa</h2>
-        <p>{f.get('res-napoli')!.data.testo}</p>
+        <Testo b={T.b('archivio')} />
         <p><a class="btn" href="/archivio-2026/"><Icon name="trofeo" size={20} /> Risultati di Napoli e Cagliari</a></p>
       </div>
       <ol class="podio">
@@ -155,10 +151,10 @@ const podio = R.napoli.classifica.slice(0, 3);
       <p class="kicker">Domande frequenti</p>
       <h2 id="faq-h">Le risposte veloci</h2>
       <div class="faq-mini">
-        {faq.map(q => (
+        {faq.map(({ q, b }) => (
           <details>
             <summary>{q.data.domanda}</summary>
-            <p set:html={testoRicco(q.data.risposta)} />
+            <Testo b={b} />
           </details>
         ))}
       </div>
@@ -166,7 +162,7 @@ const podio = R.napoli.classifica.slice(0, 3);
     </div>
   </section>
 
-  <FontiPagina fatti={f.values()} />
+  <FontiPagina testi={T} fatti={faq.flatMap(x => x.b.fatti)} cautela={faq.some(x => x.b.cautela)} />
 </Base>
 
 <style>
@@ -218,5 +214,5 @@ const podio = R.napoli.classifica.slice(0, 3);
   .faq-mini summary::-webkit-details-marker { display: none; }
   .faq-mini summary::after { content: '+'; position: absolute; right: .2rem; top: .8rem; font: 500 1.4rem var(--f-mono); color: var(--accent); }
   .faq-mini details[open] summary::after { content: '−'; }
-  .faq-mini details p { margin: 0 0 1rem; color: var(--ink-2); }
+  .faq-mini details :global(.testo) { margin: 0 0 1rem; color: var(--ink-2); }
 </style>
