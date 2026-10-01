@@ -91,8 +91,8 @@ export function mount(stage, opts = {}) {
   const ui = document.createElement('div');
   ui.className = 'b3-ui';
   ui.innerHTML = `<div class="b3-vig"></div><div class="b3-label" hidden><i></i><span></span></div>
-    <div class="b3-hint">↔ Trascina per ruotare · due dita per ingrandire</div>
-    <div class="b3-ctrl"><button type="button" data-b3="l" aria-label="Ruota a sinistra">⟲</button><button type="button" data-b3="spin" aria-label="Giro completo">360°</button><button type="button" data-b3="r" aria-label="Ruota a destra">⟳</button><button type="button" data-b3="in" aria-label="Avvicina">+</button><button type="button" data-b3="out" aria-label="Allontana">−</button></div>`;
+    <div class="b3-hint">Trascina in ogni direzione per girare · due dita per ingrandire</div>
+    <div class="b3-ctrl"><button type="button" data-b3="l" aria-label="Ruota a sinistra">⟲</button><button type="button" data-b3="r" aria-label="Ruota a destra">⟳</button><button type="button" data-b3="su" aria-label="Guarda più dall'alto">↑</button><button type="button" data-b3="giu" aria-label="Guarda più dal basso">↓</button><button type="button" data-b3="in" aria-label="Avvicina">+</button><button type="button" data-b3="out" aria-label="Allontana">−</button><button type="button" data-b3="spin" aria-label="Giro completo">360°</button></div>`;
   stage.appendChild(ui);
   const label = ui.querySelector('.b3-label');
 
@@ -624,7 +624,7 @@ void main(){ float y = vP.y;
     for (let i = 0; i < NB; i++) bLife[i] = 0;
     activeIds = []; setLabel(null);
     goal = { ...VW[0] }; view.t.fromArray(goal.t); view.d = goal.d; view.el = goal.el; view.az = goal.az + userYaw;
-    userZoom = 1;
+    userZoom = 1; userPitch = 0;
     renderer.shadowMap.needsUpdate = true;
   }
 
@@ -679,8 +679,12 @@ void main(){ float y = vP.y;
     resize();
   }
 
-  /* ----- camera: trascinare per ruotare, due dita o +/− per avvicinare ----- */
-  let portrait = false, userYaw = 0, userZoom = 1, spin = 0, dragging = false, lastX = 0, idle = 0;
+  /* ----- camera: trascinare per ruotare (destra-sinistra e alto-basso), due dita, ctrl+rotella o +/− per avvicinare ----- */
+  let portrait = false, userYaw = 0, userPitch = 0, userZoom = 1, spin = 0, dragging = false, lastX = 0, lastY = 0, idle = 0;
+  // altezza dello sguardo in gradi: da poco sotto il pelo dell'acqua (si vedono i foil) a quasi dall'alto
+  const EL_MIN = -20, EL_MAX = 80;
+  const elevazione = () => clamp(goal.el + userPitch, EL_MIN, EL_MAX);
+  const inclina = d => { userPitch = clamp(userPitch + d, EL_MIN - goal.el, EL_MAX - goal.el); };
   const view = { t: V3(0, 8, 0), d: 30, az: 35, el: 12 };
   let goal = { ...VIEWS.ac40[0] };
   const lerpA = (a, b, t) => { const d = ((b - a + 540) % 360) - 180; return a + d * t; };
@@ -700,27 +704,36 @@ void main(){ float y = vP.y;
   let labelId = null, labelAt = null;
   const setLabel = id => { labelId = id; labelAt = id ? anchorOf(id) : null; label.hidden = !id || !labelAt; if (id) label.querySelector('span').textContent = LABELS[id] || ''; };
 
-  cv.style.touchAction = 'pan-y';
+  // il dito sulla barca la gira in ogni direzione: la pagina si scorre toccando fuori dal riquadro
+  cv.style.touchAction = 'none';
   const punti = new Map(); let pinch0 = 0, zoom0 = 1;
   const distanza = () => { const [a, b] = [...punti.values()]; return Math.hypot(a.x - b.x, a.y - b.y); };
   cv.addEventListener('pointerdown', e => {
     punti.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (punti.size === 2) { dragging = false; pinch0 = distanza(); zoom0 = userZoom; }
-    else { dragging = true; lastX = e.clientX; }
+    else { dragging = true; lastX = e.clientX; lastY = e.clientY; }
     idle = 0; ui.classList.add('used');
   });
   window.addEventListener('pointermove', e => {
     if (!punti.has(e.pointerId)) return;
     punti.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (punti.size === 2 && pinch0 > 0) { userZoom = clamp(zoom0 * pinch0 / Math.max(distanza(), 1), 0.45, 2.2); return; }
-    if (dragging) { userYaw += (e.clientX - lastX) * 0.35; lastX = e.clientX; }
+    if (dragging) { userYaw += (e.clientX - lastX) * 0.35; inclina((e.clientY - lastY) * 0.25); lastX = e.clientX; lastY = e.clientY; }
   });
+  // rotella con ctrl (o pizzico sul touchpad): avvicina e allontana; la rotella da sola scorre la pagina
+  cv.addEventListener('wheel', e => {
+    if (!e.ctrlKey) return;
+    e.preventDefault();
+    userZoom = clamp(userZoom * Math.exp(e.deltaY * 0.01), 0.45, 2.2);
+    idle = 0; ui.classList.add('used');
+  }, { passive: false });
   const end = e => { punti.delete(e.pointerId); if (punti.size < 2) pinch0 = 0; if (!punti.size) dragging = false; };
   window.addEventListener('pointerup', end); window.addEventListener('pointercancel', end);
   ui.addEventListener('click', e => {
     const b = e.target.closest('[data-b3]'); if (!b) return; ui.classList.add('used');
     const k = b.dataset.b3;
-    if (k === 'l') userYaw -= 45; else if (k === 'r') userYaw += 45; else if (k === 'in') userZoom = clamp(userZoom / 1.3, 0.45, 2.2); else if (k === 'out') userZoom = clamp(userZoom * 1.3, 0.45, 2.2); else spin = 360;
+    if (k === 'l') userYaw -= 45; else if (k === 'r') userYaw += 45; else if (k === 'su') inclina(15); else if (k === 'giu') inclina(-15);
+    else if (k === 'in') userZoom = clamp(userZoom / 1.3, 0.45, 2.2); else if (k === 'out') userZoom = clamp(userZoom * 1.3, 0.45, 2.2); else spin = 360;
   });
 
   function resize() {
@@ -751,7 +764,7 @@ void main(){ float y = vP.y;
     const k = 1 - Math.exp(-rdt * 4);
     if (spin > 0) { const s = Math.min(spin, dt * 120); spin -= s; userYaw += s; }
     if (goal.d > principale.M.L * 1.7 && !dragging && idle > 2 && !reduce && modo !== 'confronto') userYaw += dt * 4;
-    view.t.lerp(goalT.fromArray(goal.t), k); view.d += (goal.d * userZoom - view.d) * k; view.el += (goal.el - view.el) * k;
+    view.t.lerp(goalT.fromArray(goal.t), k); view.d += (goal.d * userZoom - view.d) * k; view.el += (elevazione() - view.el) * k;
     view.az = lerpA(view.az, goal.az + userYaw, k);
     const az = rad(view.az), el = rad(view.el), dd = view.d * (portrait ? 1.35 : 1);
     camera.position.set(view.t.x + dd * Math.cos(el) * Math.cos(az), view.t.y + dd * Math.sin(el), view.t.z + dd * Math.cos(el) * Math.sin(az));
@@ -810,7 +823,7 @@ void main(){ float y = vP.y;
 
   const api = {
     // ogni tappa riparte dalla sua inquadratura, anche se prima si è ruotato o ingrandito
-    view(i, t) { setView(i, t); userYaw = 0; userZoom = 1; },
+    view(i, t) { setView(i, t); userYaw = 0; userPitch = 0; userZoom = 1; },
     active(id, rel) { setActive(id, rel); setLabel(id && LABELS[id] ? id : null); },
     altitude: () => view.t.y,
     livery,
@@ -820,6 +833,6 @@ void main(){ float y = vP.y;
     stop() { running = false; cancelAnimationFrame(raf); },
     resize
   };
-  window.__b3 = { scene, water, spray, camera, renderer, api, get flotta() { return flotta; }, get tier() { return tier; }, snap() { view.t.fromArray(goal.t); view.d = goal.d * userZoom; view.el = goal.el; view.az = goal.az + userYaw; } };
+  window.__b3 = { scene, water, spray, camera, renderer, api, get flotta() { return flotta; }, get tier() { return tier; }, snap() { view.t.fromArray(goal.t); view.d = goal.d * userZoom; view.el = elevazione(); view.az = goal.az + userYaw; } };
   return api;
 }

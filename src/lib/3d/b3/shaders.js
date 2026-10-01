@@ -183,8 +183,9 @@ const CSS = `
 @keyframes b3p{50%{box-shadow:0 0 0 9px rgba(44,196,216,0),0 0 22px #2CC4D8}}
 .b3-hint{position:absolute;left:50%;bottom:14px;transform:translateX(-50%);font:600 13px/1.2 var(--f-sans,sans-serif);color:#EDF3F5;background:rgba(9,13,16,.72);border:1px solid rgba(120,190,220,.3);padding:7px 12px;border-radius:99px;transition:opacity .5s;white-space:nowrap}
 .b3-ui.used .b3-hint{opacity:0}
-.b3-ctrl{position:absolute;left:10px;top:10px;display:flex;flex-wrap:wrap;gap:6px;pointer-events:auto}
-.b3-ctrl button{min-width:44px;height:44px;padding:0 10px;border-radius:3px;background:rgba(9,13,16,.78);border:1px solid rgba(120,190,220,.35);color:#EDF3F5;font:600 15px var(--f-mono,monospace);cursor:pointer}
+.b3-ctrl{position:absolute;left:8px;right:8px;top:8px;display:flex;flex-wrap:wrap;gap:3px;pointer-events:none}
+.b3-ctrl button[data-b3="spin"]{font-size:13px}
+.b3-ctrl button{pointer-events:auto;min-width:44px;height:44px;padding:0 6px;border-radius:3px;background:rgba(9,13,16,.78);border:1px solid rgba(120,190,220,.35);color:#EDF3F5;font:600 15px var(--f-mono,monospace);cursor:pointer}
 .b3-ctrl button:hover,.b3-ctrl button:focus-visible{border-color:#2CC4D8;outline:none}
 .b3-scala{position:absolute;right:10px;top:10px;font:600 11px var(--f-mono,monospace);letter-spacing:.06em;color:#EDF3F5;background:rgba(9,13,16,.72);padding:6px 8px;border-radius:3px;pointer-events:none}
 `;
