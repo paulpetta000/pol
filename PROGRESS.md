@@ -93,7 +93,7 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
 ## Prossima sessione
-Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`.
+Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: **Rilascio 3, itinerari componibili** (pagina tutta loro, senza link di affiliazione, tappe da aggiungere e togliere tenendo conto delle distanze, design prima di tutto), poi il **sito più ordinato** (7 proposte del 01/10/2026: pagine più corte, «In breve» in cima, home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso).
 
 ## Cose che devi fare tu
 1. ~~Vercel → Production Branch = `main`~~ (il sito pubblico si aggiorna da `main`).
