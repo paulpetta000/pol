@@ -9,9 +9,9 @@ _Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilasci 1 e 2 costruiti e 
 3. **Ogni informazione ha fonte e data di controllo.** Oggi biglietti, tribune, ospitalità e regole per le barche 2027 **non sono ancora usciti**: il sito lo dirà chiaramente e offrirà "Avvisami".
 4. Passiamo ad **Astro**, uno strumento per siti con molte pagine e più lingue. I **risultati 2026** e il **3D** si salvano e migliorano.
 5. **Pubblicazione automatica** da GitHub a Vercel: devi collegarli una volta (5 minuti).
-6. 5 rilasci: Base → Spiegazioni e 3D AC75 → Pronostici → Vivi Napoli → Lingue.
+6. 5 rilasci: Base → Spiegazioni e 3D AC75 → Vivi Napoli → Lingue → Pronostici (ordine deciso il 01/10/2026: i pronostici passano in fondo).
 7. Da te servono: **3 risposte** (stile, nome e dominio, budget), un **avvocato** per marchi e privacy e, più avanti, qualche account gratuito.
-8. Costi: si può restare a **0 €** fino ai link sponsorizzati (Rilascio 4). Da lì Vercel richiede il piano Pro (20 $/mese). Un dominio costa circa 11-20 €/anno.
+8. Costi: si può restare a **0 €** fino ai link sponsorizzati (Rilascio 3). Da lì Vercel richiede il piano Pro (20 $/mese). Un dominio costa circa 11-20 €/anno.
 9. ⚠️ Da questo ambiente molti siti ufficiali **non si aprono** (blocco di rete). Per ora quindi le informazioni 2027 vengono dai riassunti dei motori di ricerca e **nessuna è ancora "confermata" su pagina aperta**. Qui sotto trovi l'elenco dei link da controllare.
 
 ---
@@ -218,7 +218,7 @@ Si può togliere il blocco: nelle impostazioni dell'ambiente Claude (menu dell'a
 *Altre cose verificate* (fonte: documentazione Vercel, letta nei riassunti di ricerca):
 - "git_info_fail" significa "non riesco a leggere i dati del commit": conferma la mia spiegazione.
 - Sul piano gratuito (Hobby) Vercel blocca i deploy di commit scritti da altri solo se il repository è **privato**. Il tuo è pubblico: nessun problema con i commit firmati "Claude".
-- Il piano Hobby è **solo per uso non commerciale**. I link di affiliazione come scopo principale del sito o la pubblicità lo rendono commerciale: serve **Pro, 20 $/mese**. Riguarda il Rilascio 4.
+- Il piano Hobby è **solo per uso non commerciale**. I link di affiliazione come scopo principale del sito o la pubblicità lo rendono commerciale: serve **Pro, 20 $/mese**. Riguarda il Rilascio 3.
 - Le **statistiche** Vercel (Web Analytics) non usano cookie: riconoscono il visitatore con un codice che si cancella ogni giorno. Sul piano gratuito includono **50.000 eventi al mese**. Nei mesi della Coppa potrebbero non bastare: in quel caso passo a un'alternativa gratuita, oppure si valuta Pro.
 - Le operazioni automatiche programmate (Cron) sul piano gratuito girano al massimo una volta al giorno.
 
@@ -226,7 +226,7 @@ Note: oggi il repository è **pubblico** (chiunque può leggere il codice). Va b
 
 ## 4. Struttura del sito
 
-**Menu (5 voci)**: **Vederla · Calendario · Napoli · Squadre · Pronostici**. *Pronostici* compare dal Rilascio 3; prima ci sono 4 voci.
+**Menu (5 voci)**: **Vederla · Calendario · Napoli · Squadre · Pronostici**. *Pronostici* compare dal Rilascio 5; prima ci sono 4 voci.
 
 | Pagina | Scopo | Rilascio |
 |---|---|---|
@@ -241,12 +241,12 @@ Note: oggi il repository è **pubblico** (chiunque può leggere il codice). Va b
 | ├ Mappa | Mappa su misura: punti di osservazione, stazioni, Race Village | 1 |
 | ├ Come arrivare e muoversi | Aereo, treno, traghetto, metro, funicolari, bus, auto | 1 |
 | ├ Accessibilità | Percorsi senza gradini, ascensori, assistenza | 1 |
-| └ Itinerari di 1, 2, 3 giorni | Vivere Napoli intorno alle regate | 4 |
+| └ Itinerari di 1, 2, 3 giorni | Vivere Napoli intorno alle regate | 3 |
 | **Squadre** (pagina guida) | Chi gareggia | 1 |
 | ├ Una pagina per squadra | Storia, persone, risultati (utile per ricerche come "Luna Rossa Napoli 2027") | 1 |
 | ├ Le barche | AC75 e AC40 in cifre; poi in 3D con confronto | 1 → 2 |
 | └ Capire la Coppa | La regata in 60 secondi, video, glossario, storia, quiz | 2 |
-| **Pronostici** | Gioco tra amici | 3 |
+| **Pronostici** | Gioco tra amici | 5 |
 | Archivio 2026 | Cagliari e Napoli: classifiche, regate, storie, fonti | 1 |
 | Domande frequenti | 20-25 risposte brevi | 1 |
 | Fonti | Tutte le fonti con data di controllo | 1 |
@@ -306,7 +306,7 @@ Regole valide per tutte e due: niente gradienti viola, niente emoji al posto del
 | **La regata in 60 secondi** | 6 scene da circa 10 secondi: il campo e il vento, la partenza, la bolina (controvento a zig-zag), la poppa (vento alle spalle), sorpassi e penalità, arrivo e come si vince la serie | Disegno animato (SVG) con didascalie di testo, tasti play/pausa/avanti. Non è un video: pesa poco, si traduce cambiando il testo, è accessibile. Con "riduci movimento" diventa 6 immagini ferme. Testi controllati sulle regole ufficiali | 2 |
 | **Video ufficiali da YouTube** | Una selezione curata (gare, spiegazioni, momenti storici) con titolo, durata e perché guardarlo | Prima del clic mostro una nostra immagine con il tasto play, e YouTube non viene contattato: pagina veloce e niente tracciamento. Al clic parte il lettore ufficiale in modalità privacy avanzata. Solo video del canale ufficiale; se un video non si può incorporare, metto il link | 2 |
 | **AC75 in 3D + confronto con l'AC40** | Esplorazione a tappe come oggi, confronto affiancato alla stessa scala (con una persona per capire le dimensioni), tabella dei numeri con le fonti | Riuso il motore attuale e ci costruisco l'AC75 dalle misure pubbliche, con la scritta "ricostruzione non ufficiale". Comandi touch (ruota, zoom), immagine fissa per chi non ha il 3D. Si carica solo quando tocchi "Avvia 3D" | 2 |
-| **Gioco dei pronostici** | Vedi punto 7 | | 3 |
+| **Gioco dei pronostici** | Vedi punto 7 | | 5 |
 
 **Altre idee, solo se davvero utili**
 
@@ -320,7 +320,7 @@ Regole valide per tutte e due: niente gradienti viola, niente emoji al posto del
 
 **Cosa non farei**: chat o assistente automatico, commenti e forum (vanno moderati), notifiche push per ora (su iPhone funzionano solo dopo aver installato l'app), newsletter frequenti. Dal sito attuale tolgo le parti "in diretta", il simulatore e i coriandoli (vedi punto 2).
 
-## 7. Il gioco dei pronostici (Rilascio 3)
+## 7. Il gioco dei pronostici (Rilascio 5)
 
 **Regole di punteggio** (semplici, da adattare al bando ufficiale quando uscirà):
 
@@ -363,7 +363,7 @@ A parità di punti vince chi ha più risultati esatti, poi chi ha indovinato pi�
 - Unico dato: il soprannome. Cancellazione dei dati del gioco qualche mese dopo la Coppa, più un tasto "Cancella i miei dati".
 - ⚠️ Supabase **mette in pausa i progetti gratuiti** dopo 7 giorni con poca attività (fonte ufficiale, letta). Soluzione gratuita: un controllo automatico giornaliero che lo tiene attivo. Soluzione a pagamento: Pro a 25 $/mese nei mesi di gara.
 
-**Regolamento del gioco: testo pronto per il sito** (bozza del 01/10/2026, da pubblicare con il Rilascio 3)
+**Regolamento del gioco: testo pronto per il sito** (bozza del 01/10/2026, da pubblicare con il Rilascio 5)
 
 1. **Chi organizza.** Enrico Licenziati, titolare di Napoli a Vela (napoliavela.guida@gmail.com).
 2. **Che cos'è.** Un gioco gratuito di pronostici tra amici sulle regate della Louis Vuitton 38ª America's Cup (Napoli, 2027). Nessun premio in denaro o in natura, nessuna scommessa, nessun acquisto: si gioca solo per la classifica. Il gioco non è organizzato né approvato dagli organizzatori dell'evento o dalle squadre.
@@ -386,13 +386,13 @@ Regola da non dimenticare: se un giorno arrivasse un premio, anche piccolo, o un
 |---|---|---|---|
 | **1 · Base** | **Grande** | Molte informazioni 2027 ancora non uscite (il sito deve mostrarlo bene); qualità del design; testi legali; Google impiega settimane a far salire le pagine nuove, quindi **prima si pubblica meglio è** | Risposte alle 3 domande; collegare GitHub e Vercel; OK al ramo `main`; nome ed email del titolare per la pagina privacy; account gratuito Brevo per le email di "Avvisami" (serve un dominio proprio: Brevo non manda email da un mittente @gmail.com); sblocco rete (facoltativo); guardare l'anteprima sul telefono |
 | **2 · Spiegazioni e 3D** | Media | Misure AC75 in parte approssimate (le dichiaro come tali); 3D fluido sui telefoni medi; alcuni video forse non incorporabili | Commenti sul copione dei 60 secondi; video preferiti (facoltativo) |
-| **3 · Pronostici** | Media | Formato delle regate non ancora definitivo; sicurezza del database; pausa del piano gratuito | Parere dell'avvocato; chi inserisce i risultati durante l'evento; eventuale piano a pagamento |
-| **4 · Vivi Napoli** | Media | Orari e aperture cambiano (ricontrollo vicino alle date); i link sponsorizzati rendono il sito "commerciale" | Iscrizione ai programmi di affiliazione e i link; passaggio a Vercel Pro; parere del commercialista |
-| **5 · Lingue** | Media | Termini di vela corretti; 5 lingue da tenere aggiornate | Facoltativo: un madrelingua che rilegge |
+| **3 · Vivi Napoli** | Media | Orari e aperture cambiano (ricontrollo vicino alle date); i link sponsorizzati rendono il sito "commerciale" | Iscrizione ai programmi di affiliazione e i link; passaggio a Vercel Pro; parere del commercialista |
+| **4 · Lingue** | Media | Termini di vela corretti; 5 lingue da tenere aggiornate | Facoltativo: un madrelingua che rilegge |
+| **5 · Pronostici** | Media | Formato delle regate non ancora definitivo; sicurezza del database; pausa del piano gratuito | Parere dell'avvocato; chi inserisce i risultati durante l'evento; eventuale piano a pagamento |
 
-**Tempi suggeriti**: Rilascio 1 entro novembre 2026; 2 in inverno; 3 almeno un mese prima del 22 maggio 2027; 4 e 5 in primavera. Valuta di anticipare le lingue (5) prima di Vivi Napoli (4): i turisti stranieri prenotano presto.
+**Ordine e tempi** (ordine deciso il 01/10/2026): Rilascio 1 entro novembre 2026; 2 in inverno; 3 (Vivi Napoli) e 4 (Lingue) tra l'inverno e la primavera; 5 (Pronostici) almeno un mese prima del 22 maggio 2027, cioè entro aprile, perché il gioco serve durante le regate.
 
-**Link di affiliazione (Rilascio 4): come segnarli sul sito** (testo pronto, 01/10/2026)
+**Link di affiliazione (Rilascio 3): come segnarli sul sito** (testo pronto, 01/10/2026)
 - Accanto a ogni link o pulsante, visibile prima del tocco: «Pubblicità · Link affiliato Booking.com»; sul pulsante «Vedi su Booking.com (link affiliato)». È la formula del regolamento Digital Chart dello IAP («link affiliato + brand» insieme a «pubblicità» o simili); la legge chiede che la pubblicità sia «chiaramente riconoscibile» (D.Lgs. 145/2007, art. 5).
 - In cima alle pagine che ne hanno: «In questa pagina ci sono link di affiliazione: se prenoti o compri da questi link, Napoli a Vela riceve una commissione. Per te il prezzo non cambia.» (l'ultima frase solo se è vera per quel programma).
 - Amazon chiede questa frase esatta: «In qualità di Affiliato Amazon io ricevo un guadagno dagli acquisti idonei».
@@ -420,7 +420,7 @@ Regola da non dimenticare: se un giorno arrivasse un premio, anche piccolo, o un
 - **B — Restiamo su coppa-america-napoli.vercel.app** per ora: gratis, ma il nome contiene un marchio e forse andrà cambiato più avanti (con reindirizzamenti, quindi senza perdere visite).
 
 **3 · Budget mensile**
-- **A — 0 € fino al Rilascio 4** (consigliata): piani gratuiti; Vercel Pro (20 $/mese) solo quando mettiamo i link sponsorizzati; Supabase Pro (25 $/mese) solo se serve nei mesi di gara.
+- **A — 0 € fino al Rilascio 3** (consigliata): piani gratuiti; Vercel Pro (20 $/mese) solo quando mettiamo i link sponsorizzati; Supabase Pro (25 $/mese) solo se serve nei mesi di gara.
 - **B — Piani a pagamento subito** (circa 45 $/mese): più margine su statistiche e database fin da ora.
 
 **Oltre alle risposte, per partire con il Rilascio 1 mi serve**:
@@ -430,4 +430,4 @@ Regola da non dimenticare: se un giorno arrivasse un premio, anche piccolo, o un
 
 ---
 
-**Rilasci 1 e 2 fatti e pubblicati. Per il Rilascio 3 (Pronostici) usa effort alto.**
+**Rilasci 1 e 2 fatti e pubblicati (con gli aggiornamenti 2.1 e 2.2). Prossimo: Rilascio 3 (Vivi Napoli), poi 4 (Lingue) e 5 (Pronostici).**

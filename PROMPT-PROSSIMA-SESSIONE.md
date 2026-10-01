@@ -12,4 +12,4 @@ Regole di lavoro:
 - Prima di ogni anteprima controlla: build, `npm run check:links`, accessibilità (axe), Lighthouse su telefono (almeno 95 ovunque), nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento». Aggiorna `PROGRESS.md` e fai commit chiari.
 - Tutti i testi delle pagine stanno in `src/testi/` e passano dai controlli della build (vedi `README.md`, «Testi discorsivi delle pagine»): niente schede con etichette, fonti solo in fondo, `*` sulle informazioni non ufficiali per il 2027, dette anche a parole.
 
-Prossimo passo: [scrivi qui cosa vuoi fare, per esempio «il Rilascio 3, i pronostici, come da PIANO.md» oppure «aggiorna le informazioni uscite nel frattempo»].
+Prossimo passo: [scrivi qui cosa vuoi fare, per esempio «il Rilascio 3, Vivi Napoli, come da PIANO.md» (l'ordine ora è 3 Vivi Napoli, 4 Lingue, 5 Pronostici) oppure «aggiorna le informazioni uscite nel frattempo»].

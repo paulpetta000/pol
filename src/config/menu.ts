@@ -1,4 +1,4 @@
-// Le 4 voci del menu (Pronostici arriverà con il Rilascio 3).
+// Le 4 voci del menu (Pronostici arriverà con il Rilascio 5).
 // anche: altre sezioni che accendono la stessa voce (Capire la Coppa sta sotto Squadre)
 export const MENU: { href: string; label: string; sotto: string; anche?: string[] }[] = [
   { href: '/come-vederla/', label: 'Vederla', sotto: 'Lungomare, mare, biglietti, TV' },

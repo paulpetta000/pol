@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 in anteprima, da pubblicare dopo il tuo OK)_
+_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 pubblicato)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -53,7 +53,7 @@ _Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 in anteprima, da pubblicare dopo
   - **Controlli** (in locale, telefono simulato): build, `npm run check:links` (nessun link rotto), axe senza violazioni in chiaro e scuro, nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», nessun errore in console, Lighthouse su tutte le 32 pagine: prestazioni 98–100, accessibilità, best practice e SEO 100 (la pagina 404 ha SEO 66 perché non deve essere indicizzata). Corretto anche un problema trovato da axe: le tabelle larghe dell'Archivio 2026 ora si scorrono anche da tastiera.
   - Il gioco dei pronostici e i link di affiliazione hanno i testi pronti in `PIANO.md` (punti 7 e 8).
 
-- **Rilascio 2.2 · «Tutto discorsivo»** (01/10/2026, ramo `ccr-2ebe6f48-tdkrwv`, **in anteprima: su `main` solo dopo il tuo OK**). Contiene:
+- **Rilascio 2.2 · «Tutto discorsivo» pubblicato** (01/10/2026, ramo `ccr-2ebe6f48-tdkrwv` portato su `main` dopo il tuo OK). Contiene:
   - **Tutte le pagine riscritte con il sistema dei testi**, non solo la pagina campione: home, Vederla e le 4 sottopagine, Calendario, Napoli e le 3 sottopagine, Squadre, barche e le 7 pagine delle squadre, Archivio 2026, Domande frequenti, quiz, glossario, storia, video, Fonti. Niente più schede con etichetta, «Fonte:» e «controllato il» nelle pagine: testi per argomento, fonti solo in fondo con una sola data. Tolta anche la data «Ultimo controllo» sotto i titoli (resta su privacy, termini e accessibilità del sito).
   - **Schede dei punti panoramici**: via l'etichetta e la riga delle fonti; ogni punto ha un breve testo (`src/testi/punti.yaml`) che dice perché è in elenco e, se viene dalla stampa o da un blog, lo dice. Le loro fonti ora finiscono in fondo a `/come-vederla/dal-lungomare/` e a `/napoli/mappa/` (prima mancavano).
   - **Domande frequenti e spiegazioni del quiz** passate nel sistema dei testi (`domande-frequenti.yaml`, `quiz.yaml`): la home usa le stesse risposte controllate.
@@ -66,9 +66,8 @@ _Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 in anteprima, da pubblicare dopo
   - **Controlli** (in locale, telefono simulato): build, `npm run check:links` (nessun link rotto), axe senza violazioni in chiaro e scuro su tutte le 34 pagine, nessuno scorrimento orizzontale a 320 e 390 px, «riduci movimento», Lighthouse su tutte le pagine riscritte: vedi sotto.
 
 ## Da fare
-- **Pubblicare il Rilascio 2.2 su `main`** dopo il tuo OK sull'anteprima.
 - Testi del giro in 3D delle barche (`src/data/tappe-ac75.json`, `tappe-ac40.json`): vengono dalle regole di classe e dalla pagina ufficiale delle barche (elencate in fondo alla pagina), ma non sono schede una per una. Da trasformare in schede se vuoi lo stesso controllo delle pagine.
-- Rilasci 3-5 come da `PIANO.md`, **solo dopo il tuo OK** (testi pronti per il regolamento del gioco e per i link di affiliazione nel punto 7 e 8).
+- Rilasci 3-5 come da `PIANO.md`, **nel nuovo ordine deciso il 01/10/2026: 3 · Vivi Napoli, 4 · Lingue, 5 · Pronostici**. Ognuno parte solo dopo il tuo OK. Testi già pronti per i link di affiliazione (Rilascio 3, `PIANO.md` punto 8) e per il regolamento del gioco (Rilascio 5, punto 7). I pronostici vanno finiti almeno un mese prima del 22 maggio 2027.
 - Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede "Non ancora uscito".
 
 ## Skill: quali, e quando (01/10/2026)
@@ -80,7 +79,7 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 
 **Valutate e messe da parte:**
 - **Design** (Anthropic): 7 skill utili (critica, accessibilità, UX writing, design system), ma collega anche Asana, Atlassian, Figma, Gmail, Google Calendar, Intercom, Linear, Notion e Slack. Utile solo per un restyling completo.
-- **UI Consistency**, **Backend Design**: partono da soli (comandi automatici) e hanno accesso ampio. Backend Design da rivalutare per il Rilascio 3, dopo un controllo.
+- **UI Consistency**, **Backend Design**: partono da soli (comandi automatici) e hanno accesso ampio. Backend Design da rivalutare per il Rilascio 5 (Pronostici), dopo un controllo.
 - **Fairmind Design**, **Rayden UI**, **jp-web-design**, **inhabited design**: non adatte.
 - Controllate fuori catalogo: **UI/UX Pro Max** (provata e tolta: il generatore di design system non era adatto), **Graphify** (non serve a un sito piccolo), **ECC** (293 skill e 24 comandi automatici: consuma molti token, sconsigliata).
 
@@ -88,9 +87,9 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Fase | Skill utili | Note |
 |---|---|---|
 | Restyling completo del sito (solo se deciso) | frontend-design, Design, Modern Web Guidance | Le «pesanti» servono qui; poi spegnerle |
-| Rilascio 3 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
-| Rilascio 4 · Vivi Napoli | deep-research, frontend-design per le schede | Le informazioni vanno ricontrollate vicino alle date |
-| Rilascio 5 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
+| Rilascio 3 · Vivi Napoli | deep-research, frontend-design per le schede | Le informazioni vanno ricontrollate vicino alle date |
+| Rilascio 4 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
+| Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
 ## Prossima sessione
@@ -100,7 +99,7 @@ Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`.
 1. ~~Vercel → Production Branch = `main`~~ (il sito pubblico si aggiorna da `main`).
 2. **Guardare il sito sul telefono** e dire cosa cambiare.
 3. ~~Nome ed email del titolare~~ (fatto il 30/09/2026: Enrico Licenziati, napoliavela.guida@gmail.com).
-4. ~~Pubblicare su `main`~~ (Rilasci 1, 1.1 e 2 il 30/09/2026; Rilascio 2.1 il 01/10/2026). **Rilascio 2.2: guardare l'anteprima e dare l'OK.**
+4. ~~Pubblicare su `main`~~ (Rilasci 1, 1.1 e 2 il 30/09/2026; Rilasci 2.1 e 2.2 il 01/10/2026).
 5. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni). Da sapere: sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati (c'è da Pro in su).
 6. **Reindirizzare il vecchio indirizzo** (1 minuto): Vercel → progetto *coppa-america-napoli* → **Settings → Domains** → `coppa-america-napoli.vercel.app` → **Edit** → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 (permanente) → **Save**. La regola in `vercel.json` non sta funzionando; dopo la modifica si può togliere.
 7. ~~Attivare Vercel Web Analytics~~ (attivo dal 01/10/2026).
@@ -114,4 +113,5 @@ Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`.
 - Supabase gratuito va in pausa dopo 7 giorni senza attività: se succede, riattivarlo dalla dashboard (iscrizioni e statistiche restano). Con il contatore delle visite il database ora riceve richieste ogni giorno.
 
 ## Effort consigliato per il prossimo passo
-- Rilascio 3 (Pronostici) → effort alto.
+- Rilascio 3 (Vivi Napoli) → effort alto: tante informazioni nuove da verificare con le fonti.
+- Rilascio 5 (Pronostici) → effort alto.
