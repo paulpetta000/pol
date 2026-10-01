@@ -68,6 +68,9 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 5 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
+## Prossima sessione
+Il prompt pronto da incollare è in `PROMPT-PROSSIMA-SESSIONE.md`: pagine più discorsive con le fonti solo in fondo (A), il 3D in alto nella sezione Squadre (B), privacy, termini, marchi e `LEGALE.md` (C).
+
 ## Cose che devi fare tu
 1. **Vercel → Production Branch = `main`.** Non si può fare dalle API: Vercel → progetto *coppa-america-napoli* → **Settings → Environments → Production → Branch Tracking** (nelle versioni vecchie: Settings → Git → Production Branch) → scrivi `main` → Save.
 2. **Guardare l'anteprima sul telefono** (serve essere collegati a Vercel) e dire cosa cambiare.
