@@ -1,0 +1,85 @@
+---
+// L'AC75 in 3D, in alto nella pagina Squadre e nelle pagine delle squadre: prima l'immagine fissa,
+// il modello si carica solo con «Avvia il 3D». Il giro guidato pezzo per pezzo è in /squadre/barche/.
+import { Picture } from 'astro:assets';
+import Icon from './Icon.astro';
+import { LIVREE, type Livrea } from '../lib/livree';
+interface Props { id: string; titolo: string; team?: Livrea; scelta?: boolean }
+const { id, titolo, team = 'lr', scelta = false } = Astro.props;
+const immagini = scelta ? LIVREE : LIVREE.filter(l => l.k === team);
+---
+<section class="section b3d-sez" aria-labelledby={id}>
+  <div class="wrap">
+    <h2 id={id} class="b3d__h">{titolo}</h2>
+    <div class="b3d" data-b3d data-team={team}>
+      <div class="b3d__stage" data-stage>
+        <div class="b3d__poster">
+          {immagini.map(l => (
+            <Picture src={l.img} alt={`La nostra ricostruzione 3D dell'AC75 con i colori di ${l.nome}, in volo sul golfo`} widths={[480, 800, 1200, 1600]} sizes="(min-width: 960px) 860px, calc(100vw - 32px)" formats={['avif', 'webp']} quality={55} loading={l.k === team ? 'eager' : 'lazy'} fetchpriority={l.k === team ? 'high' : undefined} class="b3d__img" data-poster={l.k} hidden={l.k !== team} />
+          ))}
+          <div class="b3d__avvio">
+            <button type="button" class="btn btn--primary" data-avvia><Icon name="cubo" size={20} /> Avvia il 3D</button>
+            <p class="small" data-msg aria-live="polite"></p>
+          </div>
+        </div>
+      </div>
+      <div class="b3d__sotto">
+        {scelta && (
+          <label class="b3d__team">
+            <span class="mono small">Colori</span>
+            <select data-team>{LIVREE.map(l => <option value={l.k} selected={l.k === team}>{l.nome}</option>)}</select>
+          </label>
+        )}
+        <p class="small muted b3d__nota">Ricostruzione non ufficiale, fatta da noi: colori indicativi, nessun logo.</p>
+        <a class="b3d__giro" href="/squadre/barche/">Il giro della barca, pezzo per pezzo <Icon name="freccia" size={18} /></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>('[data-b3d]')) {
+    const sel = box.querySelector<HTMLSelectElement>('[data-team]');
+    const team = () => sel?.value || box.dataset.team || 'lr';
+    let api: any = null;
+    sel?.addEventListener('change', () => {
+      if (api) api.livery(team());
+      else box.querySelectorAll<HTMLElement>('[data-poster]').forEach(im => (im.hidden = im.dataset.poster !== team()));
+    });
+    box.querySelector('[data-avvia]')!.addEventListener('click', async () => {
+      const stage = box.querySelector<HTMLElement>('[data-stage]')!;
+      const msg = box.querySelector('[data-msg]')!;
+      msg.textContent = 'Carico il modello…';
+      try {
+        const m = await import('../lib/3d/boat3d.js');
+        api = m.mount(stage, { team: team(), classe: 'ac75' });
+        stage.querySelector('.b3d__poster')?.remove();
+        api.start();
+        api.view(0, 0);
+        api.active(null, []);
+        new IntersectionObserver(([e]) => (e.isIntersecting ? api.start() : api.stop())).observe(stage);
+      } catch {
+        msg.textContent = 'Il 3D non funziona su questo dispositivo: resta l\'immagine.';
+      }
+    });
+  }
+</script>
+
+<style>
+  .b3d-sez { padding-block: clamp(1.6rem, 4vw, 2.6rem); }
+  .b3d__h { font-size: clamp(1.4rem, 1.1rem + 1.4vw, 2rem); margin-bottom: .8rem; }
+  .b3d { display: grid; gap: .8rem; max-width: 860px; }
+  .b3d__stage { position: relative; aspect-ratio: 4 / 3; background: linear-gradient(var(--sea-soft), var(--map-sea)); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+  .b3d__stage :global(canvas) { display: block; width: 100% !important; height: 100% !important; }
+  /* il pulsante sta in alto a destra, sul cielo: la barca resta tutta visibile */
+  .b3d__poster { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: flex-end; padding: .8rem; }
+  .b3d__poster :global(.b3d__img) { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .b3d__avvio { position: relative; display: grid; justify-items: end; gap: .5rem; max-width: min(24rem, 100%); }
+  .b3d__avvio .small { margin: 0; }
+  .b3d__avvio .small:not(:empty) { padding: .4rem .7rem; border-radius: var(--r); background: rgb(6 14 20 / .8); color: #eef3f5; }
+  .b3d__sotto { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1.4rem; }
+  .b3d__nota { margin: 0; flex: 1 1 16rem; }
+  .b3d__team { display: flex; gap: .6rem; align-items: center; flex: 1 1 100%; min-width: 0; }
+  .b3d__team select { min-height: 44px; flex: 1 1 auto; width: 100%; min-width: 0; max-width: 22rem; font: inherit; padding: .3rem .5rem; border: 2px solid var(--line-2); border-radius: var(--r); background: var(--bg); color: var(--ink); }
+  .b3d__giro { display: inline-flex; align-items: center; gap: .4rem; min-height: 44px; font-weight: 700; }
+</style>

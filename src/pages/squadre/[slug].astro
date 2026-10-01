@@ -5,7 +5,9 @@ import Icon from '../../components/Icon.astro';
 import Flag from '../../components/Flag.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
+import Barca3D from '../../components/Barca3D.astro';
 import { getCollection, type CollectionEntry } from 'astro:content';
+import { LIVREA_DI_BANDIERA } from '../../lib/livree';
 import { getFatti, tutteLeFonti } from '../../lib/fatti';
 import { SITO } from '../../config/sito';
 
@@ -33,6 +35,7 @@ const jsonld = [{ '@context': 'https://schema.org', '@type': 'SportsTeam', name:
       {d.sito && <a class="small" href={d.sito} rel="noopener">Sito della squadra <Icon name="esterno" size={14} /></a>}
     </div>
   </PageHead>
+  <Barca3D id="b3d-h" titolo={`L'AC75 con i colori di ${d.breve}`} team={LIVREA_DI_BANDIERA[d.bandiera]} />
 
   <section class="section">
     <div class="wrap split">

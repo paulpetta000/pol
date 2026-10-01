@@ -5,6 +5,7 @@ import Icon from '../../components/Icon.astro';
 import Flag from '../../components/Flag.astro';
 import Fatti from '../../components/Fatti.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
+import Barca3D from '../../components/Barca3D.astro';
 import { getCollection } from 'astro:content';
 import { getFatti } from '../../lib/fatti';
 
@@ -16,8 +17,10 @@ const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.r
 ---
 <Base title="Le squadre dell'America's Cup 2027" description="Le 7 squadre della 38ª America's Cup a Napoli: Emirates Team New Zealand, Luna Rossa, GB1, Tudor Team Alinghi, La Roche-Posay Racing Team, ARC Team USA, Team Australia. Chi sono e come sono andate nel 2026.">
   <PageHead illustrazione="squadre" kicker="Squadre" title="Chi gareggia" lead="Una squadra difende la Coppa, sei la sfidano. Per la prima volta ci sono tutte le nazioni che l'hanno già vinta." aggiornato="2026-09-30" />
-  <section class="section">
+  <Barca3D id="b3d-h" titolo="La barca della Coppa, in 3D" scelta />
+  <section class="section" aria-labelledby="sq-h">
     <div class="wrap">
+      <h2 id="sq-h" class="visually-hidden">Le squadre</h2>
       <ul class="sq">
         {squadre.map(s => {
           const c = esito(s, 'cagliari'), n = esito(s, 'napoli');
@@ -50,7 +53,6 @@ const esito = (s: typeof squadre[number], ev: 'cagliari' | 'napoli') => s.data.r
       </div>
       <div class="stack">
         <a class="vai-box" href="/capire-la-coppa/"><Icon name="play" size={30} /><span><strong>Capire la Coppa</strong><br />Come funziona una regata, in 60 secondi</span><Icon name="freccia" /></a>
-        <a class="vai-box" href="/squadre/barche/"><Icon name="cubo" size={30} /><span><strong>Le barche</strong><br />AC75 e AC40 in 3D, affiancati alla stessa scala</span><Icon name="freccia" /></a>
         <a class="vai-box" href="/archivio-2026/"><Icon name="trofeo" size={30} /><span><strong>Archivio 2026</strong><br />Tutti i risultati di Cagliari e Napoli</span><Icon name="freccia" /></a>
       </div>
     </div>
