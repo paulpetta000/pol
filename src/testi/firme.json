@@ -503,6 +503,150 @@
     "sq-acp": "c3a16848db",
     "sq-nyyc": "ca9cee7ca6"
   },
+  "tappe#duomo": {
+    "tp-duomo-prezzi": "87c0cda2b3",
+    "tp-tesoro-durata": "e1d702b5a2"
+  },
+  "tappe#sansevero": {
+    "tp-sansevero-prenota": "34ece27e45",
+    "tp-sansevero-regole": "8341c87042"
+  },
+  "tappe#santa-chiara": {
+    "tp-santachiara-prezzi": "a5d546697b"
+  },
+  "tappe#spaccanapoli": {
+    "tp-spaccanapoli-orari": "d93dd7a576"
+  },
+  "tappe#tribunali": {
+    "tp-tribunali-orari": "56d2bcb65c"
+  },
+  "tappe#pio-monte": {
+    "tp-piomonte-orari": "2fcbdeff65"
+  },
+  "tappe#mann": {
+    "tp-mann-orari": "59d7a18bdd",
+    "tp-mann-prezzi": "69fd701eb9"
+  },
+  "tappe#san-lorenzo": {
+    "tp-sanlorenzo-orari": "b2cee3a7df"
+  },
+  "tappe#napoli-sotterranea": {
+    "tp-sotterranea-visita": "1a91f2044b",
+    "tp-sotterranea-prezzi": "6cab1ce417"
+  },
+  "tappe#madre": {
+    "tp-madre-orari": "b4e055460e"
+  },
+  "tappe#plebiscito": {
+    "tp-plebiscito-orari": "064aad137e"
+  },
+  "tappe#palazzo-reale": {
+    "tp-palazzoreale-restauri": "ae1a86bc05"
+  },
+  "tappe#san-carlo": {
+    "tp-sancarlo-orari": "37ea2ec7f0"
+  },
+  "tappe#castel-nuovo": {
+    "tp-castelnuovo-orari": "7043321f1f"
+  },
+  "tappe#toledo": {
+    "tp-toledo-orari": "ed56d6515f"
+  },
+  "tappe#galleria-borbonica": {
+    "tp-borbonica-orari": "8a456646e1",
+    "tp-borbonica-prezzi": "82a7890433"
+  },
+  "tappe#monte-echia": {
+    "tp-echia-orari": "8d2c9cb463",
+    "tp-echia-prezzi": "af68397908",
+    "tp-echia-recinzione": "0dd4baa7e9"
+  },
+  "tappe#borgo-marinari": {
+    "tp-borgo-orari": "45ef91683f"
+  },
+  "tappe#lungomare": {
+    "tp-lungomare-orari": "00c1bda401",
+    "vil-caracciolo": "c8fd6023fa"
+  },
+  "tappe#dadom": {
+    "tp-dadom-orari": "dea837f539",
+    "tp-dadom-prezzi": "363e706ba3"
+  },
+  "tappe#sant-elmo": {
+    "tp-santelmo-orari": "bf2ca804eb"
+  },
+  "tappe#san-martino": {
+    "tp-sanmartino-orari": "dad9948f0a",
+    "tp-sanmartino-prezzi": "35425459f1"
+  },
+  "tappe#floridiana": {
+    "tp-floridiana-orari": "794202de37",
+    "tp-floridiana-prezzi": "bd609975ec"
+  },
+  "tappe#pedamentina": {
+    "tp-pedamentina-orari": "b882cfba48"
+  },
+  "tappe#catacombe": {
+    "tp-catacombe-orari": "a56fac6625",
+    "tp-catacombe-prezzi": "51ebf9ff1a",
+    "tp-catacombe-note": "fef33ec483"
+  },
+  "tappe#sanita": {
+    "tp-sanita-orari": "0658ee5892"
+  },
+  "tappe#fontanelle": {
+    "tp-fontanelle-orari": "a1055961ee",
+    "tp-fontanelle-prezzi": "cb053abd26"
+  },
+  "tappe#capodimonte": {
+    "tp-capodimonte-orari": "257ccbd98e",
+    "tp-capodimonte-prezzi": "c7172bd803"
+  },
+  "tappe#virgilio": {
+    "tp-virgilio-orari": "041877bc05",
+    "tp-virgilio-prezzi": "fefc54e740"
+  },
+  "tappe#marechiaro": {
+    "tp-marechiaro-orari": "349d5386da"
+  },
+  "tappe#gaiola": {
+    "tp-gaiola-orari": "b425ffca06",
+    "tp-gaiola-prenota": "c3bef7bc61"
+  },
+  "tappe#parco-virgiliano": {
+    "tp-virgiliano-orari": "b3ae22ceb6"
+  },
+  "tappe#citta-scienza": {
+    "tp-cittascienza-orari": "79257e04f1",
+    "tp-cittascienza-estate": "1a91b61206"
+  },
+  "tappe#pompei": {
+    "tp-pompei-biglietti": "2b3802c0bd",
+    "tp-pompei-viaggio": "a5d4f8487d"
+  },
+  "tappe#ercolano": {
+    "tp-ercolano-viaggio": "3009b07dc0",
+    "tp-ercolano-prezzi": "abb7e10d39"
+  },
+  "tappe#vesuvio": {
+    "tp-vesuvio-orari": "52e395f806",
+    "tp-vesuvio-prezzi": "a3ffdafddf",
+    "tp-vesuvio-viaggio": "8d64c49923"
+  },
+  "tappe#capri": {
+    "tp-capri-viaggio": "3a535a7886",
+    "tp-capri-orari": "83f124f379",
+    "tp-isole-2027": "2eba5fd02a"
+  },
+  "tappe#ischia": {
+    "tp-ischia-viaggio": "7ff262c43c",
+    "tp-ischia-orari": "2a4281b93e",
+    "tp-isole-2027": "2eba5fd02a"
+  },
+  "tappe#procida": {
+    "tp-procida-viaggio": "6d6d80d858",
+    "tp-isole-2027": "2eba5fd02a"
+  },
   "tv#rai": {
     "tv-rai": "89acd5c9b3",
     "cal-orari": "f52b029084"

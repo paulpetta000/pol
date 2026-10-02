@@ -609,3 +609,682 @@
   tipo: altro
   controllato: 2026-09-30
   letta: true
+
+# ---------- Itinerari (Rilascio 3): musei, chiese, parchi e trasporti ----------
+# Le fonti con id «tp-» servono solo agli itinerari: finché la pagina non è online (ITINERARI_ONLINE in src/config/sito.ts)
+# la pagina Fonti non le mostra. Pagine lette il 02/10/2026 (ricerca in ricerca/2026-10-02-itinerari-orari-prezzi.md).
+- id: tp-italia-duomo
+  titolo: "Duomo di Napoli"
+  editore: Ministero del Turismo (italia.it)
+  url: https://www.italia.it/it/campania/napoli/duomo
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Pagina senza data: gli orari del Duomo vanno confermati con la cattedrale"
+
+- id: tp-tesoro-info
+  titolo: "Info e tariffe"
+  editore: Museo del Tesoro di San Gennaro
+  url: https://tesorosangennaro.it/info-e-tariffe/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-tesoro-faq
+  titolo: "FAQ"
+  editore: Museo del Tesoro di San Gennaro
+  url: https://tesorosangennaro.it/faq/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sansevero-orari
+  titolo: "Orari e tariffe"
+  editore: Museo Cappella Sansevero
+  url: https://www.museosansevero.it/organizza-la-tua-visita/orari-e-tariffe
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sansevero-accesso
+  titolo: "Modalità di accesso"
+  editore: Museo Cappella Sansevero
+  url: https://www.museosansevero.it/organizza-la-tua-visita/modalita-di-accesso
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sansevero-accessibilita
+  titolo: "Accessibilità"
+  editore: Museo Cappella Sansevero
+  url: https://www.museosansevero.it/organizza-la-tua-visita/accessibilita
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-santachiara-orari
+  titolo: "Orari"
+  editore: Monastero di Santa Chiara
+  url: https://www.monasterodisantachiara.it/orari/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-santachiara-faq
+  titolo: "FAQ"
+  editore: Monastero di Santa Chiara
+  url: https://www.monasterodisantachiara.it/faq/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Le FAQ danno orari di chiusura mezz'ora più tardi della pagina degli orari: usiamo quelli della pagina degli orari"
+
+- id: tp-napolike-gesu
+  titolo: "Chiesa del Gesù Nuovo"
+  editore: Napolike
+  url: https://www.napolike.it/chiesa-del-gesu-nuovo-napoli
+  tipo: altro
+  controllato: 2026-10-02
+  letta: true
+  nota: "Sito non ufficiale: il sito della chiesa non mostra gli orari"
+
+- id: tp-napolike-sangregorio
+  titolo: "Chiesa di San Gregorio Armeno"
+  editore: Napolike
+  url: https://www.napolike.it/point/chiesa-san-gregorio-armeno-napoli
+  tipo: altro
+  controllato: 2026-10-02
+  letta: true
+  nota: "Sito non ufficiale: non abbiamo trovato un sito ufficiale della chiesa"
+
+- id: tp-piomonte
+  titolo: "Info e orari"
+  editore: Pio Monte della Misericordia
+  url: https://piomontedellamisericordia.it/info-e-orari/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-piomonte-caravaggio
+  titolo: "Caravaggio"
+  editore: Pio Monte della Misericordia
+  url: https://piomontedellamisericordia.it/caravaggio/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mann-orari
+  titolo: "Orari e biglietti"
+  editore: Museo Archeologico Nazionale di Napoli
+  url: https://www.museoarcheologiconapoli.it/orari-e-biglietti/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-mann
+  titolo: "Museo Archeologico Nazionale di Napoli"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/luogo/museo-archeologico-nazionale-di-napoli-1
+  tipo: ufficiale
+  pubblicato: 2026-03-24
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sanlorenzo
+  titolo: "Info visite"
+  editore: La Neapolis Sotterrata (San Lorenzo Maggiore)
+  url: https://www.laneapolissotterrata.it/Home/InfoVisite
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sotterranea-orari
+  titolo: "Orari"
+  editore: Napoli Sotterranea
+  url: https://www.napolisotterranea.org/orari/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sotterranea-faq
+  titolo: "FAQ"
+  editore: Napoli Sotterranea
+  url: https://www.napolisotterranea.org/faq/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-madre
+  titolo: "Visita"
+  editore: Museo Madre
+  url: https://www.madrenapoli.it/visita/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-catacombe
+  titolo: "Pianifica la visita"
+  editore: Catacombe di Napoli
+  url: https://catacombedinapoli.it/it/pianifica-visita-guidata-napoli/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-catacombe-sangennaro
+  titolo: "Catacombe di San Gennaro"
+  editore: Catacombe di Napoli
+  url: https://catacombedinapoli.it/it/luoghi/catacombe-di-san-gennaro-napoli/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-catacombe-basilica
+  titolo: "Basilica di Santa Maria della Sanità"
+  editore: Catacombe di Napoli
+  url: https://catacombedinapoli.it/it/luoghi/basilica-di-santa-maria-sanita-napoli/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-fontanelle
+  titolo: "Pianifica la visita"
+  editore: Cimitero delle Fontanelle
+  url: https://cimiterodellefontanelle.it/pianifica-visita/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-fontanelle
+  titolo: "Il Cimitero delle Fontanelle riapre per sempre"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/il-cimitero-delle-fontanelle-riapre-per-sempre/
+  tipo: ufficiale
+  pubblicato: 2026-04-08
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-capodimonte-orari
+  titolo: "Orari"
+  editore: Museo e Real Bosco di Capodimonte
+  url: https://capodimonte.cultura.gov.it/orari/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-capodimonte-biglietti
+  titolo: "Biglietti"
+  editore: Museo e Real Bosco di Capodimonte
+  url: https://capodimonte.cultura.gov.it/biglietti/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-sanmartino
+  titolo: "Certosa e Museo di San Martino"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/luogo/certosa-e-museo-di-san-martino
+  tipo: ufficiale
+  pubblicato: 2026-09-30
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-santelmo
+  titolo: "Castel Sant'Elmo e Museo del Novecento a Napoli"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/luogo/castel-sant-elmo-e-museo-del-novecento-a-napoli
+  tipo: ufficiale
+  pubblicato: 2026-09-17
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-floridiana
+  titolo: "Museo della Ceramica Duca di Martina in Villa Floridiana"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/luogo/museo-della-ceramica-duca-di-martina-in-villa-floridiana
+  tipo: ufficiale
+  pubblicato: 2026-08-06
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-pedamentina
+  titolo: "Dalla Pedamentina a Spaccanapoli"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/vivere-la-citta/turismo/turismo-sostenibile/percorsi-a-piedi/dalla-pedamentina-a-spaccanapoli/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-ascensori
+  titolo: "Ascensori"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=1339&Itemid=320
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-palazzoreale-info
+  titolo: "Informazioni per la visita"
+  editore: Palazzo Reale di Napoli
+  url: https://palazzorealedinapoli.org/informazioni-per-la-visita/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-palazzoreale-restauri
+  titolo: "Inizio cantiere di restauro del Salone d'Ercole e modifica del percorso di visita dell'Appartamento di Etichetta"
+  editore: Palazzo Reale di Napoli
+  url: https://palazzorealedinapoli.org/inizio-cantiere-di-restauro-del-salone-dercole-e-modifica-del-percorso-di-visita-dellappartamento-di-etichetta-da-giovedi-1ottobre/
+  tipo: ufficiale
+  pubblicato: 2026-09-29
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-sancarlo-visite
+  titolo: "Visite guidate"
+  editore: Teatro di San Carlo
+  url: https://www.teatrosancarlo.it/visite-guidate/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-castelnuovo
+  titolo: "Maschio Angioino"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/maschioangioino
+  tipo: ufficiale
+  pubblicato: 2026-09-07
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-napoliforme-galleria
+  titolo: "Galleria Umberto I"
+  editore: NapoliForMe, Comune di Napoli
+  url: https://napoliforme.comune.napoli.it/en/pois/-/poi/Galleria-Umberto-I
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-metroart-toledo
+  titolo: "Toledo"
+  editore: ANM, Metroart
+  url: https://metroart.anm.it/stazioni-arte/linea-1/toledo
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-borbonica-standard
+  titolo: "Percorso Standard"
+  editore: Galleria Borbonica
+  url: https://www.galleriaborbonica.com/it/percorsi/standard
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-borbonica-memorie
+  titolo: "Via delle Memorie"
+  editore: Galleria Borbonica
+  url: https://www.galleriaborbonica.com/it/percorsi/via-delle-memorie
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-borbonica-avventura
+  titolo: "Percorso Avventura"
+  editore: Galleria Borbonica
+  url: https://www.galleriaborbonica.com/it/percorsi/avventura
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-casteldellovo
+  titolo: "Castel dell'Ovo"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/casteldellovo
+  tipo: ufficiale
+  pubblicato: 2025-08-12
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-borgomarinari
+  titolo: "Area pedonale di Borgo Marinari"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/ztl-e-aree-pedonali/area-pedonale-di-borgo-marinari/
+  tipo: ufficiale
+  pubblicato: 2026-08-24
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-echia
+  titolo: "Ascensore di Monte Echia"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=4286&Itemid=314
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-echia
+  titolo: "Entra in funzione l'ascensore di Monte Echia"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/entra-in-funzione-lascensore-di-monte-echia/
+  tipo: ufficiale
+  pubblicato: 2024-04-08
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-villacomunale
+  titolo: "Villa Comunale"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/villa-comunale/
+  tipo: ufficiale
+  pubblicato: 2026-08-12
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-dadom-info
+  titolo: "Biglietteria: informazioni"
+  editore: DaDoM, Stazione Zoologica Anton Dohrn
+  url: https://dadom.okticket.it/it/ticket/home/info
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-dadom-tariffe
+  titolo: "Biglietto DaDoM"
+  editore: DaDoM, Stazione Zoologica Anton Dohrn
+  url: https://dadom.okticket.it/it/biglietti/detail/236/biglietto-dadom
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-virgilio
+  titolo: "Parco e Tomba di Virgilio"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/luogo/Parco%20e%20Tomba%20di%20Virgilio
+  tipo: ufficiale
+  pubblicato: 2026-09-23
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-musei-campania-virgilio
+  titolo: "Parco delle Tombe di Virgilio e Leopardi: temporanea chiusura di alcune aree del percorso di visita"
+  editore: Direzione regionale Musei nazionali Campania
+  url: https://museicampania.cultura.gov.it/parco-delle-tombe-di-virgilio-e-leopardi-temporanea-chiusura-di-alcune-aree-del-percorso-di-visita/
+  tipo: ufficiale
+  pubblicato: 2026-09-12
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-mic-leopardi-day-2025
+  titolo: "Leopardi Day: un omaggio poetico e inclusivo a Giacomo Leopardi nel giorno della sua nascita"
+  editore: Ministero della Cultura
+  url: https://cultura.gov.it/evento/leopardi-day-un-omaggio-poetico-e-inclusivo-a-giacomo-leopardi-nel-giorno-della-sua-nascita
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Pagina di un evento del 2025"
+
+- id: tp-comune-ztl-marechiaro
+  titolo: "ZTL Marechiaro"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/articolo_tematico/trasporti-mobilita/ztl-e-aree-pedonali/ztl-marechiaro/
+  tipo: ufficiale
+  pubblicato: 2026-08-24
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-virgiliano
+  titolo: "Parco Virgiliano"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/parco-virgiliano/
+  tipo: ufficiale
+  pubblicato: 2026-08-12
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-virgiliano-riapertura
+  titolo: "Parco Virgiliano, dal 27 giugno riapertura parziale al pubblico"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/parco-virgiliano-dal-27-giugno-riapertura-parziale-al-pubblico/
+  tipo: ufficiale
+  pubblicato: 2026-06-25
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-gaiola-accesso
+  titolo: "Accesso"
+  editore: Area Marina Protetta Parco Sommerso di Gaiola
+  url: https://www.areamarinaprotettagaiola.it/accesso
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-gaiola-prenotazione
+  titolo: "Prenotazione estate"
+  editore: Area Marina Protetta Parco Sommerso di Gaiola
+  url: https://www.areamarinaprotettagaiola.it/prenotazione-summer
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-cittascienza-visita
+  titolo: "Organizza una visita"
+  editore: Città della Scienza
+  url: https://www.cittadellascienza.it/organizza-una-visita/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-cittascienza-biglietteria
+  titolo: "Biglietteria"
+  editore: Città della Scienza
+  url: https://www.cittadellascienza.it/biglietteria/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-cittascienza-faq
+  titolo: "Who we are: FAQ"
+  editore: Città della Scienza
+  url: https://www.cittadellascienza.it/en/copia-di-copia-di-chi-siamo-en/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-cittascienza-estate-2025
+  titolo: "Estate 2025 a Città della Scienza"
+  editore: Città della Scienza
+  url: https://www.cittadellascienza.it/estate-2025-a-citta-della-scienza-14-giugno-28-settembre-2025/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-pompei-orari
+  titolo: "Timetables and tickets"
+  editore: Parco Archeologico di Pompei
+  url: https://pompeiisites.org/en/visiting-info/timetables-and-tickets/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-pompei-regolamento
+  titolo: "Regulations for visitors"
+  editore: Parco Archeologico di Pompei
+  url: https://pompeiisites.org/en/visiting-info/regulations-for-visitors/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-pompei-tariffe
+  titolo: "Pompei si esplora con tutti i sensi: accessibilità e nuove tariffe di ingresso dal 12 gennaio"
+  editore: Parco Archeologico di Pompei
+  url: https://pompeiisites.org/comunicati/pompei-si-esplora-con-tutti-i-sensi-accessibilita-e-nuove-tariffe-di-ingresso-dal-12-gennaio/
+  tipo: ufficiale
+  pubblicato: 2025-10-28
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-ercolano-biglietti
+  titolo: "Tickets"
+  editore: Parco Archeologico di Ercolano
+  url: https://ercolano.cultura.gov.it/tickets/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-vesuvio-gran-cono
+  titolo: "The Great Cone of Vesuvius"
+  editore: Parco Nazionale del Vesuvio
+  url: https://www.parconazionaledelvesuvio.it/en/visit-the-park/the-paths/the-great-cono-of-vesuvius/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-eav-campania-express
+  titolo: "Orari e tariffe Campania Express (PDF)"
+  editore: EAV
+  url: https://www.eavsrl.it/download/orari-e-tariffe-campania-express/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Il Campania Express è sospeso dal 1° ottobre 2026: i suoi tempi valgono come minimo anche per i treni ordinari"
+
+- id: tp-eav-campania-express-sospeso
+  titolo: "Campania Express"
+  editore: EAV
+  url: https://www.eavsrl.it/campania-express/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-eav-808
+  titolo: "Orario bus 808 Pompei–Vesuvio"
+  editore: EAV
+  url: https://www.eavsrl.it/download/808-pompei-vesuvio/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-caremar-tariffe
+  titolo: "Tariffe"
+  editore: Caremar
+  url: https://shop.caremar.it/it/tariffe/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-caremar-partenze
+  titolo: "Prossime partenze"
+  editore: Caremar
+  url: https://shop.caremar.it/it/prossime-partenze/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-caremar-orari
+  titolo: "Orari"
+  editore: Caremar
+  url: https://shop.caremar.it/it/orari/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Il 2 ottobre 2026 la pagina mostrava solo «Aggiornamento in corso…»"
+
+- id: tp-capri-regolamento
+  titolo: "Regolamento di visita"
+  editore: Musei e Parchi archeologici di Capri
+  url: https://museicapri.cultura.gov.it/it/regolamento-di-visita/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-ischia-castello
+  titolo: "Castello Aragonese d'Ischia"
+  editore: Castello Aragonese d'Ischia
+  url: https://www.castelloaragoneseischia.com/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-linea1
+  titolo: "Linea 1"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=71&Itemid=98
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-linea6
+  titolo: "Linea 6 della metro: nei giorni feriali corse fino alle 21:10"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/linea-6-della-metro-nei-giorni-feriali-corse-fino-alle-21-10/
+  tipo: ufficiale
+  pubblicato: 2026-03-20
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-rfi-linea2
+  titolo: "Quadro orario Linea 2 (14 giugno–12 dicembre 2026)"
+  editore: RFI, Rete Ferroviaria Italiana
+  url: https://prm.rfi.it/qo_prm/QO_Pdf.aspx?Tipo=P&lin=it&id=530
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-trenitalia-linea2
+  titolo: "Circolazione interrotta tra Napoli Campi Flegrei e Pozzuoli Solfatara"
+  editore: Trenitalia
+  url: https://www.trenitalia.com/content/trenitalia/it/informazioni/lavori-programmati/20260621-circolazione-interrotta-tra-napoli-campi-flegrei-e-puzzuoli-solfatara.html
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-centrale
+  titolo: "Funicolare Centrale"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=81&Itemid=98
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-chiaia
+  titolo: "Funicolare di Chiaia"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=82&Itemid=98
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-anm-mergellina
+  titolo: "Funicolare di Mergellina"
+  editore: ANM, Azienda Napoletana Mobilità
+  url: https://www2.anm.it/index.php?option=com_content&task=view&id=84&Itemid=98
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-comune-montesanto
+  titolo: "15 maggio 2026: chiusura della funicolare di Montesanto per la manutenzione ventennale"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/novita/15-maggio-2026-chiusura-funicolare-montesanto-per-manutenzione-ventennale/
+  tipo: ufficiale
+  pubblicato: 2026-04-27
+  controllato: 2026-10-02
+  letta: true
+
+- id: tp-eav-teleindicatori
+  titolo: "Orario treni: partenze e arrivi di Montesanto e Bagnoli (Cumana)"
+  editore: EAV
+  url: https://orariotreni.eavsrl.it/
+  tipo: ufficiale
+  controllato: 2026-10-02
+  letta: true
+  nota: "Tabellone in tempo reale letto il 2 ottobre 2026 verso le 17: da Montesanto a Bagnoli 16 minuti, un treno ogni 15 minuti fino alle 19"
+
+- id: tp-copernicus-dem
+  titolo: "Copernicus DEM GLO-30 (modello del terreno a 30 m)"
+  editore: Agenzia Spaziale Europea, programma Copernicus
+  url: https://registry.opendata.aws/copernicus-dem/
+  tipo: dati
+  controllato: 2026-10-02
+  letta: true
+  nota: "© DLR e.V. 2010-2014 e © Airbus Defence and Space GmbH 2014-2018, fornito sotto il programma Copernicus dall'Unione europea e dall'ESA"

@@ -109,3 +109,400 @@
   anno: 2021
   modifiche: "Ritagliata (tolta la cornice) e ridimensionata"
   controllato: 2026-09-30
+
+# ================= ITINERARI (Rilascio 3) =================
+# Foto delle tappe (id «tp-»): finché la pagina degli itinerari non è online le note legali non le elencano.
+# Scelte tra le foto principali di Wikidata e le «Quality images» di Commons; solo ridimensionate.
+- id: tp-duomo
+  src: ../assets/foto/tp-duomo.jpg
+  alt: "La facciata neogotica del Duomo di Napoli, chiara, con le guglie, il rosone e il portale centrale sotto un cielo azzurro."
+  didascalia: "La facciata del Duomo, in via Duomo."
+  autore: Velvet
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Velvet
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Naples_duomo_facade.jpg
+  anno: 2013
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-santa-chiara
+  src: ../assets/foto/tp-santa-chiara.jpg
+  alt: "La basilica gotica di Santa Chiara in tufo e il suo campanile al tramonto, con persone che passeggiano davanti."
+  didascalia: "La basilica di Santa Chiara e il campanile."
+  autore: IlSistemone
+  autoreUrl: https://commons.wikimedia.org/wiki/User:IlSistemone
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Monastero_di_SantaChiaraNaples.jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-spaccanapoli
+  src: ../assets/foto/tp-spaccanapoli.jpg
+  alt: "Una via stretta e dritta del centro storico tra palazzi alti e colorati con balconi; la strada prosegue fino in fondo, piena di passanti."
+  didascalia: "Spaccanapoli, nel centro storico."
+  autore: Velvet
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Velvet
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Naples_spaccanapoli.JPG
+  anno: 2013
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-tribunali
+  src: ../assets/foto/tp-tribunali.jpg
+  alt: "Via dei Tribunali con il portico ad archi in pietra scura di un palazzo antico, botteghe sotto gli archi e passanti."
+  didascalia: "Il portico di Palazzo d'Avalos, in via dei Tribunali."
+  autore: Armando Mancini
+  autoreUrl: https://www.flickr.com/people/13428228@N07
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Palazzo_d%27Avalos_o_della_Guardia._Napoli_-_Via_dei_Tribunali.jpg
+  anno: 2009
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-pio-monte
+  src: ../assets/foto/tp-pio-monte.jpg
+  alt: "La facciata del Pio Monte della Misericordia: palazzo chiaro con balconi, un lungo stendardo giallo appeso e un portico ad archi al piano terra."
+  didascalia: "Il Pio Monte della Misericordia, in via dei Tribunali."
+  autore: IlSistemone
+  autoreUrl: https://commons.wikimedia.org/wiki/User:IlSistemone
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:PioMonteMisericordiaNaples.jpg
+  anno: 2012
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-mann
+  src: ../assets/foto/tp-mann.jpg
+  alt: "La facciata rossa del Museo Archeologico Nazionale, con l'orologio in alto, le bandiere sul balcone e due palme davanti all'ingresso."
+  didascalia: "Il Museo Archeologico Nazionale, in piazza Museo."
+  autore: Mister No
+  licenza: CC BY 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Museo_Archeologico_Nazionale_di_Napoli_-_panoramio_(1).jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-san-lorenzo
+  src: ../assets/foto/tp-san-lorenzo.jpg
+  alt: "L'interno gotico di San Lorenzo Maggiore: archi acuti in pietra grigia e due cappelle laterali con altari e decorazioni in marmo colorato."
+  didascalia: "Due cappelle della chiesa di San Lorenzo Maggiore."
+  autore: Wolfgang Moroder
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Moroder
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Church_San_Lorenzo_Maggiore_Cacace_and_Saint_Roch_chapels_Niccol%C3%B2_De_Simone.jpg
+  anno: 2016
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-napoli-sotterranea
+  src: ../assets/foto/tp-napoli-sotterranea.jpg
+  alt: "Una scala stretta scavata nel tufo giallo che scende sotto terra, con un corrimano e le luci lungo la parete."
+  didascalia: "Una delle scale scavate nel tufo di Napoli Sotterranea."
+  autore: Armando Mancini
+  autoreUrl: https://www.flickr.com/photos/13428228@N07
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_sotterranea_(cunicolo).jpg
+  anno: 2010
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-madre
+  src: ../assets/foto/tp-madre.jpg
+  alt: "Il cortile del museo Madre: un palazzo bianco con file di finestre su tre lati, sotto il cielo azzurro."
+  didascalia: "Il cortile di Palazzo Donnaregina, sede del museo Madre."
+  autore: Amedeo Benestante
+  licenza: CC BY 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Museo_Madre,.jpg
+  anno: 2013
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-plebiscito
+  src: ../assets/foto/tp-plebiscito.jpg
+  alt: "Piazza del Plebiscito, grande e quasi vuota, con il colonnato a semicerchio e la cupola della basilica di San Francesco di Paola al centro."
+  didascalia: "Piazza del Plebiscito con la basilica di San Francesco di Paola."
+  autore: Wolfgang Pehlemann
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Wolfgang_Pehlemann
+  licenza: CC BY-SA 3.0 DE
+  fonte: https://commons.wikimedia.org/wiki/File:Basilica_reale_pontificia_di_San_Francesco_di_Paola_Piazza_del_Plebiscito_Napoli_Neapel_Italy_Foto_Wolfgang_Pehlemann_P1070687.jpg
+  anno: 2014
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-palazzo-reale
+  src: ../assets/foto/tp-palazzo-reale.jpg
+  alt: "La lunga facciata del Palazzo Reale su piazza del Plebiscito, con la torre dell'orologio al centro e persone sulla piazza."
+  didascalia: "Il Palazzo Reale visto da piazza del Plebiscito."
+  autore: Sordelli
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Palazzo_Reale_di_Napoli.jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-san-carlo
+  src: ../assets/foto/tp-san-carlo.jpg
+  alt: "La sala del Teatro di San Carlo dall'alto: la platea con le poltrone rosse, gli ordini di palchi dorati a ferro di cavallo e il palcoscenico."
+  didascalia: "La sala del Teatro di San Carlo."
+  autore: Diego Delso
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Poco_a_poco
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Teatro_de_San_Carlos,_N%C3%A1poles,_Italia,_2023-03-25,_DD_214-216_HDR.jpg
+  anno: 2023
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-castel-nuovo
+  src: ../assets/foto/tp-castel-nuovo.jpg
+  alt: "Castel Nuovo visto di fronte: grandi torri rotonde in pietra scura e, tra due torri, l'arco di trionfo in marmo bianco."
+  didascalia: "Castel Nuovo, il Maschio Angioino, da piazza Municipio."
+  autore: PaestumPaestum
+  autoreUrl: https://commons.wikimedia.org/wiki/User:PaestumPaestum
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Maschio_Angioino_frontale.jpg
+  anno: 2023
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-toledo
+  src: ../assets/foto/tp-toledo.jpg
+  alt: "Via Toledo, strada pedonale lastricata tra palazzi gialli con negozi, con passanti in lontananza."
+  didascalia: "Via Toledo."
+  autore: Mister No
+  licenza: CC BY 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Via_Toledo_-_panoramio_(1).jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-galleria-borbonica
+  src: ../assets/foto/tp-galleria-borbonica.jpg
+  alt: "Una grande cava sotterranea scavata nel tufo, con pareti alte e irregolari illuminate da luci calde e, sul fondo, vecchi veicoli."
+  didascalia: "Uno degli ambienti della Galleria Borbonica."
+  autore: Associazione Culturale Borbonica Sotterranea
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Galleria_borbonica_-_War_refuge_(Naples).jpg
+  anno: 2017
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-borgo-marinari
+  src: ../assets/foto/tp-borgo-marinari.jpg
+  alt: "Il porticciolo del Borgo Marinari con barche di legno colorate nell'acqua limpida, i palazzi gialli affacciati sul molo e, a sinistra, barche a vela."
+  didascalia: "Barche nel porticciolo del Borgo Marinari, accanto a Castel dell'Ovo."
+  autore: Sordelli
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Borgo_Marinari.jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-dadom
+  src: ../assets/foto/tp-dadom.jpg
+  alt: "La facciata bianca della Stazione Zoologica Anton Dohrn, con archi rossi e piante tropicali davanti."
+  didascalia: "La Stazione Zoologica Anton Dohrn nella Villa Comunale, sede dell'acquario e del museo Darwin-Dohrn."
+  autore: TatsuoTabei
+  licenza: Pubblico dominio
+  fonte: https://commons.wikimedia.org/wiki/File:StazionezoologicaAntonDohrnNapoli19-12-10_1512.jpg
+  anno: 2010
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-sant-elmo
+  src: ../assets/foto/tp-sant-elmo.jpg
+  alt: "Le alte mura di tufo di Castel Sant'Elmo dal lato dell'ingresso, con un ponte in pietra e il cielo azzurro."
+  didascalia: "Castel Sant'Elmo dal lato dell'ingresso."
+  autore: Wolfgang Moroder
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Moroder
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Castel_Sant_Elmo_Napoli_lato_ingresso.jpg
+  anno: 2016
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-san-martino
+  src: ../assets/foto/tp-san-martino.jpg
+  alt: "Il golfo di Napoli dall'alto: in primo piano il campanile della Certosa di San Martino, sotto la città e il porto con le navi, sullo sfondo il Vesuvio."
+  didascalia: "La vista da Castel Sant'Elmo sulla Certosa di San Martino, il porto e il Vesuvio."
+  autore: Wolfgang Moroder
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Moroder
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Naples_from_the_Castello_Sant_Elmo_with_Abbazia_San_Martino_the_port_and_the_Vesuv.jpg
+  anno: 2016
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-catacombe
+  src: ../assets/foto/tp-catacombe.jpg
+  alt: "Un grande ambiente delle catacombe scavato nel tufo chiaro, con nicchie e archi nelle pareti e luci basse."
+  didascalia: "Le Catacombe di San Gennaro."
+  autore: Dominik Matus
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Dominikmatus
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Catacombe_di_San_Gennaro_023.jpg
+  anno: 2017
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-sanita
+  src: ../assets/foto/tp-sanita.jpg
+  alt: "La facciata rosa di un grande palazzo settecentesco con persiane verdi e un portone ad arco; davanti, le bancarelle di un mercato."
+  didascalia: "Il Palazzo dello Spagnolo, nel Rione Sanità."
+  autore: Diego Delso
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Poco_a_poco
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Palazzo_dello_Spagnolo,_N%C3%A1poles,_Italia,_2023-03-25,_DD_132.jpg
+  anno: 2023
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-fontanelle
+  src: ../assets/foto/tp-fontanelle.jpg
+  alt: "Una grande cava sotterranea buia con la volta altissima scavata nel tufo, illuminata da poche luci."
+  didascalia: "L'interno del Cimitero delle Fontanelle."
+  autore: Lalupa
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Lalupa
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_-_Fontanelle_crocevia_1030852.JPG
+  anno: 2007
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-capodimonte
+  src: ../assets/foto/tp-capodimonte.jpg
+  alt: "La Reggia di Capodimonte, un lungo palazzo rosso e grigio, con un viale e i prati del parco davanti."
+  didascalia: "La Reggia di Capodimonte, sede del museo, nel Real Bosco."
+  autore: Mentnafunangann
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Mentnafunangann
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Reggia_di_Capodimonte_1.JPG
+  anno: 2013
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-virgilio
+  src: ../assets/foto/tp-virgilio.jpg
+  alt: "Un antico sepolcro romano in pietra coperto di muschio e piante, visto dall'ingresso buio di una grotta."
+  didascalia: "Il sepolcro romano detto Tomba di Virgilio, nel parco di Piedigrotta."
+  autore: Mentnafunangann
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Mentnafunangann
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Tomba_di_Virgilio_(Vergiliano)_1.JPG
+  anno: 2014
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-marechiaro
+  src: ../assets/foto/tp-marechiaro.jpg
+  alt: "Case e terrazze su uno sperone di tufo coperto di verde, a picco sul mare calmo di Marechiaro."
+  didascalia: "Marechiaro, sulla costa di Posillipo."
+  autore: Armando Mancini
+  autoreUrl: https://www.flickr.com/people/13428228@N07
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_-_Marechiaro2.jpg
+  anno: 2009
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-gaiola
+  src: ../assets/foto/tp-gaiola.jpg
+  alt: "L'isolotto della Gaiola con una villa in rovina, unito alla costa da un piccolo arco, nel mare calmo; all'orizzonte le isole."
+  didascalia: "L'isolotto della Gaiola visto dalla costa di Posillipo."
+  autore: ChristiHarri
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Parco_della_Gaiola.jpg
+  anno: 2015
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-parco-virgiliano
+  src: ../assets/foto/tp-parco-virgiliano.jpg
+  alt: "Il belvedere del Parco Virgiliano al tramonto: alcune persone controluce davanti al mare e alle luci della costa."
+  didascalia: "Il tramonto dal belvedere del Parco Virgiliano."
+  autore: Fr~itwiki
+  autoreUrl: https://it.wikipedia.org/wiki/Utente:Fr~itwiki
+  licenza: Pubblico dominio
+  fonte: https://commons.wikimedia.org/wiki/File:ParcoVirgilianoNapoli.jpg
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-citta-scienza
+  src: ../assets/foto/tp-citta-scienza.jpg
+  alt: "Il cortile lastricato di Città della Scienza tra due capannoni di mattoni, con un gruppo di visitatori."
+  didascalia: "Il cortile di Città della Scienza, a Bagnoli."
+  autore: Pinotto992
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Pinotto992
+  licenza: Pubblico dominio
+  fonte: https://commons.wikimedia.org/wiki/File:Citt%C3%A0_della_Scienza_Cortile.jpg
+  anno: 2008
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-pompei
+  src: ../assets/foto/tp-pompei.jpg
+  alt: "Le colonne bianche del Foro di Pompei tra le rovine, con il Vesuvio sullo sfondo e nuvole bianche."
+  didascalia: "Il Foro di Pompei e il Vesuvio."
+  autore: Commonists
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Commonists
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Forum_(Pompeii)_and_the_Vesuvio.jpg
+  anno: 2021
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-ercolano
+  src: ../assets/foto/tp-ercolano.jpg
+  alt: "Gli scavi di Ercolano dall'alto: case romane con tetti, archi e cortili, e la città moderna sullo sfondo."
+  didascalia: "Gli scavi di Ercolano."
+  autore: Diego Delso
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Poco_a_poco
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Antigua_ciudad_de_Herculano,_Italia,_2023-03-27,_DD_135-138_PAN.jpg
+  anno: 2023
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-vesuvio
+  src: ../assets/foto/tp-vesuvio.jpg
+  alt: "Il Vesuvio visto dal mare, con un veliero davanti alla costa e la città ai piedi del vulcano."
+  didascalia: "Il Vesuvio dal golfo di Napoli."
+  autore: PaestumPaestum
+  autoreUrl: https://commons.wikimedia.org/wiki/User:PaestumPaestum
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Vesuvio_e_nave_a_Napoli.jpg
+  anno: 2023
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-capri
+  src: ../assets/foto/tp-capri.jpg
+  alt: "Il porto di Marina Grande a Capri: barche nell'acqua azzurra, case bianche lungo il molo e alte pareti di roccia sopra."
+  didascalia: "Marina Grande, il porto di Capri."
+  autore: Norbert Nagel
+  autoreUrl: https://commons.wikimedia.org/wiki/User:NorbertNagel
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Capri_island_-_Campania_-_Italy_-_July_12th_2013_-_20.jpg
+  anno: 2013
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-ischia
+  src: ../assets/foto/tp-ischia.jpg
+  alt: "Il Castello Aragonese su un isolotto di roccia, con mura ed edifici in cima, e piccole barche nel mare davanti."
+  didascalia: "Il Castello Aragonese di Ischia."
+  autore: Dudva
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Dudva
+  licenza: CC0
+  fonte: https://commons.wikimedia.org/wiki/File:Castello_Aragonese_(Ischia).jpg
+  anno: 2024
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02
+
+- id: tp-procida
+  src: ../assets/foto/tp-procida.jpg
+  alt: "La Marina della Corricella a Procida dall'alto: case colorate affacciate sul porticciolo pieno di barche."
+  didascalia: "La Marina della Corricella, a Procida."
+  autore: Velvet
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Velvet
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Procida_Marina_Corricella.jpg
+  anno: 2021
+  modifiche: "Ridimensionata"
+  controllato: 2026-10-02

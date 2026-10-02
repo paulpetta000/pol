@@ -1,0 +1,458 @@
+// Calcola i tempi tra le tappe degli itinerari, a piedi e con metro, funicolari, Cumana e ascensori pubblici.
+// Scrive src/data/tempi-tappe.json: per ogni coppia di punti (le tappe in città e la fine dei percorsi a piedi)
+// i minuti stimati, i metri a piedi, la salita e i mezzi usati, in due casi: giorno feriale e domenica pomeriggio.
+// Uso: node scripts/itinerari/costruisci.mjs <cartella> [tappa1,tappa2 …]
+//      (i dati si scaricano con scripts/itinerari/scarica.mjs; con le tappe stampa il percorso di quelle coppie)
+//
+// Come funziona, in breve:
+// - a piedi: strade, piazze, scale e ascensori di OpenStreetMap. 4,5 km/h in piano; ogni 10 metri di salita
+//   aggiungono 1 minuto (regola di Naismith); sulle scale si va più piano e anche la discesa costa un po';
+// - le quote vengono dal modello Copernicus GLO-30, che però misura anche i tetti: per stare al livello della
+//   strada prendo il valore basso dei dintorni (un quarto dei 25 punti vicini, circa 150 m per lato, è più basso) e lo addolcisco lungo
+//   la strada; su ponti, gallerie, portici e passaggi coperti la quota va dritta da un capo all'altro;
+// - mezzi: le linee di OpenStreetMap con attese e tempi delle fonti ufficiali (tabella LINEE); chi sale paga
+//   l'attesa media (metà della frequenza) e il tempo per scendere ai binari o risalire in strada.
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import yaml from 'js-yaml';
+import { createHash } from 'node:crypto';
+
+const RADICE = fileURLToPath(new URL('../../', import.meta.url));
+const dir = process.argv[2];
+if (!dir) throw new Error('Indica la cartella con osm.json e quote.json (scripts/itinerari/scarica.mjs)');
+const COPPIE = process.argv[3] ? process.argv[3].split(';').map(c => c.split(',')) : [];
+
+// ---------- Parametri del modello (spiegati nella pagina «Come calcoliamo i tempi») ----------
+const PIEDI = {
+  metriAlMinuto: 75,      // 4,5 km/h in piano
+  salitaPerMinuto: 10,    // 1 minuto in più ogni 10 m di salita (Naismith)
+  scale: 1.4,             // sulle scale si va più piano che in piano
+  discesaScalePerMinuto: 30, // in discesa sulle scale: 1 minuto ogni 30 m
+  sentiero: 1.15,         // sentieri e strade bianche
+  ascensore: 1,           // minuti per ogni lato di un ascensore (attesa e corsa: 2 minuti)
+  mobili: 40              // scale e tappeti mobili: metri al minuto, senza fatica
+};
+
+// Linee e tempi. Fonti: ANM (Linea 1: frequenza e velocità commerciale; funicolari: tempi e frequenze;
+// ascensori: orari), Comune (Linea 6: 15 minuti da Mostra a Municipio, sabato e domenica solo fino alle 14:50),
+// RFI e ViaggiaTreno (Linea 2: tempi tra le stazioni), Trenitalia (Linea 2 interrotta oltre Campi Flegrei),
+// EAV (Cumana: tabellone delle partenze di Montesanto e Bagnoli del 2 ottobre 2026).
+// accesso/uscita: minuti per scendere ai binari e per tornare in strada (stazioni profonde: di più).
+const LINEE = [
+  { id: 'L1', nome: 'Linea 1', rel: 2168102, ritorno: 386098, attesa: { feriale: 5, festivo: 5 }, accesso: 3, uscita: 2, velocita: 533 /* 32 km/h */, raggio: 320 },
+  { id: 'L6', nome: 'Linea 6', rel: 2168104, ritorno: 446007, attesa: { feriale: 7, festivo: null }, accesso: 2.5, uscita: 2, totale: 15, raggio: 260 },
+  { id: 'L2', nome: 'Linea 2', rel: 2168103, ritorno: 445980, attesa: { feriale: 4, festivo: 10 }, accesso: 1.5, uscita: 1.5, raggio: 200,
+    // interrotta tra Campi Flegrei e Pozzuoli; Piazza Leopardi non è ancora una fermata confermata
+    salta: ['Napoli Piazza Leopardi', 'Cavalleggeri Aosta', 'Napoli Cavalleggeri Aosta', 'Bagnoli-Agnano Terme', 'Pozzuoli'],
+    tempi: { 'Napoli Mergellina|Napoli Piazza Amedeo': 4, 'Napoli Piazza Amedeo|Napoli Montesanto': 4, 'Napoli Montesanto|Napoli Piazza Cavour': 4, 'Napoli Piazza Cavour|Napoli Piazza Garibaldi': 5 }, velocita: 583 /* 35 km/h dove non c'è il tempo ufficiale */ },
+  { id: 'FA', nome: 'Funicolare Centrale', rel: 2168320, ritorno: 1784870, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 5.75, raggio: 120 },
+  { id: 'FB', nome: 'Funicolare di Chiaia', rel: 2168321, ritorno: 2168322, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 3.2, raggio: 120 },
+  { id: 'FC', nome: 'Funicolare di Montesanto', rel: 2168324, ritorno: 2168325, chiusa: 'chiusa dal 15 maggio 2026 per circa 9 mesi', attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 4.5, raggio: 120 },
+  { id: 'FD', nome: 'Funicolare di Mergellina', rel: 1783329, ritorno: 2168323, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 7, raggio: 120 },
+  { id: 'CU', nome: 'Cumana', rel: 2168312, ritorno: 2168313, attesa: { feriale: 7.5, festivo: 7.5 }, accesso: 1.5, uscita: 1.5, totale: 16 /* Montesanto–Bagnoli */, finoA: 'Bagnoli', raggio: 160 }
+];
+// Ascensori pubblici gratuiti dell'ANM: la domenica e nei festivi chiudono alle 14:00
+const ASCENSORI_FERIALI = /Su[^;]*?0?7:30-14:00|PH,Su 0?7:30-14:00/;
+
+// ---------- Dati ----------
+const osm = JSON.parse(fs.readFileSync(path.join(dir, 'osm.json'), 'utf8'));
+const dem = JSON.parse(fs.readFileSync(path.join(dir, 'quote.json'), 'utf8'));
+const tappe = yaml.load(fs.readFileSync(path.join(RADICE, 'src/data/tappe.yaml'), 'utf8')).filter(t => t.tipo === 'citta');
+
+const nodi = new Map(), vie = [], rel = new Map();
+for (const e of osm.elements) {
+  if (e.type === 'node') {
+    const prima = nodi.get(e.id);
+    // lo stesso nodo arriva due volte (con e senza tag): tengo i tag
+    nodi.set(e.id, { id: e.id, lat: e.lat, lon: e.lon, tags: e.tags || prima?.tags || {} });
+  } else if (e.type === 'way') vie.push(e);
+  else rel.set(e.id, e);
+}
+
+// ---------- Quote ----------
+const Q = dem.quote, W = dem.w, H = dem.h;
+// filtro delle quote: raggio in punti della griglia, percentile e media mobile lungo la strada (metri)
+const RAGGIO = +(process.env.QUOTE_RAGGIO ?? 2), PERCENTILE = +(process.env.QUOTE_PERCENTILE ?? 0.25), MEDIA = +(process.env.QUOTE_MEDIA ?? 50);
+const grezza = (i, j) => Q[Math.min(H - 1, Math.max(0, j)) * W + Math.min(W - 1, Math.max(0, i))];
+// valore basso dei 25 punti vicini (25° percentile, circa 150 m per lato): toglie buona parte dei tetti
+const filtrata = new Float32Array(W * H);
+for (let j = 0; j < H; j++) for (let i = 0; i < W; i++) {
+  const v = [];
+  for (let dj = -RAGGIO; dj <= RAGGIO; dj++) for (let di = -RAGGIO; di <= RAGGIO; di++) v.push(grezza(i + di, j + dj));
+  v.sort((a, b) => a - b);
+  filtrata[j * W + i] = v[Math.floor(PERCENTILE * (v.length - 1))];
+}
+function quota(lat, lon) {
+  const x = (lon - dem.lon0) / dem.dlon, y = (lat - dem.lat0) / dem.dlat;
+  const i = Math.floor(x), j = Math.floor(y), fx = x - i, fy = y - j;
+  const v = (a, b) => filtrata[Math.min(H - 1, Math.max(0, b)) * W + Math.min(W - 1, Math.max(0, a))];
+  return (v(i, j) * (1 - fx) + v(i + 1, j) * fx) * (1 - fy) + (v(i, j + 1) * (1 - fx) + v(i + 1, j + 1) * fx) * fy;
+}
+
+// ---------- Grafo pedonale ----------
+const PEDONALE = new Set(['footway', 'pedestrian', 'path', 'steps', 'living_street', 'residential', 'service', 'unclassified', 'tertiary', 'tertiary_link', 'secondary', 'secondary_link', 'primary', 'primary_link', 'track', 'corridor', 'cycleway', 'bridleway', 'road', 'platform', 'elevator']);
+const SI = new Set(['yes', 'designated', 'permissive', 'destination']);
+function percorribile(t) {
+  const hw = t.highway;
+  if (!hw) return false;
+  // le superstrade solo se hanno il marciapiede o il permesso per i pedoni
+  const superstrada = hw === 'trunk' || hw === 'trunk_link';
+  if (!PEDONALE.has(hw) && !(superstrada && (SI.has(t.foot) || /both|left|right|yes|separate/.test(t.sidewalk || '')))) return false;
+  if (t.foot === 'no') return false;
+  if (['no', 'private'].includes(t.access) && !SI.has(t.foot)) return false;
+  if (t.highway === 'cycleway' && t.foot !== 'yes' && t.foot !== 'designated') return false;
+  if (t.area === 'yes' && !['pedestrian', 'footway', 'platform'].includes(t.highway)) return false;
+  return true;
+}
+// Vie dove la quota del modello non vale (sopra o sotto il terreno, o sotto un tetto)
+const sospesa = t => (t.bridge && t.bridge !== 'no') || (t.tunnel && t.tunnel !== 'no') || t.covered === 'yes' || t.indoor === 'yes' || +(t.layer || 0) < 0 || /^-/.test(t.level || '') || t.highway === 'elevator';
+const dist = (a, b) => {
+  const k = Math.cos(((a.lat + b.lat) / 2) * Math.PI / 180);
+  return Math.hypot((a.lat - b.lat) * 111195, (a.lon - b.lon) * 111195 * k);
+};
+
+const pedonali = vie.filter(v => v.tags && percorribile(v.tags));
+const ascensori = new Map(); // id nodo -> { nome, chiudeDomenica }
+for (const n of nodi.values()) if (n.tags.highway === 'elevator') ascensori.set(n.id, { nome: n.tags.name || '', chiudeDomenica: ASCENSORI_FERIALI.test(n.tags.opening_hours || ''), fee: n.tags.fee === 'yes' });
+// Nodi «a terra»: stanno su almeno una via normale, la loro quota viene dal modello.
+// Un ascensore collega due livelli nello stesso punto: la sua quota non si usa
+const aTerra = new Set();
+for (const v of pedonali) if (!sospesa(v.tags)) for (const n of v.nodes) if (!ascensori.has(n)) aTerra.add(n);
+const quotaNodo = new Map();
+const quotaDi = id => {
+  if (!quotaNodo.has(id)) { const n = nodi.get(id); quotaNodo.set(id, quota(n.lat, n.lon)); }
+  return quotaNodo.get(id);
+};
+
+const adj = new Map();   // id nodo -> [{ a, t, m, su, tipo, via }]
+const archi = (id) => { if (!adj.has(id)) adj.set(id, []); return adj.get(id); };
+
+let nArchi = 0;
+for (const v of pedonali) {
+  const t = v.tags;
+  const pts = v.nodes.map(id => nodi.get(id)).filter(Boolean);
+  if (pts.length < 2) continue;
+  // profilo delle quote lungo la via
+  const lung = [0];
+  for (let i = 1; i < pts.length; i++) lung.push(lung[i - 1] + dist(pts[i - 1], pts[i]));
+  let h = pts.map(p => quotaDi(p.id));
+  if (sospesa(t)) {
+    // quota dritta tra i nodi a terra; prima del primo e dopo l'ultimo resta in piano
+    // (se nessun nodo è a terra uso i due capi)
+    const fissi = pts.map((p, i) => aTerra.has(p.id) ? i : -1).filter(i => i >= 0);
+    if (fissi.length === 0) fissi.push(0, pts.length - 1);
+    const h2 = h.slice();
+    for (let i = 0; i < fissi[0]; i++) h2[i] = h[fissi[0]];
+    for (let i = fissi[fissi.length - 1] + 1; i < pts.length; i++) h2[i] = h[fissi[fissi.length - 1]];
+    for (let k = 0; k < fissi.length - 1; k++) {
+      const a = fissi[k], b = fissi[k + 1];
+      for (let i = a + 1; i < b; i++) h2[i] = h[a] + (h[b] - h[a]) * (lung[i] - lung[a]) / (lung[b] - lung[a] || 1);
+    }
+    h = h2;
+  } else if (lung[lung.length - 1] > 40) {
+    // media mobile su ±50 m: toglie il rumore del modello lungo la strada (i capi restano uguali)
+    const h2 = h.slice();
+    for (let i = 1; i < pts.length - 1; i++) {
+      let s = 0, n = 0;
+      for (let k = 0; k < pts.length; k++) if (Math.abs(lung[k] - lung[i]) <= MEDIA) { s += h[k]; n++; }
+      h2[i] = s / n;
+    }
+    h = h2;
+  }
+  // all'ascensore la via resta in piano: la salita la fa l'ascensore
+  pts.forEach((p, i) => { if (ascensori.has(p.id) && pts.length > 1) h[i] = h[i === 0 ? 1 : i - 1]; });
+  const scale = t.highway === 'steps';
+  const mobili = scale && t.conveying && t.conveying !== 'no';
+  const versoMobili = t.conveying === 'forward' ? 1 : t.conveying === 'backward' ? -1 : 0;
+  const fattore = scale ? PIEDI.scale : ['path', 'track', 'bridleway'].includes(t.highway) ? PIEDI.sentiero : 1;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a = pts[i], b = pts[i + 1], m = lung[i + 1] - lung[i];
+    const dh = h[i + 1] - h[i];
+    for (const [da, verso, d] of [[a, 1, dh], [b, -1, -dh]]) {
+      const ad = da === a ? b : a;
+      let tempo;
+      if (t.highway === 'elevator') tempo = PIEDI.ascensore * 2;
+      else if (mobili) {
+        if (versoMobili && verso !== versoMobili) continue;   // contro il verso delle scale mobili non si passa
+        tempo = m / PIEDI.mobili;
+      } else {
+        tempo = m / PIEDI.metriAlMinuto * fattore + Math.max(0, d) / PIEDI.salitaPerMinuto + (scale ? Math.max(0, -d) / PIEDI.discesaScalePerMinuto : 0);
+      }
+      archi(da.id).push({ a: ad.id, t: tempo, m, su: mobili || t.highway === 'elevator' ? 0 : Math.max(0, d), tipo: 'piedi', via: v.id });
+      nArchi++;
+    }
+  }
+}
+console.log(`Grafo a piedi: ${adj.size} nodi, ${nArchi} archi, ${ascensori.size} ascensori`);
+
+// Nodo del grafo più vicino a un punto (solo nodi a terra, per non agganciarsi a gallerie o binari)
+const nodiGrafo = [...adj.keys()].map(id => nodi.get(id));
+const CELLA = 0.002; const griglia = new Map();
+for (const n of nodiGrafo) {
+  const k = `${Math.floor(n.lat / CELLA)}:${Math.floor(n.lon / CELLA)}`;
+  if (!griglia.has(k)) griglia.set(k, []);
+  griglia.get(k).push(n);
+}
+function vicino(p, maxM = 150, filtro = () => true) {
+  const ci = Math.floor(p.lat / CELLA), cj = Math.floor(p.lon / CELLA);
+  let best = null, bd = Infinity;
+  for (let di = -2; di <= 2; di++) for (let dj = -2; dj <= 2; dj++) for (const n of griglia.get(`${ci + di}:${cj + dj}`) || []) {
+    if (!filtro(n)) continue;
+    const d = dist(p, n);
+    if (d < bd) { bd = d; best = n; }
+  }
+  return bd <= maxM ? { nodo: best, m: bd } : null;
+}
+
+// ---------- Linee ----------
+// Componente connessa più grande: le stazioni si agganciano solo lì (niente cortili isolati)
+const comp = new Map(); let maxComp = -1, maxSize = 0;
+{
+  let c = 0;
+  for (const id of adj.keys()) {
+    if (comp.has(id)) continue;
+    const coda = [id]; comp.set(id, c); let size = 0;
+    while (coda.length) { const x = coda.pop(); size++; for (const e of adj.get(x) || []) if (!comp.has(e.a)) { comp.set(e.a, c); coda.push(e.a); } }
+    if (size > maxSize) { maxSize = size; maxComp = c; }
+    c++;
+  }
+}
+const principale = n => comp.get(n.id) === maxComp && aTerra.has(n.id);
+const entrate = [...nodi.values()].filter(n => /subway_entrance|train_station_entrance/.test(n.tags.railway || '') || (n.tags.entrance && n.tags.railway));
+const fermate = [];  // { id, linea, nome, lat, lon, accessi: [{ nodo, m }] }
+const corse = [];    // archi tra fermate
+const stazioni = [...nodi.values()].filter(n => (n.tags.railway === 'station' || n.tags.railway === 'halt' || n.tags.public_transport === 'station') && n.tags.name);
+for (const L of LINEE) {
+  // le fermate di una relazione e, se mancano, quelle della relazione nel verso opposto
+  const fermateDi = id => {
+    const r = rel.get(id);
+    if (!r) throw new Error(`Relazione ${id} (${L.nome}) mancante nei dati OSM`);
+    return r.members.filter(m => /^stop/.test(m.role) && m.type === 'node').map(m => nodi.get(m.ref)).filter(Boolean).map(n => {
+      // nome della fermata: il nodo della fermata o la stazione più vicina
+      let nome = n.tags.name;
+      if (!nome) { let bd = Infinity; for (const s of stazioni) { const d = dist(n, s); if (d < bd) { bd = d; nome = s.tags.name; } } }
+      return { ...n, nome };
+    });
+  };
+  let st = fermateDi(L.rel);
+  for (const altra of L.ritorno ? fermateDi(L.ritorno) : []) {
+    if (st.some(s => s.nome === altra.nome || dist(s, altra) < 40)) continue;
+    // la metto dove allunga meno il percorso (in testa, in coda o tra due fermate)
+    let best = 0, bd = Infinity;
+    for (let k = 0; k <= st.length; k++) {
+      const a = st[k - 1], b = st[k];
+      const extra = (a ? dist(a, altra) : 0) + (b ? dist(altra, b) : 0) - (a && b ? dist(a, b) : 0);
+      if (extra < bd) { bd = extra; best = k; }
+    }
+    st.splice(best, 0, altra);
+  }
+  st = st.filter(s => !(L.salta || []).includes(s.nome));
+  if (L.finoA) { const k = st.findIndex(s => s.nome.includes(L.finoA)); if (k >= 0) st = st.slice(0, k + 1); }
+  L.fermate = st.map(s => s.nome);
+  if (L.chiusa) { console.log(`${L.nome}: ${L.chiusa}, non la uso`); continue; }
+  const lungTot = st.slice(1).reduce((s, x, i) => s + dist(st[i], x), 0);
+  st.forEach((s, i) => {
+    const f = { id: `${L.id}:${i}`, linea: L.id, nome: s.nome, lat: s.lat, lon: s.lon, accessi: [] };
+    // ingressi della stazione vicini, altrimenti il punto della strada più vicino
+    for (const e of entrate) {
+      if (dist(e, s) > L.raggio) continue;
+      const v = adj.has(e.id) && principale(e) ? { nodo: e, m: 0 } : vicino(e, 60, principale);
+      if (v) f.accessi.push(v);
+    }
+    if (!f.accessi.length) { const v = vicino(s, 220, principale); if (v) f.accessi.push(v); }
+    if (!f.accessi.length) console.log(`  ! ${L.nome}, ${s.nome}: nessun accesso dalla strada`);
+    fermate.push(f);
+    if (process.env.DEBUG_FERMATE) console.log(`   ${L.id} ${s.nome}: ${f.accessi.length} accessi, ${f.accessi.map(a => Math.round(a.m) + "m@" + Math.round(dist(a.nodo, s)) + "m").join(" ")}`);
+    if (i > 0) {
+      const prev = st[i - 1], d = dist(prev, s);
+      let tempo;
+      if (L.tempi) tempo = L.tempi[`${prev.nome}|${s.nome}`] ?? L.tempi[`${s.nome}|${prev.nome}`] ?? (d * 1.1 / L.velocita + 1);
+      else if (L.totale) tempo = L.totale * d / lungTot;
+      else tempo = d * 1.15 / L.velocita;
+      corse.push({ da: `${L.id}:${i - 1}`, a: `${L.id}:${i}`, t: tempo, linea: L.id });
+    }
+  });
+  console.log(`${L.nome}: ${st.length} fermate (${st.map(s => s.nome).join(', ')})`);
+}
+
+// ---------- Ricerca dei percorsi (Dijkstra) ----------
+class Heap {
+  constructor() { this.a = []; }
+  push(x) { const a = this.a; a.push(x); let i = a.length - 1; while (i > 0) { const p = (i - 1) >> 1; if (a[p][0] <= a[i][0]) break; [a[p], a[i]] = [a[i], a[p]]; i = p; } }
+  pop() { const a = this.a, top = a[0], last = a.pop(); if (a.length) { a[0] = last; let i = 0; for (;;) { const l = 2 * i + 1, r = l + 1; let m = i; if (l < a.length && a[l][0] < a[m][0]) m = l; if (r < a.length && a[r][0] < a[m][0]) m = r; if (m === i) break; [a[m], a[i]] = [a[i], a[m]]; i = m; } } return top; }
+  get size() { return this.a.length; }
+}
+
+function rete(scenario) {
+  // archi aggiuntivi dei mezzi per lo scenario; gli ascensori chiusi tolgono i loro archi
+  const extra = new Map();
+  const add = (da, e) => { if (!extra.has(da)) extra.set(da, []); extra.get(da).push(e); };
+  if (scenario.mezzi) {
+    for (const f of fermate) {
+      const L = LINEE.find(l => l.id === f.linea);
+      const attesa = L.attesa[scenario.nome];
+      if (attesa == null) continue;    // linea ferma in questo scenario
+      for (const ac of f.accessi) {
+        add(ac.nodo.id, { a: f.id, t: ac.m / PIEDI.metriAlMinuto + L.accesso + attesa, m: ac.m, su: 0, tipo: 'sale', linea: L.id });
+        add(f.id, { a: ac.nodo.id, t: ac.m / PIEDI.metriAlMinuto + L.uscita, m: ac.m, su: 0, tipo: 'scende', linea: L.id });
+      }
+    }
+    for (const c of corse) {
+      const L = LINEE.find(l => l.id === c.linea);
+      if (L.attesa[scenario.nome] == null) continue;
+      add(c.da, { a: c.a, t: c.t, m: 0, su: 0, tipo: 'corsa', linea: c.linea });
+      add(c.a, { a: c.da, t: c.t, m: 0, su: 0, tipo: 'corsa', linea: c.linea });
+    }
+  }
+  const chiusi = new Set([...ascensori].filter(([, x]) => scenario.nome === 'festivo' && x.chiudeDomenica).map(([id]) => id));
+  const accantoChiusi = new Set();
+  for (const id of chiusi) for (const e of adj.get(id) || []) accantoChiusi.add(e.a);
+  const VUOTO = [];
+  // uscendo da un ascensore si pagano attesa e corsa (2 minuti)
+  const conAscensore = new Map();
+  for (const id of ascensori.keys()) if (adj.has(id)) conAscensore.set(id, adj.get(id).map(e => ({ ...e, t: e.t + PIEDI.ascensore * 2, asc: id })));
+  return id => {
+    if (chiusi.has(id)) return VUOTO;
+    let lista = conAscensore.get(id) || adj.get(id) || VUOTO;
+    if (accantoChiusi.has(id)) lista = lista.filter(e => !chiusi.has(e.a));
+    const ex = extra.get(id);
+    return ex ? lista.concat(ex) : lista;
+  };
+}
+
+function dijkstra(sorgente, vicini) {
+  const tempo = new Map([[sorgente, 0]]), prec = new Map(), h = new Heap();
+  h.push([0, sorgente]);
+  while (h.size) {
+    const [t, x] = h.pop();
+    if (t > tempo.get(x)) continue;
+    for (const e of vicini(x)) {
+      const nt = t + e.t;
+      if (nt < (tempo.get(e.a) ?? Infinity)) { tempo.set(e.a, nt); prec.set(e.a, { da: x, e }); h.push([nt, e.a]); }
+    }
+  }
+  return { tempo, prec };
+}
+
+function percorso(r, destinazione) {
+  const tratti = [], dove = [destinazione];
+  for (let x = destinazione; r.prec.has(x); x = r.prec.get(x).da) { tratti.push(r.prec.get(x).e); dove.push(r.prec.get(x).da); }
+  tratti.reverse(); dove.reverse();
+  let m = 0, su = 0; const mezzi = [], passi = [];
+  for (const e of tratti) {
+    m += e.m; su += e.su;
+    if (e.tipo === 'corsa' && mezzi[mezzi.length - 1] !== e.linea) mezzi.push(e.linea);
+    if (e.asc && ascensori.get(e.asc)?.nome && !passi.includes(ascensori.get(e.asc).nome)) passi.push(ascensori.get(e.asc).nome);
+  }
+  // il disegno del percorso, a pezzi: a piedi o sulla linea (per le mappe dei bozzetti e del blocco 2)
+  const posizione = id => nodi.get(id) || fermate.find(f => f.id === id);
+  const pezzi = [];
+  tratti.forEach((e, k) => {
+    const modo = e.tipo === 'corsa' ? e.linea : e.tipo === 'piedi' ? 'piedi' : null;
+    if (!modo) return;   // salire e scendere: restano nel punto della stazione
+    const a = posizione(dove[k]), b = posizione(dove[k + 1]);
+    let ultimo = pezzi[pezzi.length - 1];
+    if (!ultimo || ultimo.modo !== modo) { ultimo = { modo, punti: [[+a.lat.toFixed(6), +a.lon.toFixed(6)]] }; pezzi.push(ultimo); }
+    ultimo.punti.push([+b.lat.toFixed(6), +b.lon.toFixed(6)]);
+  });
+  return { m, su, mezzi, ascensori: passi, tratti, pezzi };
+}
+
+// ---------- Punti delle tappe ----------
+// Ogni punto si aggancia al tratto di strada più vicino (non solo all'incrocio più vicino): nasce un nodo
+// nuovo sul tratto, collegato ai due capi con una parte proporzionale del tempo; in più i metri tra la strada
+// e il punto della tappa.
+function aggancia(p, maxM) {
+  const ci = Math.floor(p.lat / CELLA), cj = Math.floor(p.lon / CELLA);
+  const k = Math.cos(p.lat * Math.PI / 180);
+  let best = null;
+  for (let di = -2; di <= 2; di++) for (let dj = -2; dj <= 2; dj++) for (const a of griglia.get(`${ci + di}:${cj + dj}`) || []) {
+    if (!principale(a)) continue;
+    for (const e of adj.get(a.id) || []) {
+      const b = nodi.get(e.a);
+      if (!b || !principale(b) || e.tipo !== 'piedi') continue;
+      const ritorno = (adj.get(b.id) || []).find(x => x.a === a.id && x.via === e.via);
+      if (!ritorno) continue;   // tratti a senso unico (scale mobili): no
+      // proiezione del punto sul segmento, in metri
+      const ax = 0, ay = 0, bx = (b.lon - a.lon) * 111195 * k, by = (b.lat - a.lat) * 111195;
+      const px = (p.lon - a.lon) * 111195 * k, py = (p.lat - a.lat) * 111195;
+      const l2 = bx * bx + by * by;
+      const f = l2 ? Math.max(0, Math.min(1, (px * bx + py * by) / l2)) : 0;
+      const d = Math.hypot(px - (ax + f * bx), py - (ay + f * by));
+      if (!best || d < best.d) best = { a, b, e, ritorno, f, d };
+    }
+  }
+  return best && best.d <= maxM ? best : null;
+}
+const punti = [];
+for (const t of tappe) {
+  for (const [id, p, nome] of [[t.id, t, t.nome], ...(t.fine ? [[`${t.id}>`, t.fine, `${t.nome} (fine: ${t.fine.nome})`]] : [])]) {
+    const g = aggancia(p, 250);
+    if (!g) throw new Error(`Tappa ${id}: nessuna strada a meno di 250 m`);
+    const nodo = `T:${id}`, extra = g.d / PIEDI.metriAlMinuto;
+    nodi.set(nodo, { id: nodo, lat: g.a.lat + (g.b.lat - g.a.lat) * g.f, lon: g.a.lon + (g.b.lon - g.a.lon) * g.f, tags: {} });
+    const parte = (e, q) => ({ t: e.t * q + extra, m: e.m * q + g.d, su: e.su * q, tipo: 'piedi', via: e.via });
+    adj.set(nodo, [{ a: g.b.id, ...parte(g.e, 1 - g.f) }, { a: g.a.id, ...parte(g.ritorno, g.f) }]);
+    adj.get(g.a.id).push({ a: nodo, ...parte(g.e, g.f) });
+    adj.get(g.b.id).push({ a: nodo, ...parte(g.ritorno, 1 - g.f) });
+    const via = vie.find(v => v.id === g.e.via)?.tags;
+    punti.push({ id, nome, nodo, aggancio: Math.round(g.d), strada: via?.name || via?.highway, quota: Math.round(quotaDi(g.a.id)) });
+    if (g.d > 60) console.log(`  ! ${id}: la strada più vicina è a ${Math.round(g.d)} m (${via?.name || via?.highway})`);
+  }
+}
+console.log(`\nPunti: ${punti.length}`);
+for (const p of punti) console.log(`  ${p.id.padEnd(22)} ${String(p.aggancio).padStart(3)} m da ${p.strada || '?'} · quota ${p.quota} m`);
+
+const SCENARI = [
+  { nome: 'feriale', mezzi: true, descrizione: 'giorno feriale, di giorno: tutte le linee aperte' },
+  { nome: 'festivo', mezzi: true, descrizione: 'domenica e festivi dopo le 14: Linea 6 ferma, ascensori gratuiti chiusi, Linea 2 ogni 20 minuti' },
+  { nome: 'piedi', mezzi: false, descrizione: 'solo a piedi' }
+];
+// impronta delle posizioni: la build (src/lib/tappe.ts) controlla che i tempi siano stati fatti con le tappe di oggi
+const firma = createHash('sha1').update(JSON.stringify([...tappe].sort((a, b) => a.id.localeCompare(b.id)).map(t => [t.id, t.lat, t.lon, t.fine ? [t.fine.lat, t.fine.lon] : null]))).digest('hex').slice(0, 12);
+const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30' }, parametri: PIEDI, linee: LINEE.map(({ id, nome, chiusa, fermate }) => ({ id, nome, ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
+const rapporto = [];
+for (const sc of SCENARI) {
+  const vicini = rete(sc);
+  const min = [], piedi = [], salita = [], mezzi = [];
+  for (const a of punti) {
+    const r = dijkstra(a.nodo, vicini);
+    const rm = [], rp = [], rs = [], rz = [];
+    for (const b of punti) {
+      if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); continue; }
+      const t = r.tempo.get(b.nodo);
+      if (t == null) throw new Error(`Nessun percorso da ${a.id} a ${b.id} (${sc.nome})`);
+      const p = percorso(r, b.nodo);
+      rm.push(Math.round(t)); rp.push(Math.round(p.m / 10) * 10); rs.push(Math.round(p.su)); rz.push([...p.mezzi, ...p.ascensori.map(n => 'asc:' + n)].join('+'));
+      if (COPPIE.some(([x, y]) => x === a.id && y === b.id)) rapporto.push({ scenario: sc.nome, da: a.id, a: b.id, min: t, ...p, linea: dist(nodi.get(a.nodo), nodi.get(b.nodo)) });
+    }
+    min.push(rm); piedi.push(rp); salita.push(rs); mezzi.push(rz);
+  }
+  uscita.scenari[sc.nome] = { descrizione: sc.descrizione, min, piedi, salita, ...(sc.mezzi ? { mezzi } : {}) };
+  console.log(`Scenario ${sc.nome}: fatto`);
+}
+fs.writeFileSync(path.join(RADICE, 'src/data/tempi-tappe.json'), JSON.stringify(uscita) + '\n');
+console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
+
+// ---------- Rapporto delle coppie richieste ----------
+for (const x of rapporto) {
+  console.log(`\n== ${x.da} → ${x.a} (${x.scenario}): ${x.min.toFixed(1)} min · a piedi ${Math.round(x.m)} m · salita ${Math.round(x.su)} m · in linea d'aria ${Math.round(x.linea)} m`);
+  // tratti raggruppati
+  let cur = null;
+  const righe = [];
+  for (const e of x.tratti) {
+    const k = e.tipo === 'piedi' ? 'a piedi' : e.tipo === 'corsa' ? LINEE.find(l => l.id === e.linea).nome : e.tipo === 'sale' ? `sale (${e.linea})` : `scende (${e.linea})`;
+    if (!cur || cur.k !== k) { cur = { k, t: 0, m: 0, su: 0, nomi: new Set() }; righe.push(cur); }
+    cur.t += e.t; cur.m += e.m; cur.su += e.su;
+    if (e.tipo === 'piedi') { const w = vie.find(v => v.id === e.via); if (w?.tags.name) cur.nomi.add(w.tags.name); }
+  }
+  for (const r of righe) console.log(`   ${r.k.padEnd(28)} ${r.t.toFixed(1).padStart(5)} min ${r.m ? Math.round(r.m) + ' m' : ''} ${r.su > 0.5 ? '+' + Math.round(r.su) + ' m' : ''} ${[...r.nomi].slice(0, 6).join(', ')}`);
+}
+
+// Con PERCORSI=<file> salva il disegno dei percorsi delle coppie richieste (giorno feriale): serve alle mappe
+if (process.env.PERCORSI) {
+  const disegni = Object.fromEntries(rapporto.filter(x => x.scenario === 'feriale').map(x => [`${x.da}|${x.a}`, { min: Math.round(x.min), pezzi: x.pezzi }]));
+  fs.writeFileSync(process.env.PERCORSI, JSON.stringify(disegni));
+  console.log(`\nPercorsi disegnati: ${Object.keys(disegni).length} in ${process.env.PERCORSI}`);
+}

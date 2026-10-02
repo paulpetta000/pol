@@ -72,7 +72,7 @@ const foto = defineCollection({
     didascalia: z.string().min(10),
     autore: z.string().min(2),
     autoreUrl: z.string().url().optional(),
-    licenza: z.enum(['CC0', 'Pubblico dominio', 'CC BY 2.0', 'CC BY 3.0', 'CC BY 4.0', 'CC BY-SA 2.0', 'CC BY-SA 3.0', 'CC BY-SA 4.0']),
+    licenza: z.enum(['CC0', 'Pubblico dominio', 'CC BY 2.0', 'CC BY 3.0', 'CC BY 4.0', 'CC BY-SA 2.0', 'CC BY-SA 3.0', 'CC BY-SA 3.0 DE', 'CC BY-SA 4.0']),
     licenzaUrl: z.string().url().optional(),
     fonte: z.string().url(),
     anno: z.number().int().optional(),
@@ -107,6 +107,48 @@ const luoghi = defineCollection({
     foto: reference('foto').optional(),
     fatti: z.array(reference('fatti')).default([])
   }).refine(l => l.tipo !== 'vista' || (l.gruppo && l.perche), { message: 'Ogni punto "vista" deve avere gruppo e perche (la scheda con la fonte)' })
+});
+
+// ---------- Itinerari (Rilascio 3) ----------
+// Tappe da combinare negli itinerari. Orari e prezzi sono schede (fatti) con fonte e data da ricontrollare;
+// i tempi tra le tappe stanno in src/data/tempi-tappe.json (scripts/itinerari/). Altri controlli in src/lib/tappe.ts.
+const giorno = z.enum(['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom']);
+const tappe = defineCollection({
+  loader: file('src/data/tappe.yaml'),
+  schema: z.object({
+    nome: z.string().min(3),
+    // nome corto per la mappa e per la lista dell'itinerario
+    breve: z.string().max(22).optional(),
+    tipo: z.enum(['citta', 'gita']),
+    zona: z.enum(['centro-storico', 'toledo-plebiscito', 'lungomare', 'vomero', 'sanita-capodimonte', 'posillipo-bagnoli', 'vesuvio', 'isole']),
+    generi: z.array(z.enum(['museo', 'chiesa', 'sotterraneo', 'archeologia', 'panorama', 'parco', 'passeggiata', 'castello', 'mare', 'cibo', 'teatro'])).min(1),
+    lat: z.number(),
+    lon: z.number(),
+    osm: z.string().regex(/^(node|way|relation)\/\d+$/).optional(),
+    // percorsi a piedi: dove finiscono, e se si possono fare anche al contrario
+    fine: z.object({ nome: z.string(), lat: z.number(), lon: z.number(), osm: z.string().regex(/^(node|way|relation)\/\d+$/).optional() }).optional(),
+    reversibile: z.boolean().default(true),
+    durata: z.number().int().min(10).max(600),
+    durataFonte: reference('fonti').optional(),
+    orari: reference('fatti').optional(),
+    prezzi: reference('fatti').optional(),
+    ingresso: z.enum(['gratis', 'pagamento', 'in-parte']),
+    prenotazione: z.enum(['no', 'consigliata', 'obbligatoria']),
+    chiuso: z.array(giorno).default([]),
+    alChiuso: z.enum(['si', 'no', 'in-parte']),
+    gradini: z.enum(['no', 'pochi', 'molti']).optional(),
+    bambini: z.enum(['si', 'attenzione']),
+    momento: z.enum(['mattina', 'pomeriggio', 'sera', 'quando-vuoi']),
+    avviso: z.enum(['chiuso-in-parte']).optional(),
+    foto: reference('foto').optional(),
+    // gite: da dove si parte e come si arriva (scheda con tempi e prezzi del viaggio)
+    partenza: reference('luoghi').optional(),
+    viaggio: reference('fatti').optional()
+  })
+    .refine(t => t.tipo === 'gita' || t.orari, { message: 'Ogni tappa in città deve avere la scheda degli orari' })
+    .refine(t => t.tipo === 'citta' || (t.partenza && t.viaggio), { message: 'Ogni gita deve avere partenza e viaggio' })
+    // «in-parte»: si paga solo una parte (un museo dentro un parco, la metro per vedere una stazione); il testo lo dice
+    .refine(t => t.ingresso !== 'pagamento' || t.prezzi || t.tipo === 'gita', { message: 'Una tappa a pagamento deve avere la scheda dei prezzi' })
 });
 
 // Le risposte sono in src/testi/domande-frequenti.yaml, controllate come gli altri testi
@@ -187,4 +229,4 @@ const testi = defineCollection({
   schema: z.record(z.string().regex(/^[a-z0-9-]+$/), blocco)
 });
 
-export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video, testi };
+export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video, testi, tappe };

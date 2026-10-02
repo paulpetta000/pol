@@ -6,8 +6,11 @@ import Mappa from '../../components/Mappa.astro';
 import Testo from '../../components/Testo.astro';
 import FontiPagina from '../../components/FontiPagina.astro';
 import { getTesti } from '../../lib/testi';
+import { controllaTappe } from '../../lib/tappe';
 
 const T = await getTesti('napoli');
+// Gli itinerari non sono ancora online: intanto la build controlla qui tappe, schede, testi e tempi (src/lib/tappe.ts)
+await controllaTappe();
 const PAGINE = [
   { href: '/napoli/mappa/', icon: 'mappa', t: 'Mappa', s: 'Punti da cui guardare, stazioni, villaggi' },
   { href: '/napoli/come-arrivare/', icon: 'percorso', t: 'Come arrivare e muoversi', s: 'Aereo, treno, taxi a prezzo fisso, metro' },

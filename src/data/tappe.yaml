@@ -1,0 +1,789 @@
+# Tappe degli itinerari (Rilascio 3): 33 in città, da combinare tra loro, e 6 gite che occupano una giornata intera.
+#
+# Ogni tappa:
+# - posizione: lat/lon dell'ingresso (da OpenStreetMap, elemento in «osm»). I percorsi a piedi hanno anche
+#   «fine», il punto dove finiscono; «reversibile: false» se conviene farli solo in quel verso;
+# - durata: minuti per la visita (stima nostra, oppure «durataFonte» se la dice il gestore);
+# - orari e prezzi: schede in fatti.yaml (id che cominciano con «tp-»), con la data entro cui ricontrollarle.
+#   Gli orari sono quelli in vigore il 2 ottobre 2026: per l'estate 2027 nessun ente li ha ancora pubblicati;
+# - chiuso: giorni di chiusura settimanale (lun mar mer gio ven sab dom), presi dalla scheda degli orari;
+# - alChiuso, gradini, bambini, momento: valutazioni nostre, spiegate nel testo della tappa
+#   (src/testi/tappe.yaml, stesso id); gradini manca se non lo sappiamo;
+# - avviso: «chiuso-in-parte» se una parte importante oggi è chiusa.
+# I tempi tra le tappe sono in src/data/tempi-tappe.json (scripts/itinerari/).
+
+# ================= CENTRO STORICO =================
+- id: duomo
+  nome: "Duomo e Tesoro di San Gennaro"
+  breve: "Duomo"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, museo]
+  lat: 40.85250
+  lon: 14.25890
+  osm: way/122982019
+  durata: 75
+  orari: tp-duomo-orari
+  prezzi: tp-duomo-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: mattina
+  foto: tp-duomo
+
+- id: sansevero
+  nome: "Cappella Sansevero"
+  tipo: citta
+  zona: centro-storico
+  generi: [museo, chiesa]
+  lat: 40.84930
+  lon: 14.25492
+  osm: way/123977918
+  durata: 45
+  orari: tp-sansevero-orari
+  prezzi: tp-sansevero-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  chiuso: [mar]
+  alChiuso: si
+  gradini: pochi
+  bambini: si
+  momento: quando-vuoi
+
+- id: santa-chiara
+  nome: "Santa Chiara e il chiostro maiolicato"
+  breve: "Santa Chiara"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, museo]
+  lat: 40.84703
+  lon: 14.25332
+  osm: relation/3507387
+  durata: 40
+  durataFonte: tp-santachiara-faq
+  orari: tp-santachiara-orari
+  prezzi: tp-santachiara-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  foto: tp-santa-chiara
+
+- id: spaccanapoli
+  nome: "Spaccanapoli, Gesù Nuovo e San Gregorio Armeno"
+  breve: "Spaccanapoli"
+  tipo: citta
+  zona: centro-storico
+  generi: [passeggiata, chiesa]
+  lat: 40.84707
+  lon: 14.25178
+  osm: way/563345000
+  fine: { nome: "Piazza San Gaetano", lat: 40.85093, lon: 14.25729, osm: relation/3613785 }
+  durata: 60
+  orari: tp-spaccanapoli-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: mattina
+  foto: tp-spaccanapoli
+
+- id: tribunali
+  nome: "Via dei Tribunali: pizza e cibo di strada"
+  breve: "Via dei Tribunali"
+  tipo: citta
+  zona: centro-storico
+  generi: [cibo, passeggiata]
+  lat: 40.85012
+  lon: 14.25473
+  osm: way/270104574
+  durata: 45
+  orari: tp-tribunali-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-tribunali
+
+- id: pio-monte
+  nome: "Pio Monte della Misericordia"
+  breve: "Pio Monte"
+  tipo: citta
+  zona: centro-storico
+  generi: [museo, chiesa]
+  lat: 40.85181
+  lon: 14.26035
+  osm: way/287855529
+  durata: 30
+  orari: tp-piomonte-orari
+  prezzi: tp-piomonte-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-pio-monte
+
+- id: mann
+  nome: "Museo Archeologico Nazionale"
+  breve: "MANN"
+  tipo: citta
+  zona: centro-storico
+  generi: [museo, archeologia]
+  lat: 40.85310
+  lon: 14.25060
+  osm: relation/3824019
+  durata: 120
+  orari: tp-mann-orari
+  prezzi: tp-mann-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: si
+  bambini: si
+  momento: pomeriggio
+  foto: tp-mann
+
+- id: san-lorenzo
+  nome: "San Lorenzo Maggiore e gli scavi"
+  breve: "San Lorenzo"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, archeologia, sotterraneo]
+  lat: 40.85112
+  lon: 14.25771
+  osm: relation/3623111
+  durata: 60
+  orari: tp-sanlorenzo-orari
+  prezzi: tp-sanlorenzo-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  gradini: pochi
+  bambini: si
+  momento: pomeriggio
+  foto: tp-san-lorenzo
+
+- id: napoli-sotterranea
+  nome: "Napoli Sotterranea"
+  tipo: citta
+  zona: centro-storico
+  generi: [sotterraneo, archeologia]
+  lat: 40.85100
+  lon: 14.25730
+  osm: node/5126351599
+  durata: 80
+  durataFonte: tp-sotterranea-faq
+  orari: tp-sotterranea-orari
+  prezzi: tp-sotterranea-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  gradini: molti
+  bambini: si
+  momento: pomeriggio
+  foto: tp-napoli-sotterranea
+
+- id: madre
+  nome: "Museo Madre"
+  breve: "Madre"
+  tipo: citta
+  zona: centro-storico
+  generi: [museo]
+  lat: 40.85519
+  lon: 14.25858
+  osm: node/7179565924
+  durata: 75
+  orari: tp-madre-orari
+  prezzi: tp-madre-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: si
+  bambini: si
+  momento: pomeriggio
+  foto: tp-madre
+
+# ================= TOLEDO E PLEBISCITO =================
+- id: plebiscito
+  nome: "Piazza del Plebiscito e Galleria Umberto I"
+  breve: "Plebiscito"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [passeggiata]
+  lat: 40.83712
+  lon: 14.24896
+  osm: way/248982619
+  durata: 30
+  orari: tp-plebiscito-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: in-parte
+  gradini: no
+  bambini: si
+  momento: sera
+  foto: tp-plebiscito
+
+- id: palazzo-reale
+  nome: "Palazzo Reale"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [museo]
+  lat: 40.83608
+  lon: 14.24922
+  osm: relation/62237
+  durata: 60
+  durataFonte: tp-palazzoreale-info
+  orari: tp-palazzoreale-orari
+  prezzi: tp-palazzoreale-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mer]
+  alChiuso: si
+  gradini: no
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-palazzo-reale
+
+- id: san-carlo
+  nome: "Teatro di San Carlo"
+  breve: "San Carlo"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [teatro]
+  lat: 40.83763
+  lon: 14.24930
+  osm: way/29403569
+  durata: 30
+  durataFonte: tp-sancarlo-visite
+  orari: tp-sancarlo-orari
+  prezzi: tp-sancarlo-prezzi
+  ingresso: pagamento
+  prenotazione: consigliata
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-san-carlo
+
+- id: castel-nuovo
+  nome: "Castel Nuovo (Maschio Angioino)"
+  breve: "Castel Nuovo"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [castello, museo]
+  lat: 40.83880
+  lon: 14.25250
+  osm: relation/15009683
+  durata: 60
+  orari: tp-castelnuovo-orari
+  prezzi: tp-castelnuovo-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [dom]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  foto: tp-castel-nuovo
+
+- id: toledo
+  nome: "Via Toledo, la stazione dell'arte e i Quartieri Spagnoli"
+  breve: "Via Toledo"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [passeggiata]
+  lat: 40.83760
+  lon: 14.24860
+  osm: way/248982619
+  fine: { nome: "Piazza Dante", lat: 40.84915, lon: 14.25022, osm: way/563344999 }
+  durata: 60
+  orari: tp-toledo-orari
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  gradini: pochi
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-toledo
+
+- id: galleria-borbonica
+  nome: "Galleria Borbonica"
+  breve: "Galleria Borbonica"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [sotterraneo]
+  lat: 40.83548
+  lon: 14.24628
+  osm: node/4194078289
+  durata: 60
+  durataFonte: tp-borbonica-standard
+  orari: tp-borbonica-orari
+  prezzi: tp-borbonica-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  chiuso: [lun, mar, mer, gio]
+  alChiuso: si
+  gradini: molti
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-galleria-borbonica
+
+# ================= LUNGOMARE E SANTA LUCIA =================
+- id: monte-echia
+  nome: "Monte Echia, il belvedere di Pizzofalcone"
+  breve: "Monte Echia"
+  tipo: citta
+  zona: lungomare
+  generi: [panorama]
+  lat: 40.83123
+  lon: 14.24792
+  osm: node/3465967210
+  durata: 30
+  orari: tp-echia-orari
+  prezzi: tp-echia-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  gradini: pochi
+  bambini: attenzione
+  momento: sera
+  foto: vista-monte-echia
+
+- id: borgo-marinari
+  nome: "Borgo Marinari e Castel dell'Ovo"
+  breve: "Borgo Marinari"
+  tipo: citta
+  zona: lungomare
+  generi: [passeggiata, mare, castello]
+  lat: 40.82836
+  lon: 14.24848
+  osm: node/8759639219
+  durata: 30
+  orari: tp-borgo-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: sera
+  avviso: chiuso-in-parte
+  foto: tp-borgo-marinari
+
+- id: lungomare
+  nome: "Il lungomare: via Partenope, via Caracciolo e Villa Comunale"
+  breve: "Lungomare"
+  tipo: citta
+  zona: lungomare
+  generi: [passeggiata, mare, parco]
+  lat: 40.82990
+  lon: 14.24760
+  fine: { nome: "Mergellina", lat: 40.82885, lon: 14.22272 }
+  durata: 60
+  orari: tp-lungomare-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: sera
+  foto: via-partenope
+
+- id: dadom
+  nome: "Acquario e museo Darwin-Dohrn"
+  breve: "Acquario"
+  tipo: citta
+  zona: lungomare
+  generi: [museo]
+  lat: 40.83272
+  lon: 14.23563
+  osm: relation/2446249
+  durata: 75
+  orari: tp-dadom-orari
+  prezzi: tp-dadom-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [lun]
+  alChiuso: si
+  bambini: si
+  momento: mattina
+  foto: tp-dadom
+
+# ================= VOMERO =================
+- id: sant-elmo
+  nome: "Castel Sant'Elmo"
+  breve: "Sant'Elmo"
+  tipo: citta
+  zona: vomero
+  generi: [castello, panorama, museo]
+  lat: 40.84470
+  lon: 14.23940
+  osm: way/29403971
+  durata: 60
+  orari: tp-santelmo-orari
+  prezzi: tp-santelmo-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: in-parte
+  gradini: pochi
+  bambini: si
+  momento: pomeriggio
+  foto: tp-sant-elmo
+
+- id: san-martino
+  nome: "Certosa e Museo di San Martino"
+  breve: "San Martino"
+  tipo: citta
+  zona: vomero
+  generi: [museo, chiesa, panorama]
+  lat: 40.84380
+  lon: 14.24095
+  osm: relation/6451203
+  durata: 90
+  orari: tp-sanmartino-orari
+  prezzi: tp-sanmartino-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  foto: tp-san-martino
+
+- id: floridiana
+  nome: "Villa Floridiana e il museo della ceramica"
+  breve: "Floridiana"
+  tipo: citta
+  zona: vomero
+  generi: [parco, museo, panorama]
+  lat: 40.84158
+  lon: 14.22944
+  osm: way/35396816
+  durata: 60
+  orari: tp-floridiana-orari
+  prezzi: tp-floridiana-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  gradini: pochi
+  bambini: si
+  momento: pomeriggio
+  foto: floridiana-viale
+
+- id: pedamentina
+  nome: "La Pedamentina, da San Martino in discesa"
+  breve: "Pedamentina"
+  tipo: citta
+  zona: vomero
+  generi: [passeggiata, panorama]
+  lat: 40.84422
+  lon: 14.24054
+  osm: way/414265664
+  fine: { nome: "Corso Vittorio Emanuele", lat: 40.84560, lon: 14.24364, osm: way/307606979 }
+  reversibile: false
+  durata: 30
+  orari: tp-pedamentina-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: molti
+  bambini: si
+  momento: pomeriggio
+
+# ================= SANITÀ E CAPODIMONTE =================
+- id: catacombe
+  nome: "Catacombe di San Gennaro"
+  breve: "Catacombe"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [sotterraneo, archeologia]
+  lat: 40.86515
+  lon: 14.24719
+  osm: node/6022470990
+  durata: 60
+  durataFonte: tp-catacombe-sangennaro
+  orari: tp-catacombe-orari
+  prezzi: tp-catacombe-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  chiuso: [mer]
+  alChiuso: si
+  bambini: si
+  momento: pomeriggio
+  foto: tp-catacombe
+
+- id: sanita
+  nome: "Rione Sanità e Basilica della Sanità"
+  breve: "Rione Sanità"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [passeggiata, chiesa]
+  lat: 40.85950
+  lon: 14.24933
+  osm: way/375651116
+  durata: 60
+  orari: tp-sanita-orari
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  gradini: pochi
+  bambini: si
+  momento: mattina
+  foto: tp-sanita
+
+- id: fontanelle
+  nome: "Cimitero delle Fontanelle"
+  breve: "Fontanelle"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [sotterraneo]
+  lat: 40.85886
+  lon: 14.23890
+  osm: node/6377754386
+  durata: 40
+  durataFonte: tp-fontanelle
+  orari: tp-fontanelle-orari
+  prezzi: tp-fontanelle-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  chiuso: [mer]
+  alChiuso: si
+  gradini: no
+  bambini: attenzione
+  momento: pomeriggio
+  foto: tp-fontanelle
+
+- id: capodimonte
+  nome: "Museo e Real Bosco di Capodimonte"
+  breve: "Capodimonte"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [museo, parco, panorama]
+  lat: 40.86703
+  lon: 14.25058
+  osm: relation/9734895
+  durata: 150
+  orari: tp-capodimonte-orari
+  prezzi: tp-capodimonte-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  chiuso: [mer]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  foto: tp-capodimonte
+
+# ================= POSILLIPO E BAGNOLI =================
+- id: virgilio
+  nome: "Parco delle Tombe di Virgilio e Leopardi"
+  breve: "Tomba di Virgilio"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [parco, archeologia]
+  lat: 40.83033
+  lon: 14.21744
+  osm: way/144553772
+  durata: 30
+  orari: tp-virgilio-orari
+  prezzi: tp-virgilio-prezzi
+  ingresso: gratis
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: no
+  gradini: molti
+  bambini: si
+  momento: mattina
+  avviso: chiuso-in-parte
+  foto: tp-virgilio
+
+- id: marechiaro
+  nome: "Marechiaro"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [mare, passeggiata, panorama]
+  lat: 40.79500
+  lon: 14.19150
+  osm: node/9990097791
+  durata: 60
+  orari: tp-marechiaro-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: molti
+  bambini: si
+  momento: sera
+  foto: tp-marechiaro
+
+- id: gaiola
+  nome: "Parco sommerso della Gaiola"
+  breve: "Gaiola"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [mare, parco]
+  lat: 40.79259
+  lon: 14.18770
+  osm: way/506756058
+  durata: 240
+  orari: tp-gaiola-orari
+  prezzi: tp-gaiola-prezzi
+  ingresso: gratis
+  prenotazione: obbligatoria
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  foto: tp-gaiola
+
+- id: parco-virgiliano
+  nome: "Parco Virgiliano"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [parco, panorama]
+  lat: 40.80001
+  lon: 14.18159
+  osm: node/13245355164
+  durata: 45
+  orari: tp-virgiliano-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: sera
+  avviso: chiuso-in-parte
+  foto: tp-parco-virgiliano
+
+- id: citta-scienza
+  nome: "Città della Scienza"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [museo]
+  lat: 40.80475
+  lon: 14.17467
+  osm: way/1495677472
+  durata: 120
+  durataFonte: tp-cittascienza-faq
+  orari: tp-cittascienza-orari
+  prezzi: tp-cittascienza-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: mattina
+  foto: tp-citta-scienza
+
+# ================= GITE (una giornata intera) =================
+- id: pompei
+  nome: "Pompei"
+  tipo: gita
+  zona: vesuvio
+  generi: [archeologia]
+  lat: 40.74860
+  lon: 14.48480
+  durata: 480
+  orari: tp-pompei-orari
+  prezzi: tp-pompei-prezzi
+  ingresso: pagamento
+  prenotazione: consigliata
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-pompei-viaggio
+  foto: tp-pompei
+
+- id: ercolano
+  nome: "Ercolano"
+  tipo: gita
+  zona: vesuvio
+  generi: [archeologia]
+  lat: 40.80590
+  lon: 14.34760
+  durata: 300
+  orari: tp-ercolano-orari
+  prezzi: tp-ercolano-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-ercolano-viaggio
+  foto: tp-ercolano
+
+- id: vesuvio
+  nome: "Vesuvio, il Gran Cono"
+  breve: "Vesuvio"
+  tipo: gita
+  zona: vesuvio
+  generi: [panorama]
+  lat: 40.82130
+  lon: 14.42610
+  durata: 480
+  orari: tp-vesuvio-orari
+  prezzi: tp-vesuvio-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-vesuvio-viaggio
+  foto: tp-vesuvio
+
+- id: capri
+  nome: "Capri"
+  tipo: gita
+  zona: isole
+  generi: [mare, panorama]
+  lat: 40.55600
+  lon: 14.23820
+  durata: 480
+  orari: tp-capri-orari
+  prezzi: tp-capri-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: molo-beverello
+  viaggio: tp-capri-viaggio
+  foto: tp-capri
+
+- id: ischia
+  nome: "Ischia"
+  tipo: gita
+  zona: isole
+  generi: [mare, castello]
+  lat: 40.73140
+  lon: 13.96630
+  durata: 480
+  orari: tp-ischia-orari
+  prezzi: tp-ischia-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: molo-beverello
+  viaggio: tp-ischia-viaggio
+  foto: tp-ischia
+
+- id: procida
+  nome: "Procida"
+  tipo: gita
+  zona: isole
+  generi: [mare, passeggiata]
+  lat: 40.75790
+  lon: 14.01570
+  durata: 420
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: molo-beverello
+  viaggio: tp-procida-viaggio
+  foto: tp-procida

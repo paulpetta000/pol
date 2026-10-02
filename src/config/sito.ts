@@ -24,6 +24,11 @@ export const SITO = {
   versioneTermini: '2026-10-01'
 } as const;
 
+// Itinerari (Rilascio 3): finché è false, schede, fonti e foto degli itinerari (id «tp-») restano fuori
+// dalle pagine Fonti e Note legali. Va messo a true insieme alla pagina degli itinerari.
+// (Fuori da SITO perché SITO finisce anche nello script di ogni pagina.)
+export const ITINERARI_ONLINE = false;
+
 // Le date chiave del 2027 (fonte: americascup.com, comunicati 4148 e 4372)
 export const DATE = {
   primaRegata: '2027-05-22',

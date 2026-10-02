@@ -809,3 +809,591 @@
   fonti: [ac-38, rrsac-2024]
   controllato: 2026-10-01
   ricontrollare: 2026-12-31
+
+# ================= ITINERARI: ORARI E PREZZI DELLE TAPPE (Rilascio 3) =================
+# Schede usate solo dagli itinerari (id «tp-»): finché la pagina non è online non compaiono nella pagina Fonti.
+# Orari e prezzi in vigore il 2 ottobre 2026: per l'estate 2027 nessun ente li ha ancora pubblicati,
+# quindi tutte le schede vanno ricontrollate entro la primavera 2027.
+# ---------- Centro storico ----------
+- id: tp-duomo-orari
+  testo: "Duomo: tutti i giorni 8:30–13:30; il pomeriggio 14:30–19:30 il martedì, mercoledì, venerdì e sabato, 16:30–19:30 il lunedì, giovedì e domenica. Museo del Tesoro: tutti i giorni 9:30–18:00, ultimo ingresso alle 17:00."
+  stato: confermato
+  fonti: [tp-italia-duomo, tp-tesoro-faq]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-duomo-prezzi
+  testo: "Duomo e Cappella del Tesoro di San Gennaro: ingresso libero. Museo del Tesoro: 15 € con l'audioguida; 11 € sopra i 65 anni; gratis sotto i 12 anni e per le persone con disabilità; famiglia di 3 persone 30 €."
+  stato: confermato
+  fonti: [tp-tesoro-info]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-tesoro-durata
+  testo: "Con tutta l'audioguida la visita del Museo del Tesoro dura circa un'ora. Il biglietto online è consigliato, non obbligatorio, e vale per il giorno, non per l'ora."
+  stato: confermato
+  fonti: [tp-tesoro-faq]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sansevero-orari
+  testo: "Tutti i giorni 9:00–19:00, ultimo ingresso alle 18:30. Chiusa il martedì."
+  stato: confermato
+  fonti: [tp-sansevero-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sansevero-prezzi
+  testo: "12 €; 8 € dai 18 ai 26 anni; 6 € dai 10 ai 17 anni; gratis fino a 9 anni. Persona con disabilità e accompagnatore: 7 € in due."
+  stato: confermato
+  fonti: [tp-sansevero-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sansevero-prenota
+  testo: "Si entra solo con il biglietto elettronico comprato online sul sito ufficiale, fino a 60 giorni prima; altri posti si liberano due giorni prima della visita."
+  stato: confermato
+  fonti: [tp-sansevero-orari, tp-sansevero-accesso]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sansevero-regole
+  testo: "Dentro non si possono fare foto e video né usare il telefono. La Cavea, con le «macchine anatomiche», si raggiunge solo da una stretta scala a chiocciola: in sedia a rotelle si visitano la navata e la sacrestia."
+  stato: confermato
+  fonti: [tp-sansevero-accesso, tp-sansevero-accessibilita]
+  controllato: 2026-10-02
+
+- id: tp-santachiara-orari
+  testo: "Chiostro maiolicato, museo e area archeologica: dal lunedì al sabato 9:30–17:00, la domenica 10:00–14:00. Basilica: tutti i giorni 7:45–12:45 e 16:40–20:00. Chiuso il 25 dicembre, il 1° gennaio e a Pasqua."
+  stato: confermato
+  fonti: [tp-santachiara-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-santachiara-prezzi
+  testo: "Chiostro, museo e area archeologica: 7 €; 5 € sopra i 65 anni, per gli universitari sotto i 30 anni e per gli insegnanti; 4 € dai 7 ai 17 anni; gratis sotto i 7 anni. I biglietti si comprano solo in biglietteria. La Basilica è gratuita."
+  stato: confermato
+  fonti: [tp-santachiara-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-spaccanapoli-orari
+  testo: "Spaccanapoli e via San Gregorio Armeno sono strade pubbliche, sempre aperte. Per le chiese non abbiamo trovato orari ufficiali: alcuni siti non ufficiali indicano 8:00–13:00 e 16:00–20:00 per il Gesù Nuovo e 9:30–12:00 per il chiostro di San Gregorio Armeno."
+  stato: segnalato
+  fonti: [tp-napolike-gesu, tp-napolike-sangregorio, osm]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-tribunali-orari
+  testo: "Via dei Tribunali è una strada pubblica, sempre aperta: pizzerie, friggitorie e bar hanno ciascuno i propri orari."
+  stato: confermato
+  fonti: [osm]
+  controllato: 2026-10-02
+
+- id: tp-piomonte-orari
+  testo: "Dal lunedì al sabato 10:00–18:00 (ultimo biglietto alle 17:30); la domenica 9:00–14:30 (ultimo biglietto alle 14:00). Chiuso il 25 dicembre."
+  stato: confermato
+  fonti: [tp-piomonte]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-piomonte-prezzi
+  testo: "10 €; 8 € sotto i 25 anni; biglietto famiglia 20 €; gratis fino a 6 anni e per le persone con disabilità."
+  stato: confermato
+  fonti: [tp-piomonte]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-mann-orari
+  testo: "9:00–19:30; la biglietteria chiude alle 18:30. Chiuso il martedì (se è festivo apre), il 1° gennaio e il 25 dicembre. Alcune sale possono essere chiuse: il museo pubblica il piano delle aperture."
+  stato: confermato
+  fonti: [tp-mann-orari, tp-mic-mann]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-mann-prezzi
+  testo: "20 €; 2 € dai 18 ai 25 anni (cittadini dell'Unione europea); gratis sotto i 18 anni e per le persone con disabilità. La prima domenica del mese si entra gratis, ma restano chiuse la collezione egizia, il Gabinetto Segreto e la Magna Grecia."
+  stato: confermato
+  fonti: [tp-mann-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sanlorenzo-orari
+  testo: "Tutti i giorni 9:30–17:30. Quando c'è molta gente si entra solo con la guida, a orari fissi."
+  stato: confermato
+  fonti: [tp-sanlorenzo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sanlorenzo-prezzi
+  testo: "9 €; 7 € sopra i 65 anni, per insegnanti e universitari; 6 € sotto i 18 anni; gratis sotto i 6 anni. Con la guida 2 € in più (1 € dai 6 ai 14 anni)."
+  stato: confermato
+  fonti: [tp-sanlorenzo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sotterranea-orari
+  testo: "Visite guidate ogni ora dalle 10:00 alle 18:00, in italiano; il giovedì anche alle 21:00, su prenotazione e con almeno 10 persone. Per chi è da solo o in un piccolo gruppo non serve prenotare."
+  stato: confermato
+  fonti: [tp-sotterranea-orari, tp-sotterranea-faq]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sotterranea-prezzi
+  testo: "Il sito ufficiale non scrive i prezzi nelle sue pagine: si vedono solo comprando il biglietto."
+  stato: confermato
+  fonti: [tp-sotterranea-orari, tp-sotterranea-faq]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sotterranea-visita
+  testo: "Si scendono 136 gradini, «bassi e comodi», fino a circa 40 metri sotto la strada; c'è un solo cunicolo stretto, ed è facoltativo. La visita dura circa un'ora, più circa 20 minuti per i resti del Teatro Romano, compresi nel biglietto. Non è accessibile in sedia a rotelle né con il deambulatore."
+  stato: confermato
+  fonti: [tp-sotterranea-faq]
+  controllato: 2026-10-02
+
+- id: tp-madre-orari
+  testo: "Lunedì e da mercoledì a sabato 10:00–19:30; domenica 10:00–20:00; ultimo ingresso un'ora prima. Chiuso il martedì."
+  stato: confermato
+  fonti: [tp-madre]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-madre-prezzi
+  testo: "8 €; ridotto 4 €."
+  stato: confermato
+  fonti: [tp-madre]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+# ---------- Toledo e Plebiscito ----------
+- id: tp-plebiscito-orari
+  testo: "Piazza del Plebiscito è sempre aperta. Galleria Umberto I: dal lunedì al venerdì 8:30–20:30, il sabato e la domenica 8:30–22:00."
+  stato: confermato
+  fonti: [tp-napoliforme-galleria, osm]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-palazzoreale-orari
+  testo: "9:00–20:00, ultimo ingresso alle 19:00. Chiuso il mercoledì, il 1° gennaio e il 25 dicembre. Il Giardino Romantico, gratuito, è aperto tutti i giorni 9:00–19:00 (ultimo ingresso alle 18:00)."
+  stato: confermato
+  fonti: [tp-palazzoreale-info]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-palazzoreale-prezzi
+  testo: "15 €; 2 € dai 18 ai 25 anni (cittadini dell'Unione europea); gratis sotto i 18 anni e la prima domenica del mese."
+  stato: confermato
+  fonti: [tp-palazzoreale-info]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-palazzoreale-restauri
+  testo: "Dal 1° ottobre 2026 la Sala degli Specchi, il Salone d'Ercole e parte della Sala delle Nature Morte sono chiusi per restauro, fino alla fine dei lavori: la data non è stata annunciata."
+  stato: confermato
+  fonti: [tp-palazzoreale-restauri]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sancarlo-orari
+  testo: "Visite guidate tutti i giorni alle 10:30, 11:30, 12:30, 14:30, 15:30 e 16:30 (in inglese alle 11:30 e alle 15:30), di 30 minuti. Il teatro avverte che possono cambiare o essere cancellate anche all'ultimo momento."
+  stato: confermato
+  fonti: [tp-sancarlo-visite]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sancarlo-prezzi
+  testo: "9 €; 7 € sotto i 30 anni; famiglia (2 adulti e 2 ragazzi sotto i 18 anni) 26 €. Il teatro consiglia di prenotare."
+  stato: confermato
+  fonti: [tp-sancarlo-visite]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-castelnuovo-orari
+  testo: "Dal lunedì al sabato 9:00–18:00, ultimo ingresso alle 17:30. Chiuso la domenica e i festivi."
+  stato: confermato
+  fonti: [tp-comune-castelnuovo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-castelnuovo-prezzi
+  testo: "10 €; 6 € per chi abita a Napoli e nella Città Metropolitana; 5 € con l'Artecard; gratis sotto i 18 anni."
+  stato: confermato
+  fonti: [tp-comune-castelnuovo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-toledo-orari
+  testo: "Via Toledo e i Quartieri Spagnoli sono strade pubbliche, sempre aperte. Per scendere nella stazione Toledo della Linea 1 serve un biglietto della metro."
+  stato: confermato
+  fonti: [tp-anm-metroart-toledo, osm]
+  controllato: 2026-10-02
+
+- id: tp-borbonica-orari
+  testo: "Si visita solo il venerdì, il sabato, la domenica e nei festivi. Percorso Standard alle 10:00, 12:00, 15:00 e 17:00 (circa un'ora); Via delle Memorie alle 11:00 e alle 16:00 (1 ora e 15 minuti); Avventura alle 10:00, 12:00, 15:00 e 17:00 (1 ora e 25 minuti)."
+  stato: confermato
+  fonti: [tp-borbonica-standard, tp-borbonica-memorie, tp-borbonica-avventura]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-borbonica-prezzi
+  testo: "Standard e Via delle Memorie: 15 €; 10 € dai 6 ai 18 anni e sopra i 70 anni; 7 € per le persone con disabilità; gratis fino a 5 anni. Avventura: 20 €, dai 10 anni. Prenotazione obbligatoria."
+  stato: confermato
+  fonti: [tp-borbonica-standard, tp-borbonica-memorie, tp-borbonica-avventura]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+# ---------- Lungomare e Santa Lucia ----------
+- id: tp-echia-orari
+  testo: "Al belvedere si sale con l'ascensore da via Santa Lucia, aperto tutti i giorni 7:00–22:00, oppure a piedi da Pizzofalcone."
+  stato: confermato
+  fonti: [tp-anm-echia, osm]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-echia-prezzi
+  testo: "Belvedere gratuito. Ascensore: 1,50 € a corsa per chi non abita a Napoli."
+  stato: confermato
+  fonti: [tp-anm-echia, tp-comune-echia]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-echia-recinzione
+  testo: "Per le regole sulla tutela archeologica il belvedere non ha una recinzione: con i bambini serve attenzione."
+  stato: confermato
+  fonti: [tp-comune-echia]
+  controllato: 2026-10-02
+
+- id: tp-borgo-orari
+  testo: "Il Borgo Marinari è un'area pedonale, aperta tutto il giorno. Castel dell'Ovo è chiuso al pubblico «fino a data da destinarsi» per lavori: si gira solo intorno."
+  stato: confermato
+  fonti: [tp-comune-borgomarinari, tp-comune-casteldellovo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-lungomare-orari
+  testo: "Via Partenope e via Caracciolo sono strade pubbliche, sempre aperte. La Villa Comunale apre dal 1° luglio al 31 agosto 7:00–24:00, nel resto dell'anno 7:00–21:00."
+  stato: confermato
+  fonti: [tp-comune-villacomunale, osm]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-dadom-orari
+  testo: "Dal martedì alla domenica 9:00–17:00. Chiuso il lunedì."
+  stato: confermato
+  fonti: [tp-dadom-info]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-dadom-prezzi
+  testo: "Biglietto unico per museo e acquario: 10 € dai 12 anni; 7 € dai 4 ai 12 anni, sopra i 70 anni e per gli universitari; gratis sotto i 3 anni e per le persone con disabilità. Online il biglietto ha data e ora e non si rimborsa."
+  stato: confermato
+  fonti: [tp-dadom-info, tp-dadom-tariffe]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+# ---------- Vomero ----------
+- id: tp-santelmo-orari
+  testo: "Castello: tutti i giorni 8:30–19:30. Museo del Novecento, dentro il castello: 9:30–18:30 (ultimo ingresso alle 17:30), chiuso il martedì. Con il maltempo il castello può restare chiuso."
+  stato: confermato
+  fonti: [tp-mic-santelmo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-santelmo-prezzi
+  testo: "5 €; ridotto 2 €."
+  stato: confermato
+  fonti: [tp-mic-santelmo]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sanmartino-orari
+  testo: "8:30–18:30, ultimo ingresso alle 17:30. Chiuso il martedì."
+  stato: confermato
+  fonti: [tp-mic-sanmartino]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sanmartino-prezzi
+  testo: "6 €; 2 € dai 18 ai 25 anni; gratis sotto i 18 anni."
+  stato: confermato
+  fonti: [tp-mic-sanmartino]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-floridiana-orari
+  testo: "Parco: da maggio ad agosto 8:30–19:30 (ultimo ingresso alle 19:00). Museo della ceramica Duca di Martina: 9:30–18:30 (ultimo ingresso alle 17:30), chiuso il martedì."
+  stato: confermato
+  fonti: [tp-mic-floridiana]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-floridiana-prezzi
+  testo: "Parco gratuito. Museo Duca di Martina: 4 €; ridotto 2 €."
+  stato: confermato
+  fonti: [tp-mic-floridiana]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-pedamentina-orari
+  testo: "Scala pubblica, sempre percorribile: da Largo San Martino scende con rampe e tornanti fino a Corso Vittorio Emanuele."
+  stato: confermato
+  fonti: [tp-comune-pedamentina, osm]
+  controllato: 2026-10-02
+
+# ---------- Sanità e Capodimonte ----------
+- id: tp-catacombe-orari
+  testo: "Solo con visita guidata, ogni ora dalle 10:00; ultimo ingresso alle 17:00. Chiuse il mercoledì e il 25 dicembre."
+  stato: confermato
+  fonti: [tp-catacombe]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-catacombe-prezzi
+  testo: "13 €; 9 € per studenti e sopra i 65 anni; 6 € sotto i 18 anni; gratis sotto i 6 anni e per le persone con disabilità. Lo stesso biglietto vale 12 mesi per le Catacombe di San Gennaro e di San Gaudioso. Prenotazione obbligatoria."
+  stato: confermato
+  fonti: [tp-catacombe]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-catacombe-note
+  testo: "Sotto terra ci sono 15–22 °C: il sito consiglia un maglioncino anche d'estate. L'accesso per le persone con disabilità motoria è temporaneamente sospeso per manutenzione."
+  stato: confermato
+  fonti: [tp-catacombe]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-sanita-orari
+  testo: "Il rione è fatto di strade pubbliche. La Basilica di Santa Maria della Sanità è aperta tutti i giorni 10:00–13:00. L'ascensore gratuito tra il ponte della Sanità e il rione funziona dal lunedì al sabato 7:00–21:30, la domenica e i festivi 7:30–14:00."
+  stato: confermato
+  fonti: [tp-catacombe-basilica, tp-anm-ascensori]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-fontanelle-orari
+  testo: "10:00–18:00, ultimo ingresso alle 17:15: si entra a gruppi ogni 15 minuti e si resta al massimo 40 minuti. Chiuso il mercoledì e il 25 dicembre."
+  stato: confermato
+  fonti: [tp-fontanelle]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-fontanelle-prezzi
+  testo: "Da 6 € con l'audioguida, da 8 € con la guida; gratis per chi abita nella II e nella III Municipalità. Prenotazione obbligatoria, solo sul sito."
+  stato: confermato
+  fonti: [tp-fontanelle, tp-comune-fontanelle]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-capodimonte-orari
+  testo: "Museo: 8:30–19:30 (ultimo ingresso alle 18:30); il secondo piano chiude alle 17:00. Chiuso il mercoledì. Real Bosco: da aprile a settembre 7:00–19:30."
+  stato: confermato
+  fonti: [tp-capodimonte-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-capodimonte-prezzi
+  testo: "Museo: 15 €, oppure 12 € entrando tra le 8:30 e le 9:30 o tra le 17:30 e le 18:30; 2 € dai 18 ai 25 anni (cittadini dell'Unione europea); gratis sotto i 18 anni e la prima domenica del mese. Il biglietto vale tutto il giorno."
+  stato: confermato
+  fonti: [tp-capodimonte-biglietti]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+# ---------- Posillipo e Bagnoli ----------
+- id: tp-virgilio-orari
+  testo: "Lunedì e da giovedì a domenica 9:30–15:00; mercoledì 14:00–19:00. Chiuso il martedì. Dal 12 settembre 2026 il percorso verso la Tomba di Virgilio e l'area davanti alla Crypta Neapolitana sono chiusi, senza una data di riapertura."
+  stato: confermato
+  fonti: [tp-mic-virgilio, tp-musei-campania-virgilio]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-virgilio-prezzi
+  testo: "Nel 2025 il Ministero della Cultura scriveva che l'ingresso al parco è gratuito; la scheda di oggi non ha una voce sui biglietti."
+  stato: confermato
+  anno: 2025
+  fonti: [tp-mic-leopardi-day-2025, tp-mic-virgilio]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-marechiaro-orari
+  testo: "Il borgo è pubblico. Nell'estate 2026 il tratto finale di via Marechiaro è stato chiuso alle auto dal 16 maggio al 27 settembre, e un taxi collettivo da Posillipo costava 2 € a tratta."
+  stato: confermato
+  anno: 2026
+  fonti: [tp-comune-ztl-marechiaro]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-gaiola-orari
+  testo: "Dal 1° maggio al 30 settembre si entra in due turni, 9:00–13:00 e 14:00–18:00, al massimo 200 persone per turno. Con l'allerta meteo il parco chiude."
+  stato: confermato
+  fonti: [tp-gaiola-accesso, tp-gaiola-prenotazione]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-gaiola-prezzi
+  testo: "Ingresso, navetta elettrica e ombrelloni sono gratuiti."
+  stato: confermato
+  fonti: [tp-gaiola-prenotazione]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-gaiola-prenota
+  testo: "Si entra solo con la prenotazione online: al massimo 5 persone per prenotazione, con almeno un adulto, e non più di 3 ingressi a settimana a persona. Il modulo chiede il codice fiscale di ogni partecipante e all'ingresso servono documento e codice fiscale."
+  stato: confermato
+  fonti: [tp-gaiola-prenotazione, tp-gaiola-accesso]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-virgiliano-orari
+  testo: "Dal 1° luglio al 31 agosto 7:00–24:00; nel resto dell'anno 7:00–21:00. Dal 27 giugno 2026 è aperto solo in parte (ingresso, viale nord, belvedere e piazza di via Tito Lucrezio Caro): il resto ha lavori che dovrebbero finire nel corso del 2027."
+  stato: confermato
+  fonti: [tp-comune-virgiliano, tp-comune-virgiliano-riapertura]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-cittascienza-orari
+  testo: "Dal 22 febbraio al 31 maggio 2027 tutti i giorni 9:00–17:00. Chiuso il 25 dicembre e il 1° gennaio."
+  stato: confermato
+  fonti: [tp-cittascienza-visita]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-cittascienza-estate
+  testo: "L'orario dell'estate 2027 non è ancora uscito. Nell'estate 2025, da metà giugno a metà settembre, era ridotto: dal martedì alla domenica 10:00–16:00."
+  stato: atteso
+  fonti: [tp-cittascienza-visita, tp-cittascienza-estate-2025]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-cittascienza-prezzi
+  testo: "10 €; 8 € dai 3 ai 17 anni, per gli universitari e sopra i 65 anni; gratis sotto i 3 anni e per chi abita a Bagnoli. Planetario 5 €."
+  stato: confermato
+  fonti: [tp-cittascienza-biglietteria]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+# ---------- Gite ----------
+- id: tp-pompei-orari
+  testo: "Dal 16 marzo al 14 ottobre 9:00–19:00, ultimo ingresso alle 17:30. Chiuso il 25 dicembre e il 1° gennaio."
+  stato: confermato
+  fonti: [tp-pompei-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-pompei-prezzi
+  testo: "20 € per la città antica; 25 € anche con Villa dei Misteri, Villa di Diomede e Villa Regina; 30 € «Pompei Plus», valido 3 giorni; 2 € dai 18 ai 24 anni (cittadini dell'Unione europea); gratis sotto i 18 anni e la prima domenica del mese."
+  stato: confermato
+  fonti: [tp-pompei-orari, tp-pompei-tariffe]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-pompei-biglietti
+  testo: "I biglietti sono nominativi, con giorno e fascia oraria, e non si cambiano: si comprano online o in biglietteria con un documento. Al massimo 20.000 ingressi al giorno, 15.000 tra le 9:00 e le 13:00."
+  stato: confermato
+  fonti: [tp-pompei-regolamento, tp-pompei-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-pompei-viaggio
+  testo: "Con la Circumvesuviana da Napoli Garibaldi a Pompei Scavi–Villa dei Misteri: almeno 33 minuti, il tempo del treno diretto Campania Express, oggi sospeso; i treni ordinari fanno più fermate."
+  stato: confermato
+  fonti: [tp-eav-campania-express, tp-eav-campania-express-sospeso]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ercolano-orari
+  testo: "Dal 16 marzo al 14 ottobre 8:30–19:30, ultimo ingresso alle 18:00. Chiuso il 25 dicembre."
+  stato: confermato
+  fonti: [tp-ercolano-biglietti]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ercolano-prezzi
+  testo: "16 €; 2 € dai 18 ai 24 anni; gratis la prima domenica del mese e il 2 giugno."
+  stato: confermato
+  fonti: [tp-ercolano-biglietti]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ercolano-viaggio
+  testo: "Con la Circumvesuviana da Napoli Garibaldi a Ercolano Scavi: almeno 13 minuti, il tempo del treno diretto Campania Express, oggi sospeso; i treni ordinari fanno più fermate."
+  stato: confermato
+  fonti: [tp-eav-campania-express, tp-eav-campania-express-sospeso]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-vesuvio-orari
+  testo: "In luglio e agosto 9:00–18:00 (ultimo accesso); la visita finisce entro un'ora dall'ultimo accesso. Con l'allerta meteo arancione o rossa sentiero e biglietteria chiudono."
+  stato: confermato
+  fonti: [tp-vesuvio-gran-cono]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-vesuvio-prezzi
+  testo: "11,68 € a persona (la stessa pagina indica anche 10 €); gratis sotto i 6 anni. Biglietti solo online, sul sito di vendita del Parco, a fasce di 10 minuti."
+  stato: confermato
+  fonti: [tp-vesuvio-gran-cono]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-vesuvio-viaggio
+  testo: "Da Pompei (piazza Anfiteatro, con fermata alla stazione Villa dei Misteri) il bus EAV 808 sale a quota 1000 in circa 50 minuti; con l'orario del 1° ottobre 2026 l'ultima discesa è alle 16:50. Da quota 1000 il sentiero è lungo 4 km tra andata e ritorno."
+  stato: confermato
+  fonti: [tp-eav-808, tp-vesuvio-gran-cono]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-capri-orari
+  testo: "Grotta Azzurra: dal 1° aprile al 30 settembre 8:30–18:00, ma con il mare mosso chiude o cambia orario. Villa Jovis: dal 1° marzo al 15 ottobre 10:00–17:00. Certosa di San Giacomo: dal 1° marzo al 31 ottobre 10:00–18:00."
+  stato: confermato
+  fonti: [tp-capri-regolamento]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-capri-prezzi
+  testo: "Grotta Azzurra: 6 € più 12 € per la barchetta. Villa Jovis 6 €, Certosa di San Giacomo 10 €; 2 € dai 18 ai 24 anni (cittadini dell'Unione europea); gratis sotto i 18 anni."
+  stato: confermato
+  fonti: [tp-capri-regolamento]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-capri-viaggio
+  testo: "Con Caremar da Calata Porta di Massa: motonave veloce in circa un'ora (21,50 € a persona, sola andata) o traghetto in 1 ora e 27 minuti (14,80 €); in più 5 € di tassa di sbarco."
+  stato: confermato
+  fonti: [tp-caremar-tariffe, tp-caremar-partenze]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ischia-orari
+  testo: "Castello Aragonese: tutti i giorni dalle 9:00 al tramonto; l'ultimo biglietto un'ora e mezza prima."
+  stato: confermato
+  fonti: [tp-ischia-castello]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ischia-prezzi
+  testo: "Castello Aragonese: 15 €; 12 € sopra i 70 anni; 6 € dai 10 ai 18 anni; gratis fino a 9 anni."
+  stato: confermato
+  fonti: [tp-ischia-castello]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-ischia-viaggio
+  testo: "Con Caremar: aliscafo dal Molo Beverello in 60–65 minuti (21,60 € a persona, sola andata) o traghetto da Calata Porta di Massa in 1 ora e 35 minuti (14,80 €)."
+  stato: confermato
+  fonti: [tp-caremar-tariffe, tp-caremar-partenze]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-procida-viaggio
+  testo: "Con Caremar: aliscafo dal Molo Beverello in 35–40 minuti (17,40 € a persona, sola andata) o traghetto da Calata Porta di Massa in un'ora (12,70 €); in più 3,50 € di tassa di sbarco."
+  stato: confermato
+  fonti: [tp-caremar-tariffe, tp-caremar-partenze]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30
+
+- id: tp-isole-2027
+  testo: "Gli orari estivi 2027 dei traghetti, con le ultime corse per tornare a Napoli, non sono ancora usciti."
+  stato: atteso
+  fonti: [tp-caremar-orari]
+  controllato: 2026-10-02
+  ricontrollare: 2027-04-30

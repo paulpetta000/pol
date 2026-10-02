@@ -1,9 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import PageHead from '../components/PageHead.astro';
-import { SITO } from '../config/sito';
+import { SITO, ITINERARI_ONLINE } from '../config/sito';
 import { getCollection } from 'astro:content';
-const foto = await getCollection('foto');
+// le foto degli itinerari (id «tp-») compaiono qui solo quando la pagina degli itinerari è online
+const foto = (await getCollection('foto')).filter(f => ITINERARI_ONLINE || !f.id.startsWith('tp-'));
 const t = SITO.titolare;
 ---
 <Base title="Note legali" description={`Note legali di ${SITO.nome}, guida non ufficiale all'America's Cup di Napoli 2027: sito indipendente, marchi dei rispettivi titolari, fonti, foto e mappe con licenza libera.`}>

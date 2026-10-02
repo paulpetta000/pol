@@ -1,4 +1,9 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
+import { ITINERARI_ONLINE } from '../config/sito';
+
+// Schede, fonti e foto degli itinerari (id «tp-»): restano fuori dagli elenchi generali (Fonti, Note legali)
+// finché la pagina degli itinerari non è online
+export const soloItinerari = (id: string) => !ITINERARI_ONLINE && id.startsWith('tp-');
 
 export type Fonte = CollectionEntry<'fonti'>;
 export type Fatto = CollectionEntry<'fatti'> & { fontiRisolte: Fonte[] };
