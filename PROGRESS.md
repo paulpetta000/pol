@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 02/10/2026 (Rilascio 3, blocco 1 finito e in attesa della tua revisione: vedi «Rilascio 3 · Blocco 1»)_
+_Ultimo aggiornamento: 03/10/2026 (Rilascio 3, blocco 1 finito e approvato, portato su `main`: vedi «Rilascio 3 · Blocco 1»; prossimo, blocco 2)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -99,7 +99,7 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
-## Rilascio 3 · Blocco 1 (02/10/2026): finito, in attesa della tua revisione
+## Rilascio 3 · Blocco 1 (02–03/10/2026): finito, approvato e su `main`
 Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia (controllato: tutte le pagine costruite sono identiche a prima; cambiano solo le date di generazione dei calendari .ics e ci sono le 34 foto delle tappe, non usate da nessuna pagina).
 
 **Fatto nella seconda sessione (02/10/2026)**
@@ -116,8 +116,12 @@ Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pu
 - Corretti due script che su Windows non trovavano le cartelle (`npm run testi:firma` e `npm run check:links`).
 - Nuovo pacchetto di sviluppo: `geotiff` (lettura delle quote Copernicus).
 
-**Da decidere con te**
-- Quale proposta (A o B) e cosa cambiare. Se lo stile nuovo va bene anche per il resto del sito, se ne può parlare nel blocco 3.
+**Decisione del 03/10/2026: scelta la proposta B «Orario», corretta (bozzetti aggiornati in `design/itinerari/`, schermate b1–b5)**
+- Tienila come base della pagina: la giornata con gli orari a sinistra di ogni tappa, tempi e mezzi tra una tappa e l'altra, pannello «Aggiungi una tappa» con le tappe vicine all'ultima e i minuti per arrivarci, riga di fine giornata che taglia la tappa che sfora, giorni 1/2/+ in alto, vista Giornata/Mappa.
+- **Cambiamenti chiesti da te rispetto a B**: niente linea con i pallini tipo fermata (l'ora è solo scritta a sinistra); le **foto** delle tappe, nelle schede e nell'elenco per aggiungere; le **piastrelle gialle quadrate e un po' arrotondate** di A, numerate, sulla foto di ogni tappa, nel riepilogo e sulla mappa, **piccole** (non devono coprire la mappa); il **+ per aggiungere sobrio** (bordo grigio, non giallo); **il giallo solo sulle piastrelle** e sulla riga della fine giornata; pulsanti principali neri (bianchi nello scuro).
+- Non sei del tutto sicuro: puoi cambiare idea o ritoccare man mano, anche durante il blocco 2. Lo stile «Regata» non va seguito: il nuovo stile (caratteri Barlow e Barlow Semi Condensed, nero, giallo e grigi) vale per la pagina degli itinerari; se piace, se ne parla per il resto del sito nel blocco 3.
+- **Posto nel menu**: dentro «Napoli», in una pagina tutta sua (nessuna voce nuova nel menu). **Itinerari pronti**: mezza giornata, 1, 2 e 3 giorni in città; le gite (Pompei, Ercolano, Vesuvio, Capri, Ischia, Procida) restano giornate intere a parte.
+- Da ricordare per il blocco 2: la proposta A aveva anche «Cambia l'ordine» (maniglia e frecce): nella pagina servono maniglia e pulsanti Su/Giù per chi usa tastiera e lettore di schermo.
 
 **Da sapere**
 - Gli autobus non sono nei tempi: Marechiaro, Gaiola e Parco Virgiliano risultano molto lontani a piedi (da Mergellina a Marechiaro circa un'ora e mezza); nei testi consigliamo bus o taxi.
@@ -158,7 +162,7 @@ Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pu
 
 ## Prossima sessione
 Il Rilascio 3 è diviso in **3 blocchi, uno per sessione**, con un prompt pronto per ciascuno:
-1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**finito il 02/10/2026, in attesa della tua revisione**: vedi la sezione qui sopra). Dopo il tuo OK: scrivere qui la proposta scelta e le modifiche, portare il ramo `claude/itinerari-blocco-1` su `main` (sono dati, script e bozzetti: il sito pubblico non cambia) e dire quali skill accendere per il blocco 2. Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
+1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**finito e approvato il 03/10/2026, portato su `main`**: vedi la sezione qui sopra. Per partire con il blocco 2: sessione nuova con il testo di `PROMPT-BLOCCO-2.md`). Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
 2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina**: il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
 3. `PROMPT-BLOCCO-3.md` · **il sito più ordinato**: controllo di coerenza e le 7 proposte del 01/10/2026 (pagine più corte, «In breve», home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui.
 

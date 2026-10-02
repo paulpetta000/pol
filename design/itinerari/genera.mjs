@@ -579,6 +579,37 @@ const cssB = `
 .pb .legenda span { display: inline-flex; align-items: center; gap: 6px; }
 .pb .legenda i { width: 22px; height: 0; border-top: 4px dotted var(--ink); }
 .pb .legenda i.f { border-top: 5px solid var(--funi); }
+/* ---- B con le richieste: niente linea con le fermate, giallo solo sulle piastrelle ---- */
+.pb { --tile: #F3C431; --tile-ink: #000; --tile-edge: #C99A12; }
+[data-theme="dark"] .pb { --tile: #F5CC48; --tile-ink: #000; --tile-edge: #B88A10; }
+.pb .piastrella { display: grid; place-items: center; border-radius: 6px; background: var(--tile); color: var(--tile-ink); font: 600 17px/1 var(--f-titoli); font-variant-numeric: tabular-nums; box-shadow: inset 0 0 0 2px color-mix(in srgb, var(--tile) 55%, #fff), inset 0 0 0 3px var(--tile-edge); }
+.pb .piastrella--piccola { width: 26px; height: 26px; border-radius: 5px; font-size: 15px; }
+.pb .riga-l { grid-template-columns: 56px 1fr; }
+.pb .vuoto-l .riga-l { grid-template-columns: 56px 24px 1fr; }
+.pb .binario::before { display: none; }
+.pb .vuoto-l .binario::before { display: block; }
+.pb .ora { padding-top: 14px; }
+.pb .blocco { margin: 4px 0; grid-template-columns: 56px 1fr 44px; gap: 8px; align-items: start; }
+.pb .blocco__foto { position: relative; width: 56px; height: 56px; }
+.pb .blocco__foto img, .pb .senza-foto { display: block; width: 56px; height: 56px; border-radius: 8px; object-fit: cover; background: var(--surface-2); }
+.pb .blocco__foto .piastrella { position: absolute; left: -6px; top: -6px; }
+.pb .tratto-txt { margin-left: 4px; padding-left: 10px; border-left: 3px solid var(--line-strong); }
+.pb .tratto-l.funi .tratto-txt { border-left: 5px solid var(--funi); }
+.pb .tratto-l.metro .tratto-txt { border-left: 5px solid var(--metro); }
+.pb .tratto-l .binario { display: none; }
+.pb .avviso { margin: 4px 0 8px; }
+.pb .blocco__oltre { grid-column: 1 / -1; }
+.pb .giallo { background: var(--ink); color: var(--canvas); border-color: var(--ink); }
+[data-theme="dark"] .pb .giallo { border-color: var(--ink); }
+.pb .orario .vista button[aria-pressed="true"] { background: var(--canvas); color: var(--ink); }
+[data-theme="dark"] .pb .orario .vista button[aria-pressed="true"] { background: var(--ink); color: var(--canvas); }
+.pb .scelta { grid-template-columns: 56px 1fr 44px; padding: 10px 8px 10px 12px; }
+.pb .scelta .senza-foto, .pb .scelta img { width: 56px; height: 56px; border-radius: 8px; object-fit: cover; background: var(--surface-2); display: block; }
+.pb .scelta__meta b { font-weight: 600; color: var(--ink); }
+.pb .scelta .ib { border: 2px solid var(--line-strong); background: var(--surface); color: var(--ink); border-radius: 8px; }
+.pb .riassunto-r b.piastrella { border: 0; border-radius: 5px; background: var(--tile); color: var(--tile-ink); }
+[data-theme="dark"] .pb .scelta .ib { border-color: var(--line-strong); }
+.pb .limite .ora { color: var(--warn); }
 `;
 
 function testaB() {
@@ -589,6 +620,7 @@ function titoloB(giorno, g, vista = 'giornata') {
     <div class="sotto"><span>${giorno === 1 ? 'Giovedì 15 luglio' : 'Venerdì 16 luglio'} · dalle 9:30 alle ${ora(FINE_SCELTA)}</span><button>Cambia</button></div>
     ${g ? `<div class="orario"><div><strong>${ora(g.inizio)} → ${ora(g.fine)}</strong><br><span>${g.n} tappe · ${durata(g.spostamenti)} di spostamenti</span></div><div class="vista" role="group" aria-label="Vista"><button aria-pressed="${vista === 'giornata'}" aria-label="Giornata">${icona('lista', 22)}</button><button aria-pressed="${vista === 'mappa'}" aria-label="Mappa">${icona('mappa', 22)}</button></div></div>` : ''}`;
 }
+const fotoB = id => (foto(id) ? `<img src="${foto(id)}" alt="">` : '<span class="senza-foto"></span>');
 function lineaB(g, { lontano, scelto, pieno, da = 0, a = 99 } = {}) {
   let n = 0, html = '';
   for (const v of g.voci) {
@@ -597,7 +629,7 @@ function lineaB(g, { lontano, scelto, pieno, da = 0, a = 99 } = {}) {
     if (pos < da || pos > a) continue;
     if (v.tipo === 'tratto') {
       const cl = v.mezzi.includes('FA') || v.mezzi.includes('FB') || v.mezzi.includes('FD') ? ' funi' : v.mezzi.length ? ' metro' : '';
-      html += `<div class="riga-l tratto-l${cl}"><span class="ora"></span><span class="binario"></span><div class="tratto-txt">${v.mezzi.length ? iconaMezzo(v.mezzi[0]) : icona('piedi', 18)}<span>${testoTratto(v)}</span></div></div>`;
+      html += `<div class="riga-l tratto-l${cl}"><span class="ora"></span><div class="tratto-txt">${v.mezzi.length ? iconaMezzo(v.mezzi[0]) : icona('piedi', 18)}<span>${testoTratto(v)}</span></div></div>`;
       continue;
     }
     const taglia = pieno && v.fine > FINE_SCELTA;
@@ -606,21 +638,21 @@ function lineaB(g, { lontano, scelto, pieno, da = 0, a = 99 } = {}) {
     const nota = v.id === 'tribunali' ? 'Pranzo: pizza a portafoglio e fritti' : v.id === 'pedamentina' ? 'In discesa, fino a Corso Vittorio Emanuele' : '';
     const azioni = v.id === scelto ? `<div class="blocco__azioni"><button aria-label="Sposta su">${icona('su', 20)}Su</button><button aria-label="Sposta giù">${icona('giu', 20)}Giù</button><button class="togli">${icona('x', 20)}Togli</button></div>` : '';
     const oltre = taglia ? `<div class="blocco__limite" aria-hidden="true"></div><div class="blocco__oltre"><b>${ora(FINE_SCELTA)}</b> fine della giornata: da qui sei ${v.fine - Math.max(v.inizio, FINE_SCELTA)} minuti oltre</div>` : '';
-    html += `<div class="riga-l"><span class="ora">${ora(v.inizio)}</span><span class="binario"><span class="fermata"></span></span><div class="blocco${cl}${taglia ? ' blocco--oltre' : ''}"><div><div class="blocco__nome">${t.nome}</div><div class="blocco__meta">${durata(t.durata)}, fino alle ${ora(v.fine)}</div>${nota ? `<div class="blocco__nota">${nota}</div>` : ''}</div><button class="ib" aria-label="Trascina ${nome(v.id)}">${icona('maniglia')}</button>${oltre}${azioni}</div></div>`;
+    html += `<div class="riga-l"><span class="ora">${ora(v.inizio)}</span><div class="blocco${cl}${taglia ? ' blocco--oltre' : ''}"><div class="blocco__foto">${fotoB(v.id)}<span class="piastrella piastrella--piccola">${n}</span></div><div><div class="blocco__nome">${t.nome}</div><div class="blocco__meta">${durata(t.durata)} · fino alle ${ora(v.fine)}</div>${nota ? `<div class="blocco__nota">${nota}</div>` : ''}</div><button class="ib" aria-label="Trascina ${nome(v.id)}">${icona('maniglia')}</button>${oltre}${azioni}</div></div>`;
     if (v.id === lontano) {
-      html += `<div class="riga-l"><span class="ora"></span><span class="binario"></span><div class="avviso" role="status"><div class="avviso__titolo">${icona('attenzione', 20)}<span>${nome(v.id)} è lontana dalle altre tappe</span></div><p>Circa 40 minuti in più tra andata e ritorno. Vuoi metterla in un altro giorno?</p><div class="avviso__azioni"><button class="giallo">Sposta nel giorno 2</button><button class="contorno">Lascia qui</button></div></div></div>`;
+      html += `<div class="riga-l"><span class="ora"></span><div class="avviso" role="status"><div class="avviso__titolo">${icona('attenzione', 20)}<span>${nome(v.id)} è lontana dalle altre tappe</span></div><p>Circa 40 minuti in più tra andata e ritorno. Vuoi metterla in un altro giorno?</p><div class="avviso__azioni"><button class="giallo">Sposta nel giorno 2</button><button class="contorno">Lascia qui</button></div></div></div>`;
     }
   }
   return `<div class="linea">${html}</div>`;
 }
 function mappaB(ids) {
   const R = riquadro(ids, 390 / 400, 0.1);
-  const { pos, s, trattini } = marcatori(ids, R, 28, 390);
+  const { pos, s, trattini } = marcatori(ids, R, 24, 390);
   const u = R.w / 390;
   const linee = pezzi(ids).map(p => p.modo === 'piedi'
     ? `<path class="m-giro-c" style="stroke-width:${(9 * u).toFixed(2)}" d="${proietta(p.punti)}"/><path class="m-giro" style="stroke-width:${(4 * u).toFixed(2)};stroke-dasharray:.1 ${(7 * u).toFixed(2)}" d="${proietta(p.punti)}"/>`
     : `<path class="m-giro-c" style="stroke-width:${(10 * u).toFixed(2)}" d="${proietta(p.punti)}"/><path class="${p.modo.startsWith('F') ? 'm-funi' : 'm-metro'}" style="stroke-width:${(6 * u).toFixed(2)}" d="${proietta(p.punti)}"/>`).join('');
-  const segni = pos.map((p, k) => `<g><circle cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="${(s / 2 - 2 * u).toFixed(1)}" fill="var(--surface)" stroke="var(--ink)" stroke-width="${(4 * u).toFixed(2)}"/><text x="${p.x.toFixed(1)}" y="${(p.y + s * 0.2).toFixed(1)}" text-anchor="middle" font-family="Barlow Semi Condensed, sans-serif" font-weight="600" font-size="${(s * 0.56).toFixed(1)}" fill="var(--ink)">${k + 1}</text></g>`).join('');
+  const segni = pos.map((p, k) => { const x = p.x - s / 2, y = p.y - s / 2; return `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)})"><rect width="${s.toFixed(1)}" height="${s.toFixed(1)}" rx="${(s * 0.2).toFixed(1)}" fill="var(--tile)" stroke="var(--tile-edge)" stroke-width="${(1.5 * u).toFixed(2)}"/><rect x="${(s * 0.1).toFixed(1)}" y="${(s * 0.1).toFixed(1)}" width="${(s * 0.8).toFixed(1)}" height="${(s * 0.8).toFixed(1)}" rx="${(s * 0.12).toFixed(1)}" fill="none" stroke="color-mix(in srgb, var(--tile) 55%, #fff)" stroke-width="${(1.5 * u).toFixed(2)}"/><text x="${(s / 2).toFixed(1)}" y="${(s * 0.72).toFixed(1)}" text-anchor="middle" font-family="Barlow Semi Condensed, sans-serif" font-weight="600" font-size="${(s * 0.62).toFixed(1)}" fill="var(--tile-ink)">${k + 1}</text></g>`; }).join('');
   return `<div class="mappa"><svg viewBox="${R.vb}" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Mappa del giorno 1: ${ids.length} tappe collegate nell'ordine"><rect class="m-sfondo" x="0" y="0" width="${MAPPA.w}" height="${MAPPA.h}"/>${baseMappa}${linee}<g style="stroke-width:${(1.5 * u).toFixed(2)}">${trattini}</g>${segni}</svg></div>`;
 }
 
@@ -637,7 +669,7 @@ function schermiB() {
       <div class="pannello__testa"><h2>Aggiungi una tappa</h2><button class="ib" aria-label="Chiudi">${icona('x')}</button></div>
       <div class="cerca" role="search" aria-label="Cerca una tappa">${icona('cerca', 20)}<span>Cerca una tappa</span></div>
       <div class="filtri"><button class="filtro" aria-pressed="true">Vicine</button><button class="filtro" aria-pressed="false">Al chiuso</button><button class="filtro" aria-pressed="false">Gratis</button><button class="filtro" aria-pressed="false">Con i bambini</button></div>
-      <div class="elenco"><div class="elenco__testa">Vicine all'ultima tappa, ${nome(ultimo)}</div>${vicine.map(v => `<div class="scelta"><div class="scelta__dist">${v.min < 1 ? 'qui' : v.min}<small>${v.min < 1 ? 'accanto' : 'min'}</small></div><div><div class="scelta__nome">${tappa(v.id).nome}</div><div class="scelta__meta">${meta(v.id)}</div>${avvisoGiorni(v.id) ? `<div class="scelta__chiuso">${avvisoGiorni(v.id)}</div>` : ''}</div><button class="ib" aria-label="Aggiungi ${nome(v.id)} dopo ${nome(ultimo)}">${icona('piu')}</button></div>`).join('')}</div>
+      <div class="elenco"><div class="elenco__testa">Vicine all'ultima tappa, ${nome(ultimo)}</div>${vicine.map(v => `<div class="scelta">${fotoB(v.id)}<div><div class="scelta__nome">${tappa(v.id).nome}</div><div class="scelta__meta"><b>${v.min < 1 ? 'Accanto' : v.min + ' min'}</b> · ${meta(v.id)}</div>${avvisoGiorni(v.id) ? `<div class="scelta__chiuso">${avvisoGiorni(v.id)}</div>` : ''}</div><button class="ib" aria-label="Aggiungi ${nome(v.id)} dopo ${nome(ultimo)}">${icona('piu')}</button></div>`).join('')}</div>
     </div></section>`;
   // B2 · la giornata con l'avviso «è lontana» e i comandi della tappa scelta
   const b2 = `<section class="tel pb" id="b2">${testaB()}${titoloB(1, gl)}${lineaB(gl, { lontano: 'floridiana', scelto: 'floridiana', da: 3.5, a: 5 })}
@@ -663,7 +695,7 @@ function schermiB() {
   const b5 = `<section class="tel pb" id="b5">${testaB()}${titoloB(1, g, 'mappa')}
     ${mappaB(G1)}
     <div class="legenda"><span><i></i>a piedi</span><span><i class="f"></i>Funicolare Centrale</span></div>
-    <div class="riassunto">${tappeG.slice(0, 4).map((v, k) => `<div class="riassunto-r"><b>${k + 1}</b><span>${ora(v.inizio)}</span><span>${tappa(v.id).nome}</span></div>`).join('')}</div></section>`;
+    <div class="riassunto">${tappeG.slice(0, 4).map((v, k) => `<div class="riassunto-r"><b class="piastrella piastrella--piccola">${k + 1}</b><span>${ora(v.inizio)}</span><span>${tappa(v.id).nome}</span></div>`).join('')}</div></section>`;
   return [b1, b2, b3, b4, b5].join('\n');
 }
 
