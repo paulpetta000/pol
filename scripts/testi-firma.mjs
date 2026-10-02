@@ -4,9 +4,11 @@
 import { readFileSync, writeFileSync, readdirSync } from 'node:fs';
 import { join, relative, sep } from 'node:path';
 import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 
-const radice = new URL('..', import.meta.url).pathname;
+// fileURLToPath: funziona anche su Windows (con .pathname il percorso diventa «/C:/…»)
+const radice = fileURLToPath(new URL('..', import.meta.url));
 const cartella = join(radice, 'src/testi');
 const uscita = join(cartella, 'firme.json');
 

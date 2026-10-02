@@ -1,10 +1,12 @@
 // Controlla i link interni del sito già costruito: ogni href, src e srcset che comincia con "/"
 // deve portare a un file in dist/. Uso: npm run build && npm run check:links
+import { fileURLToPath } from 'node:url';
 import { readFileSync, existsSync, statSync } from 'node:fs';
 import { readdir } from 'node:fs/promises';
 import { join, relative } from 'node:path';
 
-const DIST = new URL('../dist/', import.meta.url).pathname;
+// fileURLToPath: funziona anche su Windows (con .pathname il percorso diventa «/C:/…»)
+const DIST = fileURLToPath(new URL('../dist/', import.meta.url));
 if (!existsSync(DIST)) { console.error('Manca dist/: esegui prima npm run build'); process.exit(1); }
 
 const esiste = u => {
