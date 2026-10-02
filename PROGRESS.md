@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 01/10/2026 (Rilascio 2.2 pubblicato)_
+_Ultimo aggiornamento: 02/10/2026 (Rilascio 3, blocco 1 a metà: ricerca fatta, vedi «Rilascio 3 · Blocco 1 in corso»)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -99,9 +99,41 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
+## Rilascio 3 · Blocco 1 in corso (02/10/2026)
+Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia.
+
+**Deciso con te il 02/10/2026**
+- Gli itinerari stanno dentro «Napoli», in una pagina tutta loro: niente voce nuova nel menu.
+- Itinerari pronti: mezza giornata, 1, 2 e 3 giorni in città. Le gite fuori città (Pompei, Ercolano, Vesuvio, Capri, Ischia, Procida) restano a parte.
+
+**Fatto**
+- **Ricerca su orari, chiusure, prezzi e prenotazioni** (deep-research, 7 gruppi di luoghi più i trasporti, fonti ufficiali lette il 02/10/2026): riassunto con le tabelle in `ricerca/2026-10-02-itinerari-orari-prezzi.md`, note complete con le citazioni in `ricerca/2026-10-02-itinerari-note/`. Nessun ente ha ancora pubblicato il 2027: valgono gli orari di oggi, da ricontrollare nella primavera 2027.
+- Cose che cambiano l'elenco delle tappe:
+  - chiusi senza data di riapertura: **Castel dell'Ovo** e **Pausilypon con la Grotta di Seiano** (dal 1° ottobre 2026);
+  - chiusi fino a circa febbraio 2027: **Pontile Nord di Bagnoli** e **funicolare di Montesanto**;
+  - aperti solo in parte: **Parco Virgiliano** (lavori fino al 2027) e **Parco delle Tombe di Virgilio e Leopardi** a Piedigrotta;
+  - **Linea 2** ferma a Campi Flegrei e **Cumana** ferma a Bagnoli dopo i terremoti del 2026; **Campania Express** sospeso; **Linea 6** il sabato e la domenica solo fino alle 14:50;
+  - prenotazione obbligatoria: Cappella Sansevero, Catacombe, Fontanelle, Galleria Borbonica, spiaggia della Gaiola (maggio-settembre), Gran Cono del Vesuvio. Pompei: biglietti nominativi, al massimo 20.000 ingressi al giorno;
+  - giorni di chiusura: martedì (MANN, Sansevero, Madre, musei del Vomero, Tombe di Virgilio e Leopardi), mercoledì (Capodimonte, Palazzo Reale, Catacombe, Fontanelle), domenica (Castel Nuovo).
+- **Strumenti sul PC**: Node.js 24 (versione stabile) in `C:\Users\Windows11\tools\node-v24.21.0-win-x64`, senza cambiare le impostazioni di Windows; pacchetti installati (`npm ci`), build di prova riuscita. Per immagini e controlli si usa Chrome, già installato.
+
+**Da fare nel blocco 1**
+1. **Tappe** in `src/data/tappe.yaml` (circa 33 in città più le 6 gite), con orari e prezzi come schede in `fatti.yaml` (data «da ricontrollare»), fonti in `fonti.yaml`, foto da Wikimedia Commons, testi in `src/testi/tappe.yaml`. Prima rivedere l'elenco per le chiusure qui sopra.
+2. **Distanze**: script in `scripts/itinerari/` sulle strade e sulle scale di OpenStreetMap, con le salite (quote Copernicus a 30 m, dati aperti) e con metro, funicolari e ascensori, tenendo conto delle interruzioni del 2026. Almeno 5 controlli a campione.
+3. **Due proposte di design** come immagini da telefono, in chiaro e in scuro: serve VectorLab UI/UX Skills.
+4. Fermarsi e mandarti tabella delle tappe, controlli delle distanze e immagini.
+
+**Da sapere per non cambiare il sito pubblico**
+- Le pagine Fonti (`src/pages/fonti.astro`) e Note legali (`src/pages/note-legali.astro`) elencano tutte le fonti, le schede e le foto: quelle nuove degli itinerari vanno nascoste lì finché la pagina degli itinerari non è online.
+- I controlli dei testi (`src/lib/testi.ts`) partono solo quando una pagina li carica: per controllare i testi delle tappe già nel blocco 1 serve un modo che non crei pagine nuove.
+
+**Skill, situazione del 02/10/2026**
+- Per il blocco 1 servono deep-research (dal tuo account, attiva), frontend-design (copia nel progetto e plugin) e VectorLab UI/UX Skills (plugin).
+- Plugin installati nell'app desktop, trovati sul PC: frontend-design, modern-web-guidance (installato due volte), consistent-ui, VectorLab UI/UX Skills (aggiornato: ora 8 skill, tra cui audit, visual-taste e animation) e **Design di Anthropic, ancora installato**. La sessione «fork» del 02/10/2026 non li vedeva: controllarli in una sessione nuova.
+
 ## Prossima sessione
 Il Rilascio 3 è diviso in **3 blocchi, uno per sessione**, con un prompt pronto per ciascuno:
-1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design**: le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
+1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**a metà**: vedi la sezione qui sopra). Per riprendere: sessione nuova in locale nella cartella `pol`, ramo `claude/itinerari-blocco-1`, con il messaggio «Leggi PROGRESS.md e PROMPT-BLOCCO-1.md e continua il blocco 1 da dove si è fermato». Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
 2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina**: il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
 3. `PROMPT-BLOCCO-3.md` · **il sito più ordinato**: controllo di coerenza e le 7 proposte del 01/10/2026 (pagine più corte, «In breve», home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui.
 
