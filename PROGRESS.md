@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 02/10/2026 (Rilascio 3, blocco 1 a metà: ricerca fatta, vedi «Rilascio 3 · Blocco 1 in corso»)_
+_Ultimo aggiornamento: 02/10/2026 (Rilascio 3, blocco 1 finito e in attesa della tua revisione: vedi «Rilascio 3 · Blocco 1»)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -99,8 +99,33 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
-## Rilascio 3 · Blocco 1 in corso (02/10/2026)
-Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia.
+## Rilascio 3 · Blocco 1 (02/10/2026): finito, in attesa della tua revisione
+Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia (controllato: tutte le pagine costruite sono identiche a prima; cambiano solo le date di generazione dei calendari .ics e ci sono le 34 foto delle tappe, non usate da nessuna pagina).
+
+**Fatto nella seconda sessione (02/10/2026)**
+- **Tappe** in `src/data/tappe.yaml`: 33 in città (centro storico 10, Toledo e Plebiscito 6, lungomare 4, Vomero 4, Sanità e Capodimonte 4, Posillipo e Bagnoli 5) e 6 gite (Pompei, Ercolano, Vesuvio, Capri, Ischia, Procida). Per ognuna: posizione dell'ingresso da OpenStreetMap, durata, ingresso, prenotazione, giorni di chiusura, al chiuso, gradini, bambini, momento migliore. Tabella completa: `ricerca/2026-10-02-itinerari-tappe.md`.
+- **Tolte** per chiusura: Castel dell'Ovo (resta il Borgo Marinari), Pausilypon, Pontile Nord, Orto Botanico (pagina ufficiale irraggiungibile), Largo Maradona (cantiere senza date). Segnate «in parte chiuse»: Tombe di Virgilio e Leopardi, Parco Virgiliano; il castello del Borgo Marinari.
+- **83 schede** `tp-…` in `fatti.yaml` (orari, prezzi, viaggi delle gite, avvisi), da ricontrollare entro il 30/04/2027; **81 fonti** `tp-…` in `fonti.yaml`; **34 foto** di Wikimedia Commons (`tp-…` in `foto.yaml`, file in `src/assets/foto/`), più 3 foto già del sito. Senza foto: Cappella Sansevero (dentro non si fotografa) e Pedamentina.
+- **Testi brevi** di tutte le 39 tappe in `src/testi/tappe.yaml`, con i controlli e le firme come le altre pagine. Dati incerti segnati: orari delle chiese di Spaccanapoli (siti non ufficiali), ingresso gratuito alle Tombe di Virgilio (2025), ZTL di Marechiaro (2026), orario estivo di Città della Scienza e traghetti 2027 (non ancora usciti).
+- **Tempi tra le tappe** in `src/data/tempi-tappe.json` (script `scripts/itinerari/scarica.mjs` e `costruisci.mjs`): a piedi su strade, scale e ascensori di OpenStreetMap, con le salite dalle quote Copernicus; con Linea 1, 2 e 6, funicolari Centrale, Chiaia e Mergellina e Cumana fino a Bagnoli. Funicolare di Montesanto chiusa, Linea 2 ferma a Campi Flegrei. Due casi: giorno feriale e domenica pomeriggio, più solo a piedi. **9 controlli a campione** con BRouter e OSRM: distanze uguali (0–3%), salite forti uguali, tempi nostri più prudenti. Metodo e tabella: `ricerca/2026-10-02-itinerari-distanze.md`. La Cumana (16 minuti da Montesanto a Bagnoli, un treno ogni 15 minuti) viene dal tabellone EAV letto il 02/10/2026.
+- **Nascosto finché non è online**: `ITINERARI_ONLINE = false` in `src/config/sito.ts`; le pagine Fonti e Note legali saltano tutto ciò che ha id `tp-`. La build controlla tappe, schede, testi e tempi dalla pagina `/napoli/` (`src/lib/tappe.ts`): se una tappa cambia posizione, chiede di rifare i tempi.
+- **Due proposte di design** (con le skill frontend-design e VectorLab; tu hai detto che non serve restare nello stile «Regata»), bozzetti con i dati veri in `design/itinerari/` (`genera.mjs`, `foto.cjs`, `proposta-a.html`, `proposta-b.html`):
+  - **A «Riggiola»** (schema «Lista»): l'elenco delle tappe è la pagina; l'itinerario sta in un vassoio in basso e si apre a tutto schermo; tappe numerate con piastrelle gialle; riordino con un modo «Cambia l'ordine» (maniglia e frecce). Caratteri Bricolage Grotesque e Atkinson Hyperlegible Next; blu cobalto e giallo limone.
+  - **B «Orario»** (schema «Calendario»): la pagina è la giornata con gli orari, come una linea della metro; spostamenti nei colori dei mezzi; si aggiunge da un pannello che propone le tappe vicine all'ultima; la riga gialla e nera della fine giornata taglia la tappa che sfora. Caratteri Barlow; nero e giallo come i cartelli dei trasporti.
+  - Schermate: elenco, tappa lontana («circa 40 minuti in più tra andata e ritorno»), cambio dell'ordine (A), giornata piena, giorno vuoto con gli itinerari pronti, mappa con i percorsi veri.
+- Corretti due script che su Windows non trovavano le cartelle (`npm run testi:firma` e `npm run check:links`).
+- Nuovo pacchetto di sviluppo: `geotiff` (lettura delle quote Copernicus).
+
+**Da decidere con te**
+- Quale proposta (A o B) e cosa cambiare. Se lo stile nuovo va bene anche per il resto del sito, se ne può parlare nel blocco 3.
+
+**Da sapere**
+- Gli autobus non sono nei tempi: Marechiaro, Gaiola e Parco Virgiliano risultano molto lontani a piedi (da Mergellina a Marechiaro circa un'ora e mezza); nei testi consigliamo bus o taxi.
+- Napoli Sotterranea non pubblica i prezzi sul suo sito: la scheda lo dice.
+- Sul sito pubblico la scheda `echia-ascensore` (orari presi da OpenStreetMap) è diversa da quella del gestore ANM (7–22 tutti i giorni, 1,50 €): da correggere in un prossimo aggiornamento, quando si può cambiare il sito.
+- Su questo PC la build a volte si chiude con un errore di sistema (codice 139): basta rilanciarla.
+
+### Prima sessione del blocco 1 (02/10/2026)
 
 **Deciso con te il 02/10/2026**
 - Gli itinerari stanno dentro «Napoli», in una pagina tutta loro: niente voce nuova nel menu.
@@ -117,7 +142,7 @@ Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pu
   - giorni di chiusura: martedì (MANN, Sansevero, Madre, musei del Vomero, Tombe di Virgilio e Leopardi), mercoledì (Capodimonte, Palazzo Reale, Catacombe, Fontanelle), domenica (Castel Nuovo).
 - **Strumenti sul PC**: Node.js 24 (versione stabile) in `C:\Users\Windows11\tools\node-v24.21.0-win-x64`, senza cambiare le impostazioni di Windows; pacchetti installati (`npm ci`), build di prova riuscita. Per immagini e controlli si usa Chrome, già installato.
 
-**Da fare nel blocco 1**
+**Da fare nel blocco 1** (piano della prima sessione: tutto fatto nella seconda, vedi sopra)
 1. **Tappe** in `src/data/tappe.yaml` (circa 33 in città più le 6 gite), con orari e prezzi come schede in `fatti.yaml` (data «da ricontrollare»), fonti in `fonti.yaml`, foto da Wikimedia Commons, testi in `src/testi/tappe.yaml`. Prima rivedere l'elenco per le chiusure qui sopra.
 2. **Distanze**: script in `scripts/itinerari/` sulle strade e sulle scale di OpenStreetMap, con le salite (quote Copernicus a 30 m, dati aperti) e con metro, funicolari e ascensori, tenendo conto delle interruzioni del 2026. Almeno 5 controlli a campione.
 3. **Due proposte di design** come immagini da telefono, in chiaro e in scuro: serve VectorLab UI/UX Skills.
@@ -133,7 +158,7 @@ Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pu
 
 ## Prossima sessione
 Il Rilascio 3 è diviso in **3 blocchi, uno per sessione**, con un prompt pronto per ciascuno:
-1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**a metà**: vedi la sezione qui sopra). Per riprendere: sessione nuova in locale nella cartella `pol`, ramo `claude/itinerari-blocco-1`, con il messaggio «Leggi PROGRESS.md e PROMPT-BLOCCO-1.md e continua il blocco 1 da dove si è fermato». Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
+1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**finito il 02/10/2026, in attesa della tua revisione**: vedi la sezione qui sopra). Dopo il tuo OK: scrivere qui la proposta scelta e le modifiche, portare il ramo `claude/itinerari-blocco-1` su `main` (sono dati, script e bozzetti: il sito pubblico non cambia) e dire quali skill accendere per il blocco 2. Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
 2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina**: il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
 3. `PROMPT-BLOCCO-3.md` · **il sito più ordinato**: controllo di coerenza e le 7 proposte del 01/10/2026 (pagine più corte, «In breve», home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui.
 
