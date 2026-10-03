@@ -9,7 +9,8 @@ _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.
   - Blocco 1, itinerari, contenuti e design: **finito, su `main`** (39 tappe con fonti, tempi calcolati da noi, design «Orario» scelto).
   - Blocco 2, la pagina `/napoli/itinerari/` con il compositore, la mappa, salvataggio e condivisione: **su `main`, online, da provare sul telefono**.
   - Blocco 3, il sito più ordinato (controllo di coerenza e 7 proposte del 01/10/2026): **da fare**.
-- Rilasci 4 (Lingue) e 5 (Pronostici): da fare, dopo il 3, come da `PIANO.md`. I pronostici vanno finiti almeno un mese prima del 22 maggio 2027.
+- Rilascio 4 (Lingue): da fare, dopo il 3, come da `PIANO.md`.
+- **Rilascio 5 (Pronostici): in attesa, opzionale** (deciso da Enrico il 03/10/2026: non è più sicuro di volerlo fare). Se si rifà, vanno finiti almeno un mese prima del 22 maggio 2027; i testi pronti restano in `PIANO.md`, punto 7.
 
 ## Prossimi passi
 1. Le tue prove sul telefono della pagina itinerari, sul sito pubblico (elenco nell'archivio, sezione «Blocco 2 · Da fare»), e le correzioni che ne vengono.

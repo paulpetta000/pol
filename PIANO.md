@@ -9,7 +9,7 @@ _Fase 1 · scritto il 30/09/2026 · stato: approvato. Rilasci 1 e 2 costruiti e 
 3. **Ogni informazione ha fonte e data di controllo.** Oggi biglietti, tribune, ospitalità e regole per le barche 2027 **non sono ancora usciti**: il sito lo dirà chiaramente e offrirà "Avvisami".
 4. Passiamo ad **Astro**, uno strumento per siti con molte pagine e più lingue. I **risultati 2026** e il **3D** si salvano e migliorano.
 5. **Pubblicazione automatica** da GitHub a Vercel: devi collegarli una volta (5 minuti).
-6. 5 rilasci: Base → Spiegazioni e 3D AC75 → Vivi Napoli → Lingue → Pronostici (ordine deciso il 01/10/2026: i pronostici passano in fondo).
+6. 5 rilasci: Base → Spiegazioni e 3D AC75 → Vivi Napoli → Lingue → Pronostici (ordine deciso il 01/10/2026: i pronostici passano in fondo; **il 03/10/2026 il Rilascio 5 è messo in attesa, opzionale**).
 7. Da te servono: **3 risposte** (stile, nome e dominio, budget), un **avvocato** per marchi e privacy e, più avanti, qualche account gratuito.
 8. Costi: si può restare a **0 €** fino ai link sponsorizzati (Rilascio 3). Da lì Vercel richiede il piano Pro (20 $/mese). Un dominio costa circa 11-20 €/anno.
 9. ⚠️ Da questo ambiente molti siti ufficiali **non si aprono** (blocco di rete). Per ora quindi le informazioni 2027 vengono dai riassunti dei motori di ricerca e **nessuna è ancora "confermata" su pagina aperta**. Qui sotto trovi l'elenco dei link da controllare.
