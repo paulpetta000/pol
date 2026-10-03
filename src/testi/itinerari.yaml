@@ -34,7 +34,7 @@ pronto-regata:
 gite:
   usa: [tp-isole-2027]
   testo: |
-    Pompei, Ercolano, il Vesuvio e le isole occupano una giornata intera: nel compositore diventano un giorno a parte, senza altre tappe. Per le isole controlla le ultime corse per tornare: gli orari dei traghetti dell'estate 2027 non sono ancora usciti{?tp-isole-2027}.
+    Le gite fuori città (Pompei, Ercolano, il Vesuvio, le isole, Caserta, Sorrento e il museo di Pietrarsa) nel compositore diventano un giorno a parte, senza altre tappe: quasi tutte occupano la giornata intera. Per le isole controlla le ultime corse per tornare: gli orari dei traghetti dell'estate 2027 non sono ancora usciti{?tp-isole-2027}.
 
 tempi:
   usa: [trasporti-2027-atteso]

@@ -276,7 +276,7 @@ function avvia() {
 
   function disegnaGita(id: string) {
     const t = tappaDi(C, id)!;
-    gitaBox.innerHTML = `<div class="it-gita"><div class="it-gita__testa"><h3>${esc(t.nome)}</h3><p>Giornata intera · si parte da ${esc(t.partenza ?? '')}</p></div><div class="it-gita__scheda"></div><div class="it-gita__azioni"><button type="button" class="it-btn it-btn--pericolo" data-az="togli-gita">${icona('x', 20)}Togli la gita</button></div></div>`;
+    gitaBox.innerHTML = `<div class="it-gita"><div class="it-gita__testa"><h3>${esc(t.nome)}</h3><p>${t.durata >= 360 ? 'Giornata intera' : 'Mezza giornata'} · si parte da ${esc(t.partenza ?? '')}</p></div><div class="it-gita__scheda"></div><div class="it-gita__azioni"><button type="button" class="it-btn it-btn--pericolo" data-az="togli-gita">${icona('x', 20)}Togli la gita</button></div></div>`;
     gitaBox.querySelector('.it-gita__scheda')!.replaceWith(($<HTMLTemplateElement>(`it-t-${id}`)).content.cloneNode(true));
   }
 

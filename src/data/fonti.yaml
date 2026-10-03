@@ -1288,3 +1288,241 @@
   controllato: 2026-10-02
   letta: true
   nota: "© DLR e.V. 2010-2014 e © Airbus Defence and Space GmbH 2014-2018, fornito sotto il programma Copernicus dall'Unione europea e dall'ESA"
+
+# ---------- Blocco A (03/10/2026): luoghi e gite nuove ----------
+- id: tp-doma-info
+  titolo: "Info e contatti"
+  editore: DOMA · San Domenico Maggiore (Opera San Domenico Maggiore Onlus)
+  url: https://domasandomenicomaggiore.it/info-e-contatti/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-doma-biglietti
+  titolo: "Biglietteria"
+  editore: DOMA · San Domenico Maggiore (Opera San Domenico Maggiore Onlus)
+  url: https://domasandomenicomaggiore.it/biglietteria/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-girolamini
+  titolo: "Apertura e orari dei servizi"
+  editore: Complesso monumentale dei Girolamini (Ministero della Cultura)
+  url: https://girolamini.cultura.gov.it/apertura-e-orari-dei-servizi/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-filangieri
+  titolo: "Museo Civico Gaetano Filangieri, pagina principale (orari)"
+  editore: Museo Civico Gaetano Filangieri
+  url: https://www.museofilangieri.it/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+  nota: "Il servizio di biglietteria online del museo indica invece la chiusura alle 18:00"
+
+- id: tp-purgatorio
+  titolo: "Orari, visite guidate e biglietti"
+  editore: Santa Maria delle Anime del Purgatorio ad Arco
+  url: https://www.purgatorioadarco.it/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-mudd-carbonara
+  titolo: "San Giovanni a Carbonara"
+  editore: MUDD · Museo Diocesano Diffuso di Napoli
+  url: https://www.muddnapoli.it/en/luoghi/san-giovanni-a-carbonara/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+  nota: "Il sito blocca i programmi automatici: la pagina l'ha letta Enrico sul telefono il 3 ottobre 2026"
+
+- id: tp-mudd-tetti
+  titolo: "Tetti della Cattedrale (Cathedral roofs)"
+  editore: MUDD · Museo Diocesano Diffuso di Napoli
+  url: https://www.muddnapoli.it/en/luoghi/cathedral-roofs/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+  nota: "Il sito blocca i programmi automatici: la pagina l'ha letta Enrico sul telefono il 3 ottobre 2026"
+
+- id: tp-tetti-italpress
+  titolo: "Napoli vista dai tetti del Duomo, inaugurato un nuovo percorso di visita"
+  editore: Italpress
+  url: https://www.italpress.com/?p=664594
+  tipo: stampa
+  pubblicato: 2026-03-30
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-villa-pignatelli
+  titolo: "Villa Pignatelli: spazi espositivi e orari"
+  editore: Palazzo Reale di Napoli (Ministero della Cultura)
+  url: https://palazzorealedinapoli.org/sedi/villa-pignatelli/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-mercati-municipalita2
+  titolo: "I mercati di Napoli: Municipalità 2"
+  editore: Comune di Napoli, Servizio Mercati
+  url: https://www.comune.napoli.it/articolo_tematico/commercio-e-artigianato/servizio-mercati/i-mercati-di-napoli/municipalita-2/
+  tipo: ufficiale
+  pubblicato: 2025-06-03
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-fai-donn-anna
+  titolo: "Palazzo Donn'Anna"
+  editore: FAI · Fondo per l'Ambiente Italiano (I Luoghi del Cuore)
+  url: https://fondoambiente.it/luoghi/palazzo-donn-anna
+  tipo: altro
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-parco-camaldoli
+  titolo: "Parco dei Camaldoli"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/parco-dei-camaldoli/
+  tipo: ufficiale
+  pubblicato: 2026-08-12
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-parco-poggio
+  titolo: "Parco del Poggio"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/parco-del-poggio/
+  tipo: ufficiale
+  pubblicato: 2026-08-12
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-parco-mascagna
+  titolo: "Parco Mascagna"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/parco-mascagna/
+  tipo: ufficiale
+  pubblicato: 2026-08-12
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-parco-ventaglieri
+  titolo: "Parco Ventaglieri"
+  editore: Comune di Napoli
+  url: https://www.comune.napoli.it/vivere-il-comune/luoghi/parco-ventaglieri/
+  tipo: ufficiale
+  pubblicato: 2024-09-19
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-orto-botanico
+  titolo: "Giorni e orari di apertura"
+  editore: Orto Botanico di Napoli (Università Federico II)
+  url: https://www.ortobotaniconapoli.it/it/visitare/giorni-e-orari-di-apertura.html
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-mostra-oltremare
+  titolo: "Il parco"
+  editore: Mostra d'Oltremare
+  url: https://mostradoltremare.it/il-parco/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+  nota: "La stessa pagina dà due orari di chiusura: 18:00 nella versione per computer, 20:00 in quella per telefono"
+
+- id: tp-caserta-orari
+  titolo: "Orari"
+  editore: Reggia di Caserta (Ministero della Cultura)
+  url: https://reggiadicaserta.cultura.gov.it/orari/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-caserta-biglietti
+  titolo: "Biglietti"
+  editore: Reggia di Caserta (Ministero della Cultura)
+  url: https://reggiadicaserta.cultura.gov.it/biglietti/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-caserta-arrivare
+  titolo: "Come raggiungerci"
+  editore: Reggia di Caserta (Ministero della Cultura)
+  url: https://reggiadicaserta.cultura.gov.it/come-raggiungerci/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: false
+
+- id: tp-pietrarsa-tariffe
+  titolo: "Orari, tariffe e abbonamenti"
+  editore: Fondazione FS Italiane · Museo Nazionale Ferroviario di Pietrarsa
+  url: https://www.fondazionefs.it/it/esplora-il-museo/tariffe-abbonamenti.html
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-pietrarsa-arrivare
+  titolo: "Come arrivare"
+  editore: Fondazione FS Italiane · Museo Nazionale Ferroviario di Pietrarsa
+  url: https://www.fondazionefs.it/it/esplora-il-museo/come-arrivare.html
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: false
+
+- id: tp-eav-l1-orario
+  titolo: "Orario ferrovia L1 Napoli–Sorrento, valido dal 1° ottobre 2026"
+  editore: EAV
+  url: https://www.eavsrl.it/download/orario-ferrovia-l1-napoli-sorrento-valido-dal-1-ottobre-2026/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: false
+  nota: "Letto dall'agente di ricerca il 3 ottobre 2026: il direttissimo impiega circa 72 minuti, gli altri treni circa 77"
+
+- id: tp-sorrento-centro
+  titolo: "Il centro antico della città di Sorrento"
+  editore: Comune di Sorrento
+  url: https://www.comune.sorrento.na.it/it/sezione/cultura-e-turismo/page/il-centro-antico-della-citta-di-sorrento
+  tipo: ufficiale
+  pubblicato: 2025-04-29
+  controllato: 2026-10-03
+  letta: false
+
+- id: tp-correale
+  titolo: "Visita il museo"
+  editore: Museo Correale di Terranova
+  url: https://www.museocorreale.it/visita-il-museo/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+  nota: "La pagina porta ancora l'avviso «Il museo resterà chiuso fino al 23 marzo 2026», ormai passato"
+
+- id: tp-campolieto
+  titolo: "Villa Campolieto"
+  editore: Fondazione Ente Ville Vesuviane
+  url: https://www.villevesuviane.net/le-ville/villa-campolieto/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-villevesuviane-visite
+  titolo: "Visite e biglietti"
+  editore: Fondazione Ente Ville Vesuviane
+  url: https://www.villevesuviane.net/visite/
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true
+
+- id: tp-pietrarsa-visita
+  titolo: "Visita Pietrarsa"
+  editore: Fondazione FS Italiane · Museo Nazionale Ferroviario di Pietrarsa
+  url: https://www.fondazionefs.it/it/esplora-il-museo/visita-pietrarsa.html
+  tipo: ufficiale
+  controllato: 2026-10-03
+  letta: true

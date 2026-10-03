@@ -120,7 +120,7 @@ const tappe = defineCollection({
     // nome corto per la mappa e per la lista dell'itinerario
     breve: z.string().max(22).optional(),
     tipo: z.enum(['citta', 'gita']),
-    zona: z.enum(['centro-storico', 'toledo-plebiscito', 'lungomare', 'vomero', 'sanita-capodimonte', 'posillipo-bagnoli', 'vesuvio', 'isole']),
+    zona: z.enum(['centro-storico', 'toledo-plebiscito', 'lungomare', 'vomero', 'sanita-capodimonte', 'posillipo-bagnoli', 'vesuvio', 'isole', 'dintorni']),
     generi: z.array(z.enum(['museo', 'chiesa', 'sotterraneo', 'archeologia', 'panorama', 'parco', 'passeggiata', 'castello', 'mare', 'cibo', 'teatro'])).min(1),
     lat: z.number(),
     lon: z.number(),

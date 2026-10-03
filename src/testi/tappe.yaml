@@ -192,9 +192,11 @@ pompei:
     La città romana sepolta dal Vesuvio. I biglietti hanno nome, giorno e fascia oraria: la mattina, la più fresca, ha 15.000 posti su 20.000 ed è la prima da comprare. Con la Circumvesuviana da Garibaldi servono almeno 33 minuti. Con il caldo porta acqua e cappello.
 
 ercolano:
-  usa: [tp-ercolano-viaggio, tp-ercolano-prezzi]
+  usa: [tp-ercolano-viaggio, tp-ercolano-prezzi, tp-campolieto]
   testo: |
     Più piccola di Pompei e più facile da girare con il caldo. Con la Circumvesuviana da Garibaldi servono almeno 13 minuti. Si entra gratis la prima domenica del mese e il 2 giugno.
+
+    A pochi minuti dagli scavi, sul Miglio d'Oro, c'è Villa Campolieto, una delle ville vesuviane del Settecento: aperta dal lunedì al sabato 9:00–19:00 e la domenica fino alle 14:00, 7 €.
 
 vesuvio:
   usa: [tp-vesuvio-orari, tp-vesuvio-prezzi, tp-vesuvio-viaggio]
@@ -215,3 +217,117 @@ procida:
   usa: [tp-procida-viaggio, tp-isole-2027]
   testo: |
     La più vicina e la meno cara delle tre isole: con l'aliscafo dal Molo Beverello sono 35–40 minuti. Per Terra Murata e l'Abbazia di San Michele non abbiamo trovato orari ufficiali. Gli orari estivi 2027 dei traghetti non sono ancora usciti{?tp-isole-2027}.
+
+# ---------- Blocco A (03/10/2026): centro storico ----------
+san-domenico:
+  usa: [tp-sandomenico-prezzi, tp-sandomenico-orari]
+  testo: |
+    La grande basilica gotica di piazza San Domenico, a due passi dalla Cappella Sansevero. La chiesa è gratuita; la sagrestia, con le arche aragonesi, e la Sala del Tesoro si visitano con la guida, a pagamento. Nei giorni feriali le visite si fermano tra le 13:30 e le 14:30.
+
+purgatorio-ad-arco:
+  usa: [tp-purgatorio-orari, tp-purgatorio-prezzi]
+  testo: |
+    La chiesa di via dei Tribunali legata al culto delle «anime del Purgatorio»: oltre alla chiesa si visitano l'ipogeo, sotto, e un piccolo museo. La domenica chiude alle 14:00. Dal 1° ottobre 2026 il biglietto costa 8 €.
+
+girolamini:
+  usa: [tp-girolamini-orari, tp-girolamini-prezzi]
+  testo: |
+    Una chiesa barocca su via Duomo, con un museo e una biblioteca storica che ha riaperto a settembre 2026. È chiusa il lunedì, e nel fine settimana solo la mattina, fino alle 13:30. La biblioteca ha un biglietto suo e si entra a turni.
+
+tetti-duomo:
+  usa: [tp-tetti-orari, tp-tetti-prezzi]
+  testo: |
+    Un percorso sui tetti della cattedrale, tra le cupole del centro storico: si entra solo prenotando sul sito del MUDD, il museo diffuso della Diocesi. Ci sono molte scale e il percorso non è accessibile a chi ha difficoltà a camminare. Secondo la stampa, all'apertura nel 2026 il biglietto costava 10 €, gratis per chi abita a Napoli{?tp-tetti-prezzi}.
+
+filangieri:
+  usa: [tp-filangieri-orari]
+  testo: |
+    Il museo civico nato dalle raccolte del principe Gaetano Filangieri, a Palazzo Como su via Duomo, con una grande sala circondata da un ballatoio di legno. Il sito del museo dice che è aperto tutti i giorni fino alle 19:00, la biglietteria online fino alle 18:00: meglio non arrivare tardi.
+
+san-giovanni-a-carbonara:
+  usa: [tp-carbonara-orari]
+  fonti: [tp-mudd-carbonara]
+  testo: |
+    Una chiesa gotica poco conosciuta, in cima a una doppia scalinata vicino a Porta Capuana, con il grande monumento funebre del re Ladislao e un pavimento di maioliche del Quattrocento. Aperta tutti i giorni 10:00–17:00, la visita è gratuita; la Sagrestia Vasariana si paga a parte.
+
+mercato-porta-nolana:
+  usa: [tp-mercati-orari]
+  testo: |
+    Il mercato del pesce e della frutta intorno a Porta Nolana, una delle porte aragonesi della città, a pochi passi dalla stazione Garibaldi. Il Comune lo indica aperto dalle 7:00 alle 15:00: si va la mattina, quando i banchi sono pieni.
+
+# ---------- Blocco A: Toledo, Chiaia e Vomero ----------
+pignasecca:
+  usa: [tp-mercati-orari]
+  testo: |
+    Il mercato di strada tra via Toledo e Montesanto: frutta, verdura, pesce. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica. Si gira a piedi in mezz'ora.
+
+ventaglieri:
+  usa: [tp-ventaglieri-orari]
+  testo: |
+    Un piccolo parco di quartiere su più livelli, sopra Montesanto, con alberi, pergolati e un campetto. È una sosta all'ombra tra via Toledo e il Vomero. L'orario (7:00–19:30) viene da una pagina del Comune del 2024.
+
+villa-pignatelli:
+  usa: [tp-pignatelli-orari, tp-pignatelli-prezzi]
+  testo: |
+    Una villa dell'Ottocento sulla Riviera di Chiaia, con le stanze arredate e un giardino all'inglese, a due passi dalla Villa Comunale. È chiusa il martedì e chiude alle 17:00. Il prezzo del biglietto non siamo riusciti a verificarlo su una pagina ufficiale.
+
+parco-mascagna:
+  usa: [tp-parchi-orari]
+  testo: |
+    Un giardino tranquillo del Vomero, a pochi minuti da piazza Vanvitelli, per una pausa all'ombra. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+
+camaldoli:
+  usa: [tp-parchi-orari]
+  fonti: [tp-parco-camaldoli]
+  testo: |
+    Un grande bosco sulla collina più alta di Napoli, con sentieri e punti da cui si vede il golfo. È lontano dal centro: conviene andarci la mattina, con scarpe comode. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+
+# ---------- Blocco A: Capodimonte e Foria ----------
+parco-poggio:
+  usa: [tp-parchi-orari]
+  testo: |
+    Un parco su più terrazze ai Colli Aminei, con un laghetto, un piccolo anfiteatro e la vista sul Vesuvio. Si combina bene con il Bosco di Capodimonte. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+
+orto-botanico:
+  usa: [tp-orto-orari]
+  testo: |
+    Il giardino botanico dell'Università, in via Foria, con le serre e un museo. L'ingresso è gratuito, ma apre solo dal lunedì al venerdì e solo la mattina o il primo pomeriggio: chiude alle 14:00, il martedì e il giovedì alle 16:00.
+
+# ---------- Blocco A: Posillipo e Fuorigrotta ----------
+sant-antonio-posillipo:
+  usa: [tp-belvedere-orari]
+  testo: |
+    La terrazza davanti alla chiesa di Sant'Antonio, sopra Mergellina, con il golfo e il Vesuvio di fronte. Si sale a piedi con rampe e scale, oppure con la funicolare di Mergellina. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-sant-antonio-posillipo).
+
+via-petrarca:
+  usa: [tp-belvedere-orari]
+  testo: |
+    La strada panoramica di Posillipo, con il golfo intero sotto di sé. È una strada trafficata: si guarda dagli slarghi panoramici, non dal bordo della carreggiata. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-via-petrarca).
+
+palazzo-donn-anna:
+  usa: [tp-donnanna-orari]
+  testo: |
+    Il palazzo barocco, rimasto incompiuto, che sembra nascere dal mare all'inizio di via Posillipo. È un'abitazione privata e non si visita: si guarda da fuori, passando a piedi o dal mare. Si abbina bene a una passeggiata verso Marechiaro.
+
+mostra-oltremare:
+  usa: [tp-oltremare-orari, tp-oltremare-prezzi]
+  testo: |
+    Il grande parco della Mostra d'Oltremare, a Fuorigrotta, con viali di pini, fontane e la Fontana dell'Esedra. L'ingresso costa 1 €. Apre alle 7:00; per la chiusura il sito ufficiale dà due orari diversi, le 18:00 o le 20:00. Si arriva con la Linea 6 o la Cumana, fermata Mostra.
+
+# ---------- Blocco A: gite ----------
+caserta:
+  usa: [tp-caserta-orari, tp-caserta-viaggio]
+  testo: |
+    La reggia dei Borbone, con gli appartamenti reali e il lungo parco che sale fino alla Grande Cascata. Si arriva in treno da Napoli Centrale: la stazione di Caserta è davanti alla Reggia. È chiusa il martedì. Il parco e il Giardino Inglese chiudono prima degli appartamenti: conviene cominciare da lì.
+
+pietrarsa:
+  usa: [tp-pietrarsa-orari, tp-pietrarsa-viaggio]
+  fonti: [tp-pietrarsa-visita]
+  testo: |
+    Il museo delle ferrovie nelle officine borboniche sul mare, tra Napoli e Portici, dove nacque la prima ferrovia d'Italia, con locomotive e carrozze d'epoca. Basta mezza giornata, ma nel compositore occupa un giorno a parte. Si arriva in treno, fermata Pietrarsa–San Giorgio a Cremano. Chiuso il lunedì.
+
+sorrento:
+  usa: [tp-sorrento-viaggio, tp-correale-orari]
+  testo: |
+    La città sulla costa davanti a Napoli, con il centro antico, piazza Tasso e la vista sul golfo. Con la Circumvesuviana ci vuole circa un'ora e un quarto. Il Museo Correale è chiuso il lunedì; la sua pagina porta ancora un vecchio avviso di chiusura, ormai scaduto.
+

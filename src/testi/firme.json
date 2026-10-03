@@ -662,7 +662,8 @@
   },
   "tappe#ercolano": {
     "tp-ercolano-viaggio": "3009b07dc0",
-    "tp-ercolano-prezzi": "abb7e10d39"
+    "tp-ercolano-prezzi": "abb7e10d39",
+    "tp-campolieto": "49c180cb3f"
   },
   "tappe#vesuvio": {
     "tp-vesuvio-orari": "52e395f806",
@@ -682,6 +683,78 @@
   "tappe#procida": {
     "tp-procida-viaggio": "6d6d80d858",
     "tp-isole-2027": "2eba5fd02a"
+  },
+  "tappe#san-domenico": {
+    "tp-sandomenico-prezzi": "236abfba32",
+    "tp-sandomenico-orari": "0d70b4fea0"
+  },
+  "tappe#purgatorio-ad-arco": {
+    "tp-purgatorio-orari": "1a6a5db811",
+    "tp-purgatorio-prezzi": "8ba613e5d7"
+  },
+  "tappe#girolamini": {
+    "tp-girolamini-orari": "f3f283ac3a",
+    "tp-girolamini-prezzi": "34215f9bf2"
+  },
+  "tappe#tetti-duomo": {
+    "tp-tetti-orari": "3343c0c622",
+    "tp-tetti-prezzi": "45ae30b644"
+  },
+  "tappe#filangieri": {
+    "tp-filangieri-orari": "c0a53f3173"
+  },
+  "tappe#san-giovanni-a-carbonara": {
+    "tp-carbonara-orari": "b7a10cb78d"
+  },
+  "tappe#mercato-porta-nolana": {
+    "tp-mercati-orari": "64478f6a9c"
+  },
+  "tappe#pignasecca": {
+    "tp-mercati-orari": "64478f6a9c"
+  },
+  "tappe#ventaglieri": {
+    "tp-ventaglieri-orari": "afda09b3dc"
+  },
+  "tappe#villa-pignatelli": {
+    "tp-pignatelli-orari": "7d3b1a9c36",
+    "tp-pignatelli-prezzi": "f86db30802"
+  },
+  "tappe#parco-mascagna": {
+    "tp-parchi-orari": "ee2449d896"
+  },
+  "tappe#camaldoli": {
+    "tp-parchi-orari": "ee2449d896"
+  },
+  "tappe#parco-poggio": {
+    "tp-parchi-orari": "ee2449d896"
+  },
+  "tappe#orto-botanico": {
+    "tp-orto-orari": "dc013ec32c"
+  },
+  "tappe#sant-antonio-posillipo": {
+    "tp-belvedere-orari": "94bba85a3a"
+  },
+  "tappe#via-petrarca": {
+    "tp-belvedere-orari": "94bba85a3a"
+  },
+  "tappe#palazzo-donn-anna": {
+    "tp-donnanna-orari": "a6c2b6c6db"
+  },
+  "tappe#mostra-oltremare": {
+    "tp-oltremare-orari": "ebb8c1ff7d",
+    "tp-oltremare-prezzi": "7f65926e3c"
+  },
+  "tappe#caserta": {
+    "tp-caserta-orari": "63861202e7",
+    "tp-caserta-viaggio": "176e03628b"
+  },
+  "tappe#pietrarsa": {
+    "tp-pietrarsa-orari": "1c22f9d2a9",
+    "tp-pietrarsa-viaggio": "3b004977d5"
+  },
+  "tappe#sorrento": {
+    "tp-sorrento-viaggio": "37c5392034",
+    "tp-correale-orari": "c9d50700f3"
   },
   "tv#rai": {
     "tv-rai": "89acd5c9b3",

@@ -1,4 +1,4 @@
-# Tappe degli itinerari (Rilascio 3): 33 in città, da combinare tra loro, e 6 gite che occupano una giornata intera.
+# Tappe degli itinerari (Rilascio 3, ampliate nel blocco A del 03/10/2026): 51 in città, da combinare tra loro, e 9 gite che occupano un giorno a parte.
 #
 # Ogni tappa:
 # - posizione: lat/lon dell'ingresso (da OpenStreetMap, elemento in «osm»). I percorsi a piedi hanno anche
@@ -674,6 +674,336 @@
   momento: mattina
   foto: tp-citta-scienza
 
+# ================= BLOCCO A (03/10/2026): luoghi storici, panoramici e giardini =================
+# Posizioni da OpenStreetMap (ingresso quando c'è). Durate: stime nostre.
+- id: san-domenico
+  nome: "San Domenico Maggiore e le arche aragonesi"
+  breve: "San Domenico"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, museo]
+  lat: 40.84857
+  lon: 14.25437
+  osm: node/2668901046
+  durata: 60
+  orari: tp-sandomenico-orari
+  prezzi: tp-sandomenico-prezzi
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-san-domenico
+
+- id: purgatorio-ad-arco
+  nome: "Purgatorio ad Arco, chiesa e ipogeo"
+  breve: "Purgatorio ad Arco"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, sotterraneo]
+  lat: 40.85064
+  lon: 14.25568
+  osm: way/270097736
+  durata: 45
+  orari: tp-purgatorio-orari
+  prezzi: tp-purgatorio-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-purgatorio
+
+- id: girolamini
+  nome: "Girolamini, chiesa, museo e biblioteca"
+  breve: "Girolamini"
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa, museo]
+  lat: 40.85202
+  lon: 14.25933
+  osm: node/13566196514
+  durata: 60
+  orari: tp-girolamini-orari
+  prezzi: tp-girolamini-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [lun]
+  alChiuso: si
+  bambini: si
+  momento: mattina
+  foto: tp-girolamini
+
+- id: tetti-duomo
+  nome: "I tetti del Duomo"
+  breve: "Tetti del Duomo"
+  tipo: citta
+  zona: centro-storico
+  generi: [panorama, chiesa]
+  lat: 40.85250
+  lon: 14.25890
+  osm: way/122982019
+  durata: 60
+  orari: tp-tetti-orari
+  prezzi: tp-tetti-prezzi
+  ingresso: pagamento
+  prenotazione: obbligatoria
+  alChiuso: no
+  gradini: molti
+  bambini: attenzione
+  momento: quando-vuoi
+
+- id: filangieri
+  nome: "Museo Filangieri"
+  tipo: citta
+  zona: centro-storico
+  generi: [museo]
+  lat: 40.84901
+  lon: 14.26074
+  osm: node/3515649877
+  durata: 60
+  orari: tp-filangieri-orari
+  prezzi: tp-filangieri-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-filangieri
+
+- id: san-giovanni-a-carbonara
+  nome: "San Giovanni a Carbonara"
+  breve: "San Giovanni a Carb."
+  tipo: citta
+  zona: centro-storico
+  generi: [chiesa]
+  lat: 40.85609
+  lon: 14.26011
+  osm: node/13175512358
+  durata: 40
+  orari: tp-carbonara-orari
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: si
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-carbonara
+
+- id: mercato-porta-nolana
+  nome: "Il mercato di Porta Nolana"
+  breve: "Porta Nolana"
+  tipo: citta
+  zona: centro-storico
+  generi: [cibo, passeggiata]
+  lat: 40.85032
+  lon: 14.26788
+  osm: way/253496296
+  durata: 30
+  orari: tp-mercati-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: mattina
+  foto: tp-porta-nolana
+
+- id: pignasecca
+  nome: "Il mercato della Pignasecca"
+  breve: "Pignasecca"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [cibo, passeggiata]
+  lat: 40.84638
+  lon: 14.24760
+  osm: node/3969137393
+  durata: 30
+  orari: tp-mercati-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: mattina
+  foto: tp-pignasecca
+
+- id: ventaglieri
+  nome: "Parco dei Ventaglieri"
+  breve: "Parco Ventaglieri"
+  tipo: citta
+  zona: toledo-plebiscito
+  generi: [parco]
+  lat: 40.84974
+  lon: 14.24431
+  osm: way/112022645
+  durata: 30
+  orari: tp-ventaglieri-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-ventaglieri
+
+- id: villa-pignatelli
+  nome: "Villa Pignatelli, museo e giardino"
+  breve: "Villa Pignatelli"
+  tipo: citta
+  zona: lungomare
+  generi: [museo, parco]
+  lat: 40.83512
+  lon: 14.23352
+  osm: node/4822184243
+  durata: 75
+  orari: tp-pignatelli-orari
+  prezzi: tp-pignatelli-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: in-parte
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-villa-pignatelli
+
+- id: parco-mascagna
+  nome: "Parco Mascagna"
+  tipo: citta
+  zona: vomero
+  generi: [parco]
+  lat: 40.84871
+  lon: 14.22836
+  osm: node/12390543426
+  durata: 30
+  orari: tp-parchi-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: quando-vuoi
+
+- id: camaldoli
+  nome: "Parco dei Camaldoli"
+  breve: "Camaldoli"
+  tipo: citta
+  zona: vomero
+  generi: [parco, panorama]
+  lat: 40.86027
+  lon: 14.19390
+  osm: node/8895814287
+  durata: 90
+  orari: tp-parchi-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  foto: tp-camaldoli
+
+- id: parco-poggio
+  nome: "Parco del Poggio"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [parco, panorama]
+  lat: 40.86680
+  lon: 14.23946
+  osm: way/37346941
+  durata: 45
+  orari: tp-parchi-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: pomeriggio
+  foto: tp-poggio
+
+- id: orto-botanico
+  nome: "Orto Botanico"
+  tipo: citta
+  zona: sanita-capodimonte
+  generi: [parco, museo]
+  lat: 40.86080
+  lon: 14.26360
+  durata: 75
+  orari: tp-orto-orari
+  ingresso: gratis
+  prenotazione: no
+  chiuso: [sab, dom]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  foto: tp-orto-botanico
+
+- id: sant-antonio-posillipo
+  nome: "Il belvedere di Sant'Antonio a Posillipo"
+  breve: "Sant'Antonio"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [panorama]
+  lat: 40.82807
+  lon: 14.21781
+  durata: 20
+  orari: tp-belvedere-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: pomeriggio
+
+- id: via-petrarca
+  nome: "Il belvedere di via Petrarca"
+  breve: "Via Petrarca"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [panorama]
+  lat: 40.82215
+  lon: 14.21284
+  durata: 20
+  orari: tp-belvedere-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: attenzione
+  momento: pomeriggio
+
+- id: palazzo-donn-anna
+  nome: "Palazzo Donn'Anna, da fuori"
+  breve: "Palazzo Donn'Anna"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [mare, passeggiata]
+  lat: 40.81987
+  lon: 14.21448
+  osm: way/122851274
+  durata: 15
+  orari: tp-donnanna-orari
+  ingresso: gratis
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: quando-vuoi
+  foto: tp-donn-anna
+
+- id: mostra-oltremare
+  nome: "Il parco della Mostra d'Oltremare"
+  breve: "Mostra d'Oltremare"
+  tipo: citta
+  zona: posillipo-bagnoli
+  generi: [parco]
+  lat: 40.82339
+  lon: 14.19270
+  osm: node/13311218433
+  durata: 60
+  orari: tp-oltremare-orari
+  prezzi: tp-oltremare-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  alChiuso: no
+  gradini: no
+  bambini: si
+  momento: mattina
+  foto: tp-mostra-oltremare
+
 # ================= GITE (una giornata intera) =================
 - id: pompei
   nome: "Pompei"
@@ -787,3 +1117,67 @@
   partenza: molo-beverello
   viaggio: tp-procida-viaggio
   foto: tp-procida
+
+# Gite aggiunte nel blocco A (03/10/2026)
+- id: caserta
+  nome: "Reggia di Caserta"
+  breve: "Caserta"
+  tipo: gita
+  zona: dintorni
+  generi: [museo, parco]
+  lat: 41.07316
+  lon: 14.32710
+  osm: relation/1555812
+  durata: 420
+  orari: tp-caserta-orari
+  prezzi: tp-caserta-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [mar]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-caserta-viaggio
+  foto: tp-caserta
+
+- id: pietrarsa
+  nome: "Museo ferroviario di Pietrarsa"
+  breve: "Pietrarsa"
+  tipo: gita
+  zona: vesuvio
+  generi: [museo]
+  lat: 40.82198
+  lon: 14.32033
+  osm: way/1025270923
+  durata: 180
+  orari: tp-pietrarsa-orari
+  prezzi: tp-pietrarsa-prezzi
+  ingresso: pagamento
+  prenotazione: no
+  chiuso: [lun]
+  alChiuso: in-parte
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-pietrarsa-viaggio
+  foto: tp-pietrarsa
+
+- id: sorrento
+  nome: "Sorrento"
+  tipo: gita
+  zona: dintorni
+  generi: [passeggiata, museo]
+  lat: 40.62617
+  lon: 14.37581
+  osm: way/806378057
+  durata: 480
+  orari: tp-correale-orari
+  ingresso: in-parte
+  prenotazione: no
+  alChiuso: no
+  bambini: si
+  momento: mattina
+  partenza: napoli-centrale
+  viaggio: tp-sorrento-viaggio
+  foto: tp-sorrento

@@ -506,3 +506,189 @@
   anno: 2021
   modifiche: "Ridimensionata"
   controllato: 2026-10-02
+
+# ---------- Blocco A (03/10/2026): luoghi e gite nuove ----------
+- id: tp-san-domenico
+  src: ../assets/foto/tp-san-domenico.jpg
+  alt: "La facciata gotica della basilica di San Domenico Maggiore vista dal basso, con il campanile chiaro a destra e una piccola cupola davanti."
+  didascalia: "La basilica di San Domenico Maggiore."
+  autore: Mongolo1984
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Mongolo1984
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Basilica_di_San_Domenico_Maggiore_(Napoli),_facciata_01.jpg
+  anno: 2018
+  controllato: 2026-10-03
+
+- id: tp-girolamini
+  src: ../assets/foto/tp-girolamini.jpg
+  alt: "La facciata barocca in marmo bianco della chiesa dei Girolamini, con due piccoli campanili ai lati, contro il cielo azzurro."
+  didascalia: "La facciata della chiesa dei Girolamini, di Ferdinando Fuga."
+  autore: Wolfgang Moroder
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Moroder
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Chiesa_dei_Girolamini_facciata_di_Ferdinando_Fuga_Napoli.jpg
+  anno: 2016
+  controllato: 2026-10-03
+
+- id: tp-filangieri
+  src: ../assets/foto/tp-filangieri.jpg
+  alt: "La grande sala del Museo Filangieri: pareti piene di quadri, un ballatoio di legno scuro tutto intorno e un pavimento a disegni."
+  didascalia: "Una sala del Museo Civico Gaetano Filangieri, a Palazzo Como."
+  autore: IlSistemone
+  autoreUrl: https://commons.wikimedia.org/wiki/User:IlSistemone
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:FilangieriNaples.jpg
+  anno: 2013
+  controllato: 2026-10-03
+
+- id: tp-purgatorio
+  src: ../assets/foto/tp-purgatorio.jpg
+  alt: "La facciata scura della chiesa del Purgatorio ad Arco vista dal basso, stretta tra i palazzi di via dei Tribunali."
+  didascalia: "Santa Maria delle Anime del Purgatorio ad Arco, in via dei Tribunali."
+  autore: ho visto nina volare
+  autoreUrl: https://www.flickr.com/people/41099823@N00
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_-_Purgatorio_ad_Arco2012.jpg
+  anno: 2012
+  controllato: 2026-10-03
+
+- id: tp-carbonara
+  src: ../assets/foto/tp-carbonara.jpg
+  alt: "La doppia scalinata che sale verso la chiesa di San Giovanni a Carbonara, con la facciata in pietra e un campanile sullo sfondo."
+  didascalia: "La scalinata di San Giovanni a Carbonara."
+  autore: Mongolo1984
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Mongolo1984
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Chiesa_di_San_Giovanni_a_Carbonara_(Napoli),_facciata_01.jpg
+  anno: 2018
+  controllato: 2026-10-03
+
+- id: tp-villa-pignatelli
+  src: ../assets/foto/tp-villa-pignatelli.jpg
+  alt: "Il retro di Villa Pignatelli: un portico bianco con colonne e una tenda a strisce, due statue di cani ai lati della scala, verso il giardino."
+  didascalia: "Villa Pignatelli, il lato verso il giardino."
+  autore: Armando Mancini
+  autoreUrl: https://www.flickr.com/people/13428228@N07
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_-_Villa_Pignatelli5.jpg
+  anno: 2010
+  controllato: 2026-10-03
+
+- id: tp-pignasecca
+  src: ../assets/foto/tp-pignasecca.jpg
+  alt: "Un banco di frutta e verdura sotto un ombrellone al mercato della Pignasecca, tra i palazzi del quartiere."
+  didascalia: "Il mercato della Pignasecca."
+  autore: Argo Navis
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Argo_Navis
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Pignasecca_market,_Naples_20230622_02.jpg
+  anno: 2023
+  controllato: 2026-10-03
+
+- id: tp-porta-nolana
+  src: ../assets/foto/tp-porta-nolana.jpg
+  alt: "La Porta Nolana con le sue due torri scure, e davanti le bancarelle del mercato con gli ombrelloni bianchi e le auto parcheggiate."
+  didascalia: "Porta Nolana e il mercato."
+  autore: Rémy Lee
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Porta_Nolana_mercato_Napoli_Naples_1_May_2021.jpg
+  anno: 2021
+  controllato: 2026-10-03
+
+- id: tp-donn-anna
+  src: ../assets/foto/tp-donn-anna.jpg
+  alt: "La costa di Posillipo vista dal mare: palazzi e ville sulla collina e, sull'acqua, la mole di Palazzo Donn'Anna."
+  didascalia: "Palazzo Donn'Anna e la costa di Posillipo, visti dal mare."
+  autore: Ruthven
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Ruthven
+  licenza: CC0
+  fonte: https://commons.wikimedia.org/wiki/File:Palazzo_Donn%27Anna_visto_dal_mare_(Napoli).jpg
+  anno: 2016
+  controllato: 2026-10-03
+
+- id: tp-camaldoli
+  src: ../assets/foto/tp-camaldoli.jpg
+  alt: "Un sentiero erboso dentro il bosco del Parco dei Camaldoli, tra alberi alti e foglie verdi illuminate dal sole."
+  didascalia: "Un viale nel bosco del Parco dei Camaldoli."
+  autore: Ruthven
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Ruthven
+  licenza: CC BY 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Parco_dei_Camaldoli_-_bosco.jpg
+  anno: 2016
+  controllato: 2026-10-03
+
+- id: tp-poggio
+  src: ../assets/foto/tp-poggio.jpg
+  alt: "Il Parco del Poggio: un laghetto con le gradinate di un piccolo anfiteatro, pini sullo sfondo e il Vesuvio all'orizzonte."
+  didascalia: "Il laghetto del Parco del Poggio, con il Vesuvio sullo sfondo."
+  autore: IlSistemone
+  autoreUrl: https://commons.wikimedia.org/wiki/User:IlSistemone
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:ParcoPoggioNaples2.jpg
+  anno: 2012
+  controllato: 2026-10-03
+
+- id: tp-orto-botanico
+  src: ../assets/foto/tp-orto-botanico.jpg
+  alt: "L'ingresso del Real Orto Botanico su via Foria: un portone sotto la scritta, tra due rampe di scale con la balaustra bianca."
+  didascalia: "L'ingresso del Real Orto Botanico, in via Foria."
+  autore: Armando Mancini
+  autoreUrl: https://www.flickr.com/people/armando46/
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Napoli_-_Real_orto_botanico.jpg
+  anno: 2008
+  controllato: 2026-10-03
+
+- id: tp-mostra-oltremare
+  src: ../assets/foto/tp-mostra-oltremare.jpg
+  alt: "La Fontana dell'Esedra alla Mostra d'Oltremare: un alto getto d'acqua al centro di una vasca con tanti zampilli, tra i pini."
+  didascalia: "La Fontana dell'Esedra, alla Mostra d'Oltremare."
+  autore: aquila 460 (Gennaro Fusco)
+  autoreUrl: https://www.flickr.com/photos/gennaroneaz/
+  licenza: CC BY-SA 2.0
+  fonte: https://commons.wikimedia.org/wiki/File:Font_EsedraNa.jpg
+  anno: 2009
+  controllato: 2026-10-03
+
+- id: tp-ventaglieri
+  src: ../assets/foto/tp-ventaglieri.jpg
+  alt: "La parte alta del Parco dei Ventaglieri: un pergolato di legno e mattoni tra le piante, con i palazzi di Montesanto intorno."
+  didascalia: "Il Parco dei Ventaglieri, a Montesanto."
+  autore: Mattia Luigi Nappi
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Mattia_Luigi_Nappi
+  licenza: CC BY-SA 4.0
+  fonte: https://commons.wikimedia.org/wiki/File:Parco_dei_Ventaglieri,_upper_side,_Napoli_01.jpg
+  anno: 2022
+  controllato: 2026-10-03
+
+- id: tp-caserta
+  src: ../assets/foto/tp-caserta.jpg
+  alt: "Il lungo canale d'acqua del parco della Reggia di Caserta, tra prati e alberi, che sale verso la Grande Cascata lontana."
+  didascalia: "Il parco della Reggia di Caserta, verso la Grande Cascata."
+  autore: Carlo Pelagalli
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Parco_della_Reggia_di_Caserta,_prospettiva_dalla_fontana_di_Cerere_verso_la_Grande_Cascata._-_panoramio.jpg
+  anno: 2009
+  controllato: 2026-10-03
+
+- id: tp-pietrarsa
+  src: ../assets/foto/tp-pietrarsa.jpg
+  alt: "Il viale tra i padiglioni chiari delle vecchie officine di Pietrarsa, con i binari nel selciato e una palma."
+  didascalia: "Il Museo Nazionale Ferroviario di Pietrarsa."
+  autore: B.Zsolt
+  autoreUrl: https://commons.wikimedia.org/wiki/User:B.Zsolt
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Pietrarsa_railway_museum_21.JPG
+  anno: 2012
+  controllato: 2026-10-03
+
+- id: tp-sorrento
+  src: ../assets/foto/tp-sorrento.jpg
+  alt: "Piazza Tasso a Sorrento: la statua al centro con le aiuole, palazzi color ocra intorno e i tavolini dei bar."
+  didascalia: "Piazza Tasso, a Sorrento."
+  autore: Berthold Werner
+  autoreUrl: https://commons.wikimedia.org/wiki/User:Berthold_Werner
+  licenza: CC BY-SA 3.0
+  fonte: https://commons.wikimedia.org/wiki/File:Piazza_Tasso_-_Sorrento_BW_2013-05-12.jpg
+  anno: 2013
+  controllato: 2026-10-03

@@ -1397,3 +1397,216 @@
   fonti: [tp-caremar-orari]
   controllato: 2026-10-02
   ricontrollare: 2027-04-30
+
+# ---------- Tappe del blocco A (03/10/2026) ----------
+- id: tp-sandomenico-orari
+  testo: "Visite guidate dal lunedì al venerdì 10:00–13:30 e 14:30–17:30; sabato, domenica e festivi 10:00–18:00, ultimo ingresso alle 17:30."
+  stato: confermato
+  fonti: [tp-doma-info]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-sandomenico-prezzi
+  testo: "La basilica è gratuita. Sagrestia (con le arche aragonesi) e Sala del Tesoro: 6 €, ridotto 5 €; con la guida 8 €, ridotto 6 €; con anche la Cripta Carafa di Roccella 11 €, ridotto 8 €."
+  stato: confermato
+  fonti: [tp-doma-biglietti]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-girolamini-orari
+  testo: "Chiesa-Museo: dal martedì al venerdì 10:00–18:30 (dal 25 ottobre 2026 9:00–17:30); sabato, domenica e festivi 8:30–13:30. Chiuso il lunedì. La Biblioteca ha orari suoi, più corti, ed è chiusa anche nei giorni a ingresso gratuito."
+  stato: confermato
+  fonti: [tp-girolamini]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-girolamini-prezzi
+  testo: "Chiesa-Museo 5 €, ridotto 2 €; Biblioteca e sale storiche 10 €, ridotto 2 €, con ingressi a turni (40 persone ogni 40 minuti). Biglietti sull'app o sul sito Musei Italiani, o al totem in sede (solo carta). La prima domenica del mese la Chiesa-Museo è gratuita."
+  stato: confermato
+  fonti: [tp-girolamini]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-filangieri-orari
+  testo: "Tutti i giorni 9:30–19:00, ultimo ingresso alle 18:30. La biglietteria online del museo indica invece la chiusura alle 18:00."
+  stato: confermato
+  fonti: [tp-filangieri]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-filangieri-prezzi
+  testo: "10 €. Il sito non scrive riduzioni e gratuità."
+  stato: confermato
+  fonti: [tp-filangieri]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-purgatorio-orari
+  testo: "Chiesa superiore, ipogeo e museo: dal lunedì al sabato 10:00–17:00 (ultimo ingresso alle 16:15); la domenica 10:00–14:00 (ultimo ingresso alle 13:15)."
+  stato: confermato
+  fonti: [tp-purgatorio]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-purgatorio-prezzi
+  testo: "Dal 1° ottobre 2026: 8 €; 6 € dai 18 ai 25 anni e con il biglietto del MANN; 4 € dai 7 ai 17 anni; gratis sotto i 6 anni."
+  stato: confermato
+  fonti: [tp-purgatorio]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-carbonara-orari
+  testo: "La chiesa è aperta tutti i giorni 10:00–17:00, con visita gratuita. La Sagrestia Vasariana non è compresa: ha un biglietto a parte, che si compra sul sito del MUDD."
+  stato: confermato
+  fonti: [tp-mudd-carbonara]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-tetti-orari
+  testo: "Tutti i giorni 10:00–18:00, ultimo ingresso alle 17:00, solo su prenotazione sul sito del MUDD. Il percorso oggi non è accessibile a chi ha difficoltà a camminare o problemi di vista."
+  stato: confermato
+  fonti: [tp-mudd-tetti]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-tetti-prezzi
+  testo: "Secondo la stampa, all'apertura a marzo 2026: 10 €; studenti 8 €; sotto i 16 anni 6 €; gratis sotto i 6 anni e per chi abita a Napoli, prenotando la tariffa apposita."
+  stato: stampa
+  anno: 2026
+  fonti: [tp-tetti-italpress]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-pignatelli-orari
+  testo: "Museo e giardino 9:30–17:00, ultimo ingresso alle 16:00. Chiuso il martedì, il 1° gennaio e il 25 dicembre. Il Museo delle Carrozze è chiuso per ora."
+  stato: confermato
+  fonti: [tp-villa-pignatelli]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-pignatelli-prezzi
+  testo: "Il prezzo non siamo riusciti a leggerlo su una pagina ufficiale: il sito del Ministero non rispondeva il 3 ottobre 2026. I biglietti si comprano sull'app o sul sito Musei Italiani e in biglietteria."
+  stato: confermato
+  fonti: [tp-villa-pignatelli]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-mercati-orari
+  testo: "Il Comune elenca i mercati su strada della Pignasecca e di Porta Nolana come mercati giornalieri, dalle 7:00 alle 15:00. Non dice se sono aperti anche la domenica."
+  stato: confermato
+  fonti: [tp-mercati-municipalita2]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-donnanna-orari
+  testo: "Palazzo Donn'Anna è un'abitazione privata e non si visita: si guarda da fuori, dalla strada o dal mare."
+  stato: confermato
+  fonti: [tp-fai-donn-anna]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-belvedere-orari
+  testo: "Sono spazi pubblici all'aperto, senza orari e senza biglietto: la terrazza davanti alla chiesa di Sant'Antonio a Posillipo e gli slarghi panoramici lungo via Petrarca."
+  stato: confermato
+  fonti: [osm]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-parchi-orari
+  testo: "Orari dei grandi parchi del Comune (Camaldoli, Poggio, Mascagna): marzo 7:00–18:00; da aprile a giugno 7:00–19:30; luglio e agosto 7:00–20:00; settembre 7:00–19:00; ottobre 7:00–18:00; da novembre a febbraio 7:00–17:00. Le pagine del Comune non indicano un biglietto."
+  stato: confermato
+  fonti: [tp-parco-camaldoli, tp-parco-poggio, tp-parco-mascagna]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-ventaglieri-orari
+  testo: "Tutti i giorni 7:00–19:30, secondo la pagina del Comune (aggiornata a settembre 2024). Non indica un biglietto."
+  stato: confermato
+  fonti: [tp-parco-ventaglieri]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-orto-orari
+  testo: "Lunedì, mercoledì e venerdì 9:00–14:00; martedì e giovedì 9:00–16:00; si entra fino a 30 minuti prima della chiusura. Chiuso sabato, domenica e nelle feste, e di solito quando l'Università Federico II è chiusa. Ingresso gratuito."
+  stato: confermato
+  fonti: [tp-orto-botanico]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-oltremare-orari
+  testo: "Il parco apre tutti i giorni alle 7:00. Per la chiusura la pagina ufficiale dà due orari diversi: le 18:00 in una versione e le 20:00 nell'altra."
+  stato: confermato
+  fonti: [tp-mostra-oltremare]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-oltremare-prezzi
+  testo: "1 € al giorno; abbonamento mensile 10 €."
+  stato: confermato
+  fonti: [tp-mostra-oltremare]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+# Gite nuove
+- id: tp-caserta-orari
+  testo: "Chiusa il martedì e il 25 dicembre. Appartamenti reali 8:30–19:15 (ultimo ingresso alle 18:15). Il parco e il Giardino Inglese chiudono prima, a orari che cambiano con i mesi: a ottobre il Giardino Inglese 8:30–17:00. Nei giorni gratuiti il Giardino Inglese è chiuso."
+  stato: confermato
+  fonti: [tp-caserta-orari]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-caserta-prezzi
+  testo: "18 € (più 1 € comprando online) per appartamenti, parco e Giardino Inglese; 2 € dai 18 ai 24 anni (cittadini dell'Unione europea); gratis sotto i 18 anni."
+  stato: confermato
+  fonti: [tp-caserta-biglietti]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-caserta-viaggio
+  testo: "In treno da Napoli Centrale a Caserta: la stazione è davanti alla Reggia. I tempi cambiano da treno a treno: si vedono sul sito di Trenitalia."
+  stato: confermato
+  fonti: [tp-caserta-arrivare]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-pietrarsa-orari
+  testo: "Dal martedì alla domenica 9:30–18:00. Chiuso il lunedì; chiusure straordinarie il 6, il 28 e il 29 ottobre 2026."
+  stato: confermato
+  fonti: [tp-pietrarsa-tariffe]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-pietrarsa-prezzi
+  testo: "9 €; 6 € ridotto (sotto i 18 e sopra i 65 anni); con la guida 11 € e 8 €; famiglia di due adulti e un ragazzo 20 €, con due ragazzi 25 €; gratis sotto i 6 anni."
+  stato: confermato
+  fonti: [tp-pietrarsa-tariffe]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-pietrarsa-viaggio
+  testo: "In treno sulla linea Napoli–Salerno fino alla fermata Pietrarsa–San Giorgio a Cremano, vicina al museo. Il museo fa uno sconto sull'intero a chi arriva con il biglietto del treno."
+  stato: confermato
+  fonti: [tp-pietrarsa-arrivare, tp-pietrarsa-tariffe]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-sorrento-viaggio
+  testo: "Con la Circumvesuviana da Napoli Porta Nolana o Garibaldi a Sorrento: circa 72 minuti con il treno diretto, circa 77 con gli altri. Il Campania Express, il treno turistico più veloce, è sospeso dal 1° ottobre 2026."
+  stato: confermato
+  fonti: [tp-eav-l1-orario, tp-eav-campania-express-sospeso]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-correale-orari
+  testo: "Museo Correale: dal martedì al sabato 9:30–17:30; domenica e festivi 9:00–14:00 (ultimo ingresso un'ora prima). Chiuso il lunedì. 15 €; 7,50 € studenti, soci FAI e Touring, Campania Artecard."
+  stato: confermato
+  fonti: [tp-correale]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+
+- id: tp-campolieto
+  testo: "Villa Campolieto, a Ercolano: dal lunedì al sabato 9:00–19:00 (ultimo ingresso alle 18:15), la domenica 9:00–14:00. 7 €."
+  stato: confermato
+  fonti: [tp-campolieto, tp-villevesuviane-visite]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
