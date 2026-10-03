@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 03/10/2026 (Rilascio 3, blocco 2 costruito sul ramo `claude/itinerari-blocco-2`: mancano la prova senza rete, l'anteprima di Vercel e la tua revisione. Vedi «Rilascio 3 · Blocco 2»)_
+_Ultimo aggiornamento: 03/10/2026 (Rilascio 3, blocco 2 portato su `main` su tua richiesta, prima della revisione: domani le prove sul telefono. Vedi «Rilascio 3 · Blocco 2»)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -99,8 +99,8 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
 
-## Rilascio 3 · Blocco 2 (03/10/2026): pagina costruita, da rivedere
-Ramo `claude/itinerari-blocco-2`, creato da `main`. Niente è su `main`.
+## Rilascio 3 · Blocco 2 (03/10/2026): su `main`, da provare sul telefono
+Ramo `claude/itinerari-blocco-2`, creato da `main` e portato su `main` il 03/10/2026 su tua richiesta (dovevi andare a dormire), prima di vedere l'anteprima: la pagina è sul sito pubblico, https://napoli-a-vela.vercel.app/napoli/itinerari/.
 
 **Deciso con te il 03/10/2026**
 - **Regate**: compaiono solo se le date dell'itinerario cadono nei giorni di regata del calendario 2027 (fuori, per esempio a gennaio o ad agosto, non si propongono). La «giornata di regata» pronta chiede quale giorno.
@@ -131,11 +131,24 @@ Ramo `claude/itinerari-blocco-2`, creato da `main`. Niente è su `main`.
 - Nessuno scorrimento orizzontale a 320 e 390 px; «riduci movimento» spegne le animazioni; nessun errore in console.
 - Prove: itinerario pronto, aggiungere, tappa lontana, giornata piena, sposta in un altro giorno, Su/Giù, trascinamento con il mouse, frecce, Esc, data, giornata di regata, link condiviso aperto su un altro telefono.
 
-**Da fare prima della revisione**
-1. Prova **senza rete** (il service worker in locale va registrato a mano: lo script della pagina lo fa solo con https), poi `npm run check:links`.
-2. `git push` del ramo e **anteprima di Vercel**; prove sull'anteprima (anche senza rete).
-3. Immagini da telefono, chiaro e scuro: la pagina, un itinerario composto, l'avviso della tappa lontana, la mappa.
-4. Mandarti: link dell'anteprima, immagini, prove da fare sul telefono, risultati dei controlli. Poi aspettare il tuo OK.
+**Controlli finali (03/10/2026)**
+- Senza rete (service worker): la pagina si apre, il compositore funziona, si vedono le miniature e la mappa con i percorsi; anche un link condiviso si apre senza rete.
+- `npm run check:links`: 36 pagine, 2219 link interni, nessuno rotto.
+- Immagini da telefono, chiaro e scuro: la pagina, un itinerario composto, la tappa lontana, la mappa.
+
+**Da fare (domani)**
+1. Le tue prove sul telefono, sul sito pubblico:
+   - dalla home tocca «Girare Napoli» (o Napoli → Itinerari a Napoli);
+   - apri «Un giorno: dal Vomero al centro storico» e guarda orari e spostamenti;
+   - «Aggiungi una tappa»: aggiungi Capodimonte, leggi l'avviso «è lontana» e tocca «Sposta in un giorno nuovo»;
+   - tieni premuti i sei puntini di una tappa e trascinala; prova anche Su e Giù (tocca la tappa);
+   - apri la mappa (icona nel riquadro nero), spostala e ingrandiscila con due dita;
+   - «Cambia»: metti una data di luglio 2027 che cade di martedì e guarda le tappe chiuse;
+   - componi la «Giornata di regata» e mandala su WhatsApp con «Condividi»; apri il link da un altro telefono;
+   - in modalità aereo riapri la pagina: deve funzionare;
+   - prova il tema chiaro e quello scuro.
+2. Le correzioni che chiedi dopo le prove.
+3. Dirti quali skill accendere o spegnere per il blocco 3.
 
 ## Rilascio 3 · Blocco 1 (02–03/10/2026): finito, approvato e su `main`
 Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia (controllato: tutte le pagine costruite sono identiche a prima; cambiano solo le date di generazione dei calendari .ics e ci sono le 34 foto delle tappe, non usate da nessuna pagina).
@@ -201,7 +214,7 @@ Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pu
 ## Prossima sessione
 Il Rilascio 3 è diviso in **3 blocchi, uno per sessione**, con un prompt pronto per ciascuno:
 1. `PROMPT-BLOCCO-1.md` · **itinerari, contenuti e proposte di design** (**finito e approvato il 03/10/2026, portato su `main`**: vedi la sezione qui sopra. Per partire con il blocco 2: sessione nuova con il testo di `PROMPT-BLOCCO-2.md`). Le tappe con le loro fonti, le distanze calcolate da noi su OpenStreetMap, 2 proposte di design da scegliere. Nessuna pagina nuova online. Skill: deep-research, frontend-design, VectorLab UI/UX Skills.
-2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina**: il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
+2. `PROMPT-BLOCCO-2.md` · **itinerari, la pagina** (**costruito e portato su `main` il 03/10/2026, da provare sul telefono**): il compositore (aggiungere, togliere, riordinare, distanze, avvisi), la mappa, salvare e condividere senza account. Skill: frontend-design, Modern Web Guidance, VectorLab UI/UX Skills.
 3. `PROMPT-BLOCCO-3.md` · **il sito più ordinato**: controllo di coerenza e le 7 proposte del 01/10/2026 (pagine più corte, «In breve», home più leggera, fonti a tendina, meno riquadri, Avvisami in una pagina sola, 3D più in basso). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui.
 
 Alla fine di ogni blocco la sessione **si ferma**: manda le cose da rivedere (anteprima, immagini, tabelle), aspetta l'OK e dice quali skill accendere o spegnere per il blocco dopo. Alla fine del blocco 3 chiede di spegnere VectorLab UI/UX Skills e consistent-ui.
