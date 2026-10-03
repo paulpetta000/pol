@@ -41,18 +41,20 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 
 ## Modelli, effort e agenti
 Obiettivo di Enrico: **efficienza**. Il risultato deve essere ottimo, ma senza spendere più del necessario. Regola: si parte dal livello più basso che può bastare
-e si sale solo se il risultato non è buono. Effort, dal più leggero: basso · medio · alto · extra · max. Costo, dal più leggero: Haiku 4.5 · Sonnet · Opus.
+e si sale solo se il risultato non è buono. Effort, dal più leggero: medio · alto · extra · max. **L'effort basso non si usa mai.** Costo, dal più leggero: Haiku 4.5 · Sonnet · Opus.
 
 | Compito | Modello | Effort |
 |---|---|---|
-| Domande, un testo da correggere, modifiche di poche righe, commit e push, aggiornare `PROGRESS.md` | principale o Sonnet, fai da solo | basso–medio |
+| Domande, un testo da correggere, modifiche di poche righe, commit e push, aggiornare `PROGRESS.md` | principale o Sonnet, fai da solo | medio |
 | Ricerche ripetitive (orari, prezzi, fonti di un gruppo di luoghi o locali) | agenti Sonnet in parallelo, uno per gruppo; il principale rilegge le fonti | medio–alto |
-| Lavori meccanici (cercare, contare, estrarre, rinominare) | Haiku 4.5 (Enrico per ora preferisce non usarlo: usa Sonnet) | basso |
+| Lavori meccanici (cercare, contare, estrarre, rinominare) | Haiku 4.5 (Enrico per ora preferisce non usarlo: usa Sonnet) | medio |
 | Revisione del codice, controlli su molte pagine | agente `revisore` (Sonnet) | alto |
 | Costruire una funzione nuova nel codice esistente (filtri, nuovo tipo di tappa, pagina) | modello principale (Opus) | alto |
 | Struttura dei dati, specifiche, scelte difficili da cambiare dopo | Opus | extra |
 | Bug difficile da trovare, sicurezza (Supabase, pronostici), fallimenti ripetuti | Opus | max |
 
+- **Se un risultato fallisce o non è affidabile, sali da solo**, senza chiedere: prima di un livello di effort, poi di modello (Sonnet → Opus). Un compito fallito due volte passa subito al livello dopo.
+  Per le decisioni di struttura conta più il modello dell'effort: un Opus a effort medio vale più di un Sonnet a max. Sonnet a effort alto o extra va bene per i lavori ripetitivi e controllabili.
 - **Max** solo quando alto ed extra non bastano o quando la scelta è costosa da correggere: non è il livello normale.
 - **Fai da solo** quando il lavoro è di poche righe: un agente parte da zero e deve rileggere il contesto, quindi per poco costa di più.
 - **Il modello dei sub-agenti lo scegli tu** a ogni lancio. **L'effort della sessione lo imposta Enrico**: dì tu quando alzarlo o abbassarlo, in una riga.
