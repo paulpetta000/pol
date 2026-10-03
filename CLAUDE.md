@@ -58,6 +58,7 @@ e si sale solo se il risultato non è buono. Effort, dal più leggero: medio · 
   - Gli agenti devono scrivere «NON TROVATO» con cosa hanno provato. **Mai inventare**: vale la regola «niente senza fonte».
   - Prima di salire, capisci perché ha fallito. Se la cosa non esiste, il sito è bloccato o manca la fonte, **non salire**: scarta il caso o segnalalo a Enrico. Sali solo se ha cercato male o ragionato male.
   - Se anche Opus alto fallisce, **non salire da solo a extra o max**: scrivi il caso in `da-risolvere.md` (cosa manca, cosa è stato provato e da chi, perché, se si può ritentare) e vai avanti. Quando le righe aperte sono almeno 10, o a fine blocco, avvisa Enrico: li risolviamo insieme in un gruppo.
+  - **Effort alzato a mano da Enrico**: conviene solo quando i casi falliti sono tanti o richiedono più ragionamento nella stessa conversazione (per esempio errori di build). Fermati **una volta sola, a fine lavoro**, con l'elenco, e chiedi: «alza l'effort a X, poi scrivimi fatto». Risolvi i casi, poi ricorda a Enrico di **riabbassarlo**, perché resta alto per tutto il resto. Per pochi casi o per lavori degli agenti è meglio cambiare modello da solo (Sonnet → Opus alto), che non richiede niente a Enrico.
   - Il modello principale controlla sempre tutti i dati delicati (orari, prezzi, fonti) e un campione del resto.
   Per le decisioni di struttura conta più il modello dell'effort: un Opus a effort medio vale più di un Sonnet a max.
 - **Max** solo quando alto ed extra non bastano o quando la scelta è costosa da correggere: non è il livello normale.
