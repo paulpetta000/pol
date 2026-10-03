@@ -1,6 +1,7 @@
 # Da risolvere
 
-Qui finiscono le cose che non siamo riusciti a trovare o a fare, nemmeno salendo di livello (vedi «Scala di salita» in `CLAUDE.md`).
+Qui finiscono le cose che non siamo riusciti a trovare o a fare, nemmeno salendo di livello (vedi «Scala di salita» in `CLAUDE.md`),
+e le **piccole correzioni** che Enrico chiede mentre si lavora ad altro (motivo `altro`): si risolvono tutte insieme in una sessione apposta.
 **Non leggere questo file di default**: si apre solo quando si aggiunge una riga o quando Enrico decide di risolverne un gruppo.
 Quando le righe «aperto» sono almeno 10, o a fine di ogni blocco, avvisa Enrico con il conteggio.
 

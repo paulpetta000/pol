@@ -118,7 +118,7 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 
 ## Ordine e compiti (A → B → C → D, poi il blocco 3 del sito)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
-- [ ] **Blocco A · Luoghi**: ricerca di **18 luoghi** (circa 8 storici, 5 panoramici, 5 giardini; entrano tutti quelli con fonte ufficiale) e **5 gite in più** (Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento), Enrico rivede l'elenco, schede, foto, testi, tempi, build. Pagine fisse: rimandate al blocco 3 (sezione 4).
+- [x] **Blocco A · Luoghi** (pubblicato il 03/10/2026; Pozzuoli e ville vesuviane rimandate, vedi `da-risolvere.md`): ricerca di **18 luoghi** (circa 8 storici, 5 panoramici, 5 giardini; entrano tutti quelli con fonte ufficiale) e **5 gite in più** (Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento), Enrico rivede l'elenco, schede, foto, testi, tempi, build. Pagine fisse: rimandate al blocco 3 (sezione 4).
 - [ ] **Blocco B · Autobus**: ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
 - [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli (pagine fisse per locale: rimandate al blocco 3, sezione 4).
 - [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, testi, controlli (pagine fisse: rimandate al blocco 3). Prima di costruire, Enrico approva elenco e numeri.

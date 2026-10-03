@@ -3,9 +3,11 @@
 _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
 ## Cosa fa Enrico adesso (03/10/2026, sera)
-1. Guardare sul telefono l'anteprima del ramo `ccr-4b2e0e17-izrmws` (blocco A: 18 luoghi e 3 gite nuove) e dire OK o cosa cambiare.
-2. Dopo l'OK: pubblicazione su `main`.
-3. Su GitHub: Settings → General → Default branch → `main` (oggi è ancora `claude/new-session-hwsgjq` e le sessioni nel cloud partono indietro).
+1. Guardare sul telefono il sito pubblico, pagina itinerari, con le tappe nuove del blocco A.
+2. Quando vuole: blocco B (autobus) in una sessione nuova nel cloud da `main` (Opus 5.5, effort alto), con il testo in fondo a questo elenco.
+3. Le piccole correzioni che nota e le cose non trovate vanno in `da-risolvere.md`: quando sono abbastanza, una sessione apposta le risolve tutte insieme.
+
+Testo per il blocco B: «Leggi `CLAUDE.md`, `PROGRESS.md` e `specifiche/itinerari-napoli-ampliamento.md`. Lavoriamo solo sul blocco B · Autobus (sezione 3 della specifica). Guidami passo passo come dice `CLAUDE.md`.»
 
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
@@ -19,7 +21,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 | 3 · Sito più ordinato e SEO | VectorLab UI/UX Skills, consistent-ui, SEO Audit Kit, Programmatic SEO Gate: **da installare** (non sono nel cloud oggi). Controllare a inizio sessione se si installano nel cloud; se no, **in locale** | Da verificare |
 
 ## Dove siamo
-- Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`). Astro 7, Vercel, Supabase gratuito (progetto `coppa-america-napoli`, id `hcicqbcmtfksraabphie`).
+- Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`, che dal 03/10/2026 è anche il ramo principale su GitHub: le sessioni nel cloud partono da lì). Astro 7, Vercel, Supabase gratuito (progetto `coppa-america-napoli`, id `hcicqbcmtfksraabphie`).
 - **Pubblicati**: Rilasci 1, 1.1 (nome «Napoli a Vela»), 2 (Capire la Coppa, 3D delle barche), 2.1 e 2.2 (testi discorsivi con fonti, statistiche senza cookie).
 - **Rilascio 3 · Vivi Napoli**, diviso in 3 blocchi (un prompt per ciascuno in `PROMPT-BLOCCO-*.md`):
   - Blocco 1, itinerari, contenuti e design: **finito, su `main`** (39 tappe con fonti, tempi calcolati da noi, design «Orario» scelto).
@@ -34,7 +36,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
    **Da decidere nel blocco 3**: una pagina fissa per ogni luogo e locale (`specifiche/itinerari-napoli-ampliamento.md`, sezione 4), rimandata qui dal blocco A il 03/10/2026.
    **Ispirazioni di design** di Enrico: `design/ispirazioni/` (schermate e descrizioni; MUDD Napoli, 03/10/2026): leggerle prima delle due proposte grafiche.
    **Google Search Console è già collegata**: il file di verifica è nel sito dal 01/10/2026 (`public/googlee54aa324270bde6d.html`). Da controllare con Enrico solo se la mappa del sito (`/sitemap.xml`, già indicata in `robots.txt`) è stata inviata in Search Console.
-3. **Itinerari di Napoli ampliati** (specifica `specifiche/itinerari-napoli-ampliamento.md`): **blocco A fatto il 03/10/2026, sul ramo `ccr-4b2e0e17-izrmws`, in attesa dell'OK di Enrico** (18 luoghi, gite a Caserta, Pietrarsa e Sorrento, Villa Campolieto nella gita a Ercolano; ricerca in `ricerca/2026-10-03-luoghi-note/`; 7 cose aperte in `da-risolvere.md`). Pagine fisse dei luoghi rimandate al blocco 3. Poi blocchi B (autobus), C (dove mangiare), D (esperienze).
+3. **Itinerari di Napoli ampliati** (specifica `specifiche/itinerari-napoli-ampliamento.md`): **blocco A pubblicato su `main` il 03/10/2026, con l'OK di Enrico** (18 luoghi, gite a Caserta, Pietrarsa e Sorrento, Villa Campolieto nella gita a Ercolano; ricerca in `ricerca/2026-10-03-luoghi-note/`; 7 cose aperte in `da-risolvere.md`). Pagine fisse dei luoghi rimandate al blocco 3. Poi blocchi B (autobus), C (dove mangiare), D (esperienze).
    La Cumana va di nuovo fino a Pozzuoli dall'11/09/2026 (EAV): da tenere presente nel blocco B.
 4. Nuovo sito itinerari per più città (Napoli, poi Roma, Milano, Torino, Venezia…): idea del 03/10/2026, vedi sotto. Prima una spec.
 5. Correggere la scheda `echia-ascensore` (orari da OpenStreetMap, diversi da quelli ANM: 7–22 tutti i giorni, 1,50 €).
