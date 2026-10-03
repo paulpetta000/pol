@@ -35,6 +35,14 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 - Prima di dire «fatto»: build senza errori e `check:links` pulito.
 - Aggiorna `PROGRESS.md` a fine lavoro, in poche righe.
 
+## Guidare Enrico passo passo (regola di Enrico, 03/10/2026)
+Enrico costruisce il sito **con te**, e vuole che sia tu a dirgli cosa fare a ogni passaggio, in italiano semplice e con il telefono in mano:
+- **All'inizio di una sessione** (appena letti `CLAUDE.md` e `PROGRESS.md`) digli in 3 righe: cosa faremo, **quale modello e quale effort impostare**, e se la sessione è quella giusta o se conviene aprirne un'altra.
+- **Prima di un lavoro più difficile o più leggero** del precedente, avvisalo: «adesso alza (o abbassa) l'effort a X», e aspetta il suo «fatto».
+- **A fine lavoro** dagli sempre la lista «cosa fai adesso»: numerata, un'azione per riga, con il testo esatto da incollare, quando serve. Esempi: aprire una sessione nuova (su quale repository e da quale ramo), che modello ed effort impostare, che testo incollare, cosa guardare sul telefono, quando dire OK alla pubblicazione.
+- **Prima di ogni pubblicazione su `main`** dì cosa cambia per chi visita il sito e chiedi il suo OK.
+- Non dare mai per scontato che sappia cosa fare dopo: scrivilo.
+
 ## Cosa non leggere di default
 `design/` (bozzetti da oltre 1 MB), `ricerca/` (note lunghe), `package-lock.json`, `src/data/*.json` grandi
 (`percorsi-tappe.json`, `mappa.json`, `tempi-tappe.json`), `da-risolvere.md` (si apre solo per aggiungere una riga o per risolvere un gruppo). Aprili solo se il compito li riguarda, e solo la parte che serve.

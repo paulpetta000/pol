@@ -2,6 +2,12 @@
 
 _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
+## Cosa fa Enrico adesso (03/10/2026)
+1. Aprire una **sessione nuova** sul repository `paulpetta000/pol`, partendo da `main`.
+2. Impostare **Opus 5.5, effort alto**.
+3. Incollare il testo di `specifiche/PROMPT-A-luoghi.md` (il blocco in citazione).
+4. Quando la sessione si ferma con l'elenco dei 10–12 luoghi, scegliere cosa entra.
+
 ## Dove siamo
 - Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`). Astro 7, Vercel, Supabase gratuito (progetto `coppa-america-napoli`, id `hcicqbcmtfksraabphie`).
 - **Pubblicati**: Rilasci 1, 1.1 (nome «Napoli a Vela»), 2 (Capire la Coppa, 3D delle barche), 2.1 e 2.2 (testi discorsivi con fonti, statistiche senza cookie).
