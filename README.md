@@ -30,7 +30,7 @@ npm run check:links  # dopo la build: controlla che ogni link interno porti a un
 | `src/data/quiz.yaml` | Domande del quiz, con spiegazione e scheda o fonte |
 | `src/data/video.yaml` | Video del canale ufficiale (codice YouTube, titolo nostro, durata) |
 | `src/data/tappe-ac75.json`, `src/data/tappe-ac40.json` | Le tappe del 3D |
-| `src/data/tappe.yaml` | Le tappe degli itinerari (33 in città e 6 gite): posizione, durata, schede di orari e prezzi, foto (vedi «Itinerari») |
+| `src/data/tappe.yaml` | Le tappe degli itinerari (51 in città e 9 gite): posizione, durata, schede di orari e prezzi, foto (vedi «Itinerari») |
 | `src/data/tempi-tappe.json` | I tempi tra le tappe, calcolati da `scripts/itinerari/` (non si modifica a mano) |
 
 Stati delle schede: `confermato`, `stampa` (giornali), `segnalato` (blog e siti non ufficiali), `atteso`.

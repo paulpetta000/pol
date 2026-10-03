@@ -26,7 +26,7 @@ export const ZONE = {
   'posillipo-bagnoli': 'Posillipo e Bagnoli',
   vesuvio: 'Pompei, Ercolano e Vesuvio',
   isole: 'Le isole',
-  dintorni: 'Caserta e Sorrento'
+  dintorni: 'Caserta, Sorrento e dintorni'
 } as const;
 
 // Impronta delle posizioni delle tappe in città, in ordine di id: la stessa formula è in scripts/itinerari/costruisci.mjs

@@ -1458,7 +1458,7 @@
   url: https://reggiadicaserta.cultura.gov.it/come-raggiungerci/
   tipo: ufficiale
   controllato: 2026-10-03
-  letta: false
+  letta: true
 
 - id: tp-pietrarsa-tariffe
   titolo: "Orari, tariffe e abbonamenti"
@@ -1474,7 +1474,7 @@
   url: https://www.fondazionefs.it/it/esplora-il-museo/come-arrivare.html
   tipo: ufficiale
   controllato: 2026-10-03
-  letta: false
+  letta: true
 
 - id: tp-eav-l1-orario
   titolo: "Orario ferrovia L1 Napoli–Sorrento, valido dal 1° ottobre 2026"
@@ -1492,7 +1492,7 @@
   tipo: ufficiale
   pubblicato: 2025-04-29
   controllato: 2026-10-03
-  letta: false
+  letta: true
 
 - id: tp-correale
   titolo: "Visita il museo"

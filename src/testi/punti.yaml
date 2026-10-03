@@ -51,7 +51,7 @@ monte-echia:
 via-petrarca:
   usa: [vista-colline-stampa]
   testo: |
-    La strada panoramica in cima alla collina di Posillipo, famosa per la vista sul golfo. Per le regate del 2026 la stampa locale la indicava, insieme a via Orazio, per vedere tutto il campo dall'alto{?vista-colline-stampa}.
+    La strada panoramica in cima alla collina di Posillipo, famosa per la vista sul golfo. Per le regate del 2026 la stampa locale la indicava, insieme a via Orazio, per vedere tutto il campo dall'alto{?vista-colline-stampa}. Il belvedere è anche una tappa degli [itinerari](/napoli/itinerari/).
 
 via-orazio:
   usa: [vista-colline-stampa]
@@ -61,4 +61,4 @@ via-orazio:
 sant-antonio-posillipo:
   usa: [vista-sant-antonio]
   testo: |
-    Il piazzale della chiesa di Sant'Antonio, sopra Mergellina: la classica cartolina di Napoli con il Vesuvio. Per le regate del 2026 la consigliava un blog di viaggi napoletano, non un sito ufficiale{?vista-sant-antonio}; su OpenStreetMap la terrazza è segnata come punto panoramico.
+    Il piazzale della chiesa di Sant'Antonio, sopra Mergellina: la classica cartolina di Napoli con il Vesuvio. Per le regate del 2026 la consigliava un blog di viaggi napoletano, non un sito ufficiale{?vista-sant-antonio}; su OpenStreetMap la terrazza è segnata come punto panoramico. È anche una tappa degli [itinerari](/napoli/itinerari/).

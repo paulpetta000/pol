@@ -356,7 +356,7 @@ function avvia() {
     cambia(y => { y.giorni.push({ ...giornoVuoto(G.inizio, G.fine), gita: id }); });
     giorno = it().giorni.length - 1;
     disegna();
-    toast(`${tappaDi(C, id)!.breve} è nel giorno ${giorno + 1}: una gita occupa la giornata intera`);
+    toast(`${tappaDi(C, id)!.breve} è nel giorno ${giorno + 1}: una gita occupa un giorno a parte`);
   }
   function togliGita() {
     cambia(y => { delete y.giorni[giorno].gita; }, { annulla: 'Hai tolto la gita' });

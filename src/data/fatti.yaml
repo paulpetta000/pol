@@ -1513,14 +1513,14 @@
   ricontrollare: 2027-04-30
 
 - id: tp-parchi-orari
-  testo: "Orari dei grandi parchi del Comune (Camaldoli, Poggio, Mascagna): marzo 7:00–18:00; da aprile a giugno 7:00–19:30; luglio e agosto 7:00–20:00; settembre 7:00–19:00; ottobre 7:00–18:00; da novembre a febbraio 7:00–17:00. Le pagine del Comune non indicano un biglietto."
+  testo: "Orari dei grandi parchi del Comune (Camaldoli, Poggio, Mascagna): marzo 7:00–18:00; da aprile a giugno 7:00–19:30; luglio e agosto 7:00–20:00; settembre 7:00–19:00; ottobre 7:00–18:00; da novembre a febbraio 7:00–17:00. Le pagine del Comune non indicano nessun biglietto da pagare."
   stato: confermato
   fonti: [tp-parco-camaldoli, tp-parco-poggio, tp-parco-mascagna]
   controllato: 2026-10-03
   ricontrollare: 2027-04-30
 
 - id: tp-ventaglieri-orari
-  testo: "Tutti i giorni 7:00–19:30, secondo la pagina del Comune (aggiornata a settembre 2024). Non indica un biglietto."
+  testo: "Tutti i giorni 7:00–19:30, secondo la pagina del Comune (aggiornata a settembre 2024). Non indica nessun biglietto da pagare."
   stato: confermato
   fonti: [tp-parco-ventaglieri]
   controllato: 2026-10-03
@@ -1598,7 +1598,7 @@
   ricontrollare: 2027-04-30
 
 - id: tp-correale-orari
-  testo: "Museo Correale: dal martedì al sabato 9:30–17:30; domenica e festivi 9:00–14:00 (ultimo ingresso un'ora prima). Chiuso il lunedì. 15 €; 7,50 € studenti, soci FAI e Touring, Campania Artecard."
+  testo: "Museo Correale: dal martedì al sabato 9:30–17:30; domenica e festivi 9:00–14:00 (ultimo ingresso un'ora prima). Chiuso il lunedì. 15 €; 7,50 € studenti, soci FAI e Touring, Campania Artecard. La stessa pagina porta ancora l'avviso «chiuso fino al 23 marzo 2026»: meglio controllare prima di andare."
   stato: confermato
   fonti: [tp-correale]
   controllato: 2026-10-03

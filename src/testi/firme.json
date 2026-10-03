@@ -713,20 +713,20 @@
     "tp-mercati-orari": "64478f6a9c"
   },
   "tappe#ventaglieri": {
-    "tp-ventaglieri-orari": "afda09b3dc"
+    "tp-ventaglieri-orari": "5484c60364"
   },
   "tappe#villa-pignatelli": {
     "tp-pignatelli-orari": "7d3b1a9c36",
     "tp-pignatelli-prezzi": "f86db30802"
   },
   "tappe#parco-mascagna": {
-    "tp-parchi-orari": "ee2449d896"
+    "tp-parchi-orari": "a09971a23b"
   },
   "tappe#camaldoli": {
-    "tp-parchi-orari": "ee2449d896"
+    "tp-parchi-orari": "a09971a23b"
   },
   "tappe#parco-poggio": {
-    "tp-parchi-orari": "ee2449d896"
+    "tp-parchi-orari": "a09971a23b"
   },
   "tappe#orto-botanico": {
     "tp-orto-orari": "dc013ec32c"
@@ -754,7 +754,7 @@
   },
   "tappe#sorrento": {
     "tp-sorrento-viaggio": "37c5392034",
-    "tp-correale-orari": "c9d50700f3"
+    "tp-correale-orari": "4f3a73eb99"
   },
   "tv#rai": {
     "tv-rai": "89acd5c9b3",

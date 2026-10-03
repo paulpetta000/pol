@@ -196,7 +196,7 @@ ercolano:
   testo: |
     Più piccola di Pompei e più facile da girare con il caldo. Con la Circumvesuviana da Garibaldi servono almeno 13 minuti. Si entra gratis la prima domenica del mese e il 2 giugno.
 
-    A pochi minuti dagli scavi, sul Miglio d'Oro, c'è Villa Campolieto, una delle ville vesuviane del Settecento: aperta dal lunedì al sabato 9:00–19:00 e la domenica fino alle 14:00, 7 €.
+    A Ercolano, in corso Resina, si può visitare anche Villa Campolieto, una delle ville vesuviane: aperta dal lunedì al sabato 9:00–19:00 e la domenica fino alle 14:00, 7 €.
 
 vesuvio:
   usa: [tp-vesuvio-orari, tp-vesuvio-prezzi, tp-vesuvio-viaggio]
@@ -248,12 +248,12 @@ san-giovanni-a-carbonara:
   usa: [tp-carbonara-orari]
   fonti: [tp-mudd-carbonara]
   testo: |
-    Una chiesa gotica poco conosciuta, in cima a una doppia scalinata vicino a Porta Capuana, con il grande monumento funebre del re Ladislao e un pavimento di maioliche del Quattrocento. Aperta tutti i giorni 10:00–17:00, la visita è gratuita; la Sagrestia Vasariana si paga a parte.
+    Una chiesa gotica poco conosciuta, in cima a una scalinata monumentale vicino a Porta Capuana, con il grande monumento funebre del re Ladislao e un pavimento di maioliche del Quattrocento. Aperta tutti i giorni 10:00–17:00, la visita è gratuita; la Sagrestia Vasariana si paga a parte.
 
 mercato-porta-nolana:
   usa: [tp-mercati-orari]
   testo: |
-    Il mercato del pesce e della frutta intorno a Porta Nolana, una delle porte aragonesi della città, a pochi passi dalla stazione Garibaldi. Il Comune lo indica aperto dalle 7:00 alle 15:00: si va la mattina, quando i banchi sono pieni.
+    Il mercato del pesce e della frutta intorno a Porta Nolana, a pochi passi dalla stazione Garibaldi. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica: si va la mattina, quando i banchi sono pieni.
 
 # ---------- Blocco A: Toledo, Chiaia e Vomero ----------
 pignasecca:
@@ -274,19 +274,19 @@ villa-pignatelli:
 parco-mascagna:
   usa: [tp-parchi-orari]
   testo: |
-    Un giardino tranquillo del Vomero, a pochi minuti da piazza Vanvitelli, per una pausa all'ombra. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+    Un giardino tranquillo del Vomero, a pochi minuti da piazza Vanvitelli, per una pausa all'ombra. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
 
 camaldoli:
   usa: [tp-parchi-orari]
   fonti: [tp-parco-camaldoli]
   testo: |
-    Un grande bosco sulla collina più alta di Napoli, con sentieri e punti da cui si vede il golfo. È lontano dal centro: conviene andarci la mattina, con scarpe comode. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+    Un grande bosco sulla collina più alta di Napoli, con sentieri e punti da cui si vede il golfo. È lontano dal centro: conviene andarci la mattina, con scarpe comode. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
 
 # ---------- Blocco A: Capodimonte e Foria ----------
 parco-poggio:
   usa: [tp-parchi-orari]
   testo: |
-    Un parco su più terrazze ai Colli Aminei, con un laghetto, un piccolo anfiteatro e la vista sul Vesuvio. Si combina bene con il Bosco di Capodimonte. Gli orari sono quelli dei parchi del Comune, che d'estate chiudono alle 20:00.
+    Un parco su più terrazze ai Colli Aminei, con un laghetto, un piccolo anfiteatro e la vista sul Vesuvio. Si combina bene con il Bosco di Capodimonte. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
 
 orto-botanico:
   usa: [tp-orto-orari]
@@ -296,8 +296,9 @@ orto-botanico:
 # ---------- Blocco A: Posillipo e Fuorigrotta ----------
 sant-antonio-posillipo:
   usa: [tp-belvedere-orari]
+  fonti: [tp-anm-mergellina]
   testo: |
-    La terrazza davanti alla chiesa di Sant'Antonio, sopra Mergellina, con il golfo e il Vesuvio di fronte. Si sale a piedi con rampe e scale, oppure con la funicolare di Mergellina. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-sant-antonio-posillipo).
+    La terrazza davanti alla chiesa di Sant'Antonio, sopra Mergellina, con il golfo e il Vesuvio di fronte. Ci si arriva con la funicolare di Mergellina, fermata Sant'Antonio. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-sant-antonio-posillipo).
 
 via-petrarca:
   usa: [tp-belvedere-orari]
@@ -312,7 +313,7 @@ palazzo-donn-anna:
 mostra-oltremare:
   usa: [tp-oltremare-orari, tp-oltremare-prezzi]
   testo: |
-    Il grande parco della Mostra d'Oltremare, a Fuorigrotta, con viali di pini, fontane e la Fontana dell'Esedra. L'ingresso costa 1 €. Apre alle 7:00; per la chiusura il sito ufficiale dà due orari diversi, le 18:00 o le 20:00. Si arriva con la Linea 6 o la Cumana, fermata Mostra.
+    Il grande parco della Mostra d'Oltremare, a Fuorigrotta, con la Fontana dell'Esedra. L'ingresso costa 1 €. Apre alle 7:00; per la chiusura il sito ufficiale dà due orari diversi, le 18:00 o le 20:00. Si arriva con la Linea 6 o la Cumana, fermata Mostra.
 
 # ---------- Blocco A: gite ----------
 caserta:
@@ -328,6 +329,7 @@ pietrarsa:
 
 sorrento:
   usa: [tp-sorrento-viaggio, tp-correale-orari]
+  fonti: [tp-sorrento-centro]
   testo: |
-    La città sulla costa davanti a Napoli, con il centro antico, piazza Tasso e la vista sul golfo. Con la Circumvesuviana ci vuole circa un'ora e un quarto. Il Museo Correale è chiuso il lunedì; la sua pagina porta ancora un vecchio avviso di chiusura, ormai scaduto.
+    La città dall'altra parte del golfo, con un centro antico di stradine, chiese, monasteri e palazzi. Con la Circumvesuviana ci vuole circa un'ora e un quarto. Il Museo Correale è chiuso il lunedì: prima di andare conviene controllare sul suo sito, che porta ancora un vecchio avviso di chiusura.
 
