@@ -65,7 +65,9 @@ Altri filtri possibili, ma solo se la fonte ufficiale del locale li dice, e quin
 - Le fermate non sono tappe: compaiono solo come mezzo tra tappe.
 
 ## 4 · Una pagina propria per ogni luogo e locale (SEO e orientamento)
-Deciso da Enrico il 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa, che Google può indicizzare. Il compositore resta com'è.
+**Rimandata al blocco 3 del sito, da decidere lì** (Enrico, 03/10/2026: nel blocco A sarebbe troppo lavoro). Il blocco A aggiunge solo i dati dei luoghi; i blocchi C e D fanno la pagina «Dove mangiare» e l'elenco delle esperienze, senza pagine fisse per ogni locale o esperienza, salvo nuova decisione di Enrico all'inizio di quei blocchi. Le regole qui sotto restano come proposta per il blocco 3.
+
+Proposta del 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa, che Google può indicizzare. Il compositore resta com'è.
 
 **Indirizzi** (non cambiano mai dopo la pubblicazione, per non perdere i link): `/napoli/luoghi/<id>/` e `/napoli/dove-mangiare/<id>/`, con gli elenchi `/napoli/luoghi/` (per zona) e `/napoli/dove-mangiare/` (con i filtri). Le 39 tappe attuali ottengono la loro pagina nello stesso modo. Gli itinerari pronti (mezza giornata, un giorno, due, tre, regata) hanno anch'essi una pagina fissa con il testo e le tappe elencate.
 
@@ -80,7 +82,7 @@ Deciso da Enrico il 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa,
 
 **Come lo misuriamo**: abbiamo già il contatore del tempo passato sulle pagine (tabella `letture` su Supabase) e Search Console; dopo la pubblicazione si guardano le pagine dove la gente resta poco e si correggono.
 
-**Quando**: la pagina propria nasce insieme ai dati (blocco A per i luoghi, blocco C per i locali), non dopo. La parte SEO del blocco 3 poi controlla titoli, descrizioni e collegamenti di tutte.
+**Quando**: nel blocco 3, insieme alla parte SEO, per tutti i luoghi, i locali e le esperienze già presenti. Se si decide di farle, i dati sono già pronti: serve un solo modello di pagina.
 
 ## 5 · Esperienze (blocco D, aggiunto il 03/10/2026)
 Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, laboratori (per esempio pizza, pasta fresca, ceramica), degustazioni e simili.
@@ -88,7 +90,7 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 - **Solo offerte che si ripetono** (corsi e laboratori regolari). Gli **eventi singoli** (una serata, un festival) invecchiano subito e non entrano nell'elenco: se serve, vanno in una pagina «Novità» con la data.
 - **Nell'itinerario** un'esperienza è una tappa con orario di inizio e durata fissi (non si può spostare liberamente): il compositore avvisa se non c'è il giorno o l'ora.
 - **Regole di scelta** uguali a quelle dei locali (storia documentata o riconoscimento indipendente, comodità), **nessun pagamento e nessuna affiliazione**; la pagina dice che la lista è indipendente.
-- **Pagina propria** per ogni esperienza (sezione 4), e un elenco `/napoli/esperienze/` con filtri (tipo di attività, prezzo, durata, lingua, giorno).
+- Pagina propria per ogni esperienza: rimandata al blocco 3 (sezione 4). Un elenco `/napoli/esperienze/` con filtri (tipo di attività, prezzo, durata, lingua, giorno).
 - Numeri proposti, da approvare con Enrico prima di costruire: 10–15.
 - Dati: `categoria: esperienza`, `attivita: [cucina, laboratorio, degustazione, …]`, `durata`, `fascia`, `lingue`, `giorni`, `prenota`.
 
@@ -116,10 +118,10 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 
 ## Ordine e compiti (A → B → C → D, poi il blocco 3 del sito)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
-- [ ] **Blocco A · Luoghi**: ricerca, scelta di ~10–12 luoghi (Enrico approva l'elenco), schede, foto, testi, tempi, **una pagina fissa per ogni luogo, vecchi e nuovi (sezione 4)**, build.
+- [ ] **Blocco A · Luoghi**: ricerca di **18 luoghi** (circa 8 storici, 5 panoramici, 5 giardini; entrano tutti quelli con fonte ufficiale) e **5 gite in più** (Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento), Enrico rivede l'elenco, schede, foto, testi, tempi, build. Pagine fisse: rimandate al blocco 3 (sezione 4).
 - [ ] **Blocco B · Autobus**: ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
-- [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, **una pagina fissa per ogni locale (sezione 4)**, testi, controlli.
-- [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, pagina propria per ognuno, testi, controlli. Prima di costruire, Enrico approva elenco e numeri.
+- [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli (pagine fisse per locale: rimandate al blocco 3, sezione 4).
+- [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, testi, controlli (pagine fisse: rimandate al blocco 3). Prima di costruire, Enrico approva elenco e numeri.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).
 
 ## Domande per Enrico (tutte risolte)
