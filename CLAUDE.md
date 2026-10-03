@@ -37,7 +37,7 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 
 ## Cosa non leggere di default
 `design/` (bozzetti da oltre 1 MB), `ricerca/` (note lunghe), `package-lock.json`, `src/data/*.json` grandi
-(`percorsi-tappe.json`, `mappa.json`, `tempi-tappe.json`). Aprili solo se il compito li riguarda, e solo la parte che serve.
+(`percorsi-tappe.json`, `mappa.json`, `tempi-tappe.json`), `da-risolvere.md` (si apre solo per aggiungere una riga o per risolvere un gruppo). Aprili solo se il compito li riguarda, e solo la parte che serve.
 
 ## Modelli, effort e agenti
 Obiettivo di Enrico: **efficienza**. Il risultato deve essere ottimo, ma senza spendere più del necessario. Regola: si parte dal livello più basso che può bastare
@@ -57,7 +57,7 @@ e si sale solo se il risultato non è buono. Effort, dal più leggero: medio · 
   I casi falliti si raccolgono e si ritentano **in blocco** con un livello più forte, che parte sapendo cosa è già stato provato: Sonnet (effort della sessione) → Sonnet più alto, se l'effort per agente si può impostare → Opus alto. Un tentativo per livello.
   - Gli agenti devono scrivere «NON TROVATO» con cosa hanno provato. **Mai inventare**: vale la regola «niente senza fonte».
   - Prima di salire, capisci perché ha fallito. Se la cosa non esiste, il sito è bloccato o manca la fonte, **non salire**: scarta il caso o segnalalo a Enrico. Sali solo se ha cercato male o ragionato male.
-  - Se anche Opus alto fallisce, **non salire da solo a extra o max**: dillo a Enrico.
+  - Se anche Opus alto fallisce, **non salire da solo a extra o max**: scrivi il caso in `da-risolvere.md` (cosa manca, cosa è stato provato e da chi, perché, se si può ritentare) e vai avanti. Quando le righe aperte sono almeno 10, o a fine blocco, avvisa Enrico: li risolviamo insieme in un gruppo.
   - Il modello principale controlla sempre tutti i dati delicati (orari, prezzi, fonti) e un campione del resto.
   Per le decisioni di struttura conta più il modello dell'effort: un Opus a effort medio vale più di un Sonnet a max.
 - **Max** solo quando alto ed extra non bastano o quando la scelta è costosa da correggere: non è il livello normale.
