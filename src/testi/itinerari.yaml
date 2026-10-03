@@ -1,0 +1,57 @@
+# Testi della pagina /napoli/itinerari/ (il compositore degli itinerari). Come si scrivono: src/lib/testi.ts e README.
+# I testi brevi delle tappe stanno in tappe.yaml; qui le parti comuni, le regate e gli itinerari pronti.
+
+regate:
+  usa: [cal-orari, cal-orari-2026]
+  testo: |
+    Gli orari delle regate 2027 non sono ancora usciti: nel 2026 a Napoli si partiva ogni giorno alle 14:00, e qui mettiamo le regate a quell'ora{?cal-orari,cal-orari-2026}. Dove metterti per guardarle lo trovi nella pagina [dal lungomare](/come-vederla/dal-lungomare/).
+
+pronto-mezza-giornata:
+  usa: [tp-sansevero-orari, tp-sansevero-prenota]
+  testo: |
+    Il centro storico in una mattina, tutto a piedi: il Cristo velato, il chiostro di maioliche, Spaccanapoli e la pizza a portafoglio per finire. La Cappella Sansevero è chiusa il martedì e si entra solo con il biglietto comprato online.
+
+pronto-un-giorno:
+  usa: [tp-sanmartino-orari, tp-sansevero-orari]
+  testo: |
+    Si comincia in alto, al Vomero, con la vista dal Castel Sant'Elmo, e si scende a piedi per la Pedamentina fino al centro storico, per Spaccanapoli e la pizza in via dei Tribunali. Non di martedì, quando chiudono la Certosa di San Martino e la Cappella Sansevero.
+
+pronto-due-giorni:
+  usa: [tp-mann-orari, tp-sansevero-orari, tp-sanmartino-orari, tp-palazzoreale-orari]
+  testo: |
+    Il primo giorno il Museo Archeologico e il centro storico, il secondo il Vomero, via Toledo, piazza del Plebiscito e il mare. Il primo giorno non va bene di martedì, quando chiudono il museo e la Cappella Sansevero; il secondo né di martedì né di mercoledì, per la Certosa di San Martino e il Palazzo Reale.
+
+pronto-tre-giorni:
+  usa: [tp-capodimonte-orari, tp-catacombe-orari, tp-catacombe-prezzi, tp-madre-orari]
+  testo: |
+    I due giorni di prima, più una giornata tra Capodimonte, le Catacombe di San Gennaro e il Rione Sanità, con il Madre e Napoli Sotterranea nel pomeriggio. Le Catacombe si visitano solo con la guida, prenotando. Il terzo giorno non va bene di mercoledì, quando chiudono Capodimonte e le Catacombe, né di martedì, per il Madre.
+
+pronto-regata:
+  usa: [tp-palazzoreale-orari]
+  testo: |
+    La mattina tra piazza del Plebiscito, il Palazzo Reale e il belvedere di Monte Echia, con il golfo davanti; il pomeriggio sul lungomare, per le regate e poi la passeggiata fino a Mergellina. Il Palazzo Reale è chiuso il mercoledì.
+
+gite:
+  usa: [tp-isole-2027]
+  testo: |
+    Pompei, Ercolano, il Vesuvio e le isole occupano una giornata intera: nel compositore diventano un giorno a parte, senza altre tappe. Per le isole controlla le ultime corse per tornare: gli orari dei traghetti dell'estate 2027 non sono ancora usciti{?tp-isole-2027}.
+
+tempi:
+  usa: [trasporti-2027-atteso]
+  fonti: [osm, tp-copernicus-dem, tp-anm-linea1, tp-comune-linea6, tp-rfi-linea2, tp-trenitalia-linea2, tp-anm-centrale, tp-anm-chiaia, tp-anm-mergellina, tp-comune-montesanto, tp-eav-teleindicatori, tp-anm-ascensori]
+  testo: |
+    Gli spostamenti sono stime nostre, fatte sulle strade, le scale e gli ascensori di OpenStreetMap, con le salite prese dal modello del terreno Copernicus: in piano si va a 4,5 km all'ora e ogni 10 metri di salita aggiungono un minuto. Con la metro, le funicolari e la Cumana contiamo anche l'attesa, cioè metà del tempo tra due corse, e il tempo per scendere ai binari. Gli autobus non ci sono: per Marechiaro, la Gaiola e il Parco Virgiliano conviene il bus o il taxi.
+
+    I mezzi cambiano con il giorno e l'ora. La Linea 2 passa ogni 8 minuti nei giorni feriali, ogni 15 il sabato e ogni 20 la domenica; il sabato e la domenica la Linea 6 si ferma alle 14:50; la domenica e i festivi gli ascensori gratuiti chiudono alle 14:00. Se non scegli una data, usiamo i tempi di un giorno feriale. La funicolare di Montesanto è chiusa per lavori e la Linea 2 si ferma a Campi Flegrei.
+
+    Sono gli orari di oggi: il piano dei trasporti per il 2027 non è ancora uscito{?trasporti-2027-atteso}.
+
+orari:
+  senzaFonte: "Spiega come lavoriamo: orari, prezzi e prenotazioni delle tappe hanno ciascuno la sua scheda con la fonte"
+  testo: |
+    Orari, prezzi e prenotazioni delle tappe li abbiamo letti sui siti dei gestori il 2 ottobre 2026: sono quelli in vigore oggi, e li ricontrolliamo entro aprile 2027. Le durate delle visite sono stime nostre, tranne dove il gestore indica quanto dura la visita.
+
+salvare:
+  senzaFonte: "Spiega come funziona la pagina: niente account, niente server"
+  testo: |
+    I tuoi itinerari restano solo nella memoria di questo browser: non servono account e noi non li vediamo. Il link che mandi porta l'elenco delle tappe e gli orari dopo il segno «#», una parte dell'indirizzo che il browser non invia al nostro server. Più dettagli nella pagina [privacy](/privacy/).

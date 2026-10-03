@@ -20,14 +20,14 @@ export const SITO = {
     chiave: 'sb_publishable_0vL-4Jmm2LItXJM9B0x6cA_dkClq8zt'
   },
   // Data dell'ultima modifica di privacy e termini (va anche nelle iscrizioni ad Avvisami)
-  versionePrivacy: '2026-10-01',
+  versionePrivacy: '2026-10-03',
   versioneTermini: '2026-10-01'
 } as const;
 
-// Itinerari (Rilascio 3): finché è false, schede, fonti e foto degli itinerari (id «tp-») restano fuori
-// dalle pagine Fonti e Note legali. Va messo a true insieme alla pagina degli itinerari.
+// Itinerari (Rilascio 3): con false, schede, fonti e foto degli itinerari (id «tp-») restano fuori
+// dalle pagine Fonti e Note legali. La pagina /napoli/itinerari/ è online dal blocco 2.
 // (Fuori da SITO perché SITO finisce anche nello script di ogni pagina.)
-export const ITINERARI_ONLINE = false;
+export const ITINERARI_ONLINE = true;
 
 // Le date chiave del 2027 (fonte: americascup.com, comunicati 4148 e 4372)
 export const DATE = {

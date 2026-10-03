@@ -11,6 +11,7 @@ export const PAGINE: Pagina[] = [
   { path: '/calendario/', titolo: 'Le date del 2027', kicker: 'Calendario' },
   { path: '/napoli/', titolo: "Napoli, istruzioni per l'uso", kicker: 'Napoli' },
   { path: '/napoli/mappa/', titolo: 'Mappa: dove guardare le regate', kicker: 'Napoli' },
+  { path: '/napoli/itinerari/', titolo: 'Itinerari a Napoli', kicker: 'Napoli' },
   { path: '/napoli/come-arrivare/', titolo: 'Come arrivare e muoversi', kicker: 'Napoli' },
   { path: '/napoli/accessibilita/', titolo: 'Accessibilità', kicker: 'Napoli' },
   { path: '/squadre/', titolo: 'Chi gareggia: 7 squadre', kicker: 'Squadre' },

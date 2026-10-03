@@ -1,0 +1,35 @@
+# Itinerari pronti della pagina /napoli/itinerari/: punto di partenza da cambiare a piacere.
+# Ogni giorno: orari e tappe (id di src/data/tappe.yaml; «regate» è il blocco delle regate dal lungomare).
+# Le descrizioni stanno in src/testi/itinerari.yaml (blocco «pronto-<id>»).
+# La build ricalcola ogni giorno con i tempi veri (giorno feriale) e si ferma se un giorno non ci sta negli
+# orari, se una tappa risulta lontana dalle altre o se si arriva tardi alle regate (src/lib/itinerari/napoli.ts).
+# «evento: true»: si propone solo con una data dei giorni di regata.
+
+- id: mezza-giornata
+  nome: "Mezza giornata nel centro storico"
+  giorni:
+    - { inizio: "9:30", fine: "13:30", tappe: [sansevero, santa-chiara, spaccanapoli, tribunali] }
+
+- id: un-giorno
+  nome: "Un giorno: dal Vomero al centro storico"
+  giorni:
+    - { inizio: "9:30", fine: "19:00", tappe: [sant-elmo, san-martino, pedamentina, spaccanapoli, tribunali, sansevero, santa-chiara, plebiscito] }
+
+- id: due-giorni
+  nome: "Due giorni a Napoli"
+  giorni:
+    - { inizio: "9:30", fine: "19:00", tappe: [mann, tribunali, sansevero, santa-chiara, spaccanapoli, san-lorenzo, duomo] }
+    - { inizio: "9:30", fine: "19:00", tappe: [sant-elmo, san-martino, pedamentina, toledo, plebiscito, palazzo-reale, monte-echia, borgo-marinari] }
+
+- id: tre-giorni
+  nome: "Tre giorni a Napoli"
+  giorni:
+    - { inizio: "9:30", fine: "19:00", tappe: [mann, tribunali, sansevero, santa-chiara, spaccanapoli, san-lorenzo, duomo] }
+    - { inizio: "9:30", fine: "19:00", tappe: [sant-elmo, san-martino, pedamentina, toledo, plebiscito, palazzo-reale, monte-echia, borgo-marinari] }
+    - { inizio: "9:30", fine: "19:00", tappe: [capodimonte, catacombe, sanita, madre, napoli-sotterranea] }
+
+- id: regata
+  nome: "Giornata di regata"
+  evento: true
+  giorni:
+    - { inizio: "9:30", fine: "19:00", tappe: [plebiscito, palazzo-reale, monte-echia, borgo-marinari, regate, lungomare] }

@@ -36,21 +36,26 @@ const PIEDI = {
 
 // Linee e tempi. Fonti: ANM (Linea 1: frequenza e velocità commerciale; funicolari: tempi e frequenze;
 // ascensori: orari), Comune (Linea 6: 15 minuti da Mostra a Municipio, sabato e domenica solo fino alle 14:50),
-// RFI e ViaggiaTreno (Linea 2: tempi tra le stazioni), Trenitalia (Linea 2 interrotta oltre Campi Flegrei),
+// RFI e ViaggiaTreno (Linea 2: tempi tra le stazioni; un treno ogni 8 minuti nei feriali, 15 il sabato,
+// 20 la domenica), Trenitalia (Linea 2 interrotta oltre Campi Flegrei),
 // EAV (Cumana: tabellone delle partenze di Montesanto e Bagnoli del 2 ottobre 2026).
 // accesso/uscita: minuti per scendere ai binari e per tornare in strada (stazioni profonde: di più).
+// attesa: minuti per scenario (vedi SCENARI); null = la linea non c'è.
+const ogni = (feriale, sabato, domenica, { l6 = false } = {}) => ({
+  feriale, sabato, 'sabato-pomeriggio': l6 ? null : sabato, domenica, festivo: l6 ? null : domenica
+});
 const LINEE = [
-  { id: 'L1', nome: 'Linea 1', rel: 2168102, ritorno: 386098, attesa: { feriale: 5, festivo: 5 }, accesso: 3, uscita: 2, velocita: 533 /* 32 km/h */, raggio: 320 },
-  { id: 'L6', nome: 'Linea 6', rel: 2168104, ritorno: 446007, attesa: { feriale: 7, festivo: null }, accesso: 2.5, uscita: 2, totale: 15, raggio: 260 },
-  { id: 'L2', nome: 'Linea 2', rel: 2168103, ritorno: 445980, attesa: { feriale: 4, festivo: 10 }, accesso: 1.5, uscita: 1.5, raggio: 200,
+  { id: 'L1', nome: 'Linea 1', rel: 2168102, ritorno: 386098, attesa: ogni(5, 5, 5), accesso: 3, uscita: 2, velocita: 533 /* 32 km/h */, raggio: 320 },
+  { id: 'L6', nome: 'Linea 6', rel: 2168104, ritorno: 446007, attesa: ogni(7, 7, 7, { l6: true }), accesso: 2.5, uscita: 2, totale: 15, raggio: 260 },
+  { id: 'L2', nome: 'Linea 2', rel: 2168103, ritorno: 445980, attesa: ogni(4, 8, 10), accesso: 1.5, uscita: 1.5, raggio: 200,
     // interrotta tra Campi Flegrei e Pozzuoli; Piazza Leopardi non è ancora una fermata confermata
     salta: ['Napoli Piazza Leopardi', 'Cavalleggeri Aosta', 'Napoli Cavalleggeri Aosta', 'Bagnoli-Agnano Terme', 'Pozzuoli'],
     tempi: { 'Napoli Mergellina|Napoli Piazza Amedeo': 4, 'Napoli Piazza Amedeo|Napoli Montesanto': 4, 'Napoli Montesanto|Napoli Piazza Cavour': 4, 'Napoli Piazza Cavour|Napoli Piazza Garibaldi': 5 }, velocita: 583 /* 35 km/h dove non c'è il tempo ufficiale */ },
-  { id: 'FA', nome: 'Funicolare Centrale', rel: 2168320, ritorno: 1784870, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 5.75, raggio: 120 },
-  { id: 'FB', nome: 'Funicolare di Chiaia', rel: 2168321, ritorno: 2168322, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 3.2, raggio: 120 },
-  { id: 'FC', nome: 'Funicolare di Montesanto', rel: 2168324, ritorno: 2168325, chiusa: 'chiusa dal 15 maggio 2026 per circa 9 mesi', attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 4.5, raggio: 120 },
-  { id: 'FD', nome: 'Funicolare di Mergellina', rel: 1783329, ritorno: 2168323, attesa: { feriale: 5, festivo: 5 }, accesso: 1, uscita: 1, totale: 7, raggio: 120 },
-  { id: 'CU', nome: 'Cumana', rel: 2168312, ritorno: 2168313, attesa: { feriale: 7.5, festivo: 7.5 }, accesso: 1.5, uscita: 1.5, totale: 16 /* Montesanto–Bagnoli */, finoA: 'Bagnoli', raggio: 160 }
+  { id: 'FA', nome: 'Funicolare Centrale', rel: 2168320, ritorno: 1784870, attesa: ogni(5, 5, 5), accesso: 1, uscita: 1, totale: 5.75, raggio: 120 },
+  { id: 'FB', nome: 'Funicolare di Chiaia', rel: 2168321, ritorno: 2168322, attesa: ogni(5, 5, 5), accesso: 1, uscita: 1, totale: 3.2, raggio: 120 },
+  { id: 'FC', nome: 'Funicolare di Montesanto', rel: 2168324, ritorno: 2168325, chiusa: 'chiusa dal 15 maggio 2026 per circa 9 mesi', attesa: ogni(5, 5, 5), accesso: 1, uscita: 1, totale: 4.5, raggio: 120 },
+  { id: 'FD', nome: 'Funicolare di Mergellina', rel: 1783329, ritorno: 2168323, attesa: ogni(5, 5, 5), accesso: 1, uscita: 1, totale: 7, raggio: 120 },
+  { id: 'CU', nome: 'Cumana', rel: 2168312, ritorno: 2168313, attesa: ogni(7.5, 7.5, 7.5), accesso: 1.5, uscita: 1.5, totale: 16 /* Montesanto–Bagnoli */, finoA: 'Bagnoli', raggio: 160 }
 ];
 // Ascensori pubblici gratuiti dell'ANM: la domenica e nei festivi chiudono alle 14:00
 const ASCENSORI_FERIALI = /Su[^;]*?0?7:30-14:00|PH,Su 0?7:30-14:00/;
@@ -404,8 +409,13 @@ for (const t of tappe) {
 console.log(`\nPunti: ${punti.length}`);
 for (const p of punti) console.log(`  ${p.id.padEnd(22)} ${String(p.aggancio).padStart(3)} m da ${p.strada || '?'} · quota ${p.quota} m`);
 
+// La pagina degli itinerari sceglie lo scenario dal giorno della settimana e dall'ora di ogni spostamento
+// (src/lib/itinerari/calcolo.ts); senza data usa il giorno feriale.
 const SCENARI = [
   { nome: 'feriale', mezzi: true, descrizione: 'giorno feriale, di giorno: tutte le linee aperte' },
+  { nome: 'sabato', mezzi: true, descrizione: 'sabato fino alle 14:50: Linea 2 ogni 15 minuti' },
+  { nome: 'sabato-pomeriggio', mezzi: true, descrizione: 'sabato dopo le 14:50: Linea 6 ferma, Linea 2 ogni 15 minuti' },
+  { nome: 'domenica', mezzi: true, descrizione: 'domenica e festivi fino alle 14: Linea 2 ogni 20 minuti' },
   { nome: 'festivo', mezzi: true, descrizione: 'domenica e festivi dopo le 14: Linea 6 ferma, ascensori gratuiti chiusi, Linea 2 ogni 20 minuti' },
   { nome: 'piedi', mezzi: false, descrizione: 'solo a piedi' }
 ];
@@ -413,17 +423,21 @@ const SCENARI = [
 const firma = createHash('sha1').update(JSON.stringify([...tappe].sort((a, b) => a.id.localeCompare(b.id)).map(t => [t.id, t.lat, t.lon, t.fine ? [t.fine.lat, t.fine.lon] : null]))).digest('hex').slice(0, 12);
 const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30' }, parametri: PIEDI, linee: LINEE.map(({ id, nome, chiusa, fermate }) => ({ id, nome, ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
 const rapporto = [];
+const disegni = {};   // scenario -> righe di punti -> pezzi del percorso (per la mappa degli itinerari)
 for (const sc of SCENARI) {
   const vicini = rete(sc);
   const min = [], piedi = [], salita = [], mezzi = [];
+  disegni[sc.nome] = [];
   for (const a of punti) {
     const r = dijkstra(a.nodo, vicini);
-    const rm = [], rp = [], rs = [], rz = [];
+    const rm = [], rp = [], rs = [], rz = [], rd = [];
+    disegni[sc.nome].push(rd);
     for (const b of punti) {
-      if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); continue; }
+      if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); rd.push(null); continue; }
       const t = r.tempo.get(b.nodo);
       if (t == null) throw new Error(`Nessun percorso da ${a.id} a ${b.id} (${sc.nome})`);
       const p = percorso(r, b.nodo);
+      rd.push(p.pezzi);
       rm.push(Math.round(t)); rp.push(Math.round(p.m / 10) * 10); rs.push(Math.round(p.su)); rz.push([...p.mezzi, ...p.ascensori.map(n => 'asc:' + n)].join('+'));
       if (COPPIE.some(([x, y]) => x === a.id && y === b.id)) rapporto.push({ scenario: sc.nome, da: a.id, a: b.id, min: t, ...p, linea: dist(nodi.get(a.nodo), nodi.get(b.nodo)) });
     }
@@ -434,6 +448,61 @@ for (const sc of SCENARI) {
 }
 fs.writeFileSync(path.join(RADICE, 'src/data/tempi-tappe.json'), JSON.stringify(uscita) + '\n');
 console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
+
+// ---------- Disegno dei percorsi per la mappa degli itinerari ----------
+// src/data/percorsi-tappe.json: per ogni coppia di punti il percorso, a pezzi (a piedi o su una linea),
+// nelle unità di src/data/mappa.json (5 m). I punti sono semplificati (Douglas-Peucker, scarto massimo
+// SCARTO unità) e scritti come differenze dal punto prima, con 6 bit per carattere: la pagina li carica
+// solo quando apri la mappa. Per gli scenari diversi dal giorno feriale si salva solo ciò che cambia.
+{
+  const M = JSON.parse(fs.readFileSync(path.join(RADICE, 'src/data/mappa.json'), 'utf8'));
+  const KX = M.w / (M.box.e - M.box.w), KY = M.h / (M.box.n - M.box.s);
+  const SCARTO = 0.8;
+  const xy = ([lat, lon]) => [(lon - M.box.w) * KX, (M.box.n - lat) * KY];
+  const semplifica = (pts) => {
+    if (pts.length < 3) return pts;
+    const tieni = new Uint8Array(pts.length); tieni[0] = tieni[pts.length - 1] = 1;
+    const pila = [[0, pts.length - 1]];
+    while (pila.length) {
+      const [i, j] = pila.pop();
+      const [ax, ay] = pts[i], [bx, by] = pts[j], dx = bx - ax, dy = by - ay, l = Math.hypot(dx, dy) || 1;
+      let k = -1, dmax = 0;
+      for (let q = i + 1; q < j; q++) {
+        const d = Math.abs((pts[q][0] - ax) * dy - (pts[q][1] - ay) * dx) / l;
+        if (d > dmax) { dmax = d; k = q; }
+      }
+      if (dmax > SCARTO) { tieni[k] = 1; pila.push([i, k], [k, j]); }
+    }
+    return pts.filter((_, q) => tieni[q]);
+  };
+  const ALFA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
+  // numero intero con segno: zigzag, poi gruppi di 5 bit (il sesto dice «continua»)
+  const numero = n => { let z = n < 0 ? -2 * n - 1 : 2 * n, s = ''; do { let c = z & 31; z = Math.floor(z / 32); if (z) c |= 32; s += ALFA[c]; } while (z); return s; };
+  const codifica = (pezzi) => {
+    let prima = null;
+    return pezzi.map(p => {
+      // ogni pezzo parte dove finisce quello prima (a piedi fino all'ingresso, poi la linea dalla stazione)
+      let pts = semplifica(p.punti.map(xy)).map(([x, y]) => [Math.round(x), Math.round(y)]);
+      if (prima) pts = [prima, ...pts];
+      pts = pts.filter((q, k) => k === 0 || q[0] !== pts[k - 1][0] || q[1] !== pts[k - 1][1]);
+      prima = pts[pts.length - 1];
+      let s = p.modo === 'piedi' ? 'p' : p.modo, px = 0, py = 0;
+      for (const [x, y] of pts) { s += numero(x - px) + numero(y - py); px = x; py = y; }
+      return s;
+    }).join('~');
+  };
+  const scenari = {};
+  for (const sc of SCENARI) {
+    scenari[sc.nome] = disegni[sc.nome].map((riga, i) => riga.map((pezzi, j) => {
+      if (!pezzi) return '';
+      const s = codifica(pezzi);
+      return sc.nome !== 'feriale' && s === scenari.feriale[i][j] ? 0 : s;
+    }));
+  }
+  const file = { generato: uscita.generato, firma, punti: uscita.punti, unita: 'src/data/mappa.json', scenari };
+  fs.writeFileSync(path.join(RADICE, 'src/data/percorsi-tappe.json'), JSON.stringify(file) + '\n');
+  console.log(`Scritto src/data/percorsi-tappe.json (${Math.round(JSON.stringify(file).length / 1024)} kB)`);
+}
 
 // ---------- Rapporto delle coppie richieste ----------
 for (const x of rapporto) {

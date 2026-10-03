@@ -39,22 +39,23 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // File con nome che cambia a ogni versione: prima la copia salvata
+  // File con nome che cambia a ogni versione: prima la copia salvata (anche quella fatta all'installazione)
   if (url.pathname.startsWith('/_astro/') || url.pathname.startsWith('/fonts/')) {
-    event.respondWith(caches.open(ASSETS).then(async cache => {
-      const hit = await cache.match(req);
+    event.respondWith((async () => {
+      const hit = await caches.match(req);
       if (hit) return hit;
       const res = await fetch(req);
-      if (res.ok) cache.put(req, res.clone());
+      if (res.ok) (await caches.open(ASSETS)).put(req, res.clone());
       return res;
-    }));
+    })());
     return;
   }
 
-  // Tutto il resto (icone, calendari): copia salvata subito, aggiornata in background
-  event.respondWith(caches.open(ASSETS).then(async cache => {
-    const hit = await cache.match(req);
+  // Tutto il resto (icone, calendari, dati della mappa degli itinerari): copia salvata subito, aggiornata in background
+  event.respondWith((async () => {
+    const cache = await caches.open(ASSETS);
+    const hit = (await cache.match(req)) || (await caches.match(req));
     const net = fetch(req).then(res => { if (res.ok) cache.put(req, res.clone()); return res; }).catch(() => hit);
     return hit || net;
-  }));
+  })());
 });

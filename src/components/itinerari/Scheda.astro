@@ -1,0 +1,36 @@
+---
+// Scheda completa di una tappa (dentro un <template>: la pagina la copia nella finestra della tappa e,
+// senza foto, nelle righe del pannello «Aggiungi una tappa»). Orari, prezzi e viaggio sono le schede di
+// src/data/fatti.yaml così come sono: se una non è confermata per il 2027 il suo testo lo dice (controllato
+// da cautelaScheda) e ha il segno *, spiegato in fondo alla pagina.
+import Foto from '../Foto.astro';
+import Testo from '../Testo.astro';
+import type { Tappa } from '../../lib/tappe';
+import { cautelaScheda } from '../../lib/testi';
+import { durata, NOMI_GIORNI } from '../../lib/itinerari/date';
+
+interface Props { t: Tappa; partenza?: string; conFoto?: boolean }
+const { t, partenza, conFoto = true } = Astro.props;
+const d = t.data;
+const scheda = (id?: string) => {
+  if (!id) return null;
+  const f = t.schede.get(id)!;
+  const c = cautelaScheda(f);
+  if (c.errore) throw new Error(c.errore);
+  return { testo: f.data.testo, segno: c.segno };
+};
+const orari = scheda(d.orari?.id), prezzi = scheda(d.prezzi?.id), viaggio = scheda(d.viaggio?.id);
+const PREN = { no: 'Non serve prenotare.', consigliata: 'Meglio prenotare.', obbligatoria: 'Si entra solo prenotando.' } as const;
+const dentro = { si: 'Al chiuso', no: "All'aperto", 'in-parte': 'In parte al chiuso' }[d.alChiuso];
+const scale = d.gradini ? { no: 'senza scale', pochi: 'qualche gradino', molti: 'molte scale' }[d.gradini] : null;
+const quando = { mattina: 'meglio la mattina', pomeriggio: 'meglio il pomeriggio', sera: 'meglio verso sera', 'quando-vuoi': null }[d.momento];
+const valutazioni = [dentro, scale, quando, d.bambini === 'attenzione' ? 'con i bambini piccoli valuta prima' : null].filter(Boolean).join(', ');
+---
+<div class="it-sch">
+  {conFoto && d.foto && <Foto id={d.foto.id} sizes="(min-width: 600px) 560px, calc(100vw - 32px)" widths={[400, 720]} rapporto="3 / 2" didascalia={false} class="it-sch__foto" />}
+  <Testo b={t.testo} class="it-sch__testo" />
+  <p class="it-sch__breve">{d.tipo === 'gita' ? 'Una giornata intera' : `Visita: circa ${durata(d.durata)}`}{d.chiuso.length > 0 && <>. Chiuso il {d.chiuso.map(g => NOMI_GIORNI[g]).join(' e il ')}</>}. {PREN[d.prenotazione]}{valutazioni && <> {valutazioni[0].toUpperCase() + valutazioni.slice(1)}.</>}</p>
+  {viaggio && <><h3 class="it-sch__h">Come arrivare{partenza && <> da {partenza}</>}</h3><p>{viaggio.testo}{viaggio.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
+  {orari && <><h3 class="it-sch__h">Orari</h3><p>{orari.testo}{orari.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
+  {prezzi && <><h3 class="it-sch__h">Biglietti</h3><p>{prezzi.testo}{prezzi.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
+</div>

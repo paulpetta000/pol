@@ -26,7 +26,8 @@ const AZIONI = [
   { href: '/come-vederla/biglietti-e-ospitalita/', icon: 'biglietto', t: 'Biglietti e ospitalità', s: 'tribune, pacchetti, avvisi' },
   { href: '/calendario/', icon: 'calendario', t: 'Date e orari', s: '22 maggio – 19 luglio' },
   { href: '/napoli/come-arrivare/', icon: 'percorso', t: 'Come arrivare', s: 'aereo, treno, metro, taxi' },
-  { href: '/squadre/', icon: 'bandiera', t: 'Chi gareggia', s: '7 squadre, 6 sfidanti' }
+  { href: '/squadre/', icon: 'bandiera', t: 'Chi gareggia', s: '7 squadre, 6 sfidanti' },
+  { href: '/napoli/itinerari/', icon: 'pin', t: 'Girare Napoli', s: 'itinerari pronti o fatti da te' }
 ] as const;
 const podio = R.napoli.classifica.slice(0, 3);
 ---
@@ -193,6 +194,11 @@ const podio = R.napoli.classifica.slice(0, 3);
   .azione__t { font-weight: 800; font-stretch: 78%; font-size: 1.28rem; line-height: 1.05; }
   .azione__s { font-size: .86rem; color: inherit; opacity: .78; line-height: 1.25; }
   @media (min-width: 760px) { .azioni { grid-template-columns: repeat(3, 1fr); gap: .8rem; } .azione { min-height: 9.5rem; padding: 1.1rem; } .azione__t { font-size: 1.5rem; } }
+  /* la settima azione (Girare Napoli) occupa tutta la riga: una scheda larga, icona a sinistra */
+  .azioni li:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .azioni li:last-child:nth-child(odd) .azione { min-height: 0; display: grid; grid-template-columns: auto 1fr; grid-template-rows: auto auto; column-gap: .9rem; align-items: center; }
+  .azioni li:last-child:nth-child(odd) .azione__ico { grid-row: 1 / 3; margin: 0; padding: 0; }
+  @media (min-width: 760px) { .azioni li:last-child:nth-child(odd) .azione { min-height: 0; } }
   .capire-anteprima { display: block; max-width: 360px; width: 100%; justify-self: center; border: 1px solid var(--line); border-radius: var(--r); box-shadow: var(--shadow); overflow: hidden; }
   .capire-anteprima:hover { border-color: var(--accent); }
   .map-link { display: block; text-decoration: none; }

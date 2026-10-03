@@ -43,6 +43,16 @@ const SPIEGA: Record<Cautela, string> = {
   anno: "a quale anno si riferisce («nel 2026», «nel 2024»…)"
 };
 
+// Una scheda mostrata così com'è (per esempio orari e prezzi delle tappe degli itinerari): se non è confermata
+// per il 2027 il suo testo deve dirlo a parole. Restituisce le cautele (per il segno *) o un errore.
+export function cautelaScheda(f: Fatto): { segno: boolean; errore?: string } {
+  const c = cauteleDi(f);
+  for (const k of c) {
+    if (!PAROLE[k](f).test(f.data.testo)) return { segno: true, errore: `La scheda "${f.id}" non è confermata per il 2027: il suo testo deve dire ${SPIEGA[k]}` };
+  }
+  return { segno: c.length > 0 };
+}
+
 const SEGNO = /\{\?([a-z0-9,\s-]+)\}/g;
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 // Testo nudo, per cercare le parole di cautela

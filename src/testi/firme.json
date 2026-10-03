@@ -157,6 +157,7 @@
   "come-arrivare#isole": {
     "mare-aliscafi": "08a9054523"
   },
+  "come-arrivare#itinerari": {},
   "come-vederla#lungomare": {
     "vista-vicino": "4173a09439",
     "vil-caracciolo": "c8fd6023fa",
@@ -368,6 +369,41 @@
   "home#archivio": {
     "res-napoli": "7fc1ff31a3"
   },
+  "itinerari#regate": {
+    "cal-orari": "f52b029084",
+    "cal-orari-2026": "84169bb83f"
+  },
+  "itinerari#pronto-mezza-giornata": {
+    "tp-sansevero-orari": "d805258c2e",
+    "tp-sansevero-prenota": "34ece27e45"
+  },
+  "itinerari#pronto-un-giorno": {
+    "tp-sanmartino-orari": "dad9948f0a",
+    "tp-sansevero-orari": "d805258c2e"
+  },
+  "itinerari#pronto-due-giorni": {
+    "tp-mann-orari": "59d7a18bdd",
+    "tp-sansevero-orari": "d805258c2e",
+    "tp-sanmartino-orari": "dad9948f0a",
+    "tp-palazzoreale-orari": "d06011bf38"
+  },
+  "itinerari#pronto-tre-giorni": {
+    "tp-capodimonte-orari": "257ccbd98e",
+    "tp-catacombe-orari": "a56fac6625",
+    "tp-catacombe-prezzi": "51ebf9ff1a",
+    "tp-madre-orari": "b4e055460e"
+  },
+  "itinerari#pronto-regata": {
+    "tp-palazzoreale-orari": "d06011bf38"
+  },
+  "itinerari#gite": {
+    "tp-isole-2027": "2eba5fd02a"
+  },
+  "itinerari#tempi": {
+    "trasporti-2027-atteso": "8b175e8ad6"
+  },
+  "itinerari#orari": {},
+  "itinerari#salvare": {},
   "mappa#da-sapere": {
     "campo-mappa-atteso": "6daa8cb230",
     "vil-caracciolo": "c8fd6023fa",

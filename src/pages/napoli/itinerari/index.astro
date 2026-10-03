@@ -1,0 +1,398 @@
+---
+// Itinerari a Napoli: il compositore (stile «Orario», bozzetti in design/itinerari/), gli itinerari pronti,
+// le gite e come calcoliamo i tempi. Lo script della pagina è in src/scripts/itinerari/.
+import Base from '../../../layouts/Base.astro';
+import Testo from '../../../components/Testo.astro';
+import FontiPagina from '../../../components/FontiPagina.astro';
+import Scheda from '../../../components/itinerari/Scheda.astro';
+import { getTesti } from '../../../lib/testi';
+import { tutteLeFonti } from '../../../lib/fatti';
+import { getTappe, ZONE } from '../../../lib/tappe';
+import { cittaNapoli, impacchetta, prontiNapoli, REGATE } from '../../../lib/itinerari/napoli';
+import { icona } from '../../../lib/itinerari/icone';
+import { durata, ora } from '../../../lib/itinerari/date';
+import { getCollection } from 'astro:content';
+import '../../../styles/itinerari.css';
+
+const T = await getTesti('itinerari');
+const TT = await getTesti('tappe');
+const tappe = await getTappe();
+const C = await cittaNapoli();
+const pronti = await prontiNapoli();
+const luoghi = await getCollection('luoghi');
+const fonti = await tutteLeFonti();
+const pacco = impacchetta(C);
+
+const citta = C.tappe.filter(t => t.tipo === 'citta');
+const gite = C.tappe.filter(t => t.tipo === 'gita');
+const ordineZone = Object.keys(ZONE);
+citta.sort((a, b) => ordineZone.indexOf(a.zona) - ordineZone.indexOf(b.zona));
+const nomeDi = (id: string) => (id === REGATE.id ? REGATE.nome : C.tappe.find(t => t.id === id)!.nome);
+const partenzaDi = (id: string) => { const p = tappe.find(t => t.id === id)!.data.partenza; return p ? luoghi.find(l => l.id === p.id)?.data.nome : undefined; };
+// Schede mostrate così come sono (orari, prezzi, viaggi): anche le loro fonti vanno in fondo alla pagina
+const schedeMostrate = tappe.flatMap(t => [...t.schede.values()]);
+const ore = Array.from({ length: 11 }, (_, i) => 9 + i);
+const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
+---
+<Base title="Itinerari a Napoli: mezza giornata, 1, 2 e 3 giorni" description="Componi il tuo itinerario a Napoli: 33 tappe in città e 6 gite, con i tempi a piedi e con metro e funicolari, la mappa e gli avvisi. Itinerari pronti per mezza giornata, 1, 2 e 3 giorni e per un giorno di regata. Senza account, anche offline.">
+  <Fragment slot="head">
+    <link rel="preload" href="/fonts/barlow-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/barlow-semi-condensed-600.woff2" as="font" type="font/woff2" crossorigin />
+  </Fragment>
+  <script is:inline>
+    // Un itinerario ricevuto con un link: lo prendo e tolgo il «#…» dall'indirizzo prima di tutto il resto,
+    // così non finisce nelle statistiche né nella cronologia delle pagine viste.
+    try { if (/[#&]g=/.test(location.hash)) { window.itinerarioRicevuto = location.hash; history.replaceState(null, '', location.pathname + location.search); } } catch (e) {}
+  </script>
+  <div class="it-pagina">
+    <header class="it-testa">
+      <div class="it-wrap">
+        <nav class="it-briciole" aria-label="Percorso"><a href="/napoli/">Napoli</a></nav>
+        <h1>Itinerari a Napoli</h1>
+        <p class="it-lead">Componi le tue giornate: scegli le tappe, vedi quanto ci metti a piedi e con i mezzi, controlla tutto sulla mappa. Gli itinerari restano sul telefono e si mandano con un link.</p>
+      </div>
+    </header>
+
+    <section class="it" id="compositore" aria-labelledby="it-giorno-h">
+      <noscript>
+        <style>.it-interattivo { display: none !important; }</style>
+        <p class="it-wrap it-senza-js">Per comporre un itinerario serve JavaScript, che in questo browser è spento. Qui sotto trovi gli itinerari pronti, con tutti gli orari.</p>
+      </noscript>
+      <div class="it-wrap it-interattivo">
+        <div class="it-capo">
+          <div class="it-nome" id="it-nome">
+            <button type="button" class="it-nome__vedi" id="it-nome-vedi" aria-describedby="it-nome-aiuto">
+              <span class="it-nome__testo" id="it-nome-testo">Il mio itinerario</span>{' '}<Fragment set:html={icona('matita', 18, 'it-nome__matita')} />
+            </button>
+            <input class="it-nome__campo" id="it-nome-campo" type="text" maxlength="60" autocomplete="off" enterkeyhint="done" aria-label="Nome dell'itinerario" hidden />
+            <span id="it-nome-aiuto" class="visually-hidden">Tocca per cambiare il nome</span>
+          </div>
+          <button type="button" class="it-ib" id="it-elenco-apri" aria-label="I miei itinerari" data-tip="I miei itinerari" aria-haspopup="dialog"><Fragment set:html={icona('cartella', 22)} /><span class="it-ib__conta" id="it-elenco-conta" hidden></span></button>
+          <button type="button" class="it-btn it-btn--contorno it-btn--piccolo" id="it-condividi" aria-haspopup="dialog"><Fragment set:html={icona('condividi', 20)} />Condividi</button>
+        </div>
+
+        <div class="it-giorni">
+          <h2 id="it-giorno-h" class="it-giorno-h">Giorno 1</h2>
+          <div class="it-schede-giorni" id="it-schede-giorni" role="tablist" aria-label="Giorni dell'itinerario">
+            <button type="button" role="tab" id="it-tab-0" aria-selected="true" aria-controls="it-pannello-giorno" class="it-tab">1</button>
+          </div>
+          <button type="button" class="it-tab it-tab--piu" id="it-giorno-piu" aria-label="Aggiungi un giorno" data-tip="Aggiungi un giorno"><Fragment set:html={icona('piu', 20)} /></button>
+        </div>
+        <div class="it-quando">
+          <span id="it-quando">Senza data · dalle 9:30 alle 19:00</span>
+          <button type="button" class="it-link" id="it-cambia" aria-haspopup="dialog">Cambia<span class="visually-hidden"> data e orari del giorno</span></button>
+        </div>
+
+        <div class="it-pannello-giorno" id="it-pannello-giorno" role="tabpanel" aria-labelledby="it-giorno-h">
+          <div class="it-riepilogo" id="it-riepilogo" hidden>
+            <div class="it-riepilogo__testo">
+              <p class="it-riepilogo__ore" id="it-riepilogo-ore"></p>
+              <p class="it-riepilogo__sotto" id="it-riepilogo-sotto"></p>
+            </div>
+            <div class="it-vista" role="group" aria-label="Vista">
+              <button type="button" class="it-vista__btn" data-vista="giornata" aria-pressed="true" aria-label="Giornata" data-tip="Giornata"><Fragment set:html={icona('lista', 22)} /></button>
+              <button type="button" class="it-vista__btn" data-vista="mappa" aria-pressed="false" aria-label="Mappa" data-tip="Mappa"><Fragment set:html={icona('mappa', 22)} /></button>
+            </div>
+          </div>
+          <div class="it-avvisi" id="it-avvisi"></div>
+          <div class="it-corpo">
+            <div class="it-giornata" id="it-giornata">
+              <ol class="it-linea" id="it-linea" aria-label="Tappe del giorno 1" hidden></ol>
+              <div class="it-gita-giorno" id="it-gita-giorno" hidden></div>
+              <div class="it-vuoto" id="it-vuoto">
+                <div class="it-vuoto__ore" aria-hidden="true" id="it-vuoto-ore">
+                  {ore.map(h => <div class="it-vuoto__riga"><span>{h}:00</span></div>)}
+                </div>
+                <div class="it-vuoto__scheda">
+                  <h3 id="it-vuoto-h">Il giorno 1 è vuoto</h3>
+                  <p>Aggiungi la prima tappa: dopo ti mostriamo quelle vicine, con i minuti per arrivarci.</p>
+                  <button type="button" class="it-btn it-btn--primario it-btn--largo" data-azione="aggiungi"><Fragment set:html={icona('piu', 22)} />Aggiungi la prima tappa</button>
+                  <div class="it-vuoto__pronti">
+                    <h4>Oppure parti da un itinerario pronto</h4>
+                    <ul>
+                      {pronti.map(p => (
+                        <li><button type="button" class="it-pronto" data-pronto={p.id}>
+                          <span><strong>{p.nome}</strong><span>{p.evento ? 'Solo nei giorni di regata' : p.it.giorni.length > 1 ? `${p.it.giorni.length} giorni · ${p.it.giorni.reduce((s, g) => s + g.tappe.length, 0)} tappe` : `${p.it.giorni[0].tappe.length} tappe · ${durata(p.giorni[0].fine - p.giorni[0].inizio)}`}</span></span>
+                          <Fragment set:html={icona('avanti', 24)} />
+                        </button></li>
+                      ))}
+                    </ul>
+                    <button type="button" class="it-link" data-azione="gite">Oppure scegli una gita di un giorno</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="it-mappa" id="it-mappa" hidden>
+              <div class="it-mappa__area" id="it-mappa-area"><p class="it-mappa__attesa">Carico la mappa…</p></div>
+              <div class="it-mappa__zoom" role="group" aria-label="Ingrandimento della mappa">
+                <button type="button" class="it-ib it-ib--mappa" data-zoom="piu" aria-label="Ingrandisci" data-tip="Ingrandisci"><Fragment set:html={icona('piu', 20)} /></button>
+                <button type="button" class="it-ib it-ib--mappa" data-zoom="meno" aria-label="Rimpicciolisci" data-tip="Rimpicciolisci"><span class="it-meno" aria-hidden="true"></span></button>
+                <button type="button" class="it-ib it-ib--mappa" data-zoom="tutto" aria-label="Mostra tutto il giorno" data-tip="Mostra tutto il giorno"><Fragment set:html={icona('ricomincia', 20)} /></button>
+              </div>
+              <div class="it-legenda" id="it-legenda"></div>
+              <ol class="it-riassunto" id="it-riassunto" aria-label="Tappe sulla mappa"></ol>
+              <p class="it-mappa__cr">Mappa: dati © <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a></p>
+            </div>
+          </div>
+        </div>
+        <div class="it-barra">
+          <button type="button" class="it-btn it-btn--primario it-btn--largo" id="it-aggiungi" data-azione="aggiungi" aria-haspopup="dialog"><Fragment set:html={icona('piu', 22)} />Aggiungi una tappa</button>
+        </div>
+      </div>
+
+      <div class="visually-hidden" aria-live="polite" id="it-annunci"></div>
+      <div class="it-toast" id="it-toast" role="status" hidden><p id="it-toast-testo"></p><button type="button" class="it-toast__azione" id="it-toast-azione" hidden></button></div>
+
+      <!-- Aggiungi una tappa -->
+      <dialog class="it-foglio" id="it-pannello" aria-labelledby="it-pannello-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-pannello-h">Aggiungi una tappa</h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-segmenti" role="group" aria-label="Che cosa aggiungere">
+          <button type="button" class="it-segmento" data-tipo="citta" aria-pressed="true">In città</button>
+          <button type="button" class="it-segmento" data-tipo="gita" aria-pressed="false">Gite di un giorno</button>
+        </div>
+        <div class="it-foglio__corpo">
+          <div class="it-solo-citta">
+            <div class="it-cerca">
+              <Fragment set:html={icona('cerca', 20)} />
+              <label for="it-cerca" class="visually-hidden">Cerca una tappa</label>
+              <input type="search" id="it-cerca" placeholder="Cerca una tappa" autocomplete="off" enterkeyhint="search" />
+            </div>
+            <div class="it-filtri" role="group" aria-label="Filtri">
+              <button type="button" class="it-filtro" data-filtro="chiuso" aria-pressed="false">Al chiuso</button>
+              <button type="button" class="it-filtro" data-filtro="gratis" aria-pressed="false">Gratis</button>
+              <button type="button" class="it-filtro" data-filtro="bambini" aria-pressed="false">Con i bambini</button>
+              <button type="button" class="it-filtro" data-filtro="scale" aria-pressed="false">Senza scale</button>
+              <button type="button" class="it-filtro" data-filtro="libero" aria-pressed="false">Senza prenotare</button>
+            </div>
+            <div class="it-elenco">
+              <p class="it-elenco__testa" id="it-elenco-testa">Tutte le tappe, per zona</p>
+              <div class="it-evento" id="it-evento" hidden>
+                <span class="it-evento__segno" aria-hidden="true"><Fragment set:html={icona('vela', 28)} /></span>
+                <div><p class="it-scelta__nome">{REGATE.nome}</p><p class="it-scelta__meta" id="it-evento-meta"></p></div>
+                <button type="button" class="it-piu" data-aggiungi={REGATE.id} aria-label={`Aggiungi ${REGATE.nome}`} data-tip="Aggiungi"><Fragment set:html={icona('piu', 24)} /></button>
+              </div>
+              <ul class="it-scelte" id="it-scelte">
+                {citta.map(t => (
+                  <li class="it-scelta" data-id={t.id} data-zona={t.zona} data-cerca={`${t.nome} ${t.breve} ${C.zone[t.zona]}`.toLowerCase()}>
+                    {t.foto ? <img class="it-scelta__foto" src={t.foto} alt="" width="56" height="56" loading="lazy" decoding="async" /> : <span class="it-scelta__foto it-scelta__foto--vuota" aria-hidden="true" />}
+                    <details class="it-scelta__info">
+                      <summary>
+                        <span class="it-scelta__nome">{t.nome}</span>
+                        <span class="it-scelta__meta"><b class="it-scelta__min"></b>{durata(t.durata)} · {t.alChiuso === 'si' ? 'al chiuso' : t.alChiuso === 'in-parte' ? 'in parte al chiuso' : "all'aperto"}{t.prenotazione === 'obbligatoria' ? ' · solo prenotando' : ''}</span>
+                        <span class="it-scelta__nota" hidden></span>
+                      </summary>
+                      <div class="it-scelta__dettagli" data-da={`it-t-${t.id}`}></div>
+                    </details>
+                    <button type="button" class="it-piu" data-aggiungi={t.id} aria-label={`Aggiungi ${t.breve}`} data-tip="Aggiungi"><Fragment set:html={icona('piu', 24)} /></button>
+                  </li>
+                ))}
+              </ul>
+              <div class="it-nessuna" id="it-nessuna" hidden>
+                <p><strong>Nessuna tappa con questi filtri</strong></p>
+                <p>Togli qualche filtro o cerca un'altra parola.</p>
+                <button type="button" class="it-btn it-btn--contorno" id="it-togli-filtri">Togli i filtri</button>
+              </div>
+            </div>
+          </div>
+          <div class="it-solo-gite" hidden>
+            <Testo b={T.b('gite')} class="it-foglio__nota" />
+            <ul class="it-scelte">
+              {gite.map(t => (
+                <li class="it-scelta it-scelta--gita" data-id={t.id}>
+                  {t.foto ? <img class="it-scelta__foto" src={t.foto} alt="" width="56" height="56" loading="lazy" decoding="async" /> : <span class="it-scelta__foto it-scelta__foto--vuota" aria-hidden="true" />}
+                  <details class="it-scelta__info">
+                    <summary>
+                      <span class="it-scelta__nome">{t.nome}</span>
+                      <span class="it-scelta__meta">Giornata intera · da {t.partenza}</span>
+                    </summary>
+                    <div class="it-scelta__dettagli" data-da={`it-t-${t.id}`}></div>
+                  </details>
+                  <button type="button" class="it-piu" data-aggiungi={t.id} aria-label={`Aggiungi la gita a ${t.breve}`} data-tip="Aggiungi"><Fragment set:html={icona('piu', 24)} /></button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Scheda di una tappa -->
+      <dialog class="it-foglio it-foglio--scheda" id="it-scheda" aria-labelledby="it-scheda-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-scheda-h"></h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-foglio__corpo" id="it-scheda-corpo"></div>
+        <div class="it-foglio__piede"><button type="button" class="it-btn it-btn--primario it-btn--largo" id="it-scheda-azione"></button></div>
+      </dialog>
+
+      <!-- Data e orari del giorno -->
+      <dialog class="it-foglio it-foglio--basso" id="it-impostazioni" aria-labelledby="it-impostazioni-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-impostazioni-h">Giorno 1</h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-foglio__corpo it-moduli">
+          <div class="it-campo">
+            <label for="it-data">Data</label>
+            <div class="it-campo__riga">
+              <input type="date" id="it-data" min="2026-01-01" max="2030-12-31" aria-describedby="it-data-aiuto" />
+              <button type="button" class="it-btn it-btn--contorno it-btn--piccolo" id="it-data-togli">Togli la data</button>
+            </div>
+            <p class="it-campo__aiuto" id="it-data-aiuto">Con la data ti diciamo se una tappa è chiusa quel giorno e calcoliamo i mezzi del sabato e della domenica. Gli altri giorni seguono, uno dopo l'altro.</p>
+          </div>
+          <div class="it-campo it-campo--due">
+            <div><label for="it-inizio">Inizio</label><input type="time" id="it-inizio" step="900" min="05:00" max="20:00" /></div>
+            <div><label for="it-fine">Fine</label><input type="time" id="it-fine" step="900" min="06:00" max="23:45" /></div>
+          </div>
+          <div class="it-campo">
+            <label class="it-scelta-si"><input type="checkbox" id="it-piedi" /> Solo a piedi, senza metro e funicolari</label>
+            <p class="it-campo__aiuto">Vale per tutti i giorni di questo itinerario.</p>
+          </div>
+          <div class="it-campo it-campo--giu">
+            <button type="button" class="it-btn it-btn--pericolo" id="it-giorno-togli">Elimina questo giorno</button>
+            <div class="it-conferma" id="it-giorno-conferma" hidden>
+              <p class="it-conferma__titolo" id="it-giorno-conferma-testo"></p>
+              <div class="it-conferma__azioni">
+                <button type="button" class="it-btn it-btn--contorno" id="it-giorno-no">Annulla</button>
+                <button type="button" class="it-btn it-btn--pericolo-pieno" id="it-giorno-si">Elimina il giorno</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- I miei itinerari -->
+      <dialog class="it-foglio" id="it-elenco" aria-labelledby="it-elenco-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-elenco-h">I miei itinerari</h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-foglio__corpo">
+          <div id="it-elenco-vista">
+            <button type="button" class="it-btn it-btn--contorno it-btn--largo" id="it-nuovo"><Fragment set:html={icona('piu', 22)} />Nuovo itinerario</button>
+            <ul class="it-miei" id="it-miei"></ul>
+            <p class="it-campo__aiuto">Gli itinerari restano solo in questo browser. Per averli su un altro telefono, mandali con «Condividi».</p>
+          </div>
+          <div id="it-conferma" class="it-conferma" hidden>
+            <h3 id="it-conferma-h"></h3>
+            <p id="it-conferma-testo"></p>
+            <div class="it-conferma__azioni">
+              <button type="button" class="it-btn it-btn--contorno" id="it-conferma-no">Annulla</button>
+              <button type="button" class="it-btn it-btn--pericolo-pieno" id="it-conferma-si">Elimina itinerario</button>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Condividi (quando il telefono non ha la condivisione) -->
+      <dialog class="it-foglio it-foglio--basso" id="it-manda" aria-labelledby="it-manda-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-manda-h">Condividi l'itinerario</h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-foglio__corpo it-moduli">
+          <div class="it-campo">
+            <label for="it-link">Link dell'itinerario</label>
+            <input type="text" id="it-link" readonly />
+          </div>
+          <div class="it-btn-riga">
+            <button type="button" class="it-btn it-btn--primario" id="it-copia"><Fragment set:html={icona('copia', 20)} />Copia il link</button>
+            <a class="it-btn it-btn--contorno" id="it-whatsapp" href="https://wa.me/" rel="noopener" target="_blank">Manda su WhatsApp</a>
+          </div>
+          <p class="it-campo__aiuto">Il link porta il nome, i giorni e le tappe dell'itinerario, nient'altro.</p>
+        </div>
+      </dialog>
+
+      <!-- Giornata di regata: quale giorno? -->
+      <dialog class="it-foglio it-foglio--basso" id="it-quale-regata" aria-labelledby="it-quale-regata-h" closedby="any">
+        <div class="it-foglio__testa">
+          <h2 id="it-quale-regata-h">Quale giorno di regata?</h2>
+          <button type="button" class="it-ib" data-chiudi aria-label="Chiudi" data-tip="Chiudi"><Fragment set:html={icona('x', 24)} /></button>
+        </div>
+        <div class="it-foglio__corpo it-moduli">
+          <div class="it-campo">
+            <label for="it-giorno-regata">Giorno</label>
+            <select id="it-giorno-regata"></select>
+            <p class="it-campo__aiuto" id="it-giorno-regata-aiuto"></p>
+          </div>
+          <button type="button" class="it-btn it-btn--primario it-btn--largo" id="it-crea-regata">Crea la giornata di regata</button>
+        </div>
+      </dialog>
+
+      <!-- Schede delle tappe e testo delle regate, copiati dallo script quando servono -->
+      {tappe.map(t => <template id={`it-t-${t.id}`}><Scheda t={t} partenza={partenzaDi(t.id)} /></template>)}
+      <template id="it-t-regate"><Testo b={T.b('regate')} class="it-regate-nota" /></template>
+      <script type="application/json" id="it-dati" set:html={json} />
+      <script type="application/json" id="it-pronti" set:html={JSON.stringify(pronti.map(p => ({ id: p.id, nome: p.nome, evento: p.evento, giorni: p.it.giorni }))).replace(/</g, '\\u003c')} />
+      <p id="it-aiuto-maniglia" hidden>Trascina con il dito o con il mouse. Con la tastiera usa le frecce su e giù.</p>
+    </section>
+
+    <section class="it-sezione" id="pronti" aria-labelledby="pronti-h">
+      <div class="it-wrap">
+        <h2 id="pronti-h">Itinerari pronti</h2>
+        <p class="it-sezione__lead">Un punto di partenza: aprili nel compositore e cambiali come vuoi. Gli orari sono quelli di un giorno feriale, partendo alle 9:30.</p>
+        <div class="it-pronti">
+          {pronti.map(p => (
+            <article class="it-pronto-scheda" aria-labelledby={`pronto-${p.id}`}>
+              <h3 id={`pronto-${p.id}`}>{p.nome}</h3>
+              <Testo b={T.b(`pronto-${p.id}`)} />
+              {p.evento && <Testo b={T.b('regate')} />}
+              {p.giorni.map((g, k) => (
+                <div class="it-pronto-giorno">
+                  {p.giorni.length > 1 && <h4>Giorno {k + 1}</h4>}
+                  <ol class="it-pronto-tappe">
+                    {g.voci.filter(v => v.tipo === 'tappa').map(v => v.tipo === 'tappa' && (
+                      <li><span class="it-pronto-ora">{ora(v.inizio)}</span><span class="it-piastrella it-piastrella--mini" aria-hidden="true">{v.n}</span> {nomeDi(v.id)}</li>
+                    ))}
+                  </ol>
+                  <p class="it-pronto-totale">Dalle {ora(g.inizio)} alle {ora(g.fine)}, con {durata(g.spostamenti)} di spostamenti.</p>
+                </div>
+              ))}
+              <button type="button" class="it-btn it-btn--contorno it-interattivo" data-pronto={p.id}>Apri nel compositore</button>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="it-sezione it-sezione--gite" id="gite" aria-labelledby="gite-h">
+      <div class="it-wrap">
+        <h2 id="gite-h">Gite di un giorno</h2>
+        <Testo b={T.b('gite')} class="it-sezione__lead" />
+        <ul class="it-gite">
+          {gite.map(g => (
+            <li class="it-gita-riga">
+              {g.foto ? <img src={g.foto} alt="" width="72" height="72" loading="lazy" decoding="async" /> : <span class="it-scelta__foto--vuota" aria-hidden="true" />}
+              <div>
+                <h3>{g.nome}</h3>
+                <p>Da {g.partenza} · giornata intera</p>
+              </div>
+              <button type="button" class="it-btn it-btn--contorno it-btn--piccolo it-interattivo" data-gita={g.id}>Aggiungi<span class="visually-hidden"> la gita a {g.breve}</span></button>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
+
+    <section class="it-sezione" id="da-sapere" aria-labelledby="sapere-h">
+      <div class="it-wrap it-testi">
+        <h2 id="sapere-h">Da sapere</h2>
+        <h3>Come calcoliamo i tempi</h3>
+        <Testo b={T.b('tempi')} />
+        <h3>Orari e prezzi</h3>
+        <Testo b={T.b('orari')} />
+        <h3>Dove restano i tuoi itinerari</h3>
+        <Testo b={T.b('salvare')} />
+      </div>
+    </section>
+
+    <FontiPagina testi={[T, TT]} fatti={schedeMostrate} extra={[fonti.get('osm')!]} />
+  </div>
+</Base>
+
+<script>
+  import '../../../scripts/itinerari/app';
+</script>
