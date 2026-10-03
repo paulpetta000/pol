@@ -14,7 +14,7 @@ _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.
 ## Prossimi passi
 1. Le tue prove sul telefono della pagina itinerari, sul sito pubblico (elenco nell'archivio, sezione «Blocco 2 · Da fare»), e le correzioni che ne vengono.
 2. Blocco 3 (`PROMPT-BLOCCO-3.md`). Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui; alla fine spegnere VectorLab e consistent-ui.
-3. **Itinerari di Napoli ampliati** (10+ luoghi, dove mangiare, autobus): specifica in `specifiche/itinerari-napoli-ampliamento.md`, **da approvare**; poi blocchi A (luoghi), B (autobus), C (dove mangiare).
+3. **Itinerari di Napoli ampliati** (10+ luoghi, dove mangiare, autobus): specifica **approvata il 03/10/2026** in `specifiche/itinerari-napoli-ampliamento.md` (40–50 locali, pasta inclusa, menu solo se pubblico); poi blocchi A (luoghi), B (autobus), C (dove mangiare). Per il blocco A: sessione nuova con `specifiche/PROMPT-A-luoghi.md`.
 4. Nuovo sito itinerari per più città (Napoli, poi Roma, Milano, Torino, Venezia…): idea del 03/10/2026, vedi sotto. Prima una spec.
 5. Correggere la scheda `echia-ascensore` (orari da OpenStreetMap, diversi da quelli ANM: 7–22 tutti i giorni, 1,50 €).
 6. Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede «Non ancora uscito». Orari e prezzi delle tappe da ricontrollare entro il 30/04/2027.

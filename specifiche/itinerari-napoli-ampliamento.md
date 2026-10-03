@@ -1,6 +1,7 @@
 # Itinerari di Napoli: più luoghi, dove mangiare, autobus
 
-_Specifica del 03/10/2026, da approvare da Enrico prima di costruire. Perimetro: solo Napoli. Il sito itinerari per più città è un lavoro a parte (vedi `PROGRESS.md`)._
+_Specifica del 03/10/2026. **Approvata da Enrico il 03/10/2026** (ordine A → B → C, 40–50 locali, criteri di scelta e filtri come qui sotto)._
+_Perimetro: solo Napoli. Il sito itinerari per più città è un lavoro a parte (vedi `PROGRESS.md`)._
 
 ## Obiettivo
 Ampliare la pagina `/napoli/itinerari/` in tre modi, con lo stesso metodo delle 39 tappe attuali (fonti, schede, testi, controlli della build):
@@ -30,7 +31,7 @@ Ampliare la pagina `/napoli/itinerari/` in tre modi, con lo stesso metodo delle 
 
 ### 2b · I filtri
 Quelli che hai chiesto:
-1. **Tipo di cucina**: locali tipici (cucina napoletana), ristoranti di mare, pizzerie, carne, friggitorie e cibo di strada, dolci e caffè.
+1. **Tipo di cucina**: locali tipici (cucina napoletana), pasta, ristoranti di mare, pizzerie, carne, friggitorie e cibo di strada, dolci e caffè.
 2. **Prezzo**: tre fasce (€, €€, €€€), calcolate da prezzi ufficiali con la regola scritta sulla pagina (per esempio il costo di un pasto base preso dal menu o dal listino del locale, con data). Se il locale non pubblica i prezzi, la scheda lo dice, e il locale compare come «prezzo non pubblicato», non in una fascia inventata.
 
 Le altre due che aggiungo per renderlo completo:
@@ -40,13 +41,14 @@ Le altre due che aggiungo per renderlo completo:
 Altri filtri possibili, ma solo se la fonte ufficiale del locale li dice, e quindi non nella prima versione: vegetariano e senza glutine, adatto ai bambini, senza prenotare.
 
 ### 2c · Come si scelgono i locali (regole)
-- Numeri proposti, da approvare: circa **25–30 locali** in totale, con almeno uno per zona; per cucina all'incirca: pizzerie 6, friggitorie e cibo di strada 5, cucina napoletana 6, carne 4, pesce 4, dolci e caffè 5.
+- Numeri decisi da Enrico: **40–50 locali** in totale, con almeno uno per zona. Per cucina all'incirca (totale 45): pizzerie 8, friggitorie e cibo di strada 6, cucina napoletana tipica 8, **pasta** 6 (osterie e trattorie dove la pasta è il piatto forte), carne 5, pesce 6, dolci e caffè 6. Le quantità si aggiustano in base a quanti locali hanno una fonte ufficiale con orari e prezzi: ne entrano meno ma sicuri, mai di più con dati inventati.
 - Dati da fonte ufficiale del locale (sito, pagina ufficiale): indirizzo, orari, giorno di chiusura, prenotazione, prezzo. Le valutazioni non sono dati: niente «il migliore», niente stelle nostre.
 - Criteri di scelta scritti sulla pagina, uguali per tutti: **storia documentata**, **riconoscimento di una guida o di una fonte indipendente** (per esempio Michelin, Gambero Rosso, Slow Food, UNESCO sulla pizza napoletana) e **posto comodo tra le tappe**. Se la scelta è nostra, lo diciamo.
 - Stato delle informazioni: `confermato` (sito ufficiale), `stampa` (guida o giornale), `segnalato` (blog o siti non ufficiali, con `*`).
 - **Nessun pagamento e nessuna affiliazione** legati alla scelta: i link di affiliazione del Rilascio 3 (`PIANO.md`, punto 8) non si applicano ai locali, e la pagina dice che la lista è indipendente.
 - Ricontrollo: orari e prezzi dei locali cambiano spesso: **ricontrollare entro il 30/04/2027** e poi prima della Coppa.
-- Nei dati: `categoria: mangiare`, `pasto: [pranzo, cena, spuntino]`, `cucina: [...]`, `fascia: 1|2|3|nd`, `piatti: [...]`.
+- **Menu**: nella scheda di un locale, un pulsante «Apri il menu» che porta alla pagina del menu **sul sito ufficiale del locale**, solo se quella pagina esiste ed è pubblica. Non si copia il menu nel nostro sito (cambia spesso e non è nostro) e non si inventa niente: se il locale non ha un menu pubblico, il pulsante non c'è e la scheda dice «menu non pubblicato online». Il link porta fuori dal nostro sito e lo dice. L'indirizzo del menu ha la sua data di controllo e la build avvisa quando è da ricontrollare.
+- Nei dati: `categoria: mangiare`, `pasto: [pranzo, cena, spuntino]`, `cucina: [...]`, `fascia: 1|2|3|nd`, `piatti: [...]`, `menu: <indirizzo ufficiale>` (facoltativo).
 
 ## 3 · Autobus
 - **Cosa serve**: per le linee che portano ai luoghi, (a) ogni quanto passano, in modo approssimato, e (b) il **tempo medio di viaggio** tra una tappa e l'altra. Non gli orari di partenza.
@@ -86,8 +88,8 @@ Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di pa
 - [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).
 
-## Domande aperte per Enrico
-1. L'ordine A → B → C va bene? (Proposto perché i luoghi usano il metodo già pronto, i bus risolvono i posti lontani e i locali sono i dati che invecchiano prima.)
-2. I numeri dei locali (25–30 in totale, divisi come sopra) vanno bene?
-3. I criteri di scelta dei locali (storia, riconoscimento indipendente, comodità) vanno bene, o ne vuoi altri?
-4. I due filtri in più (aperto in quel giorno e a quell'ora; vicino a una zona o a una tappa) vanno bene?
+## Domande per Enrico (tutte risolte)
+1. ~~L'ordine A → B → C va bene?~~ → **sì** (03/10/2026). (Proposto perché i luoghi usano il metodo già pronto, i bus risolvono i posti lontani e i locali sono i dati che invecchiano prima.)
+2. ~~I numeri dei locali~~ → **40–50, con la pasta come categoria** (deciso il 03/10/2026).
+3. ~~I criteri di scelta dei locali~~ → **vanno bene** (03/10/2026).
+4. ~~I due filtri in più~~ → **vanno bene** (03/10/2026).
