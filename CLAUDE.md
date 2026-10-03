@@ -53,8 +53,13 @@ e si sale solo se il risultato non è buono. Effort, dal più leggero: medio · 
 | Struttura dei dati, specifiche, scelte difficili da cambiare dopo | Opus | extra |
 | Bug difficile da trovare, sicurezza (Supabase, pronostici), fallimenti ripetuti | Opus | max |
 
-- **Se un risultato fallisce o non è affidabile, sali da solo**, senza chiedere: prima di un livello di effort, poi di modello (Sonnet → Opus). Un compito fallito due volte passa subito al livello dopo.
-  Per le decisioni di struttura conta più il modello dell'effort: un Opus a effort medio vale più di un Sonnet a max. Sonnet a effort alto o extra va bene per i lavori ripetitivi e controllabili.
+- **Scala di salita sui fallimenti** (deciso da Enrico il 03/10/2026). Il modello leggero **finisce tutto il suo lavoro**: non si interrompe al primo problema.
+  I casi falliti si raccolgono e si ritentano **in blocco** con un livello più forte, che parte sapendo cosa è già stato provato: Sonnet (effort della sessione) → Sonnet più alto, se l'effort per agente si può impostare → Opus alto. Un tentativo per livello.
+  - Gli agenti devono scrivere «NON TROVATO» con cosa hanno provato. **Mai inventare**: vale la regola «niente senza fonte».
+  - Prima di salire, capisci perché ha fallito. Se la cosa non esiste, il sito è bloccato o manca la fonte, **non salire**: scarta il caso o segnalalo a Enrico. Sali solo se ha cercato male o ragionato male.
+  - Se anche Opus alto fallisce, **non salire da solo a extra o max**: dillo a Enrico.
+  - Il modello principale controlla sempre tutti i dati delicati (orari, prezzi, fonti) e un campione del resto.
+  Per le decisioni di struttura conta più il modello dell'effort: un Opus a effort medio vale più di un Sonnet a max.
 - **Max** solo quando alto ed extra non bastano o quando la scelta è costosa da correggere: non è il livello normale.
 - **Fai da solo** quando il lavoro è di poche righe: un agente parte da zero e deve rileggere il contesto, quindi per poco costa di più.
 - **Il modello dei sub-agenti lo scegli tu** a ogni lancio. **L'effort della sessione lo imposta Enrico**: dì tu quando alzarlo o abbassarlo, in una riga.
