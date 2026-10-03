@@ -48,6 +48,11 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 - Il compositore generico: la città e le regate arrivano come dati. Le regate compaiono solo dove la città ha un evento nel calendario.
 - Domande ancora aperte: che ne facciamo di `/napoli/itinerari/`; stessa grafica o identità nuova; nome e indirizzo.
 
+## Idea: dati che si tengono aggiornati da soli (03/10/2026, da decidere)
+- Detta da Enrico: gli orari dei bus sono d'autunno e cambiano spesso; il sito dovrebbe **accorgersi da solo quando i dati ufficiali cambiano** e avvisarci (o, più avanti, aggiornarsi).
+- Primo passo semplice (nessuna API a pagamento): un controllo periodico (ogni settimana) che riscarica il feed ANM (https://www.anm.it/google/google-transit.zip), lo confronta con quello usato e, se cambia, apre un avviso. Stesso metodo per altre fonti con un indirizzo fisso (orari dei parchi, EAV).
+- Da decidere con una specifica: dove gira il controllo, come ci avvisa, se l'aggiornamento è automatico o solo segnalato. Non fa parte del blocco B.
+
 ## Cose che devi fare tu
 1. Guardare il sito sul telefono e dire cosa cambiare.
 2. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni). Sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati.
