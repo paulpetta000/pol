@@ -71,10 +71,10 @@ Altre cose utili:
 3. Se la fonte è nuova, aggiungila in `fonti.yaml`.
 4. `npm run build` per controllare. Se la scheda è usata da un testo in `src/testi/`, rileggi il testo, correggilo e poi `npm run testi:firma`.
 
-## Itinerari (Rilascio 3, non ancora online)
+## Itinerari (Rilascio 3)
 
-- **Tappe**: `src/data/tappe.yaml`. Orari, prezzi e viaggi delle gite sono schede in `fatti.yaml` con id che cominciano con `tp-` (fonti e foto anche); i testi brevi stanno in `src/testi/tappe.yaml` (stesso id della tappa). Finché `ITINERARI_ONLINE` (in `src/config/sito.ts`) è `false`, le pagine Fonti e Note legali non mostrano niente con id `tp-`; la build controlla comunque tappe, schede, testi e tempi dalla pagina `/napoli/` (`src/lib/tappe.ts`).
-- **Tempi tra le tappe**: `node scripts/itinerari/scarica.mjs <cartella>` scarica strade, scale, ascensori e linee da OpenStreetMap e le quote Copernicus; `node scripts/itinerari/costruisci.mjs <cartella>` scrive `src/data/tempi-tappe.json` (giorno feriale, domenica pomeriggio, solo a piedi). Se una tappa nuova o spostata non è nei tempi, la build si ferma. Metodo e controlli: `ricerca/2026-10-02-itinerari-distanze.md`. I parametri (velocità, attese, linee chiuse come la funicolare di Montesanto) sono in testa allo script.
+- **Tappe**: `src/data/tappe.yaml`. Orari, prezzi e viaggi delle gite sono schede in `fatti.yaml` con id che cominciano con `tp-` (fonti e foto anche); i testi brevi stanno in `src/testi/tappe.yaml` (stesso id della tappa). Con `ITINERARI_ONLINE` (in `src/config/sito.ts`) a `false` le pagine Fonti e Note legali non mostrano niente con id `tp-`; dal blocco 2 è `true`.
+- **Tempi tra le tappe**: `node scripts/itinerari/scarica.mjs <cartella>` scarica strade, scale, ascensori e linee da OpenStreetMap e le quote Copernicus; `node scripts/itinerari/costruisci.mjs <cartella>` scrive `src/data/tempi-tappe.json` (giorno feriale, sabato, sabato dopo le 14:50, domenica mattina, domenica pomeriggio, solo a piedi) e `src/data/percorsi-tappe.json` (il disegno dei percorsi per la mappa, compresso). Se una tappa nuova o spostata non è nei tempi, la build si ferma. Metodo e controlli: `ricerca/2026-10-02-itinerari-distanze.md`. I parametri (velocità, attese, linee chiuse come la funicolare di Montesanto) sono in testa allo script.
 - **Bozzetti del design**: `design/itinerari/` (non fanno parte del sito). `node design/itinerari/genera.mjs <cartella>` rifà le due proposte in HTML con i dati veri; `node design/itinerari/foto.cjs <uscita> <percorso di playwright-core>` le fotografa come schermate da telefono, in chiaro e in scuro.
 - Le foto delle tappe finiscono già nella cartella `_astro` del sito costruito, ma nessuna pagina le usa finché gli itinerari non sono online.
 

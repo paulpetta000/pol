@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 03/10/2026 (Rilascio 3, blocco 1 finito e approvato, portato su `main`: vedi «Rilascio 3 · Blocco 1»; prossimo, blocco 2)_
+_Ultimo aggiornamento: 03/10/2026 (Rilascio 3, blocco 2 costruito sul ramo `claude/itinerari-blocco-2`: mancano la prova senza rete, l'anteprima di Vercel e la tua revisione. Vedi «Rilascio 3 · Blocco 2»)_
 
 ## Fatto
 - **Fase 1 (piano) completata**: vedi `PIANO.md`.
@@ -98,6 +98,44 @@ Regola: ogni skill aggiunge poco peso, ma si somma. Accendere solo quelle della 
 | Rilascio 4 · Lingue | nessuna in particolare | Serve un madrelingua per i termini di vela |
 | Rilascio 5 · Pronostici | security-review, controllo di sicurezza di Supabase (advisors), dataviz, code-review; Backend Design dopo un controllo | Il più delicato: database e regole di accesso |
 | Prima di ogni pubblicazione | security-review, code-review | Già incluse in Claude Code |
+
+## Rilascio 3 · Blocco 2 (03/10/2026): pagina costruita, da rivedere
+Ramo `claude/itinerari-blocco-2`, creato da `main`. Niente è su `main`.
+
+**Deciso con te il 03/10/2026**
+- **Regate**: compaiono solo se le date dell'itinerario cadono nei giorni di regata del calendario 2027 (fuori, per esempio a gennaio o ad agosto, non si propongono). La «giornata di regata» pronta chiede quale giorno.
+- **Salvataggio**: più itinerari sul telefono, ognuno con un nome («I miei itinerari»).
+- Il compositore va tenuto generico (la città e le regate arrivano come dati): potrebbe servire per un futuro sito di itinerari di altre città.
+
+**Fatto**
+- **Pagina `/napoli/itinerari/`** nello stile «Orario» corretto (caratteri Barlow e Barlow Semi Condensed salvati sul sito, nero, grigi, giallo solo sulle piastrelle e sulla riga di fine giornata):
+  - giornata con l'ora a sinistra, foto con la piastrella numerata, tempi e mezzi tra le tappe (a piedi puntinato, metro viola, funicolari blu), riepilogo nero con inizio → fine, visite, spostamenti e km a piedi;
+  - giorni 1, 2, … (fino a 7) e «+»; data facoltativa e orari del giorno in «Cambia»; «solo a piedi»;
+  - **aggiungere**: pannello dal basso con ricerca, filtri (al chiuso, gratis, bambini, senza scale, senza prenotare), minuti dall'ultima tappa, «Chiuso il martedì» se c'è la data, scheda completa della tappa (testo, orari, biglietti) aprendo la riga; un tocco aggiunge, un altro toglie;
+  - **riordinare**: maniglia da trascinare (dito o mouse), pulsanti Su e Giù, frecce della tastiera sulla maniglia; annunci per il lettore di schermo;
+  - **avvisi**: giornata piena (riga gialla e nera che taglia la tappa, «Sposta … nel giorno N» o «Finisci alle …»), tappa lontana dalle altre («Sposta nel giorno N» o «Lascia qui»), chiusa quel giorno, regate senza data o fuori calendario, arrivo tardi alle regate; **ordine più corto** proposto quando fa risparmiare almeno 5 minuti (la prima tappa resta la prima);
+  - **gite** (Pompei, Ercolano, Vesuvio, Capri, Ischia, Procida): un giorno intero a parte, non si mescolano con le tappe in città;
+  - **mappa**: la nostra mappa di OpenStreetMap con i percorsi veri del giorno (`src/data/percorsi-tappe.json`), piastrelle numerate piccole, + e −, «mostra tutto»; sul computer sta accanto alla giornata;
+  - **itinerari pronti** (`src/data/itinerari-pronti.yaml`): mezza giornata, un giorno, due e tre giorni, giornata di regata. La build li ricalcola e si ferma se un giorno non ci sta, se una tappa è lontana o se esiste un ordine più corto;
+  - **salvare e condividere**: «I miei itinerari» (nuovo, apri, rinomina sul posto, elimina con conferma e «Annulla»); «Condividi» con la condivisione del telefono, oppure copia il link o WhatsApp. Il link porta tutto dopo il «#»: non arriva al server, e la pagina lo toglie dall'indirizzo prima delle statistiche;
+  - **senza rete**: la pagina, il suo script, la mappa, i percorsi e le miniature sono nel service worker (`integrations/service-worker.mjs`).
+- **Tempi**: lo script `scripts/itinerari/costruisci.mjs` ora calcola anche sabato (Linea 2 ogni 15 minuti), sabato dopo le 14:50 (Linea 6 ferma) e domenica mattina; la pagina sceglie i tempi dal giorno e dall'ora di ogni spostamento. I tempi del giorno feriale, della domenica pomeriggio e a piedi non sono cambiati.
+- **Testi** in `src/testi/itinerari.yaml` (regate, itinerari pronti, gite, come calcoliamo i tempi, orari, dove restano gli itinerari), con i controlli della build. Orari, prezzi e viaggi delle tappe sono mostrati come sono nelle schede: se una non è confermata per il 2027 la build controlla che lo dica a parole e mette il `*`.
+- **Collegamenti**: menu (sotto «Napoli»: «Mappa, itinerari, trasporti, accessibilità»), home («Girare Napoli», settima scelta in «Cosa vuoi fare?», larga quanto la riga), pagina Napoli (al posto di «In arrivo in primavera»), Come arrivare (paragrafo «Girare la città»).
+- **Privacy** aggiornata (03/10/2026): gli itinerari restano nel browser; cosa porta il link condiviso. `ITINERARI_ONLINE = true`: Fonti e Note legali ora mostrano schede, fonti e foto delle tappe.
+
+**Controlli fatti (in locale, 03/10/2026)**
+- Build senza errori; testi firmati.
+- axe (WCAG 2.2 AA): **nessuna violazione** in 60 controlli (pagina vuota, giornata, tappa scelta, pannello, gite, avvisi, scheda, impostazioni, i miei itinerari, mappa; chiaro e scuro; 390 e 1280 px; più home, Napoli, Come arrivare, privacy, fonti, note legali).
+- Lighthouse da telefono: itinerari 97 · 100 · 100 · 100; home 98; Napoli 99; Come arrivare 100; privacy 100.
+- Nessuno scorrimento orizzontale a 320 e 390 px; «riduci movimento» spegne le animazioni; nessun errore in console.
+- Prove: itinerario pronto, aggiungere, tappa lontana, giornata piena, sposta in un altro giorno, Su/Giù, trascinamento con il mouse, frecce, Esc, data, giornata di regata, link condiviso aperto su un altro telefono.
+
+**Da fare prima della revisione**
+1. Prova **senza rete** (il service worker in locale va registrato a mano: lo script della pagina lo fa solo con https), poi `npm run check:links`.
+2. `git push` del ramo e **anteprima di Vercel**; prove sull'anteprima (anche senza rete).
+3. Immagini da telefono, chiaro e scuro: la pagina, un itinerario composto, l'avviso della tappa lontana, la mappa.
+4. Mandarti: link dell'anteprima, immagini, prove da fare sul telefono, risultati dei controlli. Poi aspettare il tuo OK.
 
 ## Rilascio 3 · Blocco 1 (02–03/10/2026): finito, approvato e su `main`
 Ramo `claude/itinerari-blocco-1`, creato da `main`. Niente è online: il sito pubblico non cambia (controllato: tutte le pagine costruite sono identiche a prima; cambiano solo le date di generazione dei calendari .ics e ci sono le 34 foto delle tappe, non usate da nessuna pagina).
