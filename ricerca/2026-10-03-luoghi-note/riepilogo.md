@@ -10,7 +10,7 @@ Note di dettaglio, una per zona, in questa cartella. Ricerca fatta da 5 agenti S
 | 2 | Girolamini (Chiesa-Museo, Biblioteca) | storico | mar–ven 10–18:30, sab–dom 8:30–13:30 (dal 25/10: mar–ven 9–17:30) | lunedì | 5 € / 2 €; Biblioteca 10 € / 2 € | sì |
 | 3 | Museo Filangieri | storico | 9:30–19 (la biglietteria online dice 9:30–18) | – | 10 € | sì (sito del museo) |
 | 4 | Purgatorio ad Arco | storico | lun–sab 10–17, dom 10–14 | – | 8 € / 6 € / 4 € (dal 1/10/2026) | orari sì |
-| 5 | San Giovanni a Carbonara | storico | 10–17 tutti i giorni (da riconfermare) | – | gratis; sagrestia a pagamento | **no: pagina MUDD con captcha** |
+| 5 | San Giovanni a Carbonara | storico | chiesa tutti i giorni 10–17 | – | visita gratuita; Sagrestia Vasariana esclusa, con biglietto a parte (prezzo non letto) | sì: letta da Enrico sul telefono il 03/10/2026 (muddnapoli.it/en/luoghi/san-giovanni-a-carbonara/), ingresso da via Carbonara 4 |
 | 6 | Villa Pignatelli, museo e giardino | storico + giardino | 9:30–17 | martedì | 5 € / 2 € (da riconfermare) | orari sì; prezzi no (cultura.gov.it irraggiungibile) |
 | 7 | Mercato della Pignasecca | storico (vita di quartiere) | 7–15, «giornaliero» | domenica non verificata | libero | sì (Comune, agg. 03/06/2025) |
 | 8 | Mercato di Porta Nolana | storico (vita di quartiere) | 7–15, «giornaliero» | domenica non verificata | libero | sì (stessa pagina) |

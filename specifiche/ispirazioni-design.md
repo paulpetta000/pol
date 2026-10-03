@@ -1,0 +1,13 @@
+# Ispirazioni di design (per il blocco 3, «estetica con due proposte»)
+
+Siti che piacciono a Enrico, descritti a parole: niente immagini copiate da altri siti.
+
+## MUDD Napoli · muddnapoli.it (segnalato da Enrico il 03/10/2026)
+Pagina vista sul telefono: «San Giovanni a Carbonara» (un luogo del circuito MUDD della Diocesi).
+- **Apertura a tutto schermo**: foto dell'opera (il Mausoleo di Ladislao) scurita, con sopra il logo bianco in alto a sinistra e un pulsante menu rotondo e semitrasparente in alto a destra.
+  Sotto: un pulsante a pillola con il bordo («↖ Tutti i luoghi MUDD»), un titolo enorme in un sans-serif nero e compatto, una frase di presentazione più leggera e un pulsante pieno scuro a pillola («Scegli la tua esperienza di visita»).
+- **Schede «da sapere»**: rettangoli grigio chiaro con gli angoli tondi, **leggermente ruotati** come foglietti appoggiati uno sull'altro, con una frase corta e grande in grassetto ciascuno («Il Mausoleo di Ladislao è tra i più alti esempi del gotico napoletano», «Ha un pavimento in maiolica del Quattrocento»).
+- **Immagine ritagliata a forma**: il dettaglio del pavimento in maiolica tagliato a rombo/ottagono, a cavallo tra una fascia bianca e una fascia blu notte. Sotto, una riga sottile bianca e un titolo **con le grazie** («Attraverso secoli di storia»), con il testo bianco sul blu scuro.
+  Quindi due caratteri: sans-serif compatto per titoli e pulsanti, serif per i titoli delle parti di racconto.
+- **Fondo pagina semplice**: Informazioni (orari in una frase), Indirizzo, «Indicazioni ↗», «Contatti ↗», un grande pulsante a pillola con il bordo e un pulsante rotondo «torna su» che resta a galla.
+- Cosa si potrebbe prendere per «Napoli a Vela»: il ritaglio a forma delle foto (c'è una guida in `.claude/skills/modern-web-guidance`, «shaped-cutouts»), le schede ruotate per i «da sapere» delle tappe, l'accoppiata sans-serif + serif, l'apertura con foto scurita e titolo grande nelle pagine dei luoghi.
