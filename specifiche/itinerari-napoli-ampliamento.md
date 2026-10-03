@@ -61,6 +61,24 @@ Altri filtri possibili, ma solo se la fonte ufficiale del locale li dice, e quin
 - Effetti sulla pagina: il compositore propone il bus come mezzo tra due tappe quando conviene (più corto del piede), nella riga dei mezzi con un colore suo; il «solo a piedi» lo esclude. Le tappe oggi segnate come «molto lontane a piedi» vanno rivalutate (i loro avvisi cambiano).
 - Le fermate non sono tappe: compaiono solo come mezzo tra tappe.
 
+## 4 · Una pagina propria per ogni luogo e locale (SEO e orientamento)
+Deciso da Enrico il 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa, che Google può indicizzare. Il compositore resta com'è.
+
+**Indirizzi** (non cambiano mai dopo la pubblicazione, per non perdere i link): `/napoli/luoghi/<id>/` e `/napoli/dove-mangiare/<id>/`, con gli elenchi `/napoli/luoghi/` (per zona) e `/napoli/dove-mangiare/` (con i filtri). Le 39 tappe attuali ottengono la loro pagina nello stesso modo. Gli itinerari pronti (mezza giornata, un giorno, due, tre, regata) hanno anch'essi una pagina fissa con il testo e le tappe elencate.
+
+**Contenuto**: titolo e descrizione propri, testo proprio, orari, prezzi, foto, fonti in fondo, dati strutturati (luogo o ristorante). Niente pagine fotocopia: una pagina esiste solo se ha almeno orari, prezzo o ingresso, foto o testo propri (la skill Programmatic SEO Gate controlla questo prima di pubblicare).
+
+**Non perdersi: ogni pagina deve avere**
+- il percorso in alto («Napoli › Luoghi › Centro storico › Duomo»), che porta indietro di un passo;
+- un pulsante chiaro **«Aggiungi all'itinerario»**; se la persona arriva dal compositore, anche **«Torna al tuo itinerario»**;
+- **«Vicino a qui»**: 3–4 luoghi e 2–3 locali vicini, con i minuti a piedi (già calcolati), e il mezzo se serve;
+- precedente e successivo nella stessa zona;
+- il menu del sito sempre visibile, e un solo passo successivo evidente: nessuna pagina senza uscita.
+
+**Come lo misuriamo**: abbiamo già il contatore del tempo passato sulle pagine (tabella `letture` su Supabase) e Search Console; dopo la pubblicazione si guardano le pagine dove la gente resta poco e si correggono.
+
+**Quando**: la pagina propria nasce insieme ai dati (blocco A per i luoghi, blocco C per i locali), non dopo. La parte SEO del blocco 3 poi controlla titoli, descrizioni e collegamenti di tutte.
+
 ## Casi limite da gestire
 - Un locale chiuso il giorno scelto o a quell'ora; chiusure estive e per ferie (se la fonte le dice).
 - Un bus che oggi non circola per lavori o deviazioni (stesso trattamento della funicolare di Montesanto: avviso e linea esclusa).
@@ -85,9 +103,9 @@ Altri filtri possibili, ma solo se la fonte ufficiale del locale li dice, e quin
 
 ## Ordine e compiti (proposto, da confermare)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
-- [ ] **Blocco A · Luoghi**: ricerca, scelta di ~10–12 luoghi (Enrico approva l'elenco), schede, foto, testi, tempi, build.
+- [ ] **Blocco A · Luoghi**: ricerca, scelta di ~10–12 luoghi (Enrico approva l'elenco), schede, foto, testi, tempi, **una pagina fissa per ogni luogo, vecchi e nuovi (sezione 4)**, build.
 - [ ] **Blocco B · Autobus**: ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
-- [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli.
+- [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, **una pagina fissa per ogni locale (sezione 4)**, testi, controlli.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).
 
 ## Domande per Enrico (tutte risolte)

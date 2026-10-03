@@ -42,7 +42,7 @@ Prima di applicare le 7 proposte, fai **due proposte di direzione grafica** (hom
 ### SEO (dopo che la struttura è finita; aggiunto il 03/10/2026)
 - Controllo con SEO Audit Kit: titoli, descrizioni, intestazioni, link interni, dati strutturati; elenco dei problemi in ordine di importanza.
 - Pagine che Google può indicizzare: il compositore degli itinerari non lo è (il contenuto sta dopo il «#»). Proponi pagine fisse per gli itinerari pronti, e valuta con Programmatic SEO Gate se ha senso una pagina per ogni tappa e per ogni locale (niente pagine fotocopia).
-- Google Search Console: se Enrico l'ha collegato, usa i dati; se no, aiutalo a farlo (serve il suo account Google).
+- Google Search Console: **già collegata dal 01/10/2026** (file di verifica in `public/`). Chiedi a Enrico se ha inviato la mappa del sito `/sitemap.xml` e, se ci sono dati, usali.
 - Parole chiave: chiedi a Enrico prima di usare Semrush (consuma unità del suo piano).
 - Pagina «Novità» con date; dominio proprio da valutare con l'avvocato (marchi, vedi `PIANO.md`).
 
