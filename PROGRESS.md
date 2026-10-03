@@ -16,6 +16,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 | A · Luoghi | deep-research (c'è nel cloud), frontend-design e Modern Web Guidance (nel progetto) | **Cloud va bene** |
 | B · Autobus | deep-research; se i dati ANM non si scaricano dal cloud, provare in locale | Cloud, con riserva |
 | C · Dove mangiare | deep-research, frontend-design | Cloud |
+| D · Esperienze | deep-research, frontend-design | Cloud |
 | 3 · Sito più ordinato e SEO | VectorLab UI/UX Skills, consistent-ui, SEO Audit Kit, Programmatic SEO Gate: **da installare** (non sono nel cloud oggi). Controllare a inizio sessione se si installano nel cloud; se no, **in locale** | Da verificare |
 
 ## Dove siamo
@@ -32,7 +33,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 1. Le tue prove sul telefono della pagina itinerari, sul sito pubblico (elenco nell'archivio, sezione «Blocco 2 · Da fare»), e le correzioni che ne vengono.
 2. Blocco 3 (`PROMPT-BLOCCO-3.md`), ora anche **estetica con due proposte grafiche e SEO**. Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui + **da installare all'inizio: SEO Audit Kit e Programmatic SEO Gate**; alla fine spegnere tutte tranne quelle di progetto. **Ricordarlo a Enrico.**
    **Google Search Console è già collegata**: il file di verifica è nel sito dal 01/10/2026 (`public/googlee54aa324270bde6d.html`). Da controllare con Enrico solo se la mappa del sito (`/sitemap.xml`, già indicata in `robots.txt`) è stata inviata in Search Console.
-3. **Itinerari di Napoli ampliati** (10+ luoghi, dove mangiare, autobus): specifica **approvata il 03/10/2026** in `specifiche/itinerari-napoli-ampliamento.md` (40–50 locali, pasta inclusa, menu solo se pubblico); poi blocchi A (luoghi), B (autobus), C (dove mangiare). Per il blocco A: sessione nuova con `specifiche/PROMPT-A-luoghi.md`.
+3. **Itinerari di Napoli ampliati** (10+ luoghi, dove mangiare, autobus): specifica **approvata il 03/10/2026** in `specifiche/itinerari-napoli-ampliamento.md` (40–50 locali, pasta inclusa, menu solo se pubblico); poi blocchi A (luoghi: storici, **panoramici e giardini**), B (autobus), C (dove mangiare), **D (esperienze: cooking class e laboratori, aggiunto il 03/10/2026)**. Per il blocco A: sessione nuova con `specifiche/PROMPT-A-luoghi.md`.
 4. Nuovo sito itinerari per più città (Napoli, poi Roma, Milano, Torino, Venezia…): idea del 03/10/2026, vedi sotto. Prima una spec.
 5. Correggere la scheda `echia-ascensore` (orari da OpenStreetMap, diversi da quelli ANM: 7–22 tutti i giorni, 1,50 €).
 6. Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede «Non ancora uscito». Orari e prezzi delle tappe da ricontrollare entro il 30/04/2027.

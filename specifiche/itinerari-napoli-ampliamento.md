@@ -5,7 +5,7 @@ _Perimetro: solo Napoli. Il sito itinerari per più città è un lavoro a parte 
 
 ## Obiettivo
 Ampliare la pagina `/napoli/itinerari/` in tre modi, con lo stesso metodo delle 39 tappe attuali (fonti, schede, testi, controlli della build):
-1. **Circa 10 luoghi di interesse in più** (almeno 10, se la ricerca li conferma aperti e documentati).
+1. **Circa 10 luoghi in più** (almeno 10, se la ricerca li conferma aperti e documentati), **non solo storici**: anche **luoghi panoramici** e **giardini belli da visitare** (aggiunto il 03/10/2026).
 2. **Dove mangiare**: una pagina sola con tutti i locali e i filtri (cucina, prezzo, aperto adesso, zona); ogni locale si può aggiungere all'itinerario come pranzo, cena o spuntino.
 3. **Autobus** nei tempi di spostamento: quanto passano le linee che portano ai luoghi e quanto ci mettono tra una tappa e l'altra.
 
@@ -16,6 +16,9 @@ Ampliare la pagina `/napoli/itinerari/` in tre modi, con lo stesso metodo delle 
 
 ## 1 · Luoghi in più
 - **Candidati di partenza** (solo un elenco mio, non una fonte; la ricerca decide cosa entra): San Domenico Maggiore, Girolamini e Quadreria, Museo Filangieri, Villa Pignatelli, Donnaregina Vecchia, San Giovanni a Carbonara, Porta Capuana con Castel Capuano, Villa Rosebery, Palazzo Donn'Anna (da fuori), Santa Maria la Nova, il mercato di Porta Nolana, la Pignasecca, il Museo del Tesoro di San Gennaro se separato dal Duomo, Piazza Vanvitelli e il Vomero. Per le gite fuori città: Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento (non in città: restano giornate intere a parte come le altre gite).
+- **Tre tipi di luogo, da mescolare nell'elenco proposto** (aggiunto il 03/10/2026): storici (come i 39 attuali); **panoramici** (terrazze, belvedere, punti da cui si vede il golfo, anche al tramonto); **giardini e parchi belli** da visitare, non storici. Ogni luogo ha `generi` con `panorama` o `giardino` quando è il caso.
+- Per panoramici e giardini contano in più: ingresso gratuito o a pagamento, orari di apertura (i giardini chiudono al tramonto o per stagione), gradini e accessibilità, **momento migliore** (tramonto, mattina), e quanto è tranquillo. Fonti ufficiali del Comune o dell'ente che li gestisce.
+- Evita doppioni con i **punti da cui guardare le regate** già nel sito (`src/data/luoghi.yaml`, pagina «Dal lungomare»): se un luogo è in entrambi, le due pagine si collegano tra loro e non ripetono lo stesso testo.
 - Per ogni luogo, come oggi: posizione dell'ingresso da OpenStreetMap, durata della visita (stima nostra o del gestore), schede `tp-…` per orari e prezzi, giorni di chiusura, prenotazione, al chiuso, gradini, bambini, momento migliore, foto libera, testo breve in `src/testi/tappe.yaml`.
 - **Si scartano** i luoghi chiusi senza data di riapertura e quelli con orari non verificabili da una fonte ufficiale. Quello che si scarta, con il motivo, va nelle note di ricerca.
 - I tempi tra le tappe si rifanno con `scripts/itinerari/costruisci.mjs` (la build si ferma finché non sono rifatti).
@@ -79,6 +82,16 @@ Deciso da Enrico il 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa,
 
 **Quando**: la pagina propria nasce insieme ai dati (blocco A per i luoghi, blocco C per i locali), non dopo. La parte SEO del blocco 3 poi controlla titoli, descrizioni e collegamenti di tutte.
 
+## 5 · Esperienze (blocco D, aggiunto il 03/10/2026)
+Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, laboratori (per esempio pizza, pasta fresca, ceramica), degustazioni e simili.
+- **Come i locali**: sono dati di operatori privati, con prezzi e orari che cambiano, quindi stesso metodo di C: fonte ufficiale dell'operatore (sito), prezzo «da» con data, durata, lingua, giorni, prenotazione, dove; stato `confermato` / `stampa` / `segnalato`; ricontrollo entro il 30/04/2027.
+- **Solo offerte che si ripetono** (corsi e laboratori regolari). Gli **eventi singoli** (una serata, un festival) invecchiano subito e non entrano nell'elenco: se serve, vanno in una pagina «Novità» con la data.
+- **Nell'itinerario** un'esperienza è una tappa con orario di inizio e durata fissi (non si può spostare liberamente): il compositore avvisa se non c'è il giorno o l'ora.
+- **Regole di scelta** uguali a quelle dei locali (storia documentata o riconoscimento indipendente, comodità), **nessun pagamento e nessuna affiliazione**; la pagina dice che la lista è indipendente.
+- **Pagina propria** per ogni esperienza (sezione 4), e un elenco `/napoli/esperienze/` con filtri (tipo di attività, prezzo, durata, lingua, giorno).
+- Numeri proposti, da approvare con Enrico prima di costruire: 10–15.
+- Dati: `categoria: esperienza`, `attivita: [cucina, laboratorio, degustazione, …]`, `durata`, `fascia`, `lingue`, `giorni`, `prenota`.
+
 ## Casi limite da gestire
 - Un locale chiuso il giorno scelto o a quell'ora; chiusure estive e per ferie (se la fonte le dice).
 - Un bus che oggi non circola per lavori o deviazioni (stesso trattamento della funicolare di Montesanto: avviso e linea esclusa).
@@ -101,11 +114,12 @@ Deciso da Enrico il 03/10/2026: ogni luogo e ogni locale ha la sua pagina fissa,
 - **Testi brevi e correzioni**: effort medio.
 - **Revisione e controlli su molte pagine**: `revisore` (Sonnet).
 
-## Ordine e compiti (proposto, da confermare)
+## Ordine e compiti (A → B → C → D, poi il blocco 3 del sito)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
 - [ ] **Blocco A · Luoghi**: ricerca, scelta di ~10–12 luoghi (Enrico approva l'elenco), schede, foto, testi, tempi, **una pagina fissa per ogni luogo, vecchi e nuovi (sezione 4)**, build.
 - [ ] **Blocco B · Autobus**: ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
 - [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, **una pagina fissa per ogni locale (sezione 4)**, testi, controlli.
+- [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, pagina propria per ognuno, testi, controlli. Prima di costruire, Enrico approva elenco e numeri.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).
 
 ## Domande per Enrico (tutte risolte)
