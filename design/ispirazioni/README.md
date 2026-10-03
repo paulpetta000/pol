@@ -13,3 +13,8 @@ Schermate: `mudd-1-apertura.jpg`, `mudd-2-schede-e-informazioni.jpg`, `mudd-3-im
   Quindi due caratteri: sans-serif compatto per titoli e pulsanti, serif per i titoli delle parti di racconto.
 - **Fondo pagina semplice**: Informazioni (orari in una frase), Indirizzo, «Indicazioni ↗», «Contatti ↗», un grande pulsante a pillola con il bordo e un pulsante rotondo «torna su» che resta a galla.
 - Cosa si potrebbe prendere per «Napoli a Vela»: il ritaglio a forma delle foto (c'è una guida in `.claude/skills/modern-web-guidance`, «shaped-cutouts»), le schede ruotate per i «da sapere» delle tappe, l'accoppiata sans-serif + serif, l'apertura con foto scurita e titolo grande nelle pagine dei luoghi.
+
+### Altre schermate MUDD (03/10/2026)
+- `mudd-4-immagine-a-infinito.jpg`: una foto ritagliata con la forma del logo (un «infinito» fatto di due rombi con un buco al centro), tra un titolo con le grazie e un grande pulsante scuro a tutta larghezza («Scopri i luoghi MUDD ↗»). Il logo diventa una cornice per le foto.
+- `mudd-5-rombo-su-mappa.jpg`: foto di una facciata ritagliata a rombo che esce dal bordo dello schermo, appoggiata su una **mappa della città disegnata in grigio chiarissimo** come sfondo; sopra, titolo grande e pulsante a pillola con il bordo; sotto, riga sottile e titolo con le grazie («Cosa sono i Percorsi»).
+- `mudd-6-elenco-a-fisarmonica.jpg`: **elenco a fisarmonica** dei luoghi di un percorso: per ogni riga nome, città e orari in una frase, con un «+» a destra per aprire i dettagli; righe separate da linee sottili, una riga evidenziata in grigio quando il luogo è «in apertura». Utile per le tappe di un itinerario pronto o per l'elenco dei luoghi.

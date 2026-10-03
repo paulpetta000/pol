@@ -16,7 +16,7 @@ Note di dettaglio, una per zona, in questa cartella. Ricerca fatta da 5 agenti S
 | 8 | Mercato di Porta Nolana | storico (vita di quartiere) | 7–15, «giornaliero» | domenica non verificata | libero | sì (stessa pagina) |
 | 9 | Palazzo Donn'Anna, da fuori | storico | sempre (si guarda da fuori) | – | – | fonte FAI, privato |
 | 10 | Belvedere di Sant'Antonio a Posillipo | panoramico | sempre | – | libero | già nel sito come punto per le regate |
-| 11 | Tetti del Duomo (MUDD) | panoramico | 10–18 (da riconfermare) | – | visita gratuita prenotabile | **no: captcha** |
+| 11 | Tetti del Duomo (MUDD) | panoramico | tutti i giorni 10–18, ultimo ingresso 17 | – | prezzo non visto sulla pagina (pulsante «Book now»): da leggere nella pagina di prenotazione | sì: letta da Enrico il 03/10/2026 (muddnapoli.it/en/luoghi/cathedral-roofs/). Via Duomo 147. **Non accessibile** a persone con difficoltà motorie o visive |
 | 12 | Via Petrarca (belvedere) | panoramico | sempre | – | libero | già nel sito come punto per le regate |
 | 13 | Parco dei Camaldoli | panoramico | ott 7–18, apr–giu 7–19:30, lug–ago 7–20 | – | non scritto (parco comunale) | sì (Comune, agg. 12/08/2026) |
 | 14 | Parco del Poggio | giardino panoramico | come Camaldoli | – | non scritto | sì |
@@ -45,3 +45,6 @@ Note di dettaglio, una per zona, in questa cartella. Ricerca fatta da 5 agenti S
 ## Altre scoperte
 - La **Cumana** va di nuovo fino a Pozzuoli e Torregaveta dall'11/09/2026 (EAV). La Linea 2 resta interrotta tra Campi Flegrei e Pozzuoli dal 21/06/2026, con bus sostitutivi (Trenitalia).
 - Campania Express sospeso dal 01/10/2026 (EAV).
+- **Duomo**: sul sito MUDD della Diocesi (letto da Enrico il 03/10/2026, pagina dei Percorsi della fede) la Cattedrale è aperta lun–sab 9:30–17 e domenica e festivi 9–17. La scheda `tp-duomo-orari` oggi usa italia.it (8:30–13:30 e pomeriggio): **da correggere** con la fonte della Diocesi. Nella stessa pagina: Succorpo del Duomo tutti i giorni 9:30–18; Cappella del Tesoro Vecchio «in apertura».
+- **Anfiteatro Flavio di Pozzuoli**: per il MUDD tutti i giorni 9–17, chiuso il martedì. Non è il gestore: serve la conferma del Parco Archeologico dei Campi Flegrei prima di fare la gita a Pozzuoli.
+- Gli altri luoghi dei Percorsi della fede MUDD fuori dal centro (Miglio d'Oro, Pompei, Benevento, Avellino…) hanno quasi tutti solo gli orari delle messe: non sono tappe di visita.
