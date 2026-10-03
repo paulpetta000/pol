@@ -8,6 +8,16 @@ _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.
 3. Incollare il testo di `specifiche/PROMPT-A-luoghi.md` (il blocco in citazione).
 4. Quando la sessione si ferma con l'elenco dei 10–12 luoghi, scegliere cosa entra.
 
+## Skill e dove eseguire (aggiornato il 03/10/2026)
+Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
+
+| Blocco | Skill e plugin | Dove |
+|---|---|---|
+| A · Luoghi | deep-research (c'è nel cloud), frontend-design e Modern Web Guidance (nel progetto) | **Cloud va bene** |
+| B · Autobus | deep-research; se i dati ANM non si scaricano dal cloud, provare in locale | Cloud, con riserva |
+| C · Dove mangiare | deep-research, frontend-design | Cloud |
+| 3 · Sito più ordinato e SEO | VectorLab UI/UX Skills, consistent-ui, SEO Audit Kit, Programmatic SEO Gate: **da installare** (non sono nel cloud oggi). Controllare a inizio sessione se si installano nel cloud; se no, **in locale** | Da verificare |
+
 ## Dove siamo
 - Sito pubblico: https://napoli-a-vela.vercel.app (ramo `main`). Astro 7, Vercel, Supabase gratuito (progetto `coppa-america-napoli`, id `hcicqbcmtfksraabphie`).
 - **Pubblicati**: Rilasci 1, 1.1 (nome «Napoli a Vela»), 2 (Capire la Coppa, 3D delle barche), 2.1 e 2.2 (testi discorsivi con fonti, statistiche senza cookie).

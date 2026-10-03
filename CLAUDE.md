@@ -41,6 +41,9 @@ Enrico costruisce il sito **con te**, e vuole che sia tu a dirgli cosa fare a og
 - **Prima di un lavoro più difficile o più leggero** del precedente, avvisalo: «adesso alza (o abbassa) l'effort a X», e aspetta il suo «fatto».
 - **A fine lavoro** dagli sempre la lista «cosa fai adesso»: numerata, un'azione per riga, con il testo esatto da incollare, quando serve. Esempi: aprire una sessione nuova (su quale repository e da quale ramo), che modello ed effort impostare, che testo incollare, cosa guardare sul telefono, quando dire OK alla pubblicazione.
 - **Prima di ogni pubblicazione su `main`** dì cosa cambia per chi visita il sito e chiedi il suo OK.
+- **Skill e plugin, all'inizio e alla fine di ogni sessione** (richiesta di Enrico, 03/10/2026):
+  - all'inizio confronta le skill e i plugin disponibili in quella sessione con quelli che servono al blocco (tabella «Skill e dove eseguire» in `PROGRESS.md`) e dì a Enrico cosa manca;
+  - a fine sessione dì quali skill e plugin servono al blocco dopo, se sono già disponibili o se deve installarli (e dove), e se conviene eseguirlo **nel cloud o in locale sul suo computer**, con il motivo.
 - Non dare mai per scontato che sappia cosa fare dopo: scrivilo.
 
 ## Cosa non leggere di default
