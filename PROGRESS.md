@@ -2,11 +2,10 @@
 
 _Ultimo aggiornamento: 03/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
-## Cosa fa Enrico adesso (03/10/2026)
-1. Aprire una **sessione nuova** sul repository `paulpetta000/pol`, partendo da `main`.
-2. Impostare **Opus 5.5, effort alto**.
-3. Incollare il testo di `specifiche/PROMPT-A-luoghi.md` (il blocco in citazione).
-4. Quando la sessione si ferma con l'elenco dei 10–12 luoghi, scegliere cosa entra.
+## Cosa fa Enrico adesso (03/10/2026, sera)
+1. Guardare sul telefono l'anteprima del ramo `ccr-4b2e0e17-izrmws` (blocco A: 18 luoghi e 3 gite nuove) e dire OK o cosa cambiare.
+2. Dopo l'OK: pubblicazione su `main`.
+3. Su GitHub: Settings → General → Default branch → `main` (oggi è ancora `claude/new-session-hwsgjq` e le sessioni nel cloud partono indietro).
 
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
@@ -35,7 +34,8 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
    **Da decidere nel blocco 3**: una pagina fissa per ogni luogo e locale (`specifiche/itinerari-napoli-ampliamento.md`, sezione 4), rimandata qui dal blocco A il 03/10/2026.
    **Ispirazioni di design** di Enrico: `design/ispirazioni/` (schermate e descrizioni; MUDD Napoli, 03/10/2026): leggerle prima delle due proposte grafiche.
    **Google Search Console è già collegata**: il file di verifica è nel sito dal 01/10/2026 (`public/googlee54aa324270bde6d.html`). Da controllare con Enrico solo se la mappa del sito (`/sitemap.xml`, già indicata in `robots.txt`) è stata inviata in Search Console.
-3. **Itinerari di Napoli ampliati** (10+ luoghi, dove mangiare, autobus): specifica **approvata il 03/10/2026** in `specifiche/itinerari-napoli-ampliamento.md` (40–50 locali, pasta inclusa, menu solo se pubblico); poi blocchi A (luoghi: storici, **panoramici e giardini**), B (autobus), C (dove mangiare), **D (esperienze: cooking class e laboratori, aggiunto il 03/10/2026)**. Per il blocco A: sessione nuova con `specifiche/PROMPT-A-luoghi.md`.
+3. **Itinerari di Napoli ampliati** (specifica `specifiche/itinerari-napoli-ampliamento.md`): **blocco A fatto il 03/10/2026, sul ramo `ccr-4b2e0e17-izrmws`, in attesa dell'OK di Enrico** (18 luoghi, gite a Caserta, Pietrarsa e Sorrento, Villa Campolieto nella gita a Ercolano; ricerca in `ricerca/2026-10-03-luoghi-note/`; 7 cose aperte in `da-risolvere.md`). Pagine fisse dei luoghi rimandate al blocco 3. Poi blocchi B (autobus), C (dove mangiare), D (esperienze).
+   La Cumana va di nuovo fino a Pozzuoli dall'11/09/2026 (EAV): da tenere presente nel blocco B.
 4. Nuovo sito itinerari per più città (Napoli, poi Roma, Milano, Torino, Venezia…): idea del 03/10/2026, vedi sotto. Prima una spec.
 5. Correggere la scheda `echia-ascensore` (orari da OpenStreetMap, diversi da quelli ANM: 7–22 tutti i giorni, 1,50 €).
 6. Quando escono: orari 2027, biglietti e tribune, ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo, regole di regata 2027. Aggiornare le schede «Non ancora uscito». Orari e prezzi delle tappe da ricontrollare entro il 30/04/2027.
