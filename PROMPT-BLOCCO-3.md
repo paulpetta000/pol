@@ -19,7 +19,8 @@ Questo è il **blocco 3 di 3** del Rilascio 3:
 - Tutti i testi stanno in `src/testi/` e passano dai controlli della build (vedi `README.md`, «Testi discorsivi delle pagine»): niente schede con etichette, fonti solo in fondo, `*` sulle informazioni non ufficiali per il 2027, dette anche a parole.
 - Ogni informazione ha la sua fonte (`src/data/fatti.yaml` e `fonti.yaml`); orari e prezzi hanno la data «da ricontrollare».
 - Niente link di affiliazione, niente «ufficiale», niente loghi dell'evento.
-- Skill per questo blocco: frontend-design, VectorLab UI/UX Skills e consistent-ui. Se ti serve una skill che non è attiva, dimmelo invece di andare avanti senza.
+- **All'inizio del blocco ricorda a Enrico di installare i plugin SEO Audit Kit e Programmatic SEO Gate** (dal catalogo «Anthropic Directory»; si spengono alla fine del blocco).
+- Skill per questo blocco: frontend-design, VectorLab UI/UX Skills, consistent-ui, SEO Audit Kit e Programmatic SEO Gate. Se ti serve una skill che non è attiva, dimmelo invece di andare avanti senza.
 
 ## Blocco 3 · Il sito più ordinato
 
@@ -34,6 +35,16 @@ Prima fai un controllo di coerenza con consistent-ui (spazi, caratteri, colori e
 5. **Meno tipi di riquadri**, più spazio tra un argomento e l'altro.
 6. **«Avvisami»** intero solo nella pagina Biglietti; altrove una riga con un pulsante.
 7. **Il 3D non in cima alla pagina.** In «Squadre» va dopo l'elenco delle 7 squadre e prima di «Da sapere»; nelle pagine delle squadre dopo la storia e prima dei risultati 2026. Nella pagina «Le barche» resta il primo blocco.
+
+### Estetica: molto bella, non solo ordinata (aggiunto il 03/10/2026)
+Prima di applicare le 7 proposte, fai **due proposte di direzione grafica** (home e una pagina interna, con i dati veri e le foto che abbiamo) e fammi scegliere, come nel blocco 1. Poi applica la scelta a tutto il sito. UX e UI aggiornate, tema chiaro e scuro, telefono per primo. Effort alto o extra.
+
+### SEO (dopo che la struttura è finita; aggiunto il 03/10/2026)
+- Controllo con SEO Audit Kit: titoli, descrizioni, intestazioni, link interni, dati strutturati; elenco dei problemi in ordine di importanza.
+- Pagine che Google può indicizzare: il compositore degli itinerari non lo è (il contenuto sta dopo il «#»). Proponi pagine fisse per gli itinerari pronti, e valuta con Programmatic SEO Gate se ha senso una pagina per ogni tappa e per ogni locale (niente pagine fotocopia).
+- Google Search Console: se Enrico l'ha collegato, usa i dati; se no, aiutalo a farlo (serve il suo account Google).
+- Parole chiave: chiedi a Enrico prima di usare Semrush (consuma unità del suo piano).
+- Pagina «Novità» con date; dominio proprio da valutare con l'avvocato (marchi, vedi `PIANO.md`).
 
 ### Domanda da farmi all'inizio
 
