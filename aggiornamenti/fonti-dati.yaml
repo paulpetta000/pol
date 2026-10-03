@@ -1,0 +1,79 @@
+# Dati scaricati da file o servizi: da dove vengono e come si rinnovano.
+# Campi: cosa · da-dove (indirizzo) · formato · licenza · aggiorna (comandi, da /home/user/pol) · cambia (file del sito)
+#        · valido-fino · controllato · ricontrollare (data entro cui rifarlo) · nota
+# Le pagine web con orari e prezzi sono in src/data/fonti.yaml e src/data/fatti.yaml (la build avvisa da sola).
+
+- id: anm-gtfs
+  cosa: "Linee, fermate, percorsi e orari programmati degli autobus ANM (bus, filobus), in formato GTFS"
+  da-dove: https://www.anm.it/google/google-transit.zip
+  catalogo: "Transitland atlas, feed f-s-anm~it; usato anche da Transitous"
+  formato: "GTFS (zip di file .txt)"
+  licenza: "IODL 2.0 (Italian Open Data License): si può riusare citando la fonte «Dati ANM, licenza IODL 2.0»"
+  aggiorna:
+    - "(blocco B, da scrivere) node scripts/itinerari/scarica-bus.mjs <cartella>"
+    - "node scripts/itinerari/costruisci.mjs <cartella>"
+  cambia: [src/data/tempi-tappe.json, src/data/percorsi-tappe.json, src/data/linee-bus.json]
+  valido-fino: 2026-12-31   # il file dice: dal 22/09/2026 al 31/12/2026 (orario d'autunno)
+  controllato: 2026-10-03
+  ricontrollare: 2026-12-31 # poi: quando ANM pubblica l'orario 2027 e prima del 22/05/2027
+  nota: "Orari programmati, non tempi reali. Non ci sono deviazioni né lavori. Le «linee» ACTON, CHIAIA, ECHIA, SANITA, VENTA sono ascensori, non bus. Ricerca: ricerca/2026-10-03-autobus-note/."
+
+- id: osm-itinerari
+  cosa: "Strade, scale, ascensori, stazioni e linee di metro, treni e funicolari nel riquadro della mappa, per i tempi a piedi e in metro"
+  da-dove: "Overpass API di OpenStreetMap (overpass-api.de, riserva: overpass.kumi.systems, overpass.private.coffee)"
+  formato: JSON
+  licenza: "ODbL: «© OpenStreetMap contributors», lo diciamo nella pagina «Come calcoliamo i tempi»"
+  aggiorna:
+    - "node scripts/itinerari/scarica.mjs <cartella>"
+    - "node scripts/itinerari/costruisci.mjs <cartella>"
+  cambia: [src/data/tempi-tappe.json, src/data/percorsi-tappe.json]
+  controllato: 2026-10-03
+  ricontrollare: 2027-04-30
+  nota: "Il server principale può non rispondere dal cloud: lo script prova gli altri due. Se si aggiungono tappe, rifare sempre costruisci.mjs (la build si ferma finché non è rifatto)."
+
+- id: copernicus-quote
+  cosa: "Quote del terreno (salite e discese) per i tempi a piedi"
+  da-dove: "Modello Copernicus GLO-30 (ESA / Unione europea), file pubblico su AWS Registry of Open Data"
+  formato: GeoTIFF
+  licenza: "Copernicus, uso libero con citazione"
+  aggiorna: ["node scripts/itinerari/scarica.mjs <cartella>   (le scarica insieme a OpenStreetMap)"]
+  cambia: [src/data/tempi-tappe.json]
+  controllato: 2026-10-03
+  ricontrollare: null       # il terreno non cambia; rifare solo se cambia il riquadro
+  nota: "Misura anche i tetti: lo script lo corregge (vedi commenti in costruisci.mjs)."
+
+- id: osm-mappa
+  cosa: "Disegno della mappa del sito (coste, strade, edifici)"
+  da-dove: "API di OpenStreetMap 0.6 (riquadri piccoli)"
+  formato: XML
+  licenza: "ODbL: «© OpenStreetMap contributors»"
+  aggiorna:
+    - "node scripts/mappa/scarica.mjs <cartella>"
+    - "node scripts/mappa/costruisci.mjs <cartella>"
+  cambia: [src/data/mappa.json]
+  controllato: null         # non registrato: il file è nel repository dal 01/10/2026; la data dello scarico va scritta al prossimo rifacimento
+  ricontrollare: 2027-04-30
+
+- id: ac-risultati-2026
+  cosa: "Classifiche e risultati delle regate del 2026 (Cagliari ecc.)"
+  da-dove: "Feed JSON ufficiale dei risultati dell'America's Cup (percorso /results/feed/, vedi ricerca/2026-09-30-risultati-ufficiali-feed.json)"
+  formato: JSON
+  licenza: "da verificare (dati dell'organizzatore: citiamo la fonte, non ricopiamo tutto)"
+  aggiorna: ["nessuno script nel repository: come è stato costruito non è registrato (la ricerca sul feed è del 30/09/2026); se serve aggiornarlo, scriverne uno e annotarlo qui"]
+  cambia: [src/data/risultati-2026.json]
+  controllato: null         # non registrato (ricerca sul feed: 30/09/2026)
+  ricontrollare: "dopo ogni nuova regata ufficiale; calendario 2027 in src/data/eventi.ts"
+
+# ---------- Cose che non sono ancora uscite (stato «atteso») ----------
+# Quando escono: aggiornare la scheda in src/data/fatti.yaml (e la fonte in fonti.yaml), poi i testi che la usano.
+- id: atteso-coppa-2027
+  cosa: "Ordinanza della Capitaneria, piano trasporti, mappa ufficiale del campo di regata, regole di regata 2027, biglietti e tribune, orari del Race Village"
+  schede: [campo-mappa-atteso, regole-pubblico-atteso, mare-2027-atteso, trasporti-2027-atteso, acc-2027-atteso, big-niente, big-tribune, big-ospitalita, vil-orari-2027, cal-orari, cal-giorni-match, cal-preliminari-2027, yw-bando-atteso, reg-2027-attese]
+  da-dove: "americascup.com, Comune di Napoli, Capitaneria di Porto: vedi le fonti nelle singole schede"
+  ricontrollare: "prima scadenza 15/11/2026 (biglietti e ospitalità), poi 31/12/2026, 31/01 e 28/02/2027"
+
+# ---------- Scadenze delle schede (da fatti.yaml, calcolate il 03/10/2026) ----------
+# 15/11/2026: big-niente, big-tribune, big-ospitalita
+# 31/12/2026: cal-orari, cal-giorni-match, cal-preliminari-2027, vil-caracciolo-gratis, vil-orari-2027, campo-mappa-atteso, regole-pubblico-atteso, mare-2027-atteso, yw-bando-atteso, reg-2027-attese
+# 15/01/2027: taxi-collettivo · 31/01/2027: cal-lvc-periodo, cal-flotta, cal-rr · 28/02/2027: trasporti-2027-atteso, acc-2027-atteso
+# 30/04/2027: tutte le altre (107 schede: orari e prezzi delle tappe)
