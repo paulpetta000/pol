@@ -66,6 +66,8 @@ e si sale solo se il risultato non è buono. Effort, dal più leggero: medio · 
 
 - **Scala di salita sui fallimenti** (deciso da Enrico il 03/10/2026). Il modello leggero **finisce tutto il suo lavoro**: non si interrompe al primo problema.
   I casi falliti si raccolgono e si ritentano **in blocco** con un livello più forte, che parte sapendo cosa è già stato provato: Sonnet (effort della sessione) → Sonnet più alto, se l'effort per agente si può impostare → Opus alto. Un tentativo per livello.
+  - **Prova del 03/10/2026** (sessione cloud): al lancio di un agente si sceglie il **modello**, non l'effort (lo strumento non ha quel parametro).
+    L'effort per agente si può fissare solo nel file dell'agente (`.claude/agents/*.md`, riga `effort:`), e vale dalla sessione dopo. In pratica si sale cambiando modello: Sonnet → Opus alto.
   - Gli agenti devono scrivere «NON TROVATO» con cosa hanno provato. **Mai inventare**: vale la regola «niente senza fonte».
   - Prima di salire, capisci perché ha fallito. Se la cosa non esiste, il sito è bloccato o manca la fonte, **non salire**: scarta il caso o segnalalo a Enrico. Sali solo se ha cercato male o ragionato male.
   - Se anche Opus alto fallisce, **non salire da solo a extra o max**: scrivi il caso in `da-risolvere.md` (cosa manca, cosa è stato provato e da chi, perché, se si può ritentare) e vai avanti. Quando le righe aperte sono almeno 10, o a fine blocco, avvisa Enrico: li risolviamo insieme in un gruppo.
