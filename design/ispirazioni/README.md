@@ -1,9 +1,11 @@
 # Ispirazioni di design (per il blocco 3, «estetica con due proposte»)
 
-Siti che piacciono a Enrico, descritti a parole: niente immagini copiate da altri siti.
+Esempi di siti che piacciono a Enrico: le schermate fatte da lui e, sotto, che cosa mostrano.
+**Solo come riferimento per noi**: queste immagini non vanno mai messe nel sito (non sono nostre e non hanno licenza libera).
 
 ## MUDD Napoli · muddnapoli.it (segnalato da Enrico il 03/10/2026)
 Pagina vista sul telefono: «San Giovanni a Carbonara» (un luogo del circuito MUDD della Diocesi).
+Schermate: `mudd-1-apertura.jpg`, `mudd-2-schede-e-informazioni.jpg`, `mudd-3-immagine-a-rombo.jpg`.
 - **Apertura a tutto schermo**: foto dell'opera (il Mausoleo di Ladislao) scurita, con sopra il logo bianco in alto a sinistra e un pulsante menu rotondo e semitrasparente in alto a destra.
   Sotto: un pulsante a pillola con il bordo («↖ Tutti i luoghi MUDD»), un titolo enorme in un sans-serif nero e compatto, una frase di presentazione più leggera e un pulsante pieno scuro a pillola («Scegli la tua esperienza di visita»).
 - **Schede «da sapere»**: rettangoli grigio chiaro con gli angoli tondi, **leggermente ruotati** come foglietti appoggiati uno sull'altro, con una frase corta e grande in grassetto ciascuno («Il Mausoleo di Ladislao è tra i più alti esempi del gotico napoletano», «Ha un pavimento in maiolica del Quattrocento»).
