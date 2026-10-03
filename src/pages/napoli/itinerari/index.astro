@@ -206,7 +206,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
                   <details class="it-scelta__info">
                     <summary>
                       <span class="it-scelta__nome">{t.nome}</span>
-                      <span class="it-scelta__meta">{t.durata >= 360 ? 'Giornata intera' : 'Mezza giornata'} · da {t.partenza}</span>
+                      <span class="it-scelta__meta">{t.durata > 240 ? 'Giornata intera' : 'Mezza giornata'} · da {t.partenza}</span>
                     </summary>
                     <div class="it-scelta__dettagli" data-da={`it-t-${t.id}`}></div>
                   </details>
@@ -368,7 +368,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
               {g.foto ? <img src={g.foto} alt="" width="72" height="72" loading="lazy" decoding="async" /> : <span class="it-scelta__foto--vuota" aria-hidden="true" />}
               <div>
                 <h3>{g.nome}</h3>
-                <p>Da {g.partenza} · {g.durata >= 360 ? 'giornata intera' : 'mezza giornata'}</p>
+                <p>Da {g.partenza} · {g.durata > 240 ? 'giornata intera' : 'mezza giornata'}</p>
               </div>
               <button type="button" class="it-btn it-btn--contorno it-btn--piccolo it-interattivo" data-gita={g.id}>Aggiungi<span class="visually-hidden"> la gita a {g.breve}</span></button>
             </li>

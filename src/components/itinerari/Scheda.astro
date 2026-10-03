@@ -29,7 +29,7 @@ const valutazioni = [dentro, scale, quando, d.bambini === 'attenzione' ? 'con i 
 <div class="it-sch">
   {conFoto && d.foto && <Foto id={d.foto.id} sizes="(min-width: 600px) 560px, calc(100vw - 32px)" widths={[400, 720]} rapporto="3 / 2" didascalia={false} class="it-sch__foto" />}
   <Testo b={t.testo} class="it-sch__testo" />
-  <p class="it-sch__breve">{d.tipo === 'gita' ? (d.durata >= 360 ? 'Una giornata intera' : `Mezza giornata: circa ${durata(d.durata)}`) : `Visita: circa ${durata(d.durata)}`}{d.chiuso.length > 0 && <>. Chiuso il {d.chiuso.map(g => NOMI_GIORNI[g]).join(' e il ')}</>}. {PREN[d.prenotazione]}{valutazioni && <> {valutazioni[0].toUpperCase() + valutazioni.slice(1)}.</>}</p>
+  <p class="it-sch__breve">{d.tipo === 'gita' ? (d.durata > 240 ? 'Una giornata intera' : `Mezza giornata: circa ${durata(d.durata)}`) : `Visita: circa ${durata(d.durata)}`}{d.chiuso.length > 0 && <>. Chiuso il {d.chiuso.map(g => NOMI_GIORNI[g]).join(' e il ')}</>}. {PREN[d.prenotazione]}{valutazioni && <> {valutazioni[0].toUpperCase() + valutazioni.slice(1)}.</>}</p>
   {viaggio && <><h3 class="it-sch__h">Come arrivare{partenza && <> da {partenza}</>}</h3><p>{viaggio.testo}{viaggio.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
   {orari && <><h3 class="it-sch__h">Orari</h3><p>{orari.testo}{orari.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
   {prezzi && <><h3 class="it-sch__h">Biglietti</h3><p>{prezzi.testo}{prezzi.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p></>}
