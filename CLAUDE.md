@@ -39,14 +39,22 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 `design/` (bozzetti da oltre 1 MB), `ricerca/` (note lunghe), `package-lock.json`, `src/data/*.json` grandi
 (`percorsi-tappe.json`, `mappa.json`, `tempi-tappe.json`). Aprili solo se il compito li riguarda, e solo la parte che serve.
 
-## Modelli e agenti
-Obiettivo di Enrico: spendere poco, senza perdere qualità. Un agente parte da zero e deve rileggere ciò che gli serve:
-si delega solo quando il lavoro è lungo o ripetitivo, mai per poche righe.
-- **Fai da solo**: una domanda, un file, una modifica di poche righe, un testo da correggere.
-- **Sonnet (agente `revisore` o altro agente di controllo)**: revisione di molte modifiche, controlli su molte pagine (link, accessibilità, formati),
-  ricerche ripetitive di orari e prezzi su più luoghi, riordino di molti file. Il modello principale rilegge sempre il risultato prima di darlo per buono.
-- **Haiku 4.5**: solo lavori meccanici (cercare, contare, estrarre). Per ora Enrico preferisce non usarlo.
-- **Modello principale**: costruzione, design, struttura dei dati, bug difficili, decisioni di cui non si torna indietro.
-- Più agenti insieme solo se i lavori sono davvero indipendenti. Chiedi sempre risposte corte (elenchi, non spiegazioni).
-- **Effort**: lo sceglie Enrico per la sessione. Dì tu quando cambiarlo: medio per testi e piccole modifiche, alto per ricerca con fonti,
-  bug difficili e struttura dei dati.
+## Modelli, effort e agenti
+Obiettivo di Enrico: **efficienza**. Il risultato deve essere ottimo, ma senza spendere più del necessario. Regola: si parte dal livello più basso che può bastare
+e si sale solo se il risultato non è buono. Effort, dal più leggero: basso · medio · alto · extra · max. Costo, dal più leggero: Haiku 4.5 · Sonnet · Opus.
+
+| Compito | Modello | Effort |
+|---|---|---|
+| Domande, un testo da correggere, modifiche di poche righe, commit e push, aggiornare `PROGRESS.md` | principale o Sonnet, fai da solo | basso–medio |
+| Ricerche ripetitive (orari, prezzi, fonti di un gruppo di luoghi o locali) | agenti Sonnet in parallelo, uno per gruppo; il principale rilegge le fonti | medio–alto |
+| Lavori meccanici (cercare, contare, estrarre, rinominare) | Haiku 4.5 (Enrico per ora preferisce non usarlo: usa Sonnet) | basso |
+| Revisione del codice, controlli su molte pagine | agente `revisore` (Sonnet) | alto |
+| Costruire una funzione nuova nel codice esistente (filtri, nuovo tipo di tappa, pagina) | modello principale (Opus) | alto |
+| Struttura dei dati, specifiche, scelte difficili da cambiare dopo | Opus | extra |
+| Bug difficile da trovare, sicurezza (Supabase, pronostici), fallimenti ripetuti | Opus | max |
+
+- **Max** solo quando alto ed extra non bastano o quando la scelta è costosa da correggere: non è il livello normale.
+- **Fai da solo** quando il lavoro è di poche righe: un agente parte da zero e deve rileggere il contesto, quindi per poco costa di più.
+- **Il modello dei sub-agenti lo scegli tu** a ogni lancio. **L'effort della sessione lo imposta Enrico**: dì tu quando alzarlo o abbassarlo, in una riga.
+- Più agenti insieme solo se i lavori sono davvero indipendenti. Chiedi sempre risposte corte (elenchi con le fonti, non spiegazioni).
+- Il modello principale rilegge sempre il lavoro di un agente prima di darlo per buono.
