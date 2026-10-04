@@ -61,7 +61,11 @@ async function carica(): Promise<Tappa[]> {
   for (const b of T.blocchi) if (!tutte.some(t => t.id === b)) errori.push(`src/testi/tappe.yaml: il testo "${b}" non corrisponde a nessuna tappa`);
 
   // i tempi devono essere stati calcolati con le tappe di oggi
-  const citta = tutte.filter(t => t.data.tipo === 'citta').map(t => ({ id: t.id, lat: t.data.lat, lon: t.data.lon, fine: t.data.fine }));
+  // i punti dei tempi: le tappe in città e i locali di «Dove mangiare» (src/data/locali.yaml)
+  const citta = [
+    ...tutte.filter(t => t.data.tipo === 'citta').map(t => ({ id: t.id, lat: t.data.lat, lon: t.data.lon, fine: t.data.fine })),
+    ...(await getCollection('locali')).map(l => ({ id: l.id, lat: l.data.lat, lon: l.data.lon, fine: undefined }))
+  ];
   const punti = citta.flatMap(t => t.fine ? [t.id, `${t.id}>`] : [t.id]).sort();
   if (tempi.firma !== firmaPosizioni(citta) || [...tempi.punti].sort().join() !== punti.join()) {
     errori.push('I tempi tra le tappe (src/data/tempi-tappe.json) sono stati calcolati con tappe diverse da quelle di oggi: rifalli con node scripts/itinerari/costruisci.mjs <cartella>');

@@ -1,0 +1,659 @@
+# Locali per la pagina «Dove mangiare» e per gli itinerari (blocco C, 04/10/2026; specifica:
+# specifiche/itinerari-napoli-ampliamento.md, sezione 2). Ricerca: ricerca/2026-10-04-locali-note/.
+#
+# Ogni locale è anche una tappa in città degli itinerari: stessi tempi tra le tappe (scripts/itinerari/),
+# id diversi da quelli delle tappe. Entrano solo locali con gli orari scritti dal locale (sito o scheda Google).
+#
+# - lat/lon: l'ingresso, da OpenStreetMap (elemento in «osm»); senza «osm» è il punto della via o della piazza;
+# - apertura: giorno per giorno (lun mar mer gio ven sab dom, anche a gruppi: «mar-dom»), con le fasce
+#   «12:00-15:30, 19:00-23:30», oppure «chiuso», oppure «?» se il locale non lo scrive. Una fascia che passa
+#   la mezzanotte finisce il giorno dopo; «19:30-?» vuol dire ora di chiusura non scritta.
+#   Ogni ora deve comparire nel testo della scheda degli orari (la build lo controlla);
+# - prezzoBase: il «pasto base» in euro secondo la regola della pagina (src/testi/dove-mangiare.yaml, «fasce»):
+#   la fascia (€, €€, €€€) la calcola la build. Senza prezzoBase il locale non ha fascia;
+# - cucina: tutte quelle che il menu o la pagina ufficiale dimostrano; piatti: solo quelli nel menu;
+# - perche: la scheda con la storia e i riconoscimenti (o perché l'abbiamo scelto noi);
+#   rinomatoPer: solo se lo dice una fonte indipendente;
+# - menu: la pagina del menu sul sito ufficiale, con la data di controllo; senza, «menu non pubblicato online».
+# Orari, prezzi e menu cambiano spesso: si ricontrollano entro il 30/04/2027 (campo «ricontrollare» delle schede).
+
+# ================= CENTRO STORICO =================
+- id: da-michele
+  nome: "L'Antica Pizzeria da Michele"
+  breve: "Da Michele"
+  zona: centro-storico
+  indirizzo: "Via Cesare Sersale 1"
+  lat: 40.84975
+  lon: 14.26335
+  osm: node/3123151652
+  sito: https://www.damichele.net/sede-di-napoli/
+  cucina: [pizza]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "11:00-23:00"
+  orari: lc-da-michele-orari
+  prezzoBase: 6.5
+  prezzi: lc-da-michele-prezzi
+  prenotazione: "no"
+  piatti: [margherita, marinara]
+  perche: lc-da-michele-perche
+  menu: { url: "https://www.damichele.net/menu/sede_napoli/menu%20Napoli.pdf", controllato: 2026-10-04 }
+
+- id: port-alba
+  nome: "Antica Pizzeria Port'Alba"
+  breve: "Port'Alba"
+  zona: centro-storico
+  indirizzo: "Via Port'Alba 18"
+  lat: 40.84937
+  lon: 14.25171
+  osm: node/5469968023
+  sito: https://www.anticapizzeriaportalba.com/
+  cucina: [pizza, pasta, pesce, carne]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: "12:00-17:00, 18:00-24:00"
+    mar: chiuso
+    mer-dom: "12:00-17:00, 18:00-24:00"
+  orari: lc-port-alba-orari
+  prezzi: lc-port-alba-prezzi
+  prenotazione: possibile
+  piatti: [baba]
+  perche: lc-port-alba-perche
+
+- id: di-matteo
+  nome: "Antica Pizzeria Di Matteo"
+  breve: "Di Matteo"
+  zona: centro-storico
+  indirizzo: "Via dei Tribunali 94"
+  lat: 40.85129
+  lon: 14.25802
+  osm: node/3106300368
+  sito: https://anticapizzeriadimatteo.it/
+  cucina: [pizza, strada]
+  pasto: [pranzo, cena, spuntino]
+  apertura:
+    lun-sab: "10:00-23:30"
+    dom: "?"
+  orari: lc-di-matteo-orari
+  prezzoBase: 5
+  prezzi: lc-di-matteo-prezzi
+  piatti: [margherita, marinara, pizza-fritta, frittatina]
+  perche: lc-di-matteo-perche
+  rinomatoPer: { piatto: "il cibo di strada fritto", scheda: lc-di-matteo-rinomato }
+  menu: { url: "https://anticapizzeriadimatteo.it/wp-content/uploads/2022/07/Menu-Online-20072022.pdf", controllato: 2026-10-04 }
+
+- id: chitarra
+  nome: "Osteria La Chitarra"
+  breve: "La Chitarra"
+  zona: centro-storico
+  indirizzo: "Rampe San Giovanni Maggiore 1b"
+  lat: 40.84575
+  lon: 14.25630
+  osm: node/4277217543
+  sito: https://www.osterialachitarra.it/
+  cucina: [napoletana, pasta, carne, pesce]
+  pasto: [cena]
+  apertura:
+    lun-sab: "19:30-23:00"
+    dom: chiuso
+  orari: lc-chitarra-orari
+  prezzoBase: 23
+  prezzi: lc-chitarra-prezzi
+  prenotazione: possibile
+  piatti: [ragu, polpette, parmigiana, baccala]
+  perche: lc-chitarra-perche
+  menu: { url: "https://www.osterialachitarra.it/menu/", controllato: 2026-10-04 }
+
+- id: gesu-vecchio
+  nome: "La Locanda Gesù Vecchio"
+  breve: "Gesù Vecchio"
+  zona: centro-storico
+  indirizzo: "Via Giovanni Paladino 26"
+  lat: 40.84720
+  lon: 14.25714
+  osm: node/7188768320
+  sito: https://www.lalocandagesuvecchionapoli.it/
+  cucina: [napoletana, pasta, carne, pesce]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-dom: "12:00-15:30, 19:00-23:00"
+  orari: lc-gesu-vecchio-orari
+  prezzoBase: 18.5
+  prezzi: lc-gesu-vecchio-prezzi
+  prenotazione: obbligatoria
+  piatti: [genovese, ragu, pasta-patate, polpette, baccala, pastiera]
+  rinomatoPer: { piatto: "la pasta e patate con la provola", scheda: lc-gesu-vecchio-perche }
+  perche: lc-gesu-vecchio-perche
+  menu: { url: "https://www.lalocandagesuvecchionapoli.it/wp-content/uploads/2026/06/MENU-LOCANDA-GIUGNO-2026-1.pdf.pdf", controllato: 2026-10-04 }
+
+- id: di-costanzo
+  nome: "Pasticceria Di Costanzo"
+  breve: "Di Costanzo"
+  zona: centro-storico
+  indirizzo: "Piazza Cavour 133"
+  lat: 40.85518
+  lon: 14.25376
+  osm: node/11777839769
+  sito: https://www.dicostanzopasticceria.it/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun: "07:00-20:00"
+    mar: chiuso
+    mer-sab: "07:00-20:00"
+    dom: "08:00-18:00"
+  orari: lc-di-costanzo-orari
+  piatti: [sfogliatella, caffe]
+  perche: lc-di-costanzo-perche
+
+# ================= TOLEDO E PLEBISCITO =================
+- id: brandi
+  nome: "Pizzeria Brandi"
+  breve: "Brandi"
+  zona: toledo-plebiscito
+  indirizzo: "Salita Sant'Anna di Palazzo 1"
+  lat: 40.83675
+  lon: 14.24690
+  osm: node/2310523920
+  sito: https://pizzeriabrandi.com/
+  cucina: [pizza]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-dom: "12:30-15:30, 19:30-23:30"
+  orari: lc-brandi-orari
+  prenotazione: possibile
+  piatti: [margherita, marinara]
+  perche: lc-brandi-perche
+  menu: { url: "https://pizzeriabrandi.com/pizzas/", controllato: 2026-10-04 }
+
+- id: zia-esterina
+  nome: "Antica Pizza Fritta da Zia Esterina Sorbillo"
+  breve: "Zia Esterina"
+  zona: toledo-plebiscito
+  indirizzo: "Piazza Trieste e Trento 53"
+  lat: 40.83747
+  lon: 14.24826
+  osm: node/4171990845
+  sito: https://www.sorbillo.it/antica-pizza-fritta-da-zia-esterina-sorbillo/
+  cucina: [strada]
+  pasto: [spuntino, pranzo, cena]
+  apertura:
+    lun-dom: "11:00-22:00"
+  orari: lc-zia-esterina-orari
+  piatti: [pizza-fritta]
+  perche: lc-zia-esterina-perche
+
+- id: hosteria-toledo
+  nome: "Hosteria Toledo"
+  zona: toledo-plebiscito
+  indirizzo: "Vico Giardinetto 78"
+  lat: 40.84099
+  lon: 14.24794
+  osm: node/5024988524
+  sito: https://www.hosteriatoledo.it/
+  cucina: [napoletana, pasta, carne, pesce]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: "12:00-16:00, 19:00-24:00"
+    mar: chiuso
+    mer-dom: "12:00-16:00, 19:00-24:00"
+  orari: lc-hosteria-toledo-orari
+  prezzoBase: 16
+  prezzi: lc-hosteria-toledo-prezzi
+  piatti: [genovese, ragu, pasta-patate, vongole, baccala, frittura, baba, caffe]
+  perche: lc-hosteria-toledo-perche
+  menu: { url: "https://www.hosteriatoledo.it/wp-content/uploads/2023/05/HOSTERIA-TOLEDO-menu-A4-print.pdf", controllato: 2026-10-04 }
+
+- id: gobbetto
+  nome: "Osteria Il Gobbetto"
+  breve: "Il Gobbetto"
+  zona: toledo-plebiscito
+  indirizzo: "Vico Sergente Maggiore 8"
+  lat: 40.83799
+  lon: 14.24812
+  osm: node/4318327741
+  sito: https://osteria-il-gobbetto3.webnode.it/
+  cucina: [napoletana, pasta, pesce]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-sab: "12:00-14:30, 19:00-22:30"
+    dom: "12:00-16:00"
+  orari: lc-gobbetto-orari
+  piatti: [pasta-patate, vongole, baccala]
+  perche: lc-gobbetto-perche
+  menu: { url: "https://osteria-il-gobbetto3.webnode.it/menu/", controllato: 2026-10-04 }
+
+- id: nennella
+  nome: "Trattoria da Nennella"
+  breve: "Nennella"
+  zona: toledo-plebiscito
+  indirizzo: "Piazza Carità 22"
+  lat: 40.84461
+  lon: 14.24977
+  osm: node/11530264327
+  sito: https://www.trattorianennella.it/
+  cucina: [napoletana, pasta]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-sab: "12:00-15:30, 18:45-23:30"
+    dom: chiuso
+  orari: lc-nennella-orari
+  prenotazione: possibile
+  piatti: [pasta-patate]
+  perche: lc-nennella-perche
+  rinomatoPer: { piatto: "la pasta e patate con la provola", scheda: lc-nennella-perche }
+
+- id: pintauro
+  nome: "Pasticceria Pintauro"
+  breve: "Pintauro"
+  zona: toledo-plebiscito
+  indirizzo: "Via Toledo 275"
+  lat: 40.83932
+  lon: 14.24827
+  osm: node/4318425498
+  sito: https://www.pasticceriapintauro1785.it/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun-dom: "09:00-21:00"
+  orari: lc-pintauro-orari
+  piatti: [sfogliatella, baba, pastiera]
+  perche: lc-pintauro-perche
+
+# ================= LUNGOMARE, CHIAIA E MERGELLINA =================
+- id: cinquanta-kalo
+  nome: "50 Kalò"
+  zona: lungomare
+  indirizzo: "Piazza Sannazaro 201b"
+  lat: 40.82839
+  lon: 14.22007
+  osm: node/4318205028
+  sito: https://50kalo.it/
+  cucina: [pizza]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "12:00-16:30, 18:30-00:30"
+  orari: lc-cinquanta-kalo-orari
+  prezzoBase: 7.5
+  prezzi: lc-cinquanta-kalo-prezzi
+  prenotazione: "no"
+  piatti: [margherita, marinara, frittatina, montanara]
+  perche: lc-cinquanta-kalo-perche
+  menu: { url: "https://50kalo.it/le_pizze.php", controllato: 2026-10-04 }
+
+- id: salvo
+  nome: "Pizzeria Salvo"
+  breve: "Salvo"
+  zona: lungomare
+  indirizzo: "Riviera di Chiaia 271"
+  lat: 40.83335
+  lon: 14.23900
+  osm: node/11232455940
+  sito: https://www.pizzeriasalvo.it/
+  cucina: [pizza]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "12:30-15:30, 19:00-24:00"
+  orari: lc-salvo-orari
+  prezzoBase: 8.5
+  prezzi: lc-salvo-prezzi
+  prenotazione: possibile
+  piatti: [margherita, marinara]
+  perche: lc-salvo-perche
+  menu: { url: "https://www.pizzeriasalvo.it/wp-content/uploads/2026/06/Salvo_Menu_11_05_26.pdf", controllato: 2026-10-04 }
+
+- id: pignatelli
+  nome: "Ostaria Pignatelli"
+  breve: "Pignatelli"
+  zona: lungomare
+  indirizzo: "Riviera di Chiaia 216"
+  lat: 40.83393
+  lon: 14.23548
+  osm: node/14085099501
+  sito: https://www.ostariapignatelli.com/
+  cucina: [napoletana, pasta, carne, pesce]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "12:30-16:00, 19:30-24:00"
+  orari: lc-pignatelli-orari
+  prezzoBase: 26
+  prezzi: lc-pignatelli-prezzi
+  prenotazione: possibile
+  piatti: [genovese, pasta-patate, polpette, baccala]
+  perche: lc-pignatelli-perche
+  rinomatoPer: { piatto: "le candele alla genovese", scheda: lc-pignatelli-rinomato }
+  menu: { url: "https://www.quickermenu.it/ostariapignatelli/", controllato: 2026-10-04 }
+
+- id: cantinella
+  nome: "La Cantinella"
+  zona: lungomare
+  indirizzo: "Via Cuma 42"
+  lat: 40.83228
+  lon: 14.25111
+  osm: node/3450436889
+  sito: https://lacantinella.it/
+  cucina: [pesce, pasta, carne]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-sab: "12:30-15:30, 19:30-23:30"
+    dom: "12:30-15:30"
+  orari: lc-cantinella-orari
+  prezzoBase: 31
+  prezzi: lc-cantinella-prezzi
+  prenotazione: possibile
+  piatti: [vongole]
+  perche: lc-cantinella-perche
+  menu: { url: "https://lacantinella.it/wp-content/uploads/2025/09/Menu-tavoli.pdf", controllato: 2026-10-04 }
+
+- id: bersagliera
+  nome: "La Bersagliera"
+  zona: lungomare
+  indirizzo: "Borgo Marinari 10"
+  lat: 40.82966
+  lon: 14.24853
+  osm: node/3454886395
+  sito: https://www.labersagliera.it/
+  cucina: [pesce, pasta]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: "12:00-15:30, 19:00-23:30"
+    mar: chiuso
+    mer-dom: "12:00-15:30, 19:00-23:30"
+  orari: lc-bersagliera-orari
+  prenotazione: possibile
+  perche: lc-bersagliera-perche
+
+- id: scialuppa
+  nome: "La Scialuppa"
+  zona: lungomare
+  indirizzo: "Piazzetta Marinari 5"
+  lat: 40.82859
+  lon: 14.24844
+  osm: node/3452481778
+  sito: https://www.lascialuppa.net/
+  cucina: [pesce, pasta, pizza]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-dom: "12:30-15:30, 19:00-24:00"
+  orari: lc-scialuppa-orari
+  prenotazione: possibile
+  perche: lc-scialuppa-perche
+
+- id: calabritto
+  nome: "Terrazza Calabritto"
+  zona: lungomare
+  indirizzo: "Piazza Vittoria 1"
+  # il punto della piazza (il locale non è su OpenStreetMap)
+  lat: 40.83266
+  lon: 14.24141
+  sito: https://napoli.terrazzacalabritto.it/
+  cucina: [pesce, pasta, carne]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: "20:00-24:00"
+    mar-sab: "13:00-15:00, 20:00-24:00"
+    dom: "13:00-15:30"
+  orari: lc-calabritto-orari
+  prezzoBase: 50
+  prezzi: lc-calabritto-prezzi
+  prenotazione: possibile
+  perche: lc-calabritto-perche
+  menu: { url: "https://napoli.terrazzacalabritto.it/menu/", controllato: 2026-10-04 }
+
+- id: chalet-ciro
+  nome: "Chalet Ciro"
+  zona: lungomare
+  indirizzo: "Via Caracciolo, Mergellina"
+  lat: 40.82675
+  lon: 14.22014
+  osm: node/2508856019
+  sito: https://www.chaletciro1952.com/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun-ven: "06:45-03:00"
+    sab: "06:45-04:00"
+    dom: "06:45-03:00"
+  orari: lc-chalet-ciro-orari
+  piatti: [sfogliatella, baba]
+  perche: lc-chalet-ciro-perche
+  rinomatoPer: { piatto: "il cono graffa, il gelato in una graffa fritta", scheda: lc-chalet-ciro-rinomato }
+
+- id: caffettiera
+  nome: "Gran Caffè La Caffettiera"
+  breve: "La Caffettiera"
+  zona: lungomare
+  indirizzo: "Piazza dei Martiri 26"
+  # il punto della piazza (il locale non è su OpenStreetMap)
+  lat: 40.83429
+  lon: 14.24182
+  sito: https://www.grancaffelacaffettiera.com/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun-dom: "07:00-23:00"
+  orari: lc-caffettiera-orari
+  perche: lc-caffettiera-perche
+
+# ================= VOMERO =================
+- id: gorizia
+  nome: "Pizzeria Gorizia 1916"
+  breve: "Gorizia 1916"
+  zona: vomero
+  indirizzo: "Via Gian Lorenzo Bernini 29"
+  # il punto della via (il locale non è su OpenStreetMap)
+  lat: 40.84645
+  lon: 14.23140
+  sito: https://www.gorizia1916.com/
+  cucina: [pizza, napoletana, pasta, pesce, carne]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "12:30-16:00, 19:30-24:00"
+  orari: lc-gorizia-orari
+  prenotazione: possibile
+  piatti: [margherita, marinara, pizza-fritta, genovese, ragu, vongole]
+  perche: lc-gorizia-perche
+  menu: { url: "https://www.gorizia1916.com/menu/", controllato: 2026-10-04 }
+
+- id: bellavia
+  nome: "Pasticceria Bellavia"
+  breve: "Bellavia"
+  zona: vomero
+  indirizzo: "Via Luca Giordano 50"
+  lat: 40.84267
+  lon: 14.22845
+  osm: node/9408717624
+  sito: https://www.bellaviavomero.it/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun-dom: "07:00-21:00"
+  orari: lc-bellavia-orari
+  prezzi: lc-bellavia-prezzi
+  piatti: [sfogliatella, baba, pastiera, caffe]
+  perche: lc-bellavia-perche
+
+- id: meatin
+  nome: "Meatin"
+  zona: vomero
+  indirizzo: "Via Timavo 25, angolo corso Europa"
+  # il punto della via (il locale non è su OpenStreetMap)
+  lat: 40.83890
+  lon: 14.21555
+  sito: https://www.meatin.it/
+  cucina: [carne, pasta]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-ven: "19:00-24:00"
+    sab-dom: "12:00-16:00, 19:00-24:00"
+  orari: lc-meatin-orari
+  prezzoBase: 32
+  prezzi: lc-meatin-prezzi
+  prenotazione: possibile
+  perche: lc-meatin-perche
+  menu: { url: "https://www.meatin.it/", controllato: 2026-10-04 }
+
+# ================= SANITÀ =================
+- id: starita
+  nome: "Pizzeria Starita a Materdei"
+  breve: "Starita"
+  zona: sanita-capodimonte
+  indirizzo: "Via Materdei 27"
+  lat: 40.85592
+  lon: 14.24638
+  osm: node/4318463651
+  sito: https://pizzeriestarita.it/dove-siamo/
+  cucina: [pizza, strada]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: chiuso
+    mar-dom: "12:00-15:30, 19:00-23:30"
+  orari: lc-starita-orari
+  prezzoBase: 7
+  prezzi: lc-starita-prezzi
+  prenotazione: "no"
+  piatti: [margherita, marinara, montanara, frittatina]
+  perche: lc-starita-perche
+  menu: { url: "https://pizzeriestarita.it/il-menu/", controllato: 2026-10-04 }
+
+- id: concettina
+  nome: "Concettina ai Tre Santi"
+  breve: "Concettina"
+  zona: sanita-capodimonte
+  indirizzo: "Via Arena della Sanità 7 bis"
+  lat: 40.85743
+  lon: 14.25232
+  osm: node/4318291300
+  sito: https://www.concettinaaitresanti.com/
+  cucina: [pizza, strada]
+  pasto: [pranzo, cena, spuntino]
+  apertura:
+    dom-gio: "10:30-23:30"
+    ven-sab: "11:00-23:30"
+  orari: lc-concettina-orari
+  prenotazione: possibile
+  piatti: [montanara]
+  perche: lc-concettina-perche
+
+- id: poppella
+  nome: "Pasticceria Poppella"
+  breve: "Poppella"
+  zona: sanita-capodimonte
+  indirizzo: "Via Arena della Sanità 28"
+  lat: 40.85743
+  lon: 14.25313
+  osm: node/4318435140
+  sito: https://www.pasticceriapoppella.com/
+  cucina: [dolci]
+  pasto: [spuntino]
+  apertura:
+    lun-dom: "06:00-24:00"
+  orari: lc-poppella-orari
+  piatti: [pastiera]
+  perche: lc-poppella-perche
+  rinomatoPer: { piatto: "il fiocco di neve", scheda: lc-poppella-rinomato }
+
+# ================= POSILLIPO E FUORIGROTTA =================
+- id: petrucci-posillipo
+  nome: "Palazzo Petrucci Pizzeria, Posillipo"
+  breve: "Petrucci Posillipo"
+  zona: posillipo-bagnoli
+  indirizzo: "Via Posillipo 16/c"
+  lat: 40.82146
+  lon: 14.21482
+  osm: node/5350867421
+  sito: https://palazzopetrucci.it/pizzeria-palazzo-petrucci-posillipo-napoli/
+  cucina: [pizza]
+  pasto: [cena]
+  apertura:
+    lun-dom: "19:30-?"
+  orari: lc-petrucci-posillipo-orari
+  prezzoBase: 12
+  prezzi: lc-petrucci-posillipo-prezzi
+  prenotazione: possibile
+  piatti: [margherita, marinara, frittatina]
+  perche: lc-petrucci-posillipo-perche
+
+- id: tufo
+  nome: "Tufò Trattoria"
+  breve: "Tufò"
+  zona: posillipo-bagnoli
+  indirizzo: "Via Posillipo 268"
+  lat: 40.81483
+  lon: 14.20922
+  osm: node/13943300542
+  sito: https://tufotrattoria.it/
+  cucina: [napoletana, pasta, carne, pesce]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-ven: "13:00-15:30, 20:00-23:30"
+    sab: "13:00-16:00, 20:00-24:00"
+    dom: "13:00-17:00, 20:00-23:30"
+  orari: lc-tufo-orari
+  prenotazione: possibile
+  piatti: [pasta-patate, genovese, ragu, polpette]
+  perche: lc-tufo-perche
+  rinomatoPer: { piatto: "la pasta e patate e la genovese", scheda: lc-tufo-rinomato }
+  menu: { url: "https://tufotrattoria.it/menu-trattoria/", controllato: 2026-10-04 }
+
+- id: fenestella
+  nome: "'A Fenestella"
+  breve: "A Fenestella"
+  zona: posillipo-bagnoli
+  indirizzo: "Via Marechiaro 23"
+  lat: 40.79530
+  lon: 14.19228
+  osm: node/7078504848
+  sito: https://www.ristoranteafenestella.it/
+  cucina: [pesce, pasta]
+  pasto: [pranzo, cena]
+  apertura:
+    lun: "12:00-16:00, 19:00-24:00"
+    mar: chiuso
+    mer-dom: "12:00-16:00, 19:00-24:00"
+  orari: lc-fenestella-orari
+  prenotazione: possibile
+  perche: lc-fenestella-perche
+  menu: { url: "https://www.ristoranteafenestella.it/menu-a-base-di-pesce/", controllato: 2026-10-04 }
+
+- id: cicciotto
+  nome: "Cicciotto a Marechiaro"
+  breve: "Cicciotto"
+  zona: posillipo-bagnoli
+  indirizzo: "Calata Ponticello a Marechiaro 32"
+  lat: 40.79572
+  lon: 14.19261
+  osm: node/7078495479
+  sito: https://www.trattoriadacicciotto.it/
+  cucina: [pesce, pasta]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "12:00-24:00"
+  orari: lc-cicciotto-orari
+  prezzoBase: 38
+  prezzi: lc-cicciotto-prezzi
+  piatti: [vongole, frittura, cuoppo]
+  perche: lc-cicciotto-perche
+  menu: { url: "https://www.trattoriadacicciotto.it/menu/menutrattoria.pdf", controllato: 2026-10-04 }
+
+- id: macellegria
+  nome: "Macellegria"
+  zona: posillipo-bagnoli
+  indirizzo: "Via Pasquale Formisano 10, Fuorigrotta"
+  # il punto della via (il locale non è su OpenStreetMap)
+  lat: 40.82124
+  lon: 14.18763
+  sito: https://www.macellegria.it/
+  cucina: [carne]
+  pasto: [pranzo, cena]
+  apertura:
+    lun-dom: "09:00-24:00"
+  orari: lc-macellegria-orari
+  prezzi: lc-macellegria-prezzi
+  perche: lc-macellegria-perche
+  menu: { url: "https://www.macellegria.it/menu/", controllato: 2026-10-04 }

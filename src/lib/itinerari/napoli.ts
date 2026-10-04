@@ -7,6 +7,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import yaml from 'js-yaml';
 import { getTappe, ZONE } from '../tappe';
+import { getLocali } from '../locali';
 import { EVENTI } from '../../data/eventi';
 import tempiJson from '../../data/tempi-tappe.json';
 import percorsiJson from '../../data/percorsi-tappe.json';
@@ -73,6 +74,22 @@ async function carica(): Promise<Citta> {
       ...(d.fine ? { xyFine: xy(d.fine.lat, d.fine.lon) } : {}),
       p: d.tipo === 'citta' ? punti.indexOf(t.id) : -1,
       ...(d.fine ? { pf: punti.indexOf(`${t.id}>`) } : {})
+    });
+  }
+  // i locali di «Dove mangiare»: tappe in città con gli orari giorno per giorno (src/lib/locali.ts)
+  for (const l of await getLocali()) {
+    const d = l.data;
+    let foto: string | undefined;
+    if (d.foto) {
+      const f = await getEntry('foto', d.foto.id);
+      if (f) foto = (await getImage({ src: f.data.src, width: 144, height: 144, fit: 'cover', format: 'webp', quality: 55 })).src;
+    }
+    tappe.push({
+      id: l.id, nome: d.nome, breve: d.breve ?? d.nome, tipo: 'citta', zona: d.zona, generi: ['cibo'], durata: l.durata,
+      chiuso: l.chiuso, alChiuso: 'si', bambini: 'si', momento: 'quando-vuoi', ingresso: 'pagamento',
+      prenotazione: d.prenotazione === 'obbligatoria' ? 'obbligatoria' : 'no', ...(foto ? { foto } : {}), reversibile: true,
+      xy: xy(d.lat, d.lon), ll: [d.lat, d.lon], p: punti.indexOf(l.id),
+      categoria: 'mangiare', orari: l.settimana, cucina: d.cucina, pasto: d.pasto, fascia: l.fascia, piatti: d.piatti
     });
   }
   const n = punti.length;

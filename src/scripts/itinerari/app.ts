@@ -2,7 +2,7 @@
 // nella memoria del telefono (memoria.ts) e si mandano con un link che porta tutto dopo il «#» (link.ts).
 // Il calcolo delle giornate è in src/lib/itinerari/calcolo.ts; la mappa si carica solo quando serve (mappa.ts).
 import { spacchetta, spacchettaVivo, type Pacco, type PaccoVivo } from '../../lib/itinerari/pacco';
-import { calcolaGiorno, ordinePiuCorto, tappaDi, dataDelGiorno, minuti, scenarioDi } from '../../lib/itinerari/calcolo';
+import { calcolaGiorno, ordinePiuCorto, tappaDi, dataDelGiorno, minuti, scenarioDi, orarioLocale } from '../../lib/itinerari/calcolo';
 import type { Adesso } from '../../lib/itinerari/tipi';
 import { codifica, decodifica, nuovoItinerario, giornoVuoto, uguali, MAX_GIORNI, MAX_TAPPE, MAX_NOME } from '../../lib/itinerari/link';
 import { dataLunga, dataBreve, ora, durata, durataParole, piuGiorni, giornoSettimana, NOMI_GIORNI, dataValida, minutiDa } from '../../lib/itinerari/date';
@@ -359,6 +359,7 @@ function avvia() {
       const note: string[] = [];
       const nota = (testo: string, warn = false) => note.push(`<span class="it-blocco__nota${warn ? ' it-blocco__nota--warn' : ''}">${warn ? icona('attenzione', 16) : ''}<span>${testo}</span></span>`);
       if (v.chiusa && data) nota(`Chiuso il ${NOMI_GIORNI[giornoSettimana(data)]}: scegli un altro giorno`, true);
+      if (v.chiusaOra) nota(v.chiusaOra.chiude != null ? `Chiude alle ${ora(v.chiusaOra.chiude % 1440)}, prima della fine del pasto` : v.chiusaOra.apre != null ? `A quest'ora è chiuso: apre alle ${ora(v.chiusaOra.apre)}` : `A quest'ora è chiuso${data ? '' : ' (o lo è tutti i giorni)'}`, true);
       if (ev && v.ritardo) nota(`Arrivi alle ${ora(v.inizio)}, ${durataParole(v.ritardo)} dopo l'inizio`, true);
       if (ev && E && data && E.giorni[data]) nota(`${esc(E.giorni[data].titolo)}${E.giorni[data].possibile ? ', se la sfida non è già finita' : ''}${E.giorni[data].riserva ? ', giorno di riserva' : ''}`);
       if (t?.fine) nota(v.indietro ? `Al contrario: parti da ${esc(t.fine)}` : `Fino a ${esc(t.fine)}`);
@@ -371,7 +372,7 @@ function avvia() {
       }
       const lon = lontane.get(v.id);
       const dove = lon ? (lon.giorno < x.giorni.length ? `nel giorno ${lon.giorno + 1}` : 'in un giorno nuovo') : '';
-      const foto = ev ? `<span class="it-foto__vuota">${icona('vela', 28)}</span>` : t!.foto ? `<img src="${t!.foto}" alt="" width="56" height="56" decoding="async">` : `<span class="it-foto__vuota">${icona(t!.generi[0] === 'passeggiata' ? 'piedi' : 'museo', 26)}</span>`;
+      const foto = ev ? `<span class="it-foto__vuota">${icona('vela', 28)}</span>` : t!.foto ? `<img src="${t!.foto}" alt="" width="56" height="56" decoding="async">` : `<span class="it-foto__vuota">${icona(t!.categoria ? 'piatto' : t!.generi[0] === 'passeggiata' ? 'piedi' : 'museo', 26)}</span>`;
       const meta = v.fatta ? 'Fatta' : v.inCorso ? `In corso · fino alle ${ora(v.fine)}` : ev ? `dalle ${ora(v.inizio)} · circa ${durata(v.fine - v.inizio)}` : `${durata(v.fine - v.inizio)} · fino alle ${ora(v.fine)}`;
       // dal vivo: «Fatto» con un tocco, sulle tappe che mancano; sulle fatte si toglie dal menu della tappa
       const fatto = r.vivo && !v.fatta ? `<button type="button" class="it-fatto" data-az="fatto">${icona('ok', 18)}Fatto<span class="visually-hidden">: ${esc(breve(v.id))}</span></button>` : '';
@@ -657,22 +658,26 @@ function avvia() {
   // ---------- pannello «Aggiungi una tappa» ----------
   const pannello = $<HTMLDialogElement>('it-pannello');
   const righe = [...pannello.querySelectorAll<HTMLLIElement>('.it-solo-citta .it-scelta')];
+  const righeLocali = [...pannello.querySelectorAll<HTMLLIElement>('.it-solo-mangiare .it-scelta')];
   const filtri = new Set<string>();
-  let tipoPannello: 'citta' | 'gita' = 'citta';
-  function apriPannello(tipo: 'citta' | 'gita' = 'citta', _da?: HTMLElement) {
+  const filtriLocali = { pasto: new Set<string>(), cucina: new Set<string>() };
+  type TipoPannello = 'citta' | 'gita' | 'mangiare';
+  let tipoPannello: TipoPannello = 'citta';
+  function apriPannello(tipo: TipoPannello = 'citta', _da?: HTMLElement) {
     impostaTipo(tipo);
     preparaElenco(true);
     pannello.showModal();
     pannello.querySelector<HTMLElement>('.it-foglio__corpo')!.scrollTop = 0;
   }
-  function impostaTipo(tipo: 'citta' | 'gita') {
+  function impostaTipo(tipo: TipoPannello) {
     tipoPannello = tipo;
     pannello.querySelectorAll<HTMLButtonElement>('.it-segmento').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.tipo === tipo)));
     pannello.querySelector<HTMLElement>('.it-solo-citta')!.hidden = tipo !== 'citta';
+    pannello.querySelector<HTMLElement>('.it-solo-mangiare')!.hidden = tipo !== 'mangiare';
     pannello.querySelector<HTMLElement>('.it-solo-gite')!.hidden = tipo !== 'gita';
-    $('it-pannello-h').textContent = tipo === 'citta' ? 'Aggiungi una tappa' : 'Aggiungi una gita';
+    $('it-pannello-h').textContent = tipo === 'citta' ? 'Aggiungi una tappa' : tipo === 'mangiare' ? 'Dove mangiare' : 'Aggiungi una gita';
   }
-  pannello.querySelectorAll<HTMLButtonElement>('.it-segmento').forEach(b => b.addEventListener('click', () => { impostaTipo(b.dataset.tipo as 'citta' | 'gita'); preparaElenco(true); }));
+  pannello.querySelectorAll<HTMLButtonElement>('.it-segmento').forEach(b => b.addEventListener('click', () => { impostaTipo(b.dataset.tipo as TipoPannello); preparaElenco(true); }));
 
   // minuti dall'ultima tappa del giorno, stato dei pulsanti, chiusure; con «ordina» rifà anche l'ordine
   function preparaElenco(ordina: boolean) {
@@ -698,6 +703,46 @@ function avvia() {
       const chiusa = data && t.chiuso.includes(giornoSettimana(data));
       nota.hidden = !chiusa;
       nota.textContent = chiusa ? `Chiuso il ${NOMI_GIORNI[giornoSettimana(data!)]}` : '';
+    }
+    // i locali: minuti dall'ultima tappa e, se a quell'ora (o quel giorno) è chiuso, lo diciamo
+    const distL = new Map<string, number>();
+    for (const li of righeLocali) {
+      const id = li.dataset.id!, t = tappaDi(C, id)!;
+      const dentro = !G.gita && G.tappe.includes(id);
+      const b = li.querySelector<HTMLButtonElement>('.it-piu')!;
+      b.setAttribute('aria-pressed', String(dentro));
+      b.setAttribute('aria-label', `${dentro ? 'Togli' : 'Aggiungi'} ${t.breve}`);
+      b.dataset.tip = dentro ? 'Togli' : 'Aggiungi';
+      b.innerHTML = icona(dentro ? 'ok' : 'piu', 24);
+      const m = uscita != null && !dentro ? minuti(C, s, uscita, t.p) : null;
+      if (m != null) distL.set(id, m);
+      li.querySelector('.it-scelta__min')!.textContent = m == null ? '' : `${m < 2 ? 'Accanto' : `${m} min`} · `;
+      const arrivo = (coda ? coda.fine : G.inizio) + (m ?? 0);
+      const chiusa = data && t.chiuso.includes(giornoSettimana(data));
+      const o = !chiusa && !dentro ? orarioLocale(t, data, arrivo, t.durata) : null;
+      const nota = li.querySelector<HTMLElement>('.it-scelta__nota')!;
+      nota.hidden = !chiusa && !o;
+      nota.textContent = chiusa ? `Chiuso il ${NOMI_GIORNI[giornoSettimana(data!)]}` : o ? (o.chiude != null ? `Arrivi alle ${ora(arrivo)}: chiude alle ${ora(o.chiude % 1440)}` : o.apre != null ? `Arrivi alle ${ora(arrivo)}: apre alle ${ora(o.apre)}` : `Alle ${ora(arrivo)} è chiuso`) : '';
+    }
+    if (ordina) {
+      const ulL = $('it-scelte-mangiare');
+      ulL.querySelectorAll('.it-scelta--zona').forEach(z => z.remove());
+      $('it-mangiare-testa').textContent = coda && !G.gita ? `Minuti dall'ultima tappa: ${breve(coda.id)}` : 'Tutti i locali, per zona';
+      if (coda && !G.gita) ulL.append(...[...righeLocali].sort((a, b) => (distL.get(a.dataset.id!) ?? 1e6) - (distL.get(b.dataset.id!) ?? 1e6)));
+      else {
+        let zona = '';
+        for (const li of [...righeLocali].sort((a, b) => Object.keys(C.zone).indexOf(a.dataset.zona!) - Object.keys(C.zone).indexOf(b.dataset.zona!))) {
+          if (li.dataset.zona !== zona) {
+            zona = li.dataset.zona!;
+            const z = document.createElement('li');
+            z.className = 'it-scelta--zona';
+            z.dataset.zona = zona;
+            z.textContent = C.zone[zona] ?? zona;
+            ulL.append(z);
+          }
+          ulL.append(li);
+        }
+      }
     }
     const ul = $('it-scelte');
     const testa = $('it-elenco-testa');
@@ -765,9 +810,26 @@ function avvia() {
     $('it-scelte').querySelectorAll<HTMLElement>('.it-scelta--zona').forEach(z => { z.hidden = !righe.some(li => !li.hidden && li.dataset.zona === z.dataset.zona); });
     $('it-nessuna').hidden = visibili > 0;
     $('it-elenco-testa').hidden = visibili === 0;
+    // i locali: pasto e cucina (dentro ogni gruppo basta uno dei filtri scelti)
+    let locali = 0;
+    for (const li of righeLocali) {
+      const ok = (!filtriLocali.pasto.size || li.dataset.pasto!.split(' ').some(p => filtriLocali.pasto.has(p))) &&
+        (!filtriLocali.cucina.size || li.dataset.cucina!.split(' ').some(c => filtriLocali.cucina.has(c)));
+      li.hidden = !ok;
+      if (ok) locali++;
+    }
+    $('it-scelte-mangiare').querySelectorAll<HTMLElement>('.it-scelta--zona').forEach(z => { z.hidden = !righeLocali.some(li => !li.hidden && li.dataset.zona === z.dataset.zona); });
+    $('it-nessun-locale').hidden = locali > 0;
   }
+  pannello.querySelectorAll<HTMLButtonElement>('[data-pasto], [data-cucina]').forEach(b => b.addEventListener('click', () => {
+    const [gruppo, v] = b.dataset.pasto ? ['pasto', b.dataset.pasto] as const : ['cucina', b.dataset.cucina!] as const;
+    const set = filtriLocali[gruppo];
+    if (set.has(v)) set.delete(v); else set.add(v);
+    b.setAttribute('aria-pressed', String(set.has(v)));
+    applicaFiltri();
+  }));
   cerca.addEventListener('input', applicaFiltri);
-  pannello.querySelectorAll<HTMLButtonElement>('.it-filtro').forEach(b => b.addEventListener('click', () => {
+  pannello.querySelectorAll<HTMLButtonElement>('.it-filtro[data-filtro]').forEach(b => b.addEventListener('click', () => {
     const f = b.dataset.filtro!;
     if (filtri.has(f)) filtri.delete(f); else filtri.add(f);
     b.setAttribute('aria-pressed', String(filtri.has(f)));
@@ -776,7 +838,7 @@ function avvia() {
   $('it-togli-filtri').addEventListener('click', () => {
     filtri.clear();
     cerca.value = '';
-    pannello.querySelectorAll('.it-filtro').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    pannello.querySelectorAll('.it-filtro[data-filtro]').forEach(b => b.setAttribute('aria-pressed', 'false'));
     applicaFiltri();
     cerca.focus();
   });
@@ -1048,6 +1110,18 @@ function avvia() {
         toast(`Itinerario «${d.it.nome}» salvato tra i tuoi${d.scartate.length ? `. ${d.scartate.length === 1 ? 'Una tappa non esiste più ed è stata tolta' : `${d.scartate.length} tappe non esistono più e sono state tolte`}` : ''}`);
       }
       salva();
+    }
+  }
+  // ---------- un locale da aggiungere, dalla pagina «Dove mangiare» (?aggiungi=<id>&g=<giorno>) ----------
+  const richiesta = new URLSearchParams((window as Window & { daAggiungere?: string }).daAggiungere ?? '');
+  const daAggiungere = richiesta.get('aggiungi');
+  if (daAggiungere) {
+    const t = tappaDi(C, daAggiungere);
+    if (t?.tipo === 'citta') {
+      const x = it();
+      giorno = Math.min(Math.max(0, Number(richiesta.get('g')) || 0), x.giorni.length - 1);
+      if (x.giorni[giorno].tappe.includes(t.id)) toast(`${maiuscola(t.breve)} è già nel giorno ${giorno + 1}`);
+      else { aggiungiTappa(t.id); toast(`${maiuscola(t.breve)} aggiunto al giorno ${giorno + 1}`); }
     }
   }
   quandoCambia(() => { const n = leggi(C); if (n) { A = n; disegna(); } });

@@ -1,0 +1,201 @@
+# Testi brevi dei locali di «Dove mangiare» (stesso id di src/data/locali.yaml). Come si scrivono: src/lib/testi.ts
+# e il README. Orari e prezzi stanno nelle schede del locale: qui cosa si mangia e perché è nell'elenco.
+# I riconoscimenti letti solo sui giornali hanno il segno {?…} e la frase lo dice («secondo…», «scrive…»).
+
+# ---------- Centro storico ----------
+da-michele:
+  usa: [lc-da-michele-perche]
+  fonti: [lc-da-michele-menu]
+  testo: |
+    Quattro pizze in tutto: margherita, marinara, cosacca e marita, metà e metà. Non si prenota. Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto{?lc-da-michele-perche}.
+
+port-alba:
+  usa: [lc-port-alba-perche]
+  fonti: [lc-port-alba]
+  testo: |
+    Pizzeria e ristorante accanto a piazza Dante, sotto l'arco di Port'Alba, con pizze, primi, pesce e carne. Secondo il locale, è nata come pizzeria nel 1738.
+
+di-matteo:
+  usa: [lc-di-matteo-perche, lc-di-matteo-rinomato]
+  fonti: [lc-di-matteo-menu]
+  testo: |
+    Pizzeria e friggitoria su via dei Tribunali: pizza fritta, frittatine, crocchè e arancini da mangiare anche in piedi, oltre alle pizze al tavolo. Secondo il locale è aperta dal 1936; Gambero Rosso International scrive che è una tappa obbligata per il cibo di strada fritto{?lc-di-matteo-rinomato}.
+
+chitarra:
+  usa: [lc-chitarra-perche]
+  fonti: [lc-chitarra-menu]
+  testo: |
+    Un'osteria piccola sulle rampe di San Giovanni Maggiore, aperta solo la sera: pignatiello al ragù, polpette, parmigiana, baccalà e alici fritte. Ha la Chiocciola di Slow Food nella guida 2025, secondo Scatti di Gusto{?lc-chitarra-perche}.
+
+gesu-vecchio:
+  usa: [lc-gesu-vecchio-perche]
+  fonti: [lc-gesu-vecchio-menu]
+  testo: |
+    Cucina napoletana di casa: genovese, ragù, pasta e patate con la provola, polpette e trippa. Si entra solo prenotando, e la sera ci sono due turni. Gambero Rosso la mette tra gli otto posti di Napoli per la pasta e patate, scrive Gambero Rosso International{?lc-gesu-vecchio-perche}.
+
+di-costanzo:
+  usa: [lc-di-costanzo-perche]
+  fonti: [lc-di-costanzo]
+  testo: |
+    Pasticceria in piazza Cavour, vicino al Museo Archeologico: sfogliatelle ricce e frolle, cornetti e caffè. Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it{?lc-di-costanzo-perche}.
+
+# ---------- Toledo e Plebiscito ----------
+brandi:
+  usa: [lc-brandi-perche]
+  fonti: [lc-brandi-home]
+  testo: |
+    Pizzeria in una salita tra via Chiaia e piazza del Plebiscito. Secondo il locale, qui nel 1889 è nata la pizza Margherita. Il sito non pubblica i prezzi.
+
+zia-esterina:
+  usa: [lc-zia-esterina-perche]
+  fonti: [lc-zia-esterina]
+  testo: |
+    Pizza fritta da portare via, in piazza Trieste e Trento, davanti al Gambrinus. Gambero Rosso International scrive che il suo nome a Napoli è sinonimo di pizza fritta{?lc-zia-esterina-perche}.
+
+hosteria-toledo:
+  usa: [lc-hosteria-toledo-perche]
+  fonti: [lc-hosteria-toledo-menu]
+  testo: |
+    Trattoria nei Quartieri Spagnoli, a due passi da via Toledo: genovese, ragù, lasagna, pasta e patate con la provola e, dal mare, vongole, baccalà e paranza. Secondo il locale, fa cucina napoletana dal 1951.
+
+gobbetto:
+  usa: [lc-gobbetto-perche]
+  fonti: [lc-gobbetto]
+  testo: |
+    Osteria nei Quartieri Spagnoli: pasta e patate con la provola, gnocchi, spaghetti alle vongole e baccalà. La domenica apre solo a pranzo. Il sito non pubblica i prezzi.
+
+nennella:
+  usa: [lc-nennella-perche]
+  fonti: [lc-nennella]
+  testo: |
+    Trattoria in piazza Carità, all'inizio di via Toledo, famosa per la pasta e patate con la provola. Aperta nel 1949, scrive Gambero Rosso International, che la mette tra gli otto posti di Napoli per quel piatto{?lc-nennella-perche}. Il menu e i prezzi della sede di Napoli non sono online.
+
+pintauro:
+  usa: [lc-pintauro-perche]
+  fonti: [lc-pintauro]
+  testo: |
+    Sfogliatelle ricce e frolle, babà e pastiera, su via Toledo. Secondo il locale le fa dal 1785; ha riaperto con una nuova gestione nel marzo 2026, scrive Scatti di Gusto{?lc-pintauro-perche}.
+
+# ---------- Lungomare, Chiaia e Mergellina ----------
+cinquanta-kalo:
+  usa: [lc-cinquanta-kalo-perche]
+  fonti: [lc-cinquanta-kalo-menu]
+  testo: |
+    Pizzeria in piazza Sannazaro, a Mergellina, con frittatine e montanare fritte. Non si prenota. Quinta nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-cinquanta-kalo-perche}.
+
+salvo:
+  usa: [lc-salvo-perche]
+  fonti: [lc-salvo-menu]
+  testo: |
+    Pizzeria sulla Riviera di Chiaia, di fronte alla Villa Comunale, con sette margherite diverse in carta. Ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-salvo-perche}.
+
+pignatelli:
+  usa: [lc-pignatelli-perche, lc-pignatelli-rinomato]
+  fonti: [lc-pignatelli-menu]
+  testo: |
+    Osteria sulla Riviera di Chiaia, vicino a Villa Pignatelli: pasta e patate con la provola, lardiata, genovese, polpette al ragù. Bib Gourmand della Guida Michelin 2025, secondo Scatti di Gusto, che nel 2026 ha lodato soprattutto le candele alla genovese{?lc-pignatelli-perche,lc-pignatelli-rinomato}.
+
+cantinella:
+  usa: [lc-cantinella-perche]
+  fonti: [lc-cantinella-menu]
+  testo: |
+    Ristorante di mare a Santa Lucia, a due passi dal lungomare: spaghetti alle vongole, crudi, frittura di paranza, spigola al sale, e anche carne. Secondo il locale, è della stessa famiglia dagli anni Sessanta.
+
+bersagliera:
+  usa: [lc-bersagliera-perche]
+  fonti: [lc-bersagliera-home]
+  testo: |
+    Ristorante di pesce e pasta fatta in casa sul Borgo Marinari, davanti a Castel dell'Ovo. Secondo il locale, è aperto dal 1919. Il sito non pubblica menu e prezzi.
+
+scialuppa:
+  usa: [lc-scialuppa-perche]
+  fonti: [lc-scialuppa]
+  testo: |
+    Pesce, pasta e anche pizza sul Borgo Marinari, davanti al porticciolo. Il sito non pubblica i prezzi.
+
+calabritto:
+  usa: [lc-calabritto-perche]
+  fonti: [lc-calabritto-menu]
+  testo: |
+    Cucina di mare in piazza Vittoria, accanto alla Villa Comunale, con qualche piatto di carne. È il locale più caro dell'elenco: i primi partono da 20 euro.
+
+chalet-ciro:
+  usa: [lc-chalet-ciro-perche, lc-chalet-ciro-rinomato]
+  fonti: [lc-chalet-ciro]
+  testo: |
+    Bar e pasticceria sul lungomare di Mergellina, aperto fino a notte: babà, sfogliatelle, graffe e gelato. Scatti di Gusto racconta il suo cono graffa, il gelato dentro una graffa fritta{?lc-chalet-ciro-rinomato}.
+
+caffettiera:
+  usa: [lc-caffettiera-perche]
+  fonti: [lc-caffettiera]
+  testo: |
+    Caffè in piazza dei Martiri, a Chiaia, aperto tutto il giorno: colazione, dolci e qualche piatto veloce. Si siede senza prenotare, salvo i gruppi di sei o più.
+
+# ---------- Vomero ----------
+gorizia:
+  usa: [lc-gorizia-perche]
+  fonti: [lc-gorizia]
+  testo: |
+    Pizzeria e ristorante al Vomero: pizze, pizza fritta, genovese, ragù e spaghetti alle vongole. Sessantottesima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-gorizia-perche}. Il sito non pubblica i prezzi.
+
+bellavia:
+  usa: [lc-bellavia-perche]
+  fonti: [lc-bellavia]
+  testo: |
+    Pasticceria e bar al Vomero: babà, sfogliatelle, pastiera e caffè. Secondo il locale, la famiglia fa dolci dal 1925.
+
+meatin:
+  usa: [lc-meatin-perche]
+  fonti: [lc-meatin]
+  testo: |
+    Carne alla brace e qualche primo, al Vomero. Dal martedì al venerdì apre solo la sera; il menu cambia con le stagioni.
+
+# ---------- Sanità ----------
+starita:
+  usa: [lc-starita-perche]
+  fonti: [lc-starita-menu]
+  testo: |
+    Pizzeria a Materdei, tra il Museo Archeologico e la Sanità: pizze e tanti fritti, dalla montanara alla frittatina. Non si prenota. Secondo il locale, fa la pizza dal 1901.
+
+concettina:
+  usa: [lc-concettina-perche]
+  fonti: [lc-concettina]
+  testo: |
+    Pizzeria nel Rione Sanità, aperta tutto il giorno, con la montanara fritta e le pizze della tradizione. Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto{?lc-concettina-perche}. Il sito non pubblica menu e prezzi.
+
+poppella:
+  usa: [lc-poppella-perche, lc-poppella-rinomato]
+  fonti: [lc-poppella]
+  testo: |
+    Pasticceria nel Rione Sanità, aperta dalle sei del mattino a mezzanotte. Gambero Rosso cita il suo fiocco di neve e la pastiera, riporta Napolitan.it{?lc-poppella-perche,lc-poppella-rinomato}.
+
+# ---------- Posillipo e Fuorigrotta ----------
+petrucci-posillipo:
+  usa: [lc-petrucci-posillipo-perche]
+  fonti: [lc-petrucci-posillipo]
+  testo: |
+    La nuova pizzeria di Palazzo Petrucci, sul mare di Posillipo, aperta solo la sera. La classifica 50 Top Pizza 2026 mette Palazzo Petrucci al terzo posto, secondo Sky TG24, ma riguarda la sede del centro storico{?lc-petrucci-posillipo-perche}.
+
+tufo:
+  usa: [lc-tufo-perche, lc-tufo-rinomato]
+  fonti: [lc-tufo]
+  testo: |
+    Trattoria su via Posillipo: pasta e patate, genovese, ragù e polpettine. Stars and Stripes scrive che la pasta e patate, finita al tavolo, è il suo primo simbolo{?lc-tufo-rinomato}. Il sito non pubblica i prezzi.
+
+fenestella:
+  usa: [lc-fenestella-perche]
+  fonti: [lc-fenestella-home]
+  testo: |
+    Ristorante di pesce sul mare di Marechiaro. Secondo il locale, una delle sue finestre è quella della canzone di Salvatore Di Giacomo. Il sito non pubblica i prezzi.
+
+cicciotto:
+  usa: [lc-cicciotto-perche]
+  fonti: [lc-cicciotto-menu]
+  testo: |
+    Trattoria di pesce sulla discesa di Marechiaro: crudi, spaghetti alle vongole, cuoppo fritto e frittura di paranza. Secondo il locale, è qui dal 1942.
+
+macellegria:
+  usa: [lc-macellegria-perche]
+  fonti: [lc-macellegria-menu]
+  testo: |
+    Macelleria con braceria a Fuorigrotta, vicino alla Mostra d'Oltremare: carne alla brace, hamburger e polpettine. Non ci sono primi.

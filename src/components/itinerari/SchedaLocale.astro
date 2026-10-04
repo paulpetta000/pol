@@ -1,0 +1,56 @@
+---
+// Scheda completa di un locale di «Dove mangiare»: nella pagina /napoli/dove-mangiare/ e, dentro un <template>,
+// nella finestra della tappa e nel pannello «Aggiungi una tappa» degli itinerari. Orari, prezzi e «conosciuto per»
+// sono le schede di src/data/fatti.yaml così come sono: se una non è confermata il suo testo lo dice (cautelaScheda)
+// e ha il segno *, spiegato in fondo alla pagina. Il menu porta fuori dal sito, sul sito ufficiale del locale.
+import Foto from '../Foto.astro';
+import Testo from '../Testo.astro';
+import type { Locale } from '../../lib/locali';
+import { CUCINE, GIORNI, orariDelGiorno } from '../../lib/locali';
+import { cautelaScheda } from '../../lib/testi';
+import { durata, NOMI_GIORNI } from '../../lib/itinerari/date';
+
+interface Props { l: Locale; conFoto?: boolean; conTesto?: boolean; h?: 'h3' | 'h4' }
+const { l, conFoto = true, conTesto = true, h: H = 'h3' } = Astro.props;
+const d = l.data;
+const scheda = (id?: string) => {
+  if (!id) return null;
+  const f = l.schede.get(id)!;
+  const c = cautelaScheda(f);
+  if (c.errore) throw new Error(c.errore);
+  return { testo: f.data.testo, segno: c.segno };
+};
+const orari = scheda(d.orari.id), prezzi = scheda(d.prezzi?.id), rinomato = scheda(d.rinomatoPer?.scheda.id);
+const FASCIA = ['', '€', '€€', '€€€'];
+const PREN = { obbligatoria: 'Si mangia solo prenotando.', possibile: 'Si può prenotare.', no: 'Non si prenota.' } as const;
+const pasto = l.durata <= 20 ? `Spuntino: circa ${durata(l.durata)}` : `Pasto: circa ${durata(l.durata)}`;
+// i giorni di fila con lo stesso orario si raggruppano («lun–sab 12:00–15:30»)
+const righe: { da: number; a: number; orari: string }[] = [];
+GIORNI.forEach((_, i) => {
+  const orari = orariDelGiorno(l.settimana[i]);
+  const ultima = righe[righe.length - 1];
+  if (ultima && ultima.orari === orari) ultima.a = i; else righe.push({ da: i, a: i, orari });
+});
+const giorni = (r: { da: number; a: number }) => (r.da === r.a ? GIORNI[r.da] : `${GIORNI[r.da]}–${GIORNI[r.a]}`);
+---
+<div class="it-sch it-sch--locale">
+  {conFoto && d.foto && <Foto id={d.foto.id} sizes="(min-width: 600px) 560px, calc(100vw - 32px)" widths={[400, 720]} rapporto="3 / 2" didascalia={false} class="it-sch__foto" />}
+  {conTesto && <Testo b={l.testo} class="it-sch__testo" />}
+  <p class="it-sch__breve">{d.cucina.map(c => CUCINE[c]).join(' · ')}. {pasto}.{l.chiuso.length > 0 && <> Chiuso il {l.chiuso.map(g => NOMI_GIORNI[g]).join(' e il ')}.</>}{d.prenotazione && <> {PREN[d.prenotazione]}</>}</p>
+  {rinomato && d.rinomatoPer && <p class="it-sch__rinomato"><strong>Conosciuto per</strong> {d.rinomatoPer.piatto}{rinomato.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p>}
+  <H class="it-sch__h">Orari</H>
+  <table class="it-sch__orari">
+    <caption class="visually-hidden">Orari di {d.nome}, giorno per giorno</caption>
+    <tbody>{righe.map(r => <tr><th scope="row">{giorni(r)}</th><td>{r.orari}</td></tr>)}</tbody>
+  </table>
+  <p class="it-sch__fonte-orari">{orari!.testo}{orari!.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p>
+  <H class="it-sch__h">Prezzi{l.fascia > 0 && <> · <span class="it-fascia" aria-label={`fascia ${l.fascia} su 3`}>{FASCIA[l.fascia]}</span></>}</H>
+  {prezzi ? <p>{prezzi.testo}{prezzi.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p> : <p>Il locale non pubblica i prezzi sul sito: per questo non ha una fascia.</p>}
+  <p class="it-sch__link">
+    {d.menu
+      ? <a href={d.menu.url} rel="noopener" target="_blank">Apri il menu<span class="visually-hidden"> di {d.nome}</span> sul sito del locale ↗</a>
+      : <span>Menu non pubblicato online.</span>}
+    {' '}<a href={d.sito} rel="noopener" target="_blank">Sito del locale ↗</a>
+  </p>
+  <p class="it-sch__dove">{d.indirizzo}</p>
+</div>

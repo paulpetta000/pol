@@ -5,6 +5,8 @@ import Base from '../../../layouts/Base.astro';
 import Testo from '../../../components/Testo.astro';
 import FontiPagina from '../../../components/FontiPagina.astro';
 import Scheda from '../../../components/itinerari/Scheda.astro';
+import SchedaLocale from '../../../components/itinerari/SchedaLocale.astro';
+import { getLocali, CUCINE, PASTI } from '../../../lib/locali';
 import { getTesti } from '../../../lib/testi';
 import { tutteLeFonti } from '../../../lib/fatti';
 import { getTappe, ZONE } from '../../../lib/tappe';
@@ -16,6 +18,8 @@ import '../../../styles/itinerari.css';
 
 const T = await getTesti('itinerari');
 const TT = await getTesti('tappe');
+const TL = await getTesti('locali');
+const locali = await getLocali();
 const tappe = await getTappe();
 const C = await cittaNapoli();
 const pronti = await prontiNapoli();
@@ -23,14 +27,17 @@ const luoghi = await getCollection('luoghi');
 const fonti = await tutteLeFonti();
 const pacco = impacchetta(C);
 
-const citta = C.tappe.filter(t => t.tipo === 'citta');
+const citta = C.tappe.filter(t => t.tipo === 'citta' && !t.categoria);
+// i locali di «Dove mangiare» (src/data/locali.yaml): nel pannello hanno una scelta a parte, «Mangiare»
+const mangiare = C.tappe.filter(t => t.categoria === 'mangiare');
+const FASCIA = ['', '€', '€€', '€€€'];
 const gite = C.tappe.filter(t => t.tipo === 'gita');
 const ordineZone = Object.keys(ZONE);
 citta.sort((a, b) => ordineZone.indexOf(a.zona) - ordineZone.indexOf(b.zona));
 const nomeDi = (id: string) => (id === REGATE.id ? REGATE.nome : C.tappe.find(t => t.id === id)!.nome);
 const partenzaDi = (id: string) => { const p = tappe.find(t => t.id === id)!.data.partenza; return p ? luoghi.find(l => l.id === p.id)?.data.nome : undefined; };
 // Schede mostrate così come sono (orari, prezzi, viaggi): anche le loro fonti vanno in fondo alla pagina
-const schedeMostrate = tappe.flatMap(t => [...t.schede.values()]);
+const schedeMostrate = [...tappe.flatMap(t => [...t.schede.values()]), ...locali.flatMap(l => [...l.schede.values()])];
 const ore = Array.from({ length: 11 }, (_, i) => 9 + i);
 const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
 ---
@@ -43,6 +50,8 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
     // Un itinerario ricevuto con un link: lo prendo e tolgo il «#…» dall'indirizzo prima di tutto il resto,
     // così non finisce nelle statistiche né nella cronologia delle pagine viste.
     try { if (/[#&]g=/.test(location.hash)) { window.itinerarioRicevuto = location.hash; history.replaceState(null, '', location.pathname + location.search); } } catch (e) {}
+    // Un locale da aggiungere, dalla pagina «Dove mangiare» (?aggiungi=…): stessa cosa, prima delle statistiche
+    try { if (/[?&]aggiungi=/.test(location.search)) { window.daAggiungere = location.search; history.replaceState(null, '', location.pathname + location.hash); } } catch (e) {}
   </script>
   <div class="it-pagina">
     <header class="it-testa">
@@ -50,6 +59,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
         <nav class="it-briciole" aria-label="Percorso"><a href="/napoli/">Napoli</a></nav>
         <h1>Itinerari a Napoli</h1>
         <p class="it-lead">Componi le tue giornate: scegli le tappe, vedi quanto ci metti a piedi e con i mezzi, controlla tutto sulla mappa. Gli itinerari restano sul telefono e si mandano con un link.</p>
+        <p class="it-lead it-lead--link"><a class="it-btn it-btn--contorno it-btn--piccolo" href="/napoli/dove-mangiare/"><Fragment set:html={icona('piatto', 20)} />Dove mangiare</a></p>
       </div>
     </header>
 
@@ -151,7 +161,8 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
         </div>
         <div class="it-segmenti" role="group" aria-label="Che cosa aggiungere">
           <button type="button" class="it-segmento" data-tipo="citta" aria-pressed="true">In città</button>
-          <button type="button" class="it-segmento" data-tipo="gita" aria-pressed="false">Gite di un giorno</button>
+          <button type="button" class="it-segmento" data-tipo="mangiare" aria-pressed="false">Mangiare</button>
+          <button type="button" class="it-segmento" data-tipo="gita" aria-pressed="false">Gite</button>
         </div>
         <div class="it-foglio__corpo">
           <div class="it-solo-citta">
@@ -195,6 +206,38 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
                 <p>Togli qualche filtro o cerca un'altra parola.</p>
                 <button type="button" class="it-btn it-btn--contorno" id="it-togli-filtri">Togli i filtri</button>
               </div>
+            </div>
+          </div>
+          <div class="it-solo-mangiare" hidden>
+            <div class="it-filtri" role="group" aria-label="Pasto">
+              {Object.entries(PASTI).map(([k, v]) => <button type="button" class="it-filtro" data-pasto={k} aria-pressed="false">{v}</button>)}
+            </div>
+            <div class="it-filtri" role="group" aria-label="Cucina">
+              {Object.entries(CUCINE).map(([k, v]) => <button type="button" class="it-filtro" data-cucina={k} aria-pressed="false">{v}</button>)}
+            </div>
+            <div class="it-elenco">
+              <p class="it-elenco__testa" id="it-mangiare-testa">Tutti i locali, per zona</p>
+              <ul class="it-scelte" id="it-scelte-mangiare">
+                {mangiare.map(t => (
+                  <li class="it-scelta" data-id={t.id} data-zona={t.zona} data-cucina={t.cucina!.join(' ')} data-pasto={t.pasto!.join(' ')}>
+                    {t.foto ? <img class="it-scelta__foto" src={t.foto} alt="" width="56" height="56" loading="lazy" decoding="async" /> : <span class="it-scelta__foto it-scelta__foto--vuota" aria-hidden="true"><Fragment set:html={icona('piatto', 24)} /></span>}
+                    <details class="it-scelta__info">
+                      <summary>
+                        <span class="it-scelta__nome">{t.nome}</span>
+                        <span class="it-scelta__meta"><b class="it-scelta__min"></b>{t.cucina!.map(c => CUCINE[c]).join(', ')}{t.fascia ? ` · ${FASCIA[t.fascia]}` : ''}</span>
+                        <span class="it-scelta__nota" hidden></span>
+                      </summary>
+                      <div class="it-scelta__dettagli" data-da={`it-t-${t.id}`}></div>
+                    </details>
+                    <button type="button" class="it-piu" data-aggiungi={t.id} aria-label={`Aggiungi ${t.breve}`} data-tip="Aggiungi"><Fragment set:html={icona('piu', 24)} /></button>
+                  </li>
+                ))}
+              </ul>
+              <div class="it-nessuna" id="it-nessun-locale" hidden>
+                <p><strong>Nessun locale con questi filtri</strong></p>
+                <p>Togli qualche filtro.</p>
+              </div>
+              <p class="it-foglio__nota"><a href="/napoli/dove-mangiare/">Tutti i locali, con più filtri e le schede complete: Dove mangiare</a></p>
             </div>
           </div>
           <div class="it-solo-gite" hidden>
@@ -324,6 +367,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
 
       <!-- Schede delle tappe e testo delle regate, copiati dallo script quando servono -->
       {tappe.map(t => <template id={`it-t-${t.id}`}><Scheda t={t} partenza={partenzaDi(t.id)} /></template>)}
+      {locali.map(l => <template id={`it-t-${l.id}`}><SchedaLocale l={l} /></template>)}
       <template id="it-t-regate"><Testo b={T.b('regate')} class="it-regate-nota" /></template>
       <script type="application/json" id="it-dati" set:html={json} />
       <script type="application/json" id="it-pronti" set:html={JSON.stringify(pronti.map(p => ({ id: p.id, nome: p.nome, evento: p.evento, giorni: p.it.giorni }))).replace(/</g, '\\u003c')} />
@@ -389,7 +433,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
       </div>
     </section>
 
-    <FontiPagina testi={[T, TT]} fatti={schedeMostrate} extra={[fonti.get('osm')!]} />
+    <FontiPagina testi={[T, TT, TL]} fatti={schedeMostrate} extra={[fonti.get('osm')!]} />
   </div>
 </Base>
 

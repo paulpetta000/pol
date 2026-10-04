@@ -1535,3 +1535,690 @@
   tipo: ufficiale
   controllato: 2026-10-03
   letta: true
+
+# ================= DOVE MANGIARE: LOCALI (blocco C, 04/10/2026) =================
+- id: lc-da-michele
+  titolo: "Sede di Napoli: orari e prenotazioni"
+  editore: "L'Antica Pizzeria da Michele"
+  url: https://www.damichele.net/sede-di-napoli/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-da-michele-menu
+  titolo: "Menu della sede di Napoli (PDF)"
+  editore: "L'Antica Pizzeria da Michele"
+  url: https://www.damichele.net/menu/sede_napoli/menu%20Napoli.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-port-alba
+  titolo: "Sito ufficiale: storia, orari, piatti"
+  editore: "Antica Pizzeria Port'Alba"
+  url: https://www.anticapizzeriaportalba.com/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-di-matteo
+  titolo: "Sito ufficiale: orari e contatti"
+  editore: "Antica Pizzeria Di Matteo"
+  url: https://anticapizzeriadimatteo.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-di-matteo-menu
+  titolo: "Menu (PDF, luglio 2022)"
+  editore: "Antica Pizzeria Di Matteo"
+  url: https://anticapizzeriadimatteo.it/wp-content/uploads/2022/07/Menu-Online-20072022.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-chitarra
+  titolo: "Contatti e orari"
+  editore: "Osteria La Chitarra"
+  url: https://www.osterialachitarra.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-chitarra-menu
+  titolo: "Menu"
+  editore: "Osteria La Chitarra"
+  url: https://www.osterialachitarra.it/menu/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-chitarra-storia
+  titolo: "L'osteria"
+  editore: "Osteria La Chitarra"
+  url: https://www.osterialachitarra.it/osteria/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-gesu-vecchio
+  titolo: "I nostri contatti"
+  editore: "La Locanda Gesù Vecchio"
+  url: https://www.lalocandagesuvecchionapoli.it/i-nostri-contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-gesu-vecchio-home
+  titolo: "Sito ufficiale: prenotazione e turni"
+  editore: "La Locanda Gesù Vecchio"
+  url: https://www.lalocandagesuvecchionapoli.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-gesu-vecchio-menu
+  titolo: "Menu di giugno 2026 (PDF)"
+  editore: "La Locanda Gesù Vecchio"
+  url: https://www.lalocandagesuvecchionapoli.it/wp-content/uploads/2026/06/MENU-LOCANDA-GIUGNO-2026-1.pdf.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-di-costanzo
+  titolo: "Sito ufficiale: orari"
+  editore: "Pasticceria Di Costanzo"
+  url: https://www.dicostanzopasticceria.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-brandi
+  titolo: "Information: orari e prenotazioni"
+  editore: "Pizzeria Brandi"
+  url: https://pizzeriabrandi.com/information/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-brandi-home
+  titolo: "Sito ufficiale: la storia"
+  editore: "Pizzeria Brandi"
+  url: https://pizzeriabrandi.com/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-zia-esterina
+  titolo: "Antica Pizza Fritta da Zia Esterina Sorbillo: sedi e orari"
+  editore: "Gino Sorbillo"
+  url: https://www.sorbillo.it/antica-pizza-fritta-da-zia-esterina-sorbillo/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-hosteria-toledo
+  titolo: "Sito ufficiale: orari e contatti"
+  editore: "Hosteria Toledo"
+  url: https://www.hosteriatoledo.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-hosteria-toledo-menu
+  titolo: "Menu (PDF caricato a maggio 2023)"
+  editore: "Hosteria Toledo"
+  url: https://www.hosteriatoledo.it/wp-content/uploads/2023/05/HOSTERIA-TOLEDO-menu-A4-print.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-gobbetto
+  titolo: "Contatti e orari"
+  editore: "Osteria Il Gobbetto"
+  url: https://osteria-il-gobbetto3.webnode.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-nennella
+  titolo: "Sedi e orari"
+  editore: "Trattoria da Nennella"
+  url: https://www.trattorianennella.it/sedi/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-nennella-domande
+  titolo: "Domande frequenti: prenotazione"
+  editore: "Trattoria da Nennella"
+  url: https://www.trattorianennella.it/domande/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-pintauro
+  titolo: "Contatti e orari"
+  editore: "Pasticceria Pintauro"
+  url: https://www.pasticceriapintauro1785.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cinquanta-kalo
+  titolo: "Info: orari e prenotazioni"
+  editore: "50 Kalò"
+  url: https://50kalo.it/info.php
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cinquanta-kalo-menu
+  titolo: "Menu di Napoli (PDF)"
+  editore: "50 Kalò"
+  url: https://50kalo.it/download/menu_napoli_2023.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-salvo
+  titolo: "Dove siamo: orari"
+  editore: "Pizzeria Salvo"
+  url: https://www.pizzeriasalvo.it/dove-siamo/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-salvo-menu
+  titolo: "Menu dell'11 maggio 2026 (PDF)"
+  editore: "Pizzeria Salvo"
+  url: https://www.pizzeriasalvo.it/wp-content/uploads/2026/06/Salvo_Menu_11_05_26.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-pignatelli
+  titolo: "Sito ufficiale: orari e prenotazioni"
+  editore: "Ostaria Pignatelli"
+  url: https://www.ostariapignatelli.com/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-pignatelli-menu
+  titolo: "Menu digitale: i primi"
+  editore: "Ostaria Pignatelli (QuickerMenu)"
+  url: https://www.quickermenu.it/ostariapignatelli/i-primi/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cantinella
+  titolo: "Contatti e orari"
+  editore: "La Cantinella"
+  url: https://lacantinella.it/contatti-ristorante-napoli/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cantinella-home
+  titolo: "Sito ufficiale: la storia"
+  editore: "La Cantinella"
+  url: https://lacantinella.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cantinella-menu
+  titolo: "Menu (PDF)"
+  editore: "La Cantinella"
+  url: https://lacantinella.it/wp-content/uploads/2025/09/Menu-tavoli.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-bersagliera
+  titolo: "Contatti e orari"
+  editore: "La Bersagliera"
+  url: https://www.labersagliera.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-bersagliera-home
+  titolo: "Sito ufficiale: la storia"
+  editore: "La Bersagliera"
+  url: https://www.labersagliera.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-scialuppa
+  titolo: "Sito ufficiale: orari e piatti"
+  editore: "La Scialuppa"
+  url: https://www.lascialuppa.net/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-calabritto
+  titolo: "Contatti e orari"
+  editore: "Terrazza Calabritto"
+  url: https://napoli.terrazzacalabritto.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-calabritto-menu
+  titolo: "Menu"
+  editore: "Terrazza Calabritto"
+  url: https://napoli.terrazzacalabritto.it/menu/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-chalet-ciro
+  titolo: "Sede di Mergellina: orari"
+  editore: "Chalet Ciro 1952"
+  url: https://www.chaletciro1952.com/sedi/mergellina/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-chalet-ciro-storia
+  titolo: "La storia"
+  editore: "Chalet Ciro 1952"
+  url: https://www.chaletciro1952.com/storia/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-caffettiera
+  titolo: "Sito ufficiale: orari e prenotazioni"
+  editore: "Gran Caffè La Caffettiera"
+  url: https://www.grancaffelacaffettiera.com/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-gorizia
+  titolo: "Sito ufficiale: orari e contatti"
+  editore: "Pizzeria Gorizia 1916"
+  url: https://www.gorizia1916.com/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-bellavia
+  titolo: "Contatti e orari"
+  editore: "Pasticceria Bellavia"
+  url: https://www.bellaviavomero.it/contatti
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-bellavia-store
+  titolo: "Negozio online"
+  editore: "Pasticceria Bellavia"
+  url: https://www.bellaviavomero.it/store
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-bellavia-storia
+  titolo: "La nostra storia"
+  editore: "Pasticceria Bellavia"
+  url: https://www.bellaviavomero.it/la-nostra-storia
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-meatin
+  titolo: "Sito ufficiale: orari e menu"
+  editore: "Meatin"
+  url: https://www.meatin.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-starita
+  titolo: "Dove siamo: orari"
+  editore: "Pizzerie Starita"
+  url: https://pizzeriestarita.it/dove-siamo/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-starita-menu
+  titolo: "Menu di Napoli (PDF, novembre 2024)"
+  editore: "Pizzerie Starita"
+  url: https://pizzeriestarita.it/wp-content/uploads/2024/11/Starita_QR_Napoli_ITA.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-concettina
+  titolo: "Contatti e orari"
+  editore: "Concettina ai Tre Santi"
+  url: https://www.concettinaaitresanti.com/contacts/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-concettina-storia
+  titolo: "La storia"
+  editore: "Concettina ai Tre Santi"
+  url: https://www.concettinaaitresanti.com/concettina/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-poppella
+  titolo: "Punti vendita e orari"
+  editore: "Pasticceria Poppella"
+  url: https://www.pasticceriapoppella.com/punti-vendita/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-poppella-storia
+  titolo: "La storia"
+  editore: "Pasticceria Poppella"
+  url: https://www.pasticceriapoppella.com/storia/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-petrucci-posillipo
+  titolo: "Pizzeria Palazzo Petrucci a Posillipo"
+  editore: "Palazzo Petrucci"
+  url: https://palazzopetrucci.it/pizzeria-palazzo-petrucci-posillipo-napoli/
+  tipo: ufficiale
+  pubblicato: 2026-09-09
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-tufo
+  titolo: "Informazioni: orari della trattoria e dell'asporto"
+  editore: "Tufò"
+  url: https://tufotrattoria.it/informazioni/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-fenestella
+  titolo: "Contatti e orari"
+  editore: "Ristorante 'A Fenestella"
+  url: https://www.ristoranteafenestella.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-fenestella-home
+  titolo: "Sito ufficiale: la storia"
+  editore: "Ristorante 'A Fenestella"
+  url: https://www.ristoranteafenestella.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cicciotto
+  titolo: "Cicciotto a Marechiaro dal 1942: orari"
+  editore: "Cicciotto a Marechiaro"
+  url: https://www.trattoriadacicciotto.it/trattoria-da-cicciotto-a-marechiaro-dal-1942/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-cicciotto-menu
+  titolo: "Menu della trattoria (PDF)"
+  editore: "Cicciotto a Marechiaro"
+  url: https://www.trattoriadacicciotto.it/menu/menutrattoria.pdf
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-macellegria
+  titolo: "Contatti e orari"
+  editore: "Macellegria"
+  url: https://www.macellegria.it/contatti/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-macellegria-menu
+  titolo: "Menu"
+  editore: "Macellegria"
+  url: https://www.macellegria.it/menu/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-michelin-2025-pizzerie
+  titolo: "Quali sono le pizzerie nella Guida Michelin"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/quali-sono-le-pizzerie-nella-guida-michelin
+  tipo: stampa
+  pubblicato: 2024-11-10
+  controllato: 2026-10-04
+  letta: true
+
+- id: sky-50top-2026
+  titolo: "Migliori pizzerie d'Italia, la classifica 50 Top Pizza 2026"
+  editore: "Sky TG24"
+  url: https://tg24.sky.it/lifestyle/2026/07/24/migliori-pizzerie-d-italia-classifica-2026
+  tipo: stampa
+  pubblicato: 2026-07-24
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-bib-2025
+  titolo: "I 16 nuovi ristoranti Bib Gourmand della Guida Michelin 2025"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/i-16-nuovi-ristoranti-bib-gourmand-della-guida-michelin-2025
+  tipo: stampa
+  pubblicato: 2024-10-29
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-pignatelli-2026
+  titolo: "Ostaria Pignatelli a Napoli: menu, prezzi, recensione"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/ostaria-pignatelli-a-napoli-menu-prezzi-recensione
+  tipo: stampa
+  pubblicato: 2026-01-01
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-slowfood-2025
+  titolo: "Osterie Slow Food 2025: le Chiocciole"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/osterie-slow-food-2025-le-chiocciole-mangi-bene-spendi-poco
+  tipo: stampa
+  pubblicato: 2024-10-14
+  controllato: 2026-10-04
+  letta: true
+
+- id: gri-pasta-patate-2024
+  titolo: "Where to eat pasta, potatoes, and provola in Naples. The 8 best restaurants chosen by Gambero Rosso"
+  editore: "Gambero Rosso International"
+  url: https://www.gamberorossointernational.com/?p=513457
+  tipo: stampa
+  pubblicato: 2024-01-23
+  controllato: 2026-10-04
+  letta: true
+
+- id: gri-cuoppo-2024
+  titolo: "The best cuoppo in Naples: must-visit spots"
+  editore: "Gambero Rosso International"
+  url: https://www.gamberorossointernational.com/news/the-best-cuoppo-in-naples-must-visit-spots/
+  tipo: stampa
+  pubblicato: 2024-07-01
+  controllato: 2026-10-04
+  letta: true
+
+- id: gri-pizza-fritta-2023
+  titolo: "Where to eat the best pizza fritta in Naples"
+  editore: "Gambero Rosso International"
+  url: https://gamberorossointernational.com/?p=481956
+  tipo: stampa
+  pubblicato: 2023-10-13
+  controllato: 2026-10-04
+  letta: true
+
+- id: napolitan-pasticcerie-2022
+  titolo: "Gambero Rosso: le migliori pasticcerie di Napoli sono sette"
+  editore: "Napolitan.it"
+  url: https://napolitan.it/2022/05/17/119813/gambero-rosso-le-migliori-pasticcerie-napoli-sette-quali/
+  tipo: stampa
+  pubblicato: 2022-05-17
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-pintauro-2026
+  titolo: "Pintauro, il tempio delle sfogliatelle riapre a Napoli"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/pintauro-tempio-di-sfogliatelle-riapre-a-napoli-nuova-storia
+  tipo: stampa
+  pubblicato: 2026-02-17
+  controllato: 2026-10-04
+  letta: true
+
+- id: sdg-cono-graffa
+  titolo: "Napoli: il cono graffa di Chalet Ciro a Mergellina"
+  editore: "Scatti di Gusto"
+  url: https://www.scattidigusto.it/napoli-gelato-cono-graffa-chalet-ciro-mergellina
+  tipo: stampa
+  pubblicato: 2016-05-16
+  controllato: 2026-10-04
+  letta: true
+
+- id: stripes-tufo-2022
+  titolo: "Naples ragu and genovese: Tufò"
+  editore: "Stars and Stripes"
+  url: https://www.stripes.com/living/europe_travel/after_hours/2022-12-29/naples-ragu-genovese-8416535.html
+  tipo: stampa
+  pubblicato: 2022-12-29
+  controllato: 2026-10-04
+  letta: true
+
+- id: lc-starita-home
+  titolo: "Sito ufficiale: «il rito della pizza dal 1901»"
+  editore: "Pizzerie Starita"
+  url: https://pizzeriestarita.it/
+  tipo: ufficiale
+  controllato: 2026-10-04
+  letta: true
+
+# Piatti tipici (filtro «Cosa vuoi mangiare» di /napoli/dove-mangiare/)
+- id: wiki-margherita
+  titolo: "Pizza Margherita"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Pizza_Margherita
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-marinara
+  titolo: "Pizza alla marinara"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Pizza_marinara
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-pizza-fritta
+  titolo: "Pizza fritta"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Pizza_fritta
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-frittatina
+  titolo: "Frittata di pasta"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Frittatina_di_pasta
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-genovese
+  titolo: "Genovese (sugo)"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Genovese_(sugo)
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-ragu
+  titolo: "Ragù napoletano"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Rag%C3%B9_napoletano
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-pasta-patate
+  titolo: "Cucina napoletana"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Cucina_napoletana
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-vongole
+  titolo: "Spaghetti alle vongole"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Spaghetti_alle_vongole
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-frittura
+  titolo: "Frittura di pesce"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Frittura_di_pesce
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-parmigiana
+  titolo: "Parmigiana"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Parmigiana
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-baccala
+  titolo: "Baccalà"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Bacc%C3%A0l%C3%A0
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-sfogliatella
+  titolo: "Sfogliatella"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Sfogliatella
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-baba
+  titolo: "Babà"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Bab%C3%A0
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true
+
+- id: wiki-pastiera
+  titolo: "Pastiera"
+  editore: Wikipedia
+  url: https://it.wikipedia.org/wiki/Pastiera
+  tipo: altro
+  controllato: 2026-10-04
+  letta: true

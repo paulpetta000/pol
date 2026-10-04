@@ -32,6 +32,13 @@ export interface Tappa {
   xyFine?: [number, number];
   p: number;               // indice del punto nei tempi (−1 per le gite)
   pf?: number;             // indice del punto d'arrivo dei percorsi a piedi
+  // Locali di «Dove mangiare» (src/data/locali.yaml): tappe in città con gli orari giorno per giorno
+  categoria?: 'mangiare';
+  orari?: (number[] | null)[];   // 0 = lunedì: fasce [inizio, fine…] in minuti (fine −1: non scritta); [] chiuso; null non scritto
+  cucina?: string[];
+  pasto?: string[];
+  fascia?: 0 | 1 | 2 | 3;        // € €€ €€€ (0: senza fascia)
+  piatti?: string[];
 }
 
 // Tempi tra i punti: matrici n×n in righe (i*n+j), per scenario
@@ -108,7 +115,7 @@ export interface Itinerario {
 }
 
 export type Voce =
-  | { tipo: 'tappa'; id: string; n: number; inizio: number; fine: number; indietro?: boolean; chiusa?: boolean; attesa?: number; ritardo?: number; oltre?: number; fatta?: boolean; inCorso?: boolean }
+  | { tipo: 'tappa'; id: string; n: number; inizio: number; fine: number; indietro?: boolean; chiusa?: boolean; chiusaOra?: { apre?: number; chiude?: number }; attesa?: number; ritardo?: number; oltre?: number; fatta?: boolean; inCorso?: boolean }
   | {
     tipo: 'tratto'; min: number; metri: number; mezzi: string[]; ascensori: string[]; scenario: Scenario; da: number; a: number;
     variante?: 'senza' | number;   // strada diversa da quella di sempre (orari veri): senza bus o con un bus scelto
@@ -123,6 +130,7 @@ export type Avviso =
   | { tipo: 'piena'; fine: number; limite: number; daSpostare: string[] }
   | { tipo: 'lontana'; id: string; extra: number; giorno: number }
   | { tipo: 'chiusa'; id: string; giorno: GiornoSettimana }
+  | { tipo: 'chiusa-ora'; id: string; apre?: number; chiude?: number }   // un locale chiuso a quell'ora (apre: la prossima apertura del giorno) o che chiude prima della fine
   | { tipo: 'evento-assente'; data?: string }
   | { tipo: 'evento-tardi'; ritardo: number }
   | { tipo: 'vicino'; id: string; prima: string[] };   // sei a una tappa che non è la prossima: queste, non fatte, vanno dopo

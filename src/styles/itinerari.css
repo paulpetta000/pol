@@ -338,7 +338,7 @@
 @keyframes it-sale { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes it-appare { from { transform: translateY(8px); opacity: 0; } to { transform: none; opacity: 1; } }
 
-.it-segmenti { flex: none; display: grid; grid-template-columns: 1fr 1fr; gap: 2px; margin: 0 16px 10px; padding: 2px; border-radius: var(--it-r); background: var(--it-surface-2); }
+.it-segmenti { flex: none; display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 2px; margin: 0 16px 10px; padding: 2px; border-radius: var(--it-r); background: var(--it-surface-2); }
 .it-segmento { min-height: 44px; border: 0; border-radius: 6px; background: transparent; color: var(--it-ink-2); font: 600 .9375rem/1 var(--it-f); cursor: pointer; }
 .it-segmento[aria-pressed="true"] { background: var(--it-ink); color: var(--it-canvas); }
 .it-cerca { display: flex; align-items: center; gap: 8px; height: 48px; margin-bottom: 8px; padding: 0 12px; border: 1px solid var(--it-line-strong); border-radius: var(--it-r); background: var(--it-surface); color: var(--it-ink-3); }
@@ -461,3 +461,39 @@
 @media (prefers-reduced-motion: reduce) {
   .it-pagina *, .it-pagina *::before, .it-pagina *::after { transition-duration: 0ms !important; animation: none !important; }
 }
+
+/* ---------- Locali di «Dove mangiare» (scheda, pannello, pagina /napoli/dove-mangiare/) ---------- */
+.it-scelta__foto--vuota:has(svg) { display: grid; place-items: center; color: var(--it-ink-3); }
+.it-lead--link { margin-top: 12px; }
+.it-sch__rinomato { font-size: .9375rem; }
+.it-sch__orari { width: 100%; max-width: 26rem; border-collapse: collapse; font-size: .9375rem; margin: 0 0 6px; }
+.it-sch__orari th, .it-sch__orari td { padding: 4px 0; border-bottom: 1px solid var(--it-line); text-align: left; vertical-align: top; }
+.it-sch__orari th { width: 6.5rem; font-weight: 600; }
+.it-sch__fonte-orari { color: var(--it-ink-3); font-size: .875rem; }
+.it-fascia { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.it-sch__link { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+.it-sch__dove { color: var(--it-ink-2); font-size: .9375rem; }
+
+.dm-filtri { display: grid; gap: 16px; padding-block: 8px 20px; }
+.dm-gruppo { border: 0; margin: 0; padding: 0; min-width: 0; }
+.dm-gruppo legend, .dm-gruppo > .dm-etichetta { display: block; margin-bottom: 6px; font-weight: 600; padding: 0; }
+.dm-gruppo .it-filtri { margin-bottom: 0; }
+.dm-due { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.dm-conta { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; margin: 0; padding-top: 12px; border-top: 1px solid var(--it-line); font-weight: 600; }
+.dm-piatto { margin: 0 0 16px; padding: 12px 14px; border-left: 4px solid var(--it-tile); background: var(--it-surface); border-radius: 0 var(--it-r) var(--it-r) 0; }
+.dm-piatto h2 { margin: 0 0 4px; font-size: 1.25rem; }
+.dm-piatto p { margin: 0; }
+.dm-elenco { list-style: none; margin: 0 0 24px; padding: 0; display: grid; gap: 12px; }
+.dm-locale { background: var(--it-surface); border: 1px solid var(--it-line); border-radius: var(--it-r); }
+.dm-locale > details > summary { list-style: none; display: grid; grid-template-columns: 1fr auto; gap: 4px 12px; padding: 14px 14px 12px; cursor: pointer; }
+.dm-locale > details > summary::-webkit-details-marker { display: none; }
+.dm-locale h2 { margin: 0; font-size: 1.375rem; }
+.dm-locale__meta { grid-column: 1 / -1; margin: 0; color: var(--it-ink-2); font-size: .9375rem; }
+.dm-locale__nota { grid-column: 1 / -1; margin: 0; font-size: .9375rem; }
+.dm-locale__nota--warn { color: var(--it-warn); font-weight: 600; }
+.dm-locale__apri { align-self: start; font-size: .875rem; color: var(--it-ink-3); white-space: nowrap; }
+.dm-locale__apri::after { content: ' ▾'; }
+.dm-locale details[open] .dm-locale__apri::after { content: ' ▴'; }
+.dm-locale__corpo { padding: 0 14px 14px; }
+.dm-locale__azioni { display: flex; flex-wrap: wrap; gap: 8px; padding: 0 14px 14px; }
+.dm-vuoto { padding: 16px; background: var(--it-surface); border-radius: var(--it-r); }

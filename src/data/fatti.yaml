@@ -1610,3 +1610,608 @@
   fonti: [tp-campolieto, tp-villevesuviane-visite]
   controllato: 2026-10-03
   ricontrollare: 2027-04-30
+
+# ================= DOVE MANGIARE: LOCALI (blocco C, 04/10/2026) =================
+# Orari e prezzi dei locali (src/data/locali.yaml) e perché sono nell'elenco. Gli orari sono quelli in vigore il
+# 4 ottobre 2026: per l'estate 2027 nessun locale li ha pubblicati. Da ricontrollare entro il 30/04/2027.
+- id: lc-da-michele-orari
+  testo: "Tutti i giorni 11:00–23:00. Non si accettano prenotazioni."
+  stato: confermato
+  fonti: [lc-da-michele]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-port-alba-orari
+  testo: "Lunedì e dal mercoledì alla domenica 12:00–17:00 e 18:00–24:00; chiuso il martedì. Si prenota online."
+  stato: confermato
+  fonti: [lc-port-alba]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-di-matteo-orari
+  testo: "Dal lunedì al sabato 10:00–23:30. Della domenica il sito non dice niente: né un orario né la chiusura."
+  stato: confermato
+  fonti: [lc-di-matteo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-chitarra-orari
+  testo: "Solo la sera, dal lunedì al sabato 19:30–23:00 (la stessa pagina scrive anche fino alle 23:30); chiuso la domenica. Si prenota per telefono o WhatsApp, non online."
+  stato: confermato
+  fonti: [lc-chitarra]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-gesu-vecchio-orari
+  testo: "Dal martedì alla domenica 12:00–15:30 e 19:00–23:00, la sera in due turni (alle 19:00 e alle 21:30); chiuso il lunedì. Si entra solo prenotando."
+  stato: confermato
+  fonti: [lc-gesu-vecchio, lc-gesu-vecchio-home]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-di-costanzo-orari
+  testo: "Lunedì e dal mercoledì al sabato 7:00–20:00, la domenica 8:00–18:00; chiuso il martedì."
+  stato: confermato
+  fonti: [lc-di-costanzo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-brandi-orari
+  testo: "Dal martedì alla domenica 12:30–15:30 e 19:30–23:30; chiuso il lunedì. Si prenota per telefono."
+  stato: confermato
+  fonti: [lc-brandi]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-zia-esterina-orari
+  testo: "Tutti i giorni 11:00–22:00 (sede di piazza Trieste e Trento)."
+  stato: confermato
+  fonti: [lc-zia-esterina]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-hosteria-toledo-orari
+  testo: "Tutti i giorni tranne il martedì, 12:00–16:00 e 19:00–24:00."
+  stato: confermato
+  fonti: [lc-hosteria-toledo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-gobbetto-orari
+  testo: "Dal martedì al sabato 12:00–14:30 e 19:00–22:30; la domenica solo a pranzo, 12:00–16:00; chiuso il lunedì."
+  stato: confermato
+  fonti: [lc-gobbetto]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-nennella-orari
+  testo: "Dal lunedì al sabato 12:00–15:30 e 18:45–23:30; chiuso la domenica. Si prenota online, ma metà dei posti resta a chi arriva e si mette in lista."
+  stato: confermato
+  fonti: [lc-nennella, lc-nennella-domande]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-pintauro-orari
+  testo: "Tutti i giorni 9:00–21:00."
+  stato: confermato
+  fonti: [lc-pintauro]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cinquanta-kalo-orari
+  testo: "Tutti i giorni 12:00–16:30 e 18:30–00:30. Non si accettano prenotazioni."
+  stato: confermato
+  fonti: [lc-cinquanta-kalo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-salvo-orari
+  testo: "Tutti i giorni 12:30–15:30 e 19:00–24:00. Si prenota online."
+  stato: confermato
+  fonti: [lc-salvo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-pignatelli-orari
+  testo: "Tutti i giorni 12:30–16:00 e 19:30–24:00. Si prenota con il modulo del sito; oltre 4 persone, per telefono."
+  stato: confermato
+  fonti: [lc-pignatelli]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cantinella-orari
+  testo: "Dal lunedì al sabato 12:30–15:30 e 19:30–23:30; la domenica solo a pranzo, 12:30–15:30."
+  stato: confermato
+  fonti: [lc-cantinella]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-bersagliera-orari
+  testo: "Tutti i giorni tranne il martedì, 12:00–15:30 e 19:00–23:30."
+  stato: confermato
+  fonti: [lc-bersagliera]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-scialuppa-orari
+  testo: "Dal martedì alla domenica 12:30–15:30 e 19:00–24:00; chiuso il lunedì."
+  stato: confermato
+  fonti: [lc-scialuppa]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-calabritto-orari
+  testo: "Il lunedì solo la sera, 20:00–24:00; dal martedì al sabato 13:00–15:00 e 20:00–24:00; la domenica solo a pranzo, 13:00–15:30."
+  stato: confermato
+  fonti: [lc-calabritto]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-chalet-ciro-orari
+  testo: "Tutti i giorni dalle 6:45 alle 3:00 di notte; il sabato fino alle 4:00 (sede di Mergellina)."
+  stato: confermato
+  fonti: [lc-chalet-ciro]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-caffettiera-orari
+  testo: "Tutti i giorni 7:00–23:00. Per i gruppi di 6 persone o più si prenota con due settimane di anticipo; gli altri trovano posto in ordine di arrivo."
+  stato: confermato
+  fonti: [lc-caffettiera]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-gorizia-orari
+  testo: "Tutti i giorni 12:30–16:00 e 19:30–24:00. Si prenota dal sito o per telefono."
+  stato: confermato
+  fonti: [lc-gorizia]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-bellavia-orari
+  testo: "Tutti i giorni 7:00–21:00 (sede di Napoli)."
+  stato: confermato
+  fonti: [lc-bellavia]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-meatin-orari
+  testo: "Dal martedì al venerdì solo la sera, 19:00–24:00; sabato e domenica 12:00–16:00 e 19:00–24:00; chiuso il lunedì."
+  stato: confermato
+  fonti: [lc-meatin]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-starita-orari
+  testo: "Dal martedì alla domenica 12:00–15:30 e 19:00–23:30; chiuso il lunedì. Non si accettano prenotazioni."
+  stato: confermato
+  fonti: [lc-starita]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-concettina-orari
+  testo: "Dalla domenica al giovedì 10:30–23:30; venerdì e sabato 11:00–23:30."
+  stato: confermato
+  fonti: [lc-concettina]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-poppella-orari
+  testo: "Tutti i giorni dalle 6:00 alle 24:00 (sede di via Arena della Sanità)."
+  stato: confermato
+  fonti: [lc-poppella]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-petrucci-posillipo-orari
+  testo: "Tutte le sere a cena, dalle 19:30; l'ora di chiusura non è scritta."
+  stato: confermato
+  fonti: [lc-petrucci-posillipo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-tufo-orari
+  testo: "Trattoria: dal lunedì al venerdì 13:00–15:30 e 20:00–23:30; il sabato 13:00–16:00 e 20:00–24:00; la domenica 13:00–17:00 e 20:00–23:30."
+  stato: confermato
+  fonti: [lc-tufo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-fenestella-orari
+  testo: "Tutti i giorni tranne il martedì, 12:00–16:00 e 19:00–24:00."
+  stato: confermato
+  fonti: [lc-fenestella]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cicciotto-orari
+  testo: "Tutti i giorni dalle 12:00 alle 24:00."
+  stato: confermato
+  fonti: [lc-cicciotto]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-macellegria-orari
+  testo: "Tutti i giorni 9:00–24:00: il sito dà un solo orario per la macelleria e per la braceria."
+  stato: confermato
+  fonti: [lc-macellegria]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-da-michele-prezzi
+  testo: "Margherita, marinara, cosacca e marita 6,50 €; coperto 1 € (menu della sede di Napoli)."
+  stato: confermato
+  fonti: [lc-da-michele-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-port-alba-prezzi
+  testo: "Esempi dal sito: pizza S.T.G. 7,50 €, pizza Don Vincenzo 9 €, babà 5,50 €, gnocchi verdi al salmone 12 €, filetto al pepe verde 20 €. Il menu completo non è online."
+  stato: confermato
+  fonti: [lc-port-alba]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-di-matteo-prezzi
+  testo: "Margherita 5 €, marinara 4 €, pizza fritta tradizionale 7 €, frittatina 2 €, crocchè 1 €; servizio 15%. È il menu del luglio 2022: i prezzi di oggi possono essere diversi."
+  stato: confermato
+  fonti: [lc-di-matteo-menu, lc-di-matteo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-chitarra-prezzi
+  testo: "Primi da 12 € (fagioli alla maruzzara, risotto Napoli); pignatiello, i paccheri al ragù ripieni, 13 €. Secondi da 11 € (alici fritte); polpette al sugo e parmigiana 13 €, baccalà fritto 14 €."
+  stato: confermato
+  fonti: [lc-chitarra-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-gesu-vecchio-prezzi
+  testo: "Primi da 10 € (spaghetti alla puveriello, pasta mista con patate e provola affumicata); ziti alla genovese 13 €. Secondi da 8,50 € (uova in purgatorio); polpette al ragù 9 €, trippa 12 € (menu di giugno 2026)."
+  stato: confermato
+  fonti: [lc-gesu-vecchio-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-hosteria-toledo-prezzi
+  testo: "Primi da 8 € (patate e provola, sorrentina); genovese 10 €, spaghetti alle vongole 14 €. Secondi da 8 € (carne alla genovese, carne al ragù); paranza fritta 15 €. È il menu caricato sul sito nel 2023: i prezzi di oggi possono essere diversi."
+  stato: confermato
+  fonti: [lc-hosteria-toledo-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cinquanta-kalo-prezzi
+  testo: "Margherita 7,50 €, marinara 6,50 €, frittatina 3 €; servizio e coperto 2 €."
+  stato: confermato
+  fonti: [lc-cinquanta-kalo-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-salvo-prezzi
+  testo: "Margherita classica 8,50 €; le altre margherite da 11 a 12,50 € (menu dell'11 maggio 2026)."
+  stato: confermato
+  fonti: [lc-salvo-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-pignatelli-prezzi
+  testo: "Primi da 13 € (pasta mista con patate e provola, mezzanelli alla lardiata); candele alla genovese 14 €. Secondi: polpette al ragù 13 €, baccalà 16 € (menu digitale aggiornato a gennaio 2026)."
+  stato: confermato
+  fonti: [lc-pignatelli-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cantinella-prezzi
+  testo: "Primi da 15 € (pennette alla Cantinella); spaghetti alle vongole 22 €. Secondi da 16 € (frittura di paranza); spigola su piastra di sale 30 €."
+  stato: confermato
+  fonti: [lc-cantinella-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-calabritto-prezzi
+  testo: "Primi da 20 € (pomodoro fresco) a 40 €; aglio, olio e peperoncino con frutti di mare 30 €. Secondi da 30 € (guancia di manzo); branzino in crosta di sale 35 €."
+  stato: confermato
+  fonti: [lc-calabritto-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-meatin-prezzi
+  testo: "Primi da 12 €; spaghettone alla Nerano 14 €. Secondi da 20 € (guancia di manzo brasata); costata di scottona 8,50 € all'etto. Il menu letto è quello dell'estate 2026."
+  stato: confermato
+  fonti: [lc-meatin]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-bellavia-prezzi
+  testo: "Sfogliatella 2,50 € nel negozio online del sito; i prezzi al banco non sono scritti."
+  stato: confermato
+  fonti: [lc-bellavia-store]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-starita-prezzi
+  testo: "Margherita 7 €, marinara 5,50 €, frittatina di pasta 2,50 €; coperto 1,50 €. È il menu del novembre 2024: i prezzi di oggi possono essere diversi."
+  stato: confermato
+  fonti: [lc-starita-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-petrucci-posillipo-prezzi
+  testo: "Margherita 12 €, marinara 12 €, bufalina 14 €, frittatina di pasta 5 €."
+  stato: confermato
+  fonti: [lc-petrucci-posillipo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-cicciotto-prezzi
+  testo: "Primi da 16 € (linguine alla Nerano, pasta al pomodoro); spaghetti alle vongole veraci 26 €. Secondi da 22 € (cuoppo fritto del golfo); fritto di paranza 30 €."
+  stato: confermato
+  fonti: [lc-cicciotto-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-macellegria-prezzi
+  testo: "Dalla cucina: polpettine 8 €, cotoletta 11 €. Dalla brace: hamburger di pollo 10 €, bombetta pugliese 28 €, entrecôte di podolica 46 €. Non ci sono primi: per questo non ha una fascia di prezzo."
+  stato: confermato
+  fonti: [lc-macellegria-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-da-michele-perche
+  testo: "Segnalata dalla Guida Michelin 2025 tra le pizzerie di Napoli, secondo Scatti di Gusto. Il menu del locale scrive «maestri pizzaioli dal 1870»."
+  stato: stampa
+  storico: true
+  fonti: [sdg-michelin-2025-pizzerie, lc-da-michele-menu]
+  controllato: 2026-10-04
+
+- id: lc-port-alba-perche
+  testo: "Secondo il locale, è nata come pizzeria nel 1738."
+  stato: confermato
+  storico: true
+  fonti: [lc-port-alba]
+  controllato: 2026-10-04
+
+- id: lc-di-matteo-perche
+  testo: "Secondo il locale, è aperta dal 1936, in un'unica sede in via dei Tribunali."
+  stato: confermato
+  storico: true
+  fonti: [lc-di-matteo-menu, lc-di-matteo]
+  controllato: 2026-10-04
+
+- id: lc-di-matteo-rinomato
+  testo: "Gambero Rosso International, nel luglio 2024, scrive che è una tappa obbligata per il cibo di strada fritto napoletano."
+  stato: stampa
+  storico: true
+  fonti: [gri-cuoppo-2024]
+  controllato: 2026-10-04
+
+- id: lc-chitarra-perche
+  testo: "Ha la Chiocciola di Slow Food nella guida Osterie d'Italia 2025, secondo Scatti di Gusto. Secondo il locale, l'osteria è aperta dal 1991."
+  stato: stampa
+  storico: true
+  fonti: [sdg-slowfood-2025, lc-chitarra-storia]
+  controllato: 2026-10-04
+
+- id: lc-gesu-vecchio-perche
+  testo: "Gambero Rosso la mette tra gli otto posti di Napoli per la pasta e patate con la provola, scrive Gambero Rosso International nel gennaio 2024."
+  stato: stampa
+  storico: true
+  fonti: [gri-pasta-patate-2024]
+  controllato: 2026-10-04
+
+- id: lc-di-costanzo-perche
+  testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it, che la descrive come una pasticceria tradizionale solida."
+  stato: stampa
+  storico: true
+  fonti: [napolitan-pasticcerie-2022]
+  controllato: 2026-10-04
+
+- id: lc-brandi-perche
+  testo: "Secondo il locale, qui nel 1889 è nata la pizza Margherita. L'abbiamo scelta anche per la posizione, tra via Toledo e piazza del Plebiscito."
+  stato: confermato
+  storico: true
+  fonti: [lc-brandi-home]
+  controllato: 2026-10-04
+
+- id: lc-zia-esterina-perche
+  testo: "Gambero Rosso International, nell'ottobre 2023, scrive che il suo nome a Napoli è sinonimo di pizza fritta."
+  stato: stampa
+  storico: true
+  fonti: [gri-pizza-fritta-2023]
+  controllato: 2026-10-04
+
+- id: lc-hosteria-toledo-perche
+  testo: "Secondo il locale, fa cucina napoletana dal 1951. Nessuna guida verificata: l'abbiamo scelta noi, per la cucina di casa a due passi da via Toledo."
+  stato: confermato
+  storico: true
+  fonti: [lc-hosteria-toledo]
+  controllato: 2026-10-04
+
+- id: lc-gobbetto-perche
+  testo: "Scelta nostra: un'osteria nei Quartieri Spagnoli, a due passi da via Toledo, con pasta e cucina di mare."
+  stato: confermato
+  fonti: [lc-gobbetto]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-nennella-perche
+  testo: "Aperta nel 1949, scrive Gambero Rosso International, che nel gennaio 2024 la mette tra gli otto posti di Napoli per la pasta e patate con la provola."
+  stato: stampa
+  storico: true
+  fonti: [gri-pasta-patate-2024]
+  controllato: 2026-10-04
+
+- id: lc-pintauro-perche
+  testo: "Secondo il locale, fa sfogliatelle in via Toledo dal 1785. Ha riaperto con una nuova gestione alla fine di marzo 2026, scrive Scatti di Gusto."
+  stato: stampa
+  storico: true
+  fonti: [lc-pintauro, sdg-pintauro-2026]
+  controllato: 2026-10-04
+
+- id: lc-cinquanta-kalo-perche
+  testo: "Quinta nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24, e segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto."
+  stato: stampa
+  storico: true
+  fonti: [sky-50top-2026, sdg-michelin-2025-pizzerie]
+  controllato: 2026-10-04
+
+- id: lc-salvo-perche
+  testo: "Ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24 (la classifica scrive solo «Salvo», senza dire quale sede); segnalata dalla Guida Michelin 2025 come «Salvo alla Riviera», secondo Scatti di Gusto."
+  stato: stampa
+  storico: true
+  fonti: [sky-50top-2026, sdg-michelin-2025-pizzerie]
+  controllato: 2026-10-04
+
+- id: lc-pignatelli-perche
+  testo: "Tra i nuovi Bib Gourmand della Guida Michelin 2025, cioè buona cucina a prezzi contenuti, secondo Scatti di Gusto."
+  stato: stampa
+  storico: true
+  fonti: [sdg-bib-2025]
+  controllato: 2026-10-04
+
+- id: lc-pignatelli-rinomato
+  testo: "Nella recensione del gennaio 2026, Scatti di Gusto loda soprattutto le candele alla genovese."
+  stato: stampa
+  storico: true
+  fonti: [sdg-pignatelli-2026]
+  controllato: 2026-10-04
+
+- id: lc-cantinella-perche
+  testo: "Secondo il locale, l'ha fondata Angelo Rosolino negli anni Sessanta e oggi la porta avanti la stessa famiglia. Scelta nostra anche per la posizione, a Santa Lucia, a due passi dal lungomare."
+  stato: confermato
+  storico: true
+  fonti: [lc-cantinella-home]
+  controllato: 2026-10-04
+
+- id: lc-bersagliera-perche
+  testo: "Secondo il locale, è aperta dal 1919 sul Borgo Marinari, davanti a Castel dell'Ovo."
+  stato: confermato
+  storico: true
+  fonti: [lc-bersagliera-home]
+  controllato: 2026-10-04
+
+- id: lc-scialuppa-perche
+  testo: "Scelta nostra: sul Borgo Marinari, davanti al porticciolo, aperta a pranzo e a cena."
+  stato: confermato
+  fonti: [lc-scialuppa]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-calabritto-perche
+  testo: "Scelta nostra: cucina di mare in piazza Vittoria, accanto alla Villa Comunale e al lungomare. È il locale più caro dell'elenco."
+  stato: confermato
+  fonti: [lc-calabritto-menu]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-chalet-ciro-perche
+  testo: "Secondo il locale, è sul lungomare di Mergellina dal 1952."
+  stato: confermato
+  storico: true
+  fonti: [lc-chalet-ciro-storia]
+  controllato: 2026-10-04
+
+- id: lc-chalet-ciro-rinomato
+  testo: "Scatti di Gusto, nel 2016, racconta il suo cono graffa: il gelato servito dentro una graffa fritta e zuccherata."
+  stato: stampa
+  storico: true
+  fonti: [sdg-cono-graffa]
+  controllato: 2026-10-04
+
+- id: lc-caffettiera-perche
+  testo: "Scelta nostra: caffè e dolci in piazza dei Martiri, a Chiaia, aperto tutto il giorno. Secondo il locale, è attivo da oltre 40 anni."
+  stato: confermato
+  storico: true
+  fonti: [lc-caffettiera]
+  controllato: 2026-10-04
+
+- id: lc-gorizia-perche
+  testo: "Sessantottesima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24. Secondo il locale, è aperta dal 1916."
+  stato: stampa
+  storico: true
+  fonti: [sky-50top-2026, lc-gorizia]
+  controllato: 2026-10-04
+
+- id: lc-bellavia-perche
+  testo: "Secondo il locale, la famiglia fa dolci dal 1925 ed è al Vomero dagli anni Sessanta. Nessuna guida verificata: scelta nostra, per il Vomero."
+  stato: confermato
+  storico: true
+  fonti: [lc-bellavia-storia]
+  controllato: 2026-10-04
+
+- id: lc-meatin-perche
+  testo: "Scelta nostra: l'unico locale di carne dell'elenco al Vomero, con gli orari e il menu sul sito."
+  stato: confermato
+  fonti: [lc-meatin]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-starita-perche
+  testo: "Secondo il locale, fa la pizza dal 1901."
+  stato: confermato
+  storico: true
+  fonti: [lc-starita-home]
+  controllato: 2026-10-04
+
+- id: lc-concettina-perche
+  testo: "Segnalata dalla Guida Michelin 2025 tra le pizzerie di Napoli, secondo Scatti di Gusto. Secondo il locale, è nata nel 1951."
+  stato: stampa
+  storico: true
+  fonti: [sdg-michelin-2025-pizzerie, lc-concettina-storia]
+  controllato: 2026-10-04
+
+- id: lc-poppella-perche
+  testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it, che cita la sua pastiera tra le migliori in città. Secondo il locale, è aperta dal 1920."
+  stato: stampa
+  storico: true
+  fonti: [napolitan-pasticcerie-2022, lc-poppella-storia]
+  controllato: 2026-10-04
+
+- id: lc-poppella-rinomato
+  testo: "Il suo fiocco di neve, scrive Gambero Rosso secondo Napolitan.it (2022), è ormai un dolce conosciutissimo anche all'estero."
+  stato: stampa
+  storico: true
+  fonti: [napolitan-pasticcerie-2022]
+  controllato: 2026-10-04
+
+- id: lc-petrucci-posillipo-perche
+  testo: "La pizzeria Palazzo Petrucci è terza nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24: la classifica riguarda la sede di piazza San Domenico Maggiore. Questa sede, a Posillipo, il locale l'ha presentata nel settembre 2026."
+  stato: stampa
+  storico: true
+  fonti: [sky-50top-2026, lc-petrucci-posillipo]
+  controllato: 2026-10-04
+
+- id: lc-tufo-perche
+  testo: "Scelta nostra: una trattoria di cucina napoletana su via Posillipo, aperta tutti i giorni a pranzo e a cena."
+  stato: confermato
+  fonti: [lc-tufo]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30
+
+- id: lc-tufo-rinomato
+  testo: "Stars and Stripes, nel dicembre 2022, scrive che la pasta e patate, finita al tavolo, è il primo simbolo del locale, e loda la genovese."
+  stato: stampa
+  storico: true
+  fonti: [stripes-tufo-2022]
+  controllato: 2026-10-04
+
+- id: lc-fenestella-perche
+  testo: "Secondo il locale, una delle sue finestre è quella resa celebre dalla canzone di Salvatore Di Giacomo su Marechiaro."
+  stato: confermato
+  storico: true
+  fonti: [lc-fenestella-home]
+  controllato: 2026-10-04
+
+- id: lc-cicciotto-perche
+  testo: "Secondo il locale, è a Marechiaro dal 1942."
+  stato: confermato
+  storico: true
+  fonti: [lc-cicciotto]
+  controllato: 2026-10-04
+
+- id: lc-macellegria-perche
+  testo: "Scelta nostra: macelleria e braceria a Fuorigrotta, vicino alla Mostra d'Oltremare, aperta tutti i giorni."
+  stato: confermato
+  fonti: [lc-macellegria]
+  controllato: 2026-10-04
+  ricontrollare: 2027-04-30

@@ -28,6 +28,7 @@ const P: Record<string, string> = {
   cestino: '<path d="M4.5 7h15M9.5 7V4.5h5V7M6.5 7l1 12.5h9l1-12.5"/>',
   ricomincia: '<path d="M4 12a8 8 0 1 0 2.3-5.7M4 4v4h4"/>',
   ordina: '<path d="M7 4v16M3.5 16.5L7 20l3.5-3.5M17 20V4M13.5 7.5L17 4l3.5 3.5"/>',
+  piatto: '<path d="M7 3v7.5M4.5 3v4.5a2.5 2.5 0 0 0 5 0V3M7 10.5V21M17 21V3c-2.2 1.2-3.5 3.8-3.5 7.5V13H17"/>',
   museo: '<path d="M3.5 9.5L12 4.5l8.5 5M5 9.5h14M6.5 9.5v8M10 9.5v8M14 9.5v8M17.5 9.5v8M4 20h16"/>'
 };
 

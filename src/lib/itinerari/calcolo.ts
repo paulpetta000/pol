@@ -2,6 +2,7 @@
 // le usa la pagina (src/scripts/itinerari/) e la build, che controlla gli itinerari pronti.
 import { giornoSettimana, tipoGiorno, piuGiorni } from './date';
 import type { Adesso, Avviso, Citta, Corsa, Giorno, Itinerario, Risultato, Scenario, Tappa, Vivo, Voce } from './tipi';
+import type { GiornoSettimana } from './date';
 
 // Una tappa che allunga gli spostamenti di almeno tanti minuti (andata e ritorno) è «lontana dalle altre»
 export const LONTANA = 30;
@@ -55,6 +56,36 @@ function versi(C: Citta, ids: string[], s: Scenario) {
   let j = costo.indexOf(Math.min(...costo));
   for (let k = ids.length - 1; k >= 0; k--) { out[k] = j; if (k > 0) j = da[k - 1][j]; }
   return out.map((j, k) => c[k][j]);
+}
+
+// Un locale (orari giorno per giorno) a quell'ora: va bene, oppure è chiuso (apre: la prossima apertura del giorno)
+// o chiude prima della fine (chiude). Senza data valgono tutti i giorni con l'orario scritto: avvisa solo se a
+// quell'ora è chiuso in tutti. Orari non scritti: nessun avviso.
+const GIORNI_ORARI: GiornoSettimana[] = ['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'];
+function apertoAOra(f: number[], t: number, d: number): { apre?: number; chiude?: number } | null {
+  let apre: number | undefined, chiude: number | undefined;
+  for (let k = 0; k < f.length; k += 2) {
+    const a = f[k], b = f[k + 1];
+    if (t >= a && (b === -1 || t < b)) {
+      if (b === -1 || t + d <= b) return null;
+      chiude = b;
+    } else if (a > t && (apre == null || a < apre)) apre = a;
+  }
+  return chiude != null ? { chiude } : apre != null ? { apre } : {};
+}
+export function orarioLocale(t: Tappa, data: string | undefined, inizio: number, d: number): { apre?: number; chiude?: number } | null {
+  if (!t.orari || inizio >= 24 * 60) return null;
+  if (data) {
+    const f = t.orari[GIORNI_ORARI.indexOf(giornoSettimana(data))];
+    return f && f.length ? apertoAOra(f, inizio, d) : null;
+  }
+  const giorni = t.orari.filter((f): f is number[] => !!f && f.length > 0);
+  if (!giorni.length) return null;
+  const r = giorni.map(f => apertoAOra(f, inizio, d));
+  if (r.some(x => x === null)) return null;
+  const apre = r.map(x => x!.apre).filter((x): x is number => x != null);
+  const chiude = r.map(x => x!.chiude).filter((x): x is number => x != null);
+  return chiude.length ? { chiude: Math.max(...chiude) } : apre.length ? { apre: Math.min(...apre) } : {};
 }
 
 const durataDi = (C: Citta, id: string) => (C.evento && id === C.evento.id ? C.evento.durata : tappaDi(C, id)!.durata);
@@ -188,6 +219,10 @@ export function calcolaGiorno(C: Citta, it: Itinerario, g: number, adesso?: Ades
     if (data && tappaDi(C, id)?.chiuso.includes(giornoSettimana(data))) {
       voce.chiusa = true;
       avvisi.push({ tipo: 'chiusa', id, giorno: giornoSettimana(data) });
+    } else if (tappaDi(C, id)?.orari && !voce.inCorso) {
+      // un locale: aperto a quell'ora e per tutto il pasto?
+      const o = orarioLocale(tappaDi(C, id)!, data, voce.inizio, d);
+      if (o) { voce.chiusaOra = o; avvisi.push({ tipo: 'chiusa-ora', id, ...o }); }
     }
     if (voce.fine > G.fine) voce.oltre = voce.fine - Math.max(voce.inizio, G.fine);
     voci.push(voce);
@@ -234,7 +269,7 @@ export function lontane(C: Citta, it: Itinerario, g: number, fatte: Set<string> 
   const s = scenarioDi(dataDelGiorno(it, g), G.inizio, it.piedi);
   const out: Extract<Avviso, { tipo: 'lontana' }>[] = [];
   for (const id of ids) {
-    if (G.ok?.includes(id)) continue;
+    if (G.ok?.includes(id) || tappaDi(C, id)!.categoria === 'mangiare') continue;
     const extra = inserimento(C, s, ids.filter(x => x !== id), id);
     if (extra < LONTANA) continue;
     // un altro giorno in città dove costa meno; altrimenti un giorno vuoto; altrimenti un giorno nuovo
@@ -257,7 +292,7 @@ export function lontane(C: Citta, it: Itinerario, g: number, fatte: Set<string> 
 }
 
 // ---------- L'ordine più corto ----------
-// La prima tappa resta la prima (è da lì che parti) e l'evento resta dov'è; le altre si mettono nell'ordine
+// La prima tappa resta la prima (è da lì che parti) e l'evento e i locali restano dove sono; le altre si mettono nell'ordine
 // che fa spendere meno minuti negli spostamenti. Fino a 11 tappe per tratto si provano tutti gli ordini
 // (programmazione dinamica di Held-Karp, con i due versi dei percorsi a piedi); oltre, si migliora a scambi.
 function migliorTratto(C: Citta, s: Scenario, primo: string | null, liberi: string[], ultimo: string | null): string[] {
@@ -326,14 +361,16 @@ export function ordinePiuCorto(C: Citta, it: Itinerario, g: number): { ordine: s
   const T = G.tappe.filter(id => tappaDi(C, id)?.tipo === 'citta' || id === ev);
   if (G.gita || T.length < 3) return null;
   const s = scenarioDi(dataDelGiorno(it, g), G.inizio, it.piedi);
-  const k = ev ? T.indexOf(ev) : -1;
-  let ordine: string[];
-  if (k < 0) ordine = [T[0], ...migliorTratto(C, s, T[0], T.slice(1), null)];
-  else if (k === 0) ordine = [ev!, ...migliorTratto(C, s, ev!, T.slice(1), null)];
-  else {
-    const prima = [T[0], ...migliorTratto(C, s, T[0], T.slice(1, k), ev!)];
-    ordine = [...prima, ev!, ...migliorTratto(C, s, ev!, T.slice(k + 1), null)];
+  // le regate e i locali (il pranzo resta all'ora del pranzo) restano al loro posto: si riordina tra l'uno e l'altro
+  const fissa = (id: string) => id === ev || tappaDi(C, id)?.categoria === 'mangiare';
+  const ordine: string[] = [T[0]];
+  let prima = T[0], tratto: string[] = [];
+  for (const id of T.slice(1)) {
+    if (!fissa(id)) { tratto.push(id); continue; }
+    ordine.push(...migliorTratto(C, s, prima, tratto, id), id);
+    prima = id; tratto = [];
   }
+  ordine.push(...migliorTratto(C, s, prima, tratto, null));
   if (ordine.join() === T.join()) return null;
   // controllo con gli orari veri (i mezzi cambiano con l'ora)
   const ora = calcolaGiorno(C, it, g).spostamenti;

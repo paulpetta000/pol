@@ -1,0 +1,163 @@
+---
+// Dove mangiare a Napoli (blocco C, specifiche/itinerari-napoli-ampliamento.md, sezione 2): tutti i locali in un
+// elenco, con i filtri (cucina, prezzo, piatto, quando, dove). Ogni locale si aggiunge all'itinerario come una tappa
+// (/napoli/itinerari/?aggiungi=<id>&g=<giorno>). Senza JavaScript l'elenco c'è tutto, senza filtri.
+// Lo script della pagina è in src/scripts/dove-mangiare.ts.
+import Base from '../../../layouts/Base.astro';
+import Testo from '../../../components/Testo.astro';
+import FontiPagina from '../../../components/FontiPagina.astro';
+import SchedaLocale from '../../../components/itinerari/SchedaLocale.astro';
+import { getTesti } from '../../../lib/testi';
+import { tutteLeFonti } from '../../../lib/fatti';
+import { getLocali, CUCINE, PIATTI, GIORNI } from '../../../lib/locali';
+import { ZONE } from '../../../lib/tappe';
+import { cittaNapoli } from '../../../lib/itinerari/napoli';
+import { icona } from '../../../lib/itinerari/icone';
+import { NOMI_GIORNI } from '../../../lib/itinerari/date';
+import '../../../styles/itinerari.css';
+
+const T = await getTesti('dove-mangiare');
+const TL = await getTesti('locali');
+const locali = await getLocali();
+const C = await cittaNapoli();
+const fonti = await tutteLeFonti();
+const ordineZone = Object.keys(ZONE);
+locali.sort((a, b) => ordineZone.indexOf(a.data.zona) - ordineZone.indexOf(b.data.zona) || a.data.nome.localeCompare(b.data.nome, 'it'));
+const FASCIA = ['', '€', '€€', '€€€'];
+const zoneCitta = ordineZone.filter(z => locali.some(l => l.data.zona === z));
+// i piatti del filtro: solo quelli che almeno un locale ha nel menu; le due righe ci sono dove c'è una fonte
+const piatti = Object.keys(PIATTI).filter(p => locali.some(l => l.data.piatti.includes(p)));
+const conDescrizione = piatti.filter(p => T.blocchi.includes(`piatto-${p}`));
+// Dati per lo script: i locali, i minuti a piedi da ogni tappa in città (per «vicino alle mie tappe») e i nomi brevi
+const citta = C.tappe.filter(t => t.tipo === 'citta');
+const n = C.tempi.n;
+const dati = {
+  locali: locali.map(l => {
+    const t = citta.find(x => x.id === l.id)!;
+    return { id: l.id, zona: l.data.zona, cucina: l.data.cucina, fascia: l.fascia, piatti: l.data.piatti, orari: l.settimana, durata: l.durata, piedi: citta.map(x => C.tempi.min.piedi[x.p * n + t.p]) };
+  }),
+  tappe: citta.map(t => t.id),
+  nomi: Object.fromEntries(citta.map(t => [t.id, t.breve]))
+};
+const json = JSON.stringify(dati).replace(/</g, '\\u003c');
+const schede = locali.flatMap(l => [...l.schede.values()]);
+const fontiPiatti = conDescrizione.map(p => fonti.get(`wiki-${p}`)!).filter(Boolean);
+---
+<Base title="Dove mangiare a Napoli: pizzerie, trattorie, pesce, friggitorie e dolci" description={`${locali.length} locali a Napoli con orari e prezzi presi dai siti ufficiali: pizzerie, trattorie, ristoranti di mare, friggitorie, pasticcerie. Filtri per cucina, prezzo, piatto, orario e zona; ogni locale si aggiunge al tuo itinerario.`}>
+  <div class="it-pagina">
+    <header class="it-testa">
+      <div class="it-wrap">
+        <nav class="it-briciole" aria-label="Percorso"><a href="/napoli/">Napoli</a> › <a href="/napoli/itinerari/">Itinerari</a></nav>
+        <h1>Dove mangiare a Napoli</h1>
+        <Testo b={T.b('intro')} class="it-lead" />
+      </div>
+    </header>
+
+    <section class="it-wrap" aria-labelledby="dm-filtri-h">
+      <h2 id="dm-filtri-h" class="visually-hidden">Filtri</h2>
+      <form class="dm-filtri it-interattivo" id="dm-filtri" hidden>
+        <div class="dm-gruppo it-campo">
+          <label for="dm-piatto">Cosa vuoi mangiare</label>
+          <select id="dm-piatto">
+            <option value="">Qualsiasi cosa</option>
+            {piatti.map(p => <option value={p}>{PIATTI[p]}</option>)}
+          </select>
+        </div>
+        <fieldset class="dm-gruppo">
+          <legend>Cucina</legend>
+          <div class="it-filtri">
+            {Object.entries(CUCINE).map(([k, v]) => <button type="button" class="it-filtro" data-cucina={k} aria-pressed="false">{v}</button>)}
+          </div>
+        </fieldset>
+        <fieldset class="dm-gruppo">
+          <legend>Prezzo</legend>
+          <div class="it-filtri">
+            {[1, 2, 3].map(f => <button type="button" class="it-filtro" data-fascia={f} aria-pressed="false"><span aria-hidden="true">{FASCIA[f]}</span><span class="visually-hidden">Fascia {f}: {['', 'fino a 15 euro', 'da 15 a 35 euro', 'oltre 35 euro'][f]}</span></button>)}
+          </div>
+        </fieldset>
+        <fieldset class="dm-gruppo">
+          <legend>Quando</legend>
+          <div class="dm-due">
+            <div class="it-campo">
+              <label for="dm-giorno">Giorno</label>
+              <select id="dm-giorno">
+                <option value="">Qualsiasi giorno</option>
+                {GIORNI.map(g => <option value={g}>{NOMI_GIORNI[g]}</option>)}
+              </select>
+            </div>
+            <div class="it-campo">
+              <label for="dm-ora">Ora</label>
+              <input type="time" id="dm-ora" step="900" />
+            </div>
+          </div>
+          <p class="it-campo__aiuto"><button type="button" class="it-link" id="dm-adesso">Adesso</button><span id="dm-quando-aiuto"> · Mostra i locali aperti quel giorno a quell'ora.</span></p>
+        </fieldset>
+        <div class="dm-gruppo it-campo">
+          <label for="dm-dove">Dove</label>
+          <select id="dm-dove">
+            <option value="">In tutta Napoli</option>
+            {zoneCitta.map(z => <option value={`zona:${z}`}>{ZONE[z as keyof typeof ZONE]}</option>)}
+          </select>
+          <p class="it-campo__aiuto" id="dm-dove-aiuto">Con un itinerario salvato su questo telefono puoi cercare i locali vicini alle sue tappe.</p>
+        </div>
+        <div class="dm-gruppo it-campo" id="dm-giorno-it" hidden>
+          <label for="dm-aggiungi-giorno">Aggiungi i locali al giorno</label>
+          <select id="dm-aggiungi-giorno"></select>
+        </div>
+        <p class="dm-conta" aria-live="polite"><span id="dm-conta">{locali.length} locali</span><button type="button" class="it-link" id="dm-togli">Togli i filtri</button></p>
+      </form>
+
+      {conDescrizione.map(p => (
+        <div class="dm-piatto" data-piatto-nota={p} hidden>
+          <h2>{PIATTI[p]}</h2>
+          <Testo b={T.b(`piatto-${p}`)} />
+        </div>
+      ))}
+
+      <ol class="dm-elenco" id="dm-elenco">
+        {locali.map(l => (
+          <li class="dm-locale" data-id={l.id}>
+            <details>
+              <summary>
+                <h2>{l.data.nome}</h2>
+                <span class="dm-locale__apri">Scheda</span>
+                <p class="dm-locale__meta">{ZONE[l.data.zona]} · {l.data.cucina.map(c => CUCINE[c]).join(', ')}{l.fascia > 0 && ` · ${FASCIA[l.fascia]}`}</p>
+                <p class="dm-locale__nota" hidden></p>
+              </summary>
+              <div class="dm-locale__corpo"><SchedaLocale l={l} h="h3" /></div>
+            </details>
+            <div class="dm-locale__azioni">
+              <a class="it-btn it-btn--contorno it-btn--piccolo" href={`/napoli/itinerari/?aggiungi=${l.id}`} data-aggiungi={l.id}><Fragment set:html={icona('piu', 20)} />Aggiungi all'itinerario<span class="visually-hidden">: {l.data.nome}</span></a>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <div class="dm-vuoto" id="dm-vuoto" hidden>
+        <p><strong>Nessun locale con questi filtri.</strong> Togli qualche filtro, o scegli un'altra ora.</p>
+      </div>
+    </section>
+
+    <section class="it-sezione" id="da-sapere" aria-labelledby="sapere-h">
+      <div class="it-wrap it-testi">
+        <h2 id="sapere-h">Da sapere</h2>
+        <h3>Come scegliamo i locali</h3>
+        <Testo b={T.b('criteri')} />
+        <h3>Le fasce di prezzo</h3>
+        <Testo b={T.b('fasce')} />
+        <h3>Orari e prezzi</h3>
+        <Testo b={T.b('orari')} />
+        <h3>Con il tuo itinerario</h3>
+        <Testo b={T.b('itinerario')} />
+        <h3>Una lista indipendente</h3>
+        <Testo b={T.b('indipendente')} />
+      </div>
+    </section>
+
+    <FontiPagina testi={[T, TL]} fatti={schede} extra={fontiPiatti} />
+  </div>
+  <script type="application/json" id="dm-dati" set:html={json} />
+</Base>
+
+<script>
+  import '../../../scripts/dove-mangiare';
+</script>

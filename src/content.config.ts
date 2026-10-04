@@ -151,6 +151,37 @@ const tappe = defineCollection({
     .refine(t => t.ingresso !== 'pagamento' || t.prezzi || t.tipo === 'gita', { message: 'Una tappa a pagamento deve avere la scheda dei prezzi' })
 });
 
+// Locali di «Dove mangiare» (blocco C): sono anche tappe in città degli itinerari, con gli stessi tempi.
+// Orari, prezzi e motivo della scelta sono schede (fatti) con fonte; altri controlli in src/lib/locali.ts
+// (le ore di «apertura» devono comparire nella scheda degli orari, id diversi da quelli delle tappe).
+const locali = defineCollection({
+  loader: file('src/data/locali.yaml'),
+  schema: z.object({
+    nome: z.string().min(3),
+    breve: z.string().max(22).optional(),
+    zona: z.enum(['centro-storico', 'toledo-plebiscito', 'lungomare', 'vomero', 'sanita-capodimonte', 'posillipo-bagnoli']),
+    indirizzo: z.string().min(5),
+    lat: z.number().min(40.786).max(40.874),
+    lon: z.number().min(14.135).max(14.29),
+    osm: z.string().regex(/^(node|way|relation)\/\d+$/).optional(),
+    sito: z.string().url(),
+    cucina: z.array(z.enum(['napoletana', 'pasta', 'pesce', 'pizza', 'carne', 'strada', 'dolci'])).min(1),
+    pasto: z.array(z.enum(['pranzo', 'cena', 'spuntino'])).min(1),
+    durata: z.number().int().min(10).max(180).optional(),
+    // giorno (o gruppo di giorni, «mar-dom») -> «12:00-15:30, 19:00-23:30» | «chiuso» | «?»
+    apertura: z.record(z.string().regex(/^(lun|mar|mer|gio|ven|sab|dom)(-(lun|mar|mer|gio|ven|sab|dom))?$/), z.string()),
+    orari: reference('fatti'),
+    prezzoBase: z.number().positive().optional(),
+    prezzi: reference('fatti').optional(),
+    prenotazione: z.enum(['obbligatoria', 'possibile', 'no']).optional(),
+    piatti: z.array(z.enum(['margherita', 'marinara', 'pizza-fritta', 'cuoppo', 'frittatina', 'montanara', 'genovese', 'ragu', 'pasta-patate', 'vongole', 'frittura', 'polpette', 'parmigiana', 'baccala', 'sfogliatella', 'baba', 'pastiera', 'caffe'])).default([]),
+    perche: reference('fatti'),
+    rinomatoPer: z.object({ piatto: z.string().min(3), scheda: reference('fatti') }).optional(),
+    menu: z.object({ url: z.string().url(), controllato: data }).optional(),
+    foto: reference('foto').optional()
+  }).refine(l => !l.prezzoBase || l.prezzi, { message: 'Un locale con prezzoBase deve avere la scheda dei prezzi' })
+});
+
 // Le risposte sono in src/testi/domande-frequenti.yaml, controllate come gli altri testi
 const faq = defineCollection({
   loader: file('src/data/faq.yaml'),
@@ -229,4 +260,4 @@ const testi = defineCollection({
   schema: z.record(z.string().regex(/^[a-z0-9-]+$/), blocco)
 });
 
-export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video, testi, tappe };
+export const collections = { fonti, fatti, squadre, foto, luoghi, faq, glossario, storia, quiz, video, testi, tappe, locali };

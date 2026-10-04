@@ -85,7 +85,11 @@ const ASCENSORI_FERIALI = /Su[^;]*?0?7:30-14:00|PH,Su 0?7:30-14:00/;
 // ---------- Dati ----------
 const osm = JSON.parse(fs.readFileSync(path.join(dir, 'osm.json'), 'utf8'));
 const dem = JSON.parse(fs.readFileSync(path.join(dir, 'quote.json'), 'utf8'));
-const tappe = yaml.load(fs.readFileSync(path.join(RADICE, 'src/data/tappe.yaml'), 'utf8')).filter(t => t.tipo === 'citta');
+// i punti: le tappe in città e i locali di «Dove mangiare» (src/data/locali.yaml), che nel compositore sono tappe
+const tappe = [
+  ...yaml.load(fs.readFileSync(path.join(RADICE, 'src/data/tappe.yaml'), 'utf8')).filter(t => t.tipo === 'citta'),
+  ...yaml.load(fs.readFileSync(path.join(RADICE, 'src/data/locali.yaml'), 'utf8')).map(l => ({ id: l.id, nome: l.nome, lat: l.lat, lon: l.lon }))
+];
 
 const nodi = new Map(), vie = [], rel = new Map();
 for (const e of osm.elements) {
