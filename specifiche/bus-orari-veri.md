@@ -1,37 +1,72 @@
-# Bus con gli orari veri (partenze esatte e orologio del telefono)
+# Itinerario dal vivo: orari veri dei bus, ora del telefono, «Fatto» e posizione
 
-_Specifica del 04/10/2026, **approvata da Enrico il 04/10/2026** (da fare subito, nella stessa sessione del blocco B). Idea di Enrico del 04/10/2026. Si fa subito dopo il blocco B (bus con attesa media) e si pubblica insieme._
+_Specifica del 04/10/2026. Prima versione approvata da Enrico il 04/10/2026; **cambiata lo stesso giorno su sua richiesta** (niente pulsante «Parto adesso»: la giornata si aggiorna da sola; «Fatto» con un tocco; posizione dal GPS con un pannello sulla privacy). **Da riapprovare.** Si fa subito dopo il blocco B (bus con attesa media) e si pubblica insieme._
 
 ## Obiettivo
-Quando un itinerario cade in un giorno coperto dall'orario ANM, il tratto in bus usa **la partenza vera**: «arrivi alla fermata alle 15:05, il 140 passa alle 15:04 e poi alle 15:26». Se aspettare non conviene più, il sito propone **la strada migliore senza quel bus**. Per oggi, l'ora di partenza può venire dall'**orologio del telefono**.
+Il giorno dell'itinerario la pagina funziona come un navigatore: guarda **che ora è**, sa **quali tappe hai fatto** (le segni tu) e, se lo permetti, **dove sei**; fa slittare le tappe che mancano e ricalcola gli spostamenti con **le partenze vere dei bus** in quel momento. Se un bus è appena passato e aspettare non conviene, propone un'altra strada.
 
 ## Regole
-- **Quando si usano gli orari veri**: solo se la data dell'itinerario è dentro il periodo del feed ANM (oggi: dal 22/09 al 31/12/2026). Fuori (per esempio luglio 2027) resta l'attesa media di oggi, e la pagina lo dice: «orari 2027 non ancora pubblicati».
-- **Cosa si confronta, per ogni tratto**: (1) la strada migliore con il bus, con l'attesa vera alla fermata; (2) la strada migliore senza bus (metro, funicolari, Cumana, a piedi), già calcolata. Vince la più corta; il bus resta solo se fa risparmiare almeno 5 minuti, come oggi.
-- **Cosa si scrive**: linea, fermata e ora di partenza («Bus 140 da Acton alle 15:04»), più «può tardare». Niente promesse al minuto: gli orari sono programmati, non in tempo reale.
-- **Orologio**: un pulsante «Parto adesso» mette come inizio della giornata l'ora attuale, e come data oggi. Nessun servizio esterno: l'ora la dà il telefono.
-- **Gli orari si aggiornano** con il feed ANM (`aggiornamenti/fonti-dati.yaml`, riga `anm-gtfs`), come i tempi.
-- **Senza rete** funziona come oggi: gli orari delle fermate usate sono nei file della pagina, salvati per l'uso offline.
 
-## Come si fa (proposta)
-- `costruisci.mjs` salva, per ogni coppia di punti e scenario, anche la strada migliore **senza bus** (minuti) e, per quella con il bus, **fermata di salita, linea e minuti a piedi fino alla fermata**.
-- Un file nuovo, caricato solo quando serve, con le **partenze** delle linee bus dalle fermate di salita usate (solo quelle, non tutte), per i giorni tipici (feriale, sabato, domenica) e le date speciali (feste) del feed.
-- In `src/lib/itinerari/calcolo.ts`: per ogni tratto in bus, ora di arrivo alla fermata → prossima partenza → minuti veri; confronto con la strada senza bus.
+### Quando è «dal vivo»
+- Solo per il **giorno di oggi** di un itinerario con la data (il giorno 2 di un itinerario che comincia ieri è oggi). Gli altri giorni restano come oggi: un piano.
+- Si aggiorna **da solo**: quando apri o riapri la pagina e ogni minuto mentre è aperta. Nessun pulsante.
+- Prima dell'inizio della giornata resta il piano; dopo la fine della giornata, le tappe che mancano restano con l'avviso che c'è già («la giornata è piena»).
+
+### Tappe fatte
+- Su ogni tappa del giorno di oggi c'è **«Fatto»** (un tocco; un altro tocco lo toglie). Il sito **non segna mai da solo** una tappa come fatta: essere vicino non vuol dire averla visitata.
+- Le tappe fatte restano nella giornata, in grigio con «fatta», senza orari; gli orari nuovi valgono per quelle che mancano.
+- «Fatto» si salva con l'itinerario sul telefono (come il resto). Nel link condiviso non va.
+
+### Da dove riparti e quando
+- **Ora**: l'ora del telefono, arrotondata al minuto.
+- **Punto di partenza**, in quest'ordine:
+  1. se hai dato il permesso e sei **entro 200 m** da una tappa di oggi non fatta, sei lì: quella tappa è **in corso** e la lasci quando finisce la visita prevista, o subito se l'ora prevista è già passata;
+  2. altrimenti l'ultima tappa segnata **«Fatto»**: riparti da lì adesso;
+  3. altrimenti (nessuna tappa fatta, nessuna posizione) il piano parte dall'ora attuale, se è più tardi dell'inizio previsto.
+- Se la posizione è lontana da tutte le tappe, non si usa per i tempi (non abbiamo i tempi da un punto qualsiasi): si usa il punto 2 o 3 e la pagina lo dice («non sei vicino a nessuna tappa: calcolo dall'ultima tappa fatta»).
+
+### Posizione (GPS) e privacy
+- **Mai chiesta da sola.** Il giorno di oggi compare un pannello nostro, curato nella grafica, con il pulsante «Usa la mia posizione» e «No, grazie». Solo dopo il tocco il telefono mostra la sua richiesta.
+- Il pannello dice, in parole semplici: **la posizione resta sul telefono**, non arriva a noi né a nessun altro, non viene salvata e sparisce quando chiudi la pagina; serve solo a capire vicino a quale tappa sei; si può togliere quando vuoi dalle impostazioni del telefono. Il sito non usa cookie.
+- Niente parole false: non diciamo «criptata» (non è il punto: la posizione non lascia proprio il telefono).
+- Se dici «No, grazie», il pannello non torna per quell'itinerario (si può riattivare da un link piccolo «Usa la mia posizione»).
+- La pagina **Privacy** si aggiorna con lo stesso testo.
+
+### Bus con le partenze vere
+- Si usano solo se la data è dentro il periodo del feed ANM (oggi: dal 22/09 al 31/12/2026), per tutti i giorni dell'itinerario (non solo oggi). Fuori (per esempio luglio 2027) resta l'attesa media, e il testo lo dice («gli orari 2027 non sono ancora usciti»).
+- Per ogni tratto si confrontano: la strada migliore **senza bus**; le strade migliori **con il bus**, con l'attesa vera alla fermata. Il bus vince solo se fa risparmiare almeno 5 minuti, come oggi.
+- Sul tratto: linea, fermata e ora («Bus 140 da Acton alle 15:04 · può tardare»). Se il bus della media non conviene più: «il 140 passa alle 15:26: conviene andare così».
+- Orari programmati, non in tempo reale: lo dice il testo.
+
+### Sempre
+- Funziona senza rete (le partenze sono in un file salvato per l'uso offline). Nessun servizio esterno: ora e posizione le dà il telefono.
+- Gli orari si aggiornano con il feed ANM (`aggiornamenti/fonti-dati.yaml`, riga `anm-gtfs`).
+
+## Come si fa
+- `costruisci.mjs`: per ogni coppia di punti e scenario, anche la strada migliore **senza bus** e due strade **con il bus** (la migliore con l'attesa media e la migliore se il bus arrivasse subito), scritte come pezzi: minuti fissi, poi «linea, fermata di salita e di discesa». Il disegno di queste strade per la mappa.
+- `src/data/partenze-bus.json` (pagina `/napoli/itinerari/partenze.json`, caricata dopo e salvata per l'offline): per ogni linea e coppia di fermate usate, le partenze di ogni tipo di giorno, il tempo di viaggio, i nomi delle fermate, e la data → tipo di giorno.
+- `src/lib/itinerari/calcolo.ts`: il calcolo del giorno riceve l'ora attuale, le tappe fatte e la tappa dove sei; per ogni tratto in bus valuta le partenze vere.
+- La pagina: «Fatto», tappe grigie, aggiornamento ogni minuto, pannello della posizione, testo del tratto in bus, testi «Come calcoliamo i tempi» e Privacy.
 
 ## Casi limite
-- L'ultima corsa è già passata: si usa la strada senza bus, con un avviso.
-- Giorni di festa con orario diverso (8 dicembre, Natale): si usa l'orario di quella data, se il feed lo ha.
-- Due bus nello stesso tratto: le partenze si calcolano una dopo l'altra.
-- Il feed è scaduto (dopo il 31/12/2026, se non è stato aggiornato): si torna all'attesa media, e la build avvisa.
+- L'ultima corsa è già passata: strada senza bus.
+- Giorni di festa con orario diverso (8 dicembre, Natale): l'orario di quella data, se il feed lo ha.
+- Due bus nello stesso tratto: le partenze una dopo l'altra.
+- Il feed è scaduto: attesa media, e la build avvisa (c'è già).
+- Il telefono non dà la posizione (permesso negato, GPS spento, al chiuso): si va avanti senza, con il punto 2 o 3.
+- La posizione è imprecisa (più di 200 m di incertezza): non si usa.
+- Un itinerario condiviso e aperto da un altro telefono: niente «Fatto» (sono solo di chi li ha segnati).
+- Le tappe fatte cambiano l'ordine più corto e le tappe lontane: si calcolano solo sulle tappe che mancano.
 
 ## Controlli prima di dire «fatto»
-- Build e `check:links` puliti; dimensione del file delle partenze ragionevole (obiettivo: sotto 300 kB).
-- Prove: un tratto in bus alle 15:00 e alle 15:20 dello stesso giorno danno attese diverse; con la data a luglio 2027 resta l'attesa media; «Parto adesso»; senza rete.
-- Revisione del `revisore`.
+- Build e `check:links` puliti; il file delle partenze sotto 300 kB.
+- Prove nel browser (con ora e posizione finte): un tratto in bus alle 15:00 e alle 15:20 dà attese diverse; luglio 2027 resta con l'attesa media; in ritardo di 30 minuti le tappe slittano; «Fatto» e ripartenza; posizione vicino a una tappa; permesso negato; senza rete.
+- axe senza violazioni sul pannello; revisione del `revisore`; prova di Enrico sul telefono.
 
 ## Compiti
-- [x] Enrico approva questa specifica (04/10/2026).
-- [ ] Dati: strada senza bus e fermata di salita in `costruisci.mjs`; file delle partenze.
-- [ ] Calcolo dei tratti con le partenze vere e confronto.
-- [ ] Pagina: ora di partenza nel tratto, «Parto adesso», testo «Come calcoliamo i tempi».
-- [ ] Prove sul telefono, revisione, `PROGRESS.md`.
+- [x] Prima versione approvata (04/10/2026).
+- [ ] Enrico approva questa versione.
+- [ ] Dati: strade senza bus e con il bus, disegni, file delle partenze.
+- [ ] Calcolo: partenze vere, ora attuale, tappe fatte, tappa dove sei.
+- [ ] Pagina: «Fatto», aggiornamento da solo, pannello della posizione, testi, Privacy.
+- [ ] Prove, revisione, `PROGRESS.md`.
