@@ -63,6 +63,7 @@ Altri filtri possibili, ma solo se la fonte ufficiale del locale li dice, e quin
 - **Da verificare in ricerca**: se ANM o il Comune pubblicano i dati delle linee in un formato aperto (frequenze, percorsi, fermate); se non ci sono, si usano le pagine ufficiali delle linee e OpenStreetMap, e la scheda dice che sono stime.
 - Effetti sulla pagina: il compositore propone il bus come mezzo tra due tappe quando conviene (più corto del piede), nella riga dei mezzi con un colore suo; il «solo a piedi» lo esclude. Le tappe oggi segnate come «molto lontane a piedi» vanno rivalutate (i loro avvisi cambiano).
 - Le fermate non sono tappe: compaiono solo come mezzo tra tappe.
+- **Come è stato fatto** (03–04/10/2026, decisioni di Enrico): dati dal **feed GTFS ufficiale ANM** (orari programmati, licenza IODL 2.0, valido fino al 31/12/2026), non da velocità medie. Entrano solo le **13 linee** che accorciano almeno uno spostamento (204, 140, C16, 151, R2, R7, 182, C31, 147, 168, C21, C1, C44), con **tutte le loro fermate** in `src/data/linee-bus.json` per tappe e locali futuri. Il bus si propone solo se fa risparmiare **almeno 5 minuti**. Il ritardo possibile (circa 15%, stima nostra) **è scritto nel testo, non aggiunto ai minuti**; sul tratto in bus c'è «può tardare». Ricerca: `ricerca/2026-10-03-autobus-note/`; aggiornamento: `aggiornamenti/fonti-dati.yaml`.
 
 ## 4 · Una pagina propria per ogni luogo e locale (SEO e orientamento)
 **Rimandata al blocco 3 del sito, da decidere lì** (Enrico, 03/10/2026: nel blocco A sarebbe troppo lavoro). Il blocco A aggiunge solo i dati dei luoghi; i blocchi C e D fanno la pagina «Dove mangiare» e l'elenco delle esperienze, senza pagine fisse per ogni locale o esperienza, salvo nuova decisione di Enrico all'inizio di quei blocchi. Le regole qui sotto restano come proposta per il blocco 3.
@@ -96,7 +97,7 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 
 ## Casi limite da gestire
 - Un locale chiuso il giorno scelto o a quell'ora; chiusure estive e per ferie (se la fonte le dice).
-- Un bus che oggi non circola per lavori o deviazioni (stesso trattamento della funicolare di Montesanto: avviso e linea esclusa).
+- ~~Un bus che oggi non circola per lavori o deviazioni~~: non si gestisce (deciso da Enrico il 03/10/2026). Il testo dice che lavori e strade chiuse non li conosciamo.
 - Un luogo che entra e poi chiude prima del 2027: la scheda ha la data di controllo, e la build avvisa «da ricontrollare».
 - Locali che non pubblicano prezzi: la scheda lo dice, come per Napoli Sotterranea.
 - Troppi locali vicini che appesantiscono la lista «Aggiungi»: il filtro per cucina e per pasto è obbligatorio, non facoltativo.
@@ -119,7 +120,7 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 ## Ordine e compiti (A → B → C → D, poi il blocco 3 del sito)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
 - [x] **Blocco A · Luoghi** (pubblicato il 03/10/2026; Pozzuoli e ville vesuviane rimandate, vedi `da-risolvere.md`): ricerca di **18 luoghi** (circa 8 storici, 5 panoramici, 5 giardini; entrano tutti quelli con fonte ufficiale) e **5 gite in più** (Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento), Enrico rivede l'elenco, schede, foto, testi, tempi, build. Pagine fisse: rimandate al blocco 3 (sezione 4).
-- [ ] **Blocco B · Autobus**: ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
+- [x] **Blocco B · Autobus** (costruito il 04/10/2026, da provare sul telefono e pubblicare con l'OK di Enrico): ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
 - [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli (pagine fisse per locale: rimandate al blocco 3, sezione 4).
 - [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, testi, controlli (pagine fisse: rimandate al blocco 3). Prima di costruire, Enrico approva elenco e numeri.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).

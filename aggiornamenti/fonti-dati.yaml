@@ -10,8 +10,9 @@
   formato: "GTFS (zip di file .txt)"
   licenza: "IODL 2.0 (Italian Open Data License): si può riusare citando la fonte «Dati ANM, licenza IODL 2.0»"
   aggiorna:
-    - "(blocco B, da scrivere) node scripts/itinerari/scarica-bus.mjs <cartella>"
-    - "node scripts/itinerari/costruisci.mjs <cartella>"
+    - "cancellare <cartella>/anm-gtfs.zip, poi: node scripts/itinerari/scarica.mjs <cartella>   (riscarica solo quello che manca)"
+    - "node scripts/itinerari/costruisci.mjs <cartella>   (le linee usate sono nella tabella BUS in testa allo script)"
+    - "rileggere il testo «tempi» in src/testi/itinerari.yaml (date di validità) e la fonte tp-anm-gtfs in src/data/fonti.yaml"
   cambia: [src/data/tempi-tappe.json, src/data/percorsi-tappe.json, src/data/linee-bus.json]
   valido-fino: 2026-12-31   # il file dice: dal 22/09/2026 al 31/12/2026 (orario d'autunno)
   controllato: 2026-10-03
