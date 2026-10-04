@@ -5,6 +5,8 @@ import type { GiornoSettimana } from './date';
 // Come si gira quel giorno a quell'ora (vedi scripts/itinerari/costruisci.mjs)
 export type Scenario = 'feriale' | 'sabato' | 'sabato-pomeriggio' | 'domenica' | 'festivo' | 'piedi';
 export const SCENARI: Scenario[] = ['feriale', 'sabato', 'sabato-pomeriggio', 'domenica', 'festivo', 'piedi'];
+// Lo scenario da cui si parte per ricostruire ciascuno (scenari.json): le differenze sono più piccole
+export const PRIMA: Partial<Record<Scenario, Scenario>> = { sabato: 'feriale', 'sabato-pomeriggio': 'sabato', domenica: 'feriale', festivo: 'domenica', piedi: 'feriale' };
 
 export interface Tappa {
   id: string;

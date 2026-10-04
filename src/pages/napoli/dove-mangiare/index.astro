@@ -55,7 +55,8 @@ const fontiPiatti = conDescrizione.map(p => fonti.get(`wiki-${p}`)!).filter(Bool
 
     <section class="it-wrap" aria-labelledby="dm-filtri-h">
       <h2 id="dm-filtri-h" class="visually-hidden">Filtri</h2>
-      <form class="dm-filtri it-interattivo" id="dm-filtri" hidden>
+      <noscript><style>.it-interattivo { display: none !important; }</style></noscript>
+      <form class="dm-filtri it-interattivo" id="dm-filtri">
         <div class="dm-gruppo it-campo">
           <label for="dm-piatto">Cosa vuoi mangiare</label>
           <select id="dm-piatto">

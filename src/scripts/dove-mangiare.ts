@@ -20,7 +20,6 @@ if (document.getElementById('dm-dati')) avvia();
 function avvia() {
   const D = JSON.parse($('dm-dati').textContent || '{}') as Dati;
   const form = $<HTMLFormElement>('dm-filtri');
-  form.hidden = false;
   form.addEventListener('submit', e => e.preventDefault());
   const righe = [...document.querySelectorAll<HTMLLIElement>('.dm-locale')];
   const locale = new Map(D.locali.map(l => [l.id, l]));

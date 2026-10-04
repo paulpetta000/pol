@@ -1,7 +1,7 @@
 // Il compositore degli itinerari (pagina /napoli/itinerari/). Tutto avviene nel browser: gli itinerari restano
 // nella memoria del telefono (memoria.ts) e si mandano con un link che porta tutto dopo il «#» (link.ts).
 // Il calcolo delle giornate è in src/lib/itinerari/calcolo.ts; la mappa si carica solo quando serve (mappa.ts).
-import { spacchetta, spacchettaVivo, type Pacco, type PaccoVivo } from '../../lib/itinerari/pacco';
+import { spacchetta, spacchettaVivo, aggiungiScenari, type Pacco, type PaccoVivo, type PaccoScenari } from '../../lib/itinerari/pacco';
 import { calcolaGiorno, ordinePiuCorto, tappaDi, dataDelGiorno, minuti, scenarioDi, orarioLocale } from '../../lib/itinerari/calcolo';
 import type { Adesso } from '../../lib/itinerari/tipi';
 import { codifica, decodifica, nuovoItinerario, giornoVuoto, uguali, MAX_GIORNI, MAX_TAPPE, MAX_NOME } from '../../lib/itinerari/link';
@@ -124,6 +124,13 @@ function avvia() {
   }
   setInterval(aggiornaDalVivo, 30000);
   document.addEventListener('visibilitychange', () => { curaPosizione(); if (document.visibilityState === 'visible') aggiornaDalVivo(); });
+  // i tempi di sabato, domenica, festivi e «solo a piedi» arrivano dopo l'apertura (e restano salvati per l'uso senza rete)
+  fetch('/napoli/itinerari/scenari.json').then(r => (r.ok ? r.json() : null)).then((p: PaccoScenari | null) => {
+    if (!p) return;
+    aggiungiScenari(C, p);
+    memoOrdine.clear();
+    if (occupato()) setTimeout(() => disegna(), 5000); else disegna();
+  }).catch(() => { /* senza, per questi giorni valgono i tempi del feriale */ });
   // gli orari veri dei bus arrivano dopo (e restano salvati per l'uso senza rete)
   fetch('/napoli/itinerari/partenze.json').then(r => (r.ok ? r.json() : null)).then((p: PaccoVivo | null) => {
     if (!p) return;

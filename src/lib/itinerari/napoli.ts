@@ -12,7 +12,7 @@ import { EVENTI } from '../../data/eventi';
 import tempiJson from '../../data/tempi-tappe.json';
 import percorsiJson from '../../data/percorsi-tappe.json';
 import M from '../../data/mappa.json';
-import { SCENARI, type Citta, type Evento, type Giorno, type Itinerario, type Scenario, type Tappa, type Tempi } from './tipi';
+import { SCENARI, PRIMA, type Citta, type Evento, type Giorno, type Itinerario, type Scenario, type Tappa, type Tempi } from './tipi';
 import { calcolaGiorno, ordinePiuCorto } from './calcolo';
 import { minutiDa, piuGiorni, tipoGiorno } from './date';
 
@@ -110,25 +110,40 @@ async function carica(): Promise<Citta> {
 }
 
 // ---------- Pacco per la pagina ----------
-// Tempi del giorno feriale per intero; per gli altri scenari solo le coppie che cambiano.
+// Nella pagina: tempi del giorno feriale per intero. Gli altri scenari (sabato, domenica, festivi, solo a piedi)
+// arrivano dopo l'apertura da /napoli/itinerari/scenari.json (scenariPacco), per non appesantire la pagina.
 // I mezzi sono indici di un dizionario («L1+FA», «asc:Ascensore Acton»…).
 export function impacchetta(C: Citta) {
   const dizionario: string[] = [];
   const voce = (s: string) => { let i = dizionario.indexOf(s); if (i < 0) { i = dizionario.length; dizionario.push(s); } return i; };
   const F = C.tempi;
   const feriale = { min: F.min.feriale, metri: F.metri.feriale.map(m => Math.round(m / 10)), mezzi: F.mezzi.feriale.map(voce) };
+  return { tappe: C.tappe, n: F.n, dizionario, feriale, evento: C.evento, linee: C.linee, zone: C.zone };
+}
+
+// Gli scenari, ognuno come differenza da quello che lo precede (PRIMA): per ogni cella che cambia, la distanza
+// dalla cella cambiata prima, i minuti, i metri (in decine) e il mezzo (indice del dizionario). Si decide sui
+// valori arrotondati, gli stessi che la pagina ricostruisce (src/lib/itinerari/pacco.ts, aggiungiScenari).
+export function scenariPacco(C: Citta) {
+  const dizionario: string[] = [];
+  const voce = (s: string) => { let i = dizionario.indexOf(s); if (i < 0) { i = dizionario.length; dizionario.push(s); } return i; };
+  const F = C.tempi, nn = F.n * F.n;
+  const metri = (s: Scenario, i: number) => Math.round(F.metri[s][i] / 10);
   const diff: Record<string, number[]> = {};
   for (const s of SCENARI) {
     if (s === 'feriale') continue;
+    const p = PRIMA[s]!;
     const out: number[] = [];
-    for (let ij = 0; ij < F.n * F.n; ij++) {
-      if (F.min[s][ij] !== F.min.feriale[ij] || F.metri[s][ij] !== F.metri.feriale[ij] || F.mezzi[s][ij] !== F.mezzi.feriale[ij]) {
-        out.push(ij, F.min[s][ij], Math.round(F.metri[s][ij] / 10), voce(F.mezzi[s][ij]));
+    let ultimo = 0;
+    for (let ij = 0; ij < nn; ij++) {
+      if (F.min[s][ij] !== F.min[p][ij] || metri(s, ij) !== metri(p, ij) || F.mezzi[s][ij] !== F.mezzi[p][ij]) {
+        out.push(ij - ultimo, F.min[s][ij], metri(s, ij), voce(F.mezzi[s][ij]));
+        ultimo = ij;
       }
     }
     diff[s] = out;
   }
-  return { tappe: C.tappe, n: F.n, dizionario, feriale, diff, evento: C.evento, linee: C.linee, zone: C.zone };
+  return { dizionario, diff };
 }
 
 // ---------- Itinerari pronti ----------

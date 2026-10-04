@@ -1,15 +1,29 @@
 // Riapre nella pagina il pacco della città fatto durante la build (src/lib/itinerari/napoli.ts, impacchetta)
-import { SCENARI, type Citta, type Evento, type Scenario, type Tappa, type Vivo } from './tipi';
+import { SCENARI, PRIMA, type Citta, type Evento, type Scenario, type Tappa, type Vivo } from './tipi';
 
 export interface Pacco {
   tappe: Tappa[];
   n: number;
   dizionario: string[];
   feriale: { min: number[]; metri: number[]; mezzi: number[] };
-  diff: Record<string, number[]>;
   evento?: Evento;
   linee: Record<string, string>;
   zone: Record<string, string>;
+}
+
+// Gli altri scenari (sabato, domenica, festivi, solo a piedi) arrivano dopo, da /napoli/itinerari/scenari.json:
+// finché non ci sono, valgono i tempi del feriale (aggiungiScenari li sostituisce).
+export interface PaccoScenari { dizionario: string[]; diff: Record<string, number[]> }
+export function aggiungiScenari(C: Citta, P: PaccoScenari) {
+  for (const s of SCENARI) {
+    const p = PRIMA[s];
+    if (!p) continue;
+    const m = C.tempi.min[p].slice(), w = C.tempi.metri[p].slice(), z = C.tempi.mezzi[p].slice();
+    const d = P.diff[s] ?? [];
+    let ij = 0;
+    for (let k = 0; k < d.length; k += 4) { ij += d[k]; m[ij] = d[k + 1]; w[ij] = d[k + 2] * 10; z[ij] = P.dizionario[d[k + 3]]; }
+    C.tempi.min[s] = m; C.tempi.metri[s] = w; C.tempi.mezzi[s] = z;
+  }
 }
 
 export function spacchetta(P: Pacco): Citta {
@@ -17,8 +31,6 @@ export function spacchetta(P: Pacco): Citta {
   const min = {} as Record<Scenario, number[]>, metri = {} as Record<Scenario, number[]>, mezzi = {} as Record<Scenario, string[]>;
   for (const s of SCENARI) {
     const m = P.feriale.min.slice(), w = P.feriale.metri.map(x => x * 10), z = P.feriale.mezzi.map(i => P.dizionario[i]);
-    const d = s === 'feriale' ? [] : P.diff[s] ?? [];
-    for (let k = 0; k < d.length; k += 4) { m[d[k]] = d[k + 1]; w[d[k]] = d[k + 2] * 10; z[d[k]] = P.dizionario[d[k + 3]]; }
     if (m.length !== nn) throw new Error('Tempi incompleti');
     min[s] = m; metri[s] = w; mezzi[s] = z;
   }
