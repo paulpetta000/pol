@@ -65,8 +65,9 @@ const dataGtfs = (d: string) => d.replace(/-/g, '');
 export const conOrariVeri = (C: Citta, data?: string) => !!(C.vivo && data && C.vivo.giorni[dataGtfs(data)] != null);
 
 // Una strada con il bus partendo all'ora t0: i minuti fissi (a piedi, metro…) e, per ogni corsa, il primo bus
-// che parte dopo l'arrivo alla fermata, più il viaggio. null se a quell'ora non passa più.
-function valuta(V: Vivo, tipo: number, seg: (number | string)[], t0: number): { min: number; corse: Corsa[] } | null {
+// che parte dopo l'arrivo alla fermata, più il viaggio. Se non si può: «oggi» (quel giorno la corsa non c'è)
+// o «tardi» (a quell'ora non passa più).
+function valuta(V: Vivo, tipo: number, seg: (number | string)[], t0: number): { min: number; corse: Corsa[] } | { no: 'oggi' | 'tardi' } {
   let t = t0;
   const corse: Corsa[] = [];
   for (const x of seg) {
@@ -74,9 +75,9 @@ function valuta(V: Vivo, tipo: number, seg: (number | string)[], t0: number): { 
     const [linea, a] = x.split('|');
     const v = V.viaggi[tipo]?.get(x);
     const partenze = v?.partenze ?? V.salite[tipo]?.get(`${linea}|${a}`);
-    if (!v || !partenze) return null;
+    if (!v || !partenze) return { no: 'oggi' };
     const ora = partenze.find(m => m >= t);
-    if (ora == null) return null;
+    if (ora == null) return { no: 'tardi' };
     corse.push({ linea, da: V.fermate[a] ?? a, ora });
     t = ora + v.min;
   }
@@ -106,14 +107,17 @@ function spostamento(C: Citta, s: Scenario, da: number, a: number, t: number, da
   for (const k of lista) {
     const c = V.candidati[k];
     const r = valuta(V, tipo, c.seg, t);
-    if (!r || r.min > senza.min - V.preferenza || r.min >= meglio.min) continue;
+    if ('no' in r) continue;
+    const min = Math.round(r.min);
+    if (min > senza.min - V.preferenza || min >= meglio.min) continue;
     // la prima strada della lista è quella di sempre, quando usa il bus: stesso disegno
-    meglio = { ...voce(Math.round(r.min), c.metri, c.mezzi), corse: r.corse, ...(sempreBus && k === lista[0] ? {} : { variante: k }) };
+    meglio = { ...voce(min, c.metri, c.mezzi), corse: r.corse, ...(sempreBus && k === lista[0] ? {} : { variante: k }) };
   }
-  // il bus di sempre a quell'ora non conviene: diciamo quando passa (o che non passa più)
+  // il bus di sempre a quell'ora non conviene: diciamo quando passa (ora −1: non passa più; −2: oggi non passa)
   if (sempreBus && !meglio.corse && lista.length) {
     const r = valuta(V, tipo, V.candidati[lista[0]].seg, t);
-    meglio = { ...meglio, scartato: r?.corse[0] ?? { linea: sempre.mezzi.find(m => m.startsWith('B'))!, da: '', ora: -1 } };
+    const linea = sempre.mezzi.find(m => m.startsWith('B'))!;
+    meglio = { ...meglio, scartato: 'no' in r ? { linea, da: '', ora: r.no === 'oggi' ? -2 : -1 } : r.corse[0] };
   }
   return meglio;
 }
@@ -137,14 +141,17 @@ export function calcolaGiorno(C: Citta, it: Itinerario, g: number, adesso?: Ades
   for (const id of ids) if (fatte.has(id)) voci.push({ tipo: 'tappa', id, n: ids.indexOf(id) + 1, inizio: -1, fine: -1, fatta: true });
   // dal vivo, dopo l'inizio della giornata: da dove e da quando si riparte
   let inCorso: { id: string; inizio: number; fine: number } | null = null;
+  if (vivo && !restano.length) t = adesso!.ora;   // tutte fatte
   if (vivo && adesso!.ora > G.inizio && restano.length) {
     const qui = adesso!.qui && restano.includes(adesso!.qui) ? adesso!.qui : undefined;
     if (qui && qui === restano[0]) {
-      // sei alla prossima tappa: la lasci quando finisce la visita prevista, o adesso se è già tardi
-      const piano = calcolaGiorno(C, { ...it, giorni: it.giorni.map((x, i) => (i === g ? { ...x, tappe: restano } : x)) }, g);
+      // sei alla prossima tappa: la lasci quando finisce la visita prevista dal piano del giorno, o adesso se è
+      // già tardi; se sei in anticipo, la visita comincia adesso. Si conta il tempo da adesso.
+      const piano = calcolaGiorno(C, it, g);
       const v = piano.voci.find(x => x.tipo === 'tappa' && x.id === qui) as Extract<Voce, { tipo: 'tappa' }>;
-      inCorso = { id: qui, inizio: Math.min(v.inizio, adesso!.ora), fine: Math.max(v.fine, adesso!.ora) };
-      t = inCorso.inizio;
+      const ora = adesso!.ora;
+      inCorso = { id: qui, inizio: ora, fine: ora < v.inizio ? ora + durataDi(C, qui) : Math.max(v.fine, ora) };
+      t = ora;
     } else if (qui) {
       // sei a un'altra tappa: è quella in corso (appena arrivato) e le tappe prima, non segnate «Fatto»,
       // vengono dopo; la pagina lo dice, perché non sappiamo se le hai fatte
@@ -153,7 +160,8 @@ export function calcolaGiorno(C: Citta, it: Itinerario, g: number, adesso?: Ades
       inCorso = { id: qui, inizio: adesso!.ora, fine: adesso!.ora + durataDi(C, qui) };
       t = adesso!.ora;
     } else {
-      const ultima = ids.filter(id => fatte.has(id)).pop();
+      // l'ultima tappa segnata «Fatto» (l'ordine dei tocchi)
+      const ultima = [...(G.fatte ?? [])].reverse().find(id => fatte.has(id));
       if (ultima) uscita = capi(C, ultima)[0].esce;
       t = adesso!.ora;
     }
@@ -202,7 +210,7 @@ export function calcolaGiorno(C: Citta, it: Itinerario, g: number, adesso?: Ades
   }
   // tappe lontane dalle altre (solo tra quelle che mancano)
   for (const l of lontane(C, it, g, fatte)) avvisi.push(l);
-  return { voci, inizio, fine: t, visite, spostamenti, metri, n: ids.length, avvisi, ...(vivo ? { vivo } : {}), ...(orariVeri ? { orariVeri } : {}) };
+  return { voci, inizio, fine: t, visite, spostamenti, metri, n: ids.length, avvisi, ...(vivo ? { vivo } : {}), ...(vivo && ids.length && !restano.length ? { tutteFatte: true } : {}), ...(orariVeri ? { orariVeri } : {}) };
 }
 
 // Quanti minuti aggiunge una tappa inserita nel punto migliore di una lista (andata e ritorno)

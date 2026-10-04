@@ -56,6 +56,15 @@ function avvia() {
   let posizione: { ll: [number, number]; precisione: number } | null = null;
   let guardia: number | null = null;
   let posizioneNegata = false;
+  // il GPS parte da solo solo se il telefono ha già dato il permesso; altrimenti serve il tocco sul pannello
+  let permessoPosizione: PermissionState | null = null;
+  let toccato = false;
+  navigator.permissions?.query({ name: 'geolocation' }).then(p => {
+    permessoPosizione = p.state;
+    p.onchange = () => { permessoPosizione = p.state; disegna(); };
+    if (p.state === 'granted' && it().posizione === 'si') disegna();
+  }).catch(() => { /* il browser non lo dice: si chiede con il pannello */ });
+  const posizioneAttiva = (x: Itinerario) => x.posizione === 'si' && !posizioneNegata && (toccato || permessoPosizione === 'granted');
   const VICINO = 200;   // metri
   const oggiNelGiorno = (x: Itinerario, g: number) => !!x.data && dataDelGiorno(x, g) === oggi() && !x.giorni[g].gita;
   function tappaQui(x: Itinerario, g: number): string | undefined {
@@ -74,7 +83,7 @@ function avvia() {
   // il momento per il calcolo del giorno g: solo se quel giorno è oggi
   function adessoPer(x: Itinerario, g: number): Adesso | undefined {
     if (!oggiNelGiorno(x, g)) return undefined;
-    const qui = x.posizione === 'si' ? tappaQui(x, g) : undefined;
+    const qui = posizioneAttiva(x) ? tappaQui(x, g) : undefined;
     return { data: oggi(), ora: oraDiAdesso(), ...(qui ? { qui } : {}) };
   }
   function guardaPosizione() {
@@ -94,18 +103,22 @@ function avvia() {
   // la posizione si guarda solo mentre la pagina è aperta, il giorno stesso e con il permesso
   function curaPosizione() {
     const x = it();
-    if (x.posizione === 'si' && oggiNelGiorno(x, giorno) && document.visibilityState === 'visible') guardaPosizione();
+    if (posizioneAttiva(x) && oggiNelGiorno(x, giorno) && document.visibilityState === 'visible') guardaPosizione();
     else fermaPosizione();
   }
   // ogni mezzo minuto (e quando torni sulla pagina) si ricalcola il giorno di oggi, se è cambiato qualcosa
   let firmaVivo = '';
+  // quello che, cambiando, chiede di ridisegnare: il momento (ora e tappa dove sei) e lo stato della posizione
+  const statoPosizione = () => (posizione ? (posizione.precisione > VICINO ? 'imprecisa' : 'ok') : 'nessuna');
+  const firmaDi = (x: Itinerario, g: number) => JSON.stringify([adessoPer(x, g), statoPosizione()]);
+  // non si ridisegna mentre trascini, con un dialogo aperto o con il dito (o il fuoco) sugli avvisi in cima
+  const occupato = () => linea.classList.contains('it-linea--trascina') || !!document.querySelector('dialog[open]') || !!document.activeElement?.closest('#it-avvisi, #it-riepilogo');
   function aggiornaDalVivo() {
     const x = it();
-    if (!oggiNelGiorno(x, giorno)) return;
-    if (linea.classList.contains('it-linea--trascina') || document.querySelector('dialog[open]')) return;
-    const f = JSON.stringify(adessoPer(x, giorno));
-    if (f === firmaVivo) return;
-    disegnaGiorno(x);
+    curaPosizione();
+    if (!oggiNelGiorno(x, giorno) || occupato()) return;
+    if (firmaDi(x, giorno) === firmaVivo) return;
+    disegnaGiorno(x, true);
   }
   setInterval(aggiornaDalVivo, 30000);
   document.addEventListener('visibilitychange', () => { curaPosizione(); if (document.visibilityState === 'visible') aggiornaDalVivo(); });
@@ -114,7 +127,7 @@ function avvia() {
     if (!p) return;
     C.vivo = spacchettaVivo(p);
     memoOrdine.clear();
-    disegna();
+    if (occupato()) setTimeout(() => disegna(), 5000); else disegna();
   }).catch(() => { /* senza orari veri resta l'attesa media */ });
 
   function salva() {
@@ -128,6 +141,8 @@ function avvia() {
     const prima = structuredClone(it());
     const x = structuredClone(it());
     fn(x);
+    // «Fatto» vale solo per le tappe che sono ancora nel giorno
+    for (const g of x.giorni) if (g.fatte) { g.fatte = g.fatte.filter(id => g.tappe.includes(id)); if (!g.fatte.length) delete g.fatte; }
     x.modificato = Date.now();
     A.elenco = A.elenco.map(i => (i.id === x.id ? x : i));
     giorno = Math.min(giorno, x.giorni.length - 1);
@@ -197,7 +212,9 @@ function avvia() {
     $<HTMLButtonElement>('it-giorno-piu').hidden = x.giorni.length >= MAX_GIORNI;
   }
 
-  function disegnaGiorno(x: Itinerario) {
+  // auto: l'aggiornamento di ogni minuto (dal vivo): la mappa non si ridisegna, così resta dove l'hai lasciata
+  let htmlAvvisi = '', htmlLinea = '';
+  function disegnaGiorno(x: Itinerario, auto = false) {
     const G = x.giorni[giorno];
     const data = dataDelGiorno(x, giorno);
     $('it-giorno-h').textContent = `Giorno ${giorno + 1}`;
@@ -205,9 +222,9 @@ function avvia() {
     linea.setAttribute('aria-label', `Tappe del giorno ${giorno + 1}`);
     const fuoco = ricordaFuoco();
     const adesso = adessoPer(x, giorno);
-    firmaVivo = JSON.stringify(adesso);
+    firmaVivo = firmaDi(x, giorno);
     const r = calcolaGiorno(C, x, giorno, adesso);
-    if (r.vivo) $('it-quando').textContent += ` · dal vivo, aggiornato alle ${ora(adesso!.ora)}`;
+    if (r.vivo) $('it-quando').textContent += ` · oggi: ricalcolato alle ${ora(adesso!.ora)} con l'ora del telefono`;
     ultimo = r;
     curaPosizione();
     const pieno = !G.gita && G.tappe.length > 0;
@@ -220,7 +237,7 @@ function avvia() {
     if (G.gita) disegnaGita(G.gita);
     else if (pieno) disegnaLinea(x, G, r, data);
     else disegnaVuoto(x, G);
-    disegnaVista();
+    if (!auto) disegnaVista();
     rimettiFuoco(fuoco);
   }
 
@@ -232,6 +249,11 @@ function avvia() {
       const t = tappaDi(C, G.gita)!;
       $('it-riepilogo-ore').textContent = 'Gita di un giorno';
       $('it-riepilogo-sotto').textContent = `${t.nome} · si parte da ${t.partenza}`;
+      return;
+    }
+    if (r.tutteFatte) {
+      $('it-riepilogo-ore').textContent = 'Hai fatto tutte le tappe';
+      $('it-riepilogo-sotto').textContent = `${r.n} ${r.n === 1 ? 'tappa' : 'tappe'} di oggi segnate «Fatto»`;
       return;
     }
     $('it-riepilogo-ore').innerHTML = `${ora(r.inizio)}${icona('freccia', 22)}<span class="visually-hidden"> fino alle </span>${ora(r.fine)}`;
@@ -270,8 +292,14 @@ function avvia() {
       }
     }
     // dal vivo: il pannello per la posizione (una volta per itinerario), o un link piccolo per riattivarla
-    if (r.vivo && 'geolocation' in navigator && !x.posizione) out.push(pannelloPosizione());
-    if (r.vivo && (x.posizione === 'no' || posizioneNegata)) out.push(`<p class="it-posizione-spenta">Posizione non usata: calcolo dall'ultima tappa fatta. <button type="button" class="it-link" data-az="gps-si">Usa la mia posizione</button></p>`);
+    if (r.vivo && 'geolocation' in navigator) {
+      const da = r.voci.some(v => v.tipo === 'tappa' && v.fatta) ? 'dall\'ultima tappa fatta' : 'dall\'ora di adesso';
+      if (!x.posizione || (x.posizione === 'si' && !posizioneAttiva(x) && !posizioneNegata)) out.push(pannelloPosizione());
+      else if (x.posizione === 'no' || posizioneNegata) out.push(`<p class="it-posizione-spenta">Posizione non usata: calcolo ${da}. <button type="button" class="it-link" data-az="gps-si">Usa la mia posizione</button></p>`);
+      else if (!posizione) out.push('<p class="it-posizione-spenta">Cerco la posizione del telefono…</p>');
+      else if (posizione.precisione > VICINO) out.push(`<p class="it-posizione-spenta">La posizione del telefono è poco precisa: calcolo ${da}.</p>`);
+      else if (!tappaQui(x, giorno)) out.push(`<p class="it-posizione-spenta">Non sei vicino a nessuna tappa che manca: calcolo ${da}.</p>`);
+    }
     const fatte = r.vivo ? G.fatte ?? [] : [];
     if (!G.gita && G.tappe.length - fatte.length >= 3) {
       const chiave = JSON.stringify([G.tappe, fatte, data, G.inizio, x.piedi, !!C.vivo]);
@@ -279,7 +307,9 @@ function avvia() {
       const o = memoOrdine.get(chiave);
       if (o) out.push(avviso('C\'è un ordine più corto', `Cambiando l'ordine risparmi ${durataParole(o.risparmio)} di spostamenti. La prima tappa resta la stessa.`, '<button type="button" class="it-btn it-btn--contorno" data-az="ordina">Usa l\'ordine più corto</button>', 'it-consiglio'));
     }
-    $('it-avvisi').innerHTML = out.join('');
+    // si riscrive solo se cambia: i lettori di schermo non rileggono gli stessi avvisi ogni minuto
+    const html = out.join('');
+    if (html !== htmlAvvisi) { $('it-avvisi').innerHTML = html; htmlAvvisi = html; }
   }
 
   // il pannello della posizione: prima del permesso del telefono, con quello che succede ai dati, in parole semplici
@@ -288,7 +318,7 @@ function avvia() {
       <p class="it-posizione__titolo" id="it-posizione-h">${icona('mappa', 22)}<span>Oggi ti seguo passo passo</span></p>
       <p>Se mi lasci usare la posizione del telefono, capisco vicino a quale tappa sei e ricalcolo gli orari da lì.</p>
       <ul class="it-posizione__lista">
-        <li>${icona('ok', 18)}<span>La posizione <b>resta sul tuo telefono</b>: non arriva a noi né a nessun altro.</span></li>
+        <li>${icona('ok', 18)}<span>La posizione <b>resta sul tuo telefono</b>: questa pagina non la manda a noi né a nessun altro. Per trovarla il telefono usa i suoi servizi di localizzazione, come per le mappe.</span></li>
         <li>${icona('ok', 18)}<span><b>Non la salviamo</b>: sparisce quando chiudi la pagina.</span></li>
         <li>${icona('ok', 18)}<span>Niente cookie e niente pubblicità. Puoi toglierla quando vuoi dalle impostazioni del telefono.</span></li>
       </ul>
@@ -299,13 +329,14 @@ function avvia() {
   // l'itinerario senza le tappe fatte (per l'ordine più corto dal vivo)
   const senzaFatte = (x: Itinerario, g: number, fatte: string[]) => (fatte.length ? { ...x, giorni: x.giorni.map((G, k) => (k === g ? { ...G, tappe: G.tappe.filter(id => !fatte.includes(id)) } : G)) } : x);
 
-  function testoTratto(v: VoceTratto) {
+  function testoTratto(v: VoceTratto, orariVeri = false) {
     const linee = v.mezzi.map(m => C.linee[m] ?? m);
     const asc = v.ascensori.length ? ` (${v.ascensori.map(esc).join(', ')})` : '';
     // il bus è meno puntuale: lo diciamo sul tratto; con gli orari veri anche fermata e ora di partenza
     const corse = v.corse?.length ? ` <span class="it-tratto__corse">${v.corse.map(c => `${esc(C.linee[c.linea] ?? c.linea)} da ${esc(c.da)} alle ${ora(c.ora)}`).join(', poi ')}</span>` : '';
-    const nota = v.mezzi.some(m => m.startsWith('B')) ? ' <span class="it-tratto__nota">· può tardare</span>' : '';
-    const scartato = v.scartato ? ` <span class="it-tratto__corse">${esc(C.linee[v.scartato.linea] ?? v.scartato.linea)} ${v.scartato.ora >= 0 ? `passa alle ${ora(v.scartato.ora)}: conviene andare così` : 'a quest\'ora non passa più'}</span>` : '';
+    // gli orari sono programmati (non in tempo reale); fuori dall'orario ANM (per esempio nel 2027) è un'attesa media
+    const nota = v.mezzi.some(m => m.startsWith('B')) ? ` <span class="it-tratto__nota">· ${orariVeri ? 'orario ANM, può tardare' : 'attesa media, può tardare'}</span>` : '';
+    const scartato = v.scartato ? ` <span class="it-tratto__corse">${esc(C.linee[v.scartato.linea] ?? v.scartato.linea)} ${v.scartato.ora >= 0 ? `passa alle ${ora(v.scartato.ora)}: conviene andare così` : v.scartato.ora === -2 ? 'oggi non passa' : 'a quest\'ora non passa più'}</span>` : '';
     return (linee.length ? `${durata(v.min)} · a piedi e ${linee.join(' e ')}${asc}${nota}` : `${durata(v.min)} a piedi${asc}`) + corse + scartato;
   }
   const tipoTratto = (v: VoceTratto) => (v.mezzi.some(m => m.startsWith('B')) ? 'bus' : v.mezzi[0]?.startsWith('F') ? 'funi' : v.mezzi.length ? 'metro' : 'piedi');
@@ -313,6 +344,7 @@ function avvia() {
   function disegnaLinea(x: Itinerario, G: Giorno, r: Risultato, data?: string) {
     const lontane = new Map(r.avvisi.filter((a): a is Extract<Avviso, { tipo: 'lontana' }> => a.tipo === 'lontana').map(a => [a.id, a]));
     const tappe = r.voci.filter((v): v is VoceTappa => v.tipo === 'tappa');
+    const nFatte = tappe.filter(v => v.fatta).length;
     let primoOltre = true;
     const html = tappe.map((v, k) => {
       const prima = r.voci[r.voci.indexOf(v) - 1];
@@ -341,7 +373,7 @@ function avvia() {
       const fatto = r.vivo && !v.fatta ? `<button type="button" class="it-fatto" data-az="fatto">${icona('ok', 18)}Fatto<span class="visually-hidden">: ${esc(breve(v.id))}</span></button>` : '';
       const nuova = evidenzia?.id === v.id && Date.now() - evidenzia.t < 800;
       return `<li class="it-voce${nuova ? ' it-voce--nuova' : ''}" data-id="${v.id}">
-        ${tratto ? `<p class="it-tratto it-tratto--${tipoTratto(tratto)}">${icona({ funi: 'funicolare', metro: 'metro', bus: 'bus', piedi: 'piedi' }[tipoTratto(tratto)], 18)}<span>${testoTratto(tratto)}</span></p>` : ''}
+        ${tratto ? `<p class="it-tratto it-tratto--${tipoTratto(tratto)}">${icona({ funi: 'funicolare', metro: 'metro', bus: 'bus', piedi: 'piedi' }[tipoTratto(tratto)], 18)}<span>${testoTratto(tratto, r.orariVeri)}</span></p>` : ''}
         ${v.attesa ? `<p class="it-attesa">${durata(v.attesa)} liberi prima delle regate: pranzo e tempo per trovare posto</p>` : ''}
         <span class="it-ora" aria-hidden="true">${v.fatta ? icona('ok', 18) : ora(v.inizio)}</span>
         <div class="it-blocco${sel ? ' it-blocco--scelto' : ''}${lon ? ' it-blocco--attenzione' : ''}${v.oltre != null ? ' it-blocco--oltre' : ''}${ev ? ' it-blocco--evento' : ''}${v.fatta ? ' it-blocco--fatta' : ''}${v.inCorso ? ' it-blocco--incorso' : ''}">
@@ -350,14 +382,14 @@ function avvia() {
               <span class="it-foto">${foto}<span class="it-piastrella" aria-hidden="true">${v.n}</span></span>
               <span class="it-blocco__testo"><span class="visually-hidden">Tappa ${v.n}, ${v.fatta ? 'fatta' : `alle ${ora(v.inizio)}`}: </span><span class="it-blocco__nome">${esc(nome(v.id))}</span><span class="it-blocco__meta">${meta}</span>${note.join('')}</span>
             </button>
-            <button type="button" class="it-maniglia" data-az="maniglia" aria-label="Sposta ${esc(breve(v.id))}" aria-describedby="it-aiuto-maniglia" data-tip="Trascina per spostare">${icona('maniglia')}</button>
+            <button type="button" class="it-maniglia" data-az="maniglia"${v.fatta ? ' hidden' : ''} aria-label="Sposta ${esc(breve(v.id))}" aria-describedby="it-aiuto-maniglia" data-tip="Trascina per spostare">${icona('maniglia')}</button>
           </div>
           ${ev ? '<div class="it-evento-nota"></div>' : ''}
           ${fatto}
           ${oltre}
           <div class="it-blocco__azioni" id="it-az-${v.id}"${sel ? '' : ' hidden'}>
-            <span class="it-blocco__gruppo"><button type="button" data-az="su"${k === 0 ? ' disabled' : ''}>${icona('su', 20)}Su<span class="visually-hidden"> ${esc(breve(v.id))}</span></button>
-            <button type="button" data-az="giu"${k === tappe.length - 1 ? ' disabled' : ''}>${icona('giu', 20)}Giù<span class="visually-hidden"> ${esc(breve(v.id))}</span></button></span><span class="it-blocco__gruppo">
+            <span class="it-blocco__gruppo"><button type="button" data-az="su"${k === 0 || v.fatta || k === nFatte ? ' disabled' : ''}>${icona('su', 20)}Su<span class="visually-hidden"> ${esc(breve(v.id))}</span></button>
+            <button type="button" data-az="giu"${k === tappe.length - 1 || v.fatta ? ' disabled' : ''}>${icona('giu', 20)}Giù<span class="visually-hidden"> ${esc(breve(v.id))}</span></button></span><span class="it-blocco__gruppo">
             ${ev ? '' : `<button type="button" data-az="scheda" aria-haspopup="dialog">${icona('info', 20)}Scheda<span class="visually-hidden"> di ${esc(breve(v.id))}</span></button>`}
             ${v.fatta ? `<button type="button" data-az="fatto">${icona('ricomincia', 20)}Non fatta<span class="visually-hidden"> ${esc(breve(v.id))}</span></button>` : ''}
             <button type="button" class="it-togli" data-az="togli">${icona('x', 20)}Togli<span class="visually-hidden"> ${esc(breve(v.id))}</span></button></span>
@@ -366,7 +398,9 @@ function avvia() {
         ${lon ? `<div class="it-avviso it-voce__avviso" role="status"><p class="it-avviso__titolo">${icona('attenzione', 20)}<span>${esc(maiuscola(breve(v.id)))} è lontana dalle altre tappe</span></p><p>Anche nel punto migliore della giornata aggiunge circa ${lon.extra} minuti di spostamenti. Vuoi metterla in un altro giorno?</p><div class="it-avviso__azioni">${lon.giorno < MAX_GIORNI ? `<button type="button" class="it-btn it-btn--primario" data-az="sposta-lontana" data-giorno="${lon.giorno}">Sposta ${dove}</button>` : ''}<button type="button" class="it-btn it-btn--contorno" data-az="lascia">Lascia qui</button></div></div>` : ''}
       </li>`;
     }).join('');
+    if (html === htmlLinea && linea.childElementCount) return;
     linea.innerHTML = html;
+    htmlLinea = html;
     // il testo delle regate (orari non ancora usciti) viene dal suo modello, controllato dalla build
     const notaEv = linea.querySelector('.it-evento-nota');
     if (notaEv) notaEv.replaceWith(($<HTMLTemplateElement>('it-t-regate')).content.cloneNode(true));
@@ -405,12 +439,19 @@ function avvia() {
   }
 
   // ---------- azioni sulla giornata ----------
+  // l'ordine delle tappe come lo vedi (dal vivo: le fatte in cima, la tappa dove sei per prima)
+  const ordineVisto = () => (ultimo ? ultimo.voci.filter((v): v is VoceTappa => v.tipo === 'tappa').map(v => v.id) : it().giorni[giorno].tappe);
+  const quanteFatte = () => (ultimo ? ultimo.voci.filter(v => v.tipo === 'tappa' && v.fatta).length : 0);
+  // sposta una tappa nella posizione a dell'ordine che vedi; le tappe che mancano restano sotto le fatte
   function sposta(id: string, a: number) {
-    const G = it().giorni[giorno];
-    const da = G.tappe.indexOf(id);
-    if (da < 0 || a < 0 || a >= G.tappe.length || a === da) return;
+    const vista = ordineVisto();
+    const da = vista.indexOf(id);
+    if (da < 0 || da < quanteFatte()) return;
+    a = Math.max(quanteFatte(), a);
+    if (a >= vista.length || a === da) return;
     segna(id);
-    cambia(x => { const g = x.giorni[giorno]; g.tappe.splice(da, 1); g.tappe.splice(a, 0, id); }, { annuncia: `${maiuscola(breve(id))}: ora è la tappa ${a + 1} di ${G.tappe.length}` });
+    const nuovo = [...vista]; nuovo.splice(da, 1); nuovo.splice(a, 0, id);
+    cambia(x => { x.giorni[giorno].tappe = nuovo; }, { annuncia: `${maiuscola(breve(id))}: ora è la tappa ${a + 1} di ${vista.length}` });
   }
   function togli(id: string) {
     const G = it().giorni[giorno];
@@ -482,8 +523,8 @@ function avvia() {
       scelto = scelto === id ? null : id;
       disegnaGiorno(x);
       linea.querySelector<HTMLElement>(`.it-voce[data-id="${CSS.escape(id)}"] [data-az="scegli"]`)?.focus();
-    } else if (az === 'su' && id) sposta(id, G.tappe.indexOf(id) - 1);
-    else if (az === 'giu' && id) sposta(id, G.tappe.indexOf(id) + 1);
+    } else if (az === 'su' && id) sposta(id, ordineVisto().indexOf(id) - 1);
+    else if (az === 'giu' && id) sposta(id, ordineVisto().indexOf(id) + 1);
     else if (az === 'togli' && id) togli(id);
     else if (az === 'scheda' && id) apriScheda(id, b);
     else if (az === 'lascia' && id) cambia(y => { const g = y.giorni[giorno]; g.ok = [...(g.ok ?? []), id]; }, { annuncia: `${maiuscola(breve(id))} resta nel giorno ${giorno + 1}` });
@@ -502,7 +543,7 @@ function avvia() {
       const era = !!G.fatte?.includes(id);
       cambia(y => { const g = y.giorni[giorno]; g.fatte = era ? (g.fatte ?? []).filter(t => t !== id) : [...(g.fatte ?? []), id]; if (!g.fatte.length) delete g.fatte; }, { annuncia: era ? `${maiuscola(breve(id))}: tolto «Fatto»` : `${maiuscola(breve(id))} fatta: ricalcolo gli orari da adesso` });
     } else if (az === 'gps-si') {
-      posizioneNegata = false;
+      posizioneNegata = false; toccato = true;
       cambia(y => { y.posizione = 'si'; }, { annuncia: 'Uso la posizione del telefono, solo su questa pagina' });
     } else if (az === 'gps-no') {
       cambia(y => { y.posizione = 'no'; }, { annuncia: 'Non uso la posizione' });
@@ -527,8 +568,7 @@ function avvia() {
     sposta(id, e.key === 'ArrowUp' ? k - 1 : k + 1);
   });
   trascinabile(linea, (da, a) => {
-    const G = it().giorni[giorno];
-    const id = G.tappe[da];
+    const id = ordineVisto()[da];
     if (id) sposta(id, a);
   });
 

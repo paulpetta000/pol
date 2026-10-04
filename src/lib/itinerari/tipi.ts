@@ -137,5 +137,6 @@ export interface Risultato {
   n: number;
   avvisi: Avviso[];
   vivo?: boolean;          // calcolata dal vivo (oggi, con l'ora del telefono)
+  tutteFatte?: boolean;    // dal vivo: hai fatto tutte le tappe
   orariVeri?: boolean;     // bus con le partenze vere (data dentro l'orario ANM)
 }

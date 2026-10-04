@@ -144,7 +144,7 @@ export async function disegna(area: HTMLElement, C: Citta, it: Itinerario, g: nu
   o.legenda.innerHTML = [modi.has('m-piedi') && '<span><i></i>a piedi</span>', modi.has('m-metro') && '<span><i class="it-l-metro"></i>metro e treni</span>', modi.has('m-funi') && '<span><i class="it-l-funi"></i>funicolari</span>', modi.has('m-bus') && '<span><i class="it-l-bus"></i>autobus</span>'].filter(Boolean).join('');
   o.riassunto.innerHTML = G.gita
     ? `<li><button type="button" data-id="${G.gita}"><span class="it-piastrella" aria-hidden="true">1</span><span class="it-riassunto__ora"></span><span class="it-riassunto__nome">Partenza: ${tappaDi(C, G.gita)!.partenza}</span></button></li>`
-    : tappe.map(v => `<li><button type="button" data-id="${v.id}"><span class="it-piastrella" aria-hidden="true">${v.n}</span><span class="it-riassunto__ora">${ora(v.inizio)}</span><span class="it-riassunto__nome">${(C.evento && v.id === C.evento.id ? C.evento.nome : tappaDi(C, v.id)!.nome).replace(/</g, '&lt;')}</span></button></li>`).join('');
+    : tappe.map(v => `<li><button type="button" data-id="${v.id}"><span class="it-piastrella" aria-hidden="true">${v.n}</span><span class="it-riassunto__ora">${v.fatta ? 'fatta' : ora(v.inizio)}</span><span class="it-riassunto__nome">${(C.evento && v.id === C.evento.id ? C.evento.nome : tappaDi(C, v.id)!.nome).replace(/</g, '&lt;')}</span></button></li>`).join('');
   o.riassunto.onclick = e => {
     const b = (e.target as Element).closest<HTMLElement>('[data-id]');
     if (!b) return;

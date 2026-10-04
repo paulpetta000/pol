@@ -1880,9 +1880,9 @@
       }
      ],
      "ogni": {
-      "feriale": 29,
-      "sabato": 23,
-      "sabato-pomeriggio": 31,
+      "feriale": 30,
+      "sabato": 25,
+      "sabato-pomeriggio": 36,
       "domenica": 27,
       "festivo": 27
      }

@@ -70,8 +70,11 @@ Il giorno dell'itinerario la pagina funziona come un navigatore: guarda **che or
 - [x] Calcolo: partenze vere, ora attuale, tappe fatte, tappa dove sei.
 - [x] Pagina: «Fatto», aggiornamento da solo, pannello della posizione, testi, Privacy.
 - [x] Prove nel browser (ora e posizione finte, senza rete, axe), `PROGRESS.md`.
-- [ ] Revisione del `revisore`; prova di Enrico sul telefono.
+- [x] Revisione del `revisore` (04/10/2026): 11 correzioni fatte (tappa in corso, Su/Giù e trascinamento con le fatte, aggiornamento senza ridisegnare mappa e avvisi, GPS che riparte da solo solo con il permesso già dato, testo del pannello, corse che «attraversavano» il capolinea, «oggi non passa», messaggi della posizione, «Fatto» ripulito quando togli una tappa, testi).
+- [ ] Prova di Enrico sul telefono.
 
 ## Fatto il 04/10/2026: cosa è venuto fuori
 - Martedì dalle 9 alle 19, ogni spostamento provato ogni 10 minuti: il bus si propone nel 18,4% dei casi (16,5% con l'attesa media), la scelta cambia nel 5,5%.
+- Le fermate dei bus sono separate per direzione: al capolinea si scende e si riprende il bus (prima il calcolo poteva «restare sul bus» cambiando direzione, cosa che nessuna corsa fa).
+- Da decidere con Enrico, se serve: dopo la fine della giornata le tappe che mancano slittano oltre con l'avviso «giornata piena»; l'«ordine più corto» dal vivo tiene ferma la prima tappa che manca.
 - Un caso deciso in corso d'opera: se il GPS dice che sei a una tappa che non è la prossima, quella diventa «in corso» e le tappe prima, non segnate «Fatto», vanno dopo (la pagina lo scrive).

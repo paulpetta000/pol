@@ -311,21 +311,23 @@ console.log(`\nAutobus ANM: orario dal ${GTFS.feed.dal} al ${GTFS.feed.al}; gior
 const fuori = new Map();   // fermate senza strada vicina (fuori dal riquadro): ci si passa sopra, non si scende
 const BUSLINEE = GTFS.linee.map(B => {
   const L = { id: B.id, nome: B.nome, tipo: B.tipo, accesso: BUS.accesso, uscita: BUS.uscita, bus: true, fermate: [] };
-  const serve = new Set(B.archi.flatMap(a => [a.da, a.a]));
+  // una fermata del grafo per direzione: «linea:direzione:stop»
+  const serve = new Set(B.archi.flatMap(a => [`${a.dir}|${a.da}`, `${a.dir}|${a.a}`]));
   let senza = 0;
-  for (const sid of serve) {
+  for (const ds of serve) {
+    const [dir, sid] = ds.split('|');
     const s = B.fermate.get(sid);
     const attesa = {};
     for (const sc of Object.keys(BUS.finestre)) {
-      const n = B.passaggi[sc][sid] || 0, f = BUS.finestre[sc];
+      const n = B.passaggi[sc][ds] || 0, f = BUS.finestre[sc];
       attesa[sc] = n ? (f.a - f.da) / n / 2 : null;
     }
     const v = vicino(s, BUS.raggio, principale);
-    if (!v) { senza++; fuori.set(`${B.id}:${sid}`, { lat: s.lat, lon: s.lon }); continue; }
-    fermate.push({ id: `${B.id}:${sid}`, linea: B.id, nome: s.nome, lat: s.lat, lon: s.lon, accessi: [v], attesa });
+    if (!v) { senza++; fuori.set(`${B.id}:${dir}:${sid}`, { lat: s.lat, lon: s.lon }); continue; }
+    fermate.push({ id: `${B.id}:${dir}:${sid}`, linea: B.id, nome: s.nome, lat: s.lat, lon: s.lon, accessi: [v], attesa });
     L.fermate.push(s.nome);
   }
-  for (const a of B.archi) corse.push({ da: `${B.id}:${a.da}`, a: `${B.id}:${a.a}`, t: a.tempi, linea: B.id, unVerso: true, punti: a.punti });
+  for (const a of B.archi) corse.push({ da: `${B.id}:${a.dir}:${a.da}`, a: `${B.id}:${a.dir}:${a.a}`, t: a.tempi, linea: B.id, unVerso: true, punti: a.punti });
   const ogni = Object.values(B.passaggi.feriale);
   console.log(`${B.nome}: ${serve.size} fermate${senza ? ` (${senza} lontane dalle strade del riquadro, escluse)` : ''}, al massimo ${Math.max(...ogni)} corse tra le 9 e le 19 a una fermata`);
   return L;
@@ -441,7 +443,7 @@ function percorso(r, destinazione) {
   });
   // i pezzi per gli orari veri: minuti fissi (a piedi, metro con l'attesa media…) e corse in bus
   // «linea|fermata di salita|fermata di discesa», il cui tempo la pagina prende dalle partenze
-  const fermataDi = id => { const x = base(id); return x.slice(x.indexOf(':') + 1); };
+  const fermataDi = id => { const x = base(id); return x.slice(x.lastIndexOf(':') + 1); };
   const seg = []; let fisso = 0, bus = false;
   tratti.forEach((e, k) => {
     const L = e.linea && MEZZI.get(e.linea);
@@ -566,24 +568,32 @@ for (const sc of SCENARI) {
   uscita.scenari[sc.nome] = { descrizione: sc.descrizione, min, piedi, salita, ...(sc.mezzi ? { mezzi } : {}), ...(conBus ? { senza: { min: sMin, piedi: sPiedi, mezzi: sMezzi }, bus } : {}) };
   console.log(`Scenario ${sc.nome}: fatto`);
 }
+// Le partenze vere delle corse in bus usate da quelle strade (src/data/partenze-bus.json, pagina /napoli/itinerari/partenze.json)
+const chiaviBus = new Set(candidati.flatMap(c => c.seg.filter(x => typeof x === 'string')));
+const PARTENZE = GTFS.partenze(chiaviBus);
+// le strade con una corsa che nessun bus fa davvero, in nessun giorno del feed, non si propongono
+{
+  const servite = new Set(PARTENZE.tipi.flatMap(t => Object.keys(t.viaggi)));
+  const buona = candidati.map(c => c.seg.every(x => typeof x !== 'string' || servite.has(x)));
+  let tolte = 0;
+  for (const S of Object.values(uscita.scenari)) {
+    if (!S.bus) continue;
+    S.bus = S.bus.map(r => r.map(c => { if (!c) return c; const ok = c.filter(k => buona[k]); tolte += c.length - ok.length; return ok.length ? ok : 0; }));
+  }
+  if (tolte) console.log(`Strade con il bus tolte perché nessuna corsa le fa: ${tolte}`);
+}
 uscita.candidati = candidati.map(({ seg, m, mezzi }) => ({ seg, m, mezzi }));
 console.log(`Strade con il bus da valutare con le partenze vere: ${candidati.length}`);
 fs.writeFileSync(path.join(RADICE, 'src/data/tempi-tappe.json'), JSON.stringify(uscita) + '\n');
-
-// Le partenze vere delle corse in bus usate da quelle strade (src/data/partenze-bus.json, pagina /napoli/itinerari/partenze.json)
-{
-  const chiavi = new Set(candidati.flatMap(c => c.seg.filter(x => typeof x === 'string')));
-  const P = GTFS.partenze(chiavi);
-  fs.writeFileSync(path.join(RADICE, 'src/data/partenze-bus.json'), JSON.stringify({ generato: uscita.generato, firma, fonte: 'ANM, feed GTFS (IODL 2.0)', ...P }) + '\n');
-  console.log(`Scritto src/data/partenze-bus.json: ${chiavi.size} corse, ${P.tipi.length} tipi di giorno, ${Math.round(JSON.stringify(P).length / 1024)} kB`);
-}
 console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
+fs.writeFileSync(path.join(RADICE, 'src/data/partenze-bus.json'), JSON.stringify({ generato: uscita.generato, firma, fonte: 'ANM, feed GTFS (IODL 2.0)', ...PARTENZE }) + '\n');
+console.log(`Scritto src/data/partenze-bus.json: ${chiaviBus.size} corse, ${PARTENZE.tipi.length} tipi di giorno, ${Math.round(JSON.stringify(PARTENZE).length / 1024)} kB`);
 
 // Tutte le fermate delle linee bus (anche quelle lontane dalle tappe di oggi), con la frequenza di ogni scenario
 // al capolinea di partenza: servono per le tappe e i locali che verranno (la fermata più vicina). La pagina non le usa.
 {
   const ogni = (B, d) => Object.fromEntries(Object.entries(BUS.finestre).map(([sc, f]) => {
-    const n = B.passaggi[sc][d.fermate[0].id] || 0;
+    const n = B.passaggi[sc][`${d.verso}|${d.fermate[0].id}`] || 0;
     return [sc, n ? Math.round((f.a - f.da) / n) : null];
   }));
   const file = {

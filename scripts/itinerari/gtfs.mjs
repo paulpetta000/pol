@@ -147,7 +147,9 @@ export function lineeBus(file, { linee, finestre }) {
     const id = 'B' + r.route_short_name;
     const nome = `${r.route_type === '11' ? 'Filobus' : 'Bus'} ${r.route_short_name}`;
     const corse = [...perTrip.values()].filter(t => t.route_id === rid && t.fermate.length > 1);
-    const passaggi = {};        // scenario -> stop -> numero di corse che ripartono da lì nella fascia
+    // fermate e tratti si tengono separati per direzione: al capolinea non si «passa» da una direzione all'altra
+    // restando sul bus (nel feed nessuna corsa lo fa), si scende e si riprende il bus con la sua attesa
+    const passaggi = {};        // scenario -> «direzione|stop» -> numero di corse che ripartono da lì nella fascia
     const archi = new Map();    // "da>a" -> { da, a, tempi: { scenario: min }, peso: { scenario: corse }, punti }
     const usate = new Map();    // stop -> nome (tutte le fermate delle corse della linea)
     for (const [sc, f] of Object.entries(finestre)) {
@@ -156,24 +158,25 @@ export function lineeBus(file, { linee, finestre }) {
       const p = passaggi[sc] = {};
       const schemi = new Map();   // sequenza di fermate -> corse
       for (const t of delGiorno) {
-        t.fermate.forEach((x, i) => { if (i < t.fermate.length - 1 && x.t >= f.da && x.t < f.a) p[x.s] = (p[x.s] || 0) + 1; });
+        const dir = t.direction_id || '0';
+        t.fermate.forEach((x, i) => { if (i < t.fermate.length - 1 && x.t >= f.da && x.t < f.a) p[`${dir}|${x.s}`] = (p[`${dir}|${x.s}`] || 0) + 1; });
         // per i tempi: le corse che attraversano la fascia
         if (t.fermate[t.fermate.length - 1].t < f.da || t.fermate[0].t >= f.a) continue;
-        const k = t.fermate.map(x => x.s).join(' ');
+        const k = `${t.direction_id || '0'} ` + t.fermate.map(x => x.s).join(' ');
         if (!schemi.has(k)) schemi.set(k, []);
         schemi.get(k).push(t);
       }
       for (const [k, ts] of [...schemi].sort((a, b) => b[1].length - a[1].length)) {
-        const seq = k.split(' ');
+        const [dir, ...seq] = k.split(' ');
         // tempo cumulato dalla prima fermata: mediana sulle corse (resta in ordine crescente)
         const cum = seq.map((_, i) => mediana(ts.map(t => t.fermate[i].t - t.fermate[0].t)));
         const quante = new Map(); for (const t of ts) quante.set(t.shape_id, (quante.get(t.shape_id) || 0) + 1);
         const shapeId = [...quante].sort((a, b) => b[1] - a[1])[0][0];
         let pezzi = null;
         for (let i = 1; i < seq.length; i++) {
-          const ka = `${seq[i - 1]}>${seq[i]}`;
+          const ka = `${dir}|${seq[i - 1]}>${seq[i]}`;
           if (seq[i - 1] === seq[i]) continue;
-          if (!archi.has(ka)) archi.set(ka, { da: seq[i - 1], a: seq[i], tempi: {}, peso: {}, punti: null });
+          if (!archi.has(ka)) archi.set(ka, { dir, da: seq[i - 1], a: seq[i], tempi: {}, peso: {}, punti: null });
           const a = archi.get(ka);
           if ((a.peso[sc] || 0) < ts.length) { a.tempi[sc] = Math.max(0.25, cum[i] - cum[i - 1]); a.peso[sc] = ts.length; }
           if (!a.punti) { pezzi ??= disegno(shapeId, seq) || []; a.punti = pezzi[i - 1] || []; }
