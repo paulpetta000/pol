@@ -6,6 +6,16 @@ _Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1,
 1. Provare l'anteprima del blocco C sul telefono (ramo `ccr-2e280b06-dh4h6y`), poi dire OK per pubblicarlo su `main`.
 2. Dopo: sessione di gruppo su `da-risolvere.md` (28 righe aperte, 16 sono locali senza orari: servono le schermate degli orari dalla scheda Google o dal sito del locale, oppure una sessione sul computer di Enrico con Claude in Chrome).
 
+## Skill valutate il 04/10/2026 (verifica del codice fatta da agenti; niente è installato)
+Copie lette in sola lettura in `/home/user/<autore>/<repo>` (fuori dal progetto, solo in quella sessione). Decisioni di Enrico e piano per il blocco 3:
+- **claude-seo** (MIT): sì, solo i comandi di analisi (technical, page, schema, sitemap, images, hreflang, audit) sul sito pubblicato; installare come plugin, non con `install.sh`, senza estensioni a pagamento. Il primo uso scarica circa 20 pacchetti Python e un browser: sessione apposta.
+- **impeccable** (Apache-2.0) e **ui-ux-pro-max** (MIT): copiare a mano solo i testi utili (audit, critique, polish, typeset; la lista di controllo di accessibilità) in una skill del progetto, con la nota di licenza e senza hook, senza il programma scaricato, senza telemetria. I caratteri di Google vanno scaricati e messi nel sito (regola: nessun servizio esterno prima di un tocco).
+- **awesome-design-md** (MIT): solo come ispirazione per le due proposte grafiche del blocco 3 (idee e struttura); mai caratteri proprietari, loghi, nomi o colori che identificano un marchio.
+- **img2threejs** (Apache-2.0): da accendere solo quando si rifanno le barche 3D, solo il clone base, senza plugin né `integrations/`.
+- **playwright-cli** (Microsoft): da provare con `npx`, senza aggiungerlo al progetto.
+- **No**: taste-skill, claude-mem, graphify, llmfit.
+- Da cercare ancora: «Find Skills» e uno strumento che confronti il sito con i concorrenti (senza abbonamenti): Enrico manda i link.
+
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
 
