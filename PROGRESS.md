@@ -52,7 +52,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 
 ## Cose che devi fare tu
 1. Guardare il sito sul telefono e dire cosa cambiare.
-2. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni). Sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati.
+2. Parlare con un avvocato quando vuoi (privacy, termini, marchi, gioco, affiliazioni, **foto**: Enrico (04/10/2026) vorrebbe togliere il divieto di foto senza licenza libera; per ora la regola resta, da decidere dopo l'avvocato; se cambia vanno cambiati `CLAUDE.md` e il controllo in `src/content.config.ts`). Sul piano gratuito di Vercel non c'è il contratto sul trattamento dei dati.
 3. **Reindirizzare il vecchio indirizzo**: Vercel → progetto *coppa-america-napoli* → Settings → Domains → `coppa-america-napoli.vercel.app` → Edit → «Redirect to» `napoli-a-vela.vercel.app`, codice 308 → Save. La regola in `vercel.json` non funziona; dopo si può togliere.
 
 ## Note operative
