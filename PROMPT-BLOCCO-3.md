@@ -11,6 +11,14 @@ Questo è il **blocco 3 di 3** del Rilascio 3:
 2. itinerari: la pagina;
 3. il sito più ordinato.
 
+## Prima parte: lo stile dei testi (deciso da Enrico il 04/10/2026)
+
+Prima dell'estetica e della SEO: i testi del sito sono corretti ma freddi («secondo il locale è aperta dal 1936», «Gambero Rosso scrive che…»). Enrico li vuole caldi e coinvolgenti, che accompagnino il lettore, **senza perdere le fonti**.
+1. Ricerca approfondita (skill deep-research) su come scrivono le migliori guide di viaggio e di cibo, per i vari argomenti del sito (regate, luoghi, locali, trasporti).
+2. Una **guida di stile** corta in `specifiche/` (tono, frasi tipo, come citare una fonte con calore: «per Gambero Rosso è…», «dal 1936 frigge in via dei Tribunali»), da far approvare a Enrico.
+3. Allargare le parole ammesse dal controllo dei testi (`src/lib/testi.ts`, `PAROLE`), senza togliere la regola: un'informazione non ufficiale va detta a parole.
+4. Riscrivere i testi di tutte le pagine (`src/testi/`) e rifirmarli. Va fatto prima del Rilascio 4 (Lingue), così si traducono i testi definitivi.
+
 ## Regole di lavoro
 
 - Parti da un ramo nuovo creato da `main`. Su `main` non pubblicare niente senza il mio OK esplicito: prima mostrami l'anteprima di Vercel (link e immagini su telefono, tema chiaro e scuro).
