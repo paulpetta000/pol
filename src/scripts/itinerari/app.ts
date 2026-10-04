@@ -39,8 +39,10 @@ function avvia() {
   const breve = (id: string) => (E && id === E.id ? 'le regate' : tappaDi(C, id)?.breve ?? id);
 
   // ---------- stato ----------
+  // un itinerario nuovo parte con la data di oggi (la dà l'orologio del telefono, senza permessi): si cambia con «Cambia»
+  const nuovo = (nome: string, giorni?: Giorno[]): Itinerario => ({ ...nuovoItinerario(nome, giorni), data: oggi() });
   let A: Archivio = leggi(C) ?? { attivo: '', elenco: [] };
-  if (!A.elenco.length) { const x = nuovoItinerario('Il mio itinerario'); A = { attivo: x.id, elenco: [x] }; }
+  if (!A.elenco.length) { const x = nuovo('Il mio itinerario'); A = { attivo: x.id, elenco: [x] }; }
   let giorno = 0;
   let vista: 'giornata' | 'mappa' = 'giornata';
   let scelto: string | null = null;
@@ -294,7 +296,9 @@ function avvia() {
     // dal vivo: il pannello per la posizione (una volta per itinerario), o un link piccolo per riattivarla
     if (r.vivo && 'geolocation' in navigator) {
       const da = r.voci.some(v => v.tipo === 'tappa' && v.fatta) ? 'dall\'ultima tappa fatta' : 'dall\'ora di adesso';
-      if (!x.posizione || (x.posizione === 'si' && !posizioneAttiva(x) && !posizioneNegata)) out.push(pannelloPosizione());
+      // il pannello compare quando nella giornata c'è almeno una tappa (non alla prima apertura del sito)
+      if (!G.tappe.length) { /* niente */ }
+      else if (!x.posizione || (x.posizione === 'si' && !posizioneAttiva(x) && !posizioneNegata)) out.push(pannelloPosizione());
       else if (x.posizione === 'no' || posizioneNegata) out.push(`<p class="it-posizione-spenta">Posizione non usata: calcolo ${da}. <button type="button" class="it-link" data-az="gps-si">Usa la mia posizione</button></p>`);
       else if (!posizione) out.push('<p class="it-posizione-spenta">Cerco la posizione del telefono…</p>');
       else if (posizione.precisione > VICINO) out.push(`<p class="it-posizione-spenta">La posizione del telefono è poco precisa: calcolo ${da}.</p>`);
@@ -843,6 +847,7 @@ function avvia() {
     imp.showModal();
   }
   $('it-cambia').addEventListener('click', e => apriImpostazioni(e.currentTarget as HTMLElement));
+  $('it-quando').addEventListener('click', e => apriImpostazioni(e.currentTarget as HTMLElement));
   campoData.addEventListener('change', () => {
     const v = campoData.value;
     if (v && !dataValida(v)) return;
@@ -929,7 +934,7 @@ function avvia() {
     const x = A.elenco.find(i => i.id === daEliminare)!;
     const prima = structuredClone(A);
     A.elenco = A.elenco.filter(i => i.id !== daEliminare);
-    if (!A.elenco.length) A.elenco = [nuovoItinerario('Il mio itinerario')];
+    if (!A.elenco.length) A.elenco = [nuovo('Il mio itinerario')];
     if (!A.elenco.some(i => i.id === A.attivo)) { A.attivo = [...A.elenco].sort((a, b) => b.modificato - a.modificato)[0].id; giorno = 0; }
     daEliminare = null;
     salva(); disegna(); disegnaMiei(); vistaElenco(true);
@@ -944,7 +949,7 @@ function avvia() {
     for (let k = 2; ; k++) if (!nomi.has(`${base} (${k})`)) return `${base} (${k})`;
   };
   $('it-nuovo').addEventListener('click', () => {
-    const x = nuovoItinerario(nomeLibero('Nuovo itinerario'));
+    const x = nuovo(nomeLibero('Nuovo itinerario'));
     A.elenco.push(x);
     A.attivo = x.id;
     giorno = 0; scelto = null;
@@ -959,10 +964,11 @@ function avvia() {
     const giorni = structuredClone(p.giorni);
     const x = it();
     if (vuotoTutto(x)) {
-      cambia(y => { y.nome = nomeLibero(p.nome, y.id); y.giorni = giorni; if (data) y.data = data; });
+      // la giornata di regata vuole un giorno di regata: senza una data scelta, niente data
+      cambia(y => { y.nome = nomeLibero(p.nome, y.id); y.giorni = giorni; if (data) y.data = data; else if (p.evento) delete y.data; });
     } else {
-      const y = nuovoItinerario(nomeLibero(p.nome), giorni);
-      if (data) y.data = data;
+      const y = nuovo(nomeLibero(p.nome), giorni);
+      if (data) y.data = data; else if (p.evento) delete y.data;
       A.elenco.push(y);
       A.attivo = y.id;
       salva();

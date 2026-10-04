@@ -79,7 +79,7 @@ const json = JSON.stringify(pacco).replace(/</g, '\\u003c');
           <button type="button" class="it-tab it-tab--piu" id="it-giorno-piu" aria-label="Aggiungi un giorno" data-tip="Aggiungi un giorno"><Fragment set:html={icona('piu', 20)} /></button>
         </div>
         <div class="it-quando">
-          <span id="it-quando">Senza data · dalle 9:30 alle 19:00</span>
+          <button type="button" class="it-quando__testo" id="it-quando" aria-haspopup="dialog">Senza data · dalle 9:30 alle 19:00</button>
           <button type="button" class="it-link" id="it-cambia" aria-haspopup="dialog">Cambia<span class="visually-hidden"> data e orari del giorno</span></button>
         </div>
 
