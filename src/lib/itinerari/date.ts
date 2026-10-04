@@ -3,6 +3,8 @@
 export type GiornoSettimana = 'lun' | 'mar' | 'mer' | 'gio' | 'ven' | 'sab' | 'dom';
 const SETTIMANA: GiornoSettimana[] = ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'];
 export const NOMI_GIORNI: Record<GiornoSettimana, string> = { lun: 'lunedì', mar: 'martedì', mer: 'mercoledì', gio: 'giovedì', ven: 'venerdì', sab: 'sabato', dom: 'domenica' };
+// con l'articolo: «il lunedì», «la domenica»
+export const ilGiorno = (g: GiornoSettimana) => `${g === 'dom' ? 'la' : 'il'} ${NOMI_GIORNI[g]}`;
 const MESI = ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'];
 
 // Le date sono stringhe «AAAA-MM-GG», sempre in UTC: niente sorprese con l'ora legale

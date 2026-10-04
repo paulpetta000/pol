@@ -358,6 +358,26 @@
     "big-sito-ufficiale": "41ac7f3be5"
   },
   "domande-frequenti#avvisami": {},
+  "dove-mangiare#intro": {},
+  "dove-mangiare#criteri": {},
+  "dove-mangiare#fasce": {},
+  "dove-mangiare#indipendente": {},
+  "dove-mangiare#orari": {},
+  "dove-mangiare#itinerario": {},
+  "dove-mangiare#piatto-margherita": {},
+  "dove-mangiare#piatto-marinara": {},
+  "dove-mangiare#piatto-pizza-fritta": {},
+  "dove-mangiare#piatto-frittatina": {},
+  "dove-mangiare#piatto-genovese": {},
+  "dove-mangiare#piatto-ragu": {},
+  "dove-mangiare#piatto-pasta-patate": {},
+  "dove-mangiare#piatto-vongole": {},
+  "dove-mangiare#piatto-frittura": {},
+  "dove-mangiare#piatto-parmigiana": {},
+  "dove-mangiare#piatto-baccala": {},
+  "dove-mangiare#piatto-sfogliatella": {},
+  "dove-mangiare#piatto-baba": {},
+  "dove-mangiare#piatto-pastiera": {},
   "home#prossimo": {
     "cal-flotta": "590fe580b1",
     "cal-match": "14d6c6b3b5"
@@ -404,6 +424,107 @@
   },
   "itinerari#orari": {},
   "itinerari#salvare": {},
+  "locali#da-michele": {
+    "lc-da-michele-perche": "126821a827"
+  },
+  "locali#port-alba": {
+    "lc-port-alba-perche": "5d6de800c6"
+  },
+  "locali#di-matteo": {
+    "lc-di-matteo-perche": "2f4b76b7a8",
+    "lc-di-matteo-rinomato": "e982787222"
+  },
+  "locali#chitarra": {
+    "lc-chitarra-perche": "626b58f61e"
+  },
+  "locali#gesu-vecchio": {
+    "lc-gesu-vecchio-perche": "45c4ad7fe1"
+  },
+  "locali#di-costanzo": {
+    "lc-di-costanzo-perche": "1aa87ac632"
+  },
+  "locali#brandi": {
+    "lc-brandi-perche": "c32ea082cd"
+  },
+  "locali#zia-esterina": {
+    "lc-zia-esterina-perche": "3ec6281a50"
+  },
+  "locali#hosteria-toledo": {
+    "lc-hosteria-toledo-perche": "9fb5b532bb"
+  },
+  "locali#gobbetto": {
+    "lc-gobbetto-perche": "953512b6f6"
+  },
+  "locali#nennella": {
+    "lc-nennella-perche": "58013e0651"
+  },
+  "locali#pintauro": {
+    "lc-pintauro-perche": "e256576e38"
+  },
+  "locali#cinquanta-kalo": {
+    "lc-cinquanta-kalo-perche": "8cb4048327"
+  },
+  "locali#salvo": {
+    "lc-salvo-perche": "1c7f0476ee"
+  },
+  "locali#pignatelli": {
+    "lc-pignatelli-perche": "3ffde1a375",
+    "lc-pignatelli-rinomato": "f4b4e0ecb2"
+  },
+  "locali#cantinella": {
+    "lc-cantinella-perche": "402f22c210"
+  },
+  "locali#bersagliera": {
+    "lc-bersagliera-perche": "31f650a0cd"
+  },
+  "locali#scialuppa": {
+    "lc-scialuppa-perche": "f24ece3686"
+  },
+  "locali#calabritto": {
+    "lc-calabritto-perche": "247c34fade"
+  },
+  "locali#chalet-ciro": {
+    "lc-chalet-ciro-perche": "c68be86c2a",
+    "lc-chalet-ciro-rinomato": "c47a463218"
+  },
+  "locali#caffettiera": {
+    "lc-caffettiera-perche": "3e73356abd"
+  },
+  "locali#gorizia": {
+    "lc-gorizia-perche": "7e00487e3f"
+  },
+  "locali#bellavia": {
+    "lc-bellavia-perche": "4c99969230"
+  },
+  "locali#meatin": {
+    "lc-meatin-perche": "1507e62f77"
+  },
+  "locali#starita": {
+    "lc-starita-perche": "a3a1fe73df"
+  },
+  "locali#concettina": {
+    "lc-concettina-perche": "9bc372401e"
+  },
+  "locali#poppella": {
+    "lc-poppella-perche": "f6a75d2adb",
+    "lc-poppella-rinomato": "2515b480ce"
+  },
+  "locali#petrucci-posillipo": {
+    "lc-petrucci-posillipo-perche": "8337d331e1"
+  },
+  "locali#tufo": {
+    "lc-tufo-perche": "38a57f5833",
+    "lc-tufo-rinomato": "9242b06bae"
+  },
+  "locali#fenestella": {
+    "lc-fenestella-perche": "3b4afd1c64"
+  },
+  "locali#cicciotto": {
+    "lc-cicciotto-perche": "71b3eb6277"
+  },
+  "locali#macellegria": {
+    "lc-macellegria-perche": "d2da841b13"
+  },
   "mappa#da-sapere": {
     "campo-mappa-atteso": "6daa8cb230",
     "vil-caracciolo": "c8fd6023fa",

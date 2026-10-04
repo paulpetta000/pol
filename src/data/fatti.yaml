@@ -2000,7 +2000,7 @@
   controllato: 2026-10-04
 
 - id: lc-di-costanzo-perche
-  testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it, che la descrive come una pasticceria tradizionale solida."
+  testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, secondo Napolitan.it, che la descrive come una pasticceria tradizionale solida."
   stato: stampa
   storico: true
   fonti: [napolitan-pasticcerie-2022]
@@ -2070,7 +2070,7 @@
   controllato: 2026-10-04
 
 - id: lc-pignatelli-rinomato
-  testo: "Nella recensione del gennaio 2026, Scatti di Gusto loda soprattutto le candele alla genovese."
+  testo: "Nella recensione del gennaio 2026, Scatti di Gusto scrive che le candele alla genovese sono molto buone."
   stato: stampa
   storico: true
   fonti: [sdg-pignatelli-2026]
@@ -2112,7 +2112,7 @@
   controllato: 2026-10-04
 
 - id: lc-chalet-ciro-rinomato
-  testo: "Scatti di Gusto, nel 2016, racconta il suo cono graffa: il gelato servito dentro una graffa fritta e zuccherata."
+  testo: "Scatti di Gusto, nel 2016, scrive del suo cono graffa: il gelato servito dentro una graffa fritta e zuccherata."
   stato: stampa
   storico: true
   fonti: [sdg-cono-graffa]

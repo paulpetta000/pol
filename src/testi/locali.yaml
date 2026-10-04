@@ -37,7 +37,7 @@ di-costanzo:
   usa: [lc-di-costanzo-perche]
   fonti: [lc-di-costanzo]
   testo: |
-    Pasticceria in piazza Cavour, vicino al Museo Archeologico: sfogliatelle ricce e frolle, cornetti e caffè. Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it{?lc-di-costanzo-perche}.
+    Pasticceria in piazza Cavour, vicino al Museo Archeologico: sfogliatelle ricce e frolle, cornetti e caffè. Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli nel 2022, secondo Napolitan.it{?lc-di-costanzo-perche}.
 
 # ---------- Toledo e Plebiscito ----------
 brandi:
@@ -68,7 +68,7 @@ nennella:
   usa: [lc-nennella-perche]
   fonti: [lc-nennella]
   testo: |
-    Trattoria in piazza Carità, all'inizio di via Toledo, famosa per la pasta e patate con la provola. Aperta nel 1949, scrive Gambero Rosso International, che la mette tra gli otto posti di Napoli per quel piatto{?lc-nennella-perche}. Il menu e i prezzi della sede di Napoli non sono online.
+    Trattoria di cucina napoletana in piazza Carità, all'inizio di via Toledo. Aperta nel 1949, scrive Gambero Rosso International, che la mette tra gli otto posti di Napoli per la pasta e patate con la provola{?lc-nennella-perche}. Il menu e i prezzi della sede di Napoli non sono online.
 
 pintauro:
   usa: [lc-pintauro-perche]
@@ -123,7 +123,7 @@ chalet-ciro:
   usa: [lc-chalet-ciro-perche, lc-chalet-ciro-rinomato]
   fonti: [lc-chalet-ciro]
   testo: |
-    Bar e pasticceria sul lungomare di Mergellina, aperto fino a notte: babà, sfogliatelle, graffe e gelato. Scatti di Gusto racconta il suo cono graffa, il gelato dentro una graffa fritta{?lc-chalet-ciro-rinomato}.
+    Bar e pasticceria sul lungomare di Mergellina, aperto fino a notte: babà, sfogliatelle, graffe e gelato. Scatti di Gusto, in un articolo del 2016, scrive del suo cono graffa: il gelato dentro una graffa fritta{?lc-chalet-ciro-rinomato}.
 
 caffettiera:
   usa: [lc-caffettiera-perche]
@@ -167,7 +167,7 @@ poppella:
   usa: [lc-poppella-perche, lc-poppella-rinomato]
   fonti: [lc-poppella]
   testo: |
-    Pasticceria nel Rione Sanità, aperta dalle sei del mattino a mezzanotte. Gambero Rosso cita il suo fiocco di neve e la pastiera, riporta Napolitan.it{?lc-poppella-perche,lc-poppella-rinomato}.
+    Pasticceria nel Rione Sanità, aperta dalle sei del mattino a mezzanotte. Gambero Rosso cita il suo fiocco di neve e la pastiera, secondo Napolitan.it{?lc-poppella-perche,lc-poppella-rinomato}.
 
 # ---------- Posillipo e Fuorigrotta ----------
 petrucci-posillipo:

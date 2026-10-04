@@ -8,7 +8,7 @@ import Testo from '../Testo.astro';
 import type { Locale } from '../../lib/locali';
 import { CUCINE, GIORNI, orariDelGiorno } from '../../lib/locali';
 import { cautelaScheda } from '../../lib/testi';
-import { durata, NOMI_GIORNI } from '../../lib/itinerari/date';
+import { durata, ilGiorno } from '../../lib/itinerari/date';
 
 interface Props { l: Locale; conFoto?: boolean; conTesto?: boolean; h?: 'h3' | 'h4' }
 const { l, conFoto = true, conTesto = true, h: H = 'h3' } = Astro.props;
@@ -36,7 +36,7 @@ const giorni = (r: { da: number; a: number }) => (r.da === r.a ? GIORNI[r.da] : 
 <div class="it-sch it-sch--locale">
   {conFoto && d.foto && <Foto id={d.foto.id} sizes="(min-width: 600px) 560px, calc(100vw - 32px)" widths={[400, 720]} rapporto="3 / 2" didascalia={false} class="it-sch__foto" />}
   {conTesto && <Testo b={l.testo} class="it-sch__testo" />}
-  <p class="it-sch__breve">{d.cucina.map(c => CUCINE[c]).join(' · ')}. {pasto}.{l.chiuso.length > 0 && <> Chiuso il {l.chiuso.map(g => NOMI_GIORNI[g]).join(' e il ')}.</>}{d.prenotazione && <> {PREN[d.prenotazione]}</>}</p>
+  <p class="it-sch__breve">{d.cucina.map(c => CUCINE[c]).join(' · ')}. {pasto}.{l.chiuso.length > 0 && <> Chiuso {l.chiuso.map(ilGiorno).join(' e ')}.</>}{d.prenotazione && <> {PREN[d.prenotazione]}</>}</p>
   {rinomato && d.rinomatoPer && <p class="it-sch__rinomato"><strong>Conosciuto per</strong> {d.rinomatoPer.piatto}{rinomato.segno && <sup class="cautela" aria-hidden="true">*</sup>}</p>}
   <H class="it-sch__h">Orari</H>
   <table class="it-sch__orari">

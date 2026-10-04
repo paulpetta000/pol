@@ -1,7 +1,8 @@
 // I filtri della pagina /napoli/dove-mangiare/. Tutto nel browser: l'itinerario salvato sul telefono (stessa memoria
 // del compositore, src/scripts/itinerari/memoria.ts) serve solo a proporre il giorno, le tappe vicine e il giorno
 // a cui aggiungere un locale; non si manda a nessuno.
-import { giornoSettimana, piuGiorni, dataLunga } from '../lib/itinerari/date';
+import { giornoSettimana, piuGiorni, dataLunga, ilGiorno, type GiornoSettimana } from '../lib/itinerari/date';
+const maiuscola = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 type Locale = { id: string; zona: string; cucina: string[]; fascia: number; piatti: string[]; orari: (number[] | null)[]; durata: number; piedi: number[] };
 type Dati = { locali: Locale[]; tappe: string[]; nomi: Record<string, string> };
@@ -72,7 +73,7 @@ function avvia() {
       if (t == null) return { ok: true, testo: '' };
       for (let i = 0; i < f.length; i += 2) if (t >= f[i] && (f[i + 1] === -1 || t < f[i + 1])) return { ok: true, testo: f[i + 1] === -1 ? '' : `Aperto fino alle ${ora(f[i + 1])}` };
     }
-    if (ignoto) return { ok: null, testo: g >= 0 ? `Il ${['lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica'][g]} il locale non scrive l'orario` : '' };
+    if (ignoto) return { ok: null, testo: g >= 0 ? `${maiuscola(ilGiorno(GIORNI[g] as GiornoSettimana))} il locale non scrive l'orario` : '' };
     return { ok: false, testo: '' };
   }
 

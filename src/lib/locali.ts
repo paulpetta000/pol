@@ -77,7 +77,7 @@ export function leggiApertura(a: Record<string, string>): { settimana: Settimana
 }
 
 // «07:00» e «7:00», «24:00» e «00:00» si equivalgono nel testo della scheda
-const normale = (s: string) => s.replace(/\b0(\d):/g, '$1:');
+const normale = (s: string) => s.replace(/(^|[^\d:])0(\d):/g, '$1$2:');
 const nelTesto = (ora: string, testo: string) => {
   const t = normale(testo), o = normale(ora);
   return t.includes(o) || (o === '24:00' && /\b(0?0:00|mezzanotte)\b/.test(t)) || (o === '0:00' && t.includes('24:00'));

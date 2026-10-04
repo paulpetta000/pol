@@ -5,7 +5,7 @@ import { spacchetta, spacchettaVivo, type Pacco, type PaccoVivo } from '../../li
 import { calcolaGiorno, ordinePiuCorto, tappaDi, dataDelGiorno, minuti, scenarioDi, orarioLocale } from '../../lib/itinerari/calcolo';
 import type { Adesso } from '../../lib/itinerari/tipi';
 import { codifica, decodifica, nuovoItinerario, giornoVuoto, uguali, MAX_GIORNI, MAX_TAPPE, MAX_NOME } from '../../lib/itinerari/link';
-import { dataLunga, dataBreve, ora, durata, durataParole, piuGiorni, giornoSettimana, NOMI_GIORNI, dataValida, minutiDa } from '../../lib/itinerari/date';
+import { dataLunga, dataBreve, ora, durata, durataParole, piuGiorni, giornoSettimana, NOMI_GIORNI, ilGiorno, dataValida, minutiDa } from '../../lib/itinerari/date';
 import { icona } from '../../lib/itinerari/icone';
 import { leggi, scrivi, quandoCambia, type Archivio } from './memoria';
 import { trascinabile } from './trascina';
@@ -358,12 +358,12 @@ function avvia() {
       const sel = scelto === v.id;
       const note: string[] = [];
       const nota = (testo: string, warn = false) => note.push(`<span class="it-blocco__nota${warn ? ' it-blocco__nota--warn' : ''}">${warn ? icona('attenzione', 16) : ''}<span>${testo}</span></span>`);
-      if (v.chiusa && data) nota(`Chiuso il ${NOMI_GIORNI[giornoSettimana(data)]}: scegli un altro giorno`, true);
+      if (v.chiusa && data) nota(`Chiuso ${ilGiorno(giornoSettimana(data))}: scegli un altro giorno`, true);
       if (v.chiusaOra) nota(v.chiusaOra.chiude != null ? `Chiude alle ${ora(v.chiusaOra.chiude % 1440)}, prima della fine del pasto` : v.chiusaOra.apre != null ? `A quest'ora è chiuso: apre alle ${ora(v.chiusaOra.apre)}` : `A quest'ora è chiuso${data ? '' : ' (o lo è tutti i giorni)'}`, true);
       if (ev && v.ritardo) nota(`Arrivi alle ${ora(v.inizio)}, ${durataParole(v.ritardo)} dopo l'inizio`, true);
       if (ev && E && data && E.giorni[data]) nota(`${esc(E.giorni[data].titolo)}${E.giorni[data].possibile ? ', se la sfida non è già finita' : ''}${E.giorni[data].riserva ? ', giorno di riserva' : ''}`);
       if (t?.fine) nota(v.indietro ? `Al contrario: parti da ${esc(t.fine)}` : `Fino a ${esc(t.fine)}`);
-      if (t?.prenotazione === 'obbligatoria') nota('Si entra solo prenotando');
+      if (t?.prenotazione === 'obbligatoria') nota(t.categoria ? 'Solo prenotando' : 'Si entra solo prenotando');
       if (t?.avviso === 'chiuso-in-parte') nota('In parte chiuso per lavori');
       let oltre = '';
       if (v.oltre != null && primoOltre) {
@@ -702,7 +702,7 @@ function avvia() {
       const nota = li.querySelector<HTMLElement>('.it-scelta__nota')!;
       const chiusa = data && t.chiuso.includes(giornoSettimana(data));
       nota.hidden = !chiusa;
-      nota.textContent = chiusa ? `Chiuso il ${NOMI_GIORNI[giornoSettimana(data!)]}` : '';
+      nota.textContent = chiusa ? `Chiuso ${ilGiorno(giornoSettimana(data!))}` : '';
     }
     // i locali: minuti dall'ultima tappa e, se a quell'ora (o quel giorno) è chiuso, lo diciamo
     const distL = new Map<string, number>();
@@ -722,7 +722,7 @@ function avvia() {
       const o = !chiusa && !dentro ? orarioLocale(t, data, arrivo, t.durata) : null;
       const nota = li.querySelector<HTMLElement>('.it-scelta__nota')!;
       nota.hidden = !chiusa && !o;
-      nota.textContent = chiusa ? `Chiuso il ${NOMI_GIORNI[giornoSettimana(data!)]}` : o ? (o.chiude != null ? `Arrivi alle ${ora(arrivo)}: chiude alle ${ora(o.chiude % 1440)}` : o.apre != null ? `Arrivi alle ${ora(arrivo)}: apre alle ${ora(o.apre)}` : `Alle ${ora(arrivo)} è chiuso`) : '';
+      nota.textContent = chiusa ? `Chiuso ${ilGiorno(giornoSettimana(data!))}` : o ? (o.chiude != null ? `Arrivi alle ${ora(arrivo)}: chiude alle ${ora(o.chiude % 1440)}` : o.apre != null ? `Arrivi alle ${ora(arrivo)}: apre alle ${ora(o.apre)}` : `Alle ${ora(arrivo)} è chiuso`) : '';
     }
     if (ordina) {
       const ulL = $('it-scelte-mangiare');
@@ -1121,7 +1121,7 @@ function avvia() {
       const x = it();
       giorno = Math.min(Math.max(0, Number(richiesta.get('g')) || 0), x.giorni.length - 1);
       if (x.giorni[giorno].tappe.includes(t.id)) toast(`${maiuscola(t.breve)} è già nel giorno ${giorno + 1}`);
-      else { aggiungiTappa(t.id); toast(`${maiuscola(t.breve)} aggiunto al giorno ${giorno + 1}`); }
+      else { aggiungiTappa(t.id); toast(`Aggiunto al giorno ${giorno + 1}: ${t.breve}`); }
     }
   }
   quandoCambia(() => { const n = leggi(C); if (n) { A = n; disegna(); } });

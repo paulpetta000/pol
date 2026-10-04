@@ -46,8 +46,14 @@ out body;`;
         headers: { 'User-Agent': UA, 'Content-Type': 'application/x-www-form-urlencoded' },
         body: 'data=' + encodeURIComponent(query)
       });
-      if (res.ok) { testo = await res.text(); break; }
-      console.log(`${server}: risposta ${res.status}, riprovo`);
+      if (res.ok) {
+        const t = await res.text();
+        // alcuni server di riserva hanno dati di mesi fa: se sono più vecchi di 14 giorni provo il successivo
+        const base = t.slice(0, 2000).match(/"timestamp_osm_base":\s*"([^"]+)"/)?.[1];
+        if (base && Date.now() - Date.parse(base) > 14 * 864e5 && prova < 8) console.log(`${server}: dati vecchi (${base}), provo un altro server`);
+        else { testo = t; break; }
+      }
+      else console.log(`${server}: risposta ${res.status}, riprovo`);
     } catch (e) { console.log(`${server}: ${e.message}, riprovo`); }
     await new Promise(r => setTimeout(r, 15000 * (1 + Math.floor(prova / SERVER.length))));
   }
