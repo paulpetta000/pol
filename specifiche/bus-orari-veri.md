@@ -1,6 +1,6 @@
 # Bus con gli orari veri (partenze esatte e orologio del telefono)
 
-_Bozza del 04/10/2026, **da approvare da Enrico**. Idea di Enrico del 04/10/2026. Viene dopo il blocco B (bus con attesa media), pubblicato prima._
+_Specifica del 04/10/2026, **approvata da Enrico il 04/10/2026** (da fare subito, nella stessa sessione del blocco B). Idea di Enrico del 04/10/2026. Si fa subito dopo il blocco B (bus con attesa media) e si pubblica insieme._
 
 ## Obiettivo
 Quando un itinerario cade in un giorno coperto dall'orario ANM, il tratto in bus usa **la partenza vera**: «arrivi alla fermata alle 15:05, il 140 passa alle 15:04 e poi alle 15:26». Se aspettare non conviene più, il sito propone **la strada migliore senza quel bus**. Per oggi, l'ora di partenza può venire dall'**orologio del telefono**.
@@ -30,7 +30,7 @@ Quando un itinerario cade in un giorno coperto dall'orario ANM, il tratto in bus
 - Revisione del `revisore`.
 
 ## Compiti
-- [ ] Enrico approva questa specifica (o la cambia).
+- [x] Enrico approva questa specifica (04/10/2026).
 - [ ] Dati: strada senza bus e fermata di salita in `costruisci.mjs`; file delle partenze.
 - [ ] Calcolo dei tratti con le partenze vere e confronto.
 - [ ] Pagina: ora di partenza nel tratto, «Parto adesso», testo «Come calcoliamo i tempi».
