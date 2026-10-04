@@ -30,6 +30,7 @@ export const ZONE = {
 } as const;
 
 // Impronta delle posizioni delle tappe in città, in ordine di id: la stessa formula è in scripts/itinerari/costruisci.mjs
+let avvisoBus = false;
 export const firmaPosizioni = (tappe: { id: string; lat: number; lon: number; fine?: { lat: number; lon: number } }[]) =>
   createHash('sha1').update(JSON.stringify([...tappe].sort((a, b) => a.id.localeCompare(b.id)).map(t => [t.id, t.lat, t.lon, t.fine ? [t.fine.lat, t.fine.lon] : null]))).digest('hex').slice(0, 12);
 
@@ -64,6 +65,13 @@ async function carica(): Promise<Tappa[]> {
   const punti = citta.flatMap(t => t.fine ? [t.id, `${t.id}>`] : [t.id]).sort();
   if (tempi.firma !== firmaPosizioni(citta) || [...tempi.punti].sort().join() !== punti.join()) {
     errori.push('I tempi tra le tappe (src/data/tempi-tappe.json) sono stati calcolati con tappe diverse da quelle di oggi: rifalli con node scripts/itinerari/costruisci.mjs <cartella>');
+  }
+  // l'orario degli autobus ANM vale fino a una data: dopo, la build avvisa (aggiornamenti/fonti-dati.yaml, anm-gtfs)
+  const bus = (tempi.dati as { bus?: { al?: string } }).bus;
+  const oggi = new Date().toISOString().slice(0, 10).replace(/-/g, '');
+  if (bus?.al && bus.al < oggi && !avvisoBus) {
+    avvisoBus = true;
+    console.warn(`\x1b[33m[da ricontrollare]\x1b[0m l'orario degli autobus ANM nei tempi tra le tappe valeva fino al ${bus.al}: riscarica il feed e rifai i tempi (aggiornamenti/fonti-dati.yaml, riga anm-gtfs)`);
   }
   if (errori.length) throw new Error(`Itinerari da sistemare (${errori.length}):\n- ${errori.join('\n- ')}`);
   return tappe;
