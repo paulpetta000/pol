@@ -2,9 +2,11 @@
 
 _Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
-## Cosa fa Enrico adesso (04/10/2026, blocco C costruito)
-1. Provare l'anteprima del blocco C sul telefono (ramo `ccr-2e280b06-dh4h6y`), poi dire OK per pubblicarlo su `main`.
-2. Dopo: sessione di gruppo su `da-risolvere.md` (28 righe aperte, 16 sono locali senza orari: servono le schermate degli orari dalla scheda Google o dal sito del locale, oppure una sessione sul computer di Enrico con Claude in Chrome).
+## Cosa fa Enrico adesso (04/10/2026, blocco C pubblicato su `main`)
+1. Aprire il sito pubblicato (https://napoli-a-vela.vercel.app) dopo che Vercel ha finito (1-2 minuti) e guardare «Dove mangiare» e gli itinerari sul telefono.
+2. Aprire una sessione nuova nel cloud (repository `paulpetta000/pol`, ramo `main`) per il Blocco 3: modello Opus, effort extra. Prima parte: lo stile dei testi.
+3. Mandare il link dello strumento per confrontare il sito con i concorrenti (senza abbonamenti).
+4. Dopo: sessione di gruppo su `da-risolvere.md` (28 righe aperte, 16 sono locali senza orari: servono le schermate degli orari o una sessione sul computer di Enrico con Claude in Chrome).
 
 ## Skill valutate il 04/10/2026 (verifica del codice fatta da agenti; niente è installato)
 Copie lette in sola lettura in `/home/user/<autore>/<repo>` (fuori dal progetto, solo in quella sessione). Decisioni di Enrico e piano per il blocco 3:
@@ -13,8 +15,10 @@ Copie lette in sola lettura in `/home/user/<autore>/<repo>` (fuori dal progetto,
 - **awesome-design-md** (MIT): solo come ispirazione per le due proposte grafiche del blocco 3 (idee e struttura); mai caratteri proprietari, loghi, nomi o colori che identificano un marchio.
 - **img2threejs** (Apache-2.0): da accendere solo quando si rifanno le barche 3D, solo il clone base, senza plugin né `integrations/`.
 - **playwright-cli** (Microsoft): da provare con `npx`, senza aggiungerlo al progetto.
+- **find-skills** (MIT, Vercel, `vercel-labs/skills`, cartella `skills/find-skills`): è la vera «Find Skills» (il link `llmfit` che Enrico ha mandato è un'altra cosa: sceglie quali modelli di IA girano sul tuo computer, non serve al sito). È un solo file di istruzioni che cerca altre skill con `npx skills find` e controlla installazioni, fonte e stelle prima di consigliarle. Sì: copiare solo il testo di `SKILL.md` in una skill del progetto, con la nota di licenza; **non** il programma `npx skills` (manda statistiche di installazione a Vercel) e mai installare una skill trovata senza far leggere il codice a me e dire a Enrico cosa fa.
 - **No**: taste-skill, claude-mem, graphify, llmfit.
-- Da cercare ancora: «Find Skills» e uno strumento che confronti il sito con i concorrenti (senza abbonamenti): Enrico manda i link.
+- Da cercare ancora: uno strumento che confronti il sito con i concorrenti (senza abbonamenti): Enrico manda il link.
+- **Barche 3D (deciso da Enrico il 04/10/2026)**: devono sembrare vere come una fotografia e restare 3D: **si ruotano con il dito e si muovono nell'acqua** (onde, scia, foil che si alza). Non basta un'immagine ferma. Forma da AC75 vera (scafo e foil da foto e disegni con licenza libera), materiali realistici, luce da ambiente vero, caricamento solo al tocco e Lighthouse 95+ sulle pagine. Fare prima una prova su una sola barca (con img2threejs, clone base) e farla vedere a Enrico.
 
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.

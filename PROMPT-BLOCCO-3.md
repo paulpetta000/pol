@@ -47,6 +47,12 @@ Prima fai un controllo di coerenza con consistent-ui (spazi, caratteri, colori e
 ### Estetica: molto bella, non solo ordinata (aggiunto il 03/10/2026)
 Prima di applicare le 7 proposte, fai **due proposte di direzione grafica** (home e una pagina interna, con i dati veri e le foto che abbiamo) e fammi scegliere, come nel blocco 1. Poi applica la scelta a tutto il sito. UX e UI aggiornate, tema chiaro e scuro, telefono per primo. Effort alto o extra.
 
+### Logo e identità del marchio (aggiunto il 04/10/2026)
+Il logo di oggi non piace a Enrico (l'ho fatto io come bozza). Fare **3 o 4 direzioni** (SVG, chiaro e scuro, anche piccolo come icona del telefono), farle scegliere, poi applicarle: colori, caratteri e uso del marchio. Anche il look «Orario» si può cambiare: va rimesso in discussione nelle due proposte grafiche. Presentazioni e banner non servono. Ispirazione: awesome-design-md (idee, non marchi altrui). I caratteri di Google Fonts si scaricano e si servono dal sito (cartella `/fonts`): così nessuna richiesta a Google, e la regola sui servizi esterni e la pagina Privacy restano come sono.
+
+### Barche 3D realistiche (aggiunto il 04/10/2026)
+Enrico vuole barche **vere come una fotografia**, in 3D: si **ruotano con il dito** e **si muovono nell'acqua** (onde, scia, foil che si alza). Forma da AC75 vera (scafo, foil, vela doppia) da foto e disegni con licenza libera; materiali realistici (carbonio, vernice, vela); luce da ambiente vero con ombre e riflessi sul mare. Si carica solo al tocco e non deve far scendere Lighthouse sotto 95. **Prima una prova su una sola barca** (img2threejs, solo il clone base), da mostrare a Enrico sul telefono; poi, se piace, le altre.
+
 ### SEO (dopo che la struttura è finita; aggiunto il 03/10/2026)
 - Controllo con SEO Audit Kit: titoli, descrizioni, intestazioni, link interni, dati strutturati; elenco dei problemi in ordine di importanza.
 - Pagine che Google può indicizzare: il compositore degli itinerari non lo è (il contenuto sta dopo il «#»). Proponi pagine fisse per gli itinerari pronti, e valuta con Programmatic SEO Gate se ha senso una pagina per ogni tappa e per ogni locale (niente pagine fotocopia).
