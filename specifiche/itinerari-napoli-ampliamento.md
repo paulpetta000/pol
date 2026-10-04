@@ -120,7 +120,7 @@ Attività da fare a Napoli, oltre a visitare e mangiare: **cooking class**, labo
 ## Ordine e compiti (A → B → C → D, poi il blocco 3 del sito)
 Un blocco per sessione, con commit e push alla fine e l'OK di Enrico prima di passare al successivo.
 - [x] **Blocco A · Luoghi** (pubblicato il 03/10/2026; Pozzuoli e ville vesuviane rimandate, vedi `da-risolvere.md`): ricerca di **18 luoghi** (circa 8 storici, 5 panoramici, 5 giardini; entrano tutti quelli con fonte ufficiale) e **5 gite in più** (Reggia di Caserta, Pozzuoli, ville vesuviane, Pietrarsa, Sorrento), Enrico rivede l'elenco, schede, foto, testi, tempi, build. Pagine fisse: rimandate al blocco 3 (sezione 4).
-- [x] **Blocco B · Autobus** (costruito il 04/10/2026, da provare sul telefono e pubblicare con l'OK di Enrico): ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
+- [x] **Blocco B · Autobus** (pubblicato su `main` il 04/10/2026 con l'OK di Enrico, insieme all'itinerario dal vivo: `specifiche/bus-orari-veri.md`): ricerca delle linee, blocco `LINEE` per i bus, tempi rifatti, avvisi rivalutati, testo «Come calcoliamo i tempi».
 - [ ] **Blocco C · Dove mangiare**: ricerca dei locali, nuovo tipo `mangiare`, filtri, avvisi di orario, pagina «Dove mangiare» con i filtri, testi, controlli (pagine fisse per locale: rimandate al blocco 3, sezione 4).
 - [ ] **Blocco D · Esperienze**: ricerca degli operatori, nuovo tipo `esperienza`, filtri, testi, controlli (pagine fisse: rimandate al blocco 3). Prima di costruire, Enrico approva elenco e numeri.
 - [ ] Alla fine di ogni blocco: provare sul telefono, aggiornare `PROGRESS.md` (poche righe).

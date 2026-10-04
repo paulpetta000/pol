@@ -71,7 +71,7 @@ Il giorno dell'itinerario la pagina funziona come un navigatore: guarda **che or
 - [x] Pagina: «Fatto», aggiornamento da solo, pannello della posizione, testi, Privacy.
 - [x] Prove nel browser (ora e posizione finte, senza rete, axe), `PROGRESS.md`.
 - [x] Revisione del `revisore` (04/10/2026): 11 correzioni fatte (tappa in corso, Su/Giù e trascinamento con le fatte, aggiornamento senza ridisegnare mappa e avvisi, GPS che riparte da solo solo con il permesso già dato, testo del pannello, corse che «attraversavano» il capolinea, «oggi non passa», messaggi della posizione, «Fatto» ripulito quando togli una tappa, testi).
-- [ ] Prova di Enrico sul telefono.
+- [x] Pubblicato su `main` il 04/10/2026 con l'OK di Enrico (42 prove automatiche sull'anteprima). Il GPS sul telefono di Enrico non è stato chiesto: vedi `da-risolvere.md`.
 
 ## Fatto il 04/10/2026: cosa è venuto fuori
 - Martedì dalle 9 alle 19, ogni spostamento provato ogni 10 minuti: il bus si propone nel 18,4% dei casi (16,5% con l'attesa media), la scelta cambia nel 5,5%.
