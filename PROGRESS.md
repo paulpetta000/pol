@@ -4,9 +4,9 @@ _Ultimo aggiornamento: 04/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.
 
 ## Cosa fa Enrico adesso (04/10/2026, notte)
 1. Domani: sessione nuova nel cloud da `main`, **Opus 5.5, effort alto**, con il testo qui sotto.
-2. Tenere il telefono a portata di mano: all'inizio si guarda insieme perché il GPS non è stato chiesto (`da-risolvere.md`, ultima riga).
+2. Il GPS che sul telefono di Enrico non è stato chiesto è in `da-risolvere.md`: si guarda con le altre righe aperte, quando si fa il gruppo (non adesso).
 
-Testo per la prossima sessione: «Leggi `CLAUDE.md`, `PROGRESS.md` e `specifiche/itinerari-napoli-ampliamento.md`. Prima guardiamo insieme l'ultima riga di `da-risolvere.md` (il GPS che sul mio telefono non è stato chiesto), poi lavoriamo sul blocco C · Dove mangiare (sezione 2 della specifica). Guidami passo passo come dice `CLAUDE.md`.»
+Testo per la prossima sessione: «Leggi `CLAUDE.md`, `PROGRESS.md` e `specifiche/itinerari-napoli-ampliamento.md`. Lavoriamo solo sul blocco C · Dove mangiare (sezione 2 della specifica). Guidami passo passo come dice `CLAUDE.md`.»
 
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
