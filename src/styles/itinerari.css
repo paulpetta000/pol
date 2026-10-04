@@ -19,7 +19,7 @@
   --it-ink: #000000; --it-ink-2: #3A3A38; --it-ink-3: #5E5E5A;
   --it-line: #D9D9D5; --it-line-strong: #85857F;
   --it-tile: #F3C431; --it-tile-ink: #000000; --it-tile-edge: #C99A12;
-  --it-funi: #0067B1; --it-metro: #6A3FB5;
+  --it-funi: #0067B1; --it-metro: #6A3FB5; --it-bus: #007A4D;
   --it-warn: #9A3F00; --it-warn-bg: #FFF0E3; --it-warn-line: #E39A63;
   --it-danger: #B42318; --it-danger-ink: #FFFFFF;
   --it-land: #EDEDEA; --it-sea: #D3E1E6; --it-park: #DCE6D4; --it-road: #FFFFFF; --it-road-c: #CFCFCA; --it-path: #C9C9C4;
@@ -39,7 +39,7 @@
     --it-ink: #FFFFFF; --it-ink-2: #CFCFCB; --it-ink-3: #A3A39E;
     --it-line: #2F2F2C; --it-line-strong: #6E6E69;
     --it-tile: #F5CC48; --it-tile-ink: #000000; --it-tile-edge: #B88A10;
-    --it-funi: #5AB0FF; --it-metro: #B794F6;
+    --it-funi: #5AB0FF; --it-metro: #B794F6; --it-bus: #3DDC97;
     --it-warn: #FFAA6B; --it-warn-bg: #2A1708; --it-warn-line: #7A4318;
     --it-danger: #FF8A80; --it-danger-ink: #1A0000;
     --it-land: #121211; --it-sea: #0C1A1F; --it-park: #12200F; --it-road: #2A2A28; --it-road-c: #050505; --it-path: #252523;
@@ -51,7 +51,7 @@
   --it-ink: #FFFFFF; --it-ink-2: #CFCFCB; --it-ink-3: #A3A39E;
   --it-line: #2F2F2C; --it-line-strong: #6E6E69;
   --it-tile: #F5CC48; --it-tile-ink: #000000; --it-tile-edge: #B88A10;
-  --it-funi: #5AB0FF; --it-metro: #B794F6;
+  --it-funi: #5AB0FF; --it-metro: #B794F6; --it-bus: #3DDC97;
   --it-warn: #FFAA6B; --it-warn-bg: #2A1708; --it-warn-line: #7A4318;
   --it-danger: #FF8A80; --it-danger-ink: #1A0000;
   --it-land: #121211; --it-sea: #0C1A1F; --it-park: #12200F; --it-road: #2A2A28; --it-road-c: #050505; --it-path: #252523;
@@ -168,6 +168,8 @@
 .it-tratto svg { flex: none; color: var(--it-ink-3); }
 .it-tratto--metro { border-left: 5px solid var(--it-metro); padding-left: 8px; }
 .it-tratto--funi { border-left: 5px solid var(--it-funi); padding-left: 8px; }
+.it-tratto--bus { border-left: 5px solid var(--it-bus); padding-left: 8px; }
+.it-tratto__nota { color: var(--it-ink-3); }
 .it-tratto__cr { color: var(--it-ink-3); }
 .it-attesa { grid-column: 2; margin: 2px 0 2px 4px; padding: 6px 0 6px 10px; border-left: 3px solid var(--it-line); color: var(--it-ink-3); font-size: .875rem; }
 .it-blocco { grid-column: 2; position: relative; margin: 4px 0; border: 1px solid var(--it-line); border-radius: var(--it-r); background: var(--it-surface); }
@@ -263,6 +265,7 @@
 .it-legenda i { width: 22px; height: 0; border-top: 4px dotted var(--it-ink); }
 .it-legenda i.it-l-funi { border-top: 5px solid var(--it-funi); }
 .it-legenda i.it-l-metro { border-top: 5px solid var(--it-metro); }
+.it-legenda i.it-l-bus { border-top: 5px solid var(--it-bus); }
 .it-riassunto { list-style: none; margin: 0; padding: 8px 16px 4px; display: grid; gap: 2px; }
 .it-riassunto li { margin: 0; }
 .it-riassunto button { width: 100%; display: grid; grid-template-columns: 30px 48px minmax(0, 1fr); gap: 6px; align-items: center; min-height: 44px; padding: 0; border: 0; background: transparent; color: var(--it-ink); font: inherit; font-size: .9375rem; text-align: left; cursor: pointer; }
@@ -284,6 +287,7 @@
 .m-piedi { fill: none; stroke: var(--it-ink); stroke-width: 4; stroke-dasharray: .1 7; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .m-funi { fill: none; stroke: var(--it-funi); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .m-metro { fill: none; stroke: var(--it-metro); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
+.m-bus { fill: none; stroke: var(--it-bus); stroke-width: 6; stroke-linecap: round; stroke-linejoin: round; vector-effect: non-scaling-stroke; }
 .m-trattino { stroke: var(--it-ink); stroke-width: 1.5; vector-effect: non-scaling-stroke; }
 .m-punto { fill: var(--it-ink); }
 .m-segno { cursor: pointer; }

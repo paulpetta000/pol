@@ -1,4 +1,4 @@
-// Calcola i tempi tra le tappe degli itinerari, a piedi e con metro, funicolari, Cumana e ascensori pubblici.
+// Calcola i tempi tra le tappe degli itinerari, a piedi e con metro, funicolari, Cumana, autobus e ascensori pubblici.
 // Scrive src/data/tempi-tappe.json: per ogni coppia di punti (le tappe in città e la fine dei percorsi a piedi)
 // i minuti stimati, i metri a piedi, la salita e i mezzi usati, in due casi: giorno feriale e domenica pomeriggio.
 // Uso: node scripts/itinerari/costruisci.mjs <cartella> [tappa1,tappa2 …]
@@ -11,12 +11,16 @@
 //   strada prendo il valore basso dei dintorni (un quarto dei 25 punti vicini, circa 150 m per lato, è più basso) e lo addolcisco lungo
 //   la strada; su ponti, gallerie, portici e passaggi coperti la quota va dritta da un capo all'altro;
 // - mezzi: le linee di OpenStreetMap con attese e tempi delle fonti ufficiali (tabella LINEE); chi sale paga
-//   l'attesa media (metà della frequenza) e il tempo per scendere ai binari o risalire in strada.
+//   l'attesa media (metà della frequenza) e il tempo per scendere ai binari o risalire in strada;
+// - autobus: le linee della tabella BUS, con fermate, tempi e frequenze dall'orario programmato ANM (feed GTFS,
+//   scripts/itinerari/gtfs.mjs); l'attesa è metà della frequenza a quella fermata, in quella fascia oraria.
+//   Si va solo nel verso della corsa (le fermate dei due versi sono diverse).
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import yaml from 'js-yaml';
 import { createHash } from 'node:crypto';
+import { lineeBus } from './gtfs.mjs';
 
 const RADICE = fileURLToPath(new URL('../../', import.meta.url));
 const dir = process.argv[2];
@@ -57,6 +61,24 @@ const LINEE = [
   { id: 'FD', nome: 'Funicolare di Mergellina', rel: 1783329, ritorno: 2168323, attesa: ogni(5, 5, 5), accesso: 1, uscita: 1, totale: 7, raggio: 120 },
   { id: 'CU', nome: 'Cumana', rel: 2168312, ritorno: 2168313, attesa: ogni(7.5, 7.5, 7.5), accesso: 1.5, uscita: 1.5, totale: 16 /* Montesanto–Bagnoli */, finoA: 'Bagnoli', raggio: 160 }
 ];
+// Autobus ANM (feed GTFS, licenza IODL 2.0). Solo le linee che accorciano almeno uno spostamento tra le tappe
+// (prova del 03/10/2026, ricerca/2026-10-03-autobus-note/): per una tappa nuova lontana dalle altre, aggiungere qui
+// la linea che la serve e rifare i tempi. Le fermate di queste linee, tutte, vanno in src/data/linee-bus.json.
+// finestre: la fascia oraria di ogni scenario (minuti dalla mezzanotte) e i giorni da cui prendere l'orario tipico
+// (0 = domenica); accesso: minuti per salire (pagare, timbrare); uscita: per scendere; raggio: metri dalla strada;
+// preferenza: il bus si sceglie solo se fa risparmiare almeno tanti minuti (è meno puntuale di metro e piedi):
+// pesa nella scelta del percorso, non nei minuti scritti.
+const BUS = {
+  linee: ['204', '140', 'C16', '151', 'R2', 'R7', '182', 'C31', '147', '168', 'C21', 'C1', 'C44'],
+  finestre: {
+    feriale: { giorni: [2, 3, 4], da: 9 * 60, a: 19 * 60 },
+    sabato: { giorni: [6], da: 9 * 60, a: 14 * 60 + 50 },
+    'sabato-pomeriggio': { giorni: [6], da: 14 * 60 + 50, a: 19 * 60 },
+    domenica: { giorni: [0], da: 9 * 60, a: 14 * 60 },
+    festivo: { giorni: [0], da: 14 * 60, a: 19 * 60 }
+  },
+  accesso: 1, uscita: 0.5, raggio: 80, preferenza: 5
+};
 // Ascensori pubblici gratuiti dell'ANM: la domenica e nei festivi chiudono alle 14:00
 const ASCENSORI_FERIALI = /Su[^;]*?0?7:30-14:00|PH,Su 0?7:30-14:00/;
 
@@ -281,6 +303,36 @@ for (const L of LINEE) {
   console.log(`${L.nome}: ${st.length} fermate (${st.map(s => s.nome).join(', ')})`);
 }
 
+// Autobus: una fermata del grafo per ogni linea e fermata ANM, con l'attesa di ogni scenario
+const busFile = path.join(dir, 'anm-gtfs.zip');
+if (!fs.existsSync(busFile)) throw new Error(`Manca ${busFile}: scaricalo con scripts/itinerari/scarica.mjs`);
+const GTFS = lineeBus(busFile, BUS);
+console.log(`\nAutobus ANM: orario dal ${GTFS.feed.dal} al ${GTFS.feed.al}; giorni tipici ${Object.entries(GTFS.date).map(([k, v]) => `${k} ${v}`).join(', ')}`);
+const fuori = new Map();   // fermate senza strada vicina (fuori dal riquadro): ci si passa sopra, non si scende
+const BUSLINEE = GTFS.linee.map(B => {
+  const L = { id: B.id, nome: B.nome, tipo: B.tipo, accesso: BUS.accesso, uscita: BUS.uscita, bus: true, fermate: [] };
+  const serve = new Set(B.archi.flatMap(a => [a.da, a.a]));
+  let senza = 0;
+  for (const sid of serve) {
+    const s = B.fermate.get(sid);
+    const attesa = {};
+    for (const sc of Object.keys(BUS.finestre)) {
+      const n = B.passaggi[sc][sid] || 0, f = BUS.finestre[sc];
+      attesa[sc] = n ? (f.a - f.da) / n / 2 : null;
+    }
+    const v = vicino(s, BUS.raggio, principale);
+    if (!v) { senza++; fuori.set(`${B.id}:${sid}`, { lat: s.lat, lon: s.lon }); continue; }
+    fermate.push({ id: `${B.id}:${sid}`, linea: B.id, nome: s.nome, lat: s.lat, lon: s.lon, accessi: [v], attesa });
+    L.fermate.push(s.nome);
+  }
+  for (const a of B.archi) corse.push({ da: `${B.id}:${a.da}`, a: `${B.id}:${a.a}`, t: a.tempi, linea: B.id, unVerso: true, punti: a.punti });
+  const ogni = Object.values(B.passaggi.feriale);
+  console.log(`${B.nome}: ${serve.size} fermate${senza ? ` (${senza} lontane dalle strade del riquadro, escluse)` : ''}, al massimo ${Math.max(...ogni)} corse tra le 9 e le 19 a una fermata`);
+  return L;
+});
+const MEZZI = new Map([...LINEE, ...BUSLINEE].map(L => [L.id, L]));
+const perId = new Map([...fuori, ...fermate.map(f => [f.id, f])]);
+
 // ---------- Ricerca dei percorsi (Dijkstra) ----------
 class Heap {
   constructor() { this.a = []; }
@@ -295,19 +347,21 @@ function rete(scenario) {
   const add = (da, e) => { if (!extra.has(da)) extra.set(da, []); extra.get(da).push(e); };
   if (scenario.mezzi) {
     for (const f of fermate) {
-      const L = LINEE.find(l => l.id === f.linea);
-      const attesa = L.attesa[scenario.nome];
+      const L = MEZZI.get(f.linea);
+      const attesa = (f.attesa || L.attesa)[scenario.nome];
       if (attesa == null) continue;    // linea ferma in questo scenario
+      const pen = L.bus ? BUS.preferenza : 0;
       for (const ac of f.accessi) {
-        add(ac.nodo.id, { a: f.id, t: ac.m / PIEDI.metriAlMinuto + L.accesso + attesa, m: ac.m, su: 0, tipo: 'sale', linea: L.id });
+        add(ac.nodo.id, { a: f.id, t: ac.m / PIEDI.metriAlMinuto + L.accesso + attesa + pen, m: ac.m, su: 0, tipo: 'sale', linea: L.id, ...(pen ? { pen } : {}) });
         add(f.id, { a: ac.nodo.id, t: ac.m / PIEDI.metriAlMinuto + L.uscita, m: ac.m, su: 0, tipo: 'scende', linea: L.id });
       }
     }
     for (const c of corse) {
-      const L = LINEE.find(l => l.id === c.linea);
-      if (L.attesa[scenario.nome] == null) continue;
-      add(c.da, { a: c.a, t: c.t, m: 0, su: 0, tipo: 'corsa', linea: c.linea });
-      add(c.a, { a: c.da, t: c.t, m: 0, su: 0, tipo: 'corsa', linea: c.linea });
+      const L = MEZZI.get(c.linea);
+      const t = typeof c.t === 'object' ? c.t[scenario.nome] : L.attesa[scenario.nome] == null ? null : c.t;
+      if (t == null) continue;
+      add(c.da, { a: c.a, t, m: 0, su: 0, tipo: 'corsa', linea: c.linea, punti: c.punti });
+      if (!c.unVerso) add(c.a, { a: c.da, t, m: 0, su: 0, tipo: 'corsa', linea: c.linea });
     }
   }
   const chiusi = new Set([...ascensori].filter(([, x]) => scenario.nome === 'festivo' && x.chiudeDomenica).map(([id]) => id));
@@ -344,14 +398,14 @@ function percorso(r, destinazione) {
   const tratti = [], dove = [destinazione];
   for (let x = destinazione; r.prec.has(x); x = r.prec.get(x).da) { tratti.push(r.prec.get(x).e); dove.push(r.prec.get(x).da); }
   tratti.reverse(); dove.reverse();
-  let m = 0, su = 0; const mezzi = [], passi = [];
+  let m = 0, su = 0, pen = 0; const mezzi = [], passi = [];
   for (const e of tratti) {
-    m += e.m; su += e.su;
+    m += e.m; su += e.su; pen += e.pen || 0;
     if (e.tipo === 'corsa' && mezzi[mezzi.length - 1] !== e.linea) mezzi.push(e.linea);
     if (e.asc && ascensori.get(e.asc)?.nome && !passi.includes(ascensori.get(e.asc).nome)) passi.push(ascensori.get(e.asc).nome);
   }
   // il disegno del percorso, a pezzi: a piedi o sulla linea (per le mappe dei bozzetti e del blocco 2)
-  const posizione = id => nodi.get(id) || fermate.find(f => f.id === id);
+  const posizione = id => nodi.get(id) || perId.get(id);
   const pezzi = [];
   tratti.forEach((e, k) => {
     const modo = e.tipo === 'corsa' ? e.linea : e.tipo === 'piedi' ? 'piedi' : null;
@@ -359,9 +413,10 @@ function percorso(r, destinazione) {
     const a = posizione(dove[k]), b = posizione(dove[k + 1]);
     let ultimo = pezzi[pezzi.length - 1];
     if (!ultimo || ultimo.modo !== modo) { ultimo = { modo, punti: [[+a.lat.toFixed(6), +a.lon.toFixed(6)]] }; pezzi.push(ultimo); }
+    if (e.punti) ultimo.punti.push(...e.punti);   // autobus: il percorso della linea tra le due fermate
     ultimo.punti.push([+b.lat.toFixed(6), +b.lon.toFixed(6)]);
   });
-  return { m, su, mezzi, ascensori: passi, tratti, pezzi };
+  return { m, su, pen, mezzi, ascensori: passi, tratti, pezzi };
 }
 
 // ---------- Punti delle tappe ----------
@@ -421,7 +476,7 @@ const SCENARI = [
 ];
 // impronta delle posizioni: la build (src/lib/tappe.ts) controlla che i tempi siano stati fatti con le tappe di oggi
 const firma = createHash('sha1').update(JSON.stringify([...tappe].sort((a, b) => a.id.localeCompare(b.id)).map(t => [t.id, t.lat, t.lon, t.fine ? [t.fine.lat, t.fine.lon] : null]))).digest('hex').slice(0, 12);
-const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30' }, parametri: PIEDI, linee: LINEE.map(({ id, nome, chiusa, fermate }) => ({ id, nome, ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
+const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30', bus: { fonte: 'ANM, feed GTFS (IODL 2.0)', dal: GTFS.feed.dal, al: GTFS.feed.al, giorni: GTFS.date } }, parametri: PIEDI, linee: [...LINEE, ...BUSLINEE].map(({ id, nome, tipo, chiusa, fermate }) => ({ id, nome, ...(tipo ? { tipo } : {}), ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
 const rapporto = [];
 const disegni = {};   // scenario -> righe di punti -> pezzi del percorso (per la mappa degli itinerari)
 for (const sc of SCENARI) {
@@ -434,9 +489,10 @@ for (const sc of SCENARI) {
     disegni[sc.nome].push(rd);
     for (const b of punti) {
       if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); rd.push(null); continue; }
-      const t = r.tempo.get(b.nodo);
-      if (t == null) throw new Error(`Nessun percorso da ${a.id} a ${b.id} (${sc.nome})`);
+      const costo = r.tempo.get(b.nodo);
+      if (costo == null) throw new Error(`Nessun percorso da ${a.id} a ${b.id} (${sc.nome})`);
       const p = percorso(r, b.nodo);
+      const t = costo - p.pen;   // i minuti veri, senza il peso che serve solo a scegliere
       rd.push(p.pezzi);
       rm.push(Math.round(t)); rp.push(Math.round(p.m / 10) * 10); rs.push(Math.round(p.su)); rz.push([...p.mezzi, ...p.ascensori.map(n => 'asc:' + n)].join('+'));
       if (COPPIE.some(([x, y]) => x === a.id && y === b.id)) rapporto.push({ scenario: sc.nome, da: a.id, a: b.id, min: t, ...p, linea: dist(nodi.get(a.nodo), nodi.get(b.nodo)) });
@@ -448,6 +504,23 @@ for (const sc of SCENARI) {
 }
 fs.writeFileSync(path.join(RADICE, 'src/data/tempi-tappe.json'), JSON.stringify(uscita) + '\n');
 console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
+
+// Tutte le fermate delle linee bus (anche quelle lontane dalle tappe di oggi), con la frequenza di ogni scenario
+// al capolinea di partenza: servono per le tappe e i locali che verranno (la fermata più vicina). La pagina non le usa.
+{
+  const ogni = (B, d) => Object.fromEntries(Object.entries(BUS.finestre).map(([sc, f]) => {
+    const n = B.passaggi[sc][d.fermate[0].id] || 0;
+    return [sc, n ? Math.round((f.a - f.da) / n) : null];
+  }));
+  const file = {
+    generato: uscita.generato, fonte: 'ANM, feed GTFS https://www.anm.it/google/google-transit.zip (licenza IODL 2.0)',
+    dal: GTFS.feed.dal, al: GTFS.feed.al, giorni: GTFS.date, fasce: BUS.finestre,
+    nota: 'ogni: minuti tra due corse in partenza dal primo capolinea della direzione, nella fascia dello scenario (orario programmato)',
+    linee: GTFS.linee.map(B => ({ id: B.id, nome: B.nome, tipo: B.tipo, direzioni: B.direzioni.map(d => ({ ...d, ogni: ogni(B, d) })) }))
+  };
+  fs.writeFileSync(path.join(RADICE, 'src/data/linee-bus.json'), JSON.stringify(file, null, 1) + '\n');
+  console.log(`Scritto src/data/linee-bus.json (${GTFS.linee.length} linee)`);
+}
 
 // ---------- Disegno dei percorsi per la mappa degli itinerari ----------
 // src/data/percorsi-tappe.json: per ogni coppia di punti il percorso, a pezzi (a piedi o su una linea),
@@ -486,7 +559,8 @@ console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
       if (prima) pts = [prima, ...pts];
       pts = pts.filter((q, k) => k === 0 || q[0] !== pts[k - 1][0] || q[1] !== pts[k - 1][1]);
       prima = pts[pts.length - 1];
-      let s = p.modo === 'piedi' ? 'p' : p.modo, px = 0, py = 0;
+      // il mezzo («p» a piedi, o l'id della linea) e un punto, poi i numeri
+      let s = (p.modo === 'piedi' ? 'p' : p.modo) + '.', px = 0, py = 0;
       for (const [x, y] of pts) { s += numero(x - px) + numero(y - py); px = x; py = y; }
       return s;
     }).join('~');
@@ -511,7 +585,7 @@ for (const x of rapporto) {
   let cur = null;
   const righe = [];
   for (const e of x.tratti) {
-    const k = e.tipo === 'piedi' ? 'a piedi' : e.tipo === 'corsa' ? LINEE.find(l => l.id === e.linea).nome : e.tipo === 'sale' ? `sale (${e.linea})` : `scende (${e.linea})`;
+    const k = e.tipo === 'piedi' ? 'a piedi' : e.tipo === 'corsa' ? MEZZI.get(e.linea).nome : e.tipo === 'sale' ? `sale (${e.linea})` : `scende (${e.linea})`;
     if (!cur || cur.k !== k) { cur = { k, t: 0, m: 0, su: 0, nomi: new Set() }; righe.push(cur); }
     cur.t += e.t; cur.m += e.m; cur.su += e.su;
     if (e.tipo === 'piedi') { const w = vie.find(v => v.id === e.via); if (w?.tags.name) cur.nomi.add(w.tags.name); }

@@ -11,6 +11,7 @@ const P: Record<string, string> = {
   piedi: '<circle cx="13" cy="4.5" r="1.8"/><path d="M10 21l2-6 3 3v3M12 15l-1-5 4 1 2 3M11 10l-3 2-1 3"/>',
   funicolare: '<rect x="5" y="4" width="14" height="13" rx="2"/><path d="M5 11h14M9 21l1.5-4M15 21l-1.5-4M2 21h20"/>',
   metro: '<rect x="6" y="3" width="12" height="15" rx="3"/><path d="M6 11h12M9 21l1.5-3M15 21l-1.5-3"/><circle cx="9.5" cy="14.5" r=".8" fill="currentColor"/><circle cx="14.5" cy="14.5" r=".8" fill="currentColor"/>',
+  bus: '<rect x="4.5" y="3.5" width="15" height="14" rx="2.5"/><path d="M4.5 11h15M4.5 7h15M7.5 17.5V20M16.5 17.5V20"/><circle cx="8" cy="14.3" r=".8" fill="currentColor"/><circle cx="16" cy="14.3" r=".8" fill="currentColor"/>',
   attenzione: '<path d="M12 3.5L2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.5"/>',
   matita: '<path d="M4 20l1-4L16 5l3 3L8 19z"/>',
   freccia: '<path d="M5 12h14M13 6l6 6-6 6"/>',

@@ -2,7 +2,9 @@
 // - strade, scale, ascensori, stazioni e linee di metro, treni e funicolari da OpenStreetMap
 //   (Overpass API, dati © OpenStreetMap, licenza ODbL), nel riquadro della mappa;
 // - le quote del terreno dal modello Copernicus GLO-30 (30 m, dati aperti dell'ESA/Unione europea),
-//   letto solo nella parte che serve dal file pubblico su AWS (Registry of Open Data).
+//   letto solo nella parte che serve dal file pubblico su AWS (Registry of Open Data);
+// - gli orari programmati degli autobus ANM, feed GTFS ufficiale (licenza IODL 2.0): anm-gtfs.zip.
+//   Vale per un periodo (il file lo dice): per aggiornarlo, cancellare anm-gtfs.zip e rilanciare.
 // Uso: node scripts/itinerari/scarica.mjs <cartella>   (poi: node scripts/itinerari/costruisci.mjs <cartella>)
 import fs from 'node:fs';
 import path from 'node:path';
@@ -81,4 +83,17 @@ if (!fs.existsSync(demFile)) {
   }));
   console.log(`quote.json: ${w}×${h} punti, da ${quote.reduce((a, b) => Math.min(a, b))} a ${quote.reduce((a, b) => Math.max(a, b))} m`);
 } else console.log('quote.json già scaricato');
+
+// ---------- Autobus ANM (GTFS) ----------
+const busFile = path.join(dir, 'anm-gtfs.zip');
+if (!fs.existsSync(busFile)) {
+  const url = 'https://www.anm.it/google/google-transit.zip';
+  console.log('ANM: scarico il feed GTFS degli autobus…');
+  const res = await fetch(url, { headers: { 'User-Agent': UA } });
+  if (!res.ok) throw new Error(`ANM GTFS: risposta ${res.status}`);
+  const b = Buffer.from(await res.arrayBuffer());
+  if (b.readUInt32LE(0) !== 0x04034b50) throw new Error('ANM GTFS: il file scaricato non è uno zip');
+  fs.writeFileSync(busFile, b);
+  console.log(`anm-gtfs.zip: ${(b.length / 1e6).toFixed(1)} MB`);
+} else console.log('anm-gtfs.zip già scaricato');
 console.log('FATTO');

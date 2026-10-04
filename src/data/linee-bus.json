@@ -1,0 +1,4959 @@
+{
+ "generato": "2026-10-04",
+ "fonte": "ANM, feed GTFS https://www.anm.it/google/google-transit.zip (licenza IODL 2.0)",
+ "dal": "20260922",
+ "al": "20261231",
+ "giorni": {
+  "feriale": "20260922",
+  "sabato": "20261003",
+  "sabato-pomeriggio": "20261003",
+  "domenica": "20261004",
+  "festivo": "20261004"
+ },
+ "fasce": {
+  "feriale": {
+   "giorni": [
+    2,
+    3,
+    4
+   ],
+   "da": 540,
+   "a": 1140
+  },
+  "sabato": {
+   "giorni": [
+    6
+   ],
+   "da": 540,
+   "a": 890
+  },
+  "sabato-pomeriggio": {
+   "giorni": [
+    6
+   ],
+   "da": 890,
+   "a": 1140
+  },
+  "domenica": {
+   "giorni": [
+    0
+   ],
+   "da": 540,
+   "a": 840
+  },
+  "festivo": {
+   "giorni": [
+    0
+   ],
+   "da": 840,
+   "a": 1140
+  }
+ },
+ "nota": "ogni: minuti tra due corse in partenza dal primo capolinea della direzione, nella fascia dello scenario (orario programmato)",
+ "linee": [
+  {
+   "id": "B204",
+   "nome": "Filobus 204",
+   "tipo": "filobus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "MEDINA - MUNICIPIO",
+     "fermate": [
+      {
+       "id": "3301",
+       "nome": "CARDARELLI-OSPEDALE",
+       "lat": 40.8649125911459,
+       "lon": 14.2267723613777
+      },
+      {
+       "id": "3300",
+       "nome": "CARDARELLI - OSPEDALE CARDARELLI",
+       "lat": 40.8659045452442,
+       "lon": 14.2269254422973
+      },
+      {
+       "id": "3342",
+       "nome": "COLLI AMINEI",
+       "lat": 40.868334280483,
+       "lon": 14.2305936219584
+      },
+      {
+       "id": "3343",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8682027826372,
+       "lon": 14.2331672192026
+      },
+      {
+       "id": "3344",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8690546261817,
+       "lon": 14.2359668341611
+      },
+      {
+       "id": "3345",
+       "nome": "COLLI AMINEI - TRIBUNALE",
+       "lat": 40.8706550304884,
+       "lon": 14.2389092517809
+      },
+      {
+       "id": "3346",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8712387145371,
+       "lon": 14.2399943408097
+      },
+      {
+       "id": "3347",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8715571551733,
+       "lon": 14.2418419755275
+      },
+      {
+       "id": "3348",
+       "nome": "COLLI AMINEI",
+       "lat": 40.871053646605,
+       "lon": 14.2440460929986
+      },
+      {
+       "id": "3349",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8701363184226,
+       "lon": 14.2470321522247
+      },
+      {
+       "id": "3378",
+       "nome": "COLLI AMINEI-C.T.O.",
+       "lat": 40.8686171616369,
+       "lon": 14.2468387288122
+      },
+      {
+       "id": "3351",
+       "nome": "COLLI AMINEI - FACOLTÀ DI TEOLOGIA",
+       "lat": 40.8675927785888,
+       "lon": 14.248612503456
+      },
+      {
+       "id": "3251",
+       "nome": "CAPODIMONTE",
+       "lat": 40.8670034948503,
+       "lon": 14.2487289282083
+      },
+      {
+       "id": "3250",
+       "nome": "CAPODIMONTE - BASILICA DELL'INCORONATA E CATACOMBE DI S.GENNARO",
+       "lat": 40.8655718610167,
+       "lon": 14.2474517040585
+      },
+      {
+       "id": "3355",
+       "nome": "AMEDEO DI SAVOIA 269",
+       "lat": 40.8648301086993,
+       "lon": 14.2483619135714
+      },
+      {
+       "id": "3356",
+       "nome": "AMEDEO DI SAVOIA 205",
+       "lat": 40.8629924580038,
+       "lon": 14.2483678579651
+      },
+      {
+       "id": "3357",
+       "nome": "AMEDEO DI SAVOIA 193",
+       "lat": 40.8601367713722,
+       "lon": 14.248358613182
+      },
+      {
+       "id": "3118",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8585693479797,
+       "lon": 14.2483615006353
+      },
+      {
+       "id": "3119",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8565107957848,
+       "lon": 14.2483373114117
+      },
+      {
+       "id": "3120",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8540159876395,
+       "lon": 14.2491040454503
+      },
+      {
+       "id": "1253",
+       "nome": "PESSINA",
+       "lat": 40.8514990972639,
+       "lon": 14.2499391851736
+      },
+      {
+       "id": "1061",
+       "nome": "DANTE - M1",
+       "lat": 40.8485604263483,
+       "lon": 14.2496371921539
+      },
+      {
+       "id": "1296",
+       "nome": "TOLEDO - VII SETTEMBRE",
+       "lat": 40.8468876366233,
+       "lon": 14.2493683899733
+      },
+      {
+       "id": "1297",
+       "nome": "TOLEDO - CARITÀ",
+       "lat": 40.8451161478095,
+       "lon": 14.2491600269379
+      },
+      {
+       "id": "1907",
+       "nome": "BATTISTI",
+       "lat": 40.8432809146598,
+       "lon": 14.250924470042
+      },
+      {
+       "id": "1431",
+       "nome": "SANFELICE - BOVIO",
+       "lat": 40.8434770363004,
+       "lon": 14.2547053565364
+      },
+      {
+       "id": "1081",
+       "nome": "DEPRETIS - LOGGIA DEI PISANI",
+       "lat": 40.8423735324993,
+       "lon": 14.254780575093
+      },
+      {
+       "id": "1083",
+       "nome": "DEPRETIS - SAN MARCO",
+       "lat": 40.8402147411892,
+       "lon": 14.2537245225919
+      },
+      {
+       "id": "1236",
+       "nome": "MEDINA - MUNICIPIO",
+       "lat": 40.8407670642221,
+       "lon": 14.2523702415038
+      }
+     ],
+     "altre": [
+      {
+       "id": "1045",
+       "nome": "BROGGIA - BELLE ARTI",
+       "lat": 40.8519139743892,
+       "lon": 14.2507625418365
+      },
+      {
+       "id": "1130",
+       "nome": "COSTANTINOPOLI",
+       "lat": 40.8524796227172,
+       "lon": 14.251707276164
+      }
+     ],
+     "ogni": {
+      "feriale": 12,
+      "sabato": 22,
+      "sabato-pomeriggio": 25,
+      "domenica": 20,
+      "festivo": 30
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "CARDARELLI-OSPEDALE",
+     "fermate": [
+      {
+       "id": "1236",
+       "nome": "MEDINA - MUNICIPIO",
+       "lat": 40.8407670642221,
+       "lon": 14.2523702415038
+      },
+      {
+       "id": "1242",
+       "nome": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+       "lat": 40.8442372949267,
+       "lon": 14.2518503339715
+      },
+      {
+       "id": "1416",
+       "nome": "SANT'ANNA DEI LOMBARDI",
+       "lat": 40.8468573149069,
+       "lon": 14.2499702786642
+      },
+      {
+       "id": "1062",
+       "nome": "DANTE - PORT'ALBA",
+       "lat": 40.849793055303,
+       "lon": 14.2500978176082
+      },
+      {
+       "id": "1045",
+       "nome": "BROGGIA - BELLE ARTI",
+       "lat": 40.8519139743892,
+       "lon": 14.2507625418365
+      },
+      {
+       "id": "1130",
+       "nome": "COSTANTINOPOLI",
+       "lat": 40.8524796227172,
+       "lon": 14.251707276164
+      },
+      {
+       "id": "1246",
+       "nome": "MUSEO NAZIONALE",
+       "lat": 40.8530144687807,
+       "lon": 14.2502165720295
+      },
+      {
+       "id": "3545",
+       "nome": "SANTA TERESA DEGLI SCALZI 38",
+       "lat": 40.8543581812245,
+       "lon": 14.249085351596
+      },
+      {
+       "id": "3116",
+       "nome": "S.TERESA DEGLI SCALZI - LEOPARDI",
+       "lat": 40.8557238648756,
+       "lon": 14.2485360356376
+      },
+      {
+       "id": "3117",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.858642568471,
+       "lon": 14.2485386457296
+      },
+      {
+       "id": "3352",
+       "nome": "AMEDEO DI SAVOIA 180",
+       "lat": 40.86009302803,
+       "lon": 14.2485578482926
+      },
+      {
+       "id": "3353",
+       "nome": "AMEDEO DI SAVOIA",
+       "lat": 40.863038829586,
+       "lon": 14.2485720159352
+      },
+      {
+       "id": "3354",
+       "nome": "AMEDEO DI SAVOIA 280",
+       "lat": 40.8648584457689,
+       "lon": 14.2485633145235
+      },
+      {
+       "id": "3422",
+       "nome": "TONDO DI CAPODIMONTE",
+       "lat": 40.865454687351,
+       "lon": 14.2488235613489
+      },
+      {
+       "id": "3248",
+       "nome": "CAPODIMONTE - BASILICA DELL'INCORONATA E CATACOMBE DI S.GENNARO",
+       "lat": 40.8655933929453,
+       "lon": 14.2473001676301
+      },
+      {
+       "id": "3249",
+       "nome": "CAPODIMONTE",
+       "lat": 40.8664897517043,
+       "lon": 14.2486872693671
+      },
+      {
+       "id": "3332",
+       "nome": "COLLI AMINEI - IST. TEOLOGIA CAPODIMONTE",
+       "lat": 40.867732551173,
+       "lon": 14.2486346564339
+      },
+      {
+       "id": "3333",
+       "nome": "COLLI AMINEI - C.T.O. - MUSEO CAPODIMONTE",
+       "lat": 40.8693147747643,
+       "lon": 14.2474478954101
+      },
+      {
+       "id": "3334",
+       "nome": "COLLI AMINEI - C.T.O.",
+       "lat": 40.8703236186716,
+       "lon": 14.2467452238804
+      },
+      {
+       "id": "3335",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8711575644949,
+       "lon": 14.2440953461495
+      },
+      {
+       "id": "3336",
+       "nome": "COLLI AMINEI",
+       "lat": 40.8715706099765,
+       "lon": 14.2426505446762
+      },
+      {
+       "id": "3337",
+       "nome": "COLLI  AMINEI",
+       "lat": 40.8713605124546,
+       "lon": 14.240022615847
+      },
+      {
+       "id": "3338",
+       "nome": "COLLI AMINEI - TRIBUNALE",
+       "lat": 40.8706534251068,
+       "lon": 14.2386659968221
+      },
+      {
+       "id": "3339",
+       "nome": "COLLI  AMINEI",
+       "lat": 40.8690620222301,
+       "lon": 14.2357234816534
+      },
+      {
+       "id": "3864",
+       "nome": "COLLI AMINEI 74",
+       "lat": 40.868460440734,
+       "lon": 14.2346624048116
+      },
+      {
+       "id": "3340",
+       "nome": "COLLI  AMINEI",
+       "lat": 40.8683992962049,
+       "lon": 14.231562962846
+      },
+      {
+       "id": "3987",
+       "nome": "COLLI AMINEI 126",
+       "lat": 40.8684984765431,
+       "lon": 14.2293529655465
+      },
+      {
+       "id": "3197",
+       "nome": "PIETRAVALLE - GATTO",
+       "lat": 40.868680800473,
+       "lon": 14.2258370232376
+      },
+      {
+       "id": "3198",
+       "nome": "PIETRAVALLE - DE AMICIS",
+       "lat": 40.8687374276743,
+       "lon": 14.223540167999
+      },
+      {
+       "id": "3215",
+       "nome": "PANSINI - POLICLINICO",
+       "lat": 40.8668285593515,
+       "lon": 14.2223343030904
+      },
+      {
+       "id": "3240",
+       "nome": "PANSINI SEMMOLA",
+       "lat": 40.8637261166396,
+       "lon": 14.2211335911032
+      },
+      {
+       "id": "3129",
+       "nome": "SEMMOLA - OSPEDALE PASCALE",
+       "lat": 40.8617500380644,
+       "lon": 14.2213169238759
+      },
+      {
+       "id": "3003",
+       "nome": "D'ANTONA - SEMMOLA",
+       "lat": 40.8612491863819,
+       "lon": 14.2231886092938
+      },
+      {
+       "id": "3004",
+       "nome": "D'ANTONA - CAVALLINO",
+       "lat": 40.8619575303197,
+       "lon": 14.2253754383193
+      },
+      {
+       "id": "5045",
+       "nome": "CARDARELLI",
+       "lat": 40.8640108377493,
+       "lon": 14.2261869610535
+      },
+      {
+       "id": "3301",
+       "nome": "CARDARELLI-OSPEDALE",
+       "lat": 40.8649125911459,
+       "lon": 14.2267723613777
+      }
+     ],
+     "ogni": {
+      "feriale": 13,
+      "sabato": 22,
+      "sabato-pomeriggio": 25,
+      "domenica": 21,
+      "festivo": 30
+     }
+    }
+   ]
+  },
+  {
+   "id": "B140",
+   "nome": "Bus 140",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "SANTA LUCIA - PLEBISCITO",
+     "fermate": [
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      },
+      {
+       "id": "2374",
+       "nome": "DISCESA COROGLIO - PONTE",
+       "lat": 40.8035172256965,
+       "lon": 14.1862847355487
+      },
+      {
+       "id": "2175",
+       "nome": "DISCESA COROGLIO - DENZA",
+       "lat": 40.8022265501587,
+       "lon": 14.1878505106904
+      },
+      {
+       "id": "2176",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8013554340408,
+       "lon": 14.1895148484344
+      },
+      {
+       "id": "2506",
+       "nome": "S.STRATO - BOCCACCIO",
+       "lat": 40.8016058020903,
+       "lon": 14.1924606504201
+      },
+      {
+       "id": "2507",
+       "nome": "S.STRATO - RICCIARDI",
+       "lat": 40.8021092089707,
+       "lon": 14.1942416530897
+      },
+      {
+       "id": "2633",
+       "nome": "POSILLIPO-COSTA",
+       "lat": 40.8031930931893,
+       "lon": 14.197239701275
+      },
+      {
+       "id": "2397",
+       "nome": "POSILLIPO",
+       "lat": 40.8033056862216,
+       "lon": 14.1991825595762
+      },
+      {
+       "id": "2398",
+       "nome": "POSILLIPO - DI GIACOMO",
+       "lat": 40.8039381607076,
+       "lon": 14.2020557421574
+      },
+      {
+       "id": "2399",
+       "nome": "POSILLIPO",
+       "lat": 40.8059683953486,
+       "lon": 14.2038453073045
+      },
+      {
+       "id": "2400",
+       "nome": "POSILLIPO",
+       "lat": 40.8076378705113,
+       "lon": 14.204269944432
+      },
+      {
+       "id": "2401",
+       "nome": "POSILLIPO - ROCCA BELVEDERE",
+       "lat": 40.8102273457112,
+       "lon": 14.2048614602236
+      },
+      {
+       "id": "2403",
+       "nome": "POSILLIPO",
+       "lat": 40.8128470248165,
+       "lon": 14.207225232419
+      },
+      {
+       "id": "2404",
+       "nome": "POSILLIPO - S.LUIGI",
+       "lat": 40.8139847528154,
+       "lon": 14.2076148228681
+      },
+      {
+       "id": "2405",
+       "nome": "POSILLIPO",
+       "lat": 40.8148397131397,
+       "lon": 14.2094632392497
+      },
+      {
+       "id": "2406",
+       "nome": "POSILLIPO",
+       "lat": 40.816780795254,
+       "lon": 14.2107474715698
+      },
+      {
+       "id": "2407",
+       "nome": "POSILLIPO",
+       "lat": 40.8179684316791,
+       "lon": 14.2118509724557
+      },
+      {
+       "id": "2408",
+       "nome": "POSILLIPO",
+       "lat": 40.8190753328989,
+       "lon": 14.2130058622857
+      },
+      {
+       "id": "2409",
+       "nome": "POSILLIPO - PALAZZO DONN'ANNA",
+       "lat": 40.8199823387052,
+       "lon": 14.2139111681621
+      },
+      {
+       "id": "2410",
+       "nome": "POSILLIPO",
+       "lat": 40.8222044118298,
+       "lon": 14.2161202301903
+      },
+      {
+       "id": "2516",
+       "nome": "CARACCIOLO-SEA GARDEN",
+       "lat": 40.8235853564241,
+       "lon": 14.2198364614812
+      },
+      {
+       "id": "2051",
+       "nome": "CARACCIOLO - CAPITANERIA DI PORTO",
+       "lat": 40.8257574194367,
+       "lon": 14.2206589235422
+      },
+      {
+       "id": "2142",
+       "nome": "MERGELLINA - SANNAZZARO",
+       "lat": 40.8281664115109,
+       "lon": 14.2198835770261
+      },
+      {
+       "id": "2139",
+       "nome": "SANNAZARO",
+       "lat": 40.8286255287011,
+       "lon": 14.2202058501631
+      },
+      {
+       "id": "2105",
+       "nome": "DOHRN - CIRCOLO TENNIS",
+       "lat": 40.8321406748982,
+       "lon": 14.2279054436142
+      },
+      {
+       "id": "2106",
+       "nome": "DOHRN",
+       "lat": 40.8324967530925,
+       "lon": 14.2323393571591
+      },
+      {
+       "id": "2519",
+       "nome": "VITTORIA - VILLA COMUNALE",
+       "lat": 40.8325091080378,
+       "lon": 14.2416438772655
+      },
+      {
+       "id": "2018",
+       "nome": "ARCOLEO",
+       "lat": 40.8320160712152,
+       "lon": 14.2433422020407
+      },
+      {
+       "id": "2129",
+       "nome": "CHIATAMONE",
+       "lat": 40.8313596186318,
+       "lon": 14.2442972777602
+      },
+      {
+       "id": "2128",
+       "nome": "CHIATAMONE - CASTEL DELL'OVO",
+       "lat": 40.8303939501945,
+       "lon": 14.2457693708243
+      },
+      {
+       "id": "2501",
+       "nome": "SANTA LUCIA - REGIONE CAMAPANIA",
+       "lat": 40.8311470112793,
+       "lon": 14.248893642486
+      },
+      {
+       "id": "2502",
+       "nome": "SANTA LUCIA - PLEBISCITO",
+       "lat": 40.8331710374239,
+       "lon": 14.2498403804192
+      }
+     ],
+     "ogni": {
+      "feriale": 19,
+      "sabato": 15,
+      "sabato-pomeriggio": 19,
+      "domenica": 14,
+      "festivo": 19
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "POSILLIPO CAPO - ATTESTAMENTO",
+     "fermate": [
+      {
+       "id": "2502",
+       "nome": "SANTA LUCIA - PLEBISCITO",
+       "lat": 40.8331710374239,
+       "lon": 14.2498403804192
+      },
+      {
+       "id": "2076",
+       "nome": "ACTON - PLEBISCITO",
+       "lat": 40.8345260392339,
+       "lon": 14.251038520756
+      },
+      {
+       "id": "2144",
+       "nome": "MORELLI",
+       "lat": 40.8324362688617,
+       "lon": 14.2435420128857
+      },
+      {
+       "id": "2800",
+       "nome": "VITTORIA",
+       "lat": 40.8323038378569,
+       "lon": 14.2413065842279
+      },
+      {
+       "id": "2116",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8334285467958,
+       "lon": 14.2369096930103
+      },
+      {
+       "id": "2124",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8334610448845,
+       "lon": 14.2299908797963
+      },
+      {
+       "id": "2069",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8330001908574,
+       "lon": 14.2281048261494
+      },
+      {
+       "id": "2127",
+       "nome": "RIVIERA DI CHIAIA - CONSOLATO AMERICANO",
+       "lat": 40.8317663027946,
+       "lon": 14.2240487355456
+      },
+      {
+       "id": "2085",
+       "nome": "BRUNO - YAN PALACH",
+       "lat": 40.8310260064992,
+       "lon": 14.2224711023622
+      },
+      {
+       "id": "2137",
+       "nome": "BRUNO - SANNAZARO",
+       "lat": 40.8299150855031,
+       "lon": 14.2202544114426
+      },
+      {
+       "id": "2138",
+       "nome": "MERGELLINA - LEONE",
+       "lat": 40.8279712641352,
+       "lon": 14.2196664657256
+      },
+      {
+       "id": "2140",
+       "nome": "MERGELLINA - FUNCOLARE",
+       "lat": 40.8260748603362,
+       "lon": 14.2196442246363
+      },
+      {
+       "id": "2517",
+       "nome": "LARGO SERMONETA",
+       "lat": 40.8234454161909,
+       "lon": 14.218459543275
+      },
+      {
+       "id": "2411",
+       "nome": "POSILLIPO",
+       "lat": 40.8218012042517,
+       "lon": 14.215114059911
+      },
+      {
+       "id": "2412",
+       "nome": "POSILLIPO - PALAZZO DONN'ANNA",
+       "lat": 40.8201898061184,
+       "lon": 14.2138114833295
+      },
+      {
+       "id": "2413",
+       "nome": "POSILLIPO",
+       "lat": 40.818972304819,
+       "lon": 14.2124290139648
+      },
+      {
+       "id": "2414",
+       "nome": "POSILLIPO - VILLA DE MARTINO",
+       "lat": 40.8179722064644,
+       "lon": 14.2117442095006
+      },
+      {
+       "id": "2415",
+       "nome": "POSILLIPO",
+       "lat": 40.8164756326533,
+       "lon": 14.2102530809869
+      },
+      {
+       "id": "2416",
+       "nome": "POSILLIPO",
+       "lat": 40.8151014822197,
+       "lon": 14.209540167102
+      },
+      {
+       "id": "2417",
+       "nome": "POSILLIPO - S.LUIGI",
+       "lat": 40.8141105132778,
+       "lon": 14.2075629347441
+      },
+      {
+       "id": "2418",
+       "nome": "POSILLIPO - OSPEDALE PAUSILLIPON",
+       "lat": 40.8122030837033,
+       "lon": 14.2065926433453
+      },
+      {
+       "id": "2419",
+       "nome": "POSILLIPO - ROCCA BELVEDERE",
+       "lat": 40.8099724358189,
+       "lon": 14.2044732500382
+      },
+      {
+       "id": "2420",
+       "nome": "POSILLIPO",
+       "lat": 40.8077455530466,
+       "lon": 14.2042093792823
+      },
+      {
+       "id": "2421",
+       "nome": "POSILLIPO",
+       "lat": 40.8056690782659,
+       "lon": 14.2035495358487
+      },
+      {
+       "id": "2423",
+       "nome": "POSILLIPO - DI GIACOMO",
+       "lat": 40.803859300073,
+       "lon": 14.201724744749
+      },
+      {
+       "id": "2424",
+       "nome": "POSILLIPO - ISTITUTO CIMAROSA",
+       "lat": 40.8035392052118,
+       "lon": 14.1990819487795
+      },
+      {
+       "id": "2425",
+       "nome": "POSILLIPO - RIONE PRIMAVERA",
+       "lat": 40.8031912784689,
+       "lon": 14.1969789142741
+      },
+      {
+       "id": "2504",
+       "nome": "S.STRATO-RICCIARDI",
+       "lat": 40.8022357085474,
+       "lon": 14.1942964334128
+      },
+      {
+       "id": "2505",
+       "nome": "S.STRATO - BOCCACCIO",
+       "lat": 40.8016903371233,
+       "lon": 14.1923114423322
+      },
+      {
+       "id": "2177",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8015260578108,
+       "lon": 14.1894386813247
+      },
+      {
+       "id": "2178",
+       "nome": "DISCESA COROGLIO-ISTITUTO DENZA",
+       "lat": 40.8025717357471,
+       "lon": 14.187618097347
+      },
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      }
+     ],
+     "ogni": {
+      "feriale": 22,
+      "sabato": 14,
+      "sabato-pomeriggio": 23,
+      "domenica": 13,
+      "festivo": 20
+     }
+    }
+   ]
+  },
+  {
+   "id": "BC16",
+   "nome": "Bus C16",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "CARACCIOLO POGGIO",
+     "fermate": [
+      {
+       "id": "5206",
+       "nome": "CAPOLINEA MERGELLINA",
+       "lat": 40.8252342765415,
+       "lon": 14.2205612827001
+      },
+      {
+       "id": "2141",
+       "nome": "MERGELLINA",
+       "lat": 40.8259868892282,
+       "lon": 14.2199565550747
+      },
+      {
+       "id": "2142",
+       "nome": "MERGELLINA - SANNAZZARO",
+       "lat": 40.8281664115109,
+       "lon": 14.2198835770261
+      },
+      {
+       "id": "2554",
+       "nome": "VITTORIO EMANUELE II - M2 MERGELLINA",
+       "lat": 40.832088363824,
+       "lon": 14.2197101121888
+      },
+      {
+       "id": "2529",
+       "nome": "VITTORIO EMANUELE II - STAZIONE CARABINIERI",
+       "lat": 40.8329300804429,
+       "lon": 14.22029325647
+      },
+      {
+       "id": "2556",
+       "nome": "GIORDANI",
+       "lat": 40.8341139627998,
+       "lon": 14.2215217700606
+      },
+      {
+       "id": "2520",
+       "nome": "VITTORIO EMANUELE - MERCADANTE",
+       "lat": 40.8362275020617,
+       "lon": 14.2223510261941
+      },
+      {
+       "id": "2522",
+       "nome": "VITTORIO EMANUELE II - PONTANO",
+       "lat": 40.8364254322667,
+       "lon": 14.2249907240268
+      },
+      {
+       "id": "2523",
+       "nome": "VITTORIO EMANUELE II - TASSO",
+       "lat": 40.8363491057689,
+       "lon": 14.2283867860979
+      },
+      {
+       "id": "2524",
+       "nome": "VITTORIO EMANUELE II - PARCO MARGHERITA",
+       "lat": 40.8371734220156,
+       "lon": 14.2310934001464
+      },
+      {
+       "id": "2525",
+       "nome": "VITTORIO EMANUELE II - FUNICOLARE CHIAIA",
+       "lat": 40.838646441053,
+       "lon": 14.2338252301791
+      },
+      {
+       "id": "2527",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8398413235912,
+       "lon": 14.2374173651782
+      },
+      {
+       "id": "2528",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8395816998839,
+       "lon": 14.2397096001762
+      },
+      {
+       "id": "2530",
+       "nome": "VITTORIO EMANUELE II - CARIATI",
+       "lat": 40.8400570761037,
+       "lon": 14.2433336664663
+      },
+      {
+       "id": "2531",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.841662036485,
+       "lon": 14.244007787249
+      },
+      {
+       "id": "2532",
+       "nome": "VITTORIO EMANUELE II - CHIESA",
+       "lat": 40.8432856790708,
+       "lon": 14.2447472214741
+      },
+      {
+       "id": "2533",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8445605493915,
+       "lon": 14.2440892165574
+      },
+      {
+       "id": "2930",
+       "nome": "VITTORIO EMANUELE II -  FUNICOLARE MONTESANTO",
+       "lat": 40.8468032824644,
+       "lon": 14.2419788556545
+      },
+      {
+       "id": "2535",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8493402173803,
+       "lon": 14.2414605882205
+      },
+      {
+       "id": "2536",
+       "nome": "VITTORIO EMANUELE II - MAZZINI",
+       "lat": 40.8505785423484,
+       "lon": 14.2420984651757
+      },
+      {
+       "id": "3768",
+       "nome": "SALVATOR ROSA-PONTECORVO",
+       "lat": 40.8526644719866,
+       "lon": 14.2449224910578
+      },
+      {
+       "id": "3295",
+       "nome": "IMBRIANI-ROSA",
+       "lat": 40.8531098750433,
+       "lon": 14.2452586252643
+      },
+      {
+       "id": "3979",
+       "nome": "IMBRIANI 152",
+       "lat": 40.8541340801474,
+       "lon": 14.2425885200699
+      },
+      {
+       "id": "3005",
+       "nome": "D'ACQUISTO",
+       "lat": 40.8553636105232,
+       "lon": 14.2375656616839
+      },
+      {
+       "id": "3283",
+       "nome": "GIGANTE - DE LEVA",
+       "lat": 40.8548869449324,
+       "lon": 14.2370886698526
+      },
+      {
+       "id": "3706",
+       "nome": "GIACINTO GIGANTE",
+       "lat": 40.8541341434988,
+       "lon": 14.2369094387497
+      },
+      {
+       "id": "3297",
+       "nome": "CARACCIOLO POGGIO",
+       "lat": 40.852866049639,
+       "lon": 14.2358621773889
+      }
+     ],
+     "ogni": {
+      "feriale": 19,
+      "sabato": 22,
+      "sabato-pomeriggio": 21,
+      "domenica": 17,
+      "festivo": 23
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "CAPOLINEA MERGELLINA",
+     "fermate": [
+      {
+       "id": "3297",
+       "nome": "CARACCIOLO POGGIO",
+       "lat": 40.852866049639,
+       "lon": 14.2358621773889
+      },
+      {
+       "id": "3298",
+       "nome": "CARACCIOLO-S.ROSA",
+       "lat": 40.8522750792731,
+       "lon": 14.2384463586297
+      },
+      {
+       "id": "3322",
+       "nome": "SALVATOR ROSA - ISTITUTO VICO",
+       "lat": 40.8516387282385,
+       "lon": 14.2411247343802
+      },
+      {
+       "id": "2537",
+       "nome": "VITTORIO EMANUELE II - MAZZINI",
+       "lat": 40.850984400307,
+       "lon": 14.2421714412677
+      },
+      {
+       "id": "2538",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8496014970426,
+       "lon": 14.2414665059767
+      },
+      {
+       "id": "2903",
+       "nome": "VITTORIO EMANUELE II - S.ANTONIO AI MONTI",
+       "lat": 40.8476440920755,
+       "lon": 14.2413453912597
+      },
+      {
+       "id": "2539",
+       "nome": "VITTORIO EMANUELE II - FUNICOLARE DI MONTESANTO",
+       "lat": 40.8464867627791,
+       "lon": 14.2420667924063
+      },
+      {
+       "id": "2540",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8449156126809,
+       "lon": 14.2439724892585
+      },
+      {
+       "id": "2541",
+       "nome": "VITTORIO EMANUELE II - CHIESA",
+       "lat": 40.8429840657239,
+       "lon": 14.244498088591
+      },
+      {
+       "id": "2542",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8414124926818,
+       "lon": 14.2438682813865
+      },
+      {
+       "id": "2543",
+       "nome": "VITTORIO EMANULE II - FUNICOLARE CENTRALE",
+       "lat": 40.839752848223,
+       "lon": 14.2425847513477
+      },
+      {
+       "id": "2544",
+       "nome": "VITTORIO EMANUELE II - CHIESA",
+       "lat": 40.8397235989316,
+       "lon": 14.2386878920407
+      },
+      {
+       "id": "2545",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8396593477224,
+       "lon": 14.2371436718194
+      },
+      {
+       "id": "2546",
+       "nome": "VITTORIO EMANUELE II - FUNICOLARE CHIAIA",
+       "lat": 40.8388046754824,
+       "lon": 14.2344574997987
+      },
+      {
+       "id": "2547",
+       "nome": "VITTORIO EMANUELE II - PARCO GRIFEO",
+       "lat": 40.837867478807,
+       "lon": 14.2325087169568
+      },
+      {
+       "id": "2548",
+       "nome": "VITTORIO EMANUELE II - TASSO",
+       "lat": 40.8373725745956,
+       "lon": 14.2305632821613
+      },
+      {
+       "id": "2549",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8364404519449,
+       "lon": 14.225886045742
+      },
+      {
+       "id": "2550",
+       "nome": "VITTORIO EMANUELE II",
+       "lat": 40.8368464849779,
+       "lon": 14.2241076210105
+      },
+      {
+       "id": "2555",
+       "nome": "VITTORIO EMANUELE II - CIRCUMFLEGREA",
+       "lat": 40.8363520164098,
+       "lon": 14.2213130358929
+      },
+      {
+       "id": "2551",
+       "nome": "VITTORIO EMANUELE II - PARCO COMOLA RICCI",
+       "lat": 40.8347239208792,
+       "lon": 14.219136589728
+      },
+      {
+       "id": "2552",
+       "nome": "VITTORIO EMANULE II -PRESIDIO SANITARIO",
+       "lat": 40.834097913535,
+       "lon": 14.2204124114619
+      },
+      {
+       "id": "2553",
+       "nome": "VITVITTORIO EMANUELE II - STAZIONE CARABINIERI",
+       "lat": 40.8329957134629,
+       "lon": 14.220007841148
+      },
+      {
+       "id": "2373",
+       "nome": "VITTORIO EMANUELE II - M2 MERGELLINA",
+       "lat": 40.8313714969381,
+       "lon": 14.2196058467691
+      },
+      {
+       "id": "2356",
+       "nome": "PIEDIGROTTA - CHIESA",
+       "lat": 40.8306788094602,
+       "lon": 14.2195997376053
+      },
+      {
+       "id": "2138",
+       "nome": "MERGELLINA - LEONE",
+       "lat": 40.8279712641352,
+       "lon": 14.2196664657256
+      },
+      {
+       "id": "2140",
+       "nome": "MERGELLINA - FUNCOLARE",
+       "lat": 40.8260748603362,
+       "lon": 14.2196442246363
+      },
+      {
+       "id": "5206",
+       "nome": "CAPOLINEA MERGELLINA",
+       "lat": 40.8252342765415,
+       "lon": 14.2205612827001
+      }
+     ],
+     "ogni": {
+      "feriale": 19,
+      "sabato": 22,
+      "sabato-pomeriggio": 19,
+      "domenica": 15,
+      "festivo": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "B151",
+   "nome": "Bus 151",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "1",
+     "capolinea": "GARIBALDI - ATTESTAMENTO",
+     "fermate": [
+      {
+       "id": "2100",
+       "nome": "GIULIO CESARE - TECCHIO",
+       "lat": 40.8233933128849,
+       "lon": 14.1951581046068
+      },
+      {
+       "id": "2101",
+       "nome": "GIULIO CESARE",
+       "lat": 40.8244342417355,
+       "lon": 14.1984600356173
+      },
+      {
+       "id": "2102",
+       "nome": "GIULIO CESARE - M2",
+       "lat": 40.8248548439223,
+       "lon": 14.2006547802235
+      },
+      {
+       "id": "2103",
+       "nome": "GIULIO CESARE - SAN VITALE",
+       "lat": 40.8250820692986,
+       "lon": 14.2028993036578
+      },
+      {
+       "id": "2209",
+       "nome": "FUORIGROTTA - PIAZZA ITALIA",
+       "lat": 40.8261458682489,
+       "lon": 14.2062841805618
+      },
+      {
+       "id": "2139",
+       "nome": "SANNAZARO",
+       "lat": 40.8286255287011,
+       "lon": 14.2202058501631
+      },
+      {
+       "id": "2105",
+       "nome": "DOHRN - CIRCOLO TENNIS",
+       "lat": 40.8321406748982,
+       "lon": 14.2279054436142
+      },
+      {
+       "id": "2106",
+       "nome": "DOHRN",
+       "lat": 40.8324967530925,
+       "lon": 14.2323393571591
+      },
+      {
+       "id": "2519",
+       "nome": "VITTORIA - VILLA COMUNALE",
+       "lat": 40.8325091080378,
+       "lon": 14.2416438772655
+      },
+      {
+       "id": "2018",
+       "nome": "ARCOLEO",
+       "lat": 40.8320160712152,
+       "lon": 14.2433422020407
+      },
+      {
+       "id": "1390",
+       "nome": "ACTON - MOLOSIGLIO",
+       "lat": 40.8360056725521,
+       "lon": 14.251460638789
+      },
+      {
+       "id": "1053",
+       "nome": "ACTON - BEVERELLO",
+       "lat": 40.8381200459757,
+       "lon": 14.2545397423487
+      },
+      {
+       "id": "1123",
+       "nome": "COLOMBO - BEVERELLO",
+       "lat": 40.8396985377992,
+       "lon": 14.25562174563
+      },
+      {
+       "id": "1510",
+       "nome": "COLOMBO",
+       "lat": 40.8417602984048,
+       "lon": 14.2571915954436
+      },
+      {
+       "id": "1488",
+       "nome": "MARINA - OREFICI",
+       "lat": 40.8445275402034,
+       "lon": 14.2598368417242
+      },
+      {
+       "id": "1229",
+       "nome": "MARINA - DUOMO",
+       "lat": 40.8457299243238,
+       "lon": 14.263179390013
+      },
+      {
+       "id": "1230",
+       "nome": "MARINA - TORRE ARAGONESE",
+       "lat": 40.8461591819027,
+       "lon": 14.2677785129053
+      },
+      {
+       "id": "1170",
+       "nome": "GARIBALDI - CIRCUMVESUVIANA",
+       "lat": 40.849178647945,
+       "lon": 14.2687536443193
+      },
+      {
+       "id": "1279",
+       "nome": "GARIBALDI",
+       "lat": 40.8516450879756,
+       "lon": 14.26834442392
+      },
+      {
+       "id": "1171",
+       "nome": "PRINCIPE UMBERTO",
+       "lat": 40.8538636264109,
+       "lon": 14.2682853276597
+      },
+      {
+       "id": "1148",
+       "nome": "FIRENZE",
+       "lat": 40.8541433718519,
+       "lon": 14.27078475846
+      },
+      {
+       "id": "1125",
+       "nome": "GARIBALDI - ATTESTAMENTO",
+       "lat": 40.8529983870462,
+       "lon": 14.2713912009977
+      }
+     ],
+     "ogni": {
+      "feriale": 17,
+      "sabato": 15,
+      "sabato-pomeriggio": 18,
+      "domenica": 16,
+      "festivo": 19
+     }
+    }
+   ]
+  },
+  {
+   "id": "BR2",
+   "nome": "Bus R2",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "SAN CARLO - TRIESTE E TRENTO",
+     "fermate": [
+      {
+       "id": "4724",
+       "nome": "VOLTA - BRIN",
+       "lat": 40.8457745202465,
+       "lon": 14.280374861023
+      },
+      {
+       "id": "4097",
+       "nome": "VOLTA - BRIN",
+       "lat": 40.8458279501003,
+       "lon": 14.2801311001864
+      },
+      {
+       "id": "4782",
+       "nome": "VOLTA - LUCCI",
+       "lat": 40.8466121125081,
+       "lon": 14.2781830600439
+      },
+      {
+       "id": "1201",
+       "nome": "LUCCI",
+       "lat": 40.8497800725974,
+       "lon": 14.273978145569
+      },
+      {
+       "id": "1421",
+       "nome": "LUCCI - GARIBALDI",
+       "lat": 40.8515114888463,
+       "lon": 14.2720791782242
+      },
+      {
+       "id": "1119",
+       "nome": "PIAZZA GARIBALDI",
+       "lat": 40.8528884021643,
+       "lon": 14.2710833101249
+      },
+      {
+       "id": "1131",
+       "nome": "GARIBALDI",
+       "lat": 40.8526649298566,
+       "lon": 14.2690492527928
+      },
+      {
+       "id": "1278",
+       "nome": "UMBERTO",
+       "lat": 40.851138857043,
+       "lon": 14.266977153093
+      },
+      {
+       "id": "1325",
+       "nome": "UMBERTO I - POERIO",
+       "lat": 40.8497744559762,
+       "lon": 14.264841703358
+      },
+      {
+       "id": "1017",
+       "nome": "UMBERTO I°",
+       "lat": 40.8489918136626,
+       "lon": 14.2635987925999
+      },
+      {
+       "id": "1327",
+       "nome": "UMBERTO I - DUOMO",
+       "lat": 40.8472121072424,
+       "lon": 14.2608342915459
+      },
+      {
+       "id": "1330",
+       "nome": "UMBERTO I",
+       "lat": 40.8457202111598,
+       "lon": 14.2585697001996
+      },
+      {
+       "id": "1494",
+       "nome": "BOVIO",
+       "lat": 40.8440117828919,
+       "lon": 14.2558068541852
+      },
+      {
+       "id": "1302",
+       "nome": "SANFELICE",
+       "lat": 40.8434052804428,
+       "lon": 14.2537988662386
+      },
+      {
+       "id": "1009",
+       "nome": "MEDINA - MUNICIPIO",
+       "lat": 40.8406448110771,
+       "lon": 14.2521319859313
+      },
+      {
+       "id": "2714",
+       "nome": "SAN CARLO - TRIESTE E TRENTO",
+       "lat": 40.8378146855876,
+       "lon": 14.2493603472091
+      }
+     ],
+     "ogni": {
+      "feriale": 13,
+      "sabato": 11,
+      "sabato-pomeriggio": 16,
+      "domenica": 13,
+      "festivo": 13
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "VOLTA - BRIN",
+     "fermate": [
+      {
+       "id": "2714",
+       "nome": "SAN CARLO - TRIESTE E TRENTO",
+       "lat": 40.8378146855876,
+       "lon": 14.2493603472091
+      },
+      {
+       "id": "1241",
+       "nome": "MUNICIPIO - SAN CARLO",
+       "lat": 40.8381502631758,
+       "lon": 14.2507094702934
+      },
+      {
+       "id": "1236",
+       "nome": "MEDINA - MUNICIPIO",
+       "lat": 40.8407670642221,
+       "lon": 14.2523702415038
+      },
+      {
+       "id": "1431",
+       "nome": "SANFELICE - BOVIO",
+       "lat": 40.8434770363004,
+       "lon": 14.2547053565364
+      },
+      {
+       "id": "1493",
+       "nome": "BOVIO",
+       "lat": 40.8438590491316,
+       "lon": 14.2560222847344
+      },
+      {
+       "id": "1329",
+       "nome": "UMBERTO I",
+       "lat": 40.8455884311804,
+       "lon": 14.258669627909
+      },
+      {
+       "id": "1328",
+       "nome": "UMBERTO I - N. AMORE",
+       "lat": 40.8466942835959,
+       "lon": 14.260436712836
+      },
+      {
+       "id": "1326",
+       "nome": "UMBERTO I - COLLETTA",
+       "lat": 40.8487711266994,
+       "lon": 14.2636518279117
+      },
+      {
+       "id": "1183",
+       "nome": "UMBERTO - NOLANA",
+       "lat": 40.8503529125452,
+       "lon": 14.2661176844341
+      },
+      {
+       "id": "1187",
+       "nome": "GARIBALDI - LUCCI",
+       "lat": 40.8511813122425,
+       "lon": 14.271993995009
+      },
+      {
+       "id": "1133",
+       "nome": "GALILEO FERRARIS - CIRCUMVESUVIANA E.A.V.",
+       "lat": 40.850419204787,
+       "lon": 14.275481379318
+      },
+      {
+       "id": "1135",
+       "nome": "GALILEO FERRARIS",
+       "lat": 40.8498520904348,
+       "lon": 14.2791414515918
+      },
+      {
+       "id": "1186",
+       "nome": "GALILEO FERRARIS - POSTE",
+       "lat": 40.8494166121048,
+       "lon": 14.2808129532784
+      },
+      {
+       "id": "1137",
+       "nome": "GALILEO FERRARIS - BRIN",
+       "lat": 40.8493079686247,
+       "lon": 14.2828961194877
+      },
+      {
+       "id": "1219",
+       "nome": "BRIN",
+       "lat": 40.8490025580911,
+       "lon": 14.2830364314347
+      },
+      {
+       "id": "4724",
+       "nome": "VOLTA - BRIN",
+       "lat": 40.8457745202465,
+       "lon": 14.280374861023
+      }
+     ],
+     "ogni": {
+      "feriale": 13,
+      "sabato": 11,
+      "sabato-pomeriggio": 15,
+      "domenica": 12,
+      "festivo": 14
+     }
+    }
+   ]
+  },
+  {
+   "id": "BR7",
+   "nome": "Bus R7",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "VITTORIA",
+     "fermate": [
+      {
+       "id": "2005",
+       "nome": "BAGNOLI - LA PIETRA",
+       "lat": 40.8171262581479,
+       "lon": 14.1595370908599
+      },
+      {
+       "id": "2939",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8152860556712,
+       "lon": 14.1629099426713
+      },
+      {
+       "id": "2632",
+       "nome": "BAGNOLI",
+       "lat": 40.8139379734893,
+       "lon": 14.1658347793125
+      },
+      {
+       "id": "2940",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8130949006626,
+       "lon": 14.1669717253094
+      },
+      {
+       "id": "2164",
+       "nome": "COROGLIO",
+       "lat": 40.8084284378769,
+       "lon": 14.172302110775
+      },
+      {
+       "id": "2166",
+       "nome": "COROGLIO",
+       "lat": 40.8061110502675,
+       "lon": 14.1735291796303
+      },
+      {
+       "id": "2167",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8044629819754,
+       "lon": 14.1742224061457
+      },
+      {
+       "id": "2168",
+       "nome": "COROGLIO",
+       "lat": 40.8030507426494,
+       "lon": 14.1747644984387
+      },
+      {
+       "id": "2081",
+       "nome": "CATTOLICA",
+       "lat": 40.8010955571492,
+       "lon": 14.1763505467174
+      },
+      {
+       "id": "2087",
+       "nome": "CATTOLICA",
+       "lat": 40.8026610348262,
+       "lon": 14.1811353699975
+      },
+      {
+       "id": "2079",
+       "nome": "CATTOLICA",
+       "lat": 40.8110587928331,
+       "lon": 14.1877872846019
+      },
+      {
+       "id": "2083",
+       "nome": "CATTOLICA",
+       "lat": 40.8133221538527,
+       "lon": 14.1887497207659
+      },
+      {
+       "id": "2097",
+       "nome": "CAVALLEGGERI - CAMPEGNA",
+       "lat": 40.8154070303231,
+       "lon": 14.1880306818537
+      },
+      {
+       "id": "2098",
+       "nome": "CAVALLEGGERI",
+       "lat": 40.8165187550823,
+       "lon": 14.1879163392413
+      },
+      {
+       "id": "2099",
+       "nome": "CAVALLEGGERI",
+       "lat": 40.8181079010189,
+       "lon": 14.1877991336353
+      },
+      {
+       "id": "2093",
+       "nome": "DIOCLEZIANO - CAVALLEGGERI",
+       "lat": 40.8207354776665,
+       "lon": 14.1873935526529
+      },
+      {
+       "id": "2604",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.821218574999,
+       "lon": 14.1888373159122
+      },
+      {
+       "id": "2188",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8225052325139,
+       "lon": 14.1924710576976
+      },
+      {
+       "id": "2100",
+       "nome": "GIULIO CESARE - TECCHIO",
+       "lat": 40.8233933128849,
+       "lon": 14.1951581046068
+      },
+      {
+       "id": "2101",
+       "nome": "GIULIO CESARE",
+       "lat": 40.8244342417355,
+       "lon": 14.1984600356173
+      },
+      {
+       "id": "2102",
+       "nome": "GIULIO CESARE - M2",
+       "lat": 40.8248548439223,
+       "lon": 14.2006547802235
+      },
+      {
+       "id": "2103",
+       "nome": "GIULIO CESARE - SAN VITALE",
+       "lat": 40.8250820692986,
+       "lon": 14.2028993036578
+      },
+      {
+       "id": "2209",
+       "nome": "FUORIGROTTA - PIAZZA ITALIA",
+       "lat": 40.8261458682489,
+       "lon": 14.2062841805618
+      },
+      {
+       "id": "2139",
+       "nome": "SANNAZARO",
+       "lat": 40.8286255287011,
+       "lon": 14.2202058501631
+      },
+      {
+       "id": "2105",
+       "nome": "DOHRN - CIRCOLO TENNIS",
+       "lat": 40.8321406748982,
+       "lon": 14.2279054436142
+      },
+      {
+       "id": "2106",
+       "nome": "DOHRN",
+       "lat": 40.8324967530925,
+       "lon": 14.2323393571591
+      },
+      {
+       "id": "2800",
+       "nome": "VITTORIA",
+       "lat": 40.8323038378569,
+       "lon": 14.2413065842279
+      }
+     ],
+     "altre": [
+      {
+       "id": "2089",
+       "nome": "CIRCUM. CAV. AOSTA",
+       "lat": 40.8149946219627,
+       "lon": 14.1847380372045
+      },
+      {
+       "id": "2084",
+       "nome": "CATTOLICA",
+       "lat": 40.8129617051914,
+       "lon": 14.1887333621902
+      },
+      {
+       "id": "2080",
+       "nome": "CATTOLICA",
+       "lat": 40.8110390248043,
+       "lon": 14.187538542496
+      },
+      {
+       "id": "2082",
+       "nome": "CATTOLICA",
+       "lat": 40.8011027874983,
+       "lon": 14.1761015114135
+      },
+      {
+       "id": "2090",
+       "nome": "COROGLIO",
+       "lat": 40.802589088544,
+       "lon": 14.1751987483258
+      },
+      {
+       "id": "2002",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8052642999555,
+       "lon": 14.1740263184145
+      },
+      {
+       "id": "2171",
+       "nome": "COROGLIO",
+       "lat": 40.805959641244,
+       "lon": 14.1737711305577
+      },
+      {
+       "id": "2172",
+       "nome": "COROGLIO",
+       "lat": 40.8082225267537,
+       "lon": 14.1727170421027
+      },
+      {
+       "id": "2901",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8128997518481,
+       "lon": 14.1673921136223
+      },
+      {
+       "id": "2173",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8143921899621,
+       "lon": 14.1651147100095
+      },
+      {
+       "id": "2010",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8155935449396,
+       "lon": 14.162455506124
+      }
+     ],
+     "ogni": {
+      "feriale": 29,
+      "sabato": 23,
+      "sabato-pomeriggio": 31,
+      "domenica": 27,
+      "festivo": 27
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "BAGNOLI - LA PIETRA",
+     "fermate": [
+      {
+       "id": "2800",
+       "nome": "VITTORIA",
+       "lat": 40.8323038378569,
+       "lon": 14.2413065842279
+      },
+      {
+       "id": "2116",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8334285467958,
+       "lon": 14.2369096930103
+      },
+      {
+       "id": "2124",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8334610448845,
+       "lon": 14.2299908797963
+      },
+      {
+       "id": "2069",
+       "nome": "RIVIERA DI CHIAIA",
+       "lat": 40.8330001908574,
+       "lon": 14.2281048261494
+      },
+      {
+       "id": "2127",
+       "nome": "RIVIERA DI CHIAIA - CONSOLATO AMERICANO",
+       "lat": 40.8317663027946,
+       "lon": 14.2240487355456
+      },
+      {
+       "id": "2085",
+       "nome": "BRUNO - YAN PALACH",
+       "lat": 40.8310260064992,
+       "lon": 14.2224711023622
+      },
+      {
+       "id": "2137",
+       "nome": "BRUNO - SANNAZARO",
+       "lat": 40.8299150855031,
+       "lon": 14.2202544114426
+      },
+      {
+       "id": "2174",
+       "nome": "LEGIONI",
+       "lat": 40.8267877519783,
+       "lon": 14.2066174778231
+      },
+      {
+       "id": "2025",
+       "nome": "AUGUSTO - SAN VITALE",
+       "lat": 40.826638127149,
+       "lon": 14.2025545453475
+      },
+      {
+       "id": "2026",
+       "nome": "AUGUSTO - VENIERO",
+       "lat": 40.8263071035887,
+       "lon": 14.1996322861313
+      },
+      {
+       "id": "2027",
+       "nome": "AUGUSTO - POLITECNICO",
+       "lat": 40.8258106490677,
+       "lon": 14.1962495524362
+      },
+      {
+       "id": "2153",
+       "nome": "TECCHIO - MOSTRA",
+       "lat": 40.8250873807524,
+       "lon": 14.1929733844248
+      },
+      {
+       "id": "2189",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8224930702283,
+       "lon": 14.1920205866539
+      },
+      {
+       "id": "2605",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8213671996863,
+       "lon": 14.1888355051826
+      },
+      {
+       "id": "2619",
+       "nome": "DIOCLEZIANO - CAVALLEGGERI",
+       "lat": 40.8207783227531,
+       "lon": 14.187081755258
+      },
+      {
+       "id": "2096",
+       "nome": "CAVALLEGGERI - M2",
+       "lat": 40.8191626778658,
+       "lon": 14.1872734183854
+      },
+      {
+       "id": "2094",
+       "nome": "CAVALLEGGERI",
+       "lat": 40.817066880907,
+       "lon": 14.1877199361202
+      },
+      {
+       "id": "2095",
+       "nome": "CAVALLEGGERI",
+       "lat": 40.8151138464035,
+       "lon": 14.1879720069577
+      },
+      {
+       "id": "2084",
+       "nome": "CATTOLICA",
+       "lat": 40.8129617051914,
+       "lon": 14.1887333621902
+      },
+      {
+       "id": "2080",
+       "nome": "CATTOLICA",
+       "lat": 40.8110390248043,
+       "lon": 14.187538542496
+      },
+      {
+       "id": "2082",
+       "nome": "CATTOLICA",
+       "lat": 40.8011027874983,
+       "lon": 14.1761015114135
+      },
+      {
+       "id": "2090",
+       "nome": "COROGLIO",
+       "lat": 40.802589088544,
+       "lon": 14.1751987483258
+      },
+      {
+       "id": "2002",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8052642999555,
+       "lon": 14.1740263184145
+      },
+      {
+       "id": "2171",
+       "nome": "COROGLIO",
+       "lat": 40.805959641244,
+       "lon": 14.1737711305577
+      },
+      {
+       "id": "2172",
+       "nome": "COROGLIO",
+       "lat": 40.8082225267537,
+       "lon": 14.1727170421027
+      },
+      {
+       "id": "2901",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8128997518481,
+       "lon": 14.1673921136223
+      },
+      {
+       "id": "2173",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8143921899621,
+       "lon": 14.1651147100095
+      },
+      {
+       "id": "2010",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8155935449396,
+       "lon": 14.162455506124
+      },
+      {
+       "id": "2005",
+       "nome": "BAGNOLI - LA PIETRA",
+       "lat": 40.8171262581479,
+       "lon": 14.1595370908599
+      }
+     ],
+     "altre": [
+      {
+       "id": "2939",
+       "nome": "VIA DI POZZUOLI",
+       "lat": 40.8152860556712,
+       "lon": 14.1629099426713
+      },
+      {
+       "id": "2632",
+       "nome": "BAGNOLI",
+       "lat": 40.8139379734893,
+       "lon": 14.1658347793125
+      },
+      {
+       "id": "2940",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8130949006626,
+       "lon": 14.1669717253094
+      },
+      {
+       "id": "2164",
+       "nome": "COROGLIO",
+       "lat": 40.8084284378769,
+       "lon": 14.172302110775
+      },
+      {
+       "id": "2166",
+       "nome": "COROGLIO",
+       "lat": 40.8061110502675,
+       "lon": 14.1735291796303
+      },
+      {
+       "id": "2167",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8044629819754,
+       "lon": 14.1742224061457
+      },
+      {
+       "id": "2168",
+       "nome": "COROGLIO",
+       "lat": 40.8030507426494,
+       "lon": 14.1747644984387
+      },
+      {
+       "id": "2081",
+       "nome": "CATTOLICA",
+       "lat": 40.8010955571492,
+       "lon": 14.1763505467174
+      },
+      {
+       "id": "2087",
+       "nome": "CATTOLICA",
+       "lat": 40.8026610348262,
+       "lon": 14.1811353699975
+      },
+      {
+       "id": "2079",
+       "nome": "CATTOLICA",
+       "lat": 40.8110587928331,
+       "lon": 14.1877872846019
+      },
+      {
+       "id": "2083",
+       "nome": "CATTOLICA",
+       "lat": 40.8133221538527,
+       "lon": 14.1887497207659
+      },
+      {
+       "id": "2089",
+       "nome": "CIRCUM. CAV. AOSTA",
+       "lat": 40.8149946219627,
+       "lon": 14.1847380372045
+      }
+     ],
+     "ogni": {
+      "feriale": 35,
+      "sabato": 25,
+      "sabato-pomeriggio": 50,
+      "domenica": 27,
+      "festivo": 33
+     }
+    }
+   ]
+  },
+  {
+   "id": "B182",
+   "nome": "Bus 182",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+     "fermate": [
+      {
+       "id": "5106",
+       "nome": "DEPOSITO VIA PUGLIE",
+       "lat": 40.8794590888047,
+       "lon": 14.3151872588385
+      },
+      {
+       "id": "1433",
+       "nome": "PUGLIE - DEPOSITO ANM",
+       "lat": 40.8797824430854,
+       "lon": 14.3154167653707
+      },
+      {
+       "id": "1450",
+       "nome": "CASORIA PASCOLI - PARCO DEI PINI",
+       "lat": 40.882959230052,
+       "lon": 14.3111081456919
+      },
+      {
+       "id": "1472",
+       "nome": "CASORIA PASCOLI",
+       "lat": 40.8836097482522,
+       "lon": 14.308418930805
+      },
+      {
+       "id": "1351",
+       "nome": "PATERNUM - PROTEZIONE CIVILE",
+       "lat": 40.8944200262074,
+       "lon": 14.2892173769718
+      },
+      {
+       "id": "1352",
+       "nome": "PATERNUM",
+       "lat": 40.8939332098578,
+       "lon": 14.2876971418584
+      },
+      {
+       "id": "1353",
+       "nome": "QUATTRO APRILE - CASORIA",
+       "lat": 40.8933445702784,
+       "lon": 14.2857387940994
+      },
+      {
+       "id": "1354",
+       "nome": "PIAZZA QUATTRO APRILE",
+       "lat": 40.8921605822027,
+       "lon": 14.2836563220549
+      },
+      {
+       "id": "1356",
+       "nome": "SAN PIETRO A PATIERNO",
+       "lat": 40.8893492960487,
+       "lon": 14.2820930478752
+      },
+      {
+       "id": "1361",
+       "nome": "NUOVO TEMPIO",
+       "lat": 40.8872755725666,
+       "lon": 14.2781924326841
+      },
+      {
+       "id": "1362",
+       "nome": "NUOVO TEMPIO",
+       "lat": 40.886150744254,
+       "lon": 14.2762283374563
+      },
+      {
+       "id": "1094",
+       "nome": "DE PINEDO",
+       "lat": 40.8849842161921,
+       "lon": 14.2748710497596
+      },
+      {
+       "id": "1091",
+       "nome": "DE PINEDO - DI VITTORIO",
+       "lat": 40.8827364758489,
+       "lon": 14.2726264485163
+      },
+      {
+       "id": "1212",
+       "nome": "MADDALENA - CUPA POZZELLE",
+       "lat": 40.8783143871858,
+       "lon": 14.2756431383287
+      },
+      {
+       "id": "1222",
+       "nome": "MADDALENA - BRIGANTI",
+       "lat": 40.8761707279263,
+       "lon": 14.2778472493079
+      },
+      {
+       "id": "1211",
+       "nome": "MADDALENA - AEROPOTO CIVILE",
+       "lat": 40.8731005047086,
+       "lon": 14.2809869154615
+      },
+      {
+       "id": "1214",
+       "nome": "MADDALENA - DE GIAXA",
+       "lat": 40.8719484271757,
+       "lon": 14.2821597028434
+      },
+      {
+       "id": "1210",
+       "nome": "MADDALENA - S.MARIA DEL PIANTO",
+       "lat": 40.870111021746,
+       "lon": 14.2840868526679
+      },
+      {
+       "id": "1098",
+       "nome": "NUOVA DEL CAMPO - CIMITERO DEL PIANTO",
+       "lat": 40.8690641786447,
+       "lon": 14.2837836597391
+      },
+      {
+       "id": "1099",
+       "nome": "NUOVA DEL CAMPO",
+       "lat": 40.868069576808,
+       "lon": 14.2817414637116
+      },
+      {
+       "id": "1110",
+       "nome": "NUOVA DEL CAMPO - DE GIAXA",
+       "lat": 40.8691481318576,
+       "lon": 14.279184393312
+      },
+      {
+       "id": "1111",
+       "nome": "NUOVA DEL CAMPO",
+       "lat": 40.8689834963842,
+       "lon": 14.2759109669296
+      },
+      {
+       "id": "1107",
+       "nome": "DON BOSCO - SALESIANI",
+       "lat": 40.8676719372483,
+       "lon": 14.2729111697497
+      },
+      {
+       "id": "1113",
+       "nome": "DON BOSCO - PROVINCIA",
+       "lat": 40.8666267722226,
+       "lon": 14.2714511822321
+      },
+      {
+       "id": "1109",
+       "nome": "DON BOSCO - CARLO III",
+       "lat": 40.8639383818579,
+       "lon": 14.2679861648134
+      },
+      {
+       "id": "1013",
+       "nome": "CARLO III - PALAZZO FUGA",
+       "lat": 40.8620291782183,
+       "lon": 14.2652395665114
+      },
+      {
+       "id": "1151",
+       "nome": "FORIA - ORTO BOTANICO",
+       "lat": 40.8608445067583,
+       "lon": 14.2638139967854
+      },
+      {
+       "id": "1152",
+       "nome": "FORIA - CAVARA",
+       "lat": 40.8590474917363,
+       "lon": 14.2614407467778
+      },
+      {
+       "id": "1153",
+       "nome": "FORIA -CESARE ROSSAROLL",
+       "lat": 40.8579323864944,
+       "lon": 14.259913080607
+      },
+      {
+       "id": "1154",
+       "nome": "FORIA - CASERMA GARIBALDI",
+       "lat": 40.8570048943113,
+       "lon": 14.2587255370131
+      },
+      {
+       "id": "1155",
+       "nome": "FORIA - DUOMO",
+       "lat": 40.8561738531092,
+       "lon": 14.2575123114538
+      },
+      {
+       "id": "1054",
+       "nome": "CAVOUR - M2",
+       "lat": 40.8551749060672,
+       "lon": 14.2552231924725
+      },
+      {
+       "id": "1055",
+       "nome": "FORIA - M1",
+       "lat": 40.8537072458186,
+       "lon": 14.2521921642074
+      },
+      {
+       "id": "1253",
+       "nome": "PESSINA",
+       "lat": 40.8514990972639,
+       "lon": 14.2499391851736
+      },
+      {
+       "id": "1061",
+       "nome": "DANTE - M1",
+       "lat": 40.8485604263483,
+       "lon": 14.2496371921539
+      },
+      {
+       "id": "1296",
+       "nome": "TOLEDO - VII SETTEMBRE",
+       "lat": 40.8468876366233,
+       "lon": 14.2493683899733
+      },
+      {
+       "id": "1297",
+       "nome": "TOLEDO - CARITÀ",
+       "lat": 40.8451161478095,
+       "lon": 14.2491600269379
+      },
+      {
+       "id": "1907",
+       "nome": "BATTISTI",
+       "lat": 40.8432809146598,
+       "lon": 14.250924470042
+      },
+      {
+       "id": "1242",
+       "nome": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+       "lat": 40.8442372949267,
+       "lon": 14.2518503339715
+      }
+     ],
+     "ogni": {
+      "feriale": 22,
+      "sabato": 22,
+      "sabato-pomeriggio": 21,
+      "domenica": 21,
+      "festivo": 25
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "DEPOSITO VIA PUGLIE",
+     "fermate": [
+      {
+       "id": "1242",
+       "nome": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+       "lat": 40.8442372949267,
+       "lon": 14.2518503339715
+      },
+      {
+       "id": "1416",
+       "nome": "SANT'ANNA DEI LOMBARDI",
+       "lat": 40.8468573149069,
+       "lon": 14.2499702786642
+      },
+      {
+       "id": "1062",
+       "nome": "DANTE - PORT'ALBA",
+       "lat": 40.849793055303,
+       "lon": 14.2500978176082
+      },
+      {
+       "id": "1045",
+       "nome": "BROGGIA - BELLE ARTI",
+       "lat": 40.8519139743892,
+       "lon": 14.2507625418365
+      },
+      {
+       "id": "1130",
+       "nome": "COSTANTINOPOLI",
+       "lat": 40.8524796227172,
+       "lon": 14.251707276164
+      },
+      {
+       "id": "1188",
+       "nome": "FORIA -M1",
+       "lat": 40.8538046899789,
+       "lon": 14.2526330021379
+      },
+      {
+       "id": "1156",
+       "nome": "FORIA - M2",
+       "lat": 40.8553728876272,
+       "lon": 14.2562339808877
+      },
+      {
+       "id": "1157",
+       "nome": "FORIA - CASERMA GARIBALDI",
+       "lat": 40.8570349930292,
+       "lon": 14.2590450902305
+      },
+      {
+       "id": "1158",
+       "nome": "FORIA - PONTENUOVO",
+       "lat": 40.8581888995143,
+       "lon": 14.2605805854249
+      },
+      {
+       "id": "1159",
+       "nome": "FORIA - TENORE",
+       "lat": 40.8599422783842,
+       "lon": 14.2628896106323
+      },
+      {
+       "id": "1015",
+       "nome": "PIAZZA CARLO III - ALIFANA",
+       "lat": 40.861940556293,
+       "lon": 14.2654689557734
+      },
+      {
+       "id": "1100",
+       "nome": "DON BOSCO - CARLO III",
+       "lat": 40.8635767199957,
+       "lon": 14.2677765636815
+      },
+      {
+       "id": "1105",
+       "nome": "DON BOSCO - PROVINCIA",
+       "lat": 40.8661886264417,
+       "lon": 14.2712542586506
+      },
+      {
+       "id": "1101",
+       "nome": "DON BOSCO - SALESIANI",
+       "lat": 40.8676740310719,
+       "lon": 14.273243408112
+      },
+      {
+       "id": "1112",
+       "nome": "NUOVA DEL CAMPO",
+       "lat": 40.8688079400085,
+       "lon": 14.2759277127169
+      },
+      {
+       "id": "1102",
+       "nome": "NUOVA DEL CAMPO",
+       "lat": 40.869245830447,
+       "lon": 14.2775219879234
+      },
+      {
+       "id": "1103",
+       "nome": "NUOVA DEL CAMPO - DE GIAXA",
+       "lat": 40.8689584331002,
+       "lon": 14.2791004168681
+      },
+      {
+       "id": "1104",
+       "nome": "NUOVA DEL CAMPO",
+       "lat": 40.8679579043318,
+       "lon": 14.2818910019901
+      },
+      {
+       "id": "1106",
+       "nome": "NUOVA DEL CAMPO - CIMITERO PIANTO",
+       "lat": 40.8690573071736,
+       "lon": 14.284127868802
+      },
+      {
+       "id": "1226",
+       "nome": "COM.MADDALENA - TANGENZIALE",
+       "lat": 40.8704765824411,
+       "lon": 14.2839511798289
+      },
+      {
+       "id": "1213",
+       "nome": "MADDALENA - AEROPORTO CIVILE",
+       "lat": 40.8733166887713,
+       "lon": 14.280984576586
+      },
+      {
+       "id": "1217",
+       "nome": "MADDALENA - AEROPORTO MILITARE",
+       "lat": 40.8750713035466,
+       "lon": 14.2792210264092
+      },
+      {
+       "id": "3553",
+       "nome": "DE PINEDO",
+       "lat": 40.8822183597472,
+       "lon": 14.272366886169
+      },
+      {
+       "id": "1360",
+       "nome": "NUOVO TEMPIO",
+       "lat": 40.886284128675,
+       "lon": 14.2766690341863
+      },
+      {
+       "id": "1357",
+       "nome": "NUOVO TEMPIO",
+       "lat": 40.8871625545351,
+       "lon": 14.2784145496937
+      },
+      {
+       "id": "1359",
+       "nome": "NUOVO TEMPIO",
+       "lat": 40.8883577735816,
+       "lon": 14.2805487718988
+      },
+      {
+       "id": "1355",
+       "nome": "SAN PIETRO A PATIERNO",
+       "lat": 40.889314004242,
+       "lon": 14.2822121327529
+      },
+      {
+       "id": "1267",
+       "nome": "TRANWAY",
+       "lat": 40.8902367530717,
+       "lon": 14.2828402005401
+      },
+      {
+       "id": "1097",
+       "nome": "PIAZZA QUATTRO APRILE - ASL",
+       "lat": 40.8921934358539,
+       "lon": 14.2838696431452
+      },
+      {
+       "id": "1340",
+       "nome": "PATERNUM",
+       "lat": 40.8934805628576,
+       "lon": 14.2866068887758
+      },
+      {
+       "id": "1351",
+       "nome": "PATERNUM - PROTEZIONE CIVILE",
+       "lat": 40.8944200262074,
+       "lon": 14.2892173769718
+      },
+      {
+       "id": "1403",
+       "nome": "PATERNUM",
+       "lat": 40.8942321008014,
+       "lon": 14.2901512794962
+      },
+      {
+       "id": "1516",
+       "nome": "LUCE",
+       "lat": 40.89478312314,
+       "lon": 14.2918637637126
+      },
+      {
+       "id": "1471",
+       "nome": "CASORIA",
+       "lat": 40.8953561390015,
+       "lon": 14.2986599815681
+      },
+      {
+       "id": "1514",
+       "nome": "PASCOLI",
+       "lat": 40.8935603691137,
+       "lon": 14.3011125234807
+      },
+      {
+       "id": "1473",
+       "nome": "CAVONI",
+       "lat": 40.8829529703493,
+       "lon": 14.3087174536758
+      },
+      {
+       "id": "1366",
+       "nome": "PUGLIE - DEPOSITO ANM",
+       "lat": 40.8798760907459,
+       "lon": 14.31525854064
+      },
+      {
+       "id": "5106",
+       "nome": "DEPOSITO VIA PUGLIE",
+       "lat": 40.8794590888047,
+       "lon": 14.3151872588385
+      }
+     ],
+     "ogni": {
+      "feriale": 21,
+      "sabato": 21,
+      "sabato-pomeriggio": 23,
+      "domenica": null,
+      "festivo": null
+     }
+    }
+   ]
+  },
+  {
+   "id": "BC31",
+   "nome": "Bus C31",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "SCARLATTI",
+     "fermate": [
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      },
+      {
+       "id": "2374",
+       "nome": "DISCESA COROGLIO - PONTE",
+       "lat": 40.8035172256965,
+       "lon": 14.1862847355487
+      },
+      {
+       "id": "2175",
+       "nome": "DISCESA COROGLIO - DENZA",
+       "lat": 40.8022265501587,
+       "lon": 14.1878505106904
+      },
+      {
+       "id": "2176",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8013554340408,
+       "lon": 14.1895148484344
+      },
+      {
+       "id": "2049",
+       "nome": "BOCCACCIO - CASALE",
+       "lat": 40.801769690719,
+       "lon": 14.1901381078698
+      },
+      {
+       "id": "2254",
+       "nome": "BOCCACCIO - PASCOLI",
+       "lat": 40.8028657343988,
+       "lon": 14.1884324996396
+      },
+      {
+       "id": "2070",
+       "nome": "PASCOLI",
+       "lat": 40.8041429119417,
+       "lon": 14.1875070613931
+      },
+      {
+       "id": "2071",
+       "nome": "PASCOLI - POSTE",
+       "lat": 40.8046719216267,
+       "lon": 14.188434207247
+      },
+      {
+       "id": "2072",
+       "nome": "PASCOLI - PADULA",
+       "lat": 40.8048678314042,
+       "lon": 14.1906754254975
+      },
+      {
+       "id": "2073",
+       "nome": "PADULA - MANZONI",
+       "lat": 40.8065078214795,
+       "lon": 14.192027779507
+      },
+      {
+       "id": "2251",
+       "nome": "MANZONI - PETRARCA",
+       "lat": 40.8078261741685,
+       "lon": 14.1937634790062
+      },
+      {
+       "id": "2252",
+       "nome": "MANZONI - TORRE RANIERI",
+       "lat": 40.8093627679819,
+       "lon": 14.1964421306912
+      },
+      {
+       "id": "2253",
+       "nome": "MANZONI",
+       "lat": 40.810712107943,
+       "lon": 14.1981094446429
+      },
+      {
+       "id": "2255",
+       "nome": "MANZONI - OSPEDALE FATEBENEFRATELLI",
+       "lat": 40.8132867653949,
+       "lon": 14.1991574091312
+      },
+      {
+       "id": "2256",
+       "nome": "MANZONI - OSPEDALE FATEBENEFRATELLI",
+       "lat": 40.8149690860679,
+       "lon": 14.2001331706063
+      },
+      {
+       "id": "2257",
+       "nome": "MANZONI",
+       "lat": 40.8177388735406,
+       "lon": 14.2020445373588
+      },
+      {
+       "id": "2258",
+       "nome": "MANZONI - POSTE",
+       "lat": 40.8192044610001,
+       "lon": 14.2039906261155
+      },
+      {
+       "id": "2259",
+       "nome": "MANZONI - MONTESSORI",
+       "lat": 40.820856392634,
+       "lon": 14.2060537516795
+      },
+      {
+       "id": "2260",
+       "nome": "MANZONI - PORTA POSILLIPO",
+       "lat": 40.8218272899165,
+       "lon": 14.2083841825261
+      },
+      {
+       "id": "2614",
+       "nome": "MANZONI-SUORE DEL CENACOLO",
+       "lat": 40.8226838806281,
+       "lon": 14.209814796153
+      },
+      {
+       "id": "2261",
+       "nome": "MANZONI - BELVEDERE IANNELLO",
+       "lat": 40.8239618448276,
+       "lon": 14.2109528818596
+      },
+      {
+       "id": "2262",
+       "nome": "MANZONI - FUNICOLARE MERGELLINA",
+       "lat": 40.8259551831761,
+       "lon": 14.2126369525531
+      },
+      {
+       "id": "2263",
+       "nome": "MANZONI",
+       "lat": 40.827595132974,
+       "lon": 14.2127005700715
+      },
+      {
+       "id": "2264",
+       "nome": "MANZONI",
+       "lat": 40.8293904363334,
+       "lon": 14.213088492258
+      },
+      {
+       "id": "2265",
+       "nome": "MANZONI",
+       "lat": 40.8308484534027,
+       "lon": 14.2128933562626
+      },
+      {
+       "id": "2266",
+       "nome": "MANZONI",
+       "lat": 40.8330520640908,
+       "lon": 14.2117316740484
+      },
+      {
+       "id": "2267",
+       "nome": "MANZONI - CARAVAGGIO",
+       "lat": 40.8344270838797,
+       "lon": 14.21125579234
+      },
+      {
+       "id": "2300",
+       "nome": "MANZONI - LARGO EUROPA",
+       "lat": 40.8355590997593,
+       "lon": 14.2127901992904
+      },
+      {
+       "id": "3379",
+       "nome": "EUROPA - PIAVE",
+       "lat": 40.8382436793977,
+       "lon": 14.2154407633104
+      },
+      {
+       "id": "3327",
+       "nome": "CILEA - SAN DOMENICO",
+       "lat": 40.8409244118892,
+       "lon": 14.2175514597934
+      },
+      {
+       "id": "3328",
+       "nome": "CILEA - TANGENZIALE DI NAPOLI",
+       "lat": 40.8421386618092,
+       "lon": 14.2192696095629
+      },
+      {
+       "id": "3329",
+       "nome": "CILEA - SANTA MARIA DELLA LIBERA",
+       "lat": 40.8428832219271,
+       "lon": 14.2208053083704
+      },
+      {
+       "id": "3330",
+       "nome": "CILEA - ACITILLO",
+       "lat": 40.8431184774327,
+       "lon": 14.2236316572181
+      },
+      {
+       "id": "3331",
+       "nome": "CILEA",
+       "lat": 40.8433034335123,
+       "lon": 14.2256846087088
+      },
+      {
+       "id": "3098",
+       "nome": "CIMAROSA",
+       "lat": 40.8425024796259,
+       "lon": 14.2280991135068
+      },
+      {
+       "id": "3124",
+       "nome": "SCARLATTI",
+       "lat": 40.8435672375109,
+       "lon": 14.2274104472441
+      }
+     ],
+     "ogni": {
+      "feriale": 24,
+      "sabato": 17,
+      "sabato-pomeriggio": 28,
+      "domenica": 18,
+      "festivo": 25
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "POSILLIPO CAPO - ATTESTAMENTO",
+     "fermate": [
+      {
+       "id": "3124",
+       "nome": "SCARLATTI",
+       "lat": 40.8435672375109,
+       "lon": 14.2274104472441
+      },
+      {
+       "id": "3323",
+       "nome": "CILEA - GEMITO",
+       "lat": 40.8432871531924,
+       "lon": 14.2239321724542
+      },
+      {
+       "id": "3324",
+       "nome": "CILEA",
+       "lat": 40.8430431977028,
+       "lon": 14.2211503999299
+      },
+      {
+       "id": "3325",
+       "nome": "CILEA - TANGENZIALE DI NAPOLI",
+       "lat": 40.8416697935671,
+       "lon": 14.2181411222992
+      },
+      {
+       "id": "3326",
+       "nome": "CILEA -SAN DOMENICO",
+       "lat": 40.8406581047343,
+       "lon": 14.2174685947348
+      },
+      {
+       "id": "3380",
+       "nome": "EUROPA-SANTO STEFANO",
+       "lat": 40.8385848371375,
+       "lon": 14.2159421176555
+      },
+      {
+       "id": "2377",
+       "nome": "EUROPA - SACRO CUORE",
+       "lat": 40.8369303191941,
+       "lon": 14.2132775914775
+      },
+      {
+       "id": "2301",
+       "nome": "MANZONI - CARAVAGGIO",
+       "lat": 40.8346602268857,
+       "lon": 14.2110988418467
+      },
+      {
+       "id": "2302",
+       "nome": "MANZONI",
+       "lat": 40.8327146036243,
+       "lon": 14.2117831118306
+      },
+      {
+       "id": "2303",
+       "nome": "MANZONI - ORTENSIO",
+       "lat": 40.8304827152653,
+       "lon": 14.2127612935146
+      },
+      {
+       "id": "2304",
+       "nome": "MANZONI",
+       "lat": 40.8290148816742,
+       "lon": 14.2128379517338
+      },
+      {
+       "id": "2305",
+       "nome": "MANZONI - STAZIO",
+       "lat": 40.8276662832814,
+       "lon": 14.2125663112693
+      },
+      {
+       "id": "2306",
+       "nome": "MANZONI - FUNICOLARE MERGELLINA",
+       "lat": 40.825727524244,
+       "lon": 14.2122779466875
+      },
+      {
+       "id": "2307",
+       "nome": "MANZONI",
+       "lat": 40.8238973316445,
+       "lon": 14.2107401909342
+      },
+      {
+       "id": "2163",
+       "nome": "MANZONI",
+       "lat": 40.8227733881077,
+       "lon": 14.2097307247294
+      },
+      {
+       "id": "2308",
+       "nome": "MANZONI - SUORE DEL CENACOLO",
+       "lat": 40.8216390774339,
+       "lon": 14.2072124547962
+      },
+      {
+       "id": "2309",
+       "nome": "MANZONI - PORTA POSILLIPO",
+       "lat": 40.8205504343452,
+       "lon": 14.2054467108168
+      },
+      {
+       "id": "2310",
+       "nome": "MANZONI - POSTE",
+       "lat": 40.8190462899093,
+       "lon": 14.2035229491413
+      },
+      {
+       "id": "2311",
+       "nome": "MANZONI - POSTE",
+       "lat": 40.8175695673295,
+       "lon": 14.2016611971151
+      },
+      {
+       "id": "2329",
+       "nome": "MANZONI",
+       "lat": 40.8161432366485,
+       "lon": 14.2005755719822
+      },
+      {
+       "id": "2312",
+       "nome": "MANZONI - OSPEDALE FATEBENEFRATELLI",
+       "lat": 40.8148135317059,
+       "lon": 14.1997852568872
+      },
+      {
+       "id": "2313",
+       "nome": "MANZONI - OSPEDALE FATEBENEFRATELLI",
+       "lat": 40.8132406575163,
+       "lon": 14.1990038259706
+      },
+      {
+       "id": "2315",
+       "nome": "MANZONI",
+       "lat": 40.8106704819049,
+       "lon": 14.1979528500834
+      },
+      {
+       "id": "2316",
+       "nome": "MANZONI TORRE RANIERI",
+       "lat": 40.8090555823362,
+       "lon": 14.1956663050515
+      },
+      {
+       "id": "2317",
+       "nome": "MANZONI-PETRARCA",
+       "lat": 40.8076657241566,
+       "lon": 14.1933623257227
+      },
+      {
+       "id": "2314",
+       "nome": "MANZONI - PADULA",
+       "lat": 40.8069289777037,
+       "lon": 14.1917084975664
+      },
+      {
+       "id": "2318",
+       "nome": "MANZONI  257",
+       "lat": 40.8054881049017,
+       "lon": 14.1872861502936
+      },
+      {
+       "id": "2319",
+       "nome": "MANZONI-PARCO VIRGILIANO",
+       "lat": 40.8038346014834,
+       "lon": 14.1865801993525
+      },
+      {
+       "id": "2521",
+       "nome": "BOCCACCIO-S.STRATO",
+       "lat": 40.8028195290634,
+       "lon": 14.1882670941827
+      },
+      {
+       "id": "2177",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8015260578108,
+       "lon": 14.1894386813247
+      },
+      {
+       "id": "2178",
+       "nome": "DISCESA COROGLIO-ISTITUTO DENZA",
+       "lat": 40.8025717357471,
+       "lon": 14.187618097347
+      },
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      }
+     ],
+     "ogni": {
+      "feriale": 22,
+      "sabato": 17,
+      "sabato-pomeriggio": 25,
+      "domenica": 18,
+      "festivo": 25
+     }
+    }
+   ]
+  },
+  {
+   "id": "B147",
+   "nome": "Bus 147",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "TANUCCI",
+     "fermate": [
+      {
+       "id": "3131",
+       "nome": "SUAREZ-IMMACOLATA",
+       "lat": 40.8504994310402,
+       "lon": 14.2348898765279
+      },
+      {
+       "id": "3064",
+       "nome": "MENZINGER  -MEDAGLIE D'ORO",
+       "lat": 40.8507356861808,
+       "lon": 14.2324848131456
+      },
+      {
+       "id": "3084",
+       "nome": "MEDAGLIE D'ORO",
+       "lat": 40.85062180188,
+       "lon": 14.2302647030456
+      },
+      {
+       "id": "3144",
+       "nome": "TINO DA CAMAINO-DEGLI ARTISTI",
+       "lat": 40.8486002851745,
+       "lon": 14.2290424762001
+      },
+      {
+       "id": "3202",
+       "nome": "NIUTTA - MEDAGLIE D' ORO",
+       "lat": 40.8514406099296,
+       "lon": 14.2307979846957
+      },
+      {
+       "id": "3051",
+       "nome": "NIUTTA - MUZII",
+       "lat": 40.8528987458301,
+       "lon": 14.2305571468454
+      },
+      {
+       "id": "3226",
+       "nome": "ARENELLA - GIGANTE",
+       "lat": 40.8536092113614,
+       "lon": 14.2311139913735
+      },
+      {
+       "id": "3279",
+       "nome": "GIGANTE - ORSI",
+       "lat": 40.8536027279216,
+       "lon": 14.2328462024587
+      },
+      {
+       "id": "3280",
+       "nome": "GIGANTE-CANNETO",
+       "lat": 40.8552194761644,
+       "lon": 14.2348444719673
+      },
+      {
+       "id": "3297",
+       "nome": "CARACCIOLO POGGIO",
+       "lat": 40.852866049639,
+       "lon": 14.2358621773889
+      },
+      {
+       "id": "3298",
+       "nome": "CARACCIOLO-S.ROSA",
+       "lat": 40.8522750792731,
+       "lon": 14.2384463586297
+      },
+      {
+       "id": "3322",
+       "nome": "SALVATOR ROSA - ISTITUTO VICO",
+       "lat": 40.8516387282385,
+       "lon": 14.2411247343802
+      },
+      {
+       "id": "3768",
+       "nome": "SALVATOR ROSA-PONTECORVO",
+       "lat": 40.8526644719866,
+       "lon": 14.2449224910578
+      },
+      {
+       "id": "3433",
+       "nome": "SALVATOR ROSA-CAVONE",
+       "lat": 40.8530455244167,
+       "lon": 14.2460244690024
+      },
+      {
+       "id": "3432",
+       "nome": "SALVATOR ROSA-MUSEO NAZIONALE",
+       "lat": 40.8535963989238,
+       "lon": 14.2489960754384
+      },
+      {
+       "id": "1253",
+       "nome": "PESSINA",
+       "lat": 40.8514990972639,
+       "lon": 14.2499391851736
+      },
+      {
+       "id": "1130",
+       "nome": "COSTANTINOPOLI",
+       "lat": 40.8524796227172,
+       "lon": 14.251707276164
+      },
+      {
+       "id": "1188",
+       "nome": "FORIA -M1",
+       "lat": 40.8538046899789,
+       "lon": 14.2526330021379
+      },
+      {
+       "id": "1156",
+       "nome": "FORIA - M2",
+       "lat": 40.8553728876272,
+       "lon": 14.2562339808877
+      },
+      {
+       "id": "1157",
+       "nome": "FORIA - CASERMA GARIBALDI",
+       "lat": 40.8570349930292,
+       "lon": 14.2590450902305
+      },
+      {
+       "id": "1158",
+       "nome": "FORIA - PONTENUOVO",
+       "lat": 40.8581888995143,
+       "lon": 14.2605805854249
+      },
+      {
+       "id": "1159",
+       "nome": "FORIA - TENORE",
+       "lat": 40.8599422783842,
+       "lon": 14.2628896106323
+      },
+      {
+       "id": "1015",
+       "nome": "PIAZZA CARLO III - ALIFANA",
+       "lat": 40.861940556293,
+       "lon": 14.2654689557734
+      },
+      {
+       "id": "1182",
+       "nome": "CARLO III",
+       "lat": 40.8636506293459,
+       "lon": 14.2673574818415
+      },
+      {
+       "id": "1430",
+       "nome": "TANUCCI",
+       "lat": 40.8647359953948,
+       "lon": 14.2673366210326
+      },
+      {
+       "id": "1367",
+       "nome": "TANUCCI",
+       "lat": 40.8655387639862,
+       "lon": 14.2660818340802
+      }
+     ],
+     "ogni": {
+      "feriale": 24,
+      "sabato": 25,
+      "sabato-pomeriggio": 31,
+      "domenica": 21,
+      "festivo": 33
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "SUAREZ-IMMACOLATA",
+     "fermate": [
+      {
+       "id": "1367",
+       "nome": "TANUCCI",
+       "lat": 40.8655387639862,
+       "lon": 14.2660818340802
+      },
+      {
+       "id": "1389",
+       "nome": "TANUCCI",
+       "lat": 40.8657825110709,
+       "lon": 14.2655257896569
+      },
+      {
+       "id": "1373",
+       "nome": "TANUCCI",
+       "lat": 40.8649265312406,
+       "lon": 14.2668420829176
+      },
+      {
+       "id": "1181",
+       "nome": "CARLO III",
+       "lat": 40.8639568143148,
+       "lon": 14.2673422417681
+      },
+      {
+       "id": "1013",
+       "nome": "CARLO III - PALAZZO FUGA",
+       "lat": 40.8620291782183,
+       "lon": 14.2652395665114
+      },
+      {
+       "id": "1151",
+       "nome": "FORIA - ORTO BOTANICO",
+       "lat": 40.8608445067583,
+       "lon": 14.2638139967854
+      },
+      {
+       "id": "1152",
+       "nome": "FORIA - CAVARA",
+       "lat": 40.8590474917363,
+       "lon": 14.2614407467778
+      },
+      {
+       "id": "1153",
+       "nome": "FORIA -CESARE ROSSAROLL",
+       "lat": 40.8579323864944,
+       "lon": 14.259913080607
+      },
+      {
+       "id": "1154",
+       "nome": "FORIA - CASERMA GARIBALDI",
+       "lat": 40.8570048943113,
+       "lon": 14.2587255370131
+      },
+      {
+       "id": "1155",
+       "nome": "FORIA - DUOMO",
+       "lat": 40.8561738531092,
+       "lon": 14.2575123114538
+      },
+      {
+       "id": "1054",
+       "nome": "CAVOUR - M2",
+       "lat": 40.8551749060672,
+       "lon": 14.2552231924725
+      },
+      {
+       "id": "1055",
+       "nome": "FORIA - M1",
+       "lat": 40.8537072458186,
+       "lon": 14.2521921642074
+      },
+      {
+       "id": "1246",
+       "nome": "MUSEO NAZIONALE",
+       "lat": 40.8530144687807,
+       "lon": 14.2502165720295
+      },
+      {
+       "id": "3428",
+       "nome": "SALVATOR ROSA-PARCO CIS",
+       "lat": 40.854178355166,
+       "lon": 14.247064560659
+      },
+      {
+       "id": "3295",
+       "nome": "IMBRIANI-ROSA",
+       "lat": 40.8531098750433,
+       "lon": 14.2452586252643
+      },
+      {
+       "id": "3979",
+       "nome": "IMBRIANI 152",
+       "lat": 40.8541340801474,
+       "lon": 14.2425885200699
+      },
+      {
+       "id": "3005",
+       "nome": "D'ACQUISTO",
+       "lat": 40.8553636105232,
+       "lon": 14.2375656616839
+      },
+      {
+       "id": "3283",
+       "nome": "GIGANTE - DE LEVA",
+       "lat": 40.8548869449324,
+       "lon": 14.2370886698526
+      },
+      {
+       "id": "3706",
+       "nome": "GIACINTO GIGANTE",
+       "lat": 40.8541341434988,
+       "lon": 14.2369094387497
+      },
+      {
+       "id": "3282",
+       "nome": "GIGANTE-CANNETO",
+       "lat": 40.8547244896323,
+       "lon": 14.2355946424413
+      },
+      {
+       "id": "3281",
+       "nome": "GIGANTE",
+       "lat": 40.8546783274676,
+       "lon": 14.2340676651344
+      },
+      {
+       "id": "3395",
+       "nome": "GIGANTE - ORSI",
+       "lat": 40.8537189390857,
+       "lon": 14.2327113922898
+      },
+      {
+       "id": "3225",
+       "nome": "ARENELLA - MUZII",
+       "lat": 40.8536884607192,
+       "lon": 14.2308402040368
+      },
+      {
+       "id": "3084",
+       "nome": "MEDAGLIE D'ORO",
+       "lat": 40.85062180188,
+       "lon": 14.2302647030456
+      },
+      {
+       "id": "3145",
+       "nome": "TINO DA CAMAINO-GIARDINI RUOPPOLO",
+       "lat": 40.8492448368991,
+       "lon": 14.2297853507618
+      },
+      {
+       "id": "3065",
+       "nome": "MENZINGER",
+       "lat": 40.8505802872089,
+       "lon": 14.2321455334292
+      },
+      {
+       "id": "3369",
+       "nome": "SUAREZ-IMMACOLATA",
+       "lat": 40.8504640464145,
+       "lon": 14.2344302465987
+      },
+      {
+       "id": "3113",
+       "nome": "VIA SUAREZ",
+       "lat": 40.8502395527442,
+       "lon": 14.2357422675468
+      },
+      {
+       "id": "3131",
+       "nome": "SUAREZ-IMMACOLATA",
+       "lat": 40.8504994310402,
+       "lon": 14.2348898765279
+      }
+     ],
+     "ogni": {
+      "feriale": 24,
+      "sabato": 22,
+      "sabato-pomeriggio": 31,
+      "domenica": 20,
+      "festivo": 38
+     }
+    }
+   ]
+  },
+  {
+   "id": "B168",
+   "nome": "Bus 168",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+     "fermate": [
+      {
+       "id": "3133",
+       "nome": "FRULLONE -  M1",
+       "lat": 40.8799594751936,
+       "lon": 14.231210826496
+      },
+      {
+       "id": "3186",
+       "nome": "SCAGLIONE 55",
+       "lat": 40.8800419445375,
+       "lon": 14.2335142444987
+      },
+      {
+       "id": "3187",
+       "nome": "SCAGLIONE 29",
+       "lat": 40.8791714302332,
+       "lon": 14.234687400757
+      },
+      {
+       "id": "3377",
+       "nome": "SCAGLIONE 23",
+       "lat": 40.8786858477158,
+       "lon": 14.2361765468598
+      },
+      {
+       "id": "3155",
+       "nome": "SCAGLIONE",
+       "lat": 40.877740942419,
+       "lon": 14.2390476588163
+      },
+      {
+       "id": "3176",
+       "nome": "NUOVA S. ROCCO",
+       "lat": 40.876593273211,
+       "lon": 14.2426034154839
+      },
+      {
+       "id": "3177",
+       "nome": "NUOVA S. ROCCO 111",
+       "lat": 40.8760897081745,
+       "lon": 14.244113419548
+      },
+      {
+       "id": "3178",
+       "nome": "NUOVA S. ROCCO",
+       "lat": 40.8754094239131,
+       "lon": 14.2461535259331
+      },
+      {
+       "id": "3361",
+       "nome": "MIANO - L IETI",
+       "lat": 40.8740378570555,
+       "lon": 14.24856040583
+      },
+      {
+       "id": "3398",
+       "nome": "MIANO - DE MARTIN",
+       "lat": 40.8720038924942,
+       "lon": 14.2495446493254
+      },
+      {
+       "id": "3099",
+       "nome": "MIANO - MUSEO DI CAPODIMONTE E REAL BOSCO",
+       "lat": 40.8701922549647,
+       "lon": 14.2500872488536
+      },
+      {
+       "id": "3251",
+       "nome": "CAPODIMONTE",
+       "lat": 40.8670034948503,
+       "lon": 14.2487289282083
+      },
+      {
+       "id": "3250",
+       "nome": "CAPODIMONTE - BASILICA DELL'INCORONATA E CATACOMBE DI S.GENNARO",
+       "lat": 40.8655718610167,
+       "lon": 14.2474517040585
+      },
+      {
+       "id": "3355",
+       "nome": "AMEDEO DI SAVOIA 269",
+       "lat": 40.8648301086993,
+       "lon": 14.2483619135714
+      },
+      {
+       "id": "3356",
+       "nome": "AMEDEO DI SAVOIA 205",
+       "lat": 40.8629924580038,
+       "lon": 14.2483678579651
+      },
+      {
+       "id": "3357",
+       "nome": "AMEDEO DI SAVOIA 193",
+       "lat": 40.8601367713722,
+       "lon": 14.248358613182
+      },
+      {
+       "id": "3118",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8585693479797,
+       "lon": 14.2483615006353
+      },
+      {
+       "id": "3119",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8565107957848,
+       "lon": 14.2483373114117
+      },
+      {
+       "id": "3120",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.8540159876395,
+       "lon": 14.2491040454503
+      },
+      {
+       "id": "1253",
+       "nome": "PESSINA",
+       "lat": 40.8514990972639,
+       "lon": 14.2499391851736
+      },
+      {
+       "id": "1061",
+       "nome": "DANTE - M1",
+       "lat": 40.8485604263483,
+       "lon": 14.2496371921539
+      },
+      {
+       "id": "1296",
+       "nome": "TOLEDO - VII SETTEMBRE",
+       "lat": 40.8468876366233,
+       "lon": 14.2493683899733
+      },
+      {
+       "id": "1297",
+       "nome": "TOLEDO - CARITÀ",
+       "lat": 40.8451161478095,
+       "lon": 14.2491600269379
+      },
+      {
+       "id": "1907",
+       "nome": "BATTISTI",
+       "lat": 40.8432809146598,
+       "lon": 14.250924470042
+      },
+      {
+       "id": "1242",
+       "nome": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+       "lat": 40.8442372949267,
+       "lon": 14.2518503339715
+      }
+     ],
+     "ogni": {
+      "feriale": 23,
+      "sabato": 27,
+      "sabato-pomeriggio": 31,
+      "domenica": 23,
+      "festivo": 50
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "FRULLONE -  M1",
+     "fermate": [
+      {
+       "id": "1242",
+       "nome": "MONTEOLIVETO - FEDERICO II - ARCHITETTURA",
+       "lat": 40.8442372949267,
+       "lon": 14.2518503339715
+      },
+      {
+       "id": "1416",
+       "nome": "SANT'ANNA DEI LOMBARDI",
+       "lat": 40.8468573149069,
+       "lon": 14.2499702786642
+      },
+      {
+       "id": "1062",
+       "nome": "DANTE - PORT'ALBA",
+       "lat": 40.849793055303,
+       "lon": 14.2500978176082
+      },
+      {
+       "id": "1045",
+       "nome": "BROGGIA - BELLE ARTI",
+       "lat": 40.8519139743892,
+       "lon": 14.2507625418365
+      },
+      {
+       "id": "1130",
+       "nome": "COSTANTINOPOLI",
+       "lat": 40.8524796227172,
+       "lon": 14.251707276164
+      },
+      {
+       "id": "1246",
+       "nome": "MUSEO NAZIONALE",
+       "lat": 40.8530144687807,
+       "lon": 14.2502165720295
+      },
+      {
+       "id": "3545",
+       "nome": "SANTA TERESA DEGLI SCALZI 38",
+       "lat": 40.8543581812245,
+       "lon": 14.249085351596
+      },
+      {
+       "id": "3116",
+       "nome": "S.TERESA DEGLI SCALZI - LEOPARDI",
+       "lat": 40.8557238648756,
+       "lon": 14.2485360356376
+      },
+      {
+       "id": "3117",
+       "nome": "S.TERESA DEGLI SCALZI",
+       "lat": 40.858642568471,
+       "lon": 14.2485386457296
+      },
+      {
+       "id": "3352",
+       "nome": "AMEDEO DI SAVOIA 180",
+       "lat": 40.86009302803,
+       "lon": 14.2485578482926
+      },
+      {
+       "id": "3353",
+       "nome": "AMEDEO DI SAVOIA",
+       "lat": 40.863038829586,
+       "lon": 14.2485720159352
+      },
+      {
+       "id": "3354",
+       "nome": "AMEDEO DI SAVOIA 280",
+       "lat": 40.8648584457689,
+       "lon": 14.2485633145235
+      },
+      {
+       "id": "3422",
+       "nome": "TONDO DI CAPODIMONTE",
+       "lat": 40.865454687351,
+       "lon": 14.2488235613489
+      },
+      {
+       "id": "3248",
+       "nome": "CAPODIMONTE - BASILICA DELL'INCORONATA E CATACOMBE DI S.GENNARO",
+       "lat": 40.8655933929453,
+       "lon": 14.2473001676301
+      },
+      {
+       "id": "3249",
+       "nome": "CAPODIMONTE",
+       "lat": 40.8664897517043,
+       "lon": 14.2486872693671
+      },
+      {
+       "id": "3364",
+       "nome": "MIANO - MUSEO DI CAPODIMONTE E REAL BOSCO",
+       "lat": 40.8706563205264,
+       "lon": 14.2501087136324
+      },
+      {
+       "id": "3365",
+       "nome": "MIANO",
+       "lat": 40.8728175558113,
+       "lon": 14.2493010807864
+      },
+      {
+       "id": "3179",
+       "nome": "NUOVA S. ROCCO",
+       "lat": 40.8750891128246,
+       "lon": 14.2474537153051
+      },
+      {
+       "id": "3180",
+       "nome": "NUOVA S. ROCCO 52",
+       "lat": 40.8756854006924,
+       "lon": 14.2456519436997
+      },
+      {
+       "id": "3181",
+       "nome": "NUOVA S. ROCCO 61A",
+       "lat": 40.8762506586221,
+       "lon": 14.2439306018293
+      },
+      {
+       "id": "3182",
+       "nome": "NUOVA S. ROCCO 112",
+       "lat": 40.8770691659133,
+       "lon": 14.2414088036826
+      },
+      {
+       "id": "3576",
+       "nome": "SCAGLIONE",
+       "lat": 40.8778711607862,
+       "lon": 14.2389868261621
+      },
+      {
+       "id": "3382",
+       "nome": "SCAGLIONE FR. 25",
+       "lat": 40.8789439814952,
+       "lon": 14.235707741953
+      },
+      {
+       "id": "3219",
+       "nome": "SCAGLIONE",
+       "lat": 40.8801145965113,
+       "lon": 14.2336024214791
+      },
+      {
+       "id": "3133",
+       "nome": "FRULLONE -  M1",
+       "lat": 40.8799594751936,
+       "lon": 14.231210826496
+      }
+     ],
+     "ogni": {
+      "feriale": 22,
+      "sabato": 25,
+      "sabato-pomeriggio": 36,
+      "domenica": 21,
+      "festivo": 50
+     }
+    }
+   ]
+  },
+  {
+   "id": "BC21",
+   "nome": "Bus C21",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "POSILLIPO CAPO - ATTESTAMENTO",
+     "fermate": [
+      {
+       "id": "5206",
+       "nome": "CAPOLINEA MERGELLINA",
+       "lat": 40.8252342765415,
+       "lon": 14.2205612827001
+      },
+      {
+       "id": "2141",
+       "nome": "MERGELLINA",
+       "lat": 40.8259868892282,
+       "lon": 14.2199565550747
+      },
+      {
+       "id": "2142",
+       "nome": "MERGELLINA - SANNAZZARO",
+       "lat": 40.8281664115109,
+       "lon": 14.2198835770261
+      },
+      {
+       "id": "2138",
+       "nome": "MERGELLINA - LEONE",
+       "lat": 40.8279712641352,
+       "lon": 14.2196664657256
+      },
+      {
+       "id": "2385",
+       "nome": "ORAZIO",
+       "lat": 40.8259748835662,
+       "lon": 14.2188478778511
+      },
+      {
+       "id": "2386",
+       "nome": "ORAZIO",
+       "lat": 40.8239693084928,
+       "lon": 14.2180027641699
+      },
+      {
+       "id": "2558",
+       "nome": "PETRARCA",
+       "lat": 40.8239128248516,
+       "lon": 14.2163165351477
+      },
+      {
+       "id": "2559",
+       "nome": "PETRARCA",
+       "lat": 40.8219339599623,
+       "lon": 14.2134434401518
+      },
+      {
+       "id": "2560",
+       "nome": "PETRARCA-VIA NEVIO",
+       "lat": 40.8211568826285,
+       "lon": 14.2117776560347
+      },
+      {
+       "id": "2561",
+       "nome": "PETRARCA",
+       "lat": 40.82018151254,
+       "lon": 14.2107575585175
+      },
+      {
+       "id": "2562",
+       "nome": "PETRARCA",
+       "lat": 40.8176892803876,
+       "lon": 14.2088541776265
+      },
+      {
+       "id": "2564",
+       "nome": "PETRARCA-TITO LIVIO",
+       "lat": 40.8150915081825,
+       "lon": 14.2061195203427
+      },
+      {
+       "id": "2565",
+       "nome": "PETRARCA",
+       "lat": 40.814003248563,
+       "lon": 14.2050653742165
+      },
+      {
+       "id": "2566",
+       "nome": "PETRARCA  81",
+       "lat": 40.8128365127584,
+       "lon": 14.2037365326842
+      },
+      {
+       "id": "2567",
+       "nome": "PETRARCA  65",
+       "lat": 40.8115671734661,
+       "lon": 14.2019021032731
+      },
+      {
+       "id": "2568",
+       "nome": "PETRARCA - VILLA RUFFO",
+       "lat": 40.8094431331802,
+       "lon": 14.1989309340994
+      },
+      {
+       "id": "2569",
+       "nome": "PETRARCA",
+       "lat": 40.8083365326132,
+       "lon": 14.1984877915192
+      },
+      {
+       "id": "2332",
+       "nome": "PETRARCA - TORRE RANIERI",
+       "lat": 40.8073674231109,
+       "lon": 14.195796354541
+      },
+      {
+       "id": "2333",
+       "nome": "PETRARCA",
+       "lat": 40.8072817741377,
+       "lon": 14.1938500938432
+      },
+      {
+       "id": "2314",
+       "nome": "MANZONI - PADULA",
+       "lat": 40.8069289777037,
+       "lon": 14.1917084975664
+      },
+      {
+       "id": "2318",
+       "nome": "MANZONI  257",
+       "lat": 40.8054881049017,
+       "lon": 14.1872861502936
+      },
+      {
+       "id": "2319",
+       "nome": "MANZONI-PARCO VIRGILIANO",
+       "lat": 40.8038346014834,
+       "lon": 14.1865801993525
+      },
+      {
+       "id": "2521",
+       "nome": "BOCCACCIO-S.STRATO",
+       "lat": 40.8028195290634,
+       "lon": 14.1882670941827
+      },
+      {
+       "id": "2177",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8015260578108,
+       "lon": 14.1894386813247
+      },
+      {
+       "id": "2178",
+       "nome": "DISCESA COROGLIO-ISTITUTO DENZA",
+       "lat": 40.8025717357471,
+       "lon": 14.187618097347
+      },
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      }
+     ],
+     "ogni": {
+      "feriale": 22,
+      "sabato": 19,
+      "sabato-pomeriggio": 31,
+      "domenica": 20,
+      "festivo": 33
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "CAPOLINEA MERGELLINA",
+     "fermate": [
+      {
+       "id": "2422",
+       "nome": "POSILLIPO CAPO - ATTESTAMENTO",
+       "lat": 40.8042527845461,
+       "lon": 14.1856052369237
+      },
+      {
+       "id": "2374",
+       "nome": "DISCESA COROGLIO - PONTE",
+       "lat": 40.8035172256965,
+       "lon": 14.1862847355487
+      },
+      {
+       "id": "2175",
+       "nome": "DISCESA COROGLIO - DENZA",
+       "lat": 40.8022265501587,
+       "lon": 14.1878505106904
+      },
+      {
+       "id": "2176",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8013554340408,
+       "lon": 14.1895148484344
+      },
+      {
+       "id": "2049",
+       "nome": "BOCCACCIO - CASALE",
+       "lat": 40.801769690719,
+       "lon": 14.1901381078698
+      },
+      {
+       "id": "2254",
+       "nome": "BOCCACCIO - PASCOLI",
+       "lat": 40.8028657343988,
+       "lon": 14.1884324996396
+      },
+      {
+       "id": "2070",
+       "nome": "PASCOLI",
+       "lat": 40.8041429119417,
+       "lon": 14.1875070613931
+      },
+      {
+       "id": "2071",
+       "nome": "PASCOLI - POSTE",
+       "lat": 40.8046719216267,
+       "lon": 14.188434207247
+      },
+      {
+       "id": "2072",
+       "nome": "PASCOLI - PADULA",
+       "lat": 40.8048678314042,
+       "lon": 14.1906754254975
+      },
+      {
+       "id": "2073",
+       "nome": "PADULA - MANZONI",
+       "lat": 40.8065078214795,
+       "lon": 14.192027779507
+      },
+      {
+       "id": "2334",
+       "nome": "PETRARCA - MANZONI",
+       "lat": 40.8071449413334,
+       "lon": 14.1936057450241
+      },
+      {
+       "id": "2335",
+       "nome": "PETRARCA - TORRE RANIERI",
+       "lat": 40.8072608604046,
+       "lon": 14.1960169709787
+      },
+      {
+       "id": "2336",
+       "nome": "PETRARCA",
+       "lat": 40.8083967082639,
+       "lon": 14.1987212209847
+      },
+      {
+       "id": "2337",
+       "nome": "PETRARCA - VILLA RUFFO",
+       "lat": 40.8096807455807,
+       "lon": 14.1994201047601
+      },
+      {
+       "id": "2338",
+       "nome": "PETRARCA - VILLA VITTORIA",
+       "lat": 40.8115103459697,
+       "lon": 14.2021517692876
+      },
+      {
+       "id": "2339",
+       "nome": "PETRARCA",
+       "lat": 40.8128703299176,
+       "lon": 14.2040681152544
+      },
+      {
+       "id": "2340",
+       "nome": "PETRARCA",
+       "lat": 40.8141138307271,
+       "lon": 14.2054256896024
+      },
+      {
+       "id": "2341",
+       "nome": "PETRARCA - TITO LIVIO",
+       "lat": 40.8151295777508,
+       "lon": 14.206415493457
+      },
+      {
+       "id": "2342",
+       "nome": "PETRARCA - FACOLTÀ TEOLOGIA",
+       "lat": 40.8165140123414,
+       "lon": 14.2087528827641
+      },
+      {
+       "id": "2344",
+       "nome": "PETRARCA",
+       "lat": 40.8204911160646,
+       "lon": 14.2112430325346
+      },
+      {
+       "id": "2345",
+       "nome": "PETRARCA - PARCO CARELLI",
+       "lat": 40.8213045271265,
+       "lon": 14.2122917389539
+      },
+      {
+       "id": "2346",
+       "nome": "PETRARCA",
+       "lat": 40.8221162943959,
+       "lon": 14.2137614608454
+      },
+      {
+       "id": "2347",
+       "nome": "PETRARCA - ORAZIO",
+       "lat": 40.8238392395577,
+       "lon": 14.2167561707909
+      },
+      {
+       "id": "2382",
+       "nome": "ORAZIO",
+       "lat": 40.82412920522,
+       "lon": 14.2189999802566
+      },
+      {
+       "id": "2383",
+       "nome": "ORAZIO",
+       "lat": 40.8260700857431,
+       "lon": 14.2189386682072
+      },
+      {
+       "id": "2140",
+       "nome": "MERGELLINA - FUNCOLARE",
+       "lat": 40.8260748603362,
+       "lon": 14.2196442246363
+      },
+      {
+       "id": "5206",
+       "nome": "CAPOLINEA MERGELLINA",
+       "lat": 40.8252342765415,
+       "lon": 14.2205612827001
+      }
+     ],
+     "ogni": {
+      "feriale": 21,
+      "sabato": 18,
+      "sabato-pomeriggio": 31,
+      "domenica": 20,
+      "festivo": 30
+     }
+    }
+   ]
+  },
+  {
+   "id": "BC1",
+   "nome": "Bus C1",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "PADULA - MANZONI",
+     "fermate": [
+      {
+       "id": "5001",
+       "nome": "PIAZZALE TECCHIO",
+       "lat": 40.8226958965257,
+       "lon": 14.1944236056058
+      },
+      {
+       "id": "2100",
+       "nome": "GIULIO CESARE - TECCHIO",
+       "lat": 40.8233933128849,
+       "lon": 14.1951581046068
+      },
+      {
+       "id": "2027",
+       "nome": "AUGUSTO - POLITECNICO",
+       "lat": 40.8258106490677,
+       "lon": 14.1962495524362
+      },
+      {
+       "id": "2153",
+       "nome": "TECCHIO - MOSTRA",
+       "lat": 40.8250873807524,
+       "lon": 14.1929733844248
+      },
+      {
+       "id": "2189",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8224930702283,
+       "lon": 14.1920205866539
+      },
+      {
+       "id": "2605",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8213671996863,
+       "lon": 14.1888355051826
+      },
+      {
+       "id": "2619",
+       "nome": "DIOCLEZIANO - CAVALLEGGERI",
+       "lat": 40.8207783227531,
+       "lon": 14.187081755258
+      },
+      {
+       "id": "2620",
+       "nome": "DIOCLEZIANO - EDENLANDIA",
+       "lat": 40.8196562547046,
+       "lon": 14.1838167521917
+      },
+      {
+       "id": "2651",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8186296216162,
+       "lon": 14.1806840838023
+      },
+      {
+       "id": "2190",
+       "nome": "DIOCLEZIANO - ESEDRA",
+       "lat": 40.8176072811924,
+       "lon": 14.1775336728449
+      },
+      {
+       "id": "2624",
+       "nome": "NUOVA BAGNOLI-CUMANA NUOVA AGNANO",
+       "lat": 40.8166778784312,
+       "lon": 14.1747942490291
+      },
+      {
+       "id": "2622",
+       "nome": "NUOVA BAGNOLI-VILLA LE PALME",
+       "lat": 40.8160838612654,
+       "lon": 14.1729815247025
+      },
+      {
+       "id": "2625",
+       "nome": "NUOVA BAGNOLI-CARAFA",
+       "lat": 40.815241883713,
+       "lon": 14.1705138507969
+      },
+      {
+       "id": "2621",
+       "nome": "PIAZZA BAGNOLI",
+       "lat": 40.8142478305099,
+       "lon": 14.1675768272102
+      },
+      {
+       "id": "2940",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8130949006626,
+       "lon": 14.1669717253094
+      },
+      {
+       "id": "2164",
+       "nome": "COROGLIO",
+       "lat": 40.8084284378769,
+       "lon": 14.172302110775
+      },
+      {
+       "id": "2166",
+       "nome": "COROGLIO",
+       "lat": 40.8061110502675,
+       "lon": 14.1735291796303
+      },
+      {
+       "id": "2167",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8044629819754,
+       "lon": 14.1742224061457
+      },
+      {
+       "id": "2168",
+       "nome": "COROGLIO",
+       "lat": 40.8030507426494,
+       "lon": 14.1747644984387
+      },
+      {
+       "id": "2091",
+       "nome": "DISCESA COROGLIO - NISIDA",
+       "lat": 40.8005976890758,
+       "lon": 14.176644172352
+      },
+      {
+       "id": "2434",
+       "nome": "DISCESA COROGLIO - GROTTA DI SEIANO",
+       "lat": 40.7998915456388,
+       "lon": 14.1761550154452
+      },
+      {
+       "id": "2374",
+       "nome": "DISCESA COROGLIO - PONTE",
+       "lat": 40.8035172256965,
+       "lon": 14.1862847355487
+      },
+      {
+       "id": "2175",
+       "nome": "DISCESA COROGLIO - DENZA",
+       "lat": 40.8022265501587,
+       "lon": 14.1878505106904
+      },
+      {
+       "id": "2176",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8013554340408,
+       "lon": 14.1895148484344
+      },
+      {
+       "id": "2049",
+       "nome": "BOCCACCIO - CASALE",
+       "lat": 40.801769690719,
+       "lon": 14.1901381078698
+      },
+      {
+       "id": "2254",
+       "nome": "BOCCACCIO - PASCOLI",
+       "lat": 40.8028657343988,
+       "lon": 14.1884324996396
+      },
+      {
+       "id": "2070",
+       "nome": "PASCOLI",
+       "lat": 40.8041429119417,
+       "lon": 14.1875070613931
+      },
+      {
+       "id": "2071",
+       "nome": "PASCOLI - POSTE",
+       "lat": 40.8046719216267,
+       "lon": 14.188434207247
+      },
+      {
+       "id": "2072",
+       "nome": "PASCOLI - PADULA",
+       "lat": 40.8048678314042,
+       "lon": 14.1906754254975
+      },
+      {
+       "id": "2073",
+       "nome": "PADULA - MANZONI",
+       "lat": 40.8065078214795,
+       "lon": 14.192027779507
+      }
+     ],
+     "ogni": {
+      "feriale": 33,
+      "sabato": 35,
+      "sabato-pomeriggio": 31,
+      "domenica": 33,
+      "festivo": 60
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "PIAZZALE TECCHIO",
+     "fermate": [
+      {
+       "id": "2073",
+       "nome": "PADULA - MANZONI",
+       "lat": 40.8065078214795,
+       "lon": 14.192027779507
+      },
+      {
+       "id": "2318",
+       "nome": "MANZONI  257",
+       "lat": 40.8054881049017,
+       "lon": 14.1872861502936
+      },
+      {
+       "id": "2319",
+       "nome": "MANZONI-PARCO VIRGILIANO",
+       "lat": 40.8038346014834,
+       "lon": 14.1865801993525
+      },
+      {
+       "id": "2521",
+       "nome": "BOCCACCIO-S.STRATO",
+       "lat": 40.8028195290634,
+       "lon": 14.1882670941827
+      },
+      {
+       "id": "2177",
+       "nome": "DISCESA COROGLIO - MARECHIARO",
+       "lat": 40.8015260578108,
+       "lon": 14.1894386813247
+      },
+      {
+       "id": "2178",
+       "nome": "DISCESA COROGLIO-ISTITUTO DENZA",
+       "lat": 40.8025717357471,
+       "lon": 14.187618097347
+      },
+      {
+       "id": "2433",
+       "nome": "DISCESA COROGLIO - GROTTA DI SEIANO",
+       "lat": 40.8000576776996,
+       "lon": 14.1760818350298
+      },
+      {
+       "id": "2090",
+       "nome": "COROGLIO",
+       "lat": 40.802589088544,
+       "lon": 14.1751987483258
+      },
+      {
+       "id": "2002",
+       "nome": "COROGLIO - CITTÀ DELLA SCIEZA",
+       "lat": 40.8052642999555,
+       "lon": 14.1740263184145
+      },
+      {
+       "id": "2171",
+       "nome": "COROGLIO",
+       "lat": 40.805959641244,
+       "lon": 14.1737711305577
+      },
+      {
+       "id": "2172",
+       "nome": "COROGLIO",
+       "lat": 40.8082225267537,
+       "lon": 14.1727170421027
+      },
+      {
+       "id": "2901",
+       "nome": "COROGLIO - ARENILE",
+       "lat": 40.8128997518481,
+       "lon": 14.1673921136223
+      },
+      {
+       "id": "2656",
+       "nome": "BAGNOLI-CUMANA",
+       "lat": 40.8139333703581,
+       "lon": 14.1670679490979
+      },
+      {
+       "id": "2078",
+       "nome": "NUOVA BAGNOLI - CARAFA",
+       "lat": 40.8149409263256,
+       "lon": 14.170001818694
+      },
+      {
+       "id": "2623",
+       "nome": "NUOVA BAGNOLI-VILLA LE PALME",
+       "lat": 40.8159673582668,
+       "lon": 14.1730659720494
+      },
+      {
+       "id": "2077",
+       "nome": "NUOVA BAGNOLI - AGNANO",
+       "lat": 40.8166900016394,
+       "lon": 14.175229856118
+      },
+      {
+       "id": "2321",
+       "nome": "DIOCLEZIANO-PIAZZA ESEDRA",
+       "lat": 40.8173130569068,
+       "lon": 14.1773298014554
+      },
+      {
+       "id": "2642",
+       "nome": "DIOCLEZIANO - POSTE",
+       "lat": 40.8183935728057,
+       "lon": 14.180426120002
+      },
+      {
+       "id": "2285",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.818977599586,
+       "lon": 14.1821749899446
+      },
+      {
+       "id": "2679",
+       "nome": "DIOCLEZIANO - OSSERVATORIO VESUVIANO",
+       "lat": 40.8196268458783,
+       "lon": 14.1841165238766
+      },
+      {
+       "id": "2514",
+       "nome": "DIOCLEZIANO-AOSTA",
+       "lat": 40.8202525297463,
+       "lon": 14.1859735245019
+      },
+      {
+       "id": "2093",
+       "nome": "DIOCLEZIANO - CAVALLEGGERI",
+       "lat": 40.8207354776665,
+       "lon": 14.1873935526529
+      },
+      {
+       "id": "2604",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.821218574999,
+       "lon": 14.1888373159122
+      },
+      {
+       "id": "2188",
+       "nome": "DIOCLEZIANO",
+       "lat": 40.8225052325139,
+       "lon": 14.1924710576976
+      },
+      {
+       "id": "2731",
+       "nome": "TECCHIO - M2",
+       "lat": 40.8230665169082,
+       "lon": 14.1948003714281
+      },
+      {
+       "id": "5001",
+       "nome": "PIAZZALE TECCHIO",
+       "lat": 40.8226958965257,
+       "lon": 14.1944236056058
+      }
+     ],
+     "ogni": {
+      "feriale": 33,
+      "sabato": 35,
+      "sabato-pomeriggio": 36,
+      "domenica": 33,
+      "festivo": 60
+     }
+    }
+   ]
+  },
+  {
+   "id": "BC44",
+   "nome": "Bus C44",
+   "tipo": "bus",
+   "direzioni": [
+    {
+     "verso": "0",
+     "capolinea": "DELL'EREMO-PARCO PUBBLICO",
+     "fermate": [
+      {
+       "id": "3574",
+       "nome": "VIA SUAREZ",
+       "lat": 40.8504057801488,
+       "lon": 14.234773262481
+      },
+      {
+       "id": "3982",
+       "nome": "MICHELANGELO",
+       "lat": 40.8484645342682,
+       "lon": 14.2345376566915
+      },
+      {
+       "id": "3981",
+       "nome": "MICHELANGELO",
+       "lat": 40.8476780575828,
+       "lon": 14.2321424554038
+      },
+      {
+       "id": "3899",
+       "nome": "FIORE - OSPEDALE SANTOBONO",
+       "lat": 40.8486689765197,
+       "lon": 14.2312363470884
+      },
+      {
+       "id": "3202",
+       "nome": "NIUTTA - MEDAGLIE D' ORO",
+       "lat": 40.8514406099296,
+       "lon": 14.2307979846957
+      },
+      {
+       "id": "3051",
+       "nome": "NIUTTA - MUZII",
+       "lat": 40.8528987458301,
+       "lon": 14.2305571468454
+      },
+      {
+       "id": "3201",
+       "nome": "PISCICELLI-RUOPPOLO",
+       "lat": 40.8515704536246,
+       "lon": 14.2279848139754
+      },
+      {
+       "id": "3302",
+       "nome": "CASTELLINO-SCHIAPPOLI",
+       "lat": 40.8523215620495,
+       "lon": 14.2264783011483
+      },
+      {
+       "id": "3303",
+       "nome": "CASTELLINO-DELL'ERBA",
+       "lat": 40.853546362482,
+       "lon": 14.2257581515296
+      },
+      {
+       "id": "3304",
+       "nome": "CASTELLINO-C.N.R.",
+       "lat": 40.8552262401075,
+       "lon": 14.225062332441
+      },
+      {
+       "id": "3305",
+       "nome": "CASTELLINO 115",
+       "lat": 40.8565587245179,
+       "lon": 14.2249518886313
+      },
+      {
+       "id": "3306",
+       "nome": "CASTELLINO-MONTEDONZELLI",
+       "lat": 40.857851628919,
+       "lon": 14.2256546334297
+      },
+      {
+       "id": "3712",
+       "nome": "CASTELLINO 136",
+       "lat": 40.8602546606037,
+       "lon": 14.2253300196026
+      },
+      {
+       "id": "3307",
+       "nome": "CASTELLINO-D'ANTONA",
+       "lat": 40.8610748880219,
+       "lon": 14.2247301653316
+      },
+      {
+       "id": "3004",
+       "nome": "D'ANTONA - CAVALLINO",
+       "lat": 40.8619575303197,
+       "lon": 14.2253754383193
+      },
+      {
+       "id": "3300",
+       "nome": "CARDARELLI - OSPEDALE CARDARELLI",
+       "lat": 40.8659045452442,
+       "lon": 14.2269254422973
+      },
+      {
+       "id": "3197",
+       "nome": "PIETRAVALLE - GATTO",
+       "lat": 40.868680800473,
+       "lon": 14.2258370232376
+      },
+      {
+       "id": "3198",
+       "nome": "PIETRAVALLE - DE AMICIS",
+       "lat": 40.8687374276743,
+       "lon": 14.223540167999
+      },
+      {
+       "id": "3215",
+       "nome": "PANSINI - POLICLINICO",
+       "lat": 40.8668285593515,
+       "lon": 14.2223343030904
+      },
+      {
+       "id": "3125",
+       "nome": "MONTESANO - M1 POLICLINICO",
+       "lat": 40.8654818713238,
+       "lon": 14.2216736917721
+      },
+      {
+       "id": "3651",
+       "nome": "MONTESANO - CANGIANI",
+       "lat": 40.8642072745827,
+       "lon": 14.2203507418168
+      },
+      {
+       "id": "3233",
+       "nome": "BIANCHI",
+       "lat": 40.8644171620658,
+       "lon": 14.2187523206642
+      },
+      {
+       "id": "3234",
+       "nome": "BIANCHI - II^ TRAVERSA",
+       "lat": 40.8659661314608,
+       "lon": 14.2166931395542
+      },
+      {
+       "id": "3232",
+       "nome": "BIANCHI - MONTELUNGO",
+       "lat": 40.8667727662589,
+       "lon": 14.2154258077022
+      },
+      {
+       "id": "3074",
+       "nome": "BIANCHI - EDICOLA",
+       "lat": 40.8682285310824,
+       "lon": 14.2122580561626
+      },
+      {
+       "id": "3203",
+       "nome": "GUANTAI AD ORSOLONE-INPS",
+       "lat": 40.8683172649267,
+       "lon": 14.2061486912407
+      },
+      {
+       "id": "3389",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8675198116736,
+       "lon": 14.2035031038527
+      },
+      {
+       "id": "3385",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8673711629486,
+       "lon": 14.2015469304623
+      },
+      {
+       "id": "3392",
+       "nome": "GUANTAI AD ORSOLONE - LARDICHIELLO",
+       "lat": 40.8685386833503,
+       "lon": 14.1990854199218
+      },
+      {
+       "id": "3386",
+       "nome": "GUANTAI AD ORSOLONE - ROTONDELLA",
+       "lat": 40.8682319122833,
+       "lon": 14.1957783508456
+      },
+      {
+       "id": "3649",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8684125808744,
+       "lon": 14.1926267762452
+      },
+      {
+       "id": "3211",
+       "nome": "PIAZZETTA NAZARETH",
+       "lat": 40.8687469612809,
+       "lon": 14.1914941978911
+      },
+      {
+       "id": "3934",
+       "nome": "GUERRA - SOFFRITTO",
+       "lat": 40.8694434967984,
+       "lon": 14.189981613908
+      },
+      {
+       "id": "3612",
+       "nome": "SOFFRITTO - IST. DARMON",
+       "lat": 40.8705953429194,
+       "lon": 14.1878878912374
+      },
+      {
+       "id": "3921",
+       "nome": "MANDRACCHIO",
+       "lat": 40.8678183331536,
+       "lon": 14.1868983379664
+      },
+      {
+       "id": "3922",
+       "nome": "MANDRACCHIO",
+       "lat": 40.8670663241925,
+       "lon": 14.1875631514776
+      },
+      {
+       "id": "3384",
+       "nome": "DELL'EREMO - LOYOLA",
+       "lat": 40.8649562056508,
+       "lon": 14.1898138067159
+      },
+      {
+       "id": "3645",
+       "nome": "DELL'EREMO",
+       "lat": 40.863763810889,
+       "lon": 14.190626309595
+      },
+      {
+       "id": "3023",
+       "nome": "DELL'EREMO 51",
+       "lat": 40.8623654134802,
+       "lon": 14.1909666686506
+      },
+      {
+       "id": "3127",
+       "nome": "DELL'EREMO-PARCO PUBBLICO",
+       "lat": 40.8609160256125,
+       "lon": 14.1917436804729
+      }
+     ],
+     "ogni": {
+      "feriale": 30,
+      "sabato": 39,
+      "sabato-pomeriggio": 83,
+      "domenica": 30,
+      "festivo": 75
+     }
+    },
+    {
+     "verso": "1",
+     "capolinea": "VIA SUAREZ",
+     "fermate": [
+      {
+       "id": "3127",
+       "nome": "DELL'EREMO-PARCO PUBBLICO",
+       "lat": 40.8609160256125,
+       "lon": 14.1917436804729
+      },
+      {
+       "id": "3209",
+       "nome": "DELL'EREMO 45",
+       "lat": 40.8626335890292,
+       "lon": 14.1913134386749
+      },
+      {
+       "id": "3413",
+       "nome": "DELL'EREMO-POSTE",
+       "lat": 40.8639082013654,
+       "lon": 14.1906631154333
+      },
+      {
+       "id": "3383",
+       "nome": "DELL'EREMO-LOYOLA",
+       "lat": 40.8650827480355,
+       "lon": 14.1898745608729
+      },
+      {
+       "id": "3376",
+       "nome": "NAZARETH - PARCO PUBBLICO",
+       "lat": 40.8661539100537,
+       "lon": 14.1897576778139
+      },
+      {
+       "id": "3247",
+       "nome": "NAZARETH",
+       "lat": 40.8674564296193,
+       "lon": 14.18987529824
+      },
+      {
+       "id": "3391",
+       "nome": "PIAZZETTA NAZARETH",
+       "lat": 40.8685360130151,
+       "lon": 14.1916005964973
+      },
+      {
+       "id": "3390",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8683271676251,
+       "lon": 14.1932941209485
+      },
+      {
+       "id": "3451",
+       "nome": "GUANTAI AD ORSOLONE - ROTONDELLA",
+       "lat": 40.8682606571556,
+       "lon": 14.1947337469176
+      },
+      {
+       "id": "3387",
+       "nome": "GUANTAI AD ORSOLONE - LARDICHIELLO",
+       "lat": 40.8684154545525,
+       "lon": 14.1988525398702
+      },
+      {
+       "id": "3388",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8671941124701,
+       "lon": 14.201997012229
+      },
+      {
+       "id": "3393",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8675208562571,
+       "lon": 14.2036543881717
+      },
+      {
+       "id": "3204",
+       "nome": "GUANTAI AD ORSOLONE - SEDE INPS",
+       "lat": 40.8681616745363,
+       "lon": 14.2064472128072
+      },
+      {
+       "id": "3806",
+       "nome": "GUANTAI AD ORSOLONE",
+       "lat": 40.8681532279439,
+       "lon": 14.2104671018514
+      },
+      {
+       "id": "3863",
+       "nome": "BIANCHI",
+       "lat": 40.8681368498927,
+       "lon": 14.2125516526992
+      },
+      {
+       "id": "3231",
+       "nome": "BIANCHI - II^ TRAVERSA",
+       "lat": 40.8667936101575,
+       "lon": 14.2151793360946
+      },
+      {
+       "id": "3235",
+       "nome": "BIANCHI - CANGIANI",
+       "lat": 40.8657284989624,
+       "lon": 14.2168531655354
+      },
+      {
+       "id": "3128",
+       "nome": "SEMMOLA - CANGIANI",
+       "lat": 40.8635258099806,
+       "lon": 14.2194866038192
+      },
+      {
+       "id": "3129",
+       "nome": "SEMMOLA - OSPEDALE PASCALE",
+       "lat": 40.8617500380644,
+       "lon": 14.2213169238759
+      },
+      {
+       "id": "3003",
+       "nome": "D'ANTONA - SEMMOLA",
+       "lat": 40.8612491863819,
+       "lon": 14.2231886092938
+      },
+      {
+       "id": "3308",
+       "nome": "CASTELLINO-JEMMA",
+       "lat": 40.8607018910235,
+       "lon": 14.2248561330136
+      },
+      {
+       "id": "3309",
+       "nome": "CASTELLINO 131",
+       "lat": 40.857624567514,
+       "lon": 14.2253784580625
+      },
+      {
+       "id": "3310",
+       "nome": "CASTELLINO-METROPOLITANA",
+       "lat": 40.8566210003266,
+       "lon": 14.2248354840917
+      },
+      {
+       "id": "3311",
+       "nome": "CASTELLINO-C.N.R.",
+       "lat": 40.8546995754332,
+       "lon": 14.2251099941016
+      },
+      {
+       "id": "3312",
+       "nome": "CASTELLINO-DELL'ERBA",
+       "lat": 40.8534106514651,
+       "lon": 14.2256707521395
+      },
+      {
+       "id": "3313",
+       "nome": "CASTELLINO-SCHIAPPOLI",
+       "lat": 40.8522307303846,
+       "lon": 14.2263666524292
+      },
+      {
+       "id": "3287",
+       "nome": "GIOTTO-RUOPPOLO",
+       "lat": 40.8502705626361,
+       "lon": 14.228254964131
+      },
+      {
+       "id": "3288",
+       "nome": "GIOTTO-MEDAGLIE D'ORO",
+       "lat": 40.850393959453,
+       "lon": 14.2298699168459
+      },
+      {
+       "id": "3065",
+       "nome": "MENZINGER",
+       "lat": 40.8505802872089,
+       "lon": 14.2321455334292
+      },
+      {
+       "id": "3574",
+       "nome": "VIA SUAREZ",
+       "lat": 40.8504057801488,
+       "lon": 14.234773262481
+      }
+     ],
+     "ogni": {
+      "feriale": 29,
+      "sabato": 39,
+      "sabato-pomeriggio": 63,
+      "domenica": 27,
+      "festivo": 75
+     }
+    }
+   ]
+  }
+ ]
+}

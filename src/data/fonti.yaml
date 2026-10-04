@@ -1205,6 +1205,15 @@
   controllato: 2026-10-02
   letta: true
 
+- id: tp-anm-gtfs
+  titolo: "Orari programmati degli autobus (feed GTFS)"
+  editore: ANM, Azienda Napoletana Mobilità (dati aperti, licenza IODL 2.0)
+  url: https://www.anm.it/google/google-transit.zip
+  tipo: dati
+  controllato: 2026-10-03
+  letta: true
+  nota: "Linee, fermate, percorsi e orari dal 22 settembre al 31 dicembre 2026. Usato per 13 linee nei tempi tra le tappe (ricerca/2026-10-03-autobus-note/)."
+
 - id: tp-anm-linea1
   titolo: "Linea 1"
   editore: ANM, Azienda Napoletana Mobilità

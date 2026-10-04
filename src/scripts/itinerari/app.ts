@@ -201,9 +201,11 @@ function avvia() {
   function testoTratto(v: VoceTratto) {
     const linee = v.mezzi.map(m => C.linee[m] ?? m);
     const asc = v.ascensori.length ? ` (${v.ascensori.map(esc).join(', ')})` : '';
-    return linee.length ? `${durata(v.min)} · a piedi e ${linee.join(' e ')}${asc}` : `${durata(v.min)} a piedi${asc}`;
+    // il bus è meno puntuale: lo diciamo sul tratto (i minuti sono quelli dell'orario ANM)
+    const nota = v.mezzi.some(m => m.startsWith('B')) ? ' <span class="it-tratto__nota">· può tardare</span>' : '';
+    return linee.length ? `${durata(v.min)} · a piedi e ${linee.join(' e ')}${asc}${nota}` : `${durata(v.min)} a piedi${asc}`;
   }
-  const tipoTratto = (v: VoceTratto) => (v.mezzi[0]?.startsWith('F') ? 'funi' : v.mezzi.length ? 'metro' : 'piedi');
+  const tipoTratto = (v: VoceTratto) => (v.mezzi.some(m => m.startsWith('B')) ? 'bus' : v.mezzi[0]?.startsWith('F') ? 'funi' : v.mezzi.length ? 'metro' : 'piedi');
 
   function disegnaLinea(x: Itinerario, G: Giorno, r: Risultato, data?: string) {
     const lontane = new Map(r.avvisi.filter((a): a is Extract<Avviso, { tipo: 'lontana' }> => a.tipo === 'lontana').map(a => [a.id, a]));
@@ -234,7 +236,7 @@ function avvia() {
       const meta = ev ? `dalle ${ora(v.inizio)} · circa ${durata(v.fine - v.inizio)}` : `${durata(v.fine - v.inizio)} · fino alle ${ora(v.fine)}`;
       const nuova = evidenzia?.id === v.id && Date.now() - evidenzia.t < 800;
       return `<li class="it-voce${nuova ? ' it-voce--nuova' : ''}" data-id="${v.id}">
-        ${tratto ? `<p class="it-tratto it-tratto--${tipoTratto(tratto)}">${icona(tipoTratto(tratto) === 'funi' ? 'funicolare' : tipoTratto(tratto) === 'metro' ? 'metro' : 'piedi', 18)}<span>${testoTratto(tratto)}</span></p>` : ''}
+        ${tratto ? `<p class="it-tratto it-tratto--${tipoTratto(tratto)}">${icona({ funi: 'funicolare', metro: 'metro', bus: 'bus', piedi: 'piedi' }[tipoTratto(tratto)], 18)}<span>${testoTratto(tratto)}</span></p>` : ''}
         ${v.attesa ? `<p class="it-attesa">${durata(v.attesa)} liberi prima delle regate: pranzo e tempo per trovare posto</p>` : ''}
         <span class="it-ora" aria-hidden="true">${ora(v.inizio)}</span>
         <div class="it-blocco${sel ? ' it-blocco--scelto' : ''}${lon ? ' it-blocco--attenzione' : ''}${v.oltre != null ? ' it-blocco--oltre' : ''}${ev ? ' it-blocco--evento' : ''}">

@@ -24,14 +24,14 @@ const el = <K extends keyof SVGElementTagNameMap>(tag: K, attr: Record<string, s
   return e;
 };
 
-// Percorso codificato: «p» o la linea, poi differenze dal punto prima (6 bit per carattere, zigzag)
+// Percorso codificato: «p» o la linea e un punto, poi differenze dal punto prima (6 bit per carattere, zigzag)
 const ALFA = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_';
 function decodifica(s: string): { modo: string; punti: [number, number][] }[] {
   return s.split('~').filter(Boolean).map(pezzo => {
-    const m = /^(p|L1|L2|L6|FA|FB|FC|FD|CU)/.exec(pezzo)!;
+    const k = pezzo.indexOf('.');
     const nums: number[] = [];
     let z = 0, mul = 1;
-    for (const c of pezzo.slice(m[0].length)) {
+    for (const c of pezzo.slice(k + 1)) {
       const v = ALFA.indexOf(c);
       z += (v & 31) * mul;
       if (v & 32) { mul *= 32; continue; }
@@ -41,7 +41,7 @@ function decodifica(s: string): { modo: string; punti: [number, number][] }[] {
     const punti: [number, number][] = [];
     let x = 0, y = 0;
     for (let k = 0; k + 1 < nums.length; k += 2) { x += nums[k]; y += nums[k + 1]; punti.push([x, y]); }
-    return { modo: m[0], punti };
+    return { modo: pezzo.slice(0, k), punti };
   });
 }
 
@@ -88,7 +88,7 @@ export async function disegna(area: HTMLElement, C: Citta, it: Itinerario, g: nu
   const linea = (punti: [number, number][], modo: string) => {
     if (punti.length < 2) return;
     const d = 'M' + punti.map(p => p.join(' ')).join('L');
-    const cls = modo === 'p' ? 'm-piedi' : modo.startsWith('F') ? 'm-funi' : 'm-metro';
+    const cls = modo === 'p' ? 'm-piedi' : modo.startsWith('F') ? 'm-funi' : modo.startsWith('B') ? 'm-bus' : 'm-metro';
     modi.add(cls);
     giro.append(el('path', { class: 'm-giro-c', d }), el('path', { class: cls, d }));
     tutti.push(...punti);
@@ -130,7 +130,7 @@ export async function disegna(area: HTMLElement, C: Citta, it: Itinerario, g: nu
   } else adatta = { ...piena };
   inquadra(adatta);
   // legenda e riassunto
-  o.legenda.innerHTML = [modi.has('m-piedi') && '<span><i></i>a piedi</span>', modi.has('m-metro') && '<span><i class="it-l-metro"></i>metro e treni</span>', modi.has('m-funi') && '<span><i class="it-l-funi"></i>funicolari</span>'].filter(Boolean).join('');
+  o.legenda.innerHTML = [modi.has('m-piedi') && '<span><i></i>a piedi</span>', modi.has('m-metro') && '<span><i class="it-l-metro"></i>metro e treni</span>', modi.has('m-funi') && '<span><i class="it-l-funi"></i>funicolari</span>', modi.has('m-bus') && '<span><i class="it-l-bus"></i>autobus</span>'].filter(Boolean).join('');
   o.riassunto.innerHTML = G.gita
     ? `<li><button type="button" data-id="${G.gita}"><span class="it-piastrella" aria-hidden="true">1</span><span class="it-riassunto__ora"></span><span class="it-riassunto__nome">Partenza: ${tappaDi(C, G.gita)!.partenza}</span></button></li>`
     : tappe.map(v => `<li><button type="button" data-id="${v.id}"><span class="it-piastrella" aria-hidden="true">${v.n}</span><span class="it-riassunto__ora">${ora(v.inizio)}</span><span class="it-riassunto__nome">${(C.evento && v.id === C.evento.id ? C.evento.nome : tappaDi(C, v.id)!.nome).replace(/</g, '&lt;')}</span></button></li>`).join('');
