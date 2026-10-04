@@ -1,12 +1,10 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 04/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
+_Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
-## Cosa fa Enrico adesso (04/10/2026, notte)
-1. Domani: sessione nuova nel cloud da `main`, **Opus 5.5, effort alto**, con il testo qui sotto.
-2. Il GPS che sul telefono di Enrico non è stato chiesto è in `da-risolvere.md`: si guarda con le altre righe aperte, quando si fa il gruppo (non adesso).
-
-Testo per la prossima sessione: «Leggi `CLAUDE.md`, `PROGRESS.md` e `specifiche/itinerari-napoli-ampliamento.md`. Lavoriamo solo sul blocco C · Dove mangiare (sezione 2 della specifica). Guidami passo passo come dice `CLAUDE.md`.»
+## Cosa fa Enrico adesso (04/10/2026, blocco C costruito)
+1. Provare l'anteprima del blocco C sul telefono (ramo `ccr-2e280b06-dh4h6y`), poi dire OK per pubblicarlo su `main`.
+2. Dopo: sessione di gruppo su `da-risolvere.md` (28 righe aperte, 16 sono locali senza orari: servono le schermate degli orari dalla scheda Google o dal sito del locale, oppure una sessione sul computer di Enrico con Claude in Chrome).
 
 ## Skill e dove eseguire (aggiornato il 03/10/2026)
 Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o più), Chromium installato, raggiungibili Copernicus, Wikimedia e il sito del Comune; l'Overpass principale non risponde, ma gli script usano anche due server di riserva.
@@ -15,7 +13,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 |---|---|---|
 | A · Luoghi | deep-research (c'è nel cloud), frontend-design e Modern Web Guidance (nel progetto) | **Cloud va bene** |
 | B · Autobus | nessuna in più: il feed ANM e OpenStreetMap si scaricano dal cloud (provato il 03/10/2026) | **Fatto nel cloud, pubblicato** |
-| C · Dove mangiare | deep-research, frontend-design | Cloud |
+| C · Dove mangiare | deep-research, frontend-design | **Costruito nel cloud il 04/10/2026**, da pubblicare |
 | D · Esperienze | deep-research, frontend-design | Cloud |
 | 3 · Sito più ordinato e SEO | VectorLab UI/UX Skills, consistent-ui, SEO Audit Kit, Programmatic SEO Gate: **da installare** (non sono nel cloud oggi). Controllare a inizio sessione se si installano nel cloud; se no, **in locale** | Da verificare |
 
@@ -31,11 +29,11 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 
 ## Prossimi passi
 1. Le tue prove sul telefono della pagina itinerari, sul sito pubblico (elenco nell'archivio, sezione «Blocco 2 · Da fare»), e le correzioni che ne vengono.
-2. Blocco 3 (`PROMPT-BLOCCO-3.md`), ora anche **estetica con due proposte grafiche e SEO**. Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui + **da installare all'inizio: SEO Audit Kit e Programmatic SEO Gate**; alla fine spegnere tutte tranne quelle di progetto. **Ricordarlo a Enrico.**
+2. Blocco 3 (`PROMPT-BLOCCO-3.md`): **prima parte, lo stile dei testi** (più caldi e coinvolgenti, con le fonti; deciso da Enrico il 04/10/2026, prima del Rilascio 4), poi **estetica con due proposte grafiche e SEO**. Skill: frontend-design, VectorLab UI/UX Skills, consistent-ui + **da installare all'inizio: SEO Audit Kit e Programmatic SEO Gate**; alla fine spegnere tutte tranne quelle di progetto. **Ricordarlo a Enrico.**
    **Da decidere nel blocco 3**: una pagina fissa per ogni luogo e locale (`specifiche/itinerari-napoli-ampliamento.md`, sezione 4), rimandata qui dal blocco A il 03/10/2026.
    **Ispirazioni di design** di Enrico: `design/ispirazioni/` (schermate e descrizioni; MUDD Napoli, 03/10/2026): leggerle prima delle due proposte grafiche.
    **Google Search Console è già collegata**: il file di verifica è nel sito dal 01/10/2026 (`public/googlee54aa324270bde6d.html`). Da controllare con Enrico solo se la mappa del sito (`/sitemap.xml`, già indicata in `robots.txt`) è stata inviata in Search Console.
-3. **Itinerari di Napoli ampliati** (specifica `specifiche/itinerari-napoli-ampliamento.md`): **blocco A pubblicato su `main` il 03/10/2026, con l'OK di Enrico** (18 luoghi, gite a Caserta, Pietrarsa e Sorrento, Villa Campolieto nella gita a Ercolano; ricerca in `ricerca/2026-10-03-luoghi-note/`; 7 cose aperte in `da-risolvere.md`). Pagine fisse dei luoghi rimandate al blocco 3. **Blocco B (autobus) e itinerario dal vivo pubblicati su `main` il 04/10/2026, con l'OK di Enrico**: 13 linee ANM dal feed GTFS ufficiale (orari fino al 31/12/2026), bus solo se fa risparmiare almeno 5 minuti; partenze vere dei bus, ora del telefono, «Fatto», posizione con pannello sulla privacy, itinerari nuovi con la data di oggi (`specifiche/bus-orari-veri.md`). Verificato con 42 prove automatiche sull'anteprima di Vercel. Da decidere con Enrico: la giornata oltre l'orario di fine e l'«ordine più corto» con le tappe fatte. Poi blocchi C (dove mangiare), D (esperienze).
+3. **Itinerari di Napoli ampliati** (specifica `specifiche/itinerari-napoli-ampliamento.md`): **blocco A pubblicato su `main` il 03/10/2026, con l'OK di Enrico** (18 luoghi, gite a Caserta, Pietrarsa e Sorrento, Villa Campolieto nella gita a Ercolano; ricerca in `ricerca/2026-10-03-luoghi-note/`; 7 cose aperte in `da-risolvere.md`). Pagine fisse dei luoghi rimandate al blocco 3. **Blocco B (autobus) e itinerario dal vivo pubblicati su `main` il 04/10/2026, con l'OK di Enrico**: 13 linee ANM dal feed GTFS ufficiale (orari fino al 31/12/2026), bus solo se fa risparmiare almeno 5 minuti; partenze vere dei bus, ora del telefono, «Fatto», posizione con pannello sulla privacy, itinerari nuovi con la data di oggi (`specifiche/bus-orari-veri.md`). Verificato con 42 prove automatiche sull'anteprima di Vercel. Da decidere con Enrico: la giornata oltre l'orario di fine e l'«ordine più corto» con le tappe fatte. **Blocco C (dove mangiare) costruito il 04/10/2026 sul ramo `ccr-2e280b06-dh4h6y`, in attesa dell'OK**: 32 locali con orari e prezzi riletti sui siti ufficiali, pagina `/napoli/dove-mangiare/` con i filtri (cucina, prezzo, piatto, giorno e ora, zona, vicino alle mie tappe), scelta «Mangiare» nel pannello del compositore, avvisi «chiuso a quest'ora», tempi rifatti per 87 punti (OSM del 04/10/2026). Ricerca in `ricerca/2026-10-04-locali-note/`. La scheda Google del locale vale come fonte degli orari (Enrico, 04/10/2026), ma dal cloud non si legge. Poi blocco D (esperienze).
    La Cumana va di nuovo fino a Pozzuoli dall'11/09/2026 (EAV): da tenere presente nel blocco B.
 4. Nuovo sito itinerari per più città (Napoli, poi Roma, Milano, Torino, Venezia…): idea del 03/10/2026, vedi sotto. Prima una spec.
 5. Correggere la scheda `echia-ascensore` (orari da OpenStreetMap, diversi da quelli ANM: 7–22 tutti i giorni, 1,50 €).
