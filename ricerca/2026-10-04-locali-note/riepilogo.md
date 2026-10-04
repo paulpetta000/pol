@@ -53,3 +53,13 @@ Siti bloccati per il programma, da ritentare: Di Matteo (503), La Notizia (403),
 ## Proposta per le fasce di prezzo (da approvare)
 «Pasto base» a persona, preso dal menu ufficiale con la data: ristoranti = il primo tipico meno caro + il secondo tipico meno caro; pizzerie = una margherita; cibo di strada = una pizza fritta o un cuoppo; dolci e caffè = una sfogliatella e un caffè. Bevande e coperto esclusi.
 **€** fino a 15 € · **€€** da 15 a 35 € · **€€€** oltre 35 €. Senza prezzi sul sito: «prezzo non pubblicato».
+
+## Secondo giro (Opus, 04/10/2026): entrano 2 locali, riletti dal modello principale
+| # | Locale | Zona | Cucina | Chiuso | Prezzi sul sito | Note |
+|---|---|---|---|---|---|---|
+| 31 | Antica Pizzeria Di Matteo (via dei Tribunali 94) | centro-storico | pizza, strada | domenica non scritta | margherita 5, pizza fritta 7 (menu 2022) | sito vero anticapizzeriadimatteo.it: «dal lunedì al sabato 10–23:30» |
+| 32 | Zia Esterina Sorbillo (piazza Trieste e Trento 53) | toledo-plebiscito | strada | – | no | sorbillo.it: «tutti i giorni 11–22» |
+
+Restano fuori: Ciro a Santa Brigida (sito trascurato, non è sicuro che sia aperto), Sorbillo «Lievito Madre al Mare» (catena, nessun riconoscimento proprio), La Notizia, Masardona, Scaturchio, Gambrinus, Carraturo, Da Tonino, Mimì, Sorbillo via dei Tribunali (sito contraddittorio), Attanasio (certificato scaduto), Friggitoria Vomero (solo Facebook), pesce a Mergellina (nessun sito con orari). Dettagli in `secondo-giro.md`.
+
+**Totale: 32 locali.** Cibo di strada: Starita, Concettina, Di Matteo, Zia Esterina.
