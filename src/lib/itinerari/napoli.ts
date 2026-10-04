@@ -69,6 +69,7 @@ async function carica(): Promise<Citta> {
       ...(d.fine ? { fine: d.fine.nome } : {}), reversibile: d.reversibile,
       ...(partenza ? { partenza: partenza.data.nome } : {}),
       xy: partenza ? xy(partenza.data.lat, partenza.data.lon) : xy(d.lat, d.lon),
+      ...(d.tipo === 'citta' ? { ll: [d.lat, d.lon] as [number, number] } : {}),
       ...(d.fine ? { xyFine: xy(d.fine.lat, d.fine.lon) } : {}),
       p: d.tipo === 'citta' ? punti.indexOf(t.id) : -1,
       ...(d.fine ? { pf: punti.indexOf(`${t.id}>`) } : {})

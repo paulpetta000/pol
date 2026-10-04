@@ -1,5 +1,5 @@
 // Riapre nella pagina il pacco della città fatto durante la build (src/lib/itinerari/napoli.ts, impacchetta)
-import { SCENARI, type Citta, type Evento, type Scenario, type Tappa } from './tipi';
+import { SCENARI, type Citta, type Evento, type Scenario, type Tappa, type Vivo } from './tipi';
 
 export interface Pacco {
   tappe: Tappa[];
@@ -23,4 +23,37 @@ export function spacchetta(P: Pacco): Citta {
     min[s] = m; metri[s] = w; mezzi[s] = z;
   }
   return { tappe: P.tappe, tempi: { n: P.n, min, metri, mezzi }, evento: P.evento, linee: P.linee, zone: P.zone };
+}
+
+// Gli orari veri dei bus, come arrivano da /napoli/itinerari/partenze.json (src/pages/napoli/itinerari/partenze.json.ts)
+export interface PaccoVivo {
+  preferenza: number; dal: string; al: string; giorni: Record<string, number>;
+  tipi: { salite: Record<string, number[]>; viaggi: Record<string, number | number[]> }[];
+  fermate: Record<string, string>; dizionario: string[];
+  candidati: [(number | string)[], number, number][];
+  senza: Record<string, number[]>; bus: Record<string, number[]>;
+}
+
+// le partenze arrivano come differenze dalla partenza prima: qui tornano minuti dalla mezzanotte
+const somme = (v: number[]) => { let c = 0; return v.map((x, i) => (c = i ? c + x : x)); };
+
+export function spacchettaVivo(P: PaccoVivo): Vivo {
+  const senza: Vivo['senza'] = {}, bus: Vivo['bus'] = {};
+  for (const [s, v] of Object.entries(P.senza)) {
+    const m = new Map<number, { min: number; metri: number; mezzi: string }>();
+    for (let k = 0; k < v.length; k += 4) m.set(v[k], { min: v[k + 1], metri: v[k + 2] * 10, mezzi: P.dizionario[v[k + 3]] });
+    senza[s as Scenario] = m;
+  }
+  for (const [s, v] of Object.entries(P.bus)) {
+    const m = new Map<number, number[]>();
+    for (let k = 0; k < v.length;) { const n = v[k + 1]; m.set(v[k], v.slice(k + 2, k + 2 + n)); k += 2 + n; }
+    bus[s as Scenario] = m;
+  }
+  return {
+    dal: P.dal, al: P.al, giorni: P.giorni, fermate: P.fermate, preferenza: P.preferenza,
+    salite: P.tipi.map(t => new Map(Object.entries(t.salite).map(([k, v]) => [k, somme(v)]))),
+    viaggi: P.tipi.map(t => new Map(Object.entries(t.viaggi).map(([k, v]) => [k, Array.isArray(v) ? { min: v[0], partenze: somme(v.slice(1)) } : { min: v }]))),
+    candidati: P.candidati.map(([seg, m, z]) => ({ seg, metri: m * 10, mezzi: P.dizionario[z] })),
+    senza, bus
+  };
 }

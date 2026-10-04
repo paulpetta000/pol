@@ -46,6 +46,8 @@ tempi:
 
     I mezzi cambiano con il giorno e l'ora. La Linea 2 passa ogni 8 minuti nei giorni feriali, ogni 15 il sabato e ogni 20 la domenica; il sabato e la domenica la Linea 6 si ferma alle 14:50; la domenica e i festivi gli ascensori gratuiti chiudono alle 14:00. Se non scegli una data, usiamo i tempi di un giorno feriale. La funicolare di Montesanto è chiusa per lavori e la Linea 2 si ferma a Campi Flegrei. Gli orari degli autobus sono quelli dell'autunno 2026, validi fino al 31 dicembre, e li abbiamo letti tra le 9 e le 19: la mattina presto e la sera i bus passano di meno. Li aggiorniamo quando l'ANM pubblica i nuovi.
 
+    Quando la data dell'itinerario è dentro l'orario dell'ANM, per i bus usiamo le partenze vere: arrivi alla fermata, guardiamo quando passa il prossimo bus e, se aspettarlo non conviene, ti proponiamo un'altra strada. Il giorno stesso la pagina guarda anche l'ora del telefono: le tappe che segni «Fatto» restano in grigio e quelle che mancano slittano da adesso. Se le permetti di usare la posizione, capisce vicino a quale tappa sei; la posizione resta sul telefono. Per le date fuori dall'orario, come l'estate 2027, il bus resta con l'attesa media.
+
     Sono gli orari di oggi: il piano dei trasporti per il 2027 non è ancora uscito{?trasporti-2027-atteso}.
 
 orari:

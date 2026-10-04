@@ -32,6 +32,7 @@ npm run check:links  # dopo la build: controlla che ogni link interno porti a un
 | `src/data/tappe-ac75.json`, `src/data/tappe-ac40.json` | Le tappe del 3D |
 | `src/data/tappe.yaml` | Le tappe degli itinerari (51 in città e 9 gite): posizione, durata, schede di orari e prezzi, foto (vedi «Itinerari») |
 | `src/data/tempi-tappe.json` | I tempi tra le tappe, calcolati da `scripts/itinerari/` (non si modifica a mano) |
+| `src/data/partenze-bus.json`, `src/data/percorsi-alternativi.json` | Orari veri dei bus: partenze ANM per tipo di giorno e disegni delle strade alternative (calcolati da `scripts/itinerari/`; pagine `/napoli/itinerari/partenze.json` e `percorsi-alternativi.json`). Specifica: `specifiche/bus-orari-veri.md` |
 | `src/data/linee-bus.json` | Tutte le fermate delle 13 linee bus usate, con le frequenze (dal feed ANM, calcolato da `scripts/itinerari/`; per tappe e locali futuri) |
 
 Stati delle schede: `confermato`, `stampa` (giornali), `segnalato` (blog e siti non ufficiali), `atteso`.

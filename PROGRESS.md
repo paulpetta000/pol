@@ -3,7 +3,7 @@
 _Ultimo aggiornamento: 04/10/2026. La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
 ## Cosa fa Enrico adesso (04/10/2026, notte)
-1. Provare sul telefono l'**anteprima del ramo `ccr-750f4abf-ojlx83`** (blocco B, autobus): un itinerario Plebiscito → Marechiaro → Parco Virgiliano, la mappa, «solo a piedi».
+1. Provare sul telefono l'**anteprima del ramo `ccr-750f4abf-ojlx83`** (blocco B, autobus, e **itinerario dal vivo**: ora del telefono, «Fatto», posizione, partenze vere dei bus; `specifiche/bus-orari-veri.md`): un itinerario Plebiscito → Marechiaro → Parco Virgiliano con la data di oggi, la mappa, «solo a piedi».
 2. Se va bene, dire OK alla pubblicazione su `main`.
 3. Dopo: blocco C (dove mangiare) in una sessione nuova nel cloud da `main` (Opus 5.5, effort alto), con il testo qui sotto.
 

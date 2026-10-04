@@ -46,7 +46,8 @@ function sistemaGiorno(C: Citta, g: Partial<Giorno> | undefined, scartate: strin
     return ok;
   }).slice(0, MAX_TAPPE);
   const ok = Array.isArray(g?.ok) ? g!.ok.filter(id => tappe.includes(id)) : undefined;
-  return { tappe, inizio, fine, ...(gita ? { gita } : {}), ...(ok?.length ? { ok } : {}) };
+  const fatte = Array.isArray(g?.fatte) ? g!.fatte.filter(id => tappe.includes(id)) : undefined;
+  return { tappe, inizio, fine, ...(gita ? { gita } : {}), ...(ok?.length ? { ok } : {}), ...(fatte?.length ? { fatte } : {}) };
 }
 
 // Un itinerario letto dalla memoria o da un link: tiene solo ciò che è valido e dice cosa ha scartato
@@ -60,6 +61,7 @@ export function sistema(C: Citta, x: Partial<Itinerario>): { it: Itinerario; sca
       nome: (typeof x.nome === 'string' && x.nome.trim() ? x.nome.trim() : 'Itinerario').slice(0, MAX_NOME),
       ...(dataValida(x.data) ? { data: x.data } : {}),
       ...(x.piedi ? { piedi: true } : {}),
+      ...(x.posizione === 'si' || x.posizione === 'no' ? { posizione: x.posizione } : {}),
       giorni: giorni.length ? giorni : [giornoVuoto()],
       creato: Number.isFinite(x.creato) ? x.creato! : ora,
       modificato: Number.isFinite(x.modificato) ? x.modificato! : ora

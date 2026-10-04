@@ -1,8 +1,9 @@
 // Il compositore degli itinerari (pagina /napoli/itinerari/). Tutto avviene nel browser: gli itinerari restano
 // nella memoria del telefono (memoria.ts) e si mandano con un link che porta tutto dopo il «#» (link.ts).
 // Il calcolo delle giornate è in src/lib/itinerari/calcolo.ts; la mappa si carica solo quando serve (mappa.ts).
-import { spacchetta, type Pacco } from '../../lib/itinerari/pacco';
+import { spacchetta, spacchettaVivo, type Pacco, type PaccoVivo } from '../../lib/itinerari/pacco';
 import { calcolaGiorno, ordinePiuCorto, tappaDi, dataDelGiorno, minuti, scenarioDi } from '../../lib/itinerari/calcolo';
+import type { Adesso } from '../../lib/itinerari/tipi';
 import { codifica, decodifica, nuovoItinerario, giornoVuoto, uguali, MAX_GIORNI, MAX_TAPPE, MAX_NOME } from '../../lib/itinerari/link';
 import { dataLunga, dataBreve, ora, durata, durataParole, piuGiorni, giornoSettimana, NOMI_GIORNI, dataValida, minutiDa } from '../../lib/itinerari/date';
 import { icona } from '../../lib/itinerari/icone';
@@ -21,6 +22,10 @@ const hhmm = (m: number) => `${String(Math.floor(m / 60)).padStart(2, '0')}:${St
 const km = (m: number) => (m < 1000 ? `${Math.round(m / 10) * 10} m` : `${(m / 1000).toFixed(1).replace('.', ',')} km`);
 const piano = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const oggi = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date());
+// l'ora di adesso a Napoli, in minuti dalla mezzanotte
+const oraDiAdesso = () => { const [h, m] = new Intl.DateTimeFormat('en-GB', { timeZone: 'Europe/Rome', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' }).format(new Date()).split(':').map(Number); return h * 60 + m; };
+// distanza in metri tra due punti vicini
+const metriTra = (a: [number, number], b: [number, number]) => { const k = Math.cos(((a[0] + b[0]) / 2) * Math.PI / 180); return Math.hypot((a[0] - b[0]) * 111195, (a[1] - b[1]) * 111195 * k); };
 const movimentoRidotto = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (document.getElementById('compositore')) avvia();
@@ -45,6 +50,72 @@ function avvia() {
   const segna = (id: string) => { evidenzia = { id, t: Date.now() }; };
   const it = () => A.elenco.find(i => i.id === A.attivo) ?? A.elenco[0];
   const largo = matchMedia('(min-width: 900px)');
+
+  // ---------- dal vivo: ora del telefono, posizione, orari veri dei bus (specifiche/bus-orari-veri.md) ----------
+  // La posizione resta in questa pagina: non va a nessun server e non si salva. Serve solo a capire vicino a quale tappa sei.
+  let posizione: { ll: [number, number]; precisione: number } | null = null;
+  let guardia: number | null = null;
+  let posizioneNegata = false;
+  const VICINO = 200;   // metri
+  const oggiNelGiorno = (x: Itinerario, g: number) => !!x.data && dataDelGiorno(x, g) === oggi() && !x.giorni[g].gita;
+  function tappaQui(x: Itinerario, g: number): string | undefined {
+    if (!posizione || posizione.precisione > VICINO) return undefined;
+    const G = x.giorni[g];
+    let meglio: string | undefined, md = VICINO;
+    for (const id of G.tappe) {
+      if (G.fatte?.includes(id)) continue;
+      const t = tappaDi(C, id);
+      if (!t?.ll) continue;
+      const d = metriTra(posizione.ll, t.ll);
+      if (d <= md) { md = d; meglio = id; }
+    }
+    return meglio;
+  }
+  // il momento per il calcolo del giorno g: solo se quel giorno è oggi
+  function adessoPer(x: Itinerario, g: number): Adesso | undefined {
+    if (!oggiNelGiorno(x, g)) return undefined;
+    const qui = x.posizione === 'si' ? tappaQui(x, g) : undefined;
+    return { data: oggi(), ora: oraDiAdesso(), ...(qui ? { qui } : {}) };
+  }
+  function guardaPosizione() {
+    if (guardia != null || posizioneNegata || !('geolocation' in navigator)) return;
+    guardia = navigator.geolocation.watchPosition(p => {
+      posizione = { ll: [p.coords.latitude, p.coords.longitude], precisione: p.coords.accuracy };
+      aggiornaDalVivo();
+    }, e => {
+      if (e.code === e.PERMISSION_DENIED) {
+        posizioneNegata = true; fermaPosizione();
+        toast('Il telefono non ha dato la posizione: calcolo dall\'ultima tappa fatta.');
+        disegna();
+      }
+    }, { enableHighAccuracy: true, maximumAge: 60000, timeout: 30000 });
+  }
+  function fermaPosizione() { if (guardia != null) navigator.geolocation.clearWatch(guardia); guardia = null; posizione = null; }
+  // la posizione si guarda solo mentre la pagina è aperta, il giorno stesso e con il permesso
+  function curaPosizione() {
+    const x = it();
+    if (x.posizione === 'si' && oggiNelGiorno(x, giorno) && document.visibilityState === 'visible') guardaPosizione();
+    else fermaPosizione();
+  }
+  // ogni mezzo minuto (e quando torni sulla pagina) si ricalcola il giorno di oggi, se è cambiato qualcosa
+  let firmaVivo = '';
+  function aggiornaDalVivo() {
+    const x = it();
+    if (!oggiNelGiorno(x, giorno)) return;
+    if (linea.classList.contains('it-linea--trascina') || document.querySelector('dialog[open]')) return;
+    const f = JSON.stringify(adessoPer(x, giorno));
+    if (f === firmaVivo) return;
+    disegnaGiorno(x);
+  }
+  setInterval(aggiornaDalVivo, 30000);
+  document.addEventListener('visibilitychange', () => { curaPosizione(); if (document.visibilityState === 'visible') aggiornaDalVivo(); });
+  // gli orari veri dei bus arrivano dopo (e restano salvati per l'uso senza rete)
+  fetch('/napoli/itinerari/partenze.json').then(r => (r.ok ? r.json() : null)).then((p: PaccoVivo | null) => {
+    if (!p) return;
+    C.vivo = spacchettaVivo(p);
+    memoOrdine.clear();
+    disegna();
+  }).catch(() => { /* senza orari veri resta l'attesa media */ });
 
   function salva() {
     if (scrivi(A) || avvisatoMemoria) return;
@@ -133,8 +204,12 @@ function avvia() {
     $('it-quando').textContent = `${data ? maiuscola(dataLunga(data)) : 'Senza data'} · dalle ${ora(G.inizio)} alle ${ora(G.fine)}`;
     linea.setAttribute('aria-label', `Tappe del giorno ${giorno + 1}`);
     const fuoco = ricordaFuoco();
-    const r = calcolaGiorno(C, x, giorno);
+    const adesso = adessoPer(x, giorno);
+    firmaVivo = JSON.stringify(adesso);
+    const r = calcolaGiorno(C, x, giorno, adesso);
+    if (r.vivo) $('it-quando').textContent += ` · dal vivo, aggiornato alle ${ora(adesso!.ora)}`;
     ultimo = r;
+    curaPosizione();
     const pieno = !G.gita && G.tappe.length > 0;
     linea.hidden = !pieno;
     vuoto.hidden = pieno || !!G.gita;
@@ -184,26 +259,54 @@ function avvia() {
         if (!data) out.push(avviso('Le regate dipendono dalla data', `Si corrono solo in alcuni giorni, dal ${dataBreve(E.primo)} al ${dataBreve(E.ultimo)} 2027: scegli la data di questo giorno.`, '<button type="button" class="it-btn it-btn--primario" data-az="cambia">Scegli la data</button><button type="button" class="it-btn it-btn--contorno" data-az="togli-evento">Togli le regate</button>'));
         else out.push(avviso(`Il ${dataBreve(data)} non ci sono regate in calendario`, `Le regate si corrono solo in alcuni giorni, dal ${dataBreve(E.primo)} al ${dataBreve(E.ultimo)} 2027.`, '<button type="button" class="it-btn it-btn--primario" data-az="togli-evento">Togli le regate</button><button type="button" class="it-btn it-btn--contorno" data-az="cambia">Cambia la data</button>'));
       }
+      if (a.tipo === 'vicino') {
+        const nomi = a.prima.map(id => esc(breve(id)));
+        const elenco = nomi.length > 1 ? `${nomi.slice(0, -1).join(', ')} e ${nomi[nomi.length - 1]}` : nomi[0];
+        out.push(avviso(`Sei a ${esc(breve(a.id))}`, `Calcolo gli orari da qui. ${maiuscola(elenco)} ${a.prima.length > 1 ? 'non sono segnate' : 'non è segnata'} «Fatto», quindi ${a.prima.length > 1 ? 'le metto' : 'la metto'} dopo: se ${a.prima.length > 1 ? 'le hai già fatte, segnale' : 'l\'hai già fatta, segnala'}.`, ''));
+      }
       if (a.tipo === 'evento-tardi' && E) {
         const nuovo = Math.max(5 * 60, Math.floor((G.inizio - a.ritardo) / 15) * 15);
         out.push(avviso('Arrivi tardi alle regate', `Con queste tappe arrivi sul lungomare ${durataParole(a.ritardo)} dopo le ${ora(E.inizio)}.`, nuovo < G.inizio ? `<button type="button" class="it-btn it-btn--primario" data-az="anticipa" data-ora="${nuovo}">Comincia alle ${ora(nuovo)}</button>` : ''));
       }
     }
-    if (!G.gita && G.tappe.length >= 3) {
-      const chiave = JSON.stringify([G.tappe, data, G.inizio, x.piedi]);
-      if (!memoOrdine.has(chiave)) memoOrdine.set(chiave, ordinePiuCorto(C, x, giorno));
+    // dal vivo: il pannello per la posizione (una volta per itinerario), o un link piccolo per riattivarla
+    if (r.vivo && 'geolocation' in navigator && !x.posizione) out.push(pannelloPosizione());
+    if (r.vivo && (x.posizione === 'no' || posizioneNegata)) out.push(`<p class="it-posizione-spenta">Posizione non usata: calcolo dall'ultima tappa fatta. <button type="button" class="it-link" data-az="gps-si">Usa la mia posizione</button></p>`);
+    const fatte = r.vivo ? G.fatte ?? [] : [];
+    if (!G.gita && G.tappe.length - fatte.length >= 3) {
+      const chiave = JSON.stringify([G.tappe, fatte, data, G.inizio, x.piedi, !!C.vivo]);
+      if (!memoOrdine.has(chiave)) memoOrdine.set(chiave, ordinePiuCorto(C, senzaFatte(x, giorno, fatte), giorno));
       const o = memoOrdine.get(chiave);
       if (o) out.push(avviso('C\'è un ordine più corto', `Cambiando l'ordine risparmi ${durataParole(o.risparmio)} di spostamenti. La prima tappa resta la stessa.`, '<button type="button" class="it-btn it-btn--contorno" data-az="ordina">Usa l\'ordine più corto</button>', 'it-consiglio'));
     }
     $('it-avvisi').innerHTML = out.join('');
   }
 
+  // il pannello della posizione: prima del permesso del telefono, con quello che succede ai dati, in parole semplici
+  function pannelloPosizione() {
+    return `<div class="it-posizione" role="region" aria-labelledby="it-posizione-h">
+      <p class="it-posizione__titolo" id="it-posizione-h">${icona('mappa', 22)}<span>Oggi ti seguo passo passo</span></p>
+      <p>Se mi lasci usare la posizione del telefono, capisco vicino a quale tappa sei e ricalcolo gli orari da lì.</p>
+      <ul class="it-posizione__lista">
+        <li>${icona('ok', 18)}<span>La posizione <b>resta sul tuo telefono</b>: non arriva a noi né a nessun altro.</span></li>
+        <li>${icona('ok', 18)}<span><b>Non la salviamo</b>: sparisce quando chiudi la pagina.</span></li>
+        <li>${icona('ok', 18)}<span>Niente cookie e niente pubblicità. Puoi toglierla quando vuoi dalle impostazioni del telefono.</span></li>
+      </ul>
+      <div class="it-avviso__azioni"><button type="button" class="it-btn it-btn--primario" data-az="gps-si">Usa la mia posizione</button><button type="button" class="it-btn it-btn--contorno" data-az="gps-no">No, grazie</button></div>
+      <p class="it-posizione__piccolo">Dopo il tocco il telefono ti chiederà il permesso. Più dettagli nella pagina <a href="/privacy/">privacy</a>.</p>
+    </div>`;
+  }
+  // l'itinerario senza le tappe fatte (per l'ordine più corto dal vivo)
+  const senzaFatte = (x: Itinerario, g: number, fatte: string[]) => (fatte.length ? { ...x, giorni: x.giorni.map((G, k) => (k === g ? { ...G, tappe: G.tappe.filter(id => !fatte.includes(id)) } : G)) } : x);
+
   function testoTratto(v: VoceTratto) {
     const linee = v.mezzi.map(m => C.linee[m] ?? m);
     const asc = v.ascensori.length ? ` (${v.ascensori.map(esc).join(', ')})` : '';
-    // il bus è meno puntuale: lo diciamo sul tratto (i minuti sono quelli dell'orario ANM)
+    // il bus è meno puntuale: lo diciamo sul tratto; con gli orari veri anche fermata e ora di partenza
+    const corse = v.corse?.length ? ` <span class="it-tratto__corse">${v.corse.map(c => `${esc(C.linee[c.linea] ?? c.linea)} da ${esc(c.da)} alle ${ora(c.ora)}`).join(', poi ')}</span>` : '';
     const nota = v.mezzi.some(m => m.startsWith('B')) ? ' <span class="it-tratto__nota">· può tardare</span>' : '';
-    return linee.length ? `${durata(v.min)} · a piedi e ${linee.join(' e ')}${asc}${nota}` : `${durata(v.min)} a piedi${asc}`;
+    const scartato = v.scartato ? ` <span class="it-tratto__corse">${esc(C.linee[v.scartato.linea] ?? v.scartato.linea)} ${v.scartato.ora >= 0 ? `passa alle ${ora(v.scartato.ora)}: conviene andare così` : 'a quest\'ora non passa più'}</span>` : '';
+    return (linee.length ? `${durata(v.min)} · a piedi e ${linee.join(' e ')}${asc}${nota}` : `${durata(v.min)} a piedi${asc}`) + corse + scartato;
   }
   const tipoTratto = (v: VoceTratto) => (v.mezzi.some(m => m.startsWith('B')) ? 'bus' : v.mezzi[0]?.startsWith('F') ? 'funi' : v.mezzi.length ? 'metro' : 'piedi');
 
@@ -233,26 +336,30 @@ function avvia() {
       const lon = lontane.get(v.id);
       const dove = lon ? (lon.giorno < x.giorni.length ? `nel giorno ${lon.giorno + 1}` : 'in un giorno nuovo') : '';
       const foto = ev ? `<span class="it-foto__vuota">${icona('vela', 28)}</span>` : t!.foto ? `<img src="${t!.foto}" alt="" width="56" height="56" decoding="async">` : `<span class="it-foto__vuota">${icona(t!.generi[0] === 'passeggiata' ? 'piedi' : 'museo', 26)}</span>`;
-      const meta = ev ? `dalle ${ora(v.inizio)} · circa ${durata(v.fine - v.inizio)}` : `${durata(v.fine - v.inizio)} · fino alle ${ora(v.fine)}`;
+      const meta = v.fatta ? 'Fatta' : v.inCorso ? `In corso · fino alle ${ora(v.fine)}` : ev ? `dalle ${ora(v.inizio)} · circa ${durata(v.fine - v.inizio)}` : `${durata(v.fine - v.inizio)} · fino alle ${ora(v.fine)}`;
+      // dal vivo: «Fatto» con un tocco, sulle tappe che mancano; sulle fatte si toglie dal menu della tappa
+      const fatto = r.vivo && !v.fatta ? `<button type="button" class="it-fatto" data-az="fatto">${icona('ok', 18)}Fatto<span class="visually-hidden">: ${esc(breve(v.id))}</span></button>` : '';
       const nuova = evidenzia?.id === v.id && Date.now() - evidenzia.t < 800;
       return `<li class="it-voce${nuova ? ' it-voce--nuova' : ''}" data-id="${v.id}">
         ${tratto ? `<p class="it-tratto it-tratto--${tipoTratto(tratto)}">${icona({ funi: 'funicolare', metro: 'metro', bus: 'bus', piedi: 'piedi' }[tipoTratto(tratto)], 18)}<span>${testoTratto(tratto)}</span></p>` : ''}
         ${v.attesa ? `<p class="it-attesa">${durata(v.attesa)} liberi prima delle regate: pranzo e tempo per trovare posto</p>` : ''}
-        <span class="it-ora" aria-hidden="true">${ora(v.inizio)}</span>
-        <div class="it-blocco${sel ? ' it-blocco--scelto' : ''}${lon ? ' it-blocco--attenzione' : ''}${v.oltre != null ? ' it-blocco--oltre' : ''}${ev ? ' it-blocco--evento' : ''}">
+        <span class="it-ora" aria-hidden="true">${v.fatta ? icona('ok', 18) : ora(v.inizio)}</span>
+        <div class="it-blocco${sel ? ' it-blocco--scelto' : ''}${lon ? ' it-blocco--attenzione' : ''}${v.oltre != null ? ' it-blocco--oltre' : ''}${ev ? ' it-blocco--evento' : ''}${v.fatta ? ' it-blocco--fatta' : ''}${v.inCorso ? ' it-blocco--incorso' : ''}">
           <div class="it-blocco__riga">
             <button type="button" class="it-blocco__corpo" data-az="scegli" aria-expanded="${sel}" aria-controls="it-az-${v.id}">
               <span class="it-foto">${foto}<span class="it-piastrella" aria-hidden="true">${v.n}</span></span>
-              <span class="it-blocco__testo"><span class="visually-hidden">Tappa ${v.n}, alle ${ora(v.inizio)}: </span><span class="it-blocco__nome">${esc(nome(v.id))}</span><span class="it-blocco__meta">${meta}</span>${note.join('')}</span>
+              <span class="it-blocco__testo"><span class="visually-hidden">Tappa ${v.n}, ${v.fatta ? 'fatta' : `alle ${ora(v.inizio)}`}: </span><span class="it-blocco__nome">${esc(nome(v.id))}</span><span class="it-blocco__meta">${meta}</span>${note.join('')}</span>
             </button>
             <button type="button" class="it-maniglia" data-az="maniglia" aria-label="Sposta ${esc(breve(v.id))}" aria-describedby="it-aiuto-maniglia" data-tip="Trascina per spostare">${icona('maniglia')}</button>
           </div>
           ${ev ? '<div class="it-evento-nota"></div>' : ''}
+          ${fatto}
           ${oltre}
           <div class="it-blocco__azioni" id="it-az-${v.id}"${sel ? '' : ' hidden'}>
             <span class="it-blocco__gruppo"><button type="button" data-az="su"${k === 0 ? ' disabled' : ''}>${icona('su', 20)}Su<span class="visually-hidden"> ${esc(breve(v.id))}</span></button>
             <button type="button" data-az="giu"${k === tappe.length - 1 ? ' disabled' : ''}>${icona('giu', 20)}Giù<span class="visually-hidden"> ${esc(breve(v.id))}</span></button></span><span class="it-blocco__gruppo">
             ${ev ? '' : `<button type="button" data-az="scheda" aria-haspopup="dialog">${icona('info', 20)}Scheda<span class="visually-hidden"> di ${esc(breve(v.id))}</span></button>`}
+            ${v.fatta ? `<button type="button" data-az="fatto">${icona('ricomincia', 20)}Non fatta<span class="visually-hidden"> ${esc(breve(v.id))}</span></button>` : ''}
             <button type="button" class="it-togli" data-az="togli">${icona('x', 20)}Togli<span class="visually-hidden"> ${esc(breve(v.id))}</span></button></span>
           </div>
         </div>
@@ -388,8 +495,17 @@ function avvia() {
       const fine = Math.min(24 * 60 - 15, Math.ceil(ultimo.fine / 30) * 30);
       cambia(y => { y.giorni[giorno].fine = fine; }, { annuncia: `Il giorno ${giorno + 1} ora finisce alle ${ora(fine)}` });
     } else if (az === 'ordina') {
-      const o = ordinePiuCorto(C, x, giorno);
-      if (o) cambia(y => { y.giorni[giorno].tappe = o.ordine; }, { annulla: `Ordine cambiato: ${durataParole(o.risparmio)} in meno` });
+      const fatte = ultimo?.vivo ? G.fatte ?? [] : [];
+      const o = ordinePiuCorto(C, senzaFatte(x, giorno, fatte), giorno);
+      if (o) cambia(y => { y.giorni[giorno].tappe = [...G.tappe.filter(id => fatte.includes(id)), ...o.ordine]; }, { annulla: `Ordine cambiato: ${durataParole(o.risparmio)} in meno` });
+    } else if (az === 'fatto' && id) {
+      const era = !!G.fatte?.includes(id);
+      cambia(y => { const g = y.giorni[giorno]; g.fatte = era ? (g.fatte ?? []).filter(t => t !== id) : [...(g.fatte ?? []), id]; if (!g.fatte.length) delete g.fatte; }, { annuncia: era ? `${maiuscola(breve(id))}: tolto «Fatto»` : `${maiuscola(breve(id))} fatta: ricalcolo gli orari da adesso` });
+    } else if (az === 'gps-si') {
+      posizioneNegata = false;
+      cambia(y => { y.posizione = 'si'; }, { annuncia: 'Uso la posizione del telefono, solo su questa pagina' });
+    } else if (az === 'gps-no') {
+      cambia(y => { y.posizione = 'no'; }, { annuncia: 'Non uso la posizione' });
     } else if (az === 'togli-evento' && E) cambia(y => { y.giorni[giorno].tappe = y.giorni[giorno].tappe.filter(t => t !== E.id); }, { annulla: 'Hai tolto le regate' });
     else if (az === 'anticipa') cambia(y => { y.giorni[giorno].inizio = Number(b.dataset.ora); }, { annuncia: `Il giorno ${giorno + 1} ora comincia alle ${ora(Number(b.dataset.ora))}` });
     else if (az === 'cambia') apriImpostazioni(b);
@@ -909,7 +1025,7 @@ function avvia() {
     const x = it();
     try {
       mappa ??= await import('./mappa');
-      const r = calcolaGiorno(C, x, giorno);
+      const r = calcolaGiorno(C, x, giorno, adessoPer(x, giorno));
       await mappa.disegna($('it-mappa-area'), C, x, giorno, r, {
         legenda: $('it-legenda'), riassunto: $('it-riassunto'),
         apri: (id: string) => { scelto = id; vista = 'giornata'; disegna(); linea.querySelector<HTMLElement>(`.it-voce[data-id="${CSS.escape(id)}"] [data-az="scegli"]`)?.focus(); }

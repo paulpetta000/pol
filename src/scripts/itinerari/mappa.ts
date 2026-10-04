@@ -17,6 +17,11 @@ const carica = () => (dati ??= Promise.all([
   fetch('/napoli/itinerari/percorsi.json').then(r => { if (!r.ok) throw new Error('percorsi'); return r.json() as Promise<Percorsi>; })
 ]).catch(e => { dati = null; throw e; }));
 
+// le strade alternative degli orari veri (senza bus, o con un altro bus): si caricano solo se servono
+type Alternativi = { senza: Record<string, (string | 0)[][]>; candidati: string[] };
+let alt: Promise<Alternativi | null> | null = null;
+const caricaAlt = () => (alt ??= fetch('/napoli/itinerari/percorsi-alternativi.json').then(r => (r.ok ? r.json() as Promise<Alternativi> : null)).catch(() => { alt = null; return null; }));
+
 const NS = 'http://www.w3.org/2000/svg';
 const el = <K extends keyof SVGElementTagNameMap>(tag: K, attr: Record<string, string | number> = {}) => {
   const e = document.createElementNS(NS, tag);
@@ -104,8 +109,14 @@ export async function disegna(area: HTMLElement, C: Citta, it: Itinerario, g: nu
     tutti.push(t.xy);
     svg!.setAttribute('aria-label', `Mappa del giorno ${g + 1}: la gita a ${t.breve} parte da ${t.partenza}`);
   } else {
+    const Alt = r.voci.some(v => v.tipo === 'tratto' && v.variante != null) ? await caricaAlt() : null;
     for (const v of r.voci) {
-      if (v.tipo === 'tratto') for (const p of decodifica(percorso(v.scenario, v.da, v.a))) linea(p.punti, p.modo);
+      if (v.tipo !== 'tratto') continue;
+      let s: string;
+      if (v.variante == null) s = percorso(v.scenario, v.da, v.a);
+      else if (v.variante === 'senza') { const x = Alt?.senza[v.scenario]?.[v.da]?.[v.a]; s = x === 0 ? percorso(v.scenario, v.da, v.a) : x ?? ''; }
+      else s = Alt?.candidati[v.variante] ?? '';   // senza rete e senza copia salvata: quel tratto non si disegna
+      for (const p of decodifica(s)) linea(p.punti, p.modo);
     }
     for (const v of tappe) {
       const ev = C.evento && v.id === C.evento.id;

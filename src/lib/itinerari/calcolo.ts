@@ -1,7 +1,7 @@
 // Calcolo di una giornata: orari, spostamenti, avvisi e ordine più corto. Funzioni pure, senza DOM:
 // le usa la pagina (src/scripts/itinerari/) e la build, che controlla gli itinerari pronti.
 import { giornoSettimana, tipoGiorno, piuGiorni } from './date';
-import type { Avviso, Citta, Giorno, Itinerario, Risultato, Scenario, Tappa, Voce } from './tipi';
+import type { Adesso, Avviso, Citta, Corsa, Giorno, Itinerario, Risultato, Scenario, Tappa, Vivo, Voce } from './tipi';
 
 // Una tappa che allunga gli spostamenti di almeno tanti minuti (andata e ritorno) è «lontana dalle altre»
 export const LONTANA = 30;
@@ -59,37 +59,123 @@ function versi(C: Citta, ids: string[], s: Scenario) {
 
 const durataDi = (C: Citta, id: string) => (C.evento && id === C.evento.id ? C.evento.durata : tappaDi(C, id)!.durata);
 
-// La giornata g dell'itinerario, con orari e avvisi
-export function calcolaGiorno(C: Citta, it: Itinerario, g: number): Risultato {
+// ---------- Orari veri dei bus (specifiche/bus-orari-veri.md) ----------
+const dataGtfs = (d: string) => d.replace(/-/g, '');
+// Le partenze vere valgono solo nelle date dell'orario ANM (fuori, per esempio nel 2027, resta l'attesa media)
+export const conOrariVeri = (C: Citta, data?: string) => !!(C.vivo && data && C.vivo.giorni[dataGtfs(data)] != null);
+
+// Una strada con il bus partendo all'ora t0: i minuti fissi (a piedi, metro…) e, per ogni corsa, il primo bus
+// che parte dopo l'arrivo alla fermata, più il viaggio. null se a quell'ora non passa più.
+function valuta(V: Vivo, tipo: number, seg: (number | string)[], t0: number): { min: number; corse: Corsa[] } | null {
+  let t = t0;
+  const corse: Corsa[] = [];
+  for (const x of seg) {
+    if (typeof x === 'number') { t += x; continue; }
+    const [linea, a] = x.split('|');
+    const v = V.viaggi[tipo]?.get(x);
+    const partenze = v?.partenze ?? V.salite[tipo]?.get(`${linea}|${a}`);
+    if (!v || !partenze) return null;
+    const ora = partenze.find(m => m >= t);
+    if (ora == null) return null;
+    corse.push({ linea, da: V.fermate[a] ?? a, ora });
+    t = ora + v.min;
+  }
+  return { min: t - t0, corse };
+}
+
+type Tratto = Extract<Voce, { tipo: 'tratto' }>;
+// Lo spostamento da un punto all'altro partendo all'ora t: i tempi di sempre (attesa media) o, se la data è
+// nell'orario ANM, la strada migliore tra quella senza bus e quelle con il bus valutate con le partenze vere
+function spostamento(C: Citta, s: Scenario, da: number, a: number, t: number, data?: string): Tratto {
+  const ij = da * C.tempi.n + a;
+  const voce = (min: number, metri: number, mezzi: string): Tratto => {
+    const parti = mezzi.split('+').filter(Boolean);
+    return { tipo: 'tratto', min, metri, scenario: s, da, a, mezzi: parti.filter(x => !x.startsWith('asc:')), ascensori: parti.filter(x => x.startsWith('asc:')).map(x => x.slice(4)) };
+  };
+  const sempre = voce(minuti(C, s, da, a), C.tempi.metri[s][ij] ?? 0, C.tempi.mezzi[s]?.[ij] || '');
+  const V = C.vivo;
+  if (s === 'piedi' || !V || !data || da === a) return sempre;
+  const tipo = V.giorni[dataGtfs(data)];
+  if (tipo == null) return sempre;
+  const sz = V.senza[s]?.get(ij);
+  // senza bus: se la strada di sempre non usa il bus è lei
+  const senza = sz ? { ...voce(sz.min, sz.metri, sz.mezzi), variante: 'senza' as const } : sempre;
+  const sempreBus = sempre.mezzi.some(m => m.startsWith('B'));
+  const lista = V.bus[s]?.get(ij) ?? [];
+  let meglio: Tratto = senza;
+  for (const k of lista) {
+    const c = V.candidati[k];
+    const r = valuta(V, tipo, c.seg, t);
+    if (!r || r.min > senza.min - V.preferenza || r.min >= meglio.min) continue;
+    // la prima strada della lista è quella di sempre, quando usa il bus: stesso disegno
+    meglio = { ...voce(Math.round(r.min), c.metri, c.mezzi), corse: r.corse, ...(sempreBus && k === lista[0] ? {} : { variante: k }) };
+  }
+  // il bus di sempre a quell'ora non conviene: diciamo quando passa (o che non passa più)
+  if (sempreBus && !meglio.corse && lista.length) {
+    const r = valuta(V, tipo, V.candidati[lista[0]].seg, t);
+    meglio = { ...meglio, scartato: r?.corse[0] ?? { linea: sempre.mezzi.find(m => m.startsWith('B'))!, da: '', ora: -1 } };
+  }
+  return meglio;
+}
+
+// La giornata g dell'itinerario, con orari e avvisi. Con «adesso» (la pagina, il giorno stesso) la giornata è
+// dal vivo: le tappe fatte restano senza orari, si riparte dall'ora del telefono e dalla tappa dove sei
+// (o dall'ultima fatta), e le tappe che mancano slittano.
+export function calcolaGiorno(C: Citta, it: Itinerario, g: number, adesso?: Adesso): Risultato {
   const G = it.giorni[g];
   const data = dataDelGiorno(it, g);
   const ids = G.tappe.filter(id => tappaDi(C, id) || (C.evento && id === C.evento.id));
+  const vivo = !!adesso && !!data && adesso.data === data && !G.gita;
+  const fatte = new Set(vivo ? (G.fatte ?? []).filter(id => ids.includes(id)) : []);
+  let restano = ids.filter(id => !fatte.has(id));
   const base = scenarioDi(data, G.inizio, it.piedi);
-  const verso = versi(C, ids, base);
   const voci: Voce[] = [];
   const avvisi: Avviso[] = [];
-  let t = G.inizio, n = 0, visite = 0, spostamenti = 0, metri = 0;
+  let t = G.inizio, visite = 0, spostamenti = 0, metri = 0;
   let uscita: number | null = null;
-  ids.forEach((id, k) => {
+  // le tappe fatte, in cima e senza orari
+  for (const id of ids) if (fatte.has(id)) voci.push({ tipo: 'tappa', id, n: ids.indexOf(id) + 1, inizio: -1, fine: -1, fatta: true });
+  // dal vivo, dopo l'inizio della giornata: da dove e da quando si riparte
+  let inCorso: { id: string; inizio: number; fine: number } | null = null;
+  if (vivo && adesso!.ora > G.inizio && restano.length) {
+    const qui = adesso!.qui && restano.includes(adesso!.qui) ? adesso!.qui : undefined;
+    if (qui && qui === restano[0]) {
+      // sei alla prossima tappa: la lasci quando finisce la visita prevista, o adesso se è già tardi
+      const piano = calcolaGiorno(C, { ...it, giorni: it.giorni.map((x, i) => (i === g ? { ...x, tappe: restano } : x)) }, g);
+      const v = piano.voci.find(x => x.tipo === 'tappa' && x.id === qui) as Extract<Voce, { tipo: 'tappa' }>;
+      inCorso = { id: qui, inizio: Math.min(v.inizio, adesso!.ora), fine: Math.max(v.fine, adesso!.ora) };
+      t = inCorso.inizio;
+    } else if (qui) {
+      // sei a un'altra tappa: è quella in corso (appena arrivato) e le tappe prima, non segnate «Fatto»,
+      // vengono dopo; la pagina lo dice, perché non sappiamo se le hai fatte
+      avvisi.push({ tipo: 'vicino', id: qui, prima: restano.slice(0, restano.indexOf(qui)) });
+      restano = [qui, ...restano.filter(id => id !== qui)];
+      inCorso = { id: qui, inizio: adesso!.ora, fine: adesso!.ora + durataDi(C, qui) };
+      t = adesso!.ora;
+    } else {
+      const ultima = ids.filter(id => fatte.has(id)).pop();
+      if (ultima) uscita = capi(C, ultima)[0].esce;
+      t = adesso!.ora;
+    }
+  }
+  const orariVeri = !it.piedi && conOrariVeri(C, data);
+  const verso = versi(C, restano, base) as Capi;
+  restano.forEach((id, k) => {
     const v = verso[k];
     if (uscita != null) {
       const s = scenarioDi(data, t, it.piedi);
-      const ij = uscita * C.tempi.n + v.entra;
-      const min = minuti(C, s, uscita, v.entra);
-      const parti = (C.tempi.mezzi[s]?.[ij] || '').split('+').filter(Boolean);
-      voci.push({
-        tipo: 'tratto', min, metri: C.tempi.metri[s][ij] ?? 0, scenario: s, da: uscita, a: v.entra,
-        mezzi: parti.filter(x => !x.startsWith('asc:')), ascensori: parti.filter(x => x.startsWith('asc:')).map(x => x.slice(4))
-      });
-      t += min; spostamenti += min; metri += C.tempi.metri[s][ij] ?? 0;
+      const tr = spostamento(C, s, uscita, v.entra, t, data);
+      voci.push(tr);
+      t += tr.min; spostamenti += tr.min; metri += tr.metri;
     }
-    const voce: Extract<Voce, { tipo: 'tappa' }> = { tipo: 'tappa', id, n: ++n, inizio: t, fine: t };
+    const voce: Extract<Voce, { tipo: 'tappa' }> = { tipo: 'tappa', id, n: ids.indexOf(id) + 1, inizio: t, fine: t };
     if (C.evento && id === C.evento.id) {
       if (t < C.evento.inizio) { voce.attesa = C.evento.inizio - t; t = C.evento.inizio; voce.inizio = t; }
       else if (t > C.evento.inizio) voce.ritardo = t - C.evento.inizio;
     }
     const d = durataDi(C, id);
     voce.fine = t + d;
+    if (inCorso?.id === id) { voce.inCorso = true; voce.inizio = inCorso.inizio; voce.fine = inCorso.fine; }
     if (v.indietro) voce.indietro = true;
     if (data && tappaDi(C, id)?.chiuso.includes(giornoSettimana(data))) {
       voce.chiusa = true;
@@ -97,24 +183,26 @@ export function calcolaGiorno(C: Citta, it: Itinerario, g: number): Risultato {
     }
     if (voce.fine > G.fine) voce.oltre = voce.fine - Math.max(voce.inizio, G.fine);
     voci.push(voce);
-    t = voce.fine; visite += d;
+    t = voce.fine; visite += voce.fine - voce.inizio;
     uscita = v.esce;
   });
+  // dal vivo la giornata comincia da dove riparti (la prima tappa che manca), altrimenti all'ora scelta
+  const inizio = vivo ? Math.min(...voci.filter((v): v is Extract<Voce, { tipo: 'tappa' }> => v.tipo === 'tappa' && !v.fatta).map(v => v.inizio), t) : G.inizio;
 
   // l'evento: c'è davvero quel giorno? Si arriva in tempo?
-  if (C.evento && ids.includes(C.evento.id)) {
+  if (C.evento && ids.includes(C.evento.id) && !fatte.has(C.evento.id)) {
     if (!data || !C.evento.giorni[data]) avvisi.push({ tipo: 'evento-assente', data });
     const e = voci.find(v => v.tipo === 'tappa' && v.id === C.evento!.id) as Extract<Voce, { tipo: 'tappa' }>;
     if (e.ritardo) avvisi.push({ tipo: 'evento-tardi', ritardo: e.ritardo });
   }
   // la giornata non ci sta: si propongono le ultime tappe che finiscono oltre (l'evento resta dov'è)
   if (t > G.fine) {
-    const daSpostare = voci.filter((v): v is Extract<Voce, { tipo: 'tappa' }> => v.tipo === 'tappa' && v.fine > G.fine && v.id !== C.evento?.id).map(v => v.id);
+    const daSpostare = voci.filter((v): v is Extract<Voce, { tipo: 'tappa' }> => v.tipo === 'tappa' && !v.fatta && v.fine > G.fine && v.id !== C.evento?.id && !v.inCorso).map(v => v.id);
     avvisi.push({ tipo: 'piena', fine: t, limite: G.fine, daSpostare });
   }
-  // tappe lontane dalle altre
-  for (const l of lontane(C, it, g)) avvisi.push(l);
-  return { voci, inizio: G.inizio, fine: t, visite, spostamenti, metri, n, avvisi };
+  // tappe lontane dalle altre (solo tra quelle che mancano)
+  for (const l of lontane(C, it, g, fatte)) avvisi.push(l);
+  return { voci, inizio, fine: t, visite, spostamenti, metri, n: ids.length, avvisi, ...(vivo ? { vivo } : {}), ...(orariVeri ? { orariVeri } : {}) };
 }
 
 // Quanti minuti aggiunge una tappa inserita nel punto migliore di una lista (andata e ritorno)
@@ -131,9 +219,9 @@ function inserimento(C: Citta, s: Scenario, lista: string[], id: string) {
 }
 
 // Le tappe che allungano molto la giornata, con il giorno (o un giorno nuovo) dove starebbero meglio
-export function lontane(C: Citta, it: Itinerario, g: number): Extract<Avviso, { tipo: 'lontana' }>[] {
+export function lontane(C: Citta, it: Itinerario, g: number, fatte: Set<string> = new Set()): Extract<Avviso, { tipo: 'lontana' }>[] {
   const G = it.giorni[g];
-  const ids = G.tappe.filter(id => tappaDi(C, id)?.tipo === 'citta');
+  const ids = G.tappe.filter(id => tappaDi(C, id)?.tipo === 'citta' && !fatte.has(id));
   if (ids.length < 3) return [];
   const s = scenarioDi(dataDelGiorno(it, g), G.inizio, it.piedi);
   const out: Extract<Avviso, { tipo: 'lontana' }>[] = [];

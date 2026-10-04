@@ -341,16 +341,26 @@ class Heap {
   get size() { return this.a.length; }
 }
 
-function rete(scenario) {
+// Tre modi di usare gli autobus (per gli orari veri della pagina, specifiche/bus-orari-veri.md):
+// «media»: attesa media e preferenza (i tempi di sempre); «senza»: niente bus; «subito»: il bus arriva appena
+// sei alla fermata e senza preferenza, e il percorso DEVE usare almeno un bus (grafo a due strati: prima e dopo
+// essere saliti). La pagina valuta i percorsi «media» e «subito» con le partenze vere e li confronta con «senza».
+const strato1 = id => (typeof id === 'number' ? -id : '^' + id);
+const base = id => (typeof id === 'number' ? Math.abs(id) : id[0] === '^' ? id.slice(1) : id);
+const inStrato1 = id => (typeof id === 'number' ? id < 0 : id[0] === '^');
+
+function rete(scenario, modo = 'media') {
   // archi aggiuntivi dei mezzi per lo scenario; gli ascensori chiusi tolgono i loro archi
   const extra = new Map();
   const add = (da, e) => { if (!extra.has(da)) extra.set(da, []); extra.get(da).push(e); };
   if (scenario.mezzi) {
     for (const f of fermate) {
       const L = MEZZI.get(f.linea);
-      const attesa = (f.attesa || L.attesa)[scenario.nome];
+      if (L.bus && modo === 'senza') continue;
+      let attesa = (f.attesa || L.attesa)[scenario.nome];
       if (attesa == null) continue;    // linea ferma in questo scenario
-      const pen = L.bus ? BUS.preferenza : 0;
+      if (L.bus && modo === 'subito') attesa = 0;
+      const pen = L.bus && modo === 'media' ? BUS.preferenza : 0;
       for (const ac of f.accessi) {
         add(ac.nodo.id, { a: f.id, t: ac.m / PIEDI.metriAlMinuto + L.accesso + attesa + pen, m: ac.m, su: 0, tipo: 'sale', linea: L.id, ...(pen ? { pen } : {}) });
         add(f.id, { a: ac.nodo.id, t: ac.m / PIEDI.metriAlMinuto + L.uscita, m: ac.m, su: 0, tipo: 'scende', linea: L.id });
@@ -358,6 +368,7 @@ function rete(scenario) {
     }
     for (const c of corse) {
       const L = MEZZI.get(c.linea);
+      if (L.bus && modo === 'senza') continue;
       const t = typeof c.t === 'object' ? c.t[scenario.nome] : L.attesa[scenario.nome] == null ? null : c.t;
       if (t == null) continue;
       add(c.da, { a: c.a, t, m: 0, su: 0, tipo: 'corsa', linea: c.linea, punti: c.punti });
@@ -371,12 +382,24 @@ function rete(scenario) {
   // uscendo da un ascensore si pagano attesa e corsa (2 minuti)
   const conAscensore = new Map();
   for (const id of ascensori.keys()) if (adj.has(id)) conAscensore.set(id, adj.get(id).map(e => ({ ...e, t: e.t + PIEDI.ascensore * 2, asc: id })));
-  return id => {
+  const vicini = id => {
     if (chiusi.has(id)) return VUOTO;
     let lista = conAscensore.get(id) || adj.get(id) || VUOTO;
     if (accantoChiusi.has(id)) lista = lista.filter(e => !chiusi.has(e.a));
     const ex = extra.get(id);
     return ex ? lista.concat(ex) : lista;
+  };
+  if (modo !== 'subito') return vicini;
+  // due strati: salendo su un bus si passa al secondo e non si torna indietro; le tappe d'arrivo si cercano lì
+  const memo0 = new Map(), memo1 = new Map();
+  return id => {
+    const su = inStrato1(id), b = base(id), memo = su ? memo1 : memo0;
+    let out = memo.get(b);
+    if (!out) {
+      out = vicini(b).map(e => (su || (e.tipo === 'sale' && MEZZI.get(e.linea).bus) ? { ...e, a: strato1(e.a) } : e));
+      memo.set(b, out);
+    }
+    return out;
   };
 }
 
@@ -405,7 +428,7 @@ function percorso(r, destinazione) {
     if (e.asc && ascensori.get(e.asc)?.nome && !passi.includes(ascensori.get(e.asc).nome)) passi.push(ascensori.get(e.asc).nome);
   }
   // il disegno del percorso, a pezzi: a piedi o sulla linea (per le mappe dei bozzetti e del blocco 2)
-  const posizione = id => nodi.get(id) || perId.get(id);
+  const posizione = id => nodi.get(base(id)) || perId.get(base(id));
   const pezzi = [];
   tratti.forEach((e, k) => {
     const modo = e.tipo === 'corsa' ? e.linea : e.tipo === 'piedi' ? 'piedi' : null;
@@ -416,7 +439,19 @@ function percorso(r, destinazione) {
     if (e.punti) ultimo.punti.push(...e.punti);   // autobus: il percorso della linea tra le due fermate
     ultimo.punti.push([+b.lat.toFixed(6), +b.lon.toFixed(6)]);
   });
-  return { m, su, pen, mezzi, ascensori: passi, tratti, pezzi };
+  // i pezzi per gli orari veri: minuti fissi (a piedi, metro con l'attesa media…) e corse in bus
+  // «linea|fermata di salita|fermata di discesa», il cui tempo la pagina prende dalle partenze
+  const fermataDi = id => { const x = base(id); return x.slice(x.indexOf(':') + 1); };
+  const seg = []; let fisso = 0, bus = false;
+  tratti.forEach((e, k) => {
+    const L = e.linea && MEZZI.get(e.linea);
+    if (L?.bus && e.tipo === 'sale') { seg.push(+(fisso + e.m / PIEDI.metriAlMinuto + BUS.accesso).toFixed(2), `${e.linea}|${fermataDi(dove[k + 1])}`); fisso = 0; bus = true; }
+    else if (L?.bus && e.tipo === 'corsa') { /* il tempo viene dalle partenze */ }
+    else if (L?.bus && e.tipo === 'scende') { seg[seg.length - 1] += `|${fermataDi(dove[k])}`; fisso = e.t; }
+    else fisso += e.t;
+  });
+  seg.push(+fisso.toFixed(2));
+  return { m, su, pen, mezzi, ascensori: passi, tratti, pezzi, seg: bus ? seg : null };
 }
 
 // ---------- Punti delle tappe ----------
@@ -476,19 +511,35 @@ const SCENARI = [
 ];
 // impronta delle posizioni: la build (src/lib/tappe.ts) controlla che i tempi siano stati fatti con le tappe di oggi
 const firma = createHash('sha1').update(JSON.stringify([...tappe].sort((a, b) => a.id.localeCompare(b.id)).map(t => [t.id, t.lat, t.lon, t.fine ? [t.fine.lat, t.fine.lon] : null]))).digest('hex').slice(0, 12);
-const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30', bus: { fonte: 'ANM, feed GTFS (IODL 2.0)', dal: GTFS.feed.dal, al: GTFS.feed.al, giorni: GTFS.date } }, parametri: PIEDI, linee: [...LINEE, ...BUSLINEE].map(({ id, nome, tipo, chiusa, fermate }) => ({ id, nome, ...(tipo ? { tipo } : {}), ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
+const uscita = { generato: new Date().toISOString().slice(0, 10), firma, dati: { osm: osm.osm3s?.timestamp_osm_base, quote: 'Copernicus GLO-30', bus: { fonte: 'ANM, feed GTFS (IODL 2.0)', dal: GTFS.feed.dal, al: GTFS.feed.al, giorni: GTFS.date, preferenza: BUS.preferenza, accesso: BUS.accesso } }, parametri: PIEDI, linee: [...LINEE, ...BUSLINEE].map(({ id, nome, tipo, chiusa, fermate }) => ({ id, nome, ...(tipo ? { tipo } : {}), ...(chiusa ? { chiusa } : {}), fermate })), punti: punti.map(p => p.id), scenari: {} };
 const rapporto = [];
 const disegni = {};   // scenario -> righe di punti -> pezzi del percorso (per la mappa degli itinerari)
+const disegniSenza = {};
+// Le strade con il bus da valutare con le partenze vere (la pagina le ritrova per indice): pezzi, metri, mezzi, disegno
+const candidati = [], indiceCandidato = new Map();
+const mezziDi = p => [...p.mezzi, ...p.ascensori.map(n => 'asc:' + n)].join('+');
+function candidato(p) {
+  const k = JSON.stringify(p.seg);
+  if (!indiceCandidato.has(k)) { indiceCandidato.set(k, candidati.length); candidati.push({ seg: p.seg, m: Math.round(p.m / 10) * 10, mezzi: mezziDi(p), pezzi: p.pezzi }); }
+  return indiceCandidato.get(k);
+}
 for (const sc of SCENARI) {
   const vicini = rete(sc);
+  const conBus = sc.mezzi;   // gli scenari con i mezzi hanno anche i bus
+  const vSenza = conBus ? rete(sc, 'senza') : null, vSubito = conBus ? rete(sc, 'subito') : null;
   const min = [], piedi = [], salita = [], mezzi = [];
+  const sMin = [], sPiedi = [], sMezzi = [], bus = [];
   disegni[sc.nome] = [];
+  if (conBus) disegniSenza[sc.nome] = [];
   for (const a of punti) {
     const r = dijkstra(a.nodo, vicini);
+    const rS = conBus ? dijkstra(a.nodo, vSenza) : null, rZ = conBus ? dijkstra(a.nodo, vSubito) : null;
     const rm = [], rp = [], rs = [], rz = [], rd = [];
+    const sm = [], sp = [], sz = [], sd = [], rb = [];
     disegni[sc.nome].push(rd);
+    if (conBus) { disegniSenza[sc.nome].push(sd); sMin.push(sm); sPiedi.push(sp); sMezzi.push(sz); bus.push(rb); }
     for (const b of punti) {
-      if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); rd.push(null); continue; }
+      if (a === b) { rm.push(0); rp.push(0); rs.push(0); rz.push(''); rd.push(null); if (conBus) { sm.push(0); sp.push(0); sz.push(''); sd.push(null); rb.push(0); } continue; }
       const costo = r.tempo.get(b.nodo);
       if (costo == null) throw new Error(`Nessun percorso da ${a.id} a ${b.id} (${sc.nome})`);
       const p = percorso(r, b.nodo);
@@ -496,13 +547,36 @@ for (const sc of SCENARI) {
       rd.push(p.pezzi);
       rm.push(Math.round(t)); rp.push(Math.round(p.m / 10) * 10); rs.push(Math.round(p.su)); rz.push([...p.mezzi, ...p.ascensori.map(n => 'asc:' + n)].join('+'));
       if (COPPIE.some(([x, y]) => x === a.id && y === b.id)) rapporto.push({ scenario: sc.nome, da: a.id, a: b.id, min: t, ...p, linea: dist(nodi.get(a.nodo), nodi.get(b.nodo)) });
+      if (!conBus) continue;
+      // senza bus
+      const ps = percorso(rS, b.nodo), ts = rS.tempo.get(b.nodo);
+      sm.push(Math.round(ts)); sp.push(Math.round(ps.m / 10) * 10); sz.push(mezziDi(ps)); sd.push(ps.pezzi);
+      // con il bus: il percorso di sempre, se usa il bus, e quello «bus subito», se può battere la strada senza bus
+      const c = [];
+      if (p.seg) c.push(candidato(p));
+      const tz = rZ.tempo.get(strato1(b.nodo));
+      if (tz != null && tz <= ts - BUS.preferenza) {   // anche con il bus subito deve far risparmiare abbastanza
+        const pz = percorso(rZ, strato1(b.nodo));
+        if (pz.seg) { const k = candidato(pz); if (!c.includes(k)) c.push(k); }
+      }
+      rb.push(c.length ? c : 0);
     }
     min.push(rm); piedi.push(rp); salita.push(rs); mezzi.push(rz);
   }
-  uscita.scenari[sc.nome] = { descrizione: sc.descrizione, min, piedi, salita, ...(sc.mezzi ? { mezzi } : {}) };
+  uscita.scenari[sc.nome] = { descrizione: sc.descrizione, min, piedi, salita, ...(sc.mezzi ? { mezzi } : {}), ...(conBus ? { senza: { min: sMin, piedi: sPiedi, mezzi: sMezzi }, bus } : {}) };
   console.log(`Scenario ${sc.nome}: fatto`);
 }
+uscita.candidati = candidati.map(({ seg, m, mezzi }) => ({ seg, m, mezzi }));
+console.log(`Strade con il bus da valutare con le partenze vere: ${candidati.length}`);
 fs.writeFileSync(path.join(RADICE, 'src/data/tempi-tappe.json'), JSON.stringify(uscita) + '\n');
+
+// Le partenze vere delle corse in bus usate da quelle strade (src/data/partenze-bus.json, pagina /napoli/itinerari/partenze.json)
+{
+  const chiavi = new Set(candidati.flatMap(c => c.seg.filter(x => typeof x === 'string')));
+  const P = GTFS.partenze(chiavi);
+  fs.writeFileSync(path.join(RADICE, 'src/data/partenze-bus.json'), JSON.stringify({ generato: uscita.generato, firma, fonte: 'ANM, feed GTFS (IODL 2.0)', ...P }) + '\n');
+  console.log(`Scritto src/data/partenze-bus.json: ${chiavi.size} corse, ${P.tipi.length} tipi di giorno, ${Math.round(JSON.stringify(P).length / 1024)} kB`);
+}
 console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
 
 // Tutte le fermate delle linee bus (anche quelle lontane dalle tappe di oggi), con la frequenza di ogni scenario
@@ -573,9 +647,23 @@ console.log(`Scritto src/data/tempi-tappe.json (${punti.length} punti)`);
       return sc.nome !== 'feriale' && s === scenari.feriale[i][j] ? 0 : s;
     }));
   }
+  // senza bus: solo dove cambia rispetto al percorso di sempre (0 = uguale); i candidati con il bus per indice
+  const senza = {};
+  for (const [nome, righe] of Object.entries(disegniSenza)) {
+    senza[nome] = righe.map((riga, i) => riga.map((pezzi, j) => {
+      if (!pezzi) return '';
+      const s = codifica(pezzi), sempre = scenari[nome][i][j] === 0 ? scenari.feriale[i][j] : scenari[nome][i][j];
+      return s === sempre ? 0 : s;
+    }));
+  }
+  const conBus = candidati.map(c => codifica(c.pezzi));
   const file = { generato: uscita.generato, firma, punti: uscita.punti, unita: 'src/data/mappa.json', scenari };
   fs.writeFileSync(path.join(RADICE, 'src/data/percorsi-tappe.json'), JSON.stringify(file) + '\n');
   console.log(`Scritto src/data/percorsi-tappe.json (${Math.round(JSON.stringify(file).length / 1024)} kB)`);
+  // le strade alternative (orari veri): file a parte, la pagina lo carica solo se la mappa le deve disegnare
+  const alt = { generato: uscita.generato, firma, senza, candidati: conBus };
+  fs.writeFileSync(path.join(RADICE, 'src/data/percorsi-alternativi.json'), JSON.stringify(alt) + '\n');
+  console.log(`Scritto src/data/percorsi-alternativi.json (${Math.round(JSON.stringify(alt).length / 1024)} kB)`);
 }
 
 // ---------- Rapporto delle coppie richieste ----------

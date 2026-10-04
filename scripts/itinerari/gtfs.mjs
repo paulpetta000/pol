@@ -193,5 +193,62 @@ export function lineeBus(file, { linee, finestre }) {
     }
     out.push({ id, nome, breve: r.route_short_name, tipo: r.route_type === '11' ? 'filobus' : 'bus', passaggi, archi: [...archi.values()], fermate: stops, usate, direzioni });
   }
-  return { linee: out, feed: { dal: tutte[0], al: tutte[tutte.length - 1] }, date: tipiche };
+  // Le partenze vere di alcune corse («linea|fermata di salita|fermata di discesa»), per ogni data del feed.
+  // Le date con le stesse partenze diventano un «tipo di giorno». Per ogni tipo:
+  // - salite["linea|salita"]: le partenze da quella fermata (prima partenza, poi le differenze dalla prima),
+  //   in minuti dalla mezzanotte: tutte le corse che portano ad almeno una delle discese usate;
+  // - viaggi["linea|salita|discesa"]: i minuti di viaggio (mediana), oppure [minuti, partenze…] se verso quella
+  //   discesa vanno solo alcune corse (le linee con le diramazioni).
+  function partenze(chiavi) {
+    const idLinea = new Map(out.map(l => [l.id, [...scelte].find(([, r]) => 'B' + r.route_short_name === l.id)[0]]));
+    const perServizio = new Map();   // route_id -> service_id -> corse, con l'indice di ogni fermata
+    for (const t of perTrip.values()) {
+      if (!perServizio.has(t.route_id)) perServizio.set(t.route_id, new Map());
+      const m = perServizio.get(t.route_id);
+      if (!m.has(t.service_id)) m.set(t.service_id, []);
+      m.get(t.service_id).push({ t: t.fermate.map(x => x.t), dove: new Map(t.fermate.map((x, i) => [x.s, i])) });
+    }
+    const tipi = [], firme = new Map(), giorni = {};
+    const lista = v => v.map((x, i) => (i ? x - v[i - 1] : x));
+    for (const d of tutte) {
+      const attivi = date.get(d);
+      const perChiave = {};
+      for (const k of [...chiavi].sort()) {
+        const [lid, a, b] = k.split('|');
+        const coppie = [];
+        for (const [sv, corse] of perServizio.get(idLinea.get(lid)) || []) {
+          if (!attivi.has(sv)) continue;
+          for (const c of corse) {
+            const ia = c.dove.get(a), ib = c.dove.get(b);
+            if (ia != null && ib != null && ib > ia) coppie.push([Math.round(c.t[ia]), c.t[ib] - c.t[ia]]);
+          }
+        }
+        if (!coppie.length) continue;
+        coppie.sort((x, y) => x[0] - y[0]);
+        perChiave[k] = { viaggio: Math.round(mediana(coppie.map(x => x[1])) * 2) / 2, partenze: [...new Set(coppie.map(x => x[0]))] };
+      }
+      const salite = {}, viaggi = {};
+      for (const [k, v] of Object.entries(perChiave)) {
+        const la = k.split('|').slice(0, 2).join('|');
+        salite[la] = [...new Set([...(salite[la] || []), ...v.partenze])].sort((x, y) => x - y);
+      }
+      for (const [k, v] of Object.entries(perChiave)) {
+        const la = k.split('|').slice(0, 2).join('|');
+        viaggi[k] = v.partenze.length === salite[la].length ? v.viaggio : [v.viaggio, ...lista(v.partenze)];
+      }
+      for (const la of Object.keys(salite)) salite[la] = lista(salite[la]);
+      const tipo = { salite, viaggi };
+      const f = JSON.stringify(tipo);
+      if (!firme.has(f)) { firme.set(f, tipi.length); tipi.push(tipo); }
+      giorni[d] = firme.get(f);
+    }
+    // i nomi delle fermate usate, scritti per bene («ACTON - PLEBISCITO» → «Acton - Plebiscito»)
+    const PICCOLE = new Set(['di', 'dei', 'del', 'della', 'delle', 'degli', 'a', 'al', 'alla', 'e', 'da', 'in']);
+    const bello = s => s.toLowerCase().replace(/\s+/g, ' ').trim().split(' ').map((w, i) => (i && PICCOLE.has(w) ? w : w.replace(/(^|['(.-])(\p{L})/gu, (_, x, y) => x + y.toUpperCase()))).join(' ');
+    const fermate = {};
+    for (const k of chiavi) for (const sid of k.split('|').slice(1)) fermate[sid] = bello(stops.get(sid).nome);
+    return { dal: tutte[0], al: tutte[tutte.length - 1], giorni, tipi, fermate };
+  }
+
+  return { linee: out, feed: { dal: tutte[0], al: tutte[tutte.length - 1] }, date: tipiche, partenze };
 }

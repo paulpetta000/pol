@@ -158,6 +158,19 @@
 .it-consiglio__titolo { display: flex; gap: 8px; margin: 0; font: 600 1.0625rem/1.25 var(--it-f-titoli); }
 .it-consiglio p { margin: 4px 0 0; font-size: .9375rem; color: var(--it-ink-2); }
 .it-consiglio .it-avviso__azioni .it-btn { min-height: 44px; }
+/* dal vivo: il pannello della posizione (prima del permesso del telefono) */
+.it-posizione { padding: 16px; border: 2px solid var(--it-ink); border-radius: var(--it-r); background: var(--it-surface); }
+.it-posizione__titolo { display: flex; align-items: center; gap: 10px; margin: 0; font: 700 1.1875rem/1.2 var(--it-f-titoli); }
+.it-posizione__titolo svg { flex: none; padding: 6px; width: 34px; height: 34px; border-radius: 50%; background: var(--it-tile); color: var(--it-tile-ink); }
+.it-posizione > p { margin: 8px 0 0; font-size: .9375rem; color: var(--it-ink-2); }
+.it-posizione__lista { display: grid; gap: 8px; margin: 12px 0 0; padding: 12px; list-style: none; border-radius: var(--it-r); background: var(--it-surface-2); font-size: .9375rem; }
+.it-posizione__lista li { display: flex; gap: 8px; align-items: flex-start; }
+.it-posizione__lista svg { flex: none; margin-top: 1px; color: var(--it-bus); }
+.it-posizione .it-avviso__azioni { margin-top: 14px; }
+.it-posizione .it-btn { min-height: 48px; }
+.it-posizione .it-posizione__piccolo { font-size: .8125rem; color: var(--it-ink-3); }
+.it-posizione__piccolo a { color: inherit; }
+.it-posizione-spenta { margin: 0; font-size: .875rem; color: var(--it-ink-3); }
 
 /* la giornata */
 .it-linea { list-style: none; margin: 0; padding: 0 0 8px; }
@@ -170,6 +183,7 @@
 .it-tratto--funi { border-left: 5px solid var(--it-funi); padding-left: 8px; }
 .it-tratto--bus { border-left: 5px solid var(--it-bus); padding-left: 8px; }
 .it-tratto__nota { color: var(--it-ink-3); }
+.it-tratto__corse { display: block; margin-top: 2px; color: var(--it-ink-2); font-weight: 600; }
 .it-tratto__cr { color: var(--it-ink-3); }
 .it-attesa { grid-column: 2; margin: 2px 0 2px 4px; padding: 6px 0 6px 10px; border-left: 3px solid var(--it-line); color: var(--it-ink-3); font-size: .875rem; }
 .it-blocco { grid-column: 2; position: relative; margin: 4px 0; border: 1px solid var(--it-line); border-radius: var(--it-r); background: var(--it-surface); }
@@ -193,6 +207,12 @@
 .it-blocco__azioni button:disabled { color: var(--it-ink-3); cursor: default; opacity: .6; }
 .it-blocco__azioni .it-togli { color: var(--it-danger); }
 .it-blocco--scelto { border: 2px solid var(--it-ink); }
+/* dal vivo: tappe fatte, tappa in corso, pulsante «Fatto» */
+.it-blocco--fatta { background: var(--it-surface-2); border-style: dashed; }
+.it-blocco--fatta .it-blocco__nome, .it-blocco--fatta .it-foto { opacity: .6; }
+.it-blocco--incorso { border: 2px solid var(--it-bus); }
+.it-fatto { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin: 0 10px 10px 76px; padding: 0 14px; border: 2px solid var(--it-bus); border-radius: 999px; background: transparent; color: var(--it-ink); font: 600 .9375rem/1 var(--it-f); cursor: pointer; }
+.it-fatto svg { color: var(--it-bus); }
 .it-blocco--attenzione { border: 2px solid var(--it-warn-line); }
 .it-blocco--oltre { border: 2px solid var(--it-warn-line); overflow: hidden; }
 .it-blocco__limite { height: 10px; background: repeating-linear-gradient(135deg, var(--it-tile) 0 10px, #000 10px 20px); }

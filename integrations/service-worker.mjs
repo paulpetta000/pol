@@ -22,7 +22,7 @@ const CORE = [
 // (anche quelli caricati dopo, come la mappa), i dati e le miniature delle tappe (il campo "foto" dei dati
 // della pagina). Le foto grandi no: si salvano quando le guardi.
 const INTERATTIVE = {
-  '/napoli/itinerari/': ['/napoli/itinerari/mappa.json', '/napoli/itinerari/percorsi.json']
+  '/napoli/itinerari/': ['/napoli/itinerari/mappa.json', '/napoli/itinerari/percorsi.json', '/napoli/itinerari/partenze.json']
 };
 
 export default function serviceWorker() {

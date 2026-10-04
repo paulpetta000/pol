@@ -1,6 +1,6 @@
 # Itinerario dal vivo: orari veri dei bus, ora del telefono, «Fatto» e posizione
 
-_Specifica del 04/10/2026. Prima versione approvata da Enrico il 04/10/2026; **cambiata lo stesso giorno su sua richiesta** (niente pulsante «Parto adesso»: la giornata si aggiorna da sola; «Fatto» con un tocco; posizione dal GPS con un pannello sulla privacy). **Da riapprovare.** Si fa subito dopo il blocco B (bus con attesa media) e si pubblica insieme._
+_Specifica del 04/10/2026. Prima versione approvata da Enrico il 04/10/2026; **cambiata lo stesso giorno su sua richiesta** (niente pulsante «Parto adesso»: la giornata si aggiorna da sola; «Fatto» con un tocco; posizione dal GPS con un pannello sulla privacy). **Riapprovata da Enrico il 04/10/2026.** Si fa subito dopo il blocco B (bus con attesa media) e si pubblica insieme._
 
 ## Obiettivo
 Il giorno dell'itinerario la pagina funziona come un navigatore: guarda **che ora è**, sa **quali tappe hai fatto** (le segni tu) e, se lo permetti, **dove sei**; fa slittare le tappe che mancano e ricalcola gli spostamenti con **le partenze vere dei bus** in quel momento. Se un bus è appena passato e aspettare non conviene, propone un'altra strada.
@@ -59,14 +59,19 @@ Il giorno dell'itinerario la pagina funziona come un navigatore: guarda **che or
 - Le tappe fatte cambiano l'ordine più corto e le tappe lontane: si calcolano solo sulle tappe che mancano.
 
 ## Controlli prima di dire «fatto»
-- Build e `check:links` puliti; il file delle partenze sotto 300 kB.
+- Build e `check:links` puliti; il file delle partenze piccolo da scaricare (fatto: 475 kB, **87 kB compresso**; i disegni delle strade alternative, 1,4 MB, si scaricano solo se la mappa li deve mostrare).
 - Prove nel browser (con ora e posizione finte): un tratto in bus alle 15:00 e alle 15:20 dà attese diverse; luglio 2027 resta con l'attesa media; in ritardo di 30 minuti le tappe slittano; «Fatto» e ripartenza; posizione vicino a una tappa; permesso negato; senza rete.
 - axe senza violazioni sul pannello; revisione del `revisore`; prova di Enrico sul telefono.
 
 ## Compiti
 - [x] Prima versione approvata (04/10/2026).
-- [ ] Enrico approva questa versione.
-- [ ] Dati: strade senza bus e con il bus, disegni, file delle partenze.
-- [ ] Calcolo: partenze vere, ora attuale, tappe fatte, tappa dove sei.
-- [ ] Pagina: «Fatto», aggiornamento da solo, pannello della posizione, testi, Privacy.
-- [ ] Prove, revisione, `PROGRESS.md`.
+- [x] Enrico approva questa versione (04/10/2026).
+- [x] Dati: strade senza bus e con il bus, disegni, file delle partenze.
+- [x] Calcolo: partenze vere, ora attuale, tappe fatte, tappa dove sei.
+- [x] Pagina: «Fatto», aggiornamento da solo, pannello della posizione, testi, Privacy.
+- [x] Prove nel browser (ora e posizione finte, senza rete, axe), `PROGRESS.md`.
+- [ ] Revisione del `revisore`; prova di Enrico sul telefono.
+
+## Fatto il 04/10/2026: cosa è venuto fuori
+- Martedì dalle 9 alle 19, ogni spostamento provato ogni 10 minuti: il bus si propone nel 18,4% dei casi (16,5% con l'attesa media), la scelta cambia nel 5,5%.
+- Un caso deciso in corso d'opera: se il GPS dice che sei a una tappa che non è la prossima, quella diventa «in corso» e le tappe prima, non segnate «Fatto», vanno dopo (la pagina lo scrive).
