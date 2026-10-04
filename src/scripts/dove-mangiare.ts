@@ -32,7 +32,8 @@ function avvia() {
     const a = JSON.parse(localStorage.getItem('itinerari-v1') || 'null');
     it = a?.elenco?.find((i: ItinerarioSalvato) => i.id === a.attivo) ?? a?.elenco?.[0] ?? null;
   } catch { /* niente memoria: si usa la pagina senza itinerario */ }
-  const giorniCitta = it ? it.giorni.map((g, k) => ({ k, tappe: (g.tappe || []).filter(id => D.tappe.includes(id)), gita: !!g.gita })) : [];
+  // le tappe vere (non i locali già scelti): «vicino alle tappe» parte da quelle
+  const giorniCitta = it ? it.giorni.map((g, k) => ({ k, tappe: (g.tappe || []).filter(id => D.tappe.includes(id) && !locale.has(id)), gita: !!g.gita })) : [];
 
   // «Dove»: le tappe di un giorno dell'itinerario
   const dove = $<HTMLSelectElement>('dm-dove');
@@ -62,12 +63,19 @@ function avvia() {
   if (it?.data) selGiorno.value = giornoSettimana(it.data);
   $('dm-adesso').addEventListener('click', () => { selGiorno.value = giornoSettimana(oggi()); const m = oraDiAdesso(); campoOra.value = `${String(Math.floor(m / 60)).padStart(2, '0')}:${String(m % 60).padStart(2, '0')}`; aggiorna(); });
 
+  // le fasce di un giorno, con la coda di quelle del giorno prima che passano la mezzanotte (Chalet Ciro fino alle 3)
+  const fasceDi = (l: Locale, k: number): number[] | null => {
+    const f = l.orari[k], prima = l.orari[(k + 6) % 7] ?? [];
+    const coda: number[] = [];
+    for (let i = 0; i < prima.length; i += 2) if (prima[i + 1] > 24 * 60) coda.push(0, prima[i + 1] - 24 * 60);
+    return f === null ? (coda.length ? coda : null) : [...coda, ...f];
+  };
   // aperto quel giorno (e a quell'ora)? null = non si sa (orario non scritto)
   function aperto(l: Locale, g: number, t: number | null): { ok: boolean | null; testo: string } {
     const giorni = g >= 0 ? [g] : [0, 1, 2, 3, 4, 5, 6];
     let ignoto = false;
     for (const k of giorni) {
-      const f = l.orari[k];
+      const f = t == null ? l.orari[k] : fasceDi(l, k);
       if (f === null) { ignoto = true; continue; }
       if (!f.length) continue;
       if (t == null) return { ok: true, testo: '' };
@@ -128,8 +136,7 @@ function avvia() {
     $('dm-conta').textContent = visibili === 1 ? '1 locale' : `${visibili} locali`;
     $('dm-vuoto').hidden = visibili > 0;
     // «Aggiungi all'itinerario»: al giorno scelto (o a quello delle tappe vicine)
-    const giornoAgg = tipoDove === 'giorno' ? +valDove : +(aggGiorno.value || 0);
-    if (tipoDove === 'giorno' && !$('dm-giorno-it').hidden) aggGiorno.value = String(giornoAgg);
+    const giornoAgg = +(aggGiorno.value || 0);
     document.querySelectorAll<HTMLAnchorElement>('[data-aggiungi]').forEach(a => { a.href = `/napoli/itinerari/?aggiungi=${a.dataset.aggiungi}${giornoAgg ? `&g=${giornoAgg}` : ''}`; });
   }
   righe.forEach((li, k) => { li.dataset.n = String(k); });
@@ -139,6 +146,13 @@ function avvia() {
     else { const f = +b.dataset.fascia!; if (fasce.has(f)) fasce.delete(f); else fasce.add(f); b.setAttribute('aria-pressed', String(fasce.has(f))); }
     aggiorna();
   }));
+  // scegliendo le tappe di un giorno: i locali si aggiungono a quel giorno e «Quando» prende il suo giorno della settimana
+  dove.addEventListener('change', () => {
+    const [tipo, k] = dove.value.split(':');
+    if (tipo !== 'giorno') return;
+    if (!$('dm-giorno-it').hidden) aggGiorno.value = k;
+    if (it?.data) selGiorno.value = giornoSettimana(piuGiorni(it.data, +k));
+  });
   form.addEventListener('change', aggiorna);
   form.addEventListener('input', e => { if (e.target === campoOra) aggiorna(); });
   $('dm-togli').addEventListener('click', () => {

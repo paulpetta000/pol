@@ -87,13 +87,13 @@ salvo:
   usa: [lc-salvo-perche]
   fonti: [lc-salvo-menu]
   testo: |
-    Pizzeria sulla Riviera di Chiaia, di fronte alla Villa Comunale, con sette margherite diverse in carta. Ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-salvo-perche}.
+    Pizzeria sulla Riviera di Chiaia, di fronte alla Villa Comunale, con sette margherite diverse in carta. «Salvo» è ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24, ma la classifica non dice quale delle due sedi{?lc-salvo-perche}.
 
 pignatelli:
   usa: [lc-pignatelli-perche, lc-pignatelli-rinomato]
   fonti: [lc-pignatelli-menu]
   testo: |
-    Osteria sulla Riviera di Chiaia, vicino a Villa Pignatelli: pasta e patate con la provola, lardiata, genovese, polpette al ragù. Bib Gourmand della Guida Michelin 2025, secondo Scatti di Gusto, che nel 2026 ha lodato soprattutto le candele alla genovese{?lc-pignatelli-perche,lc-pignatelli-rinomato}.
+    Osteria sulla Riviera di Chiaia, vicino a Villa Pignatelli: pasta e patate con la provola, lardiata, genovese, polpette al ragù. Bib Gourmand della Guida Michelin 2025, secondo Scatti di Gusto, che nel 2026 ha scritto che le candele alla genovese sono molto buone{?lc-pignatelli-perche,lc-pignatelli-rinomato}.
 
 cantinella:
   usa: [lc-cantinella-perche]
@@ -117,7 +117,7 @@ calabritto:
   usa: [lc-calabritto-perche]
   fonti: [lc-calabritto-menu]
   testo: |
-    Cucina di mare in piazza Vittoria, accanto alla Villa Comunale, con qualche piatto di carne. È il locale più caro dell'elenco: i primi partono da 20 euro.
+    Cucina di mare in piazza Vittoria, accanto alla Villa Comunale, con qualche piatto di carne. I primi partono da 20 euro.
 
 chalet-ciro:
   usa: [lc-chalet-ciro-perche, lc-chalet-ciro-rinomato]

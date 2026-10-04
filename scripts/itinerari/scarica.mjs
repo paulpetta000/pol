@@ -51,7 +51,7 @@ out body;`;
         // alcuni server di riserva hanno dati di mesi fa: se sono più vecchi di 14 giorni provo il successivo
         const base = t.slice(0, 2000).match(/"timestamp_osm_base":\s*"([^"]+)"/)?.[1];
         if (base && Date.now() - Date.parse(base) > 14 * 864e5 && prova < 8) console.log(`${server}: dati vecchi (${base}), provo un altro server`);
-        else { testo = t; break; }
+        else { if (base && Date.now() - Date.parse(base) > 14 * 864e5) console.log(`Attenzione: uso dati vecchi (${base}): nessun server ha dati più recenti`); testo = t; break; }
       }
       else console.log(`${server}: risposta ${res.status}, riprovo`);
     } catch (e) { console.log(`${server}: ${e.message}, riprovo`); }

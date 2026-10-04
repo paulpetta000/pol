@@ -1881,7 +1881,7 @@
   ricontrollare: 2027-04-30
 
 - id: lc-cinquanta-kalo-prezzi
-  testo: "Margherita 7,50 €, marinara 6,50 €, frittatina 3 €; servizio e coperto 2 €."
+  testo: "Margherita 7,50 €, marinara 6,50 €, frittatina 3 €; servizio e coperto 2 € (menu del sito, file del luglio 2026)."
   stato: confermato
   fonti: [lc-cinquanta-kalo-menu]
   controllato: 2026-10-04
@@ -2098,7 +2098,7 @@
   ricontrollare: 2027-04-30
 
 - id: lc-calabritto-perche
-  testo: "Scelta nostra: cucina di mare in piazza Vittoria, accanto alla Villa Comunale e al lungomare. È il locale più caro dell'elenco."
+  testo: "Scelta nostra: cucina di mare in piazza Vittoria, accanto alla Villa Comunale e al lungomare."
   stato: confermato
   fonti: [lc-calabritto-menu]
   controllato: 2026-10-04

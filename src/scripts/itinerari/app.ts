@@ -1121,7 +1121,12 @@ function avvia() {
       const x = it();
       giorno = Math.min(Math.max(0, Number(richiesta.get('g')) || 0), x.giorni.length - 1);
       if (x.giorni[giorno].tappe.includes(t.id)) toast(`${maiuscola(t.breve)} è già nel giorno ${giorno + 1}`);
-      else { aggiungiTappa(t.id); toast(`Aggiunto al giorno ${giorno + 1}: ${t.breve}`); }
+      else {
+        // aggiungiTappa dice da sé se non si può (giorno pieno) o se finisce in un giorno nuovo (dopo una gita)
+        aggiungiTappa(t.id);
+        const dove = it().giorni.findIndex(G => G.tappe.includes(t.id));
+        if (dove >= 0) toast(`Aggiunto al giorno ${dove + 1}: ${t.breve}`);
+      }
     }
   }
   quandoCambia(() => { const n = leggi(C); if (n) { A = n; disegna(); } });

@@ -18,7 +18,7 @@ import '../../../styles/itinerari.css';
 
 const T = await getTesti('dove-mangiare');
 const TL = await getTesti('locali');
-const locali = await getLocali();
+const locali = [...await getLocali()];
 const C = await cittaNapoli();
 const fonti = await tutteLeFonti();
 const ordineZone = Object.keys(ZONE);
@@ -117,13 +117,13 @@ const fontiPiatti = conDescrizione.map(p => fonti.get(`wiki-${p}`)!).filter(Bool
       <ol class="dm-elenco" id="dm-elenco">
         {locali.map(l => (
           <li class="dm-locale" data-id={l.id}>
+            <div class="dm-locale__testa">
+              <h2>{l.data.nome}</h2>
+              <p class="dm-locale__meta">{ZONE[l.data.zona]} · {l.data.cucina.map(c => CUCINE[c]).join(', ')}{l.fascia > 0 && <> · <span aria-hidden="true">{FASCIA[l.fascia]}</span><span class="visually-hidden">fascia di prezzo {l.fascia} su 3</span></>}</p>
+              <p class="dm-locale__nota" hidden></p>
+            </div>
             <details>
-              <summary>
-                <h2>{l.data.nome}</h2>
-                <span class="dm-locale__apri">Scheda</span>
-                <p class="dm-locale__meta">{ZONE[l.data.zona]} · {l.data.cucina.map(c => CUCINE[c]).join(', ')}{l.fascia > 0 && ` · ${FASCIA[l.fascia]}`}</p>
-                <p class="dm-locale__nota" hidden></p>
-              </summary>
+              <summary><span class="dm-locale__apri">Scheda completa<span class="visually-hidden"> di {l.data.nome}</span></span></summary>
               <div class="dm-locale__corpo"><SchedaLocale l={l} h="h3" /></div>
             </details>
             <div class="dm-locale__azioni">

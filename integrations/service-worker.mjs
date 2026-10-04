@@ -15,6 +15,7 @@ const CORE = [
   '/napoli/mappa/',
   '/napoli/come-arrivare/',
   '/napoli/itinerari/',
+  '/napoli/dove-mangiare/',
   '/domande-frequenti/',
   '/offline/'
 ];

@@ -60,7 +60,8 @@ function versi(C: Citta, ids: string[], s: Scenario) {
 
 // Un locale (orari giorno per giorno) a quell'ora: va bene, oppure è chiuso (apre: la prossima apertura del giorno)
 // o chiude prima della fine (chiude). Senza data valgono tutti i giorni con l'orario scritto: avvisa solo se a
-// quell'ora è chiuso in tutti. Orari non scritti: nessun avviso.
+// quell'ora è chiuso in tutti. Orari non scritti: nessun avviso. Le fasce che passano la mezzanotte non contano
+// il giorno dopo: le giornate cominciano dalle 5:00 e oltre la mezzanotte non si controlla.
 const GIORNI_ORARI: GiornoSettimana[] = ['lun', 'mar', 'mer', 'gio', 'ven', 'sab', 'dom'];
 function apertoAOra(f: number[], t: number, d: number): { apre?: number; chiude?: number } | null {
   let apre: number | undefined, chiude: number | undefined;
