@@ -20,6 +20,7 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 
 ## Regole che non si rompono
 - **Skill, plugin e programmi di altri: prima si legge il codice, regola numero uno di Enrico (04/10/2026).** Prima di copiare o installare qualsiasi skill, plugin, script o pacchetto, leggi **tutti** i suoi file e cerca malware e cose pericolose: comandi che scaricano o eseguono altro (`curl`, `wget`, `eval`, `exec`, `base64`), accesso a file personali, chiavi o password, invii di dati a server esterni (anche statistiche), hook che partono da soli, modifiche a impostazioni o permessi, installazioni nascoste. Se trovi **qualcosa di dubbio, avvisa Enrico prima di fare qualsiasi altra cosa** e aspetta il suo OK: non installare, non copiare, non eseguire. Dì sempre a Enrico, in parole semplici, cosa hai controllato e cosa hai trovato. Una skill che sembra pulita ma che non hai letto per intero non si usa.
+- **Niente pacchetti nuovi quando se ne può fare a meno** (Enrico, 06/10/2026): prima si usa ciò che c'è già (Node, Astro, gli strumenti nel cloud). Se un pacchetto serve davvero, dì a Enrico perché e aspetta il suo OK, poi controllane autore, licenza e script di installazione.
 - **Nessuna informazione senza fonte.** Ogni dato ha fonte, stato (`confermato`, `stampa`, `segnalato`, `atteso`) e data di controllo.
 - Un'informazione non confermata per il 2027 va segnata con `{?id}` e detta a parole («secondo la stampa», «non è ancora uscito»).
 - Se una scheda cambia, i testi che la usano vanno riletti e poi firmati con `npm run testi:firma`.

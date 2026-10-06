@@ -12,7 +12,7 @@ _Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1,
 - **A, fatto**: contraddizioni di questo file, 4 schermate tolte, riga sugli id nel README, due frasi in `CLAUDE.md` (funzioni nuove, cosa conta come fallimento).
 - **B, primo passo del Blocco 3** (da approvare ancora i dettagli): `npm test` con `node:test` e zero pacchetti nuovi (cautela, firma con formula unica, link, date), avviso che non ferma la build per schede «confermate» con sole fonti `altro` (oggi 4: `reg-partenza`, `reg-precedenze`, `reg-penalita`, `tp-donnanna-orari`), tabella «per questo tipo di informazione cerca prima qui» nel README, divisione di `altro`.
 - **C**: test del calcolo della giornata, dei tempi compressi e degli orari dei locali all'inizio del Blocco D; script per i link esterni con «dati che si tengono aggiornati da soli»; axe e Lighthouse come comando.
-- **Da decidere con Enrico**: regola numero uno e pacchetti npm grandi (leggere tutto il codice o controllare autore, licenza e script di installazione).
+- **Deciso da Enrico il 06/10/2026**: niente pacchetti nuovi quando se ne può fare a meno (regola in `CLAUDE.md`); Playwright resta fuori dal progetto, si usa quello del cloud.
 
 ## Skill valutate il 04/10/2026 (verifica del codice fatta da agenti; niente è installato)
 Copie lette in sola lettura in `/home/user/<autore>/<repo>` (fuori dal progetto, solo in quella sessione). Decisioni di Enrico e piano per il blocco 3:
