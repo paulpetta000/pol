@@ -2,12 +2,12 @@
 
 _Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
-## Cosa fa Enrico adesso (06/10/2026, Blocco 3 · prima parte, stile dei testi: sul ramo `ccr-8d2ed67d-c97lqi`, non su `main`)
-1. Leggere sul telefono i testi nuovi nell'anteprima di Vercel del ramo e dire cosa non va.
-2. Dare l'OK per pubblicare su `main` (cambia solo il testo delle pagine, niente grafica).
-3. Poi: seconda parte del Blocco 3 (estetica, due proposte grafiche, logo), Opus effort alto o extra; installare prima SEO Audit Kit e Programmatic SEO Gate per la parte SEO.
+## Cosa fa Enrico adesso (06/10/2026, stile dei testi pubblicato su `main` con il suo OK)
+1. Guardare i testi nuovi sul sito pubblico (https://napoli-a-vela.vercel.app) e dire cosa non suona.
+2. Aprire una **sessione nuova nel cloud** (repository `paulpetta000/pol`, ramo `main`, modello Opus, effort alto, extra per scegliere la grafica) per la **seconda parte del Blocco 3**: estetica, due proposte grafiche, logo. All'inizio la sessione elenca le skill che vede: se ci sono VectorLab e consistent-ui (già attivi sul suo account) li legge e li copia in `.claude/skills/`; se no, sessione locale sul suo computer.
+3. SEO Audit Kit e Programmatic SEO Gate: Enrico non li trova nel catalogo. Senza, l'audit SEO si fa a mano sulle pagine costruite (titoli, descrizioni, intestazioni, link, dati strutturati) e con Lighthouse; Semrush solo dopo il suo OK (consuma unità).
 4. Mandare il link dello strumento per confrontare il sito con i concorrenti (senza abbonamenti).
-5. Dopo: sessione di gruppo su `da-risolvere.md` (29 righe aperte: 16 locali senza orari, 19 premi da verificare sulle guide in una riga sola).
+5. Dopo: sessione di gruppo su `da-risolvere.md` (29 righe aperte, di cui 19 premi da verificare in una riga sola e 16 locali senza orari).
 
 ## Blocco 3 · prima parte: lo stile dei testi (06/10/2026)
 - Ricerca: `ricerca/reports/Stile delle guide di viaggio.md` (note in `ricerca/research_notes/`). Molte guide bloccano la lettura dal cloud.
@@ -16,7 +16,7 @@ _Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia complet
 - Controllo dei testi (`src/lib/regole.mjs`): parole nuove (condizionale, «lo diranno… più avanti»…), corretto «voci,». Schede `comeFatto: true` (19 premi e recensioni dei locali, decisione di Enrico): scritte come fatti, la build le elenca come `[da verificare]`; riga in `da-risolvere.md`.
 - Nuovo `test/testi.test.mjs`: segni e cautele dei testi veri e lista nera, senza build. `CLAUDE.md` e README aggiornati.
 - Tutti i 31 file di `src/testi/` riscritti (agenti Sonnet per gruppi, riletti dal modello principale; controllo automatico dei numeri: nessun numero nuovo). Lunghezze simili a prima: senza fatti nuovi non si allunga. I fatti nuovi sui luoghi sono un lavoro a parte (scelta di Enrico).
-- Controlli: `npm test` 26/26, build ok, `check:links` 2441 link senza errori.
+- Controlli: `npm test` 26/26, build ok, `check:links` 2441 link senza errori. **Pubblicato su `main` il 06/10/2026 con l'OK di Enrico** (solo testi, grafica invariata).
 
 ## Revisione tecnica del 06/10/2026 (analisi approvata da Enrico; A fatto)
 - **A, fatto**: contraddizioni di questo file, 4 schermate tolte, riga sugli id nel README, due frasi in `CLAUDE.md` (funzioni nuove, cosa conta come fallimento).
