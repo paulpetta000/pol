@@ -5,7 +5,7 @@ _Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia complet
 ## Cosa fa Enrico adesso (06/10/2026, stile dei testi pubblicato su `main` con il suo OK)
 1. Guardare i testi nuovi sul sito pubblico (https://napoli-a-vela.vercel.app) e dire cosa non suona.
 2. Aprire una **sessione nuova nel cloud** (repository `paulpetta000/pol`, ramo `main`, modello Opus, effort alto, extra per scegliere la grafica) per la **seconda parte del Blocco 3**: estetica, due proposte grafiche, logo. All'inizio la sessione elenca le skill che vede: se ci sono VectorLab e consistent-ui (già attivi sul suo account) li legge e li copia in `.claude/skills/`; se no, sessione locale sul suo computer.
-3. SEO Audit Kit e Programmatic SEO Gate: Enrico non li trova nel catalogo. Senza, l'audit SEO si fa a mano sulle pagine costruite (titoli, descrizioni, intestazioni, link, dati strutturati) e con Lighthouse; Semrush solo dopo il suo OK (consuma unità).
+3. **SEO: deciso da Enrico il 06/10/2026** — si usa **claude-seo** (AgriciDaniel, MIT; scartato seomachine) **alla fine del Blocco 3**, dopo la grafica. Solo i comandi di analisi sul sito pubblicato (technical, page, schema, sitemap, images, hreflang, geo), installato come plugin e non con `install.sh`, senza estensioni a pagamento né Semrush senza OK; il primo uso scarica circa 20 pacchetti Python e un browser: sessione apposta e OK di Enrico prima. Prima si legge tutto il codice (regola numero uno); da notare: ha un hook PostToolUse (controllo dati strutturati). SEO Audit Kit e Programmatic SEO Gate: Enrico non li trova nel catalogo, non servono.
 4. Mandare il link dello strumento per confrontare il sito con i concorrenti (senza abbonamenti).
 5. Dopo: sessione di gruppo su `da-risolvere.md` (29 righe aperte, di cui 19 premi da verificare in una riga sola e 16 locali senza orari).
 
@@ -26,7 +26,7 @@ _Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia complet
 
 ## Skill valutate il 04/10/2026 (verifica del codice fatta da agenti; niente è installato)
 Copie lette in sola lettura in `/home/user/<autore>/<repo>` (fuori dal progetto, solo in quella sessione). Decisioni di Enrico e piano per il blocco 3:
-- **claude-seo** (MIT): sì, solo i comandi di analisi (technical, page, schema, sitemap, images, hreflang, audit) sul sito pubblicato; installare come plugin, non con `install.sh`, senza estensioni a pagamento. Il primo uso scarica circa 20 pacchetti Python e un browser: sessione apposta.
+- **claude-seo** (MIT; riconfermato da Enrico il 06/10/2026, da usare a fine Blocco 3): sì, solo i comandi di analisi (technical, page, schema, sitemap, images, hreflang, audit) sul sito pubblicato; installare come plugin, non con `install.sh`, senza estensioni a pagamento. Il primo uso scarica circa 20 pacchetti Python e un browser: sessione apposta.
 - **impeccable** (Apache-2.0) e **ui-ux-pro-max** (MIT): copiare a mano solo i testi utili (audit, critique, polish, typeset; la lista di controllo di accessibilità) in una skill del progetto, con la nota di licenza e senza hook, senza il programma scaricato, senza telemetria. I caratteri di Google vanno scaricati e messi nel sito (regola: nessun servizio esterno prima di un tocco).
 - **awesome-design-md** (MIT): solo come ispirazione per le due proposte grafiche del blocco 3 (idee e struttura); mai caratteri proprietari, loghi, nomi o colori che identificano un marchio.
 - **img2threejs** (Apache-2.0): da accendere solo quando si rifanno le barche 3D, solo il clone base, senza plugin né `integrations/`.
