@@ -3,18 +3,18 @@
 defender:
   usa: [cal-defender-gironi, cal-match]
   testo: |
-    Da Defender non deve qualificarsi. Corre con gli altri le regate di flotta e i tre Round Robin della Louis Vuitton Cup, ma i suoi risultati non contano per la classifica degli sfidanti, e non corre ripescaggio, semifinali e finale.
+    Da Defender, cioè da squadra che difende la Coppa, non deve qualificarsi. Corre con gli altri le regate di flotta e i tre Round Robin della Louis Vuitton Cup, ma i suoi risultati non contano per la classifica degli sfidanti, e non corre ripescaggio, semifinali e finale.
 
-    Dal 10 luglio difende la Coppa nel Match contro il vincitore della Louis Vuitton Cup: vince chi arriva prima a 7 vittorie, entro il 19 luglio.
+    Dal 10 luglio difende la Coppa nel Match contro il vincitore della Louis Vuitton Cup. Vince chi arriva prima a 7 vittorie, entro il 19 luglio.
 
 sfidante:
   usa: [cal-lvc-periodo, cal-ripescaggio, cal-match]
   testo: |
-    Corre la Louis Vuitton Cup, dal 22 maggio al 4 luglio al più tardi. Dopo il terzo Round Robin, se è tra i primi tre sfidanti va dritta in semifinale; altrimenti si gioca l'ultimo posto nel ripescaggio del 12 e 13 giugno.
+    La Louis Vuitton Cup va dal 22 maggio al 4 luglio al più tardi. Dopo il terzo Round Robin, se la squadra è tra i primi tre sfidanti, va dritta in semifinale; altrimenti si gioca l'ultimo posto nel ripescaggio, il 12 e 13 giugno.
 
-    Chi vince la Louis Vuitton Cup sfida Emirates Team New Zealand nel Match, dal 10 luglio al 19 luglio al più tardi: vince chi arriva prima a 7 vittorie.
+    Chi vince la Louis Vuitton Cup sfida Emirates Team New Zealand nel Match, dal 10 luglio al 19 luglio al più tardi. Vince chi arriva prima a 7 vittorie.
 
 equipaggi:
   usa: [ac40-ruoli, ac75-cinque, ac75-donna]
   testo: |
-    Sull'AC40 regatano in quattro: due timonieri e due regolatori, per randa e fiocco. Nel 2027, sull'AC75, saranno in cinque, con almeno una donna.
+    Sull'AC40 regatano in quattro: due timonieri e due regolatori, che si occupano di randa e fiocco. Nel 2027, sull'AC75, saranno in cinque, con almeno una donna.

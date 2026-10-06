@@ -4,24 +4,24 @@ napoli:
   usa: [res-napoli]
   fonti: [ac-risultati, scuttlebutt-napoli]
   testo: |
-    Nove AC40, otto regate di flotta e poi la finale a due. Ha vinto Luna Rossa, che in finale ha battuto Emirates Team New Zealand senza mai farsi superare. ARC Team USA, al debutto, ha vinto la prima regata; La Roche-Posay ne ha vinte due, ma si è anche rovesciata due volte.
+    A Napoli, dal 25 al 27 settembre 2026, hanno regatato nove AC40: otto regate di flotta, poi la finale a due. Ha vinto Luna Rossa, che in finale ha battuto Emirates Team New Zealand senza mai farsi superare. ARC Team USA, al debutto, ha vinto la prima regata. La Roche-Posay ne ha vinte due, ma si è anche rovesciata due volte.
 
 cagliari:
   usa: [res-cagliari]
   fonti: [ac-risultati, scuttlebutt-cagliari]
   testo: |
-    Otto AC40 nel Golfo degli Angeli. Ha vinto Luna Rossa, che in finale ha battuto Emirates Team New Zealand. Le squadre americana e australiana, iscritte in ritardo, non c'erano.
+    Dal 21 al 24 maggio 2026, nel Golfo degli Angeli, hanno regatato otto AC40. Ha vinto Luna Rossa, che in finale ha battuto Emirates Team New Zealand. Le squadre americana e australiana, iscritte in ritardo, non c'erano.
 
 punteggio:
   usa: [res-punteggio]
   testo: |
-    Nel 2026 chi vinceva una regata prendeva 10 punti, il secondo 9 e così via, e dopo 8 regate le prime due si giocavano la vittoria in una finale a due{?res-punteggio}. Lo 0 è di chi non ha finito; in arancio le vittorie.
+    Nel 2026 il punteggio andava così: 10 punti a chi vinceva la regata, 9 al secondo e così via. Dopo 8 regate le prime due barche si giocavano la vittoria in una finale a due{?res-punteggio}. Nella tabella lo 0 è di chi non ha finito, e in arancio ci sono le vittorie.
 
 da-sapere:
   usa: [res-non-contano, res-wy, campo-2026, vil-2026-folla]
   testo: |
-    I risultati delle regate preliminari del 2026, scrive la stampa specializzata, non contano per la classifica della Louis Vuitton Cup{?res-non-contano}.
+    Per la stampa specializzata i risultati delle regate preliminari del 2026 non contano per la classifica della Louis Vuitton Cup{?res-non-contano}.
 
-    Nel 2026 le squadre potevano schierare una seconda barca con un equipaggio di donne e giovani, chiamata «Women & Youth»: per questo in classifica ci sono più barche che squadre{?res-wy}.
+    Nel 2026 le squadre potevano schierare anche una seconda barca, con un equipaggio di donne e giovani: la «Women & Youth». Per questo in classifica ci sono più barche che squadre{?res-wy}.
 
-    A Napoli, nel 2026, gli AC40 hanno regatato davanti al lungomare Caracciolo, tra Castel dell'Ovo e la Rotonda Diaz. L'ultimo giorno, secondo l'ANSA, sul lungomare ci sono stati oltre 100.000 ingressi{?campo-2026,vil-2026-folla}.
+    A Napoli, nel 2026, gli AC40 hanno regatato davanti al lungomare Caracciolo, tra Castel dell'Ovo e la Rotonda Diaz{?campo-2026}. L'ultimo giorno sul lungomare ci sono stati oltre 100.000 ingressi, secondo l'ANSA{?vil-2026-folla}.
