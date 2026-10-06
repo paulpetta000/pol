@@ -3,8 +3,8 @@
 prima-di-partire:
   usa: [trasporti-2027-atteso, caracciolo-chiusa, vil-2026-folla, caldo-bollettini]
   testo: |
-    Il piano dei trasporti e del traffico per il 2027 non è ancora uscito{?trasporti-2027-atteso}. Secondo la stampa locale, però, via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia: un provvedimento ancora non c'è{?caracciolo-chiusa}.
+    Il piano dei trasporti e del traffico per il 2027 non è ancora uscito{?trasporti-2027-atteso}. Si parla però di una chiusura lunga: via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia. Per ora non c'è nessun provvedimento{?caracciolo-chiusa}.
 
-    Per farti un'idea della folla: nel 2026, l'ultimo giorno di regate, secondo l'ANSA sul lungomare ci sono stati oltre 100.000 ingressi{?vil-2026-folla}. Nei giorni di regata, quindi, lascia l'auto e muoviti a piedi, in metro e in funicolare.
+    Per farti un'idea della folla: nel 2026, l'ultimo giorno di regate, secondo l'ANSA sul lungomare ci sono stati oltre 100.000 ingressi{?vil-2026-folla}. Nei giorni di regata lascia l'auto e muoviti a piedi, in metro o in funicolare: con tanta gente è la scelta più semplice.
 
-    Poi c'è il caldo. Da fine maggio il Ministero della Salute pubblica ogni giorno un bollettino sulle ondate di calore per 27 città, Napoli compresa, con 4 livelli di rischio: dagli un'occhiata prima di uscire.
+    Poi c'è il caldo. Da fine maggio il Ministero della Salute pubblica ogni giorno un bollettino sulle ondate di calore per 27 città, Napoli compresa, con 4 livelli di rischio. Dagli un'occhiata prima di uscire.

@@ -3,7 +3,7 @@
 taxi:
   usa: [taxi-regole, taxi-aeroporto, taxi-altre]
   testo: |
-    Dall'aeroporto, e per i tragitti più comuni in città, il taxi ha tariffe fisse decise dal Comune di Napoli. Chiedi la tariffa fissa **prima di partire**: il tassista non può rifiutarla e deve darti la ricevuta prima di mettersi in marcia. Vale 24 ore su 24, festivi compresi; a parte si pagano solo i pedaggi e, se prendi un minivan, un supplemento di 5 €.
+    Appena sali, prima che il taxi parta, chiedi la **tariffa fissa**: dall'aeroporto e per i tragitti più comuni la decide il Comune di Napoli, e il tassista non può rifiutarla. Deve anche darti la ricevuta prima di partire. Vale 24 ore su 24, festivi compresi. A parte si pagano solo i pedaggi e, se prendi un minivan, un supplemento di 5 €.
 
 tariffe:
   usa: [taxi-aeroporto, taxi-altre]
@@ -28,11 +28,11 @@ aereo-altro:
   testo: |
     ### Spendendo meno
 
-    C'è il taxi collettivo Aeroporto–Stazione Centrale–Molo Beverello, a 6 € a persona; da lì prosegui in metro. Per ora è prorogato fino al 31 dicembre 2026: per il 2027 non si sa ancora.
+    Il taxi collettivo Aeroporto–Stazione Centrale–Molo Beverello costa 6 € a persona; da lì prosegui in metro. Il servizio è prorogato fino al 31 dicembre 2026: per il 2027 non si sa ancora.
 
     ### E la metro?
 
-    La fermata della Linea 1 all'aeroporto non è ancora aperta, scrivono i giornali, e le date annunciate continuano a cambiare: per il 2027 non contarci{?metro-aeroporto}.
+    All'aeroporto la fermata della Linea 1 non è ancora aperta, scrivono i giornali, e le date annunciate continuano a cambiare. Per il 2027 non contarci: pensa al taxi{?metro-aeroporto}.
 
 linea6:
   usa: [linea6-fermate]
@@ -40,7 +40,7 @@ linea6:
   testo: |
     ### Linea 6
 
-    Corre sotto la Riviera di Chiaia, parallela al lungomare. Per la Rotonda Diaz scendi ad **Arco Mirelli** o a **San Pasquale**; per via Partenope e Castel dell'Ovo a **Chiaia–Monte di Dio**. Le altre fermate sono Mergellina e Municipio.
+    La Linea 6 corre sotto la Riviera di Chiaia, parallela al lungomare. Per la Rotonda Diaz scendi ad **Arco Mirelli** o a **San Pasquale**; per via Partenope e Castel dell'Ovo a **Chiaia–Monte di Dio**. Le altre fermate sono Mergellina e Municipio.
 
 linea1:
   fonti: [osm]
@@ -52,20 +52,20 @@ linea1:
 citta:
   usa: [anm-2026, trasporti-2027-atteso, linea2-bagnoli]
   testo: |
-    Nel 2026, per le regate, la metro ha fatto orari lunghi: la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30; la funicolare di Mergellina ha fatto l'ultima corsa alle 00:30, mentre quelle di Chiaia e Centrale, come di consueto, arrivavano alle 2{?anm-2026}. Il piano dei trasporti per il 2027 non è ancora uscito{?trasporti-2027-atteso}.
+    Nel 2026, per le regate, la metro ha fatto orari lunghi: la Linea 1 è rimasta aperta fino alle 2 di notte, la Linea 6 fino alle 00:30. La funicolare di Mergellina ha fatto l'ultima corsa alle 00:30; quelle di Chiaia e Centrale, come di consueto, arrivavano alle 2{?anm-2026}. Per il 2027 il piano dei trasporti non è ancora uscito{?trasporti-2027-atteso}, quindi gli orari non li sappiamo.
 
-    È in progetto, scrive la stampa, una nuova fermata della Linea 2 a Bagnoli, «Porta del Parco», vicino alle basi delle squadre; la data di apertura però non è confermata{?linea2-bagnoli}.
+    Si parla di una nuova fermata della Linea 2 a Bagnoli, «Porta del Parco», vicino alle basi delle squadre. Per ora è un progetto: la data di apertura non è confermata{?linea2-bagnoli}.
 
 auto:
   usa: [trasporti-2027-atteso, caracciolo-chiusa]
   testo: |
-    Nei giorni di regata lascia stare l'auto. Il piano del traffico per il 2027 non è ancora uscito{?trasporti-2027-atteso}, ma secondo la stampa locale via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia{?caracciolo-chiusa}.
+    Nei giorni di regata lascia l'auto a casa. Il piano del traffico per il 2027 non è ancora uscito{?trasporti-2027-atteso}. In più via Caracciolo e viale Anton Dohrn potrebbero restare chiuse alle auto per circa tre mesi, con il traffico spostato sulla Riviera di Chiaia; per ora non c'è nessun provvedimento{?caracciolo-chiusa}.
 
 isole:
   usa: [mare-aliscafi]
   fonti: [osm]
   testo: |
-    Aliscafi e traghetti arrivano al Molo Beverello e, solo gli aliscafi, anche a Mergellina: da tutti e due il lungomare è a pochi minuti a piedi.
+    Aliscafi e traghetti arrivano al Molo Beverello; gli aliscafi, solo loro, anche a Mergellina. Da tutti e due i porti il lungomare è a pochi minuti a piedi.
 
     Nel 2026, scrivevano i giornali, durante le regate le corse per le isole hanno fatto rotte più lunghe per girare intorno al campo: quasi dieci minuti in più per gli aliscafi{?mare-aliscafi}.
 
@@ -74,4 +74,4 @@ itinerari:
   testo: |
     ### Girare la città
 
-    Per mettere insieme musei, chiese e passeggiate, con i tempi a piedi e con metro, funicolari e autobus, usa gli [itinerari a Napoli](/napoli/itinerari/): ci sono giornate pronte, da mezza giornata a tre giorni, oppure componi le tue.
+    Musei, chiese e passeggiate, con i tempi a piedi e con metro, funicolari e autobus: li metti insieme negli [itinerari a Napoli](/napoli/itinerari/). Ci sono giornate pronte, da mezza giornata a tre giorni, oppure ne componi una tua.

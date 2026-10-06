@@ -4,23 +4,23 @@
 intro:
   senzaFonte: "Spiega che cosa c'è nella pagina; ogni dato dei locali ha la sua scheda con la fonte"
   testo: |
-    Pizzerie, trattorie, ristoranti di mare, friggitorie, pasticcerie e caffè, in tutte le zone della città. Scegli con i filtri che cosa vuoi mangiare, quanto vuoi spendere, quando e dove: ogni locale si aggiunge al tuo itinerario come una tappa, per il pranzo, la cena o uno spuntino.
+    In tutte le zone della città trovi pizzerie, trattorie, ristoranti di mare, friggitorie, pasticcerie e caffè. Con i filtri scegli che cosa vuoi mangiare, quanto vuoi spendere, quando e dove. Poi aggiungi il locale al tuo itinerario come una tappa: per il pranzo, la cena o uno spuntino.
 
 criteri:
   senzaFonte: "Spiega come scegliamo i locali: sono regole nostre"
   testo: |
-    Entrano solo i locali che scrivono i loro orari, sul sito o nella scheda Google del locale: senza orari non possiamo dirti se è aperto quando ci passi. Tra questi scegliamo con le stesse regole per tutti:
+    Entrano solo i locali che scrivono i loro orari, sul sito o nella scheda Google del locale: senza orari non possiamo dirti se è aperto quando ci passi. Tra questi scegliamo con le stesse regole per tutti. Cerchiamo:
 
     - una **storia documentata**, scritta dal locale o da un giornale;
     - un **riconoscimento** di una guida o di un giornale indipendente (Guida Michelin, Gambero Rosso, Slow Food, 50 Top Pizza);
     - un **posto comodo** tra le tappe degli itinerari, in tutte le zone.
 
-    Quando la scelta è nostra, perché il locale non ha un riconoscimento, la scheda lo dice. Non diamo voti e non scriviamo «il migliore». Alcuni locali famosi mancano solo perché non scrivono gli orari: se li pubblicano, li aggiungiamo.
+    Se la scelta è nostra, perché il locale non ha un riconoscimento, la scheda lo dice. Non diamo voti e non scriviamo «il migliore». Alcuni locali famosi mancano solo perché non scrivono gli orari: se li pubblicano, li aggiungiamo.
 
 fasce:
   senzaFonte: "Spiega la regola delle fasce di prezzo, decisa da noi; i prezzi di ogni locale hanno la loro scheda"
   testo: |
-    La fascia di prezzo viene dal menu ufficiale del locale, con la data in cui l'abbiamo letto. Contiamo un **pasto base** a persona, senza bevande né coperto:
+    La fascia di prezzo viene dal menu del locale, con la data in cui l'abbiamo letto. Contiamo un **pasto base** a persona, senza bevande né coperto:
 
     - nei ristoranti e nelle trattorie, il primo e il secondo meno cari del menu;
     - nelle pizzerie, una margherita;
@@ -32,17 +32,17 @@ fasce:
 indipendente:
   senzaFonte: "Dice come è fatta la lista: è una nostra scelta"
   testo: |
-    La lista è indipendente: nessun locale paga per esserci e nei link ai locali non ci sono affiliazioni. Il menu si apre sul sito del locale, fuori da questa guida.
+    Nessun locale paga per stare nella lista, e nei link non ci sono affiliazioni. Il menu lo apri sul sito del locale, fuori da questa guida.
 
 orari:
   senzaFonte: "Spiega da dove vengono gli orari: ogni orario ha la sua scheda con la fonte"
   testo: |
-    Gli orari e i prezzi sono quelli scritti dai locali quando li abbiamo letti, il 4 ottobre 2026: per l'estate 2027 nessun locale li ha ancora pubblicati. Li ricontrolliamo entro aprile 2027 e poi prima della Coppa. Chiusure per ferie e giorni di festa li scriviamo solo se il locale li dice: prima di andare, soprattutto ad agosto, conviene controllare sul suo sito.
+    Orari e prezzi sono quelli scritti dai locali il 4 ottobre 2026, quando li abbiamo letti. Per l'estate 2027 nessun locale li ha ancora pubblicati. Li ricontrolliamo entro aprile 2027 e poi prima della Coppa. Le chiusure per ferie e i giorni di festa li scriviamo solo se il locale li dice: prima di andare, soprattutto ad agosto, ti conviene controllare sul suo sito.
 
 itinerario:
   senzaFonte: "Spiega come funziona il collegamento con il compositore degli itinerari"
   testo: |
-    «Aggiungi all'itinerario» mette il locale nel tuo itinerario, sul telefono, con i minuti per arrivarci dalla tappa prima. Se a quell'ora il locale è chiuso, o chiude prima della fine del pasto, l'itinerario te lo dice. Per cercare i locali vicini alle tue tappe e aperti quando ci passi, la pagina usa l'itinerario salvato su questo telefono: non lo manda a nessuno.
+    «Aggiungi all'itinerario» mette il locale nel tuo itinerario, sul telefono, con i minuti per arrivarci dalla tappa prima. Se a quell'ora il locale è chiuso, o chiude prima della fine del pasto, l'itinerario te lo dice. Per trovare i locali vicini alle tue tappe e aperti quando ci passi, la pagina usa l'itinerario salvato su questo telefono: non lo manda a nessuno.
 
 # ---------- Piatti tipici: due righe per il filtro «Cosa vuoi mangiare» (Wikipedia) ----------
 piatto-margherita:

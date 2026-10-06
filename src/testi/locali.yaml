@@ -7,195 +7,195 @@ da-michele:
   usa: [lc-da-michele-perche]
   fonti: [lc-da-michele-menu]
   testo: |
-    Quattro pizze in tutto: margherita, marinara, cosacca e marita, metà e metà. Non si prenota. Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto{?lc-da-michele-perche}.
+    Maestri pizzaioli dal 1870. In carta ci sono quattro pizze in tutto: margherita, marinara, cosacca e marita, metà e metà. È nella Guida Michelin 2025, tra le pizzerie di Napoli. Non si prenota.
 
 port-alba:
   usa: [lc-port-alba-perche]
   fonti: [lc-port-alba]
   testo: |
-    Pizzeria e ristorante accanto a piazza Dante, sotto l'arco di Port'Alba, con pizze, primi, pesce e carne. Secondo il locale, è nata come pizzeria nel 1738.
+    Nata come pizzeria nel 1738, sotto l'arco di Port'Alba, accanto a piazza Dante. Oggi è anche ristorante: ci sono pizze, primi, pesce e carne.
 
 di-matteo:
   usa: [lc-di-matteo-perche, lc-di-matteo-rinomato]
   fonti: [lc-di-matteo-menu]
   testo: |
-    Pizzeria e friggitoria su via dei Tribunali: pizza fritta, frittatine, crocchè e arancini da mangiare anche in piedi, oltre alle pizze al tavolo. Secondo il locale è aperta dal 1936; Gambero Rosso International scrive che è una tappa obbligata per il cibo di strada fritto{?lc-di-matteo-rinomato}.
+    Aperta dal 1936, in un'unica sede su via dei Tribunali. Qui si frigge: pizza fritta, frittatine, crocchè e arancini, da mangiare anche in piedi, oppure seduto, con una pizza al tavolo. Nel luglio 2024 Gambero Rosso International l'ha indicata come riferimento per il cibo di strada fritto napoletano.
 
 chitarra:
   usa: [lc-chitarra-perche]
   fonti: [lc-chitarra-menu]
   testo: |
-    Un'osteria piccola sulle rampe di San Giovanni Maggiore, aperta solo la sera: pignatiello al ragù, polpette, parmigiana, baccalà e alici fritte. Ha la Chiocciola di Slow Food nella guida 2025, secondo Scatti di Gusto{?lc-chitarra-perche}.
+    Un'osteria piccola, aperta dal 1991, sulle rampe di San Giovanni Maggiore. Ordina il pignatiello al ragù, le polpette, la parmigiana, il baccalà o le alici fritte. Ha la Chiocciola di Slow Food nella guida Osterie d'Italia 2025, che premia le osterie della tradizione. Apre solo la sera.
 
 gesu-vecchio:
   usa: [lc-gesu-vecchio-perche]
   fonti: [lc-gesu-vecchio-menu]
   testo: |
-    Cucina napoletana di casa: genovese, ragù, pasta e patate con la provola, polpette e trippa. Si entra solo prenotando, e la sera ci sono due turni. Gambero Rosso la mette tra gli otto posti di Napoli per la pasta e patate, scrive Gambero Rosso International{?lc-gesu-vecchio-perche}.
+    Cucina napoletana di casa: genovese, ragù, polpette, trippa e la pasta e patate con la provola. Nel gennaio 2024 Gambero Rosso l'ha messa tra gli otto posti di Napoli per la pasta e patate. Prenota: si entra solo così, e la sera ci sono due turni.
 
 di-costanzo:
   usa: [lc-di-costanzo-perche]
   fonti: [lc-di-costanzo]
   testo: |
-    Pasticceria in piazza Cavour, vicino al Museo Archeologico: sfogliatelle ricce e frolle, cornetti e caffè. Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli nel 2022, secondo Napolitan.it{?lc-di-costanzo-perche}.
+    Pasticceria in piazza Cavour, vicino al Museo Archeologico: sfogliatelle ricce e frolle, cornetti e caffè. Nel 2022 Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli.
 
 # ---------- Toledo e Plebiscito ----------
 brandi:
   usa: [lc-brandi-perche]
   fonti: [lc-brandi-home]
   testo: |
-    Pizzeria in una salita tra via Chiaia e piazza del Plebiscito. Secondo il locale, qui nel 1889 è nata la pizza Margherita. Il sito non pubblica i prezzi.
+    Pizzeria in una salita tra via Chiaia e piazza del Plebiscito. La pizzeria dice che qui, nel 1889, è nata la pizza Margherita. I prezzi non sono sul sito.
 
 zia-esterina:
   usa: [lc-zia-esterina-perche]
   fonti: [lc-zia-esterina]
   testo: |
-    Pizza fritta da portare via, in piazza Trieste e Trento, davanti al Gambrinus. Gambero Rosso International scrive che il suo nome a Napoli è sinonimo di pizza fritta{?lc-zia-esterina-perche}.
+    Pizza fritta da portare via, in piazza Trieste e Trento, davanti al Gambrinus. A Napoli il suo nome è sinonimo di pizza fritta: lo scriveva Gambero Rosso nell'ottobre 2023.
 
 hosteria-toledo:
   usa: [lc-hosteria-toledo-perche]
   fonti: [lc-hosteria-toledo-menu]
   testo: |
-    Trattoria nei Quartieri Spagnoli, a due passi da via Toledo: genovese, ragù, lasagna, pasta e patate con la provola e, dal mare, vongole, baccalà e paranza. Secondo il locale, fa cucina napoletana dal 1951.
+    Trattoria nei Quartieri Spagnoli, a due passi da via Toledo. Fa cucina napoletana dal 1951: genovese, ragù, lasagna, pasta e patate con la provola e, dal mare, vongole, baccalà e paranza. Nessuna guida la segnala: l'abbiamo scelta noi, per la cucina di casa.
 
 gobbetto:
   usa: [lc-gobbetto-perche]
   fonti: [lc-gobbetto]
   testo: |
-    Osteria nei Quartieri Spagnoli: pasta e patate con la provola, gnocchi, spaghetti alle vongole e baccalà. La domenica apre solo a pranzo. Il sito non pubblica i prezzi.
+    Osteria nei Quartieri Spagnoli, a due passi da via Toledo: pasta e patate con la provola, gnocchi, spaghetti alle vongole e baccalà. L'abbiamo scelta noi, per la pasta e la cucina di mare. La domenica apre solo a pranzo. Il sito non pubblica i prezzi.
 
 nennella:
   usa: [lc-nennella-perche]
   fonti: [lc-nennella]
   testo: |
-    Trattoria di cucina napoletana in piazza Carità, all'inizio di via Toledo. Aperta nel 1949, scrive Gambero Rosso International, che la mette tra gli otto posti di Napoli per la pasta e patate con la provola{?lc-nennella-perche}. Il menu e i prezzi della sede di Napoli non sono online.
+    Aperta nel 1949, in piazza Carità, all'inizio di via Toledo: trattoria di cucina napoletana. Nel gennaio 2024 Gambero Rosso l'ha messa tra gli otto posti di Napoli per la pasta e patate con la provola. Il menu e i prezzi della sede di Napoli non sono online.
 
 pintauro:
   usa: [lc-pintauro-perche]
   fonti: [lc-pintauro]
   testo: |
-    Sfogliatelle ricce e frolle, babà e pastiera, su via Toledo. Secondo il locale le fa dal 1785; ha riaperto con una nuova gestione nel marzo 2026, scrive Scatti di Gusto{?lc-pintauro-perche}.
+    Su via Toledo: sfogliatelle ricce e frolle, babà e pastiera. Le fa dal 1785. Ha riaperto con una nuova gestione alla fine di marzo 2026.
 
 # ---------- Lungomare, Chiaia e Mergellina ----------
 cinquanta-kalo:
   usa: [lc-cinquanta-kalo-perche]
   fonti: [lc-cinquanta-kalo-menu]
   testo: |
-    Pizzeria in piazza Sannazaro, a Mergellina, con frittatine e montanare fritte. Non si prenota. Quinta nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-cinquanta-kalo-perche}.
+    In piazza Sannazaro, a Mergellina: pizzeria con frittatine e montanare fritte. È quinta nella classifica 50 Top Pizza Italia 2026 e segnalata dalla Guida Michelin 2025. Non si prenota.
 
 salvo:
   usa: [lc-salvo-perche]
   fonti: [lc-salvo-menu]
   testo: |
-    Pizzeria sulla Riviera di Chiaia, di fronte alla Villa Comunale, con sette margherite diverse in carta. «Salvo» è ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24, ma la classifica non dice quale delle due sedi{?lc-salvo-perche}.
+    Sulla Riviera di Chiaia, di fronte alla Villa Comunale: sette margherite diverse in carta. «Salvo» è ventiquattresima nella classifica 50 Top Pizza Italia 2026, ma la classifica non dice quale delle due sedi. Nella Guida Michelin 2025 c'è «Salvo alla Riviera».
 
 pignatelli:
   usa: [lc-pignatelli-perche, lc-pignatelli-rinomato]
   fonti: [lc-pignatelli-menu]
   testo: |
-    Osteria sulla Riviera di Chiaia, vicino a Villa Pignatelli: pasta e patate con la provola, lardiata, genovese, polpette al ragù. Bib Gourmand della Guida Michelin 2025, secondo Scatti di Gusto, che nel 2026 ha scritto che le candele alla genovese sono molto buone{?lc-pignatelli-perche,lc-pignatelli-rinomato}.
+    Osteria sulla Riviera di Chiaia, vicino a Villa Pignatelli: pasta e patate con la provola, lardiata, genovese, polpette al ragù. È tra i nuovi Bib Gourmand della Guida Michelin 2025, cioè buona cucina a prezzi contenuti. È conosciuta per le candele alla genovese.
 
 cantinella:
   usa: [lc-cantinella-perche]
   fonti: [lc-cantinella-menu]
   testo: |
-    Ristorante di mare a Santa Lucia, a due passi dal lungomare: spaghetti alle vongole, crudi, frittura di paranza, spigola al sale, e anche carne. Secondo il locale, è della stessa famiglia dagli anni Sessanta.
+    Ristorante di mare a Santa Lucia, a due passi dal lungomare: spaghetti alle vongole, crudi, frittura di paranza, spigola al sale, e anche carne. L'ha fondata Angelo Rosolino negli anni Sessanta, e oggi la porta avanti la stessa famiglia.
 
 bersagliera:
   usa: [lc-bersagliera-perche]
   fonti: [lc-bersagliera-home]
   testo: |
-    Ristorante di pesce e pasta fatta in casa sul Borgo Marinari, davanti a Castel dell'Ovo. Secondo il locale, è aperto dal 1919. Il sito non pubblica menu e prezzi.
+    Sul Borgo Marinari, davanti a Castel dell'Ovo: ristorante di pesce e pasta fatta in casa, aperto dal 1919. Il sito non pubblica menu e prezzi.
 
 scialuppa:
   usa: [lc-scialuppa-perche]
   fonti: [lc-scialuppa]
   testo: |
-    Pesce, pasta e anche pizza sul Borgo Marinari, davanti al porticciolo. Il sito non pubblica i prezzi.
+    Sul Borgo Marinari, davanti al porticciolo: pesce, pasta e anche pizza, a pranzo e a cena. L'abbiamo scelta noi per la posizione. Il sito non pubblica i prezzi.
 
 calabritto:
   usa: [lc-calabritto-perche]
   fonti: [lc-calabritto-menu]
   testo: |
-    Cucina di mare in piazza Vittoria, accanto alla Villa Comunale, con qualche piatto di carne. I primi partono da 20 euro.
+    In piazza Vittoria, accanto alla Villa Comunale e al lungomare: cucina di mare, con qualche piatto di carne. I primi partono da 20 €. L'abbiamo scelto noi per la posizione.
 
 chalet-ciro:
   usa: [lc-chalet-ciro-perche, lc-chalet-ciro-rinomato]
   fonti: [lc-chalet-ciro]
   testo: |
-    Bar e pasticceria sul lungomare di Mergellina, aperto fino a notte: babà, sfogliatelle, graffe e gelato. Scatti di Gusto, in un articolo del 2016, scrive del suo cono graffa: il gelato dentro una graffa fritta{?lc-chalet-ciro-rinomato}.
+    Sul lungomare di Mergellina dal 1952, aperto fino a notte: bar e pasticceria con babà, sfogliatelle, graffe e gelato. È conosciuto per il cono graffa: il gelato servito dentro una graffa fritta e zuccherata.
 
 caffettiera:
   usa: [lc-caffettiera-perche]
   fonti: [lc-caffettiera]
   testo: |
-    Caffè in piazza dei Martiri, a Chiaia, aperto tutto il giorno: colazione, dolci e qualche piatto veloce. Si siede senza prenotare, salvo i gruppi di sei o più.
+    In piazza dei Martiri, a Chiaia, aperto tutto il giorno: colazione, dolci e qualche piatto veloce. C'è da oltre 40 anni. Ti siedi senza prenotare, salvo i gruppi di sei o più.
 
 # ---------- Vomero ----------
 gorizia:
   usa: [lc-gorizia-perche]
   fonti: [lc-gorizia]
   testo: |
-    Pizzeria e ristorante al Vomero: pizze, pizza fritta, genovese, ragù e spaghetti alle vongole. Sessantottesima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24{?lc-gorizia-perche}. Il sito non pubblica i prezzi.
+    Al Vomero, aperta dal 1916: pizzeria e ristorante con pizze, pizza fritta, genovese, ragù e spaghetti alle vongole. Nella classifica 50 Top Pizza Italia 2026 è sessantottesima. Il sito non pubblica i prezzi.
 
 bellavia:
   usa: [lc-bellavia-perche]
   fonti: [lc-bellavia]
   testo: |
-    Pasticceria e bar al Vomero: babà, sfogliatelle, pastiera e caffè. Secondo il locale, la famiglia fa dolci dal 1925.
+    Pasticceria e bar al Vomero: babà, sfogliatelle, pastiera e caffè. La famiglia fa dolci dal 1925 ed è al Vomero dagli anni Sessanta. Nessuna guida la segnala: l'abbiamo scelta noi, per il Vomero.
 
 meatin:
   usa: [lc-meatin-perche]
   fonti: [lc-meatin]
   testo: |
-    Carne alla brace e qualche primo, al Vomero. Dal martedì al venerdì apre solo la sera; il menu cambia con le stagioni.
+    Al Vomero, carne alla brace e qualche primo. L'abbiamo scelto noi: è l'unico locale di carne dell'elenco in questa zona. Dal martedì al venerdì apre solo la sera; il menu cambia con le stagioni.
 
 # ---------- Sanità ----------
 starita:
   usa: [lc-starita-perche]
   fonti: [lc-starita-menu]
   testo: |
-    Pizzeria a Materdei, tra il Museo Archeologico e la Sanità: pizze e tanti fritti, dalla montanara alla frittatina. Non si prenota. Secondo il locale, fa la pizza dal 1901.
+    Pizzeria a Materdei, tra il Museo Archeologico e la Sanità, che fa la pizza dal 1901. Oltre alle pizze ci sono tanti fritti, dalla montanara alla frittatina. Non si prenota.
 
 concettina:
   usa: [lc-concettina-perche]
   fonti: [lc-concettina]
   testo: |
-    Pizzeria nel Rione Sanità, aperta tutto il giorno, con la montanara fritta e le pizze della tradizione. Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto{?lc-concettina-perche}. Il sito non pubblica menu e prezzi.
+    Nel Rione Sanità, aperta tutto il giorno: nata nel 1951, con la montanara fritta e le pizze della tradizione. È nella Guida Michelin 2025, tra le pizzerie di Napoli. Il sito non pubblica menu e prezzi.
 
 poppella:
   usa: [lc-poppella-perche, lc-poppella-rinomato]
   fonti: [lc-poppella]
   testo: |
-    Pasticceria nel Rione Sanità, aperta dalle sei del mattino a mezzanotte. Gambero Rosso cita il suo fiocco di neve e la pastiera, secondo Napolitan.it{?lc-poppella-perche,lc-poppella-rinomato}.
+    Pasticceria nel Rione Sanità, aperta dalle sei del mattino a mezzanotte, dal 1920. Nel 2022 Gambero Rosso l'ha messa tra le sette pasticcerie di Napoli. Il suo fiocco di neve è conosciuto anche all'estero, e accanto c'è la pastiera.
 
 # ---------- Posillipo e Fuorigrotta ----------
 petrucci-posillipo:
   usa: [lc-petrucci-posillipo-perche]
   fonti: [lc-petrucci-posillipo]
   testo: |
-    La nuova pizzeria di Palazzo Petrucci, sul mare di Posillipo, aperta solo la sera. La classifica 50 Top Pizza 2026 mette Palazzo Petrucci al terzo posto, secondo Sky TG24, ma riguarda la sede del centro storico{?lc-petrucci-posillipo-perche}.
+    Sul mare di Posillipo, aperta solo la sera: la nuova pizzeria di Palazzo Petrucci, presentata nel settembre 2026. La classifica 50 Top Pizza Italia 2026 mette Palazzo Petrucci al terzo posto, ma riguarda la sede del centro storico.
 
 tufo:
   usa: [lc-tufo-perche, lc-tufo-rinomato]
   fonti: [lc-tufo]
   testo: |
-    Trattoria su via Posillipo: pasta e patate, genovese, ragù e polpettine. Stars and Stripes scrive che la pasta e patate, finita al tavolo, è il suo primo simbolo{?lc-tufo-rinomato}. Il sito non pubblica i prezzi.
+    Trattoria su via Posillipo, aperta tutti i giorni a pranzo e a cena: pasta e patate, genovese, ragù e polpettine. È conosciuta soprattutto per la pasta e patate, finita al tavolo, e per la genovese. Il sito non pubblica i prezzi.
 
 fenestella:
   usa: [lc-fenestella-perche]
   fonti: [lc-fenestella-home]
   testo: |
-    Ristorante di pesce sul mare di Marechiaro. Secondo il locale, una delle sue finestre è quella della canzone di Salvatore Di Giacomo. Il sito non pubblica i prezzi.
+    Ristorante di pesce sul mare di Marechiaro. Il ristorante dice che una delle sue finestre è quella della canzone di Salvatore Di Giacomo. Il sito non pubblica i prezzi.
 
 cicciotto:
   usa: [lc-cicciotto-perche]
   fonti: [lc-cicciotto-menu]
   testo: |
-    Trattoria di pesce sulla discesa di Marechiaro: crudi, spaghetti alle vongole, cuoppo fritto e frittura di paranza. Secondo il locale, è qui dal 1942.
+    Sulla discesa di Marechiaro, dal 1942: trattoria di pesce con crudi, spaghetti alle vongole, cuoppo fritto e frittura di paranza.
 
 macellegria:
   usa: [lc-macellegria-perche]
   fonti: [lc-macellegria-menu]
   testo: |
-    Macelleria con braceria a Fuorigrotta, vicino alla Mostra d'Oltremare: carne alla brace, hamburger e polpettine. Non ci sono primi.
+    A Fuorigrotta, vicino alla Mostra d'Oltremare, aperta tutti i giorni: macelleria con braceria, carne alla brace, hamburger e polpettine. Non ci sono primi.
