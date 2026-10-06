@@ -55,7 +55,7 @@ formato:
 
     Paragrafo. **Grassetto**, *corsivo*, [link](/calendario/).
 
-    Secondo la stampa i percorsi avevano 8 lati{?reg-percorso}.
+    Nel 2024 i percorsi avrebbero avuto 8 lati{?reg-percorso}.
 ```
 
 Regole controllate dalla build (se non sono rispettate si ferma):
@@ -119,6 +119,7 @@ Una scheda `confermato` che ha **solo** fonti `enciclopedia`, `blog` o `altro` f
 
 `npm test` (con `node:test`, già dentro Node: nessun pacchetto in più) controlla in pochi secondi, senza costruire il sito:
 - le **regole dei testi**: parole di cautela («secondo la stampa», «non è ancora uscito», l'anno), segni `{?id}`, risultati storici (`test/regole.test.mjs`). Le regole stanno in un solo file, `src/lib/regole.mjs`, usato dalla build, da `npm run testi:firma` e dai test: se allarghi le parole ammesse, aggiungi le frasi nuove al test «tutti i modi di dirlo»;
+- i **testi veri** di `src/testi/`: segni e parole di cautela come nella build, e nessuna parola della lista nera della guida di stile (`test/testi.test.mjs`, utile mentre si riscrive un testo: `node --test test/testi.test.mjs`);
 - la **firma**: che `src/testi/firme.json` corrisponda alle schede di oggi;
 - le **date** delle schede e delle fonti (niente nel futuro, «ricontrollare» dopo «controllato») e i tipi di fonte (`test/dati.test.mjs`);
 - il **controllo dei link**, provato su un sito finto (`test/link.test.mjs`);

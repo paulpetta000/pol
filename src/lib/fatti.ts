@@ -43,7 +43,7 @@ export async function getFatti(ids: string[]): Promise<Map<string, Fatto>> {
     }
     if (f.data.comeFatto && f.data.stato !== 'confermato' && !avvisatiComeFatto.has(id)) {
       avvisatiComeFatto.add(id);
-      console.warn(`\x1b[33m[da verificare]\x1b[0m la scheda "${id}" si scrive come fatto ma è letta solo su ${[...new Set(risolte.map(r => r.data.editore))].join(', ')}: verificala sulla fonte originale (il sito della guida o del locale) e cambia lo stato in «confermato»`);
+      console.warn(`\x1b[33m[da verificare]\x1b[0m la scheda "${id}" si scrive come fatto ma è letta su ${[...new Set(risolte.filter(r => r.data.tipo !== 'ufficiale').map(r => r.data.editore))].join(', ')}: verificala sulla fonte originale (il sito della guida o del locale) e cambia lo stato in «confermato»`);
     }
     out.set(id, { ...f, fontiRisolte: risolte });
   }

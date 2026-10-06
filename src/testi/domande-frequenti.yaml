@@ -4,12 +4,12 @@
 come-funziona:
   usa: [reg-percorso, reg-partenza, cal-match]
   testo: |
-    Due barche partono insieme e fanno su e giù tra due «cancelli», cioè due coppie di boe, una in alto e una in basso: vince chi taglia per primo il traguardo. Nel 2024 andava così, scrive la stampa specializzata; le regole del 2027 le diranno gli organizzatori più avanti{?reg-percorso,reg-partenza}. Il Match, la finale, è una serie: vince chi arriva prima a 7 vittorie. Tutto in un minuto nella [regata in 60 secondi](/capire-la-coppa/).
+    Due barche partono insieme e vanno avanti e indietro tra due «cancelli», cioè coppie di boe, uno in alto e uno in basso: vince chi taglia per primo il traguardo. Nel 2024 andava così, scrive la stampa specializzata; le regole del 2027 le diranno gli organizzatori più avanti{?reg-percorso,reg-partenza}. Il Match è una serie: vince chi arriva prima a 7 vittorie. Tutto in un minuto nella [regata in 60 secondi](/capire-la-coppa/).
 
 quando:
   usa: [cal-lvc-periodo, cal-match, cal-youth, cal-womens]
   testo: |
-    Dal 22 maggio al 19 luglio 2027. Si comincia con la Louis Vuitton Cup, che sceglie lo sfidante: va dal 22 maggio al 4 luglio al più tardi. Il Match per la Coppa parte il 10 luglio e si chiude entro il 19. In mezzo ci sono la Youth America's Cup, dal 2 al 6 giugno, e la Women's America's Cup, dal 5 al 9 luglio. Tutte le date sono nel [calendario](/calendario/).
+    Dal 22 maggio al 19 luglio 2027. La Louis Vuitton Cup, che sceglie lo sfidante, va dal 22 maggio al 4 luglio al più tardi; il Match per la Coppa parte il 10 luglio e si chiude entro il 19. In mezzo ci sono la Youth America's Cup, dal 2 al 6 giugno, e la Women's America's Cup, dal 5 al 9 luglio. Tutte le date sono nel [calendario](/calendario/).
 
 gratis:
   usa: [vil-bagnoli-gratis, vil-caracciolo-gratis, vil-2026-gratis]
@@ -19,12 +19,12 @@ gratis:
 dove-meglio:
   usa: [vista-vicino, campo-ovo, vista-anfiteatro]
   testo: |
-    Dal lungomare, se vuoi stare vicino alle barche: il campo di regata è a pochi metri dalla riva e Castel dell'Ovo ne segna un'estremità. Per vedere tutto il campo sali invece a Monte Echia, al belvedere di San Martino o a Posillipo, meglio con un binocolo. Tutti i punti sono sulla [mappa](/napoli/mappa/).
+    Dal lungomare, se vuoi stare vicino alle barche: il campo di regata è a pochi metri dalla riva e Castel dell'Ovo ne segna un'estremità. Per vedere tutto il campo sali a Monte Echia, al belvedere di San Martino o a Posillipo, meglio con un binocolo. Tutti i punti sono sulla [mappa](/napoli/mappa/).
 
 biglietti:
   usa: [big-niente, big-tribune, big-sito-ufficiale]
   testo: |
-    Non si sa ancora. Al 30 settembre 2026 biglietti, tribune e pacchetti non sono in vendita, e prezzi e date non sono ancora usciti{?big-niente,big-tribune}. Fuori da americascup.com, il sito dell'evento, diffida di chi vende biglietti o pacchetti che si dicono «ufficiali». Intanto tocca [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami) e ti scriviamo noi quando escono.
+    Non si sa ancora: biglietti, tribune e pacchetti non sono in vendita, e prezzi e date non sono usciti{?big-niente,big-tribune}. Diffida di chi vende biglietti o pacchetti «ufficiali» fuori da americascup.com. Con [Avvisami](/come-vederla/biglietti-e-ospitalita/#avvisami) ti scriviamo noi quando escono.
 
 village-dove:
   usa: [vil-caracciolo, vil-bagnoli, vil-orari-2027]
@@ -34,52 +34,52 @@ village-dove:
 orari:
   usa: [cal-orari, cal-orari-2026, mare-orari]
   testo: |
-    Gli orari 2027 non sono ancora usciti{?cal-orari}: li diranno gli organizzatori più avanti. Per farti un'idea, nel 2026 a Napoli si partiva alle 14 e si finiva verso le 16{?cal-orari-2026,mare-orari}. Arriva con largo anticipo: ti serve per trovare posto.
+    Gli orari 2027 non sono ancora usciti{?cal-orari}: li diranno gli organizzatori più avanti. Nel 2026 a Napoli si partiva alle 14 e si finiva verso le 16{?cal-orari-2026,mare-orari}. Arriva con largo anticipo, per trovare posto.
 
 barca:
   usa: [mare-registrazione, mare-zone, mare-velocita, mare-motore, mare-vhf, mare-2027-atteso]
   testo: |
-    Nel 2026 sì, ma con regole precise: registrazione online, zone a colori, massimo 5 nodi, niente ancora e radio VHF a bordo{?mare-registrazione,mare-zone,mare-velocita,mare-motore,mare-vhf}. Per il 2027 le regole le scriverà la Capitaneria con la sua ordinanza, e non è ancora uscita{?mare-2027-atteso}. Tutto nella pagina [dal mare](/come-vederla/dal-mare/).
+    Nel 2026 sì, ma con regole precise: registrazione online, zone a colori, massimo 5 nodi, niente ancora e radio VHF a bordo{?mare-registrazione,mare-zone,mare-velocita,mare-motore,mare-vhf}. L'ordinanza 2027 della Capitaneria non è ancora uscita{?mare-2027-atteso}. Tutto nella pagina [dal mare](/come-vederla/dal-mare/).
 
 tv:
   usa: [tv-rai, tv-sky]
   testo: |
-    In chiaro sulla Rai, che ha i diritti per l'Italia di tutte le regate. Sky dovrebbe averle anche a pagamento, con lo streaming su NOW{?tv-sky}. Dettagli in [TV e streaming](/come-vederla/in-tv-e-streaming/).
+    In chiaro sulla Rai, che ha i diritti per l'Italia di tutte le regate. A pagamento dovrebbero trasmetterle Sky e NOW{?tv-sky}. Dettagli in [TV e streaming](/come-vederla/in-tv-e-streaming/).
 
 squadre:
   usa: [sq-sette]
   testo: |
-    Sette. Emirates Team New Zealand difende la Coppa; gli sfidanti sono sei: GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA e Team Australia. Le schede di tutte sono nella pagina [squadre](/squadre/).
+    Sette: Emirates Team New Zealand, che difende la Coppa, e sei sfidanti: GB1, Luna Rossa, Tudor Team Alinghi, La Roche-Posay Racing Team, American Racing Challenger Team USA e Team Australia. Le schede sono nella pagina [squadre](/squadre/).
 
 defender:
   usa: [sq-sette, cal-defender-gironi]
   testo: |
-    È la squadra che ha vinto la Coppa l'ultima volta e ora la difende: Emirates Team New Zealand. Per questo non deve qualificarsi: il suo posto nel Match ce l'ha già. Corre le regate di flotta e i Round Robin con gli altri, ma i suoi risultati non contano per la classifica degli sfidanti, e non corre ripescaggio, semifinali e finale.
+    È la squadra che ha vinto la Coppa l'ultima volta e la difende: Emirates Team New Zealand. Per questo non deve qualificarsi: il suo posto nel Match ce l'ha già. Corre le regate di flotta e i Round Robin con gli altri, ma i suoi risultati non contano per la classifica degli sfidanti, e non corre ripescaggio, semifinali e finale.
 
 lvc-formato:
   usa: [cal-flotta, cal-rr, cal-ripescaggio, cal-semifinali, cal-finale-lvc]
   testo: |
-    Si comincia con due giorni di regate di flotta, cioè tutte le barche insieme, poi tre Round Robin di duelli a due barche. I primi 3 sfidanti vanno in semifinale, gli altri 3 si giocano il quarto posto nel ripescaggio. In semifinale passa chi arriva prima a 5 vittorie; la finale la vince chi arriva prima a 7.
+    Si comincia con due giorni di regate di flotta, poi tre Round Robin di duelli a due barche. I primi 3 sfidanti vanno in semifinale, gli altri 3 si giocano il quarto posto nel ripescaggio. In semifinale passa chi arriva prima a 5 vittorie; la finale la vince chi arriva prima a 7.
 
 youth-women:
   usa: [cal-youth, cal-womens, ac40-uso, yw-nazionalita, yw-bando-atteso]
   testo: |
-    Sono due regate a parte, sugli AC40 con 4 persone a bordo: la Youth America's Cup per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup per gli equipaggi femminili, dal 5 al 9 luglio. Tutto l'equipaggio deve avere la nazionalità della squadra, e possono essere invitati anche club che non corrono la Coppa. Il bando ufficiale non l'abbiamo ancora trovato, quindi squadre iscritte e formato di gara restano da confermare{?yw-bando-atteso}.
+    Due regate a parte, sugli AC40 con 4 persone a bordo: la Youth America's Cup per i velisti giovani, dal 2 al 6 giugno, e la Women's America's Cup per gli equipaggi femminili, dal 5 al 9 luglio. Tutto l'equipaggio deve avere la nazionalità della squadra, e possono essere invitati anche club che non corrono la Coppa. Il bando ufficiale non l'abbiamo ancora trovato: squadre iscritte e formato di gara restano da confermare{?yw-bando-atteso}.
 
 novita-2027:
   usa: [ac75-cinque, ac75-donna, ac75-batterie, ac75-ospite]
   testo: |
-    Cambia l'equipaggio: sugli AC75 ci sono 5 velisti e almeno una donna, per la prima volta nella storia. Niente più ciclisti: l'energia per le vele arriva dalle batterie. A bordo c'è anche un posto per un ospite.
+    Sugli AC75 ci sono 5 velisti e almeno una donna, per la prima volta nella storia. Niente più ciclisti: l'energia per le vele arriva dalle batterie. A bordo c'è anche un posto per un ospite.
 
 aeroporto:
   usa: [taxi-aeroporto, taxi-regole, taxi-collettivo]
   testo: |
-    In taxi a tariffa fissa: 28,50 € fino a via Partenope o a Mergellina. Chiedila all'inizio della corsa: il tassista non può rifiutarla. Oppure il taxi collettivo, a 6 € a persona, fino alla Stazione Centrale o al Molo Beverello, e da lì la metro: è prorogato fino al 31 dicembre 2026, e per il 2027 non si sa ancora. Tutto in [come arrivare](/napoli/come-arrivare/).
+    In taxi a tariffa fissa: 28,50 € fino a via Partenope o a Mergellina. Chiedila appena sali: il tassista non può rifiutarla. Oppure il taxi collettivo, a 6 € a persona, fino alla Stazione Centrale o al Molo Beverello, e da lì la metro: è prorogato fino al 31 dicembre 2026, e per il 2027 non si sa ancora. Tutto in [come arrivare](/napoli/come-arrivare/).
 
 metro-notte:
   usa: [trasporti-2027-atteso, anm-2026]
   testo: |
-    Per il 2027 non è ancora deciso: il piano dei trasporti non è uscito{?trasporti-2027-atteso}. Per farti un'idea, nel 2026 la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30{?anm-2026}.
+    Per il 2027 non è ancora deciso: il piano dei trasporti non è uscito{?trasporti-2027-atteso}. Nel 2026 la Linea 1 è rimasta aperta fino alle 2 di notte e la Linea 6 fino alle 00:30{?anm-2026}.
 
 caracciolo-chiusa:
   usa: [caracciolo-chiusa, trasporti-2027-atteso]
@@ -89,7 +89,7 @@ caracciolo-chiusa:
 droni:
   usa: [droni-2026]
   testo: |
-    Nel 2026 no: era vietato far volare droni sopra il campo di regata e sopra le zone del pubblico, anche partendo da terra{?droni-2026}. Nel dubbio, lascialo a casa.
+    Nel 2026 no: era vietato far volare droni sopra il campo di regata e le zone del pubblico, anche partendo da terra{?droni-2026}. Nel dubbio, lascialo a casa.
 
 bambini:
   usa: [caldo-bollettini, vil-2026-folla]
@@ -99,12 +99,12 @@ bambini:
 disabilita:
   usa: [acc-2027-atteso, ped-2026]
   testo: |
-    Per il 2027 non sono ancora stati annunciati: accessi, posti riservati e bagni arriveranno più avanti{?acc-2027-atteso}. Nel 2026, raccontavano i giornali, il Comune aveva montato quattro pedane sugli scogli, raggiungibili con passerelle{?ped-2026}. Informazioni nella pagina [accessibilità](/napoli/accessibilita/).
+    Per il 2027 non sono ancora stati annunciati{?acc-2027-atteso}. Nel 2026, raccontavano i giornali, il Comune aveva montato quattro pedane sugli scogli, raggiungibili con passerelle{?ped-2026}. Informazioni nella pagina [accessibilità](/napoli/accessibilita/).
 
 preliminari:
   usa: [cal-preliminari-2027, res-cagliari, res-napoli]
   testo: |
-    Per ora no: dopo Cagliari e Napoli, nel 2026, non è stata annunciata nessun'altra regata preliminare{?cal-preliminari-2027}. I risultati di quelle due sono nell'[archivio](/archivio-2026/).
+    Per ora no: dopo Cagliari e Napoli, nel 2026, non è stata annunciata nessun'altra regata preliminare{?cal-preliminari-2027}. I risultati sono nell'[archivio](/archivio-2026/).
 
 ufficiale:
   usa: [big-sito-ufficiale]

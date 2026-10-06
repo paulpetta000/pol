@@ -1,12 +1,22 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 06/10/2026 (revisione tecnica, passo B). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
+_Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
-## Cosa fa Enrico adesso (06/10/2026, passo B della revisione tecnica pubblicato su `main`)
-1. Guardare la pagina «Fonti» sul sito pubblicato (gruppi nuovi «Enciclopedia» e «Blog e guide»).
-2. Scegliere: sistemare le 4 schede con fonti deboli (avviso `[fonti deboli]` nella build), oppure aprire una sessione nuova nel cloud (repository `paulpetta000/pol`, ramo `main`) per il Blocco 3: modello Opus, effort alto. Prima parte: lo stile dei testi.
-3. Mandare il link dello strumento per confrontare il sito con i concorrenti (senza abbonamenti).
-4. Dopo: sessione di gruppo su `da-risolvere.md` (28 righe aperte, 16 sono locali senza orari: servono le schermate degli orari o una sessione sul computer di Enrico con Claude in Chrome).
+## Cosa fa Enrico adesso (06/10/2026, Blocco 3 · prima parte, stile dei testi: sul ramo `ccr-8d2ed67d-c97lqi`, non su `main`)
+1. Leggere sul telefono i testi nuovi nell'anteprima di Vercel del ramo e dire cosa non va.
+2. Dare l'OK per pubblicare su `main` (cambia solo il testo delle pagine, niente grafica).
+3. Poi: seconda parte del Blocco 3 (estetica, due proposte grafiche, logo), Opus effort alto o extra; installare prima SEO Audit Kit e Programmatic SEO Gate per la parte SEO.
+4. Mandare il link dello strumento per confrontare il sito con i concorrenti (senza abbonamenti).
+5. Dopo: sessione di gruppo su `da-risolvere.md` (29 righe aperte: 16 locali senza orari, 19 premi da verificare sulle guide in una riga sola).
+
+## Blocco 3 · prima parte: lo stile dei testi (06/10/2026)
+- Ricerca: `ricerca/reports/Stile delle guide di viaggio.md` (note in `ricerca/research_notes/`). Molte guide bloccano la lettura dal cloud.
+- **Guida di stile approvata da Enrico**: `specifiche/stile-testi.md`. Voce 75% guida di viaggio, 25% amico napoletano; il calore non inventa fatti; fonti in fondo alla pagina, non nel testo; notizie di stampa sul 2027 al condizionale; ciò che non è uscito dice chi lo deciderà.
+- **Skill del progetto `stile-testi`** (`.claude/skills/stile-testi/`): rimanda alla guida; vale anche per le traduzioni del Rilascio 4.
+- Controllo dei testi (`src/lib/regole.mjs`): parole nuove (condizionale, «lo diranno… più avanti»…), corretto «voci,». Schede `comeFatto: true` (19 premi e recensioni dei locali, decisione di Enrico): scritte come fatti, la build le elenca come `[da verificare]`; riga in `da-risolvere.md`.
+- Nuovo `test/testi.test.mjs`: segni e cautele dei testi veri e lista nera, senza build. `CLAUDE.md` e README aggiornati.
+- Tutti i 31 file di `src/testi/` riscritti (agenti Sonnet per gruppi, riletti dal modello principale; controllo automatico dei numeri: nessun numero nuovo). Lunghezze simili a prima: senza fatti nuovi non si allunga. I fatti nuovi sui luoghi sono un lavoro a parte (scelta di Enrico).
+- Controlli: `npm test` 26/26, build ok, `check:links` 2441 link senza errori.
 
 ## Revisione tecnica del 06/10/2026 (analisi approvata da Enrico; A fatto)
 - **A, fatto**: contraddizioni di questo file, 4 schermate tolte, riga sugli id nel README, due frasi in `CLAUDE.md` (funzioni nuove, cosa conta come fallimento).
@@ -51,7 +61,7 @@ Controllato in una sessione nel cloud il 03/10/2026: Node 22.22 (serve 22.12 o p
 
 ## Prossimi passi
 1. Le tue prove sul telefono della pagina itinerari, sul sito pubblico (elenco nell'archivio, sezione «Blocco 2 · Da fare»), e le correzioni che ne vengono.
-2. Blocco 3 (`PROMPT-BLOCCO-3.md`): **prima parte, lo stile dei testi** (più caldi e coinvolgenti, con le fonti; deciso da Enrico il 04/10/2026, prima del Rilascio 4), poi **estetica con due proposte grafiche e SEO**. Skill: vedi «Skill valutate il 04/10/2026» (si copiano all'inizio, dopo averle lette per intero); a fine blocco restano solo quelle utili al progetto.
+2. Blocco 3 (`PROMPT-BLOCCO-3.md`): prima parte, lo stile dei testi, **fatta il 06/10/2026, in attesa dell'OK** (sezione sopra); poi **estetica con due proposte grafiche e SEO**. Skill: vedi «Skill valutate il 04/10/2026» (si copiano all'inizio, dopo averle lette per intero); a fine blocco restano solo quelle utili al progetto.
    **Da decidere nel blocco 3**: una pagina fissa per ogni luogo e locale (`specifiche/itinerari-napoli-ampliamento.md`, sezione 4), rimandata qui dal blocco A il 03/10/2026.
    **Ispirazioni di design** di Enrico: `design/ispirazioni/` (schermate e descrizioni; MUDD Napoli, 03/10/2026): leggerle prima delle due proposte grafiche.
    **Google Search Console è già collegata**: il file di verifica è nel sito dal 01/10/2026 (`public/googlee54aa324270bde6d.html`). Da controllare con Enrico solo se la mappa del sito (`/sitemap.xml`, già indicata in `robots.txt`) è stata inviata in Search Console.
