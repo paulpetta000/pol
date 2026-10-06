@@ -97,3 +97,4 @@ Altre cose utili:
 - Immagini fisse del 3D (`src/assets/barche/ac75.jpg`, `ac40.jpg`, `confronto.jpg`): sono schermate del 3D stesso, a 2x, senza pulsanti. Se cambi il modello, rifalle con `node scripts/barche-immagini.cjs` (serve Playwright; istruzioni in testa al file).
 - La regata in 60 secondi: `src/lib/regata60.ts` (percorsi, scritte, testi delle scene). Con `?r60t=43` il lettore si apre fermo a quell'istante.
 - Un nuovo video entra solo se è del canale ufficiale e si può incorporare: prova `https://www.youtube.com/oembed?url=https://www.youtube.com/watch?v=CODICE` (deve rispondere 200).
+- **Gli id non si rinominano** (tappe, locali, schede): finiscono nei link condivisi degli itinerari e nella memoria dei telefoni; se cambiano, le tappe dei link già mandati spariscono. Per toglierne uno, cancellalo e basta (il link lo scarta e lo dice).
