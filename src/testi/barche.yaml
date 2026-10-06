@@ -3,7 +3,7 @@
 numeri:
   usa: [ac75-misure, ac40-misure, ac75-peso, ac40-peso, ac75-pozzetti, ac40-uso, ac75-batterie, ac40-batteria, ac75-foil, ac75-velocita, ac75-una-nuova, cal-flotta]
   testo: |
-    Le misure dell'AC75 sono i massimi della sua regola di classe 2027. Lunghezza, larghezza e albero dell'AC40 invece non sono nella sua regola: li prendiamo da Wikipedia, secondo cui le barche sono tutte uguali{?ac40-misure}.
+    I numeri dell'AC75 sono i massimi della sua regola di classe 2027. Per l'AC40 la regola non dà lunghezza, larghezza e altezza dell'albero: quelle cifre le prendiamo da Wikipedia, e le barche dovrebbero essere tutte uguali{?ac40-misure}.
   voci:
     - num: Lunghezza dello scafo
       testo: "fino a 20,70 m | 11,80 m{?ac40-misure}"
@@ -31,19 +31,19 @@ misure:
   testo: |
     ### L'AC75
 
-    Lo scafo è lungo al massimo 20,70 metri e largo al massimo 5; l'albero è alto 26,5 metri, inclinato di 5 gradi verso poppa. La randa ha due teli, come un'ala, e si allarga fino a 7,8 metri dietro l'albero, mentre il fiocco ha un telo solo.
+    Lo scafo è lungo al massimo 20,70 metri e largo al massimo 5. L'albero è alto 26,5 metri ed è inclinato di 5 gradi verso poppa, cioè all'indietro. La randa, la vela principale, ha due teli, come un'ala, e si allarga fino a 7,8 metri dietro l'albero; il fiocco ha un telo solo.
 
     In regata la barca pesa 6.435 kg: 5.875 la barca, 435 i cinque velisti con la loro attrezzatura e 125 l'ospite. Se l'equipaggio pesa meno, si aggiunge zavorra.
 
-    I due foil si alzano e si abbassano ruotando attorno a un perno sul fianco. Abbassato, un foil arriva circa 5,2 metri sotto la linea di galleggiamento, e l'ala in fondo può essere larga fino a 4,5 metri. È lì sotto che nasce la velocità: il record dell'AC75 è di 55,6 nodi, cioè 102,97 km/h, fatto da INEOS Britannia a Barcellona nel 2024, nella finale della Louis Vuitton Cup.
+    I due foil, le ali che scendono sott'acqua, si alzano e si abbassano ruotando attorno a un perno sul fianco. Abbassato, un foil arriva circa 5,2 metri sotto la linea di galleggiamento, e l'ala in fondo può essere larga fino a 4,5 metri. È lì sotto che nasce la velocità: il record dell'AC75 è di 55,6 nodi, cioè 102,97 km/h, fatto da INEOS Britannia a Barcellona nel 2024, nella finale della Louis Vuitton Cup.
 
-    A bordo ci sono 6 pozzetti, 3 per lato, tutti a poppa: 5 per l'equipaggio e 1 per l'ospite. Al timone ci sono in due, uno per lato. Gli altri tre regolano il volo sui foil, le vele e la strategia; il quinto posto, che prima non c'era, tiene d'occhio l'energia delle batterie.
+    A bordo ci sono 6 pozzetti, 3 per lato, tutti a poppa: 5 per l'equipaggio e 1 per l'ospite. Al timone sono in due, uno per lato. Gli altri tre regolano il volo sui foil, le vele e la strategia; il quinto posto, che prima non c'era, tiene d'occhio l'energia delle batterie.
 
     ### L'AC40
 
-    È più piccolo, e le barche sono tutte uguali: secondo Wikipedia è lungo 11,80 metri e largo 3,38, con un albero di 17,92 metri{?ac40-misure}. Pesa circa 2.120 kg, che con i quattro velisti diventano circa 2.480.
+    È più piccolo, e le barche dovrebbero essere tutte uguali: lungo 11,80 metri e largo 3,38, con un albero di 17,92 metri{?ac40-misure}. Pesa circa 2.120 kg, che con i quattro velisti diventano circa 2.480.
 
-    A bordo ci sono due timonieri e due regolatori, per randa e fiocco; nelle regate preliminari il volo sui foil lo gestisce un pilota automatico uguale per tutti. Vele, albero e foil li muove una batteria al litio che dura fino a 8 ore. Sugli AC40 si corrono le regate preliminari, la Youth e la Women's America's Cup.
+    A bordo ci sono due timonieri e due regolatori, per randa e fiocco. Nelle regate preliminari il volo sui foil lo gestisce un pilota automatico, uguale per tutti. Vele, albero e foil li muove una batteria al litio che dura fino a 8 ore. Gli AC40 si usano per le regate preliminari, la Youth e la Women's America's Cup.
 
 cifre:
   usa: [ac75-cinque, ac75-ospite, ac75-donna, ac75-batterie, cal-vento]
@@ -60,8 +60,8 @@ cifre:
 regole:
   usa: [ac75-cinque, ac75-batterie, ac75-donna, ac75-nazionalita, ac75-ospite, ac75-una-nuova, cal-vento]
   testo: |
-    Sugli AC75 del 2027 regatano 5 velisti. Nel 2024 erano 4, più 4 ciclisti che pedalavano per produrre l'energia: adesso i ciclisti non ci sono più, perché le vele si regolano con un sistema a batterie che dà la stessa potenza. A mano si governa solo il timone.
+    Sugli AC75 del 2027 regatano in 5. Nel 2024 erano 4, più 4 ciclisti che pedalavano per produrre l'energia. Adesso i ciclisti non ci sono più: le vele si regolano con un sistema a batterie che dà la stessa potenza, e a mano si governa solo il timone.
 
-    Per la prima volta nella storia della Coppa, in ogni equipaggio deve esserci almeno una donna. La velista e almeno altri due membri dell'equipaggio devono avere la nazionalità della squadra: gli stranieri possono essere al massimo 2. A bordo c'è anche un posto per un ospite, che non partecipa alla regata.
+    Per la prima volta nella storia della Coppa, in ogni equipaggio c'è almeno una donna. La velista e almeno altri due membri dell'equipaggio devono avere la nazionalità della squadra: gli stranieri possono essere al massimo 2. A bordo c'è anche un posto per un ospite, che non partecipa alla regata.
 
-    Ogni squadra ha un solo AC75 e deve usare uno scafo già costruito per la Coppa del 2021 o del 2024, modificandolo; le squadre nuove possono comprarne uno o copiarne il progetto. E si parte solo con un vento reale tra 6,5 e 23 nodi.
+    Ogni squadra ha un solo AC75 e deve partire da uno scafo già costruito per la Coppa del 2021 o del 2024, modificandolo. Le squadre nuove possono comprarne uno o copiarne il progetto. Si regata solo con un vento reale tra 6,5 e 23 nodi.

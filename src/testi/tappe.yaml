@@ -6,156 +6,156 @@
 duomo:
   usa: [tp-duomo-prezzi, tp-tesoro-durata]
   testo: |
-    La cattedrale di Napoli. Dentro c'è la Cappella del Tesoro di San Gennaro, a ingresso libero. Il Museo del Tesoro, accanto, si paga a parte: con l'audioguida la visita dura circa un'ora, e il biglietto comprato online vale per il giorno, non per l'ora.
+    Nella cattedrale di Napoli c'è la Cappella del Tesoro di San Gennaro, e si entra gratis. Il Museo del Tesoro, lì accanto, ha un biglietto a parte: con l'audioguida ti serve circa un'ora. Il biglietto online è consigliato, non obbligatorio, e vale per tutto il giorno, non per un'ora precisa: entri quando vuoi.
 
 sansevero:
   usa: [tp-sansevero-prenota, tp-sansevero-regole]
   testo: |
-    La cappella del Cristo velato. Si entra solo con il biglietto comprato online sul sito del museo, fino a 60 giorni prima: per luglio conviene comprarlo appena esce. Dentro non si fanno foto e non si usa il telefono. La Cavea, con le «macchine anatomiche», si raggiunge solo da una stretta scala a chiocciola.
+    Nella cappella Sansevero c'è il Cristo velato. Si entra solo con il biglietto comprato online sul sito del museo, fino a 60 giorni prima: a luglio, compralo appena esce. Se è tutto esaurito, altri posti si liberano due giorni prima della visita. Dentro non puoi fare foto né usare il telefono. La Cavea, con le «macchine anatomiche», si raggiunge solo da una stretta scala a chiocciola.
 
 santa-chiara:
   usa: [tp-santachiara-prezzi]
   fonti: [tp-santachiara-faq]
   testo: |
-    Il chiostro coperto di maioliche, il museo e l'area archeologica si visitano con un solo biglietto, che si compra solo in biglietteria; la basilica è gratuita. Il monastero consiglia di calcolare circa 40 minuti. Il chiostro è all'aperto: d'estate meglio la mattina.
+    Il chiostro coperto di maioliche, il museo e l'area archeologica si visitano con un solo biglietto, che compri solo in biglietteria. La basilica è gratuita. Il monastero consiglia di calcolare circa 40 minuti. Il chiostro è all'aperto: d'estate vai la mattina.
 
 spaccanapoli:
   usa: [tp-spaccanapoli-orari]
   testo: |
-    Una passeggiata da piazza del Gesù Nuovo a piazza San Gaetano, lungo Spaccanapoli e poi su per via San Gregorio Armeno. Le strade sono sempre aperte. Per le chiese non ci sono orari ufficiali: secondo alcuni siti non ufficiali il chiostro di San Gregorio Armeno apre solo la mattina{?tp-spaccanapoli-orari}.
+    Parti da piazza del Gesù Nuovo e vai fino a piazza San Gaetano, lungo Spaccanapoli, poi su per via San Gregorio Armeno. Le strade sono sempre aperte. Per le chiese non abbiamo trovato orari ufficiali. Secondo alcuni siti non ufficiali il chiostro di San Gregorio Armeno apre solo la mattina{?tp-spaccanapoli-orari}: se vuoi vederlo, vai presto.
 
 tribunali:
   usa: [tp-tribunali-orari]
   testo: |
-    La strada del cibo di strada: pizza a portafoglio, frittatine, cuoppi di fritto da mangiare camminando. Conviene passarci all'ora di pranzo, tra una visita e l'altra: Napoli Sotterranea, San Lorenzo Maggiore e il Pio Monte della Misericordia sono sulla stessa strada.
+    Pizza a portafoglio, frittatine, cuoppi di fritto: su via dei Tribunali mangi camminando. Ti conviene passarci all'ora di pranzo, tra una visita e l'altra: sulla stessa strada ci sono Napoli Sotterranea, San Lorenzo Maggiore e il Pio Monte della Misericordia. La strada è sempre aperta; pizzerie, friggitorie e bar hanno ciascuno i propri orari.
 
 pio-monte:
   usa: [tp-piomonte-orari]
   fonti: [tp-piomonte-caravaggio]
   testo: |
-    Nella cappella del Pio Monte c'è *Sette opere di Misericordia* di Caravaggio, il primo quadro dipinto per questa chiesa. La visita è breve. La domenica chiude presto, alle 14:30.
+    Nella cappella del Pio Monte c'è *Sette opere di Misericordia* di Caravaggio, il primo quadro dipinto per questa chiesa. La visita è breve. Attenzione alla domenica: chiude alle 14:30, mentre gli altri giorni resta aperto fino alle 18.
 
 mann:
   usa: [tp-mann-orari, tp-mann-prezzi]
   testo: |
-    Il grande museo archeologico della città. È chiuso il martedì e resta aperto fino alle 19:30: con il caldo è una buona tappa del pomeriggio. La prima domenica del mese si entra gratis, ma quel giorno restano chiuse la collezione egizia, il Gabinetto Segreto e la Magna Grecia.
+    Il grande museo archeologico della città resta aperto fino alle 19:30: con il caldo è una buona tappa del pomeriggio. Il martedì è chiuso. La prima domenica del mese si entra gratis, ma quel giorno restano chiuse la collezione egizia, il Gabinetto Segreto e la Magna Grecia: se ti interessano, scegli un altro giorno.
 
 san-lorenzo:
   usa: [tp-sanlorenzo-orari]
   fonti: [tp-sanlorenzo]
   testo: |
-    Una grande chiesa e, sotto, gli scavi della città greca e romana. Quando c'è molta gente si entra solo con la guida, a orari fissi. In carrozzina e con il passeggino si visita tutto tranne l'area archeologica.
+    Una grande chiesa e, sotto, gli scavi della città greca e romana. Apre tutti i giorni, dalle 9:30 alle 17:30. Quando c'è molta gente si entra solo con la guida, a orari fissi. Con la carrozzina o il passeggino visiti tutto tranne l'area archeologica.
 
 napoli-sotterranea:
   usa: [tp-sotterranea-visita, tp-sotterranea-prezzi]
   testo: |
-    Si scende con la guida fino a circa 40 metri sotto la strada, per 136 gradini «bassi e comodi»: c'è un solo cunicolo stretto, ed è facoltativo. Dopo circa un'ora si vedono anche i resti del Teatro Romano. Non si può fare in sedia a rotelle né con il deambulatore. Il sito non scrive i prezzi: si vedono solo comprando il biglietto.
+    Scendi con la guida fino a circa 40 metri sotto la strada, per 136 gradini «bassi e comodi». C'è un solo cunicolo stretto, ed è facoltativo. La visita dura circa un'ora, e per i resti del Teatro Romano, compresi nel biglietto, ne servono circa 20 minuti in più. Non è accessibile in sedia a rotelle né con il deambulatore. I prezzi compaiono solo quando compri il biglietto.
 
 madre:
   usa: [tp-madre-orari]
   fonti: [tp-madre]
   testo: |
-    Il museo di arte contemporanea della Regione Campania, a due passi dal Duomo. È chiuso il martedì. La domenica resta aperto fino alle 20: utile quando gli altri musei del centro storico hanno già chiuso.
+    Il museo di arte contemporanea della Regione Campania sta a due passi dal Duomo. Il martedì è chiuso. La domenica resta aperto fino alle 20: comodo quando gli altri musei del centro storico hanno già chiuso. L'ultimo ingresso è un'ora prima della chiusura.
 
 # ---------- Toledo e Plebiscito ----------
 plebiscito:
   usa: [tp-plebiscito-orari]
   testo: |
-    La grande piazza con la basilica di San Francesco di Paola e, di fronte, il Palazzo Reale. Accanto c'è la Galleria Umberto I, coperta di vetro: si attraversa gratis, fino alle 20:30 nei giorni feriali e fino alle 22 il sabato e la domenica.
+    Da un lato della grande piazza c'è la basilica di San Francesco di Paola, di fronte il Palazzo Reale. La piazza è sempre aperta. Accanto c'è la Galleria Umberto I, coperta di vetro: la attraversi gratis, fino alle 20:30 nei giorni feriali e fino alle 22 il sabato e la domenica.
 
 palazzo-reale:
   usa: [tp-palazzoreale-restauri]
   fonti: [tp-palazzoreale-info]
   testo: |
-    La reggia su piazza del Plebiscito. La visita dell'Appartamento di Etichetta dura in media un'ora e il museo dice di aver tolto le barriere architettoniche. Dal 1° ottobre 2026 la Sala degli Specchi, il Salone d'Ercole e parte della Sala delle Nature Morte sono chiusi per restauro, e la fine dei lavori non è stata annunciata. Il Giardino Romantico è gratuito.
+    La reggia su piazza del Plebiscito: l'Appartamento di Etichetta si visita in media in un'ora. Dal 1° ottobre 2026 la Sala degli Specchi, il Salone d'Ercole e parte della Sala delle Nature Morte sono chiusi per restauro, e la fine dei lavori non è stata annunciata: prima di andare, controlla. Il Giardino Romantico è gratuito. Il museo dice di aver tolto le barriere architettoniche.
 
 san-carlo:
   usa: [tp-sancarlo-orari]
   testo: |
-    Il teatro dell'opera di Napoli si visita con una guida, in 30 minuti, più volte al giorno. Il teatro consiglia di prenotare e avverte che le visite possono cambiare o saltare anche all'ultimo momento.
+    Il teatro dell'opera di Napoli si visita con una guida, in 30 minuti, più volte al giorno. Prenota: il teatro lo consiglia e avverte che le visite possono cambiare o saltare anche all'ultimo momento.
 
 castel-nuovo:
   usa: [tp-castelnuovo-orari]
   fonti: [tp-comune-castelnuovo]
   testo: |
-    Il castello davanti al porto, con le grandi torri e l'arco di marmo all'ingresso; dentro c'è il Museo Civico. È chiuso la domenica e nei festivi. Il Comune avverte che per lavori l'accesso può essere sospeso e che l'ascensore del museo può non funzionare.
+    Il castello davanti al porto ha le grandi torri e l'arco di marmo all'ingresso; dentro c'è il Museo Civico. Apre dal lunedì al sabato, dalle 9 alle 18; la domenica e nei festivi è chiuso. Il Comune avverte che per lavori l'accesso può essere sospeso e che l'ascensore del museo può non funzionare: prima di andare, controlla.
 
 toledo:
   usa: [tp-toledo-orari]
   testo: |
-    Da piazza Trieste e Trento a piazza Dante, la strada dei negozi. A metà strada c'è la stazione Toledo della Linea 1, una delle «stazioni dell'arte»: per scendere a vederla serve un biglietto della metro. Ai lati salgono i vicoli dei Quartieri Spagnoli.
+    Via Toledo, da piazza Trieste e Trento a piazza Dante, è la strada dei negozi. A metà strada c'è la stazione Toledo della Linea 1, una delle «stazioni dell'arte»: per scendere a vederla ti serve un biglietto della metro. Ai lati salgono i vicoli dei Quartieri Spagnoli. Strada e vicoli sono sempre aperti.
 
 galleria-borbonica:
   usa: [tp-borbonica-orari, tp-borbonica-prezzi]
   testo: |
-    Gallerie e cave sotto la città, aperte solo dal venerdì alla domenica e nei festivi, sempre con la guida e su prenotazione. Il percorso Standard dura circa un'ora; Via delle Memorie ha più scale; l'Avventura, con un tratto in zattera, è dai 10 anni.
+    Sotto la città ci sono gallerie e cave: le visiti solo con la guida e su prenotazione, dal venerdì alla domenica e nei festivi. Il percorso Standard dura circa un'ora; Via delle Memorie ha più scale; l'Avventura, con un tratto in zattera, è dai 10 anni.
 
 # ---------- Lungomare e Santa Lucia ----------
 monte-echia:
   usa: [tp-echia-orari, tp-echia-prezzi, tp-echia-recinzione]
   testo: |
-    Il belvedere sopra Santa Lucia, con il golfo e Castel dell'Ovo davanti. Si sale con l'ascensore da via Santa Lucia, 1,50 € a corsa, oppure a piedi da Pizzofalcone. Il belvedere non ha una recinzione: con i bambini serve attenzione.
+    Dal belvedere sopra Santa Lucia vedi il golfo e, davanti, Castel dell'Ovo. Il belvedere è gratuito. Sali con l'ascensore da via Santa Lucia, 1,50 € a corsa, oppure a piedi da Pizzofalcone. Il belvedere non ha una recinzione: con i bambini serve attenzione.
 
 borgo-marinari:
   usa: [tp-borgo-orari]
   testo: |
-    Il piccolo porto accanto a Castel dell'Ovo, area pedonale aperta tutto il giorno. Il castello è chiuso al pubblico per lavori, senza una data di riapertura: si gira intorno e si guarda il mare. La sera è il momento più bello.
+    Il Borgo Marinari è il piccolo porto accanto a Castel dell'Ovo: area pedonale, aperta tutto il giorno. Il castello è chiuso al pubblico per lavori, senza una data di riapertura: ci giri intorno e guardi il mare. La sera è il momento più bello.
 
 lungomare:
   usa: [tp-lungomare-orari, vil-caracciolo]
   fonti: [osm]
   testo: |
-    La passeggiata sul mare da Castel dell'Ovo a Mergellina, circa 2,3 km a piedi: via Partenope, via Caracciolo e la Villa Comunale, che d'estate resta aperta fino a mezzanotte. Nel 2027, durante le regate, lungo viale Caracciolo ci sarà il Race Village.
+    Da Castel dell'Ovo a Mergellina sono circa 2,3 km a piedi, sul mare: via Partenope, via Caracciolo e la Villa Comunale, che d'estate resta aperta fino a mezzanotte. Nel 2027, durante le regate, lungo viale Caracciolo ci sarà il Race Village, con punti di osservazione tipo tribuna sui promontori.
 
 dadom:
   usa: [tp-dadom-orari, tp-dadom-prezzi]
   testo: |
-    L'acquario e il museo Darwin-Dohrn della Stazione Zoologica, nella Villa Comunale: un solo biglietto per tutti e due, e tutto al chiuso. È chiuso il lunedì e chiude alle 17. Comprato online, il biglietto ha data e ora e non si rimborsa.
+    L'acquario e il museo Darwin-Dohrn della Stazione Zoologica stanno nella Villa Comunale: un solo biglietto per tutti e due, e tutto al chiuso. È chiuso il lunedì e chiude alle 17. Comprato online, il biglietto ha data e ora e non si rimborsa: scegli bene il giorno.
 
 # ---------- Vomero ----------
 sant-elmo:
   usa: [tp-santelmo-orari]
   testo: |
-    La fortezza in cima al Vomero, con la vista su tutta la città e sul golfo. Il castello è aperto tutti i giorni fino alle 19:30; il Museo del Novecento, dentro, chiude il martedì. Con il maltempo il castello può restare chiuso.
+    Dalla fortezza in cima al Vomero vedi tutta la città e il golfo. Il castello è aperto tutti i giorni fino alle 19:30; il Museo del Novecento, dentro, chiude il martedì. Con il maltempo il castello può restare chiuso.
 
 san-martino:
   usa: [tp-sanmartino-orari, tp-sanmartino-prezzi]
   testo: |
-    L'antica certosa accanto a Castel Sant'Elmo, oggi museo, con i chiostri e le terrazze sul golfo. Costa 6 € ed è chiusa il martedì. Da qui si scende a piedi verso il centro storico con la Pedamentina.
+    L'antica certosa accanto a Castel Sant'Elmo, oggi museo, ha i chiostri e le terrazze sul golfo. Costa 6 € ed è chiusa il martedì. Da qui scendi a piedi verso il centro storico con la Pedamentina.
 
 floridiana:
   usa: [tp-floridiana-orari, tp-floridiana-prezzi]
   testo: |
-    Un parco gratuito sul Vomero, aperto da maggio ad agosto fino alle 19:30, con il museo della ceramica Duca di Martina nella villa (4 €, chiuso il martedì). D'estate i viali all'ombra sono buoni per una pausa.
+    Un parco gratuito sul Vomero, aperto da maggio ad agosto fino alle 19:30. Nella villa c'è il museo della ceramica Duca di Martina: 4 €, chiuso il martedì. D'estate i viali all'ombra sono un buon posto per una pausa.
 
 pedamentina:
   usa: [tp-pedamentina-orari]
   fonti: [osm]
   testo: |
-    La scala pubblica che scende da Largo San Martino a Corso Vittorio Emanuele, tra rampe e tornanti, con la città davanti. Conviene farla in discesa, dopo San Martino o Sant'Elmo: in discesa servono circa 15 minuti, in salita è faticosa. Da Corso Vittorio Emanuele si arriva a Montesanto e al centro storico.
+    Da Largo San Martino a Corso Vittorio Emanuele scendi per una scala pubblica, tra rampe e tornanti, con la città davanti. Falla in discesa, dopo San Martino o Sant'Elmo: servono circa 15 minuti, mentre in salita è faticosa. Da Corso Vittorio Emanuele arrivi a Montesanto e al centro storico.
 
 # ---------- Sanità e Capodimonte ----------
 catacombe:
   usa: [tp-catacombe-orari, tp-catacombe-prezzi, tp-catacombe-note]
   testo: |
-    Si visitano solo con la guida, ogni ora, prenotando prima. Lo stesso biglietto vale 12 mesi anche per le Catacombe di San Gaudioso, nel Rione Sanità. Sotto terra ci sono 15–22 °C: porta un maglioncino. Per ora l'accesso per le persone con disabilità motoria è sospeso.
+    Entri solo con la guida, ogni ora, e devi prenotare prima. Lo stesso biglietto vale 12 mesi anche per le Catacombe di San Gaudioso, nel Rione Sanità. Sotto terra ci sono 15–22 °C: porta un maglioncino. Per ora l'accesso per le persone con disabilità motoria è sospeso.
 
 sanita:
   usa: [tp-sanita-orari]
   fonti: [tp-catacombe-basilica]
   testo: |
-    Il quartiere sotto il ponte della Sanità, con la Basilica di Santa Maria della Sanità, aperta solo la mattina (10–13), e sotto la basilica le Catacombe di San Gaudioso. Dal ponte si scende con un ascensore gratuito, che la domenica chiude alle 14.
+    Il quartiere sta sotto il ponte della Sanità. C'è la Basilica di Santa Maria della Sanità, aperta solo la mattina (10–13), e sotto la basilica le Catacombe di San Gaudioso. Dal ponte scendi con un ascensore gratuito, che la domenica chiude alle 14.
 
 fontanelle:
   usa: [tp-fontanelle-orari, tp-fontanelle-prezzi]
   fonti: [tp-fontanelle]
   testo: |
-    L'antico ossario del Rione Sanità, scavato nel tufo: dentro fa più fresco che fuori. Si prenota solo sul sito e si entra a gruppi ogni 15 minuti, per al massimo 40 minuti. Il sito chiede silenzio e rispetto; con i bambini piccoli pensaci prima.
+    L'antico ossario del Rione Sanità è scavato nel tufo: dentro fa più fresco che fuori. Prenoti solo sul sito, entri a gruppi ogni 15 minuti e resti al massimo 40 minuti. Il sito chiede silenzio e rispetto: con i bambini piccoli pensaci prima.
 
 capodimonte:
   usa: [tp-capodimonte-orari, tp-capodimonte-prezzi]
   testo: |
-    La reggia in cima alla collina, oggi un grande museo, in mezzo al Real Bosco. Entrando tra le 8:30 e le 9:30 il biglietto costa 12 € invece di 15 e vale tutto il giorno. Il secondo piano chiude alle 17 e il museo è chiuso il mercoledì.
+    La reggia in cima alla collina, in mezzo al Real Bosco, oggi è un grande museo. Entra tra le 8:30 e le 9:30: il biglietto costa 12 € invece di 15 e vale tutto il giorno. Il secondo piano chiude alle 17 e il museo è chiuso il mercoledì.
 
 # ---------- Posillipo e Bagnoli ----------
 virgilio:
@@ -167,120 +167,120 @@ marechiaro:
   usa: [tp-marechiaro-orari]
   fonti: [osm]
   testo: |
-    Un piccolo borgo sul mare di Posillipo, in fondo a una lunga discesa. Non ci arriva la metro: da Mergellina a piedi è più di un'ora, quindi conviene il bus o il taxi. Nell'estate 2026 l'ultimo tratto di via Marechiaro era chiuso alle auto e c'era un taxi collettivo a 2 € a tratta{?tp-marechiaro-orari}.
+    Marechiaro è un piccolo borgo sul mare di Posillipo, in fondo a una lunga discesa. La metro non ci arriva: da Mergellina a piedi è più di un'ora, quindi ti conviene il bus o il taxi. Nell'estate 2026 l'ultimo tratto di via Marechiaro era chiuso alle auto e c'era un taxi collettivo a 2 € a tratta{?tp-marechiaro-orari}.
 
 gaiola:
   usa: [tp-gaiola-orari, tp-gaiola-prenota]
   testo: |
-    Un'area marina protetta con una piccola spiaggia davanti all'isolotto della Gaiola. Dal 1° maggio al 30 settembre si entra solo prenotando online, in due turni di 4 ore, al massimo 200 persone per turno. Il modulo chiede il codice fiscale di tutti: chi non ce l'ha, per esempio un turista straniero, deve chiedere all'area marina come fare.
+    Una piccola spiaggia davanti all'isolotto della Gaiola, in un'area marina protetta. Dal 1° maggio al 30 settembre entri solo prenotando online, in due turni di 4 ore, al massimo 200 persone per turno. Il modulo chiede il codice fiscale di tutti: chi non ce l'ha, per esempio un turista straniero, deve chiedere all'area marina come fare. Con l'allerta meteo il parco chiude.
 
 parco-virgiliano:
   usa: [tp-virgiliano-orari]
   testo: |
-    Il parco in cima a Posillipo, con il belvedere su Nisida, Bagnoli e le isole: il momento migliore è il tramonto. Dal 27 giugno 2026 è aperto solo in parte, belvedere compreso; i lavori sul resto dovrebbero finire nel corso del 2027.
+    Il parco in cima a Posillipo ha il belvedere su Nisida, Bagnoli e le isole: il momento migliore è il tramonto. Dal 27 giugno 2026 è aperto solo in parte, belvedere compreso; i lavori sul resto dovrebbero finire nel corso del 2027.
 
 citta-scienza:
   usa: [tp-cittascienza-orari, tp-cittascienza-estate]
   fonti: [tp-cittascienza-faq, osm]
   testo: |
-    Il museo della scienza pensato per bambini e famiglie, a Bagnoli: tutto al chiuso, con una visita media di circa 2 ore. L'orario dell'estate 2027 non è ancora uscito: nel 2025, d'estate, chiudeva alle 16{?tp-cittascienza-estate}. Da Napoli si arriva con la Cumana fino a Bagnoli, poi circa 20 minuti a piedi.
+    Il museo della scienza di Bagnoli è pensato per bambini e famiglie: tutto al chiuso, con una visita media di circa 2 ore. Dal 22 febbraio al 31 maggio 2027 è aperto tutti i giorni dalle 9 alle 17. L'orario dell'estate 2027 non è ancora uscito: nel 2025, d'estate, chiudeva alle 16{?tp-cittascienza-estate}. Da Napoli arrivi con la Cumana fino a Bagnoli, poi cammini circa 20 minuti.
 
 # ---------- Gite ----------
 pompei:
   usa: [tp-pompei-biglietti, tp-pompei-viaggio]
   testo: |
-    La città romana sepolta dal Vesuvio. I biglietti hanno nome, giorno e fascia oraria: la mattina, la più fresca, ha 15.000 posti su 20.000 ed è la prima da comprare. Con la Circumvesuviana da Garibaldi servono almeno 33 minuti. Con il caldo porta acqua e cappello.
+    La città romana sepolta dal Vesuvio. I biglietti hanno nome, giorno e fascia oraria, e non si cambiano. La mattina è la fascia più fresca: ha 15.000 posti su 20.000, quindi comprala per prima. Con la Circumvesuviana da Garibaldi servono almeno 33 minuti. Con il caldo porta acqua e cappello.
 
 ercolano:
   usa: [tp-ercolano-viaggio, tp-ercolano-prezzi, tp-campolieto]
   testo: |
-    Più piccola di Pompei e più facile da girare con il caldo. Con la Circumvesuviana da Garibaldi servono almeno 13 minuti. Si entra gratis la prima domenica del mese e il 2 giugno.
+    Più piccola di Pompei e più facile da girare con il caldo. Con la Circumvesuviana da Garibaldi servono almeno 13 minuti. Entri gratis la prima domenica del mese e il 2 giugno.
 
-    A Ercolano, in corso Resina, si può visitare anche Villa Campolieto, una delle ville vesuviane: aperta dal lunedì al sabato 9:00–19:00 e la domenica fino alle 14:00, 7 €.
+    A Ercolano, in corso Resina, c'è anche Villa Campolieto, una delle ville vesuviane: aperta dal lunedì al sabato 9:00–19:00 e la domenica fino alle 14:00, 7 €.
 
 vesuvio:
   usa: [tp-vesuvio-orari, tp-vesuvio-prezzi, tp-vesuvio-viaggio]
   testo: |
-    Il sentiero fino al cratere: 4 km tra andata e ritorno da quota 1000, con biglietti solo online a fasce di 10 minuti. Con l'allerta meteo arancione chiude tutto. Da Pompei sale il bus EAV 808; con l'orario di ottobre 2026 l'ultima discesa è alle 16:50.
+    Il sentiero fino al cratere è lungo 4 km tra andata e ritorno, da quota 1000. I biglietti si comprano solo online, a fasce di 10 minuti. Con l'allerta meteo arancione chiude tutto. Da Pompei sale il bus EAV 808: con l'orario di ottobre 2026 l'ultima discesa è alle 16:50, quindi calcola bene i tempi.
 
 capri:
   usa: [tp-capri-viaggio, tp-capri-orari, tp-isole-2027]
   testo: |
-    Con Caremar ci vuole circa un'ora con la motonave veloce o un'ora e mezza con il traghetto, più 5 € di tassa di sbarco. La Grotta Azzurra chiude con il mare mosso. Gli orari estivi 2027 dei traghetti, con le ultime corse per tornare, non sono ancora usciti: controllali prima di partire{?tp-isole-2027}.
+    Da Napoli a Capri con Caremar ci vuole circa un'ora con la motonave veloce, un'ora e mezza con il traghetto; in più, 5 € di tassa di sbarco. La Grotta Azzurra chiude con il mare mosso. Gli orari estivi 2027 dei traghetti, con le ultime corse per tornare, non sono ancora usciti: controllali prima di partire{?tp-isole-2027}.
 
 ischia:
   usa: [tp-ischia-viaggio, tp-ischia-orari, tp-isole-2027]
   testo: |
-    In una giornata conviene restare tra Ischia Porto e il Castello Aragonese, aperto dalle 9 al tramonto. L'aliscafo dal Molo Beverello impiega circa un'ora. Gli orari estivi 2027 dei traghetti non sono ancora usciti{?tp-isole-2027}.
+    L'aliscafo dal Molo Beverello impiega circa un'ora fino a Ischia. In una giornata ti conviene restare tra Ischia Porto e il Castello Aragonese, aperto dalle 9 al tramonto. Gli orari estivi 2027 dei traghetti non sono ancora usciti{?tp-isole-2027}.
 
 procida:
   usa: [tp-procida-viaggio, tp-isole-2027]
   testo: |
-    La più vicina e la meno cara delle tre isole: con l'aliscafo dal Molo Beverello sono 35–40 minuti. Per Terra Murata e l'Abbazia di San Michele non abbiamo trovato orari ufficiali. Gli orari estivi 2027 dei traghetti non sono ancora usciti{?tp-isole-2027}.
+    Procida è la più vicina e la meno cara delle tre isole: con l'aliscafo dal Molo Beverello sono 35–40 minuti. Per Terra Murata e l'Abbazia di San Michele non abbiamo trovato orari ufficiali. Gli orari estivi 2027 dei traghetti non sono ancora usciti{?tp-isole-2027}.
 
 # ---------- Blocco A (03/10/2026): centro storico ----------
 san-domenico:
   usa: [tp-sandomenico-prezzi, tp-sandomenico-orari]
   testo: |
-    La grande basilica gotica di piazza San Domenico, a due passi dalla Cappella Sansevero. La chiesa è gratuita; la sagrestia, con le arche aragonesi, e la Sala del Tesoro si visitano con la guida, a pagamento. Nei giorni feriali le visite si fermano tra le 13:30 e le 14:30.
+    La grande basilica gotica di piazza San Domenico è a due passi dalla Cappella Sansevero, e la chiesa è gratuita. La sagrestia, con le arche aragonesi, e la Sala del Tesoro si visitano con la guida, a pagamento. Nei giorni feriali le visite si fermano tra le 13:30 e le 14:30: organizzati prima o dopo.
 
 purgatorio-ad-arco:
   usa: [tp-purgatorio-orari, tp-purgatorio-prezzi]
   testo: |
-    La chiesa di via dei Tribunali legata al culto delle «anime del Purgatorio»: oltre alla chiesa si visitano l'ipogeo, sotto, e un piccolo museo. La domenica chiude alle 14:00. Dal 1° ottobre 2026 il biglietto costa 8 €.
+    La chiesa di via dei Tribunali è legata al culto delle «anime del Purgatorio»: oltre alla chiesa visiti l'ipogeo, sotto, e un piccolo museo. Dal 1° ottobre 2026 il biglietto costa 8 €. La domenica chiude alle 14:00.
 
 girolamini:
   usa: [tp-girolamini-orari, tp-girolamini-prezzi]
   testo: |
-    Una chiesa barocca su via Duomo, con un museo e una biblioteca storica che ha riaperto a settembre 2026. È chiusa il lunedì, e nel fine settimana solo la mattina, fino alle 13:30. La biblioteca ha un biglietto suo e si entra a turni.
+    Su via Duomo c'è una chiesa barocca, con un museo e una biblioteca storica che ha riaperto a settembre 2026. È chiusa il lunedì, e nel fine settimana apre solo la mattina, fino alle 13:30. La biblioteca ha un biglietto suo e si entra a turni.
 
 tetti-duomo:
   usa: [tp-tetti-orari, tp-tetti-prezzi]
   testo: |
-    Un percorso sui tetti della cattedrale, tra le cupole del centro storico: si entra solo prenotando sul sito del MUDD, il museo diffuso della Diocesi. Ci sono molte scale e il percorso non è accessibile a chi ha difficoltà a camminare. Secondo la stampa, all'apertura nel 2026 il biglietto costava 10 €, gratis per chi abita a Napoli{?tp-tetti-prezzi}.
+    Cammini sui tetti della cattedrale, tra le cupole del centro storico. Entri solo prenotando sul sito del MUDD, il museo diffuso della Diocesi. Ci sono molte scale e il percorso non è accessibile a chi ha difficoltà a camminare. Per i giornali, all'apertura nel 2026 il biglietto costava 10 €, gratis per chi abita a Napoli{?tp-tetti-prezzi}.
 
 filangieri:
   usa: [tp-filangieri-orari]
   testo: |
-    Il museo civico nato dalle raccolte del principe Gaetano Filangieri, a Palazzo Como su via Duomo, con una grande sala circondata da un ballatoio di legno. Il sito del museo dice che è aperto tutti i giorni fino alle 19:00, la biglietteria online fino alle 18:00: meglio non arrivare tardi.
+    Il museo civico nato dalle raccolte del principe Gaetano Filangieri, a Palazzo Como su via Duomo, ha una grande sala circondata da un ballatoio di legno. È aperto tutti i giorni fino alle 19:00, ma la biglietteria online indica la chiusura alle 18:00: meglio non arrivare tardi.
 
 san-giovanni-a-carbonara:
   usa: [tp-carbonara-orari]
   fonti: [tp-mudd-carbonara]
   testo: |
-    Una chiesa gotica poco conosciuta, in cima a una scalinata monumentale vicino a Porta Capuana, con il grande monumento funebre del re Ladislao e un pavimento di maioliche del Quattrocento. Aperta tutti i giorni 10:00–17:00, la visita è gratuita; la Sagrestia Vasariana si paga a parte.
+    Sali la scalinata monumentale vicino a Porta Capuana: in cima c'è una chiesa gotica poco conosciuta, con il grande monumento funebre del re Ladislao e un pavimento di maioliche del Quattrocento. È aperta tutti i giorni 10:00–17:00 e la visita è gratuita; la Sagrestia Vasariana si paga a parte.
 
 mercato-porta-nolana:
   usa: [tp-mercati-orari]
   testo: |
-    Il mercato del pesce e della frutta intorno a Porta Nolana, a pochi passi dalla stazione Garibaldi. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica: si va la mattina, quando i banchi sono pieni.
+    Il mercato del pesce e della frutta intorno a Porta Nolana è a pochi passi dalla stazione Garibaldi. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica: vai la mattina, quando i banchi sono pieni.
 
 # ---------- Blocco A: Toledo, Chiaia e Vomero ----------
 pignasecca:
   usa: [tp-mercati-orari]
   testo: |
-    Il mercato di strada tra via Toledo e Montesanto: frutta, verdura, pesce. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica. Si gira a piedi in mezz'ora.
+    Il mercato di strada tra via Toledo e Montesanto vende frutta, verdura, pesce. Il Comune lo indica aperto dalle 7:00 alle 15:00, ma non dice se apre la domenica. Lo giri a piedi in mezz'ora.
 
 ventaglieri:
   usa: [tp-ventaglieri-orari]
   testo: |
-    Un piccolo parco di quartiere su più livelli, sopra Montesanto, con alberi, pergolati e un campetto. È una sosta all'ombra tra via Toledo e il Vomero. L'orario (7:00–19:30) viene da una pagina del Comune del 2024.
+    Un piccolo parco di quartiere su più livelli, sopra Montesanto, con alberi, pergolati e un campetto: una sosta all'ombra tra via Toledo e il Vomero. L'orario (7:00–19:30) viene da una pagina del Comune del 2024.
 
 villa-pignatelli:
   usa: [tp-pignatelli-orari, tp-pignatelli-prezzi]
   testo: |
-    Una villa dell'Ottocento sulla Riviera di Chiaia, con le stanze arredate e un giardino all'inglese, a due passi dalla Villa Comunale. È chiusa il martedì e chiude alle 17:00. Il prezzo del biglietto non siamo riusciti a verificarlo su una pagina ufficiale.
+    Una villa dell'Ottocento sulla Riviera di Chiaia, con le stanze arredate e un giardino all'inglese, a due passi dalla Villa Comunale. Chiude alle 17:00 ed è chiusa il martedì. Non siamo riusciti a verificare il prezzo del biglietto su una pagina ufficiale.
 
 parco-mascagna:
   usa: [tp-parchi-orari]
   testo: |
-    Un giardino tranquillo del Vomero, a pochi minuti da piazza Vanvitelli, per una pausa all'ombra. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
+    Un giardino tranquillo del Vomero, a pochi minuti da piazza Vanvitelli: ci vai per una pausa all'ombra. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
 
 camaldoli:
   usa: [tp-parchi-orari]
   fonti: [tp-parco-camaldoli]
   testo: |
-    Un grande bosco sulla collina più alta di Napoli, con sentieri e punti da cui si vede il golfo. È lontano dal centro: conviene andarci la mattina, con scarpe comode. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
+    Un grande bosco sulla collina più alta di Napoli, con sentieri e punti da cui vedi il golfo. È lontano dal centro: ti conviene andarci la mattina, con scarpe comode. Gli orari sono quelli dei parchi del Comune, che a luglio e agosto chiudono alle 20:00.
 
 # ---------- Blocco A: Capodimonte e Foria ----------
 parco-poggio:
@@ -291,45 +291,45 @@ parco-poggio:
 orto-botanico:
   usa: [tp-orto-orari]
   testo: |
-    Il giardino botanico dell'Università, in via Foria, con le serre e un museo. L'ingresso è gratuito, ma apre solo dal lunedì al venerdì e solo la mattina o il primo pomeriggio: chiude alle 14:00, il martedì e il giovedì alle 16:00.
+    Il giardino botanico dell'Università, in via Foria, ha le serre e un museo. L'ingresso è gratuito, ma apre solo dal lunedì al venerdì e solo la mattina o il primo pomeriggio: chiude alle 14:00, il martedì e il giovedì alle 16:00.
 
 # ---------- Blocco A: Posillipo e Fuorigrotta ----------
 sant-antonio-posillipo:
   usa: [tp-belvedere-orari]
   fonti: [tp-anm-mergellina]
   testo: |
-    La terrazza davanti alla chiesa di Sant'Antonio, sopra Mergellina, con il golfo e il Vesuvio di fronte. Ci si arriva con la funicolare di Mergellina, fermata Sant'Antonio. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-sant-antonio-posillipo).
+    Dalla terrazza davanti alla chiesa di Sant'Antonio, sopra Mergellina, hai il golfo e il Vesuvio di fronte, senza orari e senza biglietto. Ci arrivi con la funicolare di Mergellina, fermata Sant'Antonio. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-sant-antonio-posillipo).
 
 via-petrarca:
   usa: [tp-belvedere-orari]
   testo: |
-    La strada panoramica di Posillipo, con il golfo intero sotto di sé. È una strada trafficata: si guarda dagli slarghi panoramici, non dal bordo della carreggiata. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-via-petrarca).
+    La strada panoramica di Posillipo ha il golfo intero sotto di sé, senza orari e senza biglietto. È una strada trafficata: guarda dagli slarghi panoramici, non dal bordo della carreggiata. È anche uno dei punti da cui guardare le regate: vedi [la sua scheda](/come-vederla/dal-lungomare/#luogo-via-petrarca).
 
 palazzo-donn-anna:
   usa: [tp-donnanna-orari]
   testo: |
-    Il palazzo barocco, rimasto incompiuto, che sembra nascere dal mare all'inizio di via Posillipo. È un'abitazione privata e non si visita: si guarda da fuori, passando a piedi o dal mare. Si abbina bene a una passeggiata verso Marechiaro.
+    All'inizio di via Posillipo c'è un palazzo barocco, rimasto incompiuto, che sembra nascere dal mare. È un'abitazione privata e non si visita: lo guardi da fuori, passando a piedi o dal mare. Si abbina bene a una passeggiata verso Marechiaro.
 
 mostra-oltremare:
   usa: [tp-oltremare-orari, tp-oltremare-prezzi]
   testo: |
-    Il grande parco della Mostra d'Oltremare, a Fuorigrotta, con la Fontana dell'Esedra. L'ingresso costa 1 €. Apre alle 7:00; per la chiusura il sito ufficiale dà due orari diversi, le 18:00 o le 20:00. Si arriva con la Linea 6 o la Cumana, fermata Mostra.
+    Il grande parco della Mostra d'Oltremare, a Fuorigrotta, ha la Fontana dell'Esedra. L'ingresso costa 1 €. Apre alle 7:00; per la chiusura il sito ufficiale dà due orari diversi, le 18:00 o le 20:00. Ci arrivi con la Linea 6 o la Cumana, fermata Mostra.
 
 # ---------- Blocco A: gite ----------
 caserta:
   usa: [tp-caserta-orari, tp-caserta-viaggio]
   testo: |
-    La reggia dei Borbone, con gli appartamenti reali e il lungo parco che sale fino alla Grande Cascata. Si arriva in treno da Napoli Centrale: la stazione di Caserta è davanti alla Reggia. È chiusa il martedì. Il parco e il Giardino Inglese chiudono prima degli appartamenti: conviene cominciare da lì.
+    La reggia dei Borbone ha gli appartamenti reali e un lungo parco che sale fino alla Grande Cascata. È chiusa il martedì. Il parco e il Giardino Inglese chiudono prima degli appartamenti: conviene cominciare da lì. Da Napoli Centrale vai in treno: la stazione di Caserta è davanti alla Reggia. I tempi cambiano da treno a treno, e li vedi sul sito di Trenitalia.
 
 pietrarsa:
   usa: [tp-pietrarsa-orari, tp-pietrarsa-viaggio]
   fonti: [tp-pietrarsa-visita]
   testo: |
-    Il museo delle ferrovie nelle officine borboniche sul mare, tra Napoli e Portici, dove nacque la prima ferrovia d'Italia, con locomotive e carrozze d'epoca. Basta mezza giornata, ma nel compositore occupa un giorno a parte. Si arriva in treno, fermata Pietrarsa–San Giorgio a Cremano. Chiuso il lunedì.
+    Il museo delle ferrovie sta nelle officine borboniche sul mare, tra Napoli e Portici, dove nacque la prima ferrovia d'Italia: dentro ci sono locomotive e carrozze d'epoca. Basta mezza giornata, ma nel compositore occupa un giorno a parte. Ci arrivi in treno, fermata Pietrarsa–San Giorgio a Cremano; con il biglietto del treno il museo fa uno sconto sull'intero. È chiuso il lunedì.
 
 sorrento:
   usa: [tp-sorrento-viaggio, tp-correale-orari]
   fonti: [tp-sorrento-centro]
   testo: |
-    La città dall'altra parte del golfo, con un centro antico di stradine, chiese, monasteri e palazzi. Con la Circumvesuviana ci vuole circa un'ora e un quarto. Il Museo Correale è chiuso il lunedì: prima di andare conviene controllare sul suo sito, che porta ancora un vecchio avviso di chiusura.
+    La città dall'altra parte del golfo ha un centro antico di stradine, chiese, monasteri e palazzi. Con la Circumvesuviana ci vuole circa un'ora e un quarto. Il Museo Correale è chiuso il lunedì: la sua pagina porta ancora un vecchio avviso di chiusura, quindi prima di andare controlla sul suo sito.
 

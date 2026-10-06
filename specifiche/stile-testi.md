@@ -103,7 +103,7 @@ Si dice **a parole**, ma con leggerezza: niente «a breve», «prossimamente», 
 
 ## 11. Cosa cambia nel controllo dei testi (`src/lib/regole.mjs`)
 La regola resta: **un'informazione non confermata per il 2027 va detta a parole**. Cambiano le parole ammesse e un caso:
-- **Stampa**: vale anche il **condizionale** («dovrebbe», «dovrebbero», «sarebbe», «è previsto», «sono previsti», «si parla di»), più «racconta», «raccontano», «per i giornali».
+- **Stampa**: vale anche il **condizionale** («dovrebbe», «dovrebbero», «sarebbe», «avrebbe», «è previsto», «sono previsti», «si parla di»), più «racconta», «raccontano», «per i giornali».
 - **Non ancora uscito**: anche «più avanti», «lo diranno», «li diranno», «non è uscito», «appena esce», «da confermare», «non confermato».
 - **Fatti del passato letti sui giornali** (premi delle guide, classifiche, recensioni): una scheda con `comeFatto: true` si scrive come fatto, senza segno e senza parole di cautela; la build la elenca come `[da verificare]` (avviso, non si ferma). Cambia la riga di `CLAUDE.md` sulle informazioni non confermate.
 - Si corregge «voci,» con la virgola (trovato dai test il 06/10/2026).

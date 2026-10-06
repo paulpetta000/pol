@@ -4,60 +4,60 @@
 equipaggio:
   usa: [ac75-cinque, ac75-donna]
   testo: |
-    Cinque velisti, e almeno una è donna. Nel 2024 erano otto: quattro velisti e quattro ciclisti.
+    Cinque velisti, e almeno una è donna. Nel 2024 a bordo erano otto: quattro velisti e quattro ciclisti.
 
 batterie:
   usa: [ac75-batterie]
   testo: |
-    Un sistema a batterie con la stessa potenza di quattro ciclisti. A mano si governa solo il timone.
+    Un sistema a batterie, con la stessa potenza di quattro ciclisti. A mano si governa solo il timone.
 
 precedenze:
   usa: [reg-precedenze, reg-2027-attese]
   testo: |
-    Chi ha le mure a sinistra, cioè il vento da sinistra, lascia passare chi ha le mure a dritta, e chi non lo fa viene penalizzato. Così dicevano le regole del 2024: quelle del 2027 non sono ancora uscite{?reg-precedenze,reg-2027-attese}.
+    Chi ha il vento da sinistra, in gergo le mure a sinistra, lascia strada all'altra barca; se non lo fa, viene penalizzato. Era così con le regole del 2024: quelle del 2027 non sono ancora uscite{?reg-precedenze,reg-2027-attese}.
 
 vittorie:
   usa: [cal-match, cal-semifinali]
   testo: |
-    Vince chi arriva prima a 7. Nelle semifinali della Louis Vuitton Cup ne bastano 5.
+    Sette: vince chi arriva per primo a 7 vittorie. Nelle semifinali della Louis Vuitton Cup ne bastano 5.
 
 ocs:
   usa: [reg-ocs]
   testo: |
-    On Course Side: chi è già oltre la linea quando parte il via viene penalizzato. È la regola del 2024{?reg-ocs}.
+    Chi passa la linea di partenza prima del via è «OCS», dall'inglese On Course Side, e viene penalizzato. Era la regola del 2024{?reg-ocs}.
 
 albero:
   usa: [ac75-misure, ac40-misure]
   testo: |
-    26,5 metri, come un palazzo di otto piani. Quello dell'AC40, secondo Wikipedia, è alto 17,9 metri{?ac40-misure}.
+    26,5 metri: come un palazzo di otto piani. L'albero dell'AC40 dovrebbe essere alto 17,9 metri{?ac40-misure}.
 
 record:
   usa: [ac75-velocita]
   testo: |
-    55,6 nodi, cioè 102,97 km/h: l'ha fatto INEOS Britannia a Barcellona, nel 2024.
+    55,6 nodi, cioè 102,97 km/h: lo ha fatto INEOS Britannia a Barcellona, nel 2024.
 
 penalita:
   usa: [reg-penalita]
   testo: |
-    Deve rallentare e perdere terreno finché non è 75 metri dietro l'avversario, ed entro 60 secondi: così prevedevano le regole del 2024{?reg-penalita}.
+    Deve rallentare e perdere terreno finché non è 75 metri dietro l'avversario, e ha 60 secondi per farlo. Era così con le regole del 2024{?reg-penalita}.
 
 foil:
   fonti: [ac-press-kit]
   testo: |
-    Sono ali sott'acqua: quando la barca prende velocità sollevano lo scafo, che vola sopra il mare.
+    Sono ali che stanno sott'acqua: quando la barca prende velocità sollevano lo scafo, che vola sopra il mare.
 
 prima-regata:
   fonti: [ac-press-kit]
   testo: |
-    Il 22 agosto 1851, attorno all'isola di Wight: vinse la goletta America, che diede il nome alla Coppa.
+    Il 22 agosto 1851, attorno all'isola di Wight. Vinse la goletta America, ed è da lei che la Coppa prende il nome.
 
 piu-coppe:
   fonti: [ac-press-kit]
   testo: |
-    Cinque vittorie: 1995, 2000, 2017, 2021 e 2024, le ultime tre di fila. Alinghi ne ha vinte due, Luna Rossa nessuna.
+    Team New Zealand, con cinque vittorie: 1995, 2000, 2017, 2021 e 2024, le ultime tre di fila. Alinghi ne ha vinte due, Luna Rossa nessuna.
 
 napoli:
   usa: [res-napoli]
   fonti: [ac-press-kit]
   testo: |
-    Nel 2012 e nel 2013 due tappe dell'America's Cup World Series, e nel 2026 una regata preliminare.
+    Sì: nel 2012 e nel 2013 due tappe dell'America's Cup World Series, e nel 2026 una regata preliminare.

@@ -25,7 +25,7 @@ export const cauteleDi = d => [
 // condizionale («dovrebbe», «è previsto»), senza nominare il giornale (guida di stile, specifiche/stile-testi.md).
 /** @type {Record<Cautela, (d: DatiScheda) => RegExp>} */
 export const PAROLE = {
-  stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|\bvoc[ei]\b|raccont|dovrebb|potrebb|sarebb|(?:è|sono) previst|si parla di/i,
+  stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|\bvoc[ei]\b|raccont|dovrebb|potrebb|sarebb|avrebb|(?:è|sono) previst|si parla di/i,
   segnalato: () => /siti non ufficiali|blog|segnalat|non ufficial/i,
   atteso: () => /non (?:\S+ ){0,2}ancora|ancora non|manca(?:no)? ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere|confermare)|non confermat|in attesa|quando usci|non (?:è|sono) (?:\S+ )?uscit|appena esc|più avanti|(?:lo|la|li|le) dirann|aspettiamo/i,
   anno: d => (d.anno === 2024 ? /2024|Barcellona/ : new RegExp(String(d.anno)))

@@ -3,13 +3,13 @@
 cosa-si-sa:
   usa: [big-niente, big-tribune, big-ospitalita, vil-bagnoli-gratis, vil-caracciolo, vil-caracciolo-gratis, vil-2026-gratis]
   testo: |
-    Per il 2027 non sono ancora in vendita biglietti, tribune o pacchetti ufficiali{?big-niente}. Gli organizzatori non hanno ancora detto dove saranno le tribune, quanto costeranno e quando si potranno comprare{?big-tribune}.
+    Per il 2027 non sono ancora in vendita biglietti, tribune o pacchetti ufficiali{?big-niente}. Dove saranno le tribune, quanto costeranno e quando si potranno comprare lo diranno gli organizzatori più avanti{?big-tribune}.
 
-    Lo stesso vale per i pacchetti di ospitalità, a terra e in mare: non si conoscono ancora il fornitore, i prezzi e la pagina per iscriversi{?big-ospitalita}.
+    Lo stesso vale per i pacchetti di ospitalità, a terra e in mare: fornitore, prezzi e pagina per iscriversi non sono ancora usciti{?big-ospitalita}.
 
     ### E gratis?
 
-    Il villaggio di Bagnoli, accanto alle basi delle squadre, sarà a ingresso gratuito: lo scrive il Comune di Napoli. Per quello di via Caracciolo, con i punti di osservazione tipo tribuna ricavati sui promontori, gli organizzatori non hanno ancora detto se si pagherà{?vil-caracciolo-gratis}. Nel 2026 il villaggio sul lungomare era gratuito{?vil-2026-gratis}.
+    Il villaggio di Bagnoli, vicino alle basi delle squadre, sarà a ingresso gratuito: lo scrive il Comune di Napoli. Per il villaggio di via Caracciolo, con i punti di osservazione tipo tribuna ricavati sui promontori, gli organizzatori non hanno ancora detto se l'ingresso sarà gratuito{?vil-caracciolo-gratis}. Nel 2026 il villaggio sul lungomare era gratuito{?vil-2026-gratis}.
 
     Per guardare le regate dall'alto, dai belvedere delle colline e di Posillipo, non serve niente: trovi i punti nella pagina [dal lungomare](/come-vederla/dal-lungomare/).
 
@@ -18,4 +18,4 @@ truffe:
   testo: |
     **Attenzione ai siti non ufficiali.** Il sito ufficiale dell'evento è [americascup.com](https://www.americascup.com/it/home), anche in italiano. Altri siti con nomi simili vendono pacchetti e gadget: americascupitalia.it, per esempio, si presenta come portale dell'evento, ma non abbiamo trovato legami con gli organizzatori.
 
-    I prezzi ufficiali non sono ancora usciti{?big-tribune}: le cifre che trovi sui blog sono stime.
+    I prezzi delle tribune non sono ancora usciti{?big-tribune}: le cifre che trovi sui blog sono stime.

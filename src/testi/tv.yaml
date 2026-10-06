@@ -5,21 +5,21 @@ rai:
   testo: |
     ### Gratis, sulla Rai
 
-    In Italia le regate le vedi in chiaro sulla Rai, che ha i diritti per l'Italia della Louis Vuitton Cup, del Match, delle regate preliminari, della Youth e della Women's America's Cup, su più canali e piattaforme. A che ora si parte ogni giorno, però, non si sa ancora: gli orari delle regate 2027 non sono usciti{?cal-orari}.
+    In Italia le regate le vedi in chiaro sulla Rai, su più canali e piattaforme: la Rai ha i diritti per la Louis Vuitton Cup, il Match, le regate preliminari, la Youth e la Women's America's Cup. A che ora si parte ogni giorno, però, non si sa ancora: gli orari delle regate 2027 non sono usciti{?cal-orari}.
 
 sky:
   usa: [tv-sky]
   testo: |
     ### A pagamento, su Sky e NOW
 
-    Secondo la stampa i diritti a pagamento per l'Italia sono di Sky: le regate andranno sui suoi canali e in streaming su NOW{?tv-sky}.
+    I diritti a pagamento per l'Italia dovrebbero essere di Sky: le regate andrebbero sui suoi canali e in streaming su NOW{?tv-sky}.
 
 youtube:
   usa: [tv-youtube]
   testo: |
     ### Su YouTube
 
-    Il canale ufficiale dell'America's Cup, [youtube.com/@americascup](https://www.youtube.com/@americascup), pubblica regate intere, riassunti e spiegazioni. Alcuni video li trovi anche qui, nella pagina [video da vedere](/capire-la-coppa/video/).
+    Su [youtube.com/@americascup](https://www.youtube.com/@americascup), il canale ufficiale dell'America's Cup, trovi regate intere, riassunti e spiegazioni. Alcuni video li trovi anche qui, nella pagina [video da vedere](/capire-la-coppa/video/).
 
 radio:
   usa: [vil-2026-radio]

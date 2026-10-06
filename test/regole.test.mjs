@@ -39,7 +39,7 @@ test('cautela: ogni stato non confermato vuole le sue parole', () => {
 test('cautela: tutti i modi di dirlo che accettiamo', () => {
   const frasi = {
     stampa: ['Secondo il Mattino', 'Scrivono i giornali', 'Lo riportano due quotidiani', 'Si legge su Repubblica', 'Ci sono indiscrezioni', 'Girano voci di un rinvio', 'Girano voci, nessuna conferma', 'Per la stampa locale',
-      'Il villaggio dovrebbe essere lì', 'Le tribune dovrebbero essere lì', 'Potrebbe cambiare', 'Sarebbe la prima volta', 'È previsto un villaggio', 'Sono previsti maxischermi', 'Si parla di tribune', 'Lo raccontano i giornali locali'],
+      'Il villaggio dovrebbe essere lì', 'Le tribune dovrebbero essere lì', 'Potrebbe cambiare', 'Sarebbe la prima volta', 'Nel 2026 il Comune avrebbe montato le pedane', 'È previsto un villaggio', 'Sono previsti maxischermi', 'Si parla di tribune', 'Lo raccontano i giornali locali'],
     segnalato: ['Secondo alcuni siti non ufficiali', 'Lo dice un blog', 'Ci è stato segnalato', 'Una fonte non ufficiale'],
     atteso: ['Non è ancora uscito', 'Non è stato ancora annunciato', 'Ancora non si conosce', 'Mancano ancora gli orari', 'Non si sa', 'Non sappiamo ancora', 'Nessun annuncio', 'Da annunciare', 'In attesa del bando', 'Quando uscirà lo diremo',
       'Gli orari li diranno gli organizzatori', 'Lo diranno più avanti', 'Ne sapremo di più più avanti', 'Il bando non è uscito', 'I prezzi non sono ancora usciti', 'Appena esce lo scriviamo', 'Data da confermare', 'Non confermato', 'Aspettiamo il bando']
