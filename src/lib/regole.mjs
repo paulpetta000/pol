@@ -69,7 +69,12 @@ export function controllaSegni(chiave, frasi, dichiarate, errori) {
         if (!f) { errori.push(`${chiave}: il segno {?${id}} indica una scheda che non è nell'elenco «usa» del blocco`); continue; }
         segnate.add(id);
         const c = cauteleDi(f.data);
-        if (!c.length) { errori.push(`${chiave}: la scheda "${id}" è confermata per il 2027. Togli il segno {?${id}} e, se c'è, la cautela dalla frase`); continue; }
+        if (!c.length) {
+          errori.push(f.data.comeFatto
+            ? `${chiave}: la scheda "${id}" si scrive come fatto (comeFatto). Togli il segno {?${id}} e il «secondo…» dalla frase`
+            : `${chiave}: la scheda "${id}" è confermata per il 2027. Togli il segno {?${id}} e, se c'è, la cautela dalla frase`);
+          continue;
+        }
         for (const k of c) {
           const re = PAROLE[k](f.data);
           if (!re.test(nudo(testo)) && !(intro && re.test(nudo(intro)))) {
@@ -93,3 +98,39 @@ export const TIPI_DEBOLI = new Set(['enciclopedia', 'blog', 'altro']);
 /** @param {string} stato @param {string[]} tipiFonti */
 export const confermataConFontiDeboli = (stato, tipiFonti) =>
   stato === 'confermato' && tipiFonti.length > 0 && tipiFonti.every(t => TIPI_DEBOLI.has(t));
+
+// Un testo diviso in pezzi: titoletti, paragrafi, elenchi (righe che cominciano con «- »). Lo usano la build
+// (src/lib/testi.ts, per l'HTML) e i test (test/testi.test.mjs).
+/** @typedef {{ tipo: 'h3' | 'h4' | 'p' | 'ul'; righe: string[] }} Pezzo */
+/** @param {string} testo @returns {Pezzo[]} */
+export function pezzi(testo) {
+  return testo.trim().split(/\n\s*\n/).map(b => {
+    const righe = b.split('\n').map(r => r.trim()).filter(Boolean);
+    if (righe[0].startsWith('#### ')) return { tipo: 'h4', righe: [righe.join(' ').slice(5)] };
+    if (righe[0].startsWith('### ')) return { tipo: 'h3', righe: [righe.join(' ').slice(4)] };
+    if (righe.every(r => r.startsWith('- '))) return { tipo: 'ul', righe: righe.map(r => r.slice(2)) };
+    return { tipo: 'p', righe: [righe.join(' ')] };
+  });
+}
+
+// Le frasi da controllare di un blocco, ognuna con la frase d'apertura della sua sottosezione. Le voci di un
+// elenco valgono con la frase d'apertura del blocco (per esempio «Nel 2026 funzionava così»).
+/** @param {Pezzo[]} ps @param {{ testo: string }[]} [voci] */
+export function frasiDaControllare(ps, voci = []) {
+  /** @type {{ testo: string; intro?: string }[]} */
+  const frasi = [];
+  /** @type {string | undefined} */
+  let intro;
+  for (const p of ps) {
+    if (p.tipo === 'h3' || p.tipo === 'h4') { intro = undefined; continue; }
+    if (intro === undefined && p.tipo === 'p') intro = p.righe[0];
+    for (const r of p.righe) frasi.push({ testo: r, intro });
+  }
+  const introVoci = ps.find(p => p.tipo === 'p')?.righe[0];
+  for (const v of voci) frasi.push({ testo: v.testo, intro: introVoci });
+  return frasi;
+}
+
+// Lista nera della guida di stile (specifiche/stile-testi.md, punto 9): parole da brochure, cliché e fonti citate
+// dove non serve. La controlla npm test (test/testi.test.mjs), non la build.
+export const LISTA_NERA = /\b(?:perl[ae]|gioiell[oi]|angolo di paradiso|imperdibil[ei]|da non perdere|mozzafiato|suggestiv[oaie]|pittoresc[oaih]\w*|vibrant[ei]|incastonat\w*|tuffo nel passato|dove il tempo si è fermato|deliziosi?[oaie]?|squisit[oaie]|esplosione di sapori|leccarsi i baffi|eccellenz[ae]|tappa obbligata|splendida cornice|ambiente accogliente|tradizione e innovazione|a breve|prossimamente|secondo il locale)\b/i;

@@ -13,7 +13,7 @@
 // con «- » per un elenco; **grassetto**, *corsivo*, [parole](/indirizzo/).
 import { getEntry } from 'astro:content';
 import { getFatti, getFonti, type Fatto, type Fonte } from './fatti';
-import { firma, cautelaScheda as cautela, controllaSegni, nudo, SEGNO } from './regole.mjs';
+import { firma, cautelaScheda as cautela, controllaSegni, nudo, SEGNO, pezzi, frasiDaControllare } from './regole.mjs';
 import firmeSalvate from '../testi/firme.json';
 
 export type Blocco = { nome: string; html: string; nudo: string; voci: { num: string; html: string }[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean };
@@ -38,16 +38,7 @@ function inline(s: string) {
     .replace(/\u0001/g, '<sup class="cautela" aria-hidden="true">*</sup>');
 }
 
-type Pezzo = { tipo: 'h3' | 'h4' | 'p' | 'ul'; righe: string[] };
-function pezzi(testo: string): Pezzo[] {
-  return testo.trim().split(/\n\s*\n/).map(b => {
-    const righe = b.split('\n').map(r => r.trim()).filter(Boolean);
-    if (righe[0].startsWith('#### ')) return { tipo: 'h4', righe: [righe.join(' ').slice(5)] };
-    if (righe[0].startsWith('### ')) return { tipo: 'h3', righe: [righe.join(' ').slice(4)] };
-    if (righe.every(r => r.startsWith('- '))) return { tipo: 'ul', righe: righe.map(r => r.slice(2)) };
-    return { tipo: 'p', righe: [righe.join(' ')] };
-  });
-}
+type Pezzo = ReturnType<typeof pezzi>[number];
 
 const html = (p: Pezzo) =>
   p.tipo === 'ul' ? `<ul>${p.righe.map(r => `<li>${inline(r)}</li>`).join('')}</ul>` : `<${p.tipo}>${inline(p.righe[0])}</${p.tipo}>`;
@@ -80,18 +71,8 @@ async function carica(pagina: string): Promise<TestiPagina> {
       }
     }
     // segni di cautela
-    const frasi: { testo: string; intro?: string }[] = [];
-    let intro: string | undefined;
     const ps = d.testo ? pezzi(d.testo) : [];
-    for (const p of ps) {
-      if (p.tipo === 'h3' || p.tipo === 'h4') { intro = undefined; continue; }
-      const righe = p.righe;
-      if (intro === undefined && p.tipo === 'p') intro = righe[0];
-      for (const r of righe) frasi.push({ testo: r, intro });
-    }
-    // Le voci di un elenco valgono con la frase d'apertura del blocco (per esempio «Nel 2026 funzionava così»)
-    const introVoci = ps.find(p => p.tipo === 'p')?.righe[0];
-    for (const v of d.voci ?? []) frasi.push({ testo: v.testo, intro: introVoci });
+    const frasi = frasiDaControllare(ps, d.voci ?? []);
     controllaSegni(chiave, frasi, f, errori);
 
     const cautela = frasi.some(x => x.testo.match(SEGNO));
