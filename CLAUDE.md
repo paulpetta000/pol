@@ -10,7 +10,8 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 - `npm run build` · costruisce il sito; **si ferma da sola** se mancano fonti o testi da rileggere
 - `npm run check:links` · dopo la build, controlla i link interni
 - `npm run testi:firma` · dopo aver riletto un testo cambiato, lo firma di nuovo
-- Node 22.12 o più recente. Non ci sono test automatici: i controlli sono la build e i link.
+- `npm test` · i test con `node:test` (regole dei testi, firme, date, link): pochi secondi, non fermano Vercel
+- Node 22.12 o più recente.
 
 ## Dove sono le cose
 - Dati: `src/data/` (schede in `fatti.yaml`, fonti in `fonti.yaml`, tappe degli itinerari in `tappe.yaml`)
@@ -35,7 +36,7 @@ Rispondi in italiano semplice e spiega i termini tecnici.
 - Per una funzione nuova e grande scrivi prima una **specifica** corta in `specifiche/` (obiettivo, regole, casi limite, controlli da fare, compiti da spuntare)
   e fala approvare, poi costruisci. Per le piccole modifiche non serve.
 - Alla fine di un blocco fermati, mostra cosa c'è da rivedere e aspetta l'OK.
-- Prima di dire «fatto»: build senza errori e `check:links` pulito.
+- Prima di dire «fatto»: `npm test` verde, build senza errori e `check:links` pulito.
 - Aggiorna `PROGRESS.md` a fine lavoro, in poche righe.
 
 ## Guidare Enrico passo passo (regola di Enrico, 03/10/2026)

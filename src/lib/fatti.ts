@@ -1,5 +1,6 @@
 import { getCollection, getEntry, type CollectionEntry } from 'astro:content';
 import { ITINERARI_ONLINE } from '../config/sito';
+import { confermataConFontiDeboli } from './regole.mjs';
 
 // Schede, fonti e foto degli itinerari (id «tp-»): restano fuori dagli elenchi generali (Fonti, Note legali)
 // finché la pagina degli itinerari non è online
@@ -9,7 +10,8 @@ export type Fonte = CollectionEntry<'fonti'>;
 export type Fatto = CollectionEntry<'fatti'> & { fontiRisolte: Fonte[] };
 
 let cacheFonti: Map<string, Fonte> | null = null;
-let avvisati = new Set<string>();
+const avvisati = new Set<string>();
+const avvisatiDeboli = new Set<string>();
 
 export async function tutteLeFonti() {
   if (!cacheFonti) cacheFonti = new Map((await getCollection('fonti')).map(f => [f.id, f]));
@@ -17,7 +19,8 @@ export async function tutteLeFonti() {
 }
 
 // Restituisce le schede richieste, con le fonti già risolte.
-// Se una scheda manca la build si ferma; se è da ricontrollare, la build avvisa.
+// Se una scheda manca la build si ferma; se è da ricontrollare, o se è «confermata» ma ha solo fonti
+// deboli (enciclopedia, blog, altro), la build avvisa senza fermarsi.
 export async function getFatti(ids: string[]): Promise<Map<string, Fatto>> {
   const fonti = await tutteLeFonti();
   const out = new Map<string, Fatto>();
@@ -32,6 +35,10 @@ export async function getFatti(ids: string[]): Promise<Map<string, Fatto>> {
     if (f.data.ricontrollare && f.data.ricontrollare < new Date() && !avvisati.has(id)) {
       avvisati.add(id);
       console.warn(`\x1b[33m[da ricontrollare]\x1b[0m la scheda "${id}" andava ricontrollata entro il ${f.data.ricontrollare.toISOString().slice(0, 10)}`);
+    }
+    if (confermataConFontiDeboli(f.data.stato, risolte.map(r => r.data.tipo)) && !avvisatiDeboli.has(id)) {
+      avvisatiDeboli.add(id);
+      console.warn(`\x1b[33m[fonti deboli]\x1b[0m la scheda "${id}" è confermata ma ha solo fonti di tipo ${[...new Set(risolte.map(r => r.data.tipo))].join(', ')}: aggiungi una fonte ufficiale, di dati o di stampa, oppure cambia lo stato`);
     }
     out.set(id, { ...f, fontiRisolte: risolte });
   }
@@ -59,7 +66,7 @@ export function fontiDi(fatti: Iterable<Fatto>, extra: Fonte[] = []): Fonte[] {
   const m = new Map<string, Fonte>();
   for (const f of fatti) for (const s of f.fontiRisolte) m.set(s.id, s);
   for (const s of extra) m.set(s.id, s);
-  const peso = { ufficiale: 0, dati: 1, stampa: 2, altro: 3 } as const;
+  const peso = { ufficiale: 0, dati: 1, stampa: 2, enciclopedia: 3, blog: 4, altro: 5 } as const;
   return [...m.values()].sort((a, b) => peso[a.data.tipo] - peso[b.data.tipo] || a.data.editore.localeCompare(b.data.editore));
 }
 

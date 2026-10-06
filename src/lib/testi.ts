@@ -12,52 +12,19 @@
 // Scrittura dei testi: paragrafi separati da una riga vuota; «### Titoletto»; righe che cominciano
 // con «- » per un elenco; **grassetto**, *corsivo*, [parole](/indirizzo/).
 import { getEntry } from 'astro:content';
-import { createHash } from 'node:crypto';
 import { getFatti, getFonti, type Fatto, type Fonte } from './fatti';
+import { firma, cautelaScheda as cautela, controllaSegni, nudo, SEGNO } from './regole.mjs';
 import firmeSalvate from '../testi/firme.json';
 
-type Cautela = 'stampa' | 'segnalato' | 'atteso' | 'anno';
 export type Blocco = { nome: string; html: string; nudo: string; voci: { num: string; html: string }[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean };
 export type TestiPagina = { pagina: string; blocchi: string[]; fatti: Fatto[]; fonti: Fonte[]; cautela: boolean; b: (nome: string) => Blocco };
 
-// Impronta di una scheda: cambia se cambiano testo, stato o anno (stessa formula di scripts/testi-firma.mjs)
-export const firma = (f: { testo: string; stato: string; anno: number }) =>
-  createHash('sha1').update(JSON.stringify([f.testo, f.stato, f.anno])).digest('hex').slice(0, 10);
+// Impronta delle schede e parole di cautela: le regole stanno in src/lib/regole.mjs (una sola copia,
+// usata anche da scripts/testi-firma.mjs e dai test).
+// Una scheda mostrata così com'è (orari e prezzi delle tappe): se non è confermata il testo deve dirlo.
+export const cautelaScheda = (f: Fatto): { segno: boolean; errore?: string } => cautela(f);
 
-const cauteleDi = (f: Fatto): Cautela[] => [
-  ...(f.data.stato !== 'confermato' ? [f.data.stato] : []),
-  ...(f.data.anno !== 2027 && !f.data.storico ? ['anno' as const] : [])
-];
-
-// Parole che, nella frase, dicono che l'informazione non è confermata per il 2027
-const PAROLE: Record<Cautela, (f: Fatto) => RegExp> = {
-  stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|voc[ei] /i,
-  segnalato: () => /siti non ufficiali|blog|segnalat|non ufficial/i,
-  atteso: () => /non (?:\S+ ){0,2}ancora|ancora non|manca(?:no)? ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere)|in attesa|quando usci/i,
-  anno: f => (f.data.anno === 2024 ? /2024|Barcellona/ : new RegExp(String(f.data.anno)))
-};
-const SPIEGA: Record<Cautela, string> = {
-  stampa: 'che viene dalla stampa («secondo la stampa», «scrivono i giornali»…)',
-  segnalato: 'che viene da siti non ufficiali («secondo alcuni siti non ufficiali»…)',
-  atteso: 'che non è ancora uscita («non è ancora stato annunciato»…)',
-  anno: "a quale anno si riferisce («nel 2026», «nel 2024»…)"
-};
-
-// Una scheda mostrata così com'è (per esempio orari e prezzi delle tappe degli itinerari): se non è confermata
-// per il 2027 il suo testo deve dirlo a parole. Restituisce le cautele (per il segno *) o un errore.
-export function cautelaScheda(f: Fatto): { segno: boolean; errore?: string } {
-  const c = cauteleDi(f);
-  for (const k of c) {
-    if (!PAROLE[k](f).test(f.data.testo)) return { segno: true, errore: `La scheda "${f.id}" non è confermata per il 2027: il suo testo deve dire ${SPIEGA[k]}` };
-  }
-  return { segno: c.length > 0 };
-}
-
-const SEGNO = /\{\?([a-z0-9,\s-]+)\}/g;
 const esc = (s: string) => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-// Testo nudo, per cercare le parole di cautela
-const nudo = (s: string) => s.replace(SEGNO, '').replace(/\*\*|\*/g, '').replace(/\[([^\]]+)\]\([^)]+\)/g, '$1');
-
 function inline(s: string) {
   return esc(s)
     .replace(SEGNO, '\u0001')
@@ -84,33 +51,6 @@ function pezzi(testo: string): Pezzo[] {
 
 const html = (p: Pezzo) =>
   p.tipo === 'ul' ? `<ul>${p.righe.map(r => `<li>${inline(r)}</li>`).join('')}</ul>` : `<${p.tipo}>${inline(p.righe[0])}</${p.tipo}>`;
-
-// Controlla i segni di cautela di un testo. "intro" è la frase d'apertura che vale per tutta la sottosezione.
-function controllaSegni(chiave: string, frasi: { testo: string; intro?: string }[], dichiarate: Map<string, Fatto>, errori: string[]) {
-  const segnate = new Set<string>();
-  for (const { testo, intro } of frasi) {
-    for (const m of testo.matchAll(SEGNO)) {
-      for (const id of m[1].split(',').map(x => x.trim()).filter(Boolean)) {
-        const f = dichiarate.get(id);
-        if (!f) { errori.push(`${chiave}: il segno {?${id}} indica una scheda che non è nell'elenco «usa» del blocco`); continue; }
-        segnate.add(id);
-        const c = cauteleDi(f);
-        if (!c.length) { errori.push(`${chiave}: la scheda "${id}" è confermata per il 2027. Togli il segno {?${id}} e, se c'è, la cautela dalla frase`); continue; }
-        for (const k of c) {
-          const re = PAROLE[k](f);
-          if (!re.test(nudo(testo)) && !(intro && re.test(nudo(intro)))) {
-            errori.push(`${chiave}: la frase con {?${id}} deve dire ${SPIEGA[k]}. Frase: «${nudo(testo).slice(0, 90)}…»`);
-          }
-        }
-      }
-    }
-  }
-  for (const [id, f] of dichiarate) {
-    if (cauteleDi(f).length && !segnate.has(id)) {
-      errori.push(`${chiave}: la scheda "${id}" non è confermata per il 2027 (${[f.data.stato, f.data.anno].join(', ')}). Aggiungi {?${id}} nella frase che la usa e dillo a parole`);
-    }
-  }
-}
 
 // Carica i testi di una pagina, li controlla e li trasforma in HTML (una volta sola per build)
 const giaCaricati = new Map<string, Promise<TestiPagina>>();

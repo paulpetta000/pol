@@ -12,7 +12,8 @@ const fonti = defineCollection({
     titolo: z.string().min(3),
     editore: z.string().min(2),
     url: z.string().url(),
-    tipo: z.enum(['ufficiale', 'stampa', 'dati', 'altro']),
+    // enciclopedia: Wikipedia; blog: blog di viaggio e siti di guide. Stesso elenco di TIPI_FONTE in src/lib/regole.mjs
+    tipo: z.enum(['ufficiale', 'stampa', 'dati', 'enciclopedia', 'blog', 'altro']),
     pubblicato: data.optional(),
     controllato: data,
     letta: z.boolean(),

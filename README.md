@@ -9,6 +9,8 @@ npm install
 npm run dev      # sito in locale su http://localhost:4321
 npm run build    # costruisce il sito in dist/
 npm run check:links  # dopo la build: controlla che ogni link interno porti a una pagina o a un file
+npm test         # i test (pochi secondi, vedi «Test» in fondo)
+npm run testi:firma  # dopo aver riletto un testo che usa una scheda cambiata
 ```
 
 ## Dove sono le informazioni
@@ -17,7 +19,7 @@ npm run check:links  # dopo la build: controlla che ogni link interno porti a un
 |---|---|
 | `src/data/fatti.yaml` | Le schede: testo, stato (`confermato` / `stampa` / `atteso`), fonti, data di controllo, data entro cui ricontrollare |
 | `src/testi/*.yaml` | I testi discorsivi delle pagine, con le schede che usano (vedi sotto) |
-| `src/data/fonti.yaml` | Le fonti, con indirizzo e data di controllo |
+| `src/data/fonti.yaml` | Le fonti, con indirizzo, tipo e data di controllo (tipi: vedi «Cercare una fonte») |
 | `src/data/eventi.ts` | Il calendario 2027 (anche i file .ics) |
 | `src/data/squadre.yaml` | Le 7 squadre |
 | `src/data/luoghi.yaml` | Punti della mappa e schede "Dove mi metto?" (gruppo, fonte `perche`, foto) |
@@ -74,6 +76,34 @@ Altre cose utili:
 3. Se la fonte è nuova, aggiungila in `fonti.yaml`.
 4. `npm run build` per controllare. Se la scheda è usata da un testo in `src/testi/`, rileggi il testo, correggilo e poi `npm run testi:firma`.
 
+## Cercare una fonte
+
+Ogni fonte in `fonti.yaml` ha un `tipo`. Il tipo è quello della **pagina**, non di chi la pubblica: un articolo di cronaca di Napolike è `stampa`, la sua pagina-guida su una chiesa è `blog`.
+
+| Tipo | Cos'è | Sul sito |
+|---|---|---|
+| `ufficiale` | Organizzatori, squadre, Comune, ministeri, aziende dei trasporti, il sito del museo o del locale | Ufficiale |
+| `dati` | Dati aperti (OpenStreetMap, Copernicus, feed GTFS) | Dati aperti |
+| `stampa` | Giornali e testate (anche guide gastronomiche come Gambero Rosso) | Stampa |
+| `enciclopedia` | Wikipedia | Enciclopedia |
+| `blog` | Blog di viaggio e pagine-guida di siti non ufficiali | Blog e guide |
+| `altro` | Il resto: copie di documenti, albi d'onore, siti di cui non si conosce il gestore | Altro |
+
+Una scheda `confermato` che ha **solo** fonti `enciclopedia`, `blog` o `altro` fa comparire nella build l'avviso `[fonti deboli]` (la build non si ferma): aggiungi una fonte più forte o cambia lo stato (`segnalato` se viene da blog o siti non ufficiali).
+
+**Per questo tipo di informazione cerca prima qui:**
+
+| Informazione | Prima qui | Se non c'è |
+|---|---|---|
+| Date, orari, campo di regata, biglietti della Coppa | americascup.com, siti delle squadre | ANSA, Il Mattino, Scuttlebutt (stato `stampa`) o «non ancora uscito» (`atteso`) |
+| Regole di regata | Protocollo e regolamento sul sito dell'America's Cup e di World Sailing | una copia del regolamento (`altro`), detto nella nota della fonte |
+| Strade chiuse, ordinanze, eventi in città | Comune di Napoli, Capitaneria di porto | Il Mattino, ANSA (`stampa`) |
+| Bus, metro, funicolari, treni, traghetti | ANM (anche il feed GTFS), EAV, Trenitalia, Caremar | nessun ripiego: senza fonte ufficiale non si scrive |
+| Musei, chiese, siti archeologici: orari e prezzi | il sito del luogo, il Ministero della Cultura | pagine-guida (`blog`) solo se il luogo non ha un sito; la scheda resta da ricontrollare |
+| Locali: orari e prezzi | il sito del locale; la sua scheda Google (decisione di Enrico, 04/10/2026: dal cloud non si legge) | guide gastronomiche per i giudizi, non per gli orari |
+| Strade, distanze, quote, mappa | OpenStreetMap, Copernicus (`dati`) | — |
+| Storia, glossario, piatti tipici (cose che non cambiano) | Wikipedia (`enciclopedia`) va bene | meglio aggiungere una fonte ufficiale per le date |
+
 ## Itinerari (Rilascio 3)
 
 - **Locali** (blocco C, 04/10/2026): `src/data/locali.yaml`, controllati da `src/lib/locali.ts` (le ore di «apertura» devono comparire nella scheda `lc-<id>-orari`; la fascia di prezzo la calcola la build dal «prezzoBase»). Schede e fonti con id `lc-`, testi brevi in `src/testi/locali.yaml`, testi della pagina e due righe sui piatti in `src/testi/dove-mangiare.yaml`. I locali entrano nei tempi tra le tappe: dopo averne aggiunto o spostato uno, rifare i tempi con `scripts/itinerari/`.
@@ -83,6 +113,17 @@ Altre cose utili:
 - **La pagina** `/napoli/itinerari/` (`src/pages/napoli/itinerari/`): il compositore. Il calcolo (orari, avvisi, ordine più corto, link) sta in `src/lib/itinerari/` e non sa niente di Napoli: la città arriva come dati da `napoli.ts` (tappe, tempi, miniature, giorni delle regate da `src/data/eventi.ts`). Lo script della pagina è in `src/scripts/itinerari/` (`app.ts`; `mappa.ts` si carica solo quando apri la mappa; `memoria.ts` salva nel browser; `trascina.ts` per riordinare). Stile in `src/styles/itinerari.css`; caratteri Barlow con `node scripts/font/barlow.mjs`.
 - **Itinerari pronti**: `src/data/itinerari-pronti.yaml` (descrizioni in `src/testi/itinerari.yaml`, blocchi `pronto-<id>`). La build li ricalcola: si ferma se un giorno non ci sta negli orari, se una tappa è lontana dalle altre, se si arriva tardi alle regate o se esiste un ordine più corto di almeno 5 minuti (e lo stampa).
 - **Link condivisi**: tutto dopo il «#» (`n` nome, `d` data del primo giorno, `w=1` solo a piedi, `g` un giorno: `0930-1900.duomo.sansevero`, `@pompei` per una gita). Un link vecchio con una tappa che non esiste più si apre lo stesso, senza quella tappa.
+
+## Test
+
+`npm test` (con `node:test`, già dentro Node: nessun pacchetto in più) controlla in pochi secondi, senza costruire il sito:
+- le **regole dei testi**: parole di cautela («secondo la stampa», «non è ancora uscito», l'anno), segni `{?id}`, risultati storici (`test/regole.test.mjs`). Le regole stanno in un solo file, `src/lib/regole.mjs`, usato dalla build, da `npm run testi:firma` e dai test: se allarghi le parole ammesse, aggiungi le frasi nuove al test «tutti i modi di dirlo»;
+- la **firma**: che `src/testi/firme.json` corrisponda alle schede di oggi;
+- le **date** delle schede e delle fonti (niente nel futuro, «ricontrollare» dopo «controllato») e i tipi di fonte (`test/dati.test.mjs`);
+- il **controllo dei link**, provato su un sito finto (`test/link.test.mjs`);
+- le **date in italiano** di `src/lib/formato.ts`, in cinque fusi orari (`test/date.test.mjs`).
+
+I test non fermano la pubblicazione su Vercel: si eseguono prima di dire «fatto», insieme a build e `check:links`.
 
 ## Altro
 

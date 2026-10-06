@@ -14,7 +14,7 @@ const fonti = fontiDi(lista, altre);
 // La data più vecchia tra schede e fonti: tutto è stato controllato almeno da quel giorno
 const quando = controlloMenoRecente(lista, altre);
 const segno = cautela || testi.some(t => t.cautela);
-const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', altro: 'Altro' } as const;
+const TIPO = { ufficiale: 'Ufficiale', stampa: 'Stampa', dati: 'Dati aperti', enciclopedia: 'Enciclopedia', blog: 'Blog e guide', altro: 'Altro' } as const;
 ---
 {fonti.length > 0 && (
   <section class="section fonti-pagina" aria-labelledby="fonti-h">

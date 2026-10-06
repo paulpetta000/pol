@@ -1,6 +1,6 @@
 # PROGRESS
 
-_Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
+_Ultimo aggiornamento: 06/10/2026 (revisione tecnica, passo B). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
 ## Cosa fa Enrico adesso (04/10/2026, blocco C pubblicato su `main`)
 1. Aprire il sito pubblicato (https://napoli-a-vela.vercel.app) dopo che Vercel ha finito (1-2 minuti) e guardare «Dove mangiare» e gli itinerari sul telefono.
@@ -10,7 +10,7 @@ _Ultimo aggiornamento: 04/10/2026 (blocco C). La storia completa dei rilasci (1,
 
 ## Revisione tecnica del 06/10/2026 (analisi approvata da Enrico; A fatto)
 - **A, fatto**: contraddizioni di questo file, 4 schermate tolte, riga sugli id nel README, due frasi in `CLAUDE.md` (funzioni nuove, cosa conta come fallimento).
-- **B, primo passo del Blocco 3** (da approvare ancora i dettagli): `npm test` con `node:test` e zero pacchetti nuovi (cautela, firma con formula unica, link, date), avviso che non ferma la build per schede «confermate» con sole fonti `altro` (oggi 4: `reg-partenza`, `reg-precedenze`, `reg-penalita`, `tp-donnanna-orari`), tabella «per questo tipo di informazione cerca prima qui» nel README, divisione di `altro`.
+- **B, fatto il 06/10/2026 (ramo `ccr-bbcbba96-mzdfbz`, da pubblicare con l'OK di Enrico)**: `npm test` con `node:test`, zero pacchetti nuovi, 22 test (cautela, firma, date, link; non fermano Vercel, scelta di Enrico). Regole in un solo file, `src/lib/regole.mjs` (la firma era copiata in due posti). Fonti `altro` divise: 26 `enciclopedia` (Wikipedia), 4 `blog`, 4 restano `altro`. Avviso `[fonti deboli]` nella build, che non la ferma: oggi `reg-partenza`, `reg-precedenze`, `reg-penalita`, `tp-donnanna-orari`, da sistemare. Tabelle «Cercare una fonte» e «Test» nel README. Trovato dai test: la regola accetta «voci» solo se seguito da uno spazio (non «voci,»): da sistemare quando si allargano le parole nel Blocco 3.
 - **C**: test del calcolo della giornata, dei tempi compressi e degli orari dei locali all'inizio del Blocco D; script per i link esterni con «dati che si tengono aggiornati da soli»; axe e Lighthouse come comando.
 - **Deciso da Enrico il 06/10/2026**: niente pacchetti nuovi quando se ne può fare a meno (regola in `CLAUDE.md`); Playwright resta fuori dal progetto, si usa quello del cloud.
 

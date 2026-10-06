@@ -396,7 +396,7 @@
   titolo: "Dove vedere gratis le regate dell'America's Cup a Napoli: la mia guida ai punti panoramici"
   editore: Le avventure di Anna Pernice (blog di viaggi)
   url: https://www.annapernice.com/dove-vedere-gratis-le-regate-dellamericas-cup-a-napoli-la-mia-guida-ai-punti-panoramici/
-  tipo: altro
+  tipo: blog
   pubblicato: 2026-09-21
   controllato: 2026-09-30
   letta: true
@@ -405,7 +405,7 @@
   titolo: "I migliori panorami di Napoli"
   editore: Vieni a Napoli (blog di viaggi)
   url: https://www.vienianapoli.com/2024/04/BEST-PANORAMAS-NAPLES-.html
-  tipo: altro
+  tipo: blog
   pubblicato: 2024-04-01
   controllato: 2026-09-30
   letta: true
@@ -416,7 +416,7 @@
   titolo: "Peter Burling (sailor)"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/Peter_Burling_(sailor)
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-27
   letta: false
 
@@ -466,7 +466,7 @@
   titolo: "AC75"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/AC75
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -474,7 +474,7 @@
   titolo: "AC40"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/AC40
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -534,7 +534,7 @@
   titolo: "America's Cup"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/America%27s_Cup
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -542,7 +542,7 @@
   titolo: "2013 America's Cup"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/2013_America%27s_Cup
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -550,7 +550,7 @@
   titolo: "1983 America's Cup"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/1983_America%27s_Cup
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -566,7 +566,7 @@
   titolo: "Andatura (vela)"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Andatura_(vela)
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -574,7 +574,7 @@
   titolo: "Virata (nautica)"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Virata_(nautica)
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -582,7 +582,7 @@
   titolo: "Abbattuta (strambata)"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Abbattuta
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -590,7 +590,7 @@
   titolo: "Nodo (unità di misura)"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Nodo_(unit%C3%A0_di_misura)
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -598,7 +598,7 @@
   titolo: "Velocity made good"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/Velocity_made_good
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -606,7 +606,7 @@
   titolo: "1992 America's Cup"
   editore: Wikipedia
   url: https://en.wikipedia.org/wiki/1992_America%27s_Cup
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-09-30
   letta: true
 
@@ -683,7 +683,7 @@
   titolo: "Chiesa del Gesù Nuovo"
   editore: Napolike
   url: https://www.napolike.it/chiesa-del-gesu-nuovo-napoli
-  tipo: altro
+  tipo: blog
   controllato: 2026-10-02
   letta: true
   nota: "Sito non ufficiale: il sito della chiesa non mostra gli orari"
@@ -692,7 +692,7 @@
   titolo: "Chiesa di San Gregorio Armeno"
   editore: Napolike
   url: https://www.napolike.it/point/chiesa-san-gregorio-armeno-napoli
-  tipo: altro
+  tipo: blog
   controllato: 2026-10-02
   letta: true
   nota: "Sito non ufficiale: non abbiamo trovato un sito ufficiale della chiesa"
@@ -2115,7 +2115,7 @@
   titolo: "Pizza Margherita"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Pizza_Margherita
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2123,7 +2123,7 @@
   titolo: "Pizza alla marinara"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Pizza_marinara
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2131,7 +2131,7 @@
   titolo: "Pizza fritta"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Pizza_fritta
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2139,7 +2139,7 @@
   titolo: "Frittata di pasta"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Frittatina_di_pasta
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2147,7 +2147,7 @@
   titolo: "Genovese (sugo)"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Genovese_(sugo)
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2155,7 +2155,7 @@
   titolo: "Ragù napoletano"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Rag%C3%B9_napoletano
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2163,7 +2163,7 @@
   titolo: "Cucina napoletana"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Cucina_napoletana
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2171,7 +2171,7 @@
   titolo: "Spaghetti alle vongole"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Spaghetti_alle_vongole
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2179,7 +2179,7 @@
   titolo: "Frittura di pesce"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Frittura_di_pesce
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2187,7 +2187,7 @@
   titolo: "Parmigiana"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Parmigiana
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2195,7 +2195,7 @@
   titolo: "Baccalà"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Bacc%C3%A0l%C3%A0
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2203,7 +2203,7 @@
   titolo: "Sfogliatella"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Sfogliatella
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2211,7 +2211,7 @@
   titolo: "Babà"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Bab%C3%A0
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
 
@@ -2219,6 +2219,6 @@
   titolo: "Pastiera"
   editore: Wikipedia
   url: https://it.wikipedia.org/wiki/Pastiera
-  tipo: altro
+  tipo: enciclopedia
   controllato: 2026-10-04
   letta: true
