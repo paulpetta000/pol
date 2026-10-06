@@ -2,6 +2,12 @@
 
 _Ultimo aggiornamento: 06/10/2026 (Blocco 3, stile dei testi). La storia completa dei rilasci (1, 1.1, 2, 2.1, 2.2, blocchi 1 e 2 del Rilascio 3, con i controlli fatti) è in `archivio/PROGRESS-fino-al-2026-10-03.md`: leggila solo se ti serve un dettaglio._
 
+## Separazione degli itinerari (06/10/2026, decisione di Enrico)
+- Gli itinerari e «Dove mangiare» sono diventati un sito a parte, **Nextstop** (repository `paulpetta000/Nextstop`, https://nextstop-alpha.vercel.app). Specifica approvata: `specifiche/sito-itinerari-separazione.md`.
+- Enrico ora lavora **solo su Nextstop**. Il Blocco 3 di Napoli a Vela (grafica, logo, 7 proposte) aspetta.
+- **Da fare qui più avanti** (sessione apposta, su questo repository): pagina ponte su `/napoli/itinerari/` e `/napoli/dove-mangiare/` (passa il «#» dei link condivisi e offre gli itinerari salvati sul telefono, fino al 31/12/2026, poi 308), riquadro e link verso Nextstop in `/napoli/` e in home, togliere codice, dati, foto `tp-` e stile «Orario», Privacy, `vercel.json` (posizione), service worker, README e CLAUDE. Fino ad allora i dati degli itinerari esistono in due copie: si aggiornano **solo in Nextstop**.
+- Controllo di coerenza del 06/10/2026: 24/40, rapporto in `design/controllo-coerenza-2026-10-06.md` (obiettivo di Enrico: almeno 35/40 con la grafica nuova). Domanda sul 3D: va bene il punto 7 del prompt. VectorLab e consistent-ui lette per intero (solo testo, pulite), **non copiate** nel progetto (scelta di Enrico).
+
 ## Cosa fa Enrico adesso (06/10/2026, stile dei testi pubblicato su `main` con il suo OK)
 1. Guardare i testi nuovi sul sito pubblico (https://napoli-a-vela.vercel.app) e dire cosa non suona.
 2. Aprire una **sessione nuova nel cloud** (repository `paulpetta000/pol`, ramo `main`, modello Opus, effort alto, extra per scegliere la grafica) per la **seconda parte del Blocco 3**: estetica, due proposte grafiche, logo. All'inizio la sessione elenca le skill che vede: se ci sono VectorLab e consistent-ui (già attivi sul suo account) li legge e li copia in `.claude/skills/`; se no, sessione locale sul suo computer.
