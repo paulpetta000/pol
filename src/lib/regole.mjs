@@ -3,7 +3,7 @@
 // Qui c'è l'unica copia di ogni formula: se cambia, cambia per tutti.
 import { createHash } from 'node:crypto';
 
-/** @typedef {{ testo: string; stato: string; anno?: number; storico?: boolean }} DatiScheda */
+/** @typedef {{ testo: string; stato: string; anno?: number; storico?: boolean; comeFatto?: boolean }} DatiScheda */
 /** @typedef {{ id: string; data: DatiScheda }} Scheda */
 /** @typedef {'stampa' | 'segnalato' | 'atteso' | 'anno'} Cautela */
 
@@ -12,25 +12,28 @@ import { createHash } from 'node:crypto';
 export const firma = f =>
   createHash('sha1').update(JSON.stringify([f.testo, f.stato, f.anno ?? 2027])).digest('hex').slice(0, 10);
 
-// Perché una scheda non è confermata per il 2027 (vuoto se lo è)
+// Perché una scheda non è confermata per il 2027 (vuoto se lo è). Una scheda con «comeFatto» (un fatto del passato
+// letto solo sui giornali: premi delle guide, classifiche, recensioni) si scrive come fatto (decisione di Enrico,
+// 06/10/2026): niente cautela, ma la build la elenca come «da verificare» sulla fonte originale (src/lib/fatti.ts).
 /** @param {DatiScheda} d @returns {Cautela[]} */
 export const cauteleDi = d => [
-  .../** @type {Cautela[]} */ (d.stato !== 'confermato' ? [d.stato] : []),
+  .../** @type {Cautela[]} */ (d.stato !== 'confermato' && !d.comeFatto ? [d.stato] : []),
   .../** @type {Cautela[]} */ ((d.anno ?? 2027) !== 2027 && !d.storico ? ['anno'] : [])
 ];
 
-// Parole che, nella frase, dicono che l'informazione non è confermata per il 2027
+// Parole che, nella frase, dicono che l'informazione non è confermata per il 2027. Per la stampa basta anche il
+// condizionale («dovrebbe», «è previsto»), senza nominare il giornale (guida di stile, specifiche/stile-testi.md).
 /** @type {Record<Cautela, (d: DatiScheda) => RegExp>} */
 export const PAROLE = {
-  stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|voc[ei] /i,
+  stampa: () => /stampa|giornal|quotidian|second[oa] |riportan|scriv|si legge|indiscrezion|\bvoc[ei]\b|raccont|dovrebb|potrebb|sarebb|(?:è|sono) previst|si parla di/i,
   segnalato: () => /siti non ufficiali|blog|segnalat|non ufficial/i,
-  atteso: () => /non (?:\S+ ){0,2}ancora|ancora non|manca(?:no)? ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere)|in attesa|quando usci/i,
+  atteso: () => /non (?:\S+ ){0,2}ancora|ancora non|manca(?:no)? ancora|non si sa|non sappiamo|nessun|da (annunciare|pubblicare|decidere|confermare)|non confermat|in attesa|quando usci|non (?:è|sono) (?:\S+ )?uscit|appena esc|più avanti|(?:lo|la|li|le) dirann|aspettiamo/i,
   anno: d => (d.anno === 2024 ? /2024|Barcellona/ : new RegExp(String(d.anno)))
 };
 export const SPIEGA = {
-  stampa: 'che viene dalla stampa («secondo la stampa», «scrivono i giornali»…)',
+  stampa: 'che viene dalla stampa («secondo la stampa», o con il condizionale: «dovrebbe», «è previsto»…)',
   segnalato: 'che viene da siti non ufficiali («secondo alcuni siti non ufficiali»…)',
-  atteso: 'che non è ancora uscita («non è ancora stato annunciato»…)',
+  atteso: 'che non è ancora uscita («non è ancora stato annunciato», «lo diranno gli organizzatori più avanti»…)',
   anno: "a quale anno si riferisce («nel 2026», «nel 2024»…)"
 };
 

@@ -12,6 +12,7 @@ export type Fatto = CollectionEntry<'fatti'> & { fontiRisolte: Fonte[] };
 let cacheFonti: Map<string, Fonte> | null = null;
 const avvisati = new Set<string>();
 const avvisatiDeboli = new Set<string>();
+const avvisatiComeFatto = new Set<string>();
 
 export async function tutteLeFonti() {
   if (!cacheFonti) cacheFonti = new Map((await getCollection('fonti')).map(f => [f.id, f]));
@@ -39,6 +40,10 @@ export async function getFatti(ids: string[]): Promise<Map<string, Fatto>> {
     if (confermataConFontiDeboli(f.data.stato, risolte.map(r => r.data.tipo)) && !avvisatiDeboli.has(id)) {
       avvisatiDeboli.add(id);
       console.warn(`\x1b[33m[fonti deboli]\x1b[0m la scheda "${id}" è confermata ma ha solo fonti di tipo ${[...new Set(risolte.map(r => r.data.tipo))].join(', ')}: aggiungi una fonte ufficiale, di dati o di stampa, oppure cambia lo stato`);
+    }
+    if (f.data.comeFatto && f.data.stato !== 'confermato' && !avvisatiComeFatto.has(id)) {
+      avvisatiComeFatto.add(id);
+      console.warn(`\x1b[33m[da verificare]\x1b[0m la scheda "${id}" si scrive come fatto ma è letta solo su ${[...new Set(risolte.map(r => r.data.editore))].join(', ')}: verificala sulla fonte originale (il sito della guida o del locale) e cambia lo stato in «confermato»`);
     }
     out.set(id, { ...f, fontiRisolte: risolte });
   }

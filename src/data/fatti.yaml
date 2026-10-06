@@ -1961,6 +1961,7 @@
   testo: "Segnalata dalla Guida Michelin 2025 tra le pizzerie di Napoli, secondo Scatti di Gusto. Il menu del locale scrive «maestri pizzaioli dal 1870»."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-michelin-2025-pizzerie, lc-da-michele-menu]
   controllato: 2026-10-04
 
@@ -1982,6 +1983,7 @@
   testo: "Gambero Rosso International, nel luglio 2024, scrive che è una tappa obbligata per il cibo di strada fritto napoletano."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [gri-cuoppo-2024]
   controllato: 2026-10-04
 
@@ -1989,6 +1991,7 @@
   testo: "Ha la Chiocciola di Slow Food nella guida Osterie d'Italia 2025, secondo Scatti di Gusto. Secondo il locale, l'osteria è aperta dal 1991."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-slowfood-2025, lc-chitarra-storia]
   controllato: 2026-10-04
 
@@ -1996,6 +1999,7 @@
   testo: "Gambero Rosso la mette tra gli otto posti di Napoli per la pasta e patate con la provola, scrive Gambero Rosso International nel gennaio 2024."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [gri-pasta-patate-2024]
   controllato: 2026-10-04
 
@@ -2003,6 +2007,7 @@
   testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, secondo Napolitan.it, che la descrive come una pasticceria tradizionale solida."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [napolitan-pasticcerie-2022]
   controllato: 2026-10-04
 
@@ -2017,6 +2022,7 @@
   testo: "Gambero Rosso International, nell'ottobre 2023, scrive che il suo nome a Napoli è sinonimo di pizza fritta."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [gri-pizza-fritta-2023]
   controllato: 2026-10-04
 
@@ -2038,6 +2044,7 @@
   testo: "Aperta nel 1949, scrive Gambero Rosso International, che nel gennaio 2024 la mette tra gli otto posti di Napoli per la pasta e patate con la provola."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [gri-pasta-patate-2024]
   controllato: 2026-10-04
 
@@ -2045,6 +2052,7 @@
   testo: "Secondo il locale, fa sfogliatelle in via Toledo dal 1785. Ha riaperto con una nuova gestione alla fine di marzo 2026, scrive Scatti di Gusto."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [lc-pintauro, sdg-pintauro-2026]
   controllato: 2026-10-04
 
@@ -2052,6 +2060,7 @@
   testo: "Quinta nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24, e segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sky-50top-2026, sdg-michelin-2025-pizzerie]
   controllato: 2026-10-04
 
@@ -2059,6 +2068,7 @@
   testo: "Ventiquattresima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24 (la classifica scrive solo «Salvo», senza dire quale sede); segnalata dalla Guida Michelin 2025 come «Salvo alla Riviera», secondo Scatti di Gusto."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sky-50top-2026, sdg-michelin-2025-pizzerie]
   controllato: 2026-10-04
 
@@ -2066,6 +2076,7 @@
   testo: "Tra i nuovi Bib Gourmand della Guida Michelin 2025, cioè buona cucina a prezzi contenuti, secondo Scatti di Gusto."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-bib-2025]
   controllato: 2026-10-04
 
@@ -2073,6 +2084,7 @@
   testo: "Nella recensione del gennaio 2026, Scatti di Gusto scrive che le candele alla genovese sono molto buone."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-pignatelli-2026]
   controllato: 2026-10-04
 
@@ -2115,6 +2127,7 @@
   testo: "Scatti di Gusto, nel 2016, scrive del suo cono graffa: il gelato servito dentro una graffa fritta e zuccherata."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-cono-graffa]
   controllato: 2026-10-04
 
@@ -2129,6 +2142,7 @@
   testo: "Sessantottesima nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24. Secondo il locale, è aperta dal 1916."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sky-50top-2026, lc-gorizia]
   controllato: 2026-10-04
 
@@ -2157,6 +2171,7 @@
   testo: "Segnalata dalla Guida Michelin 2025 tra le pizzerie di Napoli, secondo Scatti di Gusto. Secondo il locale, è nata nel 1951."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sdg-michelin-2025-pizzerie, lc-concettina-storia]
   controllato: 2026-10-04
 
@@ -2164,6 +2179,7 @@
   testo: "Gambero Rosso la mette tra le sette pasticcerie di Napoli nel 2022, riporta Napolitan.it, che cita la sua pastiera tra le migliori in città. Secondo il locale, è aperta dal 1920."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [napolitan-pasticcerie-2022, lc-poppella-storia]
   controllato: 2026-10-04
 
@@ -2171,6 +2187,7 @@
   testo: "Il suo fiocco di neve, scrive Gambero Rosso secondo Napolitan.it (2022), è ormai un dolce conosciutissimo anche all'estero."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [napolitan-pasticcerie-2022]
   controllato: 2026-10-04
 
@@ -2178,6 +2195,7 @@
   testo: "La pizzeria Palazzo Petrucci è terza nella classifica 50 Top Pizza Italia 2026, secondo Sky TG24: la classifica riguarda la sede di piazza San Domenico Maggiore. Questa sede, a Posillipo, il locale l'ha presentata nel settembre 2026."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [sky-50top-2026, lc-petrucci-posillipo]
   controllato: 2026-10-04
 
@@ -2192,6 +2210,7 @@
   testo: "Stars and Stripes, nel dicembre 2022, scrive che la pasta e patate, finita al tavolo, è il primo simbolo del locale, e loda la genovese."
   stato: stampa
   storico: true
+  comeFatto: true
   fonti: [stripes-tufo-2022]
   controllato: 2026-10-04
 

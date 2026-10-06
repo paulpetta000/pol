@@ -30,6 +30,10 @@ const fatti = defineCollection({
     // Un fatto del passato che non può valere per il 2027 (un risultato): nei testi l'anno va detto,
     // ma non serve il segno * (src/lib/testi.ts)
     storico: z.boolean().default(false),
+    // Un fatto del passato letto solo sui giornali (premi delle guide, classifiche, recensioni, notizie di un locale)
+    // che nei testi si scrive
+    // come fatto, senza segno: la build lo elenca come da verificare sulla fonte originale (src/lib/fatti.ts)
+    comeFatto: z.boolean().default(false),
     fonti: z.array(reference('fonti')).min(1),
     controllato: data,
     ricontrollare: data.optional()

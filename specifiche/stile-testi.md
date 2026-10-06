@@ -39,7 +39,7 @@ Ogni fatto ha la sua fonte, ma la fonte **sta in fondo alla pagina** («Fonti di
 | «Gambero Rosso International scrive che è una tappa obbligata» | «Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo» |
 | «Ha la Chiocciola di Slow Food nella guida 2025, secondo Scatti di Gusto» | «Ha la Chiocciola di Slow Food nella guida Osterie d'Italia 2025» |
 
-- **Premi e guide** (Michelin, Gambero Rosso, Slow Food, 50 Top Pizza): si scrivono come fatti, con l'anno: «È nella Guida Michelin 2025», «Negli anni passati era nella Guida Michelin». Si nomina la guida che dà il premio, mai il giornale che lo racconta. Oggi quasi tutti sono letti su giornali e blog: nella scheda hanno `premio: true`, la build li elenca come **da verificare sul sito della guida**, e si verificano più avanti (riga in `da-risolvere.md`).
+- **Premi e guide** (Michelin, Gambero Rosso, Slow Food, 50 Top Pizza): si scrivono come fatti, con l'anno: «È nella Guida Michelin 2025», «Negli anni passati era nella Guida Michelin». Si nomina la guida che dà il premio, mai il giornale che lo racconta. Oggi quasi tutti sono letti su giornali e blog: nella scheda hanno `comeFatto: true`, la build li elenca come **da verificare** sulla fonte originale, e si verificano più avanti (riga in `da-risolvere.md`). Vale anche per le recensioni e le notizie del passato di un locale («ha riaperto a marzo 2026»).
 - **Chi decide, non chi lo racconta**: per le regate si dice chi farà la cosa («gli orari li diranno gli organizzatori più avanti»), non «secondo il comunicato».
 - **Il fatto, non la formula della fonte**: se una guida scrive «tappa obbligata», noi riportiamo il motivo (cosa, da quando), non il cliché.
 - **Premi spiegati**: «la Chiocciola di Slow Food, che premia le osterie della tradizione», non solo «premiata».
@@ -91,7 +91,7 @@ Si dice **a parole**, ma con leggerezza: niente «a breve», «prossimamente», 
 ## 10. Prima e dopo (fatti di oggi, nessun fatto nuovo)
 **Di Matteo** (locali)
 - Prima: «Pizzeria e friggitoria su via dei Tribunali: pizza fritta, frittatine, crocchè e arancini da mangiare anche in piedi, oltre alle pizze al tavolo. Secondo il locale è aperta dal 1936; Gambero Rosso International scrive che è una tappa obbligata per il cibo di strada fritto{?…}.»
-- Dopo: «Aperta dal 1936, su via dei Tribunali. Qui si frigge: pizza fritta, frittatine, crocchè e arancini, da mangiare anche in piedi, oppure seduto, con una pizza al tavolo. Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo di fritto.» (premio: niente segno, va verificato sulla guida)
+- Dopo: «Aperta dal 1936, su via dei Tribunali. Qui si frigge: pizza fritta, frittatine, crocchè e arancini, da mangiare anche in piedi, oppure seduto, con una pizza al tavolo. Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo di fritto.» (`comeFatto`: niente segno, va verificato sulla guida)
 
 **Duomo** (tappe)
 - Prima: «La cattedrale di Napoli. Dentro c'è la Cappella del Tesoro di San Gennaro, a ingresso libero. Il Museo del Tesoro, accanto, si paga a parte: …»
@@ -105,14 +105,14 @@ Si dice **a parole**, ma con leggerezza: niente «a breve», «prossimamente», 
 La regola resta: **un'informazione non confermata per il 2027 va detta a parole**. Cambiano le parole ammesse e un caso:
 - **Stampa**: vale anche il **condizionale** («dovrebbe», «dovrebbero», «sarebbe», «è previsto», «sono previsti», «si parla di»), più «racconta», «raccontano», «per i giornali».
 - **Non ancora uscito**: anche «più avanti», «lo diranno», «li diranno», «non è uscito», «appena esce», «da confermare», «non confermato».
-- **Premi delle guide**: una scheda con `premio: true` (stato `stampa`, `storico: true`) si scrive come fatto, senza segno e senza parole di cautela; la build la elenca come `[premi da verificare]` (avviso, non si ferma). Cambia la riga di `CLAUDE.md` sulle informazioni non confermate.
+- **Fatti del passato letti sui giornali** (premi delle guide, classifiche, recensioni): una scheda con `comeFatto: true` si scrive come fatto, senza segno e senza parole di cautela; la build la elenca come `[da verificare]` (avviso, non si ferma). Cambia la riga di `CLAUDE.md` sulle informazioni non confermate.
 - Si corregge «voci,» con la virgola (trovato dai test il 06/10/2026).
 - Nuovi test in `test/` per ogni parola aggiunta, e un test che una frase senza cautela continui a fermare la build.
 
 ## 12. Controlli prima di dire «fatto»
 - [ ] Tutti i testi di `src/testi/` riscritti e firmati (`npm run testi:firma`)
 - [ ] Nessun fatto nuovo senza scheda; segni `{?id}` tutti al loro posto; nessun «secondo…» dove non serve
-- [ ] Premi segnati `premio: true` e riga in `da-risolvere.md` per verificarli sulle guide
+- [ ] Premi segnati `comeFatto: true` e riga in `da-risolvere.md` per verificarli sulle guide
 - [ ] Nessuna parola della lista nera (ricerca automatica)
 - [ ] `npm test` verde, build senza errori, `npm run check:links` pulito
 - [ ] Rilettura a campione di un agente `revisore` (fonti, cautele, tono)

@@ -34,13 +34,15 @@ test('cautela: ogni stato non confermato vuole le sue parole', () => {
   }
 });
 
-// I modi di dirlo che il controllo accetta oggi: se una parola sparisce per sbaglio dalla regola, il test lo dice.
-// Quando la guida di stile allarga le parole ammesse (Blocco 3), si aggiungono qui le frasi nuove.
+// I modi di dirlo che il controllo accetta: se una parola sparisce per sbaglio dalla regola, il test lo dice.
+// Le parole nuove della guida di stile (specifiche/stile-testi.md, 06/10/2026) sono in fondo a ogni elenco.
 test('cautela: tutti i modi di dirlo che accettiamo', () => {
   const frasi = {
-    stampa: ['Secondo il Mattino', 'Scrivono i giornali', 'Lo riportano due quotidiani', 'Si legge su Repubblica', 'Ci sono indiscrezioni', 'Girano voci di un rinvio', 'Per la stampa locale'],
+    stampa: ['Secondo il Mattino', 'Scrivono i giornali', 'Lo riportano due quotidiani', 'Si legge su Repubblica', 'Ci sono indiscrezioni', 'Girano voci di un rinvio', 'Girano voci, nessuna conferma', 'Per la stampa locale',
+      'Il villaggio dovrebbe essere lì', 'Le tribune dovrebbero essere lì', 'Potrebbe cambiare', 'Sarebbe la prima volta', 'È previsto un villaggio', 'Sono previsti maxischermi', 'Si parla di tribune', 'Lo raccontano i giornali locali'],
     segnalato: ['Secondo alcuni siti non ufficiali', 'Lo dice un blog', 'Ci è stato segnalato', 'Una fonte non ufficiale'],
-    atteso: ['Non è ancora uscito', 'Non è stato ancora annunciato', 'Ancora non si conosce', 'Mancano ancora gli orari', 'Non si sa', 'Non sappiamo ancora', 'Nessun annuncio', 'Da annunciare', 'In attesa del bando', 'Quando uscirà lo diremo']
+    atteso: ['Non è ancora uscito', 'Non è stato ancora annunciato', 'Ancora non si conosce', 'Mancano ancora gli orari', 'Non si sa', 'Non sappiamo ancora', 'Nessun annuncio', 'Da annunciare', 'In attesa del bando', 'Quando uscirà lo diremo',
+      'Gli orari li diranno gli organizzatori', 'Lo diranno più avanti', 'Ne sapremo di più più avanti', 'Il bando non è uscito', 'I prezzi non sono ancora usciti', 'Appena esce lo scriviamo', 'Data da confermare', 'Non confermato', 'Aspettiamo il bando']
   };
   for (const [stato, elenco] of Object.entries(frasi)) {
     for (const f of elenco) assert.deepEqual(errori([`${f}, le tribune saranno lì {?a}.`], scheda('a', { stato })), [], `${stato}: «${f}» deve bastare`);
@@ -111,4 +113,22 @@ test('fonti deboli: solo enciclopedia, blog o altro per una scheda confermata', 
   assert.equal(confermataConFontiDeboli('confermato', ['stampa']), false);
   assert.equal(confermataConFontiDeboli('segnalato', ['blog']), false, 'se lo stato lo dice già, va bene');
   assert.equal(confermataConFontiDeboli('confermato', []), false);
+});
+
+test('cautela: il condizionale basta per la stampa, ma non per ciò che non è ancora uscito', () => {
+  assert.deepEqual(errori(['Il villaggio dovrebbe avere lo stesso formato del 2026 {?a}.'], scheda('a', { stato: 'stampa' })), []);
+  assert.equal(errori(['Il villaggio dovrebbe avere lo stesso formato del 2026 {?a}.'], scheda('a', { stato: 'atteso' })).length, 1);
+  // senza condizionale e senza parole la frase continua a fermare la build
+  assert.equal(errori(['Il villaggio avrà lo stesso formato del 2026 {?a}.'], scheda('a', { stato: 'stampa' })).length, 1);
+});
+
+test('cautela: un fatto del passato letto sui giornali può essere scritto come fatto (comeFatto), senza segno', () => {
+  assert.deepEqual(cauteleDi({ testo: 'x', stato: 'stampa', storico: true, comeFatto: true }), []);
+  assert.deepEqual(errori(['È nella Guida Michelin 2025.'], scheda('a', { stato: 'stampa', storico: true, comeFatto: true })), []);
+  // il segno su questa scheda va tolto
+  assert.match(errori(['È nella Guida Michelin 2025 {?a}.'], scheda('a', { stato: 'stampa', storico: true, comeFatto: true }))[0], /Togli il segno/);
+  // senza «comeFatto» la stessa frase ferma la build
+  assert.equal(errori(['È nella Guida Michelin 2025.'], scheda('a', { stato: 'stampa', storico: true })).length, 1);
+  // una scheda mostrata così com'è (SchedaLocale) non prende l'asterisco
+  assert.deepEqual(cautelaScheda({ id: 'a', data: { testo: 'È nella Guida Michelin 2025.', stato: 'stampa', storico: true, comeFatto: true } }), { segno: false });
 });
