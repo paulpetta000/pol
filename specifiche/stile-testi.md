@@ -1,11 +1,11 @@
-# Guida di stile dei testi · bozza da approvare (06/10/2026)
+# Guida di stile dei testi (approvata da Enrico il 06/10/2026, con le sue modifiche)
 
-**Obiettivo.** I testi del sito sono corretti ma freddi. Li vogliamo caldi e coinvolgenti, come una guida che ti accompagna, **senza perdere le fonti**. Voce: **75% guida di viaggio, 25% amico napoletano** (scelta di Enrico, 06/10/2026).
+**Obiettivo.** I testi del sito sono corretti ma freddi. Li vogliamo caldi e coinvolgenti, come una guida che ti accompagna, **senza perdere le fonti**: le fonti restano tutte in fondo alla pagina, ma nel testo **non si citano quasi mai**. Voce: **75% guida di viaggio, 25% amico napoletano** (scelta di Enrico, 06/10/2026).
 Da dove viene: la ricerca in `ricerca/reports/Stile delle guide di viaggio.md` (con le fonti e le cose che non si sono potute leggere).
 
 ## 1. Le regole che non cambiano
 - **Il calore non inventa.** Ogni fatto viene da una scheda di `fatti.yaml` con la sua fonte. Profumi, rumori, «a destra dell'ingresso», «la coda arriva all'angolo» si scrivono solo se una fonte li dice. Il calore sta nella **forma** (ordine, verbi, ritmo), non in fatti nuovi.
-- Un'informazione non confermata per il 2027 ha il segno `{?id}` ed è **detta a parole** (vedi punto 5).
+- Un'informazione non confermata per il 2027 ha il segno `{?id}` ed è **detta a parole**, anche solo con il condizionale (vedi punto 5).
 - Un consiglio nostro si dice come nostro («noi ci andremmo la mattina») e ha `senzaFonte` se non ha una scheda.
 - Niente «ufficiale», niente link di affiliazione, niente loghi.
 
@@ -18,7 +18,7 @@ Da dove viene: la ricerca in `ricerca/reports/Stile delle guide di viaggio.md` (
 
 ## 3. Come si apre e quanto è lungo
 - **Si apre con una cosa concreta**: un luogo, un anno, un gesto, un numero. Il giudizio viene dopo, se serve.
-  - No: «Un gioiello del centro storico.» · Sì: «Su via dei Tribunali dal 1936, racconta il locale: …»
+  - No: «Un gioiello del centro storico.» · Sì: «Aperta dal 1936, su via dei Tribunali: …»
 - **Ritmo**: frasi di 12–20 parole, con qualche frase da 4–6 parole nei momenti giusti. Paragrafi di 2–4 frasi: si legge sul telefono.
 - **Ordine dentro un testo**: dove sei e cosa vedi o mangi → una o due date → il dettaglio che lo rende diverso → il fatto pratico (prenotare, orari, contanti) in coda.
 - **Lunghezza** (indicativa):
@@ -29,26 +29,30 @@ Da dove viene: la ricerca in `ricerca/reports/Stile delle guide di viaggio.md` (
 | Tappa, punto panoramico | 40–80 | 50–100; anche di più per un luogo con molto da raccontare, **se le schede ci sono** |
 | Testi di pagina (regate, trasporti, domande) | — | come oggi o più corti: la risposta prima di tutto |
 
-## 4. Citare una fonte con calore
-La fonte ha un **soggetto vero e un verbo attivo**, e sta accanto al fatto, non in un inciso burocratico.
+## 4. Le fonti: in fondo alla pagina, quasi mai nel testo (decisione di Enrico, 06/10/2026)
+Ogni fatto ha la sua fonte, ma la fonte **sta in fondo alla pagina** («Fonti di questa pagina»). Nel testo il fatto si scrive come fatto.
 
-| Freddo (oggi) | Caldo |
+| Freddo (oggi) | Come si scrive |
 |---|---|
-| «Secondo il locale è aperta dal 1936» | «Su via dei Tribunali dal 1936, racconta il locale» |
-| «Gambero Rosso International scrive che è una tappa obbligata» | «Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo» |
-| «Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto» | «Nel 2025 la Guida Michelin la segnala, racconta Scatti di Gusto» |
-| «Secondo gli organizzatori…» | «Lo hanno annunciato gli organizzatori», «nel comunicato del 30 settembre» |
+| «Secondo il locale è aperta dal 1936» | «Aperta dal 1936, su via dei Tribunali» |
+| «Segnalata dalla Guida Michelin 2025, secondo Scatti di Gusto» | «È nella Guida Michelin 2025» |
+| «Gambero Rosso International scrive che è una tappa obbligata» | «Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo» |
+| «Ha la Chiocciola di Slow Food nella guida 2025, secondo Scatti di Gusto» | «Ha la Chiocciola di Slow Food nella guida Osterie d'Italia 2025» |
 
-- **Il fatto, non la formula della fonte**: se una guida scrive «tappa obbligata», noi riportiamo il motivo (cosa, da quando, per chi), non il cliché.
+- **Premi e guide** (Michelin, Gambero Rosso, Slow Food, 50 Top Pizza): si scrivono come fatti, con l'anno: «È nella Guida Michelin 2025», «Negli anni passati era nella Guida Michelin». Si nomina la guida che dà il premio, mai il giornale che lo racconta. Oggi quasi tutti sono letti su giornali e blog: nella scheda hanno `premio: true`, la build li elenca come **da verificare sul sito della guida**, e si verificano più avanti (riga in `da-risolvere.md`).
+- **Chi decide, non chi lo racconta**: per le regate si dice chi farà la cosa («gli orari li diranno gli organizzatori più avanti»), non «secondo il comunicato».
+- **Il fatto, non la formula della fonte**: se una guida scrive «tappa obbligata», noi riportiamo il motivo (cosa, da quando), non il cliché.
 - **Premi spiegati**: «la Chiocciola di Slow Food, che premia le osterie della tradizione», non solo «premiata».
 - **Leggende come leggende**: «La leggenda dice che… La storia, quella vera, è più semplice: …».
+- **Quando la fonte si nomina ancora**: solo se senza di lei la frase direbbe una cosa falsa o troppo sicura (un parere, una cifra discussa, siti non ufficiali).
 
 ## 5. Quando una cosa non è ancora sicura
-Si dice **a parole**, con il **soggetto** e con **cosa fare intanto**. Niente «a breve», «prossimamente», «pare», «si dice».
-- **Non ancora uscito** (`atteso`): cosa manca → chi lo pubblica → cosa puoi fare adesso.
-  «Gli orari delle regate non sono ancora usciti{?…}: li pubblicano gli organizzatori. Intanto tocca *Avvisami* e te li mandiamo noi.»
-- **Dalla stampa** (`stampa`): si nomina la testata, quando si può. «Secondo la stampa locale il villaggio avrà lo stesso formato del 2026{?…}» (meglio ancora con il nome del giornale, se è nella fonte).
-- **Da siti non ufficiali** (`segnalato`): «secondo alcuni siti non ufficiali», o il nome del sito.
+Si dice **a parole**, ma con leggerezza: niente «a breve», «prossimamente», «pare», «si dice».
+- **Non ancora uscito** (`atteso`): cosa manca → chi lo deciderà → cosa puoi fare adesso.
+  «Gli orari delle regate li diranno gli organizzatori più avanti{?…}. Intanto tocca *Avvisami* e te li mandiamo noi.»
+- **Notizie del 2027 dalla stampa** (`stampa`): **il condizionale** e l'asterisco, senza nominare il giornale (decisione di Enrico, 06/10/2026).
+  «Il villaggio dovrebbe avere lo stesso formato del 2026{?…}.» Vanno bene anche «è previsto», «sarebbe», «si parla di».
+- **Da siti non ufficiali** (`segnalato`): «secondo alcuni siti non ufficiali», perché qui la fonte è debole e va detto.
 - **Com'era nel 2026 o nel 2024** (`anno`): l'anno nella frase, al passato. «Nel 2026 la diretta passava anche sui maxischermi{?…}.»
 
 ## 6. Termini tecnici: prima l'immagine, poi il nome
@@ -87,7 +91,7 @@ Si dice **a parole**, con il **soggetto** e con **cosa fare intanto**. Niente «
 ## 10. Prima e dopo (fatti di oggi, nessun fatto nuovo)
 **Di Matteo** (locali)
 - Prima: «Pizzeria e friggitoria su via dei Tribunali: pizza fritta, frittatine, crocchè e arancini da mangiare anche in piedi, oltre alle pizze al tavolo. Secondo il locale è aperta dal 1936; Gambero Rosso International scrive che è una tappa obbligata per il cibo di strada fritto{?…}.»
-- Dopo: «Su via dei Tribunali dal 1936, racconta il locale. Qui si frigge: pizza fritta, frittatine, crocchè e arancini, da mangiare anche in piedi, oppure seduto, con una pizza al tavolo. Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo di fritto{?…}.»
+- Dopo: «Aperta dal 1936, su via dei Tribunali. Qui si frigge: pizza fritta, frittatine, crocchè e arancini, da mangiare anche in piedi, oppure seduto, con una pizza al tavolo. Nel 2024 Gambero Rosso l'ha messa tra i posti migliori di Napoli per il cuoppo di fritto.» (premio: niente segno, va verificato sulla guida)
 
 **Duomo** (tappe)
 - Prima: «La cattedrale di Napoli. Dentro c'è la Cappella del Tesoro di San Gennaro, a ingresso libero. Il Museo del Tesoro, accanto, si paga a parte: …»
@@ -98,15 +102,17 @@ Si dice **a parole**, con il **soggetto** e con **cosa fare intanto**. Niente «
 - Dopo: «Appena sali, prima che il taxi parta, chiedi la **tariffa fissa**: dall'aeroporto e per i tragitti più comuni la decide il Comune di Napoli, e il tassista non può dirti di no. …»
 
 ## 11. Cosa cambia nel controllo dei testi (`src/lib/regole.mjs`)
-La regola resta: **un'informazione non ufficiale va detta a parole**. Si allargano solo le parole che lo dicono:
-- **Stampa e siti non ufficiali**: vale anche **il nome della fonte** nella frase («Gambero Rosso l'ha messa…», «per il Corriere del Mezzogiorno…»), preso dal campo `editore` di `fonti.yaml` (con un nome corto dove serve, per esempio «Gambero Rosso» per «Gambero Rosso International»). In più: «racconta», «raccontano», «cita», «per i giornali».
-- **Non ancora uscito**: anche «non è uscito», «appena esce», «da confermare», «non confermato», «aspettiamo».
+La regola resta: **un'informazione non confermata per il 2027 va detta a parole**. Cambiano le parole ammesse e un caso:
+- **Stampa**: vale anche il **condizionale** («dovrebbe», «dovrebbero», «sarebbe», «è previsto», «sono previsti», «si parla di»), più «racconta», «raccontano», «per i giornali».
+- **Non ancora uscito**: anche «più avanti», «lo diranno», «li diranno», «non è uscito», «appena esce», «da confermare», «non confermato».
+- **Premi delle guide**: una scheda con `premio: true` (stato `stampa`, `storico: true`) si scrive come fatto, senza segno e senza parole di cautela; la build la elenca come `[premi da verificare]` (avviso, non si ferma). Cambia la riga di `CLAUDE.md` sulle informazioni non confermate.
 - Si corregge «voci,» con la virgola (trovato dai test il 06/10/2026).
 - Nuovi test in `test/` per ogni parola aggiunta, e un test che una frase senza cautela continui a fermare la build.
 
 ## 12. Controlli prima di dire «fatto»
 - [ ] Tutti i testi di `src/testi/` riscritti e firmati (`npm run testi:firma`)
-- [ ] Nessun fatto nuovo senza scheda; segni `{?id}` tutti al loro posto
+- [ ] Nessun fatto nuovo senza scheda; segni `{?id}` tutti al loro posto; nessun «secondo…» dove non serve
+- [ ] Premi segnati `premio: true` e riga in `da-risolvere.md` per verificarli sulle guide
 - [ ] Nessuna parola della lista nera (ricerca automatica)
 - [ ] `npm test` verde, build senza errori, `npm run check:links` pulito
 - [ ] Rilettura a campione di un agente `revisore` (fonti, cautele, tono)
